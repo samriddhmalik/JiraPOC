@@ -4,9 +4,7 @@ public class AddOnTriggerHandler {
     
     public static void addstatusUpdateForAeSbAccomodation(List<AddOn__c> newAddonList, Map<Id, AddOn__c> oldAddonMap, Map<Id,AddOn__c> newAddonMap ){
         for(AddOn__c addon : newAddonList){
-            system.debug('addon before'+addon);
-            system.debug('oldAddonMap.get(addOn.id).ordexp_amount__c '+oldAddonMap.get(addOn.id).ordexp_amount__c);
-            system.debug('newAddonMap.get(addOn.Id).ordexp_amount__c '+newAddonMap.get(addOn.Id).ordexp_amount__c);
+            
             if(addon.RecordTypeId == Schema.SObjectType.AddOn__c.getRecordTypeInfosByDeveloperName().get('mp_AE_SB_Accommodation').getRecordTypeId() && ( (oldAddonMap.get(addOn.id).AE_Nights__c != newAddonMap.get(addOn.Id).AE_Nights__c && newAddonMap.get(addOn.Id).AE_Nights__c > oldAddonMap.get(addOn.Id).AE_Nights__c) || (oldAddonMap.get(addOn.id).SB_Nights__c != newAddonMap.get(addOn.Id).SB_Nights__c && newAddonMap.get(addOn.Id).SB_Nights__c > oldAddonMap.get(addOn.Id).SB_Nights__c)) ){
                 system.debug('addon '+addon);	
                 addon.AddOn_Status__c = 'On Hold';                
