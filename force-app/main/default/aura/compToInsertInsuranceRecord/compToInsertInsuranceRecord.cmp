@@ -1,0 +1,106 @@
+<aura:component implements="lightning:availableForFlowScreens,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="createInsuranceRecord" >
+    
+    <aura:attribute name="paxIdList" type="String" access="global"/>
+    <aura:attribute name="numberOfTimesToIterate" type="Integer"/>
+     <aura:attribute name="sourceObject" type="String"/>
+    
+    <aura:attribute name="orderLineItemId" type="String" access="global"/>    
+    <aura:attribute name="selectedPaxInfo" type="createInsuranceRecord.paxInfo[]"/>
+    <aura:attribute name="showThisNow" type="Boolean" default="false"/>
+    <aura:attribute name="showNextScreen" type="Boolean" default="false"/>
+    <aura:attribute name="showSuccessScreen" type="Boolean" default="false"/>
+    <aura:attribute name="insuranceType" type="String[]"/>
+    <aura:attribute name="coverType" type="String[]"/>
+    <aura:attribute name="inputCost" type="Decimal"/>
+    <aura:attribute name="tadOrderId" type="String" /> 
+    
+     <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <aura:if isTrue = "{!v.showThisNow}">
+        <aura:iteration items="{!v.selectedPaxInfo}" var="p">
+            <lightning:input label="{!'Enter the Insurance Policy Number for : ' + p.paxNickName}" name="NickName" value="{!p.paxPolicyNumber}"/>
+            
+        </aura:iteration>
+        
+        <br></br>
+        <br></br>
+           
+            <div class="slds-float_left" style="padding-bottom: 10px;">
+                <lightning:button aura:id="BACK" label="Previous" 
+                                  variant="neutral" onclick="{!c.previousScreen}" />
+                <lightning:button aura:id="Cancel" label="Cancel" 
+                                  variant="neutral" onclick="{!c.closeModal}" />
+            </div>
+            
+            <div class="slds-float_right" style="padding-bottom: 10px;">
+                <lightning:button aura:id="NEXT" label="Next" 
+                                  variant="brand" onclick="{!c.nextScreen}" />
+                <br></br>
+            </div>
+        
+    </aura:if>
+    
+     <aura:if isTrue = "{!v.showNextScreen}">
+         
+       
+                
+          <div class="slds-theme_default" style="width: inherit;padding: 16px; height :inherit">
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+        
+		<br></br>
+      
+              <lightning:select class="label" label="Insurance Type" aura:id="InsType"  required="true">
+                  <option value="" text="--- NONE ---"/>
+        <aura:iteration items="{!v.insuranceType}" var="ins">
+            <option value="{!ins.value}" text="{!ins.text}" >{!ins}</option> 
+        </aura:iteration>
+    </lightning:select>
+              <br></br>
+               <lightning:select class="label" label="Cover Type" aura:id="CovType"  required="true">
+                  <option value="" text="--- NONE ---"/>
+        <aura:iteration items="{!v.coverType}" var="cov">
+            <option value="{!cov.value}" text="{!cov.text}" >{!cov} </option> 
+        </aura:iteration>
+    </lightning:select> 
+              <br></br>
+                <div class="row">
+                  
+        <lightning:input class="label" type="Decimal" name="cost" value="{! v.inputCost }" label="Total Cost"  formatter="currency"  required="true" />
+                    
+    <br></br>
+    <br></br>
+                    <div class="slds-float_left" style="padding-bottom: 10px;">
+                        <lightning:button aura:id="PREVIOUS" label="Previous" 
+                                          variant="neutral" onclick="{!c.previousPolicyScreen}" />
+                        <lightning:button aura:id="Cancel1" label="Cancel" 
+                                          variant="neutral" onclick="{!c.closeModal}" />
+                    </div>
+                    
+                    
+                    <div class="slds-float_right" style="padding-bottom: 10px;">
+                        <lightning:button aura:id="NEXT" label="Next" 
+                                          variant="brand" onclick="{!c.saveRecord}" />
+                    </div>
+                    
+                </div>              
+                 
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue = "{!v.showSuccessScreen}">
+        
+        <div style="color:#00FF00;">    You have successfully created the Insurance </div>
+        <br></br>
+        <br></br>
+                <div class="slds-float_right">
+   <lightning:button aura:id="DONE" label="Done" 
+                     variant="brand" onclick="{!c.closeModal}" />
+</div>
+        
+</aura:if>
+              
+              
+</aura:component>

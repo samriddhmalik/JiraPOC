@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>tripadeal.com.au</loginFooterText>
+    <loginLogo>Communities_Shared_Document_Folder/white_tripdeal_logo_png_copy_png.png</loginLogo>
+    <loginLogoName>white_tripdeal_logo.png copy.png</loginLogoName>
+    <network>Special Holidays</network>
+    <pageHeader>SharedDocuments/New_TAD_Logo.png</pageHeader>
+    <primaryColor>#1797C0</primaryColor>
+    <primaryComplementColor>#FFFFFF</primaryComplementColor>
+    <quaternaryColor>#CFEEF8</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#1797C0</secondaryColor>
+    <tertiaryColor>#1797C0</tertiaryColor>
+    <tertiaryComplementColor>#FFFFFF</tertiaryComplementColor>
+    <zeronaryColor>#1797C0</zeronaryColor>
+    <zeronaryComplementColor>#FFFFFF</zeronaryComplementColor>
+</NetworkBranding>

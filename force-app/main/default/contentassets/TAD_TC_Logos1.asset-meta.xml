@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>TAD_TC_Logos1</masterLabel>
+    <originNetwork>TC</originNetwork>
+    <relationships>
+        <network>
+            <access>VIEWER</access>
+            <name>TC</name>
+        </network>
+    </relationships>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>TAD_TC_Logos.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

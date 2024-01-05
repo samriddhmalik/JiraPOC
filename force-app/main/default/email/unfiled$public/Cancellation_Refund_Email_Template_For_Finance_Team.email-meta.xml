@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TAD_Logo_Letterhead</letterhead>
+    <name>Cancellation/Refund Email Template For Finance Team</name>
+    <style>freeForm</style>
+    <subject>Request of {!Cancellation_Refund_POE__c.Cancellation_Type__c} for {!Cancellation_Refund_POE__c.TAD_Order_Name__c} has been Approved- Please Process Refund</subject>
+    <textOnly>Hello,
+
+You have received a request of process refund for {!Cancellation_Refund_POE__c.Cancellation_Type__c}
+
+Please click here to navigate to Record
+
+
+
+Order Name :- {!Cancellation_Refund_POE__c.TAD_Order_Name__c}
+
+
+Refund Details:-
+{!Cancellation_Refund_POE__c.Refund_Details__c}
+
+Refund Reason:-
+{!Cancellation_Refund_POE__c.Refund_Reason__c}
+
+
+Refund Amount :- {!Cancellation_Refund_POE__c.Refund_Amount__c}
+
+Total Cancellation Amount:- {!Cancellation_Refund_POE__c.Total_Cancellation_Amount__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

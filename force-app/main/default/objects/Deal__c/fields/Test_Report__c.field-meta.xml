@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;, 
+&quot;/lightning/r/00O0K00000AOi0n/view?fv0=&quot;, 
+&quot;/00O0K00000AOi0n?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Ticketing Report&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Ticketing Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

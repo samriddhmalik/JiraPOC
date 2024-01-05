@@ -1,0 +1,65 @@
+<aura:component implements="lightning:availableForFlowScreens,force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride,lightning:hasPageReference" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="parentRecordId" type="String" />
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="storeTheTADOrderRecordId" type="String"/>
+    
+    <aura:attribute name="StoreNewlyCreatedTADOrderId" type="String"/>
+    <aura:attribute name="isLoading" type="Boolean"/>
+    <aura:handler event="aura:Waiting" action="{!c.loading}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.loaded}"/>
+    <aura:html tag="style">
+        .uiOutputRichText{
+        font-weight: bold;
+        }
+        .slds-combobox_container{
+        width:95.5% !important;
+        }   
+        
+        
+        
+    </aura:html>   
+    <lightning:workspaceAPI aura:id="workspace"/>
+            
+        <div class="slds-box slds-theme_default slds-text-title_bold slds-grid slds-wrap slds-align_absolute-center">
+            <lightning:flow aura:id="flowId" class="slds-size_1-of-2" onstatuschange="{!c.handleStatusChange}"/>
+        </div>
+        
+    
+    <aura:if isTrue="{!v.isModalOpen}">
+        <!-- Modal/Popup Box starts here--> 
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.handleClose }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Anything else?</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>Do you wish to create an OLI?
+                        </b>
+                    </p>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="brand" 
+                                      label="Create an OLI"
+                                      title="Create an OLI"
+                                      onclick="{!c.submitDetailsToCallOLIFlow}"/>
+                    
+                    <lightning:button variant="neutral" 
+                                      label="No"
+                                      title="No"
+                                      onclick="{! c.handleClose }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+</aura:component>

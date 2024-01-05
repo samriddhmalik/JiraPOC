@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVC_Picklist_limit_access</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT( OR
+(
+ISBLANK(TEXT(CVC__c)),
+ISPICKVAL(CVC__c, &quot;TADRefund&quot;),
+ISPICKVAL(CVC__c, &quot;TADRefund - PIN&quot;),
+ISPICKVAL(CVC__c, &quot;BER - Hardship&quot;),
+ISPICKVAL(CVC__c, &quot;BERefund&quot;),
+ISPICKVAL(CVC__c, &quot;BERefund - Partial&quot;),
+ISPICKVAL(CVC__c, &quot;BERRefund - PIN&quot;),
+ISPICKVAL(CVC__c, &quot;RefundProcessed&quot;),
+ISPICKVAL(CVC__c, &quot;Chargeback&quot;), 
+ISPICKVAL(CVC__c, &quot;PartCredit PartRefund&quot;),
+ISPICKVAL(CVC__c, &quot;BER Send Offer (Refund)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Send Offer (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Send Offer (FollowUp)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Accepted (Refund)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Accepted (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Bank Details Required (Refund)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Bank Details Required (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Refunded (Refund)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Refunded (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c, &quot;BER Accepted - Bank Refund Required&quot;),
+ISPICKVAL(CVC__c, &quot;BER Subrogation&quot;),
+ISPICKVAL(CVC__c, &quot;TADActionRequired&quot;),
+ISPICKVAL(CVC__c, &quot;MayJuneCOVID&quot;),
+ISPICKVAL(CVC__c, &quot;MayJuneCOVID - Date Change&quot;),
+ISPICKVAL(CVC__c, &quot;BER Refund - Unsuccessful Payment&quot;)
+)
+),
+ISCHANGED(  CVC__c  ), 
+OR(
+$Profile.Name = &quot;~TAD Finance&quot;,
+$User.Email = &quot;salome.seikot@tripadeal.com.au&quot;,
+$User.Email = &quot;vanessa.murphy@tripadeal.com.au&quot;)
+)</errorConditionFormula>
+    <errorMessage>You do not have access to this CVC value - try again (Finance)</errorMessage>
+</ValidationRule>

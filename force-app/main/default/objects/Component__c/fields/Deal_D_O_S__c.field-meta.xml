@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_D_O_S__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISBLANK( Deal__c )) , Deal__r.Name , IF(NOT(ISBLANK(  Options__c  )),  Options__r.Deal__r.Name ,  Sub_Options__r.Linked_Deal_Via_Opt__c  ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Deal(D/O/S)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticketing_Side_Mandatory</fullName>
+    <active>false</active>
+    <description>Make Ticketing Side mandatory for flight components, cruises, total packages, Land tour.</description>
+    <errorConditionFormula>ISPICKVAL(Ticketing_Side__c, &apos;&apos;)  &amp;&amp;  ( 
+ISPICKVAL(Component_Type__c  , &apos;Flight&apos;)  || ISPICKVAL(Component_Type__c  , &apos;Cruise&apos;)  || 
+ISPICKVAL(Component_Type__c  , &apos;Total Package&apos;)  || 
+ISPICKVAL(Component_Type__c  , &apos;Land Tour&apos;) )</errorConditionFormula>
+    <errorDisplayField>Ticketing_Side__c</errorDisplayField>
+    <errorMessage>Please select a value in Ticketing Side</errorMessage>
+</ValidationRule>

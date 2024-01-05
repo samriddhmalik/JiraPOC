@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Publishing_AU_Needs_Est_Weight_Marg</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED( Status__c ) ,
+OR(ISPICKVAL(Status__c,&quot;Hero&quot;),ISPICKVAL(Status__c,&quot;Published&quot;)),
+ISNULL(Estimated_Weighted_Margin__c)
+)</errorConditionFormula>
+    <errorDisplayField>Estimated_Weighted_Margin__c</errorDisplayField>
+    <errorMessage>Deal Cannot be published. Deal needs Estimated Weighted Margin</errorMessage>
+</ValidationRule>

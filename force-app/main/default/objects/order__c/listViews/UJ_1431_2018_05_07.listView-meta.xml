@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UJ_1431_2018_05_07</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>total_payment_received__c</columns>
+    <columns>booking_status__c</columns>
+    <columns>total_sale_value__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>qty__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>deal__c</field>
+        <operation>equals</operation>
+        <value>1431</value>
+    </filters>
+    <filters>
+        <field>departures_dates__c</field>
+        <operation>equals</operation>
+        <value>2018-05-07</value>
+    </filters>
+    <label>UJ - 1431 2018-05-07</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Financial_Accountant</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost_Spend_approved_by__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the cost to TripADeal was over $2500, who approved the spend?</inlineHelpText>
+    <label>Cost/Spend approved by</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Team Leader</fullName>
+                <default>false</default>
+                <label>Team Leader</label>
+            </value>
+            <value>
+                <fullName>Shannon Knapp</fullName>
+                <default>false</default>
+                <label>Shannon Knapp</label>
+            </value>
+            <value>
+                <fullName>Alexandra Chakos</fullName>
+                <default>false</default>
+                <label>Alexandra Chakos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

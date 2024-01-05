@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Cabin_Bookings_Outstanding__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows Alex and Xavier to override order status on orders with triple share cabins</description>
+    <externalId>false</externalId>
+    <label>Override_Cabin_Booking_Outstanding</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

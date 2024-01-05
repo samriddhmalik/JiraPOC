@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Refunds__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Refunds</label>
+    <summarizedField>Payment_Transaction__c.amount_original__c</summarizedField>
+    <summaryFilterItems>
+        <field>Payment_Transaction__c.transaction_type__c</field>
+        <operation>equals</operation>
+        <value>Refund</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Payment_Transaction__c.order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

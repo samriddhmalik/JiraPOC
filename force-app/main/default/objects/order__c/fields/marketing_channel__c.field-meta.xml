@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>marketing_channel__c</fullName>
+    <externalId>false</externalId>
+    <label>Marketing Channel</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+                <label>Instagram</label>
+            </value>
+            <value>
+                <fullName>Friend/relative</fullName>
+                <default>false</default>
+                <label>Friend/relative</label>
+            </value>
+            <value>
+                <fullName>Newspaper</fullName>
+                <default>false</default>
+                <label>Newspaper</label>
+            </value>
+            <value>
+                <fullName>Internet</fullName>
+                <default>false</default>
+                <label>Internet</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Titans NRL</fullName>
+                <default>false</default>
+                <label>Gold Coast Titans NRL</label>
+            </value>
+            <value>
+                <fullName>Return Customer</fullName>
+                <default>false</default>
+                <label>Return Customer</label>
+            </value>
+            <value>
+                <fullName>Travel Agent</fullName>
+                <default>false</default>
+                <label>Travel Agent</label>
+            </value>
+            <value>
+                <fullName>Roadshow</fullName>
+                <default>false</default>
+                <label>Roadshow</label>
+            </value>
+            <value>
+                <fullName>Email (Newsletter)</fullName>
+                <default>false</default>
+                <label>Email (Newsletter)</label>
+            </value>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Melbourne City Football Club</fullName>
+                <default>false</default>
+                <label>Melbourne City Football Club</label>
+            </value>
+            <value>
+                <fullName>Podcast</fullName>
+                <default>false</default>
+                <label>Podcast</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>TripADeal Competition</fullName>
+                <default>false</default>
+                <label>TripADeal Competition</label>
+            </value>
+            <value>
+                <fullName>NRMA</fullName>
+                <default>false</default>
+                <label>NRMA</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <label>Billboard</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

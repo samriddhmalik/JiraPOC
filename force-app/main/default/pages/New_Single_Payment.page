@@ -1,0 +1,41 @@
+<apex:page controller="BpointSinglePaymentController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <script type="text/javascript">
+                    function hideButton(){
+                        var obj= document.getElementById('payment-button');
+                        obj.style.visibility = 'hidden';
+                        CreateCRN_JS();
+                    }
+                </script>
+                <div id="payment-button"><input name="MakePayment" class="btn" type="button" value="Make Payment" onclick="hideButton();" style="width: 90px; float: left"/></div>
+                <apex:commandButton id="backtotravelbooking" value="Back to Phone Sale" action="{!redirectToTravelBooking}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:actionFunction action="{!createCRN}" name="CreateCRN_JS" status="status1" reRender="statuses" onComplete="CallBpoint_JS();"/>
+            <apex:actionFunction action="{!makePayment}" name="CallBpoint_JS" status="status2" reRender="statuses, showmsg"/>
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+            <apex:pageBlockSection >
+                <apex:outputPanel id="statuses">
+                    <apex:actionStatus id="status1" startText="...Creating CRN and saving to DB..." />
+                    <apex:actionStatus id="status2" startText="...Sending transaction to Bpoint..." />
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputText label="Pax" value="{!paxName}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputText label="Phone Sale" value="{!travelBookingName}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputText label="Payment Amount" value="{!pageAmount}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputField label="Currency" value="{!payment.Currency__c}"/>
+                <apex:inputField label="Transaction Type" value="{!payment.Transaction_Type__c}"/>
+                <apex:inputField label="Name on card" value="{!payment.Name_on_card__c}"/>
+                <apex:inputField label="Credit Card Number" value="{!payment.Credit_Card__c}" required="true"/>
+                <apex:inputField label="Expiry Date" value="{!payment.Exp_Date__c}" required="true"/>
+                <apex:inputField label="CCV" value="{!payment.CCV__c}" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

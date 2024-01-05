@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Mapping_of_Payable_invoice_lines_to_Order_lines with Filter Criteria</description>
+    <height>450</height>
+    <label>Mapping of Payable invoice lines to Order lines</label>
+    <lightningComponent>OrderLineMapping</lightningComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningComponent</type>
+    <width>-100</width>
+</QuickAction>

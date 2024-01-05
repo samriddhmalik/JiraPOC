@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AUS_TimeZone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AUS TimeZone</shortDescription>
+        <value>+10:00</value>
+    </labels>
+    <labels>
+        <fullName>AU_DT_Company</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AU DT Company</shortDescription>
+        <value>a9e2x0000000001</value>
+    </labels>
+    <labels>
+        <fullName>AU_Site_Label</fullName>
+        <categories>Omni Channel- Site Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AU Site Label</shortDescription>
+        <value>Australia</value>
+    </labels>
+    <labels>
+        <fullName>AbTest_BaseURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AbTest_BaseURL</shortDescription>
+        <value>https://www.tripadeal.com.au/reservedQ/55D23D78CD4D1D66B93B9A1A32BE2D9F?action=widget&amp;orderid=</value>
+    </labels>
+    <labels>
+        <fullName>AbTest_BaseURL_TNZ_WT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AbTest_BaseURL_TNZ_WT</shortDescription>
+        <value>https://www.tripadeal.co.nz/reservedQ/55D23D78CD4D1D66B93B9A1A32BE2D9F?action=widget&amp;orderid=</value>
+    </labels>
+    <labels>
+        <fullName>Account</fullName>
+        <categories>Object Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account</shortDescription>
+        <value>Account</value>
+    </labels>
+    <labels>
+        <fullName>AccountingCompanyTAD</fullName>
+        <categories>SFID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountingCompanyTAD</shortDescription>
+        <value>a9e2x0000000001</value>
+    </labels>
+    <labels>
+        <fullName>AccountingCompanyTNZ</fullName>
+        <categories>SFID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountingCompanyTNZ</shortDescription>
+        <value>a9e2x0000000006</value>
+    </labels>
+    <labels>
+        <fullName>AccountingTaxCode_GSTFree</fullName>
+        <categories>SFID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountingTaxCode GSTFree</shortDescription>
+        <value>aAr2x0000000005</value>
+    </labels>
+    <labels>
+        <fullName>ActivateFeedTrigger</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivateFeedTrigger</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Allow_Blockout_Date_for_Stop_Over</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Allow Blockout Date for Stop Over</shortDescription>
+        <value>True</value>
+    </labels>
+    <labels>
+        <fullName>Australia_Site_Prefix</fullName>
+        <categories>Omni Channel- Site Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Australia Site Prefix</shortDescription>
+        <value>AU</value>
+    </labels>
+    <labels>
+        <fullName>BC_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BC Notification</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Blacklist_Deals_For_Merchant</fullName>
+        <categories>List of deals not Visible to merchant</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Blacklist Deals For Merchant</shortDescription>
+        <value>4093</value>
+    </labels>
+    <labels>
+        <fullName>BothExtensions</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Both Extensions</shortDescription>
+        <value>Both Extensions</value>
+    </labels>
+    <labels>
+        <fullName>BothExtensionsUpgrade</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Both Extensions with Upgrade</shortDescription>
+        <value>Both Extensions with Upgrade</value>
+    </labels>
+    <labels>
+        <fullName>CSAttributionRunBoolean</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSAttributionRunBoolean</shortDescription>
+        <value>True</value>
+    </labels>
+    <labels>
+        <fullName>CS_Attribution_API_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CS Attribution API User</shortDescription>
+        <value>00528000000xt2FAAQ</value>
+    </labels>
+    <labels>
+        <fullName>Case</fullName>
+        <categories>Object Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case</shortDescription>
+        <value>Case</value>
+    </labels>
+    <labels>
+        <fullName>Chat</fullName>
+        <categories>Misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Chat</shortDescription>
+        <value>Chat</value>
+    </labels>
+    <labels>
+        <fullName>ClosedCaseStatus</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClosedCaseStatus</shortDescription>
+        <value>Closed</value>
+    </labels>
+    <labels>
+        <fullName>Confirmed</fullName>
+        <categories>Status</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirmed</shortDescription>
+        <value>Confirmed</value>
+    </labels>
+    <labels>
+        <fullName>Cruise_Company_Names</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cruise Company Names</shortDescription>
+        <value>MSC
+Royal Caribbean
+Celebrity Cruises
+Costa Cruises
+Norwegian Cruise Lines
+Carnival Cruises
+Holland America
+Princess Cruises
+P&amp;O Cruises
+CMV Cruises
+Oceania Cruises
+Virgin Voyages
+Dream Cruises
+Captain Cook Cruises
+Pullmantur
+Hurtigruten</value>
+    </labels>
+    <labels>
+        <fullName>Deal_By_noe_choose_date_html</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal By now choose date html</shortDescription>
+        <value>&lt;div class=&quot;summary-highlights latofont bncl-circle&quot;&gt;
+&lt;span&gt;&lt;i class=&quot;fa fa-calendar-check-o&quot;&gt;&lt;/i&gt; Buy Now, Choose Dates Later* &lt;/span&gt;
+&lt;/div&gt;
+&lt;p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Default_Hotel_Deal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Hotel Deal</shortDescription>
+        <value>a2R2x000001wSiE</value>
+    </labels>
+    <labels>
+        <fullName>Default_Hotel_Option</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Hotel Option</shortDescription>
+        <value>a2e2x000005uvNy</value>
+    </labels>
+    <labels>
+        <fullName>DelaconAuth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DelaconAuth</shortDescription>
+        <value>1653_XBy+RvZmXyKtKFjVHBorSuu4vV8MSXyiMXn8uXN1pPf8cRTOkZSdEVhhf1l7YyuTSgUXgJNG9Rs=</value>
+    </labels>
+    <labels>
+        <fullName>DelaconTrackingUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DelaconTrackingUrl</shortDescription>
+        <value>https://pla.delaconcorp.com/site/webui/gen/uploadcrmdata.jsp?uploadtype=unmatched</value>
+    </labels>
+    <labels>
+        <fullName>Delacon_conversion_days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delacon conversion days</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>DepartureDateSurchargeComponent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DepartureDateSurchargeComponent</shortDescription>
+        <value>a110K000006eC4fQAE</value>
+    </labels>
+    <labels>
+        <fullName>ErrorRejectionComment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorRejectionComment</shortDescription>
+        <value>Please provide the reason for rejection</value>
+    </labels>
+    <labels>
+        <fullName>FOUR</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>4</shortDescription>
+        <value>4</value>
+    </labels>
+    <labels>
+        <fullName>Feature_Bank_Details_Change</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Feature - Bank Details Change</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>For_Bc_Sent_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For Bc Sent Email</shortDescription>
+        <value>partners@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>For_Cabin_Booked_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For Cabin Booked Email</shortDescription>
+        <value>cruise@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>For_Flight_Ticketed_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For Flight Ticketed Email</shortDescription>
+        <value>customisation@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>General</fullName>
+        <categories>Chat Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General</shortDescription>
+        <value>General</value>
+    </labels>
+    <labels>
+        <fullName>Hardship</fullName>
+        <categories>Hardship</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hardship</shortDescription>
+        <value>Hardship</value>
+    </labels>
+    <labels>
+        <fullName>Hide_Flight_Manifest_Data</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hide Flight Manifest Data</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>Id</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>id</shortDescription>
+        <value>id</value>
+    </labels>
+    <labels>
+        <fullName>Instance_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Instance Link</shortDescription>
+        <value>https://tripadeal.lightning.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Knowledge_Keywords</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Knowledge Keywords</shortDescription>
+        <value>non-smoking,triple,share,accommodation,bedding,twin,transfers,cancel,refundable,online,checkout,quantity,membership,loyalty,discount,ship,smoking,cabin,deck,disembark,deal,sale,offer,interstate,city,departure,companion,surcharge,date,receipt,purchase,passenger,form,wheelchair,airports,baggage,forfeit,bags,contact,details,medication,medical,mobility,request,TripADeal,seat,transit,fitness,vehicle,pack,climate,average,temperature,luggage,advice,destination,order,solo,passport,minimum,pay,tour,children,guide,itinerary,bedding,schedule,adaptors,vaccinations,age,group,inclusions,choose,later,restrictions,COVID-19,conditions,terms,refund,policy,circumstances,hardship,visa,travel,flight,upgrade,land,activity,arrive,early,stay,behind,airline,cruise,night,nights,room,allocation,international,domestic,date,documentation,ticket,insurance,emergency,bushfire,bushfires,bush,fire,Dietary,requirements,
+buy</value>
+    </labels>
+    <labels>
+        <fullName>Land_Activity</fullName>
+        <categories>RCT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Land Activity</shortDescription>
+        <value>Land_Activity</value>
+    </labels>
+    <labels>
+        <fullName>MPSummaryReportBCAvailable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPSummaryReportBCAvailable</shortDescription>
+        <value>https://qa-tad.cs57.force.com/TADMerchantPortal/s/booking-confirmation</value>
+    </labels>
+    <labels>
+        <fullName>MPSummaryReportSalesReport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPSummaryReportSalesReport</shortDescription>
+        <value>https://qa-tad.cs57.force.com/TADMerchantPortal/s/sales-report-Page</value>
+    </labels>
+    <labels>
+        <fullName>MP_BCAvailable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MP_BCAvailable</shortDescription>
+        <value>https://tripadeal.my.site.com/TADMerchantPortal/s/booking-confirmation</value>
+    </labels>
+    <labels>
+        <fullName>MP_Batch_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MP Batch Notification</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>MP_CommunityURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MP CommunityURL</shortDescription>
+        <value>https://tad.force.com/TADMerchantPortal/s/login</value>
+    </labels>
+    <labels>
+        <fullName>MP_Email</fullName>
+        <categories>Used Email Id For MP Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MP Email Logistics</shortDescription>
+        <value>partners@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>MP_Home_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MP Home Page</shortDescription>
+        <value>https://tripadeal--staging.sandbox.my.site.com/TADMerchantPortal/s/</value>
+    </labels>
+    <labels>
+        <fullName>MainPackage</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Main Package</shortDescription>
+        <value>Main Package</value>
+    </labels>
+    <labels>
+        <fullName>Merchant_Portal_Base_URl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Merchant Portal Base URl</shortDescription>
+        <value>https://qa-tad.cs57.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Merchant_Portal_Name</fullName>
+        <categories>Community</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Merchant Portal Name</shortDescription>
+        <value>TADMerchantPortal</value>
+    </labels>
+    <labels>
+        <fullName>NZ_DT_Company</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NZ DT Company</shortDescription>
+        <value>a9e2x0000000006</value>
+    </labels>
+    <labels>
+        <fullName>NZ_Site_Label</fullName>
+        <categories>Omni Channel- Site Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NZ Site Label</shortDescription>
+        <value>New Zealand</value>
+    </labels>
+    <labels>
+        <fullName>NavigateToCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NavigateToCase</shortDescription>
+        <value>https://tad.force.com/TADMerchantPortal/s/detail</value>
+    </labels>
+    <labels>
+        <fullName>NewCaseMilestone</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewCaseMilestone</shortDescription>
+        <value>New Case Milestone</value>
+    </labels>
+    <labels>
+        <fullName>NewCaseStatus</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewCaseStatus</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>Newzealand_Site_Prefix</fullName>
+        <categories>Omni Channel- Site Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Newzealand Site Prefix</shortDescription>
+        <value>NZ</value>
+    </labels>
+    <labels>
+        <fullName>None</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>None</shortDescription>
+        <value>None</value>
+    </labels>
+    <labels>
+        <fullName>ONE</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>OTAConnect_XMLNS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OTAConnect XMLNS</shortDescription>
+        <value>http://www.opentravel.org/OTA/2003/05</value>
+    </labels>
+    <labels>
+        <fullName>OTA_Connect_Partner_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OTA_Connect Partner ID</shortDescription>
+        <value>tripadeal</value>
+    </labels>
+    <labels>
+        <fullName>OTA_Connect_Reservation_Endpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OTA_Connect Reservation Endpoint</shortDescription>
+        <value>https://pushres.ezyield.com/cgi-bin/EZYieldPushInterface.cgi?requestor=tripadeal-otac</value>
+    </labels>
+    <labels>
+        <fullName>OnHoldCaseMilestone</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OnHoldCaseMilestone</shortDescription>
+        <value>On Hold Case Milestone</value>
+    </labels>
+    <labels>
+        <fullName>OnHoldCaseStatus</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OnHoldCaseStatus</shortDescription>
+        <value>On Hold</value>
+    </labels>
+    <labels>
+        <fullName>On_Tour</fullName>
+        <categories>Chat Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>On_Tour</shortDescription>
+        <value>On Tour</value>
+    </labels>
+    <labels>
+        <fullName>Online_Dates_Allocation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Online Dates Allocation</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Option</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Option</shortDescription>
+        <value>Option</value>
+    </labels>
+    <labels>
+        <fullName>OrderLineItem_error_noOfAllocations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderLineItem_error_noOfAllocations</shortDescription>
+        <value>Sorry requested number of allocation are not Available for this departure Dates</value>
+    </labels>
+    <labels>
+        <fullName>OrderLineItem_error_oneOrMore</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderLineItem_error_oneOrMore</shortDescription>
+        <value>One or more day for this allocation is not Available</value>
+    </labels>
+    <labels>
+        <fullName>OrgEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrgWideEmailAddressId</shortDescription>
+        <value>0D2280000004KMkCAM</value>
+    </labels>
+    <labels>
+        <fullName>PageSendItinerariesToCustomers</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Page.SendItinerariesToCustomers</shortDescription>
+        <value>Page.SendItinerariesToCustomers</value>
+    </labels>
+    <labels>
+        <fullName>PayToURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PayToURL</shortDescription>
+        <value>https://www.tripadeal.com.au/viapayto</value>
+    </labels>
+    <labels>
+        <fullName>Payline_Base_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payline Base URL</shortDescription>
+        <value>https://www.tripadeal.com.au/_pline?agent=</value>
+    </labels>
+    <labels>
+        <fullName>Payline_Base_URL_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payline Base URL 1</shortDescription>
+        <value>&amp;instance=tadprod&amp;token=</value>
+    </labels>
+    <labels>
+        <fullName>Payline_Base_URL_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payline Base URL 2</shortDescription>
+        <value>&amp;customer_reference_number1=</value>
+    </labels>
+    <labels>
+        <fullName>Payline_Base_URL_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payline Base URL 3</shortDescription>
+        <value>&amp;customer_reference_number1_read_only=true&amp;amount=</value>
+    </labels>
+    <labels>
+        <fullName>Payline_Base_URL_4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payline Base URL 4</shortDescription>
+        <value>&amp;display_customer_reference_number2_field=true&amp;crn2_field_name=Email&amp;template=surcharge_v2</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Status_Report</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Status Report</shortDescription>
+        <value>kristy.hanslow@tripadeal.com.au,lilian.sweetnam@tripadeal.com.au,accounts@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>PnrAuthToken</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PnrAuthToken</shortDescription>
+        <value>NnZhYjdlZTQ1djZ1dnBsZXJiN3U3amczajE6MnVrc205azBsZHVucDhrMXQ1Z2hmc2ZyMGhhaHIxbTU4azNjaWhpbHY3NmFiY2UwdnBt</value>
+    </labels>
+    <labels>
+        <fullName>PnrIsServerless</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PnrIsServerless</shortDescription>
+        <value>True</value>
+    </labels>
+    <labels>
+        <fullName>PnrMakeCallout_for_ManualSync</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PnrMakeCallout for ManualSync</shortDescription>
+        <value>https://stlgev8dhh.execute-api.ap-southeast-2.amazonaws.com/prod/psag/api/pnr/manualsync</value>
+    </labels>
+    <labels>
+        <fullName>PnrMakeCallout_for_locator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PnrMakeCallout for locator</shortDescription>
+        <value>https://stlgev8dhh.execute-api.ap-southeast-2.amazonaws.com/prod/psag/api/pnr/locators</value>
+    </labels>
+    <labels>
+        <fullName>Pnr_Client_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pnr Client Id</shortDescription>
+        <value>6vab7ee45v6uvplerb7u7jg3j1</value>
+    </labels>
+    <labels>
+        <fullName>Pnr_Token_Callout</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pnr Token Callout url</shortDescription>
+        <value>https://tad-ms.auth.ap-southeast-2.amazoncognito.com/oauth2/token?grant_type=client_credentials&amp;client_id=</value>
+    </labels>
+    <labels>
+        <fullName>Post</fullName>
+        <categories>Chat Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post</shortDescription>
+        <value>Post</value>
+    </labels>
+    <labels>
+        <fullName>PostExtension</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Extension</shortDescription>
+        <value>Post Extension</value>
+    </labels>
+    <labels>
+        <fullName>PostExtensionUpgrade</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Extension with Upgrade</shortDescription>
+        <value>Post Extension with Upgrade</value>
+    </labels>
+    <labels>
+        <fullName>Pre</fullName>
+        <categories>Chat Values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre</shortDescription>
+        <value>Pre</value>
+    </labels>
+    <labels>
+        <fullName>PreExtension</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre Extension</shortDescription>
+        <value>Pre Extension</value>
+    </labels>
+    <labels>
+        <fullName>PreExtensionUpgrade</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre Extension with Upgrade</shortDescription>
+        <value>Pre Extension with Upgrade</value>
+    </labels>
+    <labels>
+        <fullName>RecepientForEarlyBooking</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecepientForEarlyBooking</shortDescription>
+        <value>sachin@psagtechnologies.com.p1</value>
+    </labels>
+    <labels>
+        <fullName>Reopened</fullName>
+        <categories>Misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reopened</shortDescription>
+        <value>Re-opened</value>
+    </labels>
+    <labels>
+        <fullName>Room_Stay_Comments_OTA_Connect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Room Stay Comments OTA_Connect</shortDescription>
+        <value>one-room</value>
+    </labels>
+    <labels>
+        <fullName>SearchInventoryHint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SearchInventoryHint</shortDescription>
+        <value>Select only 1 value from each section</value>
+    </labels>
+    <labels>
+        <fullName>Send_Comms_Options_Visiblity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Comms Options Visiblity</shortDescription>
+        <value>0051s000003RH7nAAG</value>
+    </labels>
+    <labels>
+        <fullName>Send_Comms_Options_Visiblity_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Comms Options Visiblity 1</shortDescription>
+        <value>False</value>
+    </labels>
+    <labels>
+        <fullName>Senders_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Senders Name</shortDescription>
+        <value>TAD Merchant Portal</value>
+    </labels>
+    <labels>
+        <fullName>Set_ReplyTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Set ReplyTo</shortDescription>
+        <value>no-reply@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>SiteminderResCallout_url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SiteminderResCallout url</shortDescription>
+        <value>https://7biet033c7.execute-api.ap-southeast-2.amazonaws.com/prod/api/tad/tadInfo?tadOrderId=</value>
+    </labels>
+    <labels>
+        <fullName>Solo</fullName>
+        <categories>Land Activity Pricing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Solo</shortDescription>
+        <value>Solo</value>
+    </labels>
+    <labels>
+        <fullName>Standard</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Standard</shortDescription>
+        <value>Standard</value>
+    </labels>
+    <labels>
+        <fullName>SubStopover</fullName>
+        <categories>RCT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubStopover</shortDescription>
+        <value>SubStopover</value>
+    </labels>
+    <labels>
+        <fullName>TADOrgId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TADOrgId</shortDescription>
+        <value>00D1s0000008l7U</value>
+    </labels>
+    <labels>
+        <fullName>TAD_CURR_AUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_CURR_AUD</shortDescription>
+        <value>AUD</value>
+    </labels>
+    <labels>
+        <fullName>TAD_CURR_NZD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_CURR_NZD</shortDescription>
+        <value>NZD</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Cancellation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Cancellation</shortDescription>
+        <value>Cancellation</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Customisation_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Customisation_FromEmail</shortDescription>
+        <value>invalid.help@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Customisations</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Customisations</shortDescription>
+        <value>Customisations</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Feedback</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Feedback</shortDescription>
+        <value>Feedback</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Feedback_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Feedback_FromEmail</shortDescription>
+        <value>feedback@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Flights</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Flights</shortDescription>
+        <value>Flights</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Flights_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Flights_FromEmail</shortDescription>
+        <value>help@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Logistics</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Logistics</shortDescription>
+        <value>Logistics_Partner</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Logistics_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Logistics_FromEmail</shortDescription>
+        <value>partners@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_OmniAvailable</fullName>
+        <categories>OmniChannel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_OmniAvailable</shortDescription>
+        <value>Available</value>
+    </labels>
+    <labels>
+        <fullName>TAD_OmniBusy</fullName>
+        <categories>OmniChannel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_OmniBusy</shortDescription>
+        <value>Busy</value>
+    </labels>
+    <labels>
+        <fullName>TAD_OrgID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_OrgID</shortDescription>
+        <value>00D28000000crJfEAI</value>
+    </labels>
+    <labels>
+        <fullName>TAD_PersonAccount_RCT</fullName>
+        <categories>Account Record Type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_PersonAccount_RCT</shortDescription>
+        <value>TAD_Person_Account</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Priority</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Priority</shortDescription>
+        <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>TAD_Priority_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_Priority_FromEmail</shortDescription>
+        <value>priority@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_Merchant_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_Merchant_Opportunity</shortDescription>
+        <value>0122x000000QAVEAA4</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_NRMA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_NRMA</shortDescription>
+        <value>NRMA</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_NRMA_Person_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_NRMA Person Account</shortDescription>
+        <value>NRMA Person Account</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_Product_Partner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_Product Partner</shortDescription>
+        <value>Product Partner</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_TAD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_TAD</shortDescription>
+        <value>TAD</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_TAD_Deal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_TAD Deal</shortDescription>
+        <value>TAD Deal</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_TAD_Person_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_TAD Person Account</shortDescription>
+        <value>TAD Person Account</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_TC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_TC</shortDescription>
+        <value>TC</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_TNZ</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_TNZ</shortDescription>
+        <value>TNZ</value>
+    </labels>
+    <labels>
+        <fullName>TAD_RT_WT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_RT_WT</shortDescription>
+        <value>WT</value>
+    </labels>
+    <labels>
+        <fullName>TAD_SalesAdmin</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_SalesAdmin</shortDescription>
+        <value>Sales_Admin</value>
+    </labels>
+    <labels>
+        <fullName>TAD_SalesAdmin_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_SalesAdmin_FromEmail</shortDescription>
+        <value>enquiries@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_TransactionType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_TransactionType</shortDescription>
+        <value>callcentre</value>
+    </labels>
+    <labels>
+        <fullName>TAD_VISA_INSURANCE</fullName>
+        <categories>Record Type Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_VISA_INSURANCE</shortDescription>
+        <value>Visa_Insurance</value>
+    </labels>
+    <labels>
+        <fullName>TAD_VisaInsurance_FromEmail</fullName>
+        <categories>Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_VisaInsurance_FromEmail</shortDescription>
+        <value>visainsurance@tripadeal.com.au</value>
+    </labels>
+    <labels>
+        <fullName>TAD_amt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_amt</shortDescription>
+        <value>amt</value>
+    </labels>
+    <labels>
+        <fullName>TAD_oid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_oid</shortDescription>
+        <value>oid</value>
+    </labels>
+    <labels>
+        <fullName>TAD_oname</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_oname</shortDescription>
+        <value>oname</value>
+    </labels>
+    <labels>
+        <fullName>TAD_paxid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_paxid</shortDescription>
+        <value>paxid</value>
+    </labels>
+    <labels>
+        <fullName>TAD_reserveRedirectUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_reserveRedirectUrl</shortDescription>
+        <value>https://www.tripadeal.co.nz/reserveddirect/</value>
+    </labels>
+    <labels>
+        <fullName>TAD_reserveRedirectUrlForAU</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_reserveRedirectUrlForAU</shortDescription>
+        <value>https://www.tripadeal.com.au/reserveddirect/</value>
+    </labels>
+    <labels>
+        <fullName>TAD_reserveRedirectUrlForHeroku</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_reserveRedirectUrlForHeroku</shortDescription>
+        <value>https://www.tripadeal.co.nz/reserveddirect/</value>
+    </labels>
+    <labels>
+        <fullName>TAD_reserveRedirectUrlForHerokuCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_reserveRedirectUrlForHerokuCode</shortDescription>
+        <value>https://www.tripadeal.com.au/reserveddirect/</value>
+    </labels>
+    <labels>
+        <fullName>TAD_sub</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TAD_sub</shortDescription>
+        <value>sub</value>
+    </labels>
+    <labels>
+        <fullName>Test</fullName>
+        <categories>Status</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test</shortDescription>
+        <value>Test</value>
+    </labels>
+    <labels>
+        <fullName>Twin</fullName>
+        <categories>Land Activity Pricing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Twin</shortDescription>
+        <value>Twin</value>
+    </labels>
+    <labels>
+        <fullName>Update_Created_By_OLIAddon</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update Created By OLIAddon</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>Upgrade</fullName>
+        <categories>TestClass</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Upgrade</shortDescription>
+        <value>Upgrade</value>
+    </labels>
+    <labels>
+        <fullName>WorkingCaseMilestone</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkingCaseMilestone</shortDescription>
+        <value>Working Case Milestone</value>
+    </labels>
+    <labels>
+        <fullName>WorkingCaseStatus</fullName>
+        <categories>misc</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkingCaseStatus</shortDescription>
+        <value>Working</value>
+    </labels>
+    <labels>
+        <fullName>default_Person_Account_for_order_coms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>default Person Account for order coms</shortDescription>
+        <value>0032x00000bPKZuAAO</value>
+    </labels>
+    <labels>
+        <fullName>isByPassingValidation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>isByPassingValidation</shortDescription>
+        <value>No</value>
+    </labels>
+</CustomLabels>

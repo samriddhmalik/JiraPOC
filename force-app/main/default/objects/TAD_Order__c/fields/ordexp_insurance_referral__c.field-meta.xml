@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_insurance_referral__c</fullName>
+    <externalId>false</externalId>
+    <label>Insurance referral</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Insurance Quote Required</fullName>
+                <default>false</default>
+                <label>Insurance Quote Required</label>
+            </value>
+            <value>
+                <fullName>Refused - Already purchased TAD Insurance</fullName>
+                <default>false</default>
+                <label>Refused - Already purchased TAD Insurance</label>
+            </value>
+            <value>
+                <fullName>Refused - Already purchased other</fullName>
+                <default>false</default>
+                <label>Refused - Already purchased other</label>
+            </value>
+            <value>
+                <fullName>Refused - Has Credit Card insurance</fullName>
+                <default>false</default>
+                <label>Refused - Has Credit Card insurance</label>
+            </value>
+            <value>
+                <fullName>Insurance Quote Provided (VI Team use only)</fullName>
+                <default>false</default>
+                <label>Insurance Quote Provided (VI Team use only)</label>
+            </value>
+            <value>
+                <fullName>Attempted Contact (VI Team use only)</fullName>
+                <default>false</default>
+                <label>Attempted Contact (VI Team use only)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

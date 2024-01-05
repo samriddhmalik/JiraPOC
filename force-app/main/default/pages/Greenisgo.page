@@ -1,0 +1,22 @@
+<apex:page standardController="order__c" id="Greenisgo" >
+ <script type="text/javascript">
+     window.onload = function(){
+        
+        var testValue = document.getElementById("{!$Component.thePage.theForm.theBlock.hiddenField}").value;
+        if(testValue == 'Closed'){
+            document.getElementById("{!$Component.thePage.theForm.theBlock.theField}").style.color = "green";
+        }else{
+            
+            document.getElementById("{!$Component.thePage.theForm.theBlock.theField}").style.color = "red";
+        }
+     }
+     
+ </script>
+    <apex:form id="theForm">
+        <apex:pageBlock id="theBlock">
+            <apex:outputField style="color:red;" value="{!order__c.order_status__c}" id="Confirmed"  />
+            <apex:inputHidden value="{!order__c.order_status__c}" id="Exported"/>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

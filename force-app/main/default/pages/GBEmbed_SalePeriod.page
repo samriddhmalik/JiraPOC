@@ -1,0 +1,5 @@
+<apex:page standardController="PAF_Package__c" sidebar="false" showHeader="false">
+	<GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+	<iframe id="gridFrame" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Sale Period&id={!PAF_Package__c.Id}&sbb=1&sh=0&ssb=0"></iframe>
+</apex:page>

@@ -1,0 +1,146 @@
+<template>
+		<lightning-card title="Send Communication" style="">
+				<template if:true={loading}>
+						<lightning-spinner alternative-text="Loading"></lightning-spinner>
+				</template>
+				<div class="slds-box">
+						<lightning-combobox  label="Select a Communication Type to Send" value={getInitialData.comsSelected}   options={getInitialData.CommsType} data-id1="type" onchange={handleChange} style="width: 400px;margin-left: 15px;"></lightning-combobox>
+						<br>
+						<lightning-combobox  label="Select Departure city" value={getInitialData.citySelected}   options={cities} data-id1="city" onchange={handleChange} style="width: 400px;margin-left: 15px;"></lightning-combobox>
+
+						<div class="slds-p-around_medium lgc-bg">
+								<lightning-input type="text" label="Search Destination (Search by Region, Country or Deal)" value={getInitialData.Destination} data-id1="search Key" onchange={handleChange} style="width: 400px;"></lightning-input>
+						</div>
+						<br>
+
+						<div class="slds-grid">
+								<div class="slds-col" style="">
+										<b>Select Departure Date Range:</b></div>
+								<div class="slds-col" style="margin-left: -525px;">
+										<lightning-input type="checkbox" label="YES" checked={getInitialData.DepDateRange} value={getInitialData.DepDateRange} onchange={handleChange} data-id1="Departure Date Range"></lightning-input>
+								</div>
+						</div>
+						<br>
+
+						<template lwc:if={getInitialData.DepDateRange}>		
+								<div class="slds-grid">
+										<div class="slds-col" style="margin-right: 50px;margin-left: 50px;">
+												<lightning-input type="date" value={getInitialData.fromDate} max={getInitialData.ToDate} name="From Date" label="Select From Date" placeholder="Select From Date"  data-id1="From Date" onchange={handleChange} style="width:150px"></lightning-input>
+										</div>
+										<div class="slds-col" style="margin-right: 50px;margin-left: -350px;">
+												<lightning-input type="date" disabled="true" name="To Date" value={getInitialData.ToDate} min={getInitialData.fromDate} label="Select To Date" placeholder="Select To Date" data-id1="To Date" onchange={handleChange} style="width:150px"></lightning-input>
+										</div>
+								</div>
+						</template>
+
+						<div class="slds-m-top_large" align="center">
+								<lightning-button  variant="Brand" icon-name="utility:search" label="Search" title="Search Deals" data-id="" onclick={SearchDeals}></lightning-button>	
+						</div>
+				</div>
+				<div class="slds-box">
+
+						<template lwc:if={showdata}>
+								<table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+										<thead>
+												<tr class="slds-line-height_reset">
+														<th style="text-align:center" scope="col"></th>
+														<th style="text-align:center" scope="col"><div>Deal</div></th>
+														<th style="text-align:center" scope="col"><div>Departure dates</div></th>
+														<th style="text-align:center" scope="col"><div>Price</div></th>
+														<th style="text-align:center" scope="col"><div>Allocations</div></th>
+												</tr>
+										</thead>
+										<tbody>
+												<template for:each={dealdata} for:item="deal" for:index="Indexparent">
+														<tr key={dealdata.id}>
+
+
+																<td class="slds-cell-wrap" align="center" scope="col">
+																		<div title="Checkbox" align="center">
+																				<lightning-input  type="checkbox" label="" checked={deal.check} value={deal.check} onchange={handleChange}  data-id={Indexparent} data-id1="deal check"  title="Check to select Deal" ></lightning-input>
+																		</div>
+																</td>
+
+																<td class="slds-cell-wrap" align="center" scope="col">
+																		<div title="Name" align="center"> <b>{deal.name} - {deal.title} </b> </div>
+																</td>
+
+																<td key={dealdata.id} align="center" scope="col">
+																		<div  key={dealdata.id} align="center">
+																				<template for:each={deal.depDts} for:item="depdate" for:index="Indexchild">
+																						<!--tr key={depdate.id}>{depdate.name}</tr-->
+																						<tr key={depdate.id}></tr>{depdate.name}
+																				</template>
+																		</div>
+																</td>
+
+																<!--td  key={dealdata.id} class="slds-cell-wrap" align="center" scope="col">
+ <table key={depdate.id}>
+ <tbody>
+ <tr key={depdate.id}>{depdate.price} </tr>
+ </tbody>
+ </table>
+ </td-->
+
+																<td key={dealdata.id} class="slds-cell-wrap" align="center" scope="col">
+																		<div  key={dealdata.id} align="center">
+																				<template for:each={deal.depDts} for:item="depdate" for:index="Indexchild">
+																						<!--tr key={depdate.id}>{depdate.name}</tr-->
+
+																						{depdate.price}<tr key={depdate.id} scope="col"></tr>
+
+																				</template>
+																		</div>
+																</td>
+																<td key={dealdata.id} class="slds-cell-wrap" align="center" scope="col">
+																		<div  key={dealdata.id} align="center">
+																				<template for:each={deal.depDts} for:item="depdate" for:index="Indexchild">
+																						<!--tr key={depdate.id}>{depdate.name}</tr-->
+
+
+																						{depdate.allocation}<tr key={depdate.id} scope="col" ></tr>
+																				</template>
+																		</div>
+																</td>
+
+														</tr>
+												</template>
+										</tbody>
+								</table>
+
+						</template>
+						<br><br>
+						<div class="slds-grid"  >
+								<div class="slds-col" style="">
+										<b>Number of Passengers :</b></div>
+								<div class="slds-col" style="margin-top:-25px;margin-right:582px;width:30px;">
+										<lightning-input type="number" label="" value={getInitialData.passengerCount}  onchange={handleChange} data-id1="passengers" max-length="2"></lightning-input> 
+								</div>
+						</div><br>
+						<div class="slds-grid">
+								<div class="slds-col" style="">
+										<b>Do you want to include available add-on information ?</b></div>
+								<div class="slds-col" style="margin-left: -375px;">
+										<lightning-input type="checkbox" label="YES" checked={getInitialData.addonInclude} value={getInitialData.addonInclude} onchange={handleChange} data-id1="Include AddOn info"></lightning-input>
+								</div>
+						</div>
+						<br>
+						<lightning-textarea label="Quote Details For Customer" value={getInitialData.quoteDeals} maxlength="5000" class="slds-align_absolute-center attachtextAreaBody" data-id1="Quote Details" onchange={handleChange}></lightning-textarea>
+
+						<br>
+						<template lwc:if={dealselected}>
+								<template for:each={selectedDeals} for:item="DealNotes" for:index="Index">
+										<lightning-textarea key={DealNotes.id} label={DealNotes.dealNotesLabel} maxlength="3000" value={DealNotes.dealNotes} class="slds-align_absolute-center attachtextAreaBody" data-id1="deal notes" data-id={Index}  onchange={handleChange}></lightning-textarea>
+								</template>
+						</template>		
+				</div>
+
+
+
+				<div class="slds-m-top_large" align="center">
+						<!-- 								<lightning-button  variant="Brand" label="Preview" title="" class="slds-button_stretch slds-m-left_x-small" data-id="delete Itineraries" data-id2="" onclick={saveHandler}></lightning-button>     -->
+						<lightning-button  variant="Brand" icon-name="utility:save" label="Save" title="Save Enquiry" class="slds-button_stretch slds-m-left_x-small" data-id="Save Enquiry" data-id1="" data-id2="" data-id3="" onclick={saveHandler}></lightning-button>	
+						<lightning-button  variant="Brand" icon-name="utility:save" label="Send" title="Send Order Comms" class="slds-button_stretch slds-m-left_x-small" data-id="Send OC" onclick={saveHandler}></lightning-button>
+				</div>
+		</lightning-card>
+</template>

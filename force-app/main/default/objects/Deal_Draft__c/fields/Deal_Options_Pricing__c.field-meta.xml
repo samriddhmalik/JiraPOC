@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Options_Pricing__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is for the BDM to include the details regarding deal options and pricing that the Product Analyst can use to further complete the deal wizard.</inlineHelpText>
+    <label>Deal Options &amp; Pricing</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<apex:page standardController="order__c">
+<apex:form >
+
+
+
+<apex:pageBlock title="Current Status of Order">
+
+ <apex:outputField value="{!order__c.Current_Status__c}"/>
+
+  </apex:pageBlock>
+  
+
+  
+</apex:form>
+   
+</apex:page>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Closed_Won</fullName>
+        <description>Closed Won</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adam@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jacqui@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>luke@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Closed_Won_Internal_Trigger</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_For_Notifying_Account_Owner_For_Closed_Opportunity</fullName>
+        <description>Email Alert For Notifying Account Owner For Closed Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Product_Manager_Tour_Cruise_Escapes</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunity_Emails/Email_Template_For_Closed_Won_Opportunities</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_For_Notifying_Campaign_Manager_For_Closed_Opportunity</fullName>
+        <description>Email Alert For Notifying Campaign Manager For Closed Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.mckenzie@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Campaign_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Opportunity_Emails/Email_Template_For_Closed_Won_Opportunities</template>
+    </alerts>
+    <alerts>
+        <fullName>PAF_Employee_template</fullName>
+        <description>PAF Employee template</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/PAF_Employee_Travel_Profile</template>
+    </alerts>
+    <alerts>
+        <fullName>Test_time_trigger</fullName>
+        <description>Test time trigger</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adam@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Closed_Won_Internal_Trigger</template>
+    </alerts>
+    <alerts>
+        <fullName>email</fullName>
+        <description>email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jacqui@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>luke@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Closed_Won_Internal_Trigger</template>
+    </alerts>
+    <alerts>
+        <fullName>mail</fullName>
+        <description>mail</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jacqui@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>luke@phoneaflight.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Closed_Won_Internal_Trigger</template>
+    </alerts>
+    <rules>
+        <fullName>zaapit__Call Opportunity</fullName>
+        <actions>
+            <name>zaapit__Call_oppts</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Call Opportunity - by ZaapIT</description>
+        <formula>false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>zaapit__Email Opportunity</fullName>
+        <actions>
+            <name>zaapit__Email_oppts</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Email Opportunity - by ZaapIT</description>
+        <formula>false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>zaapit__Send Letter Opportunity</fullName>
+        <actions>
+            <name>zaapit__Send_Letter_oppts</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send Letter Opportunity - by ZaapIT</description>
+        <formula>false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>zaapit__Send Quote Opportunity</fullName>
+        <actions>
+            <name>zaapit__Send_Quote_oppts</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send Quote Opportunity - by ZaapIT</description>
+        <formula>false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Employee_Travel_Welcome_Email</fullName>
+        <assignedTo>adam@tripadeal.com.au</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>comments go here</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Employee Travel/Welcome Email</subject>
+    </tasks>
+    <tasks>
+        <fullName>zaapit__Call_oppts</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Call</subject>
+    </tasks>
+    <tasks>
+        <fullName>zaapit__Email_oppts</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Email</subject>
+    </tasks>
+    <tasks>
+        <fullName>zaapit__Send_Letter_oppts</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Send Letter</subject>
+    </tasks>
+    <tasks>
+        <fullName>zaapit__Send_Quote_oppts</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Send Quote</subject>
+    </tasks>
+</Workflow>

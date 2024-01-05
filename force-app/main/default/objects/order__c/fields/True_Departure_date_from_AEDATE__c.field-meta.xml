@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>True_Departure_date_from_AEDATE__c</fullName>
+    <description>Used to find customers true departure date in days until departure field</description>
+    <externalId>false</externalId>
+    <formula>departure_date__c - ae_date__c</formula>
+    <label>True Departure date from AE date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

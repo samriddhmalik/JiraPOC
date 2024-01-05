@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Number_for_Joining_Combining__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>What order is this current order joining/combining with?</inlineHelpText>
+    <label>Order Number for Joining/Combining</label>
+    <referenceTo>order__c</referenceTo>
+    <relationshipLabel>Order Customisations (Order Number for Joining/Combining)</relationshipLabel>
+    <relationshipName>Order_Customisations1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<apex:page standardController="departures_dates__c" tabStyle="departures_dates__c" recordSetVar="AllDepartureDates" >
+    <!-- Add below each field you reference in your Flow -->
+    <apex:repeat value="{!AllDepartureDates}" var="row" rendered="false">
+        {!row.Name}
+        {!row.create_sabre_profiles__c}
+    </apex:repeat>
+    <!-- Runs your Flow -->
+    <flow:interview name="TickCreateSabreProfiles"
+          finishLocation="{!URLFOR($Action.departures_dates__c.Tab, $ObjectType.departures_dates__c)}">
+        <apex:param name="selectedDepartureDates" value="{!Selected}"/>
+    </flow:interview>
+</apex:page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Ticketing_Group_Selected</fullName>
+    <active>true</active>
+    <description>When the Flight Ticket Structure picklist has value Group selected, then show this validation</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Flight_Ticketing_Structure__c , &apos;Group&apos;),
+OR(
+INCLUDES(Airline__c , &apos;None&apos;),
+INCLUDES(Airline__c , &apos;&apos;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Additional_Charges__c</errorDisplayField>
+    <errorMessage>Populate Airline</errorMessage>
+</ValidationRule>

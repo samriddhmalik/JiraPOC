@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ finalise_date__c,
+ $Profile.Name = &apos;TAD Logistics Consultant - Lightning&apos;,
+ Active__c
+)</errorConditionFormula>
+    <errorMessage>Tst tst tst no no no logistics, you cannot finalise an Active date. Please communicate with the content producers to finalise this date. Better together!</errorMessage>
+</ValidationRule>

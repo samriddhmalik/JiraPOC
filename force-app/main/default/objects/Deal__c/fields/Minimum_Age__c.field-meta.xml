@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_Age__c</fullName>
+    <description>Allows BDM to choose a minimum age</description>
+    <externalId>false</externalId>
+    <inlineHelpText>PAX age at time of travel</inlineHelpText>
+    <label>Minimum Age</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Minimum_Age</valueSetName>
+    </valueSet>
+</CustomField>

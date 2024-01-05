@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>update_oli_value</name>
+        <label>update oli value</label>
+        <locationX>138</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>loop_over_cs_records.cs_OLI__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Order_Line_Item__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loop_over_cs_records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>check_condition_for_addon</name>
+        <label>check condition for addon</label>
+        <locationX>380</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_condition_for_addons</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Order_Line_Item__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Order_Line_Item__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_records_over_cs</targetReference>
+            </connector>
+            <label>check condition for addons</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_value_is_empty</name>
+        <label>Is value is empty</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_values_is_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_records_over_cs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>loop_over_cs_records</targetReference>
+            </connector>
+            <label>Is values is empty</label>
+        </rules>
+    </decisions>
+    <interviewLabel>CS Records Oli Field Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CS Records Oli Field Update</label>
+    <loops>
+        <name>loop_over_cs_records</name>
+        <label>loop over cs records</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <collectionReference>get_records_over_cs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>update_oli_value</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>update_cs_oli_value</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_records_over_cs</name>
+        <label>get records over cs</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Is_value_is_empty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>cs_AddOn__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CS_Attribution_POE__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>update_cs_oli_value</name>
+        <label>update cs oli value</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <inputReference>loop_over_cs_records</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>check_condition_for_addon</targetReference>
+        </connector>
+        <object>AddOn__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>getCSUpdatedOLIValue</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>CS_Attribution_POE__c</objectType>
+    </variables>
+</Flow>

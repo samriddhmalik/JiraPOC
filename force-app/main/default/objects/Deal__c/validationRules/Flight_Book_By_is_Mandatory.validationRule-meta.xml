@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Book_By_is_Mandatory</fullName>
+    <active>true</active>
+    <description>If Has Flights is true then Flight Book By is not Empty</description>
+    <errorConditionFormula>AND(( IF( OR(ISPICKVAL( Dates_Flights__c,&apos;Dates/Domestic Flights&apos;),ISPICKVAL( Dates_Flights__c,&apos;Dates/International Flights&apos;)) ,true,false) ), ISBLANK( Flight_Book_By__c ) )</errorConditionFormula>
+    <errorDisplayField>Flight_Book_By__c</errorDisplayField>
+    <errorMessage>Please Fill Flight Book By</errorMessage>
+</ValidationRule>

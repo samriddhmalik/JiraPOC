@@ -1,0 +1,52 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" controller="tadSurchageController">
+    
+    
+    <aura:attribute name="disableSubmitButton" type="Boolean" default="false"/>
+    <aura:attribute name="tadOrderNumber" type="String"/>
+    <aura:attribute name="tadOrderCurrISOCode" type="String"/> 
+    <aura:attribute name="otherReason" type="String"/>
+    <aura:attribute name="surchargeAmount" type="Decimal" default="0"/>  
+    <aura:attribute name="reasonForOtherBoolean" type="Boolean" default="false"/>
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Departure Date Change', 'value': 'Departure Date Change'},
+                                                        {'label': 'Departure City Change', 'value': 'Departure City Change'},
+                                                        {'label': 'New OLI created', 'value': 'New OLI created'},
+                                                        {'label': 'Upgrade Booking', 'value': 'Upgrade Booking'},
+                                                        {'label': 'AddOn Created', 'value': 'AddOn Created'},
+                                                        {'label': 'AE/SB + 30 days', 'value': 'AE/SB + 30 days'},
+                                                        {'label': 'Name Change', 'value': 'Name Change'},
+                                                        {'label': 'Flight Surcharge', 'value': 'Flight Surcharge'},
+                                                        {'label': 'Other', 'value': 'Other'}                                                     
+                                                        ]"/>
+    <aura:attribute name="value" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    
+    <div class="slds-col slds-size_1-of-2">
+        <b>Tad Order Number</b> <br></br>
+        <ui:outputText value="{!v.tadOrderNumber}"/>
+    </div> <br></br>
+    
+    <b>Select what Booking Amendment actioned:</b> <br></br>
+    <lightning:checkboxGroup name="Checkbox Group"
+                             label="Select what Booking Amendment actioned:"
+                             options="{! v.options }"
+                             value="{! v.value }"
+                             onchange="{! c.handleChange }"
+                             variant = "label-hidden"/><br></br>
+    
+    <aura:if isTrue = "{!v.reasonForOtherBoolean}">
+        <b>For Other, please enter a reason below : </b> <br></br>
+        <lightning:input name="Other Reason" label="For Other, please enter a reason below" placeholder="Type here..." variant="label-hidden" value = "{!v.otherReason}"/>
+    </aura:if><br></br>
+    
+    <b>Surcharge Amount : </b> <br></br>
+    <lightning:input type="number" name="Surcharge Amount" label="Surcharge Amount" placeholder="Type here..." variant="label-hidden" value = "{!v.surchargeAmount}" formatter="currency"/><br></br>
+    
+    <b>Currency : </b> <br></br>
+    <ui:outputText value="{!v.tadOrderCurrISOCode}"/><br></br>
+    
+    <div class="slds-text-align--center"> 
+        <lightning:button variant="brand" label="Submit" onclick="{! c.sendApproval }" disabled = "{!v.disableSubmitButton}"/>
+    </div> 
+</aura:component>

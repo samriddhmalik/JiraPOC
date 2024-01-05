@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_to_be_on_Updating_Order_for_new</fullName>
+    <active>true</active>
+    <description>UPDATE ORDER status must be on &quot;Updating Order&quot; to add an Order Customisation - order financials need to be recalculated.</description>
+    <errorConditionFormula>AND(
+ NOT(ISPICKVAL( order__r.update_order__c ,&quot;Updating Order&quot;) ),
+ NOT($Profile.Name = &apos;UJ&apos;),
+ OR(ISCHANGED( Status__c),ISNEW() )
+  )</errorConditionFormula>
+    <errorMessage>UPDATE ORDER status must be on &quot;Updating Order&quot; to add an Order Customisation - order financials need to be recalculated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Feefo_1721</fullName>
+    <columns>NAME</columns>
+    <columns>Feefo_Coupon__c</columns>
+    <columns>Status__c</columns>
+    <columns>Coupon_code_sent_to_AP__c</columns>
+    <columns>Deal_from_Survey__c</columns>
+    <columns>Is_From_Feefo__c</columns>
+    <columns>account__c</columns>
+    <columns>Account_Email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_From_Feefo__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Deal_from_Survey__c</field>
+        <operation>equals</operation>
+        <value>1721</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Disabled</value>
+    </filters>
+    <label>From Feefo + 1721</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

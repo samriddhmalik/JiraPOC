@@ -1,0 +1,450 @@
+<template>
+<div class="slds-theme_default">
+    <template if:false={iscalender}>
+    <center>
+        <p style="font-size:medium;font-family:sans-serif;padding:10px;margin:5px"><b>Filter Marketing Inventory</b></p>
+        
+        </center><br/><br/>
+    </template>
+        <div class=" slds-m-around_small slds-grid slds-wrap slds-grid_vertical">
+            <div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+            <div class="slds-col slds-size_2-of-12">
+            <span> <lightning-combobox
+                name="Country"
+                label="Country"
+                value={countryValue}
+                placeholder="Select country"
+                options={OptionsForCountry}
+                onchange={changeHandler} style="font-weight: bold;"></lightning-combobox> </span>
+            </div>
+            
+            </div><br/>
+            <div class="slds-grid slds-size_12-of-12 slds-gutters">
+            <div class="slds-col slds-size_2-of-12">
+            <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Channel</b></label>
+            <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div class={dropdown} onmouseleave={closeDropDown} data-id="channelBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                    
+                    <!--code for input and dropdown icon-->
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                        <input type="text" class="channelId slds-input slds-combobox__input slds-combobox__input-value"
+                                placeholder="Select Value" onclick={openDropdown} value={selectedValue}/>
+                        <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                            <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                            <span class="slds-assistive-text">Down icon</span>
+                        </span>            
+                    </div>
+               
+                    <div id="listbox-unique-id" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                            <div class="slds-scrollable">
+                                <!-- code to show list of channels -->
+                                <template for:each={channelOptions} for:item="item">  
+                                    <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                            <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionChannel} class={item.class} role="option">
+                                            <span class="slds-media__figure">
+                                                    <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                            </span>
+                                            <span class="slds-media__body">
+                                                    <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                            </span>
+                                        </div> 
+                                    </li>
+                                </template>
+                            </div>
+                        </ul>
+                    </div>
+                </div>   
+            </div>
+            </div>
+            
+            <template for:each={channelOptions} for:item="option">   
+            <template if:true={option.isChecked}>
+            <span key={option.label}>
+            <lightning-pill label={option.label} name={option.label} class="channel slds-m-around_xx-small" onremove={removeRecordChannel}>
+                </lightning-pill>
+            </span>
+            </template>
+            </template>
+            
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Supplier</b></label>
+                <div class="slds-form-element__control">
+                    <div class="slds-combobox_container">
+                        <div class={dropdownSuplier} onmouseleave={closeDropDown} data-id="supplierBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                            
+                            <!--code for input and dropdown icon-->
+                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                <input type="text" class="supplierId slds-input slds-combobox__input slds-combobox__input-value"
+                                        placeholder="Select Value" onclick={openDropdown} value={selectedValueSuplier}/>
+                                <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                    <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                    <span class="slds-assistive-text">Down icon</span>
+                                </span>            
+                            </div>
+                            
+            
+                
+                            <div id="listbox-unique-id1" role="listbox">
+                                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                    <div class="slds-scrollable">
+                                        <!-- code to show list of countrys -->
+                                        <template for:each={SupplierOptions} for:item="item">  
+                                            <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                    <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionSuplier} class={item.class} role="option">
+                                                    <span class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                    </span>
+                                                    <span class="slds-media__body">
+                                                            <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                    </span>
+                                                </div> 
+                                            </li>
+                                        </template>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            
+                <template for:each={SupplierOptions} for:item="option">   
+                    <template if:true={option.isChecked}>
+                <span key={option.label}>
+                    <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordSupplier}>
+                        </lightning-pill>
+                    </span>
+                </template>
+                </template>
+            </div><br/>
+            <div class="slds-col slds-size_2-of-12">
+                <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Title</b></label>
+                <div class="slds-form-element__control">
+                    <div class="slds-combobox_container">
+                        <div class={dropdownTitle} onmouseleave={closeDropDown} data-id="titleBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                            
+                            <!--code for input and dropdown icon-->
+                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                <input type="text" class="titleId slds-input slds-combobox__input slds-combobox__input-value"
+                                        placeholder="Select Value" onclick={openDropdown} value={selectedValueTitle}/>
+                                <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                    <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                    <span class="slds-assistive-text">Down icon</span>
+                                </span>            
+                            </div>
+                            
+            
+                
+                            <div id="listbox-unique-id2" role="listbox">
+                                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                    <div class="slds-scrollable">
+                                        <!-- code to show list of countrys -->
+                                        <template for:each={TitleOptions} for:item="item">  
+                                            <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                    <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionTitle} class={item.class} role="option">
+                                                    <span class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                    </span>
+                                                    <span class="slds-media__body">
+                                                            <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                    </span>
+                                                </div> 
+                                            </li>
+                                        </template>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            
+                <template for:each={TitleOptions} for:item="option">   
+                    <template if:true={option.isChecked}>
+                <span key={option.label}>
+                    <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordtitle}>
+                        </lightning-pill>
+                    </span>
+                </template>
+                </template>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Placement</b></label>
+                <div class="slds-form-element__control">
+                    <div class="slds-combobox_container">
+                        <div class={dropdownPlacement} onmouseleave={closeDropDown} data-id="placmentBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                            
+                            <!--code for input and dropdown icon-->
+                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                <input type="text" class="PlacementId slds-input slds-combobox__input slds-combobox__input-value"
+                                        placeholder="Select Value" onclick={openDropdown} value={selectedValuePlacement}/>
+                                <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                    <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                    <span class="slds-assistive-text">Down icon</span>
+                                </span>            
+                            </div>
+                            <div id="listbox-unique-id3" role="listbox">
+                                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                    <div class="slds-scrollable">
+                                        <!-- code to show list of countrys -->
+                                        <template for:each={PlacementOptions} for:item="item">  
+                                            <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                    <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionPlacement} class={item.class} role="option">
+                                                    <span class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                    </span>
+                                                    <span class="slds-media__body">
+                                                            <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                    </span>
+                                                </div> 
+                                            </li>
+                                        </template>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            
+                <template for:each={PlacementOptions} for:item="option">   
+                    <template if:true={option.isChecked}>
+                <span key={option.label}>
+                    <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordPlacement}>
+                        </lightning-pill>
+                    </span>
+                </template>
+                </template>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                
+                <legend class="slds-form-element__legend slds-form-element__label"><b>Cost</b></legend>
+                    <lightning-input type="number" name="Cost" label="Cost" value={Cost} data-field="costValue" formatter="currency"  variant="label-hidden" step="0.01" onchange={handleCostChange}></lightning-input>
+                    
+            </div>
+            
+            </div><br/>
+            <div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+            <div class="slds-col slds-size_2-of-12">
+                <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Geo</b></label>
+                <div class="slds-form-element__control">
+                    <div class="slds-combobox_container">
+                        <div class={dropdownGeo} onmouseleave={closeDropDown} data-id="geoBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                            
+                            <!--code for input and dropdown icon-->
+                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                <input type="text" class="geoId slds-input slds-combobox__input slds-combobox__input-value"
+                                        placeholder="Select Value" onclick={openDropdown} value={selectedValueGeo}/>
+                                <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                    <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                    <span class="slds-assistive-text">Down icon</span>
+                                </span>            
+                            </div>
+                            
+            
+                
+                            <div id="geoId" role="listbox">
+                                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                    <div class="slds-scrollable">
+                                        <!-- code to show list of countrys -->
+                                        <template for:each={GeoOptions} for:item="item">  
+                                            <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                    <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionGeo} class={item.class} role="option">
+                                                    <span class="slds-media__figure">
+                                                            <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                    </span>
+                                                    <span class="slds-media__body">
+                                                            <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                    </span>
+                                                </div> 
+                                            </li>
+                                        </template>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            
+                <template for:each={GeoOptions} for:item="option">   
+                    <template if:true={option.isChecked}>
+                <span key={option.label}>
+                    <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordGeo}>
+                        </lightning-pill>
+                    </span>
+                </template>
+                </template>
+            </div>
+            <template if:false={iscalender}>
+                <div class="slds-col slds-size_2-of-12">
+                    <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Recurring</b></label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class={dropdownRecurring} onmouseleave={closeDropDownForRecurring} data-id="recurringBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                
+                                <!--code for input and dropdown icon-->
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                    <input type="text" class="recurringId slds-input slds-combobox__input slds-combobox__input-value"
+                                            placeholder="Select Value" onclick={openDropdown} value={selectedValueRecurring}/>
+                                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                        <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                        <span class="slds-assistive-text">Down icon</span>
+                                    </span>            
+                                </div>
+                                <div id="listbox-unique-id6" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                        <div class="slds-scrollable">
+                                            <!-- code to show list of Recurring -->
+                                            <template for:each={RecurringOptions} for:item="item">  
+                                                <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                        <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionRecurring} class={item.class} role="option">
+                                                        <span class="slds-media__figure">
+                                                                <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                                <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                        </span>
+                                                    </div> 
+                                                </li>
+                                            </template>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                 <!-- code to show pills of selected Recurring -->
+                    <template for:each={RecurringOptions} for:item="option">   
+                        <template if:true={option.isChecked}>
+                                <span key={option.label}>
+                            <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordRecurring}>
+                                </lightning-pill>
+                            </span>
+                    </template>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <legend class="slds-form-element__legend slds-form-element__label"><b>Date</b></legend>
+                    <p><lightning-input value={dateValue} type="date" name="dt" label="Date" variant="label-hidden" onchange={handleChangeDate}>
+                    </lightning-input></p>
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-grid_pull-padded-medium" style="padding-top: 22px; padding-left: 30px;">
+                    <button class="slds-button slds-button_brand" onclick={navigateBackToBookSlot} title="Back">Back</button>
+                    
+                </div>
+                <div class="slds-col slds-size_1-of-12 slds-grid_pull-padded-medium" style="padding-top: 22px; padding-left: 20px;">
+                        <button class="slds-button slds-button_brand" onclick={navigateToBookMarketingActivity} title="Next">Next</button>
+                    
+                </div>
+            </template>
+            
+            <template if:true={iscalender}>
+                
+                <div class="slds-col slds-size_2-of-12">
+                    <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Status</b></label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class={dropdownStatus} onmouseleave={closeDropDown} data-id="statusBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                
+                                <!--code for input and dropdown icon-->
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                    <input type="text" class="statusId slds-input slds-combobox__input slds-combobox__input-value"
+                                            placeholder="Select Value" onclick={openDropdown} value={selectedValueStatus}/>
+                                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                        <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                        <span class="slds-assistive-text">Down icon</span>
+                                    </span>            
+                                </div>
+                                <div id="statusId" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                        <div class="slds-scrollable">
+                                            <!-- code to show list of Status -->
+                                            <template for:each={statusOptions} for:item="item">  
+                                                <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                        <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionStatus} class={item.class} role="option">
+                                                        <span class="slds-media__figure">
+                                                                <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                                <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                        </span>
+                                                    </div> 
+                                                </li>
+                                            </template>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                     <!-- code to show pills of selected status -->
+                     <template for:each={statusOptions} for:item="option">   
+                        <template if:true={option.isChecked}>
+                                <span key={option.label}>
+                            <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordStatus}>
+                                </lightning-pill>
+                            </span>
+                    </template>
+                    </template>
+
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Approval Status</b></label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class={dropdownApproval} onmouseleave={closeDropDown} data-id="approval" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                
+                                <!--code for input and dropdown icon-->
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                    <input type="text" class="approvalStatus slds-input slds-combobox__input slds-combobox__input-value"
+                                            placeholder="Select Value" onclick={openDropdown} value={selectedValueApproval}/>
+                                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                        <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                        <span class="slds-assistive-text">Down icon</span>
+                                    </span>            
+                                </div>
+                                <div id="listbox-unique-id8" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                        <div class="slds-scrollable">
+                                            <!-- code to show list of Status -->
+                                            <template for:each={approvalStatusOptions} for:item="item">  
+                                                <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                        <div  data-id={item.isChecked} data-name={item.label} onclick={selectOptionApproval} class={item.class} role="option">
+                                                        <span class="slds-media__figure">
+                                                                <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                        </span>
+                                                        <span class="slds-media__body">
+                                                                <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                        </span>
+                                                    </div> 
+                                                </li>
+                                            </template>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                     <!-- code to show pills of selected status -->
+                     <template for:each={approvalStatusOptions} for:item="option">   
+                        <template if:true={option.isChecked}>
+                                <span key={option.label}>
+                            <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecordApproval}>
+                                </lightning-pill>
+                            </span>
+                    </template>
+                    </template>
+
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <br/><span><lightning-button variant="brand" label="Clear" title="Clear" onclick={ClearFilters} class="slds-p-top_small slds-m-around_small"></lightning-button></span>
+                       <span> <lightning-button variant="brand" label="Filter" title="Filter" onclick={handleClick} class="slds-p-top_small slds-m-around_small"></lightning-button></span>
+                </div>
+            </template>
+            
+               
+            </div><br/>
+            
+            </div>
+        </div>
+</template>

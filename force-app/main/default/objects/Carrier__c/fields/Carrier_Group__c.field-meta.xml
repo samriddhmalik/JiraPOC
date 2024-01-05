@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Carrier Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Inclusive Airlines</fullName>
+                <default>false</default>
+                <label>All Inclusive Airlines</label>
+            </value>
+            <value>
+                <fullName>Cathay Pacific</fullName>
+                <default>false</default>
+                <label>Cathay Pacific</label>
+            </value>
+            <value>
+                <fullName>China Southern or China Airlines</fullName>
+                <default>false</default>
+                <label>China Southern or China Airlines</label>
+            </value>
+            <value>
+                <fullName>Emirates</fullName>
+                <default>false</default>
+                <label>Emirates</label>
+            </value>
+            <value>
+                <fullName>Etihad</fullName>
+                <default>false</default>
+                <label>Etihad</label>
+            </value>
+            <value>
+                <fullName>Other Airline</fullName>
+                <default>false</default>
+                <label>Other Airline</label>
+            </value>
+            <value>
+                <fullName>Premium Carrier(Either Singapore Airlines, Cathay Pacific, Emirates or Qantas)</fullName>
+                <default>false</default>
+                <label>Premium Carrier(Either Singapore Airlines, Cathay Pacific, Emirates or Qantas)</label>
+            </value>
+            <value>
+                <fullName>Qantas</fullName>
+                <default>false</default>
+                <label>Qantas</label>
+            </value>
+            <value>
+                <fullName>Qatar</fullName>
+                <default>false</default>
+                <label>Qatar</label>
+            </value>
+            <value>
+                <fullName>Singapore Airlines</fullName>
+                <default>false</default>
+                <label>Singapore Airlines</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

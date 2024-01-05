@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Income_Statement_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Income Statement Account</label>
+    <referenceTo>c2g__codaGeneralLedgerAccount__c</referenceTo>
+    <relationshipLabel>Deal Transaction Lines (Income Statement Account)</relationshipLabel>
+    <relationshipName>Deal_Transaction_Lines1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

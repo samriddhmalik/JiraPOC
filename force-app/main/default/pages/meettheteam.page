@@ -1,0 +1,3 @@
+<apex:page >
+<apex:iframe src="https://s3-ap-southeast-2.amazonaws.com/cstad/a2z28000000806gAAA.gif" height="1000px" width="100%" scrolling="true"/> 
+</apex:page>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocation_below_SoldHold</fullName>
+    <active>true</active>
+    <errorConditionFormula>allocation__c &lt; Total_soldhold__c</errorConditionFormula>
+    <errorMessage>The TOTAL ALLOCATION cannot be changed to less than Total soldhold or Total soldhold is trying to be updated to greater than Total Allocation. Firstly, Talk to the Deal BDM and Content Producers to work out resolution.</errorMessage>
+</ValidationRule>

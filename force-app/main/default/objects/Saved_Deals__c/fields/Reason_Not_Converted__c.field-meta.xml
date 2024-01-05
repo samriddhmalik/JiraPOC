@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Not_Converted__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason Not Converted L1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>too expensive</fullName>
+                <default>false</default>
+                <label>Too Expensive</label>
+            </value>
+            <value>
+                <fullName>Customer No Longer Wants</fullName>
+                <default>false</default>
+                <label>Customer No Longer Wants</label>
+            </value>
+            <value>
+                <fullName>Lead Expired</fullName>
+                <default>false</default>
+                <label>Lead Expired</label>
+            </value>
+            <value>
+                <fullName>Order Expired</fullName>
+                <default>false</default>
+                <label>Order Expired</label>
+            </value>
+            <value>
+                <fullName>Order booked by other Agent</fullName>
+                <default>false</default>
+                <label>Order booked by Other Agent</label>
+            </value>
+            <value>
+                <fullName>Booked with a competitor</fullName>
+                <default>false</default>
+                <label>Booked with a competitor</label>
+            </value>
+            <value>
+                <fullName>Don&apos;t want to risk waiting for minimum number</fullName>
+                <default>false</default>
+                <label>Don&apos;t want to risk waiting for minimum number</label>
+            </value>
+            <value>
+                <fullName>Can&apos;t book as children not old enough</fullName>
+                <default>false</default>
+                <label>Can&apos;t book as children not old enough</label>
+            </value>
+            <value>
+                <fullName>Dates out of range 2024</fullName>
+                <default>false</default>
+                <label>Dates out of range 2024</label>
+            </value>
+            <value>
+                <fullName>Vaccination uncertainty/ Entry requirements</fullName>
+                <default>false</default>
+                <label>Vaccination uncertainty/ Entry requirements</label>
+            </value>
+            <value>
+                <fullName>Availability specifically too close to travel date</fullName>
+                <default>false</default>
+                <label>Availability specifically too close to travel date</label>
+            </value>
+            <value>
+                <fullName>Surcharge cost for departure city</fullName>
+                <default>false</default>
+                <label>Surcharge cost for departure city</label>
+            </value>
+            <value>
+                <fullName>Wanted to change arrival/departure city</fullName>
+                <default>false</default>
+                <label>Wanted to change arrival/departure city</label>
+            </value>
+            <value>
+                <fullName>Accommodation deal doesn&apos;t include flights</fullName>
+                <default>false</default>
+                <label>Accommodation deal doesn&apos;t include flights</label>
+            </value>
+            <value>
+                <fullName>Internal - Unable to complete purchase</fullName>
+                <default>false</default>
+                <label>Internal - Unable to complete purchase</label>
+            </value>
+            <value>
+                <fullName>Date affected</fullName>
+                <default>false</default>
+                <label>Date affected</label>
+            </value>
+            <value>
+                <fullName>Flight affected</fullName>
+                <default>false</default>
+                <label>Flight affected</label>
+            </value>
+            <value>
+                <fullName>We didn&apos;t have want the customer was after</fullName>
+                <default>false</default>
+                <label>We didn&apos;t have want the customer was after</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Only wanted deposit</fullName>
+                <default>false</default>
+                <label>Only wanted deposit</label>
+            </value>
+            <value>
+                <fullName>Wanted payment flexibility</fullName>
+                <default>false</default>
+                <label>Wanted payment flexibility</label>
+            </value>
+            <value>
+                <fullName>Wanted specific airline booked</fullName>
+                <default>false</default>
+                <label>Wanted specific airline booked</label>
+            </value>
+            <value>
+                <fullName>Not ready to purchase -general questions</fullName>
+                <default>false</default>
+                <label>Not ready to purchase-general questions</label>
+            </value>
+            <value>
+                <fullName>Blackout dates on AE and SB</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Blackout dates on AE and SB</label>
+            </value>
+            <value>
+                <fullName>Can&apos;t customise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Can&apos;t customise</label>
+            </value>
+            <value>
+                <fullName>Competitor better price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competitor Better Price</label>
+            </value>
+            <value>
+                <fullName>Didn’t want to include flights</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Didn’t Want to Include Flights</label>
+            </value>
+            <value>
+                <fullName>Internal - No Allocation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal - No Allocation</label>
+            </value>
+            <value>
+                <fullName>Internal - Unable To Complete Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal - Unable to Complete Request</label>
+            </value>
+            <value>
+                <fullName>Not Ready To Purchase - General Questions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Ready To Purchase - General Questions</label>
+            </value>
+            <value>
+                <fullName>Not The Decision Maker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not the Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Only wanted to pay deposit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Only Wanted to pay Deposit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

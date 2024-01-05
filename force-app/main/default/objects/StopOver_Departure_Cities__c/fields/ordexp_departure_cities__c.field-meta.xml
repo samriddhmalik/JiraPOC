@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_departure_cities__c</fullName>
+    <externalId>false</externalId>
+    <label>departure cities</label>
+    <referenceTo>departure_cities__c</referenceTo>
+    <relationshipLabel>StopOver Departure Cities</relationshipLabel>
+    <relationshipName>StopOver_Departure_Cities</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

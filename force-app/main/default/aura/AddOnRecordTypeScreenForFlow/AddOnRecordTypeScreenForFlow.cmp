@@ -1,0 +1,38 @@
+<aura:component implements="lightning:availableForFlowScreens,lightning:availableForFlowActions,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" Controller="createAddonRTList" >
+    
+    <aura:attribute name="dealId" type="String" />
+    <aura:attribute name="recType" type="String[]"/>
+    <aura:attribute name="selectedRT" type="String" />
+    <aura:attribute name="tadOrderId" type="String"/>
+    
+    
+     <aura:attribute name="sourceObject" type="String"/>
+    <aura:attribute name="btnlabel" type="String" default="Cancel"/>
+   
+     <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <div style="font-weight:normal">
+    <lightning:select label=" Select AddOn Record Type" aura:id="recordType"  required="true">
+        <option value="" text="--NONE--"/>
+        <aura:iteration items="{!v.recType}" var="rt">
+            <option value="{!rt.value}" text="{!rt.text}" >{!rt} </option> 
+        </aura:iteration>
+    </lightning:select> 
+</div>
+    <br></br>
+ 
+    <div class="slds-float_left" style="padding-bottom: 10px;">
+        
+        <lightning:button aura:id="Cancel" label="{!v.btnlabel}" 
+                          variant="neutral" onclick="{!c.navigateToRecord}" />
+    </div>
+    
+    <div class="slds-float_right" style="padding-bottom: 10px;">
+        <lightning:button aura:id="NEXT" label="Next" 
+                          variant="brand" onclick="{!c.navigateToFlow}" />
+        <br></br>
+    </div> 
+</aura:component>

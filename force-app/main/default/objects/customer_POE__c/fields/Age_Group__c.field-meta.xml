@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Group__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(  dob__c ), &quot;N/A&quot;,
+
+IF((Departure_Date__c  -  (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) )  / 365 &lt; 25, &quot;18-24&quot;,
+IF((Departure_Date__c  -(DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &lt; 35, &quot;25-34&quot;,
+IF((Departure_Date__c - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) )  / 365 &lt; 45, &quot;35-44&quot;,
+IF((Departure_Date__c  - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) )  / 365 &lt; 55, &quot;45-54&quot;,
+IF((Departure_Date__c  - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) )  / 365 &lt; 65, &quot;55-64&quot;,
+IF((Departure_Date__c  - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &lt; 75, &quot;65-74&quot;,
+IF((Departure_Date__c  - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &lt; 85, &quot;75-84&quot;,
+IF((Departure_Date__c - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) )  / 365 &gt;= 85, &quot;85+&quot;,
+&quot;N/A&quot;)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Age Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

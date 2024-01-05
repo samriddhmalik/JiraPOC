@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orders_with_Total_Price_0_00</fullName>
+    <booleanFilter>2 AND 3 AND 4 AND (1 OR 5)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>order_status__c</columns>
+    <columns>total_sale_value__c</columns>
+    <columns>total_price__c</columns>
+    <columns>amount_outstanding__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>total_price__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Expired</value>
+    </filters>
+    <filters>
+        <field>total_payment_received__c</field>
+        <operation>lessOrEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>Orders with Total Price $0.00</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AddOn_Name_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.DeveloperName =&quot;AE_SB&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ AE_SB__r.Name,IF(RecordType.DeveloperName =&quot;mp_AE_SB_Accommodation&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ AE_SB_Accommodation__r.Name,IF(RecordType.DeveloperName =&quot;Airline_Upgrade&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ Airline_Upgrade__r.Name,IF(RecordType.DeveloperName =&quot;Land_Activity&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ land_activity__r.Name,IF(RecordType.DeveloperName =&quot;SubStopover&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ Sub_Stopover__r.Name,IF(RecordType.DeveloperName =&quot;Insurance&quot;,&apos;AddOn &apos;+Name +&apos; &apos;+ RecordType.Name,null))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AddOn Name(Text)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

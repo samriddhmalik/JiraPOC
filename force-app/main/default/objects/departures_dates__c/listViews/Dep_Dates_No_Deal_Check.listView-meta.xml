@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dep_Dates_No_Deal_Check</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>date__c</columns>
+    <columns>Deal_for_Reporting__c</columns>
+    <columns>options__c</columns>
+    <columns>sub_options__c</columns>
+    <columns>Deal_Status__c</columns>
+    <columns>online_status__c</columns>
+    <columns>Active__c</columns>
+    <columns>recently_expired__c</columns>
+    <columns>Allocation_Table__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_for_Reporting__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>1/27/2021 12:00 AM</value>
+    </filters>
+    <label>Dep Dates - No Deal Check</label>
+    <sharedTo>
+        <group>Product</group>
+    </sharedTo>
+</ListView>

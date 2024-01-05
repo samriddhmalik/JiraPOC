@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>unassigned_Complex_Tickets</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Subject__c</columns>
+    <columns>Completion_Date_Planned__c</columns>
+    <columns>Jira_Ticket_Number__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Initial_Prioritisation_Review__c</columns>
+    <columns>Completion_Date_Actual__c</columns>
+    <columns>Grading__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Tech_Support__c.Complex</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Actioned,Withdrawn</value>
+    </filters>
+    <filters>
+        <field>Grading__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>Unassigned - Complex Tickets</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,56 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="convertLegacyOrderToTADOrderApex">
+    
+    <aura:attribute type="Object" name="orderInfo" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 65rem !important;
+        width:65% !important;
+        }
+    </aura:html>
+    
+    <aura:if isTrue="{!equals(v.orderInfo.toProcessOrder, true)}">
+        <aura:if isTrue="{!v.orderInfo.orderExists}">
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>This order has been successfully converted into TAD Order.</b></div>
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>Your order Number is {!v.orderInfo.orderNumber}</b></div>
+            <div  align="center">
+                <a  href="JavaScript:Void(0);" data-record="{!v.orderInfo.orderid}"  onclick="{!c.navigateToRecord}"> 
+                    <p>Click here to go to {!v.orderInfo.orderNumber}</p></a>
+            </div>
+            <br></br>
+        </aura:if> 
+        
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Create TAD Order" onclick="{! c.convertTADOrder }" disabled="{!v.orderInfo.button1}"/>
+        </div> 
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Create OLI Records" onclick="{! c.convertOLIRecord }" disabled="{!v.orderInfo.button2}"/>
+        </div> 
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Create Passenger and ADDON" onclick="{! c.convertAddonRecord }" disabled="{!v.orderInfo.button3}"/>
+        </div> 
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Create Related Objects" onclick="{! c.convertObjectRecord }" disabled="{!v.orderInfo.button4}"/>
+        </div> 
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Create Payment,Coupon,Surcharge" onclick="{! c.convertpaymentRecord }" disabled="{!v.orderInfo.button5}"/>
+        </div> 
+        <br></br>  
+        
+        <aura:if isTrue="{!v.orderInfo.orderExists}">
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>The converted order was success in : </b> {!v.orderInfo.conversionSuccess}</div><br/><br/> 
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>The converted order has faced errors in : </b> {!v.orderInfo.conversionError}</div><br/><br/> 
+        </aura:if> 
+    </aura:if>    
+    <aura:if isTrue="{!equals(v.orderInfo.toProcessOrder, false)}">
+        <div  align="center" style="font-size: 20px" class="slds-text"><b> Cancelled or Expired order can't be converted </b></div><br/><br/> 
+    </aura:if> 
+</aura:component>

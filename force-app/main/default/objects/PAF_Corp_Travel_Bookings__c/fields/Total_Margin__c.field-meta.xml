@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Margin__c</fullName>
+    <externalId>false</externalId>
+    <formula>((Sale_Price__c +  Corp_Car_Total_Cost__c + Hotel_Total_Cost__c +  Transfers_COst__c +  Misc_Cost__c   )  -  (Air_Tickets_Nett__c +  Corp_Car_Driveaway_Nett__c +  Hotel_Nett__c +  Transfers_Nett__c +  Misc_Nett__c ))+  BOOKING_FEE__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Margin</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

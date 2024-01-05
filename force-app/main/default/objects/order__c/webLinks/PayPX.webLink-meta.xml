@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PayPX</fullName>
+    <availability>online</availability>
+    <description>Use for NZD payments</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>PayPX</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/PayPXHostedPayment?referenceId={!order__c.Id}
+&amp;amt={!order__c.amount_outstanding__c}</url>
+</WebLink>

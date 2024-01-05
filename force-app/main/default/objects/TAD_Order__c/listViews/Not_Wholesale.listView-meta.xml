@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Wholesale</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>ordexp_account__c</columns>
+    <columns>Purchaser_Account__c</columns>
+    <columns>ordexp_deal__c</columns>
+    <columns>ordexp_option__c</columns>
+    <columns>PAX_Qty__c</columns>
+    <columns>ordexp_deal_type__c</columns>
+    <columns>ordexp_deal_has_flights__c</columns>
+    <columns>ordexp_isstay__c</columns>
+    <columns>Is_Escape_Deal__c</columns>
+    <columns>ordexp_master_status__c</columns>
+    <columns>ordexp_sub_status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>TAD_Order__c.TAD,TAD_Order__c.TNZ</value>
+    </filters>
+    <filters>
+        <field>ordexp_isstay__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Not Wholesale</label>
+</ListView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Departure_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>or(
+  and(
+      RecordType.Name = &quot;Multi-Line Expense&quot;,
+      Transaction_Date__c &lt;  Departure_Date__r.date__c ,
+      isblank(  Amount__c  ) 
+     ),
+  and(
+      not(isblank( Vendor_Invoice_Number__c  )),
+      Transaction_Date__c &lt; Departure_Date__r.date__c,
+       Is_Escape_Deal__c = false
+     )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pre Departure Date</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

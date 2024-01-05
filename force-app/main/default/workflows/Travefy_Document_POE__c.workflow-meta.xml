@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>POE_Send_Travel_Itinerary_Email_Alert</fullName>
+        <ccEmails>documentation@tripadeal.com.au</ccEmails>
+        <description>Send Travel Itinerary Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Service_Cloud_Customer_Comms/TAD_AU_Your_Travel_Pack_is_ready_POE_html</template>
+    </alerts>
+    <alerts>
+        <fullName>POE_Send_Travel_Itinerary_Email_Alert_TC</fullName>
+        <ccEmails>documentation@tripadeal.travel</ccEmails>
+        <description>Send Travel Itinerary Email Alert TC</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.travel</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Travellers_Choice/TC_Your_Travel_Pack_is_Ready_POE</template>
+    </alerts>
+    <alerts>
+        <fullName>POE_Send_Travel_Itinerary_Email_Alert_TNZ</fullName>
+        <ccEmails>documentation@tripadeal.co.nz</ccEmails>
+        <description>Send Travel Itinerary Email Alert TNZ</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>NZ_Service_Cloud_Comms/TAD_NZ_Your_Travel_Pack_is_ready_POE_html</template>
+    </alerts>
+    <alerts>
+        <fullName>POE_Send_Travel_Itinerary_Email_Alert_WT</fullName>
+        <ccEmails>documentation@tripadeal.co.nz</ccEmails>
+        <description>Send Travel Itinerary Email Alert WT</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>World_Travel_NZ/WT_Travel_Pack_is_Ready_POE</template>
+    </alerts>
+    <alerts>
+        <fullName>TADQF_Travel_Pack</fullName>
+        <ccEmails>documentation@tripadeal.com.au</ccEmails>
+        <description>TADQF Travel Pack</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TAD_with_QF/TADQF_Travel_Pack</template>
+    </alerts>
+    <alerts>
+        <fullName>TCQF_Travel_Pack</fullName>
+        <ccEmails>documentation@tripadeal.travel</ccEmails>
+        <description>TCQF Travel Pack</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.travel</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TC_with_QF/TCQF_Travel_Pack</template>
+    </alerts>
+    <alerts>
+        <fullName>TNZQF_Travel_Pack</fullName>
+        <ccEmails>documentation@tripadeal.co.nz</ccEmails>
+        <description>TNZQF Travel Pack</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TNZ_with_QF/TNZQF_Travel_Pack</template>
+    </alerts>
+    <alerts>
+        <fullName>WTQF_Travel_Pack</fullName>
+        <ccEmails>documentation@tripadeal.co.nz</ccEmails>
+        <description>WTQF Travel Pack</description>
+        <protected>false</protected>
+        <recipients>
+            <field>trip_purchaser_email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>documentation@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_WT_with_QF/WTQF_Travel_Pack</template>
+    </alerts>
+    <outboundMessages>
+        <fullName>Workato_Travefy_Doc_POE_Webhook</fullName>
+        <apiVersion>54.0</apiVersion>
+        <endpointUrl>https://www.workato.com/webhooks/notify/salesforce?sobject=Travefy_Document_POE__c&amp;org_id=00D28000000crJf</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>peter.russell@tripadeal.com.au</integrationUser>
+        <name>Workato Travefy Doc POE Webhook</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Workato Travefy Doc POE Creation</fullName>
+        <actions>
+            <name>Workato_Travefy_Doc_POE_Webhook</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Travefy_Document_POE__c.send_travefy_request__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

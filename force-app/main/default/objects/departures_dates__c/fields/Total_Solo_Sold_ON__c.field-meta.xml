@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Solo_Sold_ON__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Rollup Helper - roll up of ON (POE) Solo of Active status for this dep date</inlineHelpText>
+    <label>Total Solo Sold (ON)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

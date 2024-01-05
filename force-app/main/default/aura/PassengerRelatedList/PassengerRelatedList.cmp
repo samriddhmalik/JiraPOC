@@ -1,0 +1,244 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-08-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride" access="global" Controller ="MP_PassengersHistroy" >
+	 <!--Attributes-->
+    <aura:attribute name="passList" type="List"/>
+    <aura:attribute name="recordId" type="String"/>     
+    <!--Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     
+    <h1>Passengers History</h1>
+    
+   <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities" style="margin-top:20px">
+<thead>
+<tr class="slds-line-height_reset">
+<th class="" scope="col">
+<div class="slds-truncate" title="Opportunity Name">Date</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Account Name">Field</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Close Date">Original Value</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Stage">New Value</div>
+</th>
+
+</tr>
+</thead>
+  <tbody>
+            <aura:iteration items="{!v.passList}" var="pass">
+                <tr>
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          {!pass.EditedDate}
+                        </div>
+                    </th>
+                   <!-- 
+                    <aura:if isTrue="{!pass.FieldName == 'dob__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           DOB
+                        </div>
+                    </th>
+                            </aura:if> 
+                   
+                     <aura:if isTrue="{!pass.FieldName == 'first_name__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           First Name
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'last_name__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Last Name
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'title__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Title
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'second_name__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Second Name
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'Passenger_Name__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Passenger Name
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'Email__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Email
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'Account_Phone_Number__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Account Phone Number
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'nationality__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Nationality
+                        </div>
+                    </th>
+                            </aura:if> 
+                     <aura:if isTrue="{!pass.FieldName == 'passport_number__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Passport Number
+                        </div>
+                    </th>
+                            </aura:if> 
+                       
+                     <aura:if isTrue="{!pass.FieldName == 'passport_expiry_date__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Passport Expiry Date
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'passport_issue_date__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Passport Issue Date
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'country_issue__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Country Issue
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'is_waiting_passport__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Is Awaiting Passport
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'suburb__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Suburb
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'postcode__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Postcode
+                        </div>
+                    </th>
+                            </aura:if>    <aura:if isTrue="{!pass.FieldName == 'preferredbedding__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          Preferred Bedding
+                        </div>
+                    </th>
+                            </aura:if> 
+                       
+                           <aura:if isTrue="{!pass.FieldName == 'dietary_request__c' }">
+       <th scope="row">
+          <div class="slds-truncate" >
+            Dietary Request
+          </div>
+      </th>
+              </aura:if> 
+      
+         <aura:if isTrue="{!pass.FieldName == 'other_request__c' }">
+       <th scope="row">
+          <div class="slds-truncate" >
+            Other Request
+          </div>
+      </th>
+              </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'medical_request__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Medical Request
+                        </div>
+                    </th>
+                            </aura:if> 
+                       <aura:if isTrue="{!pass.FieldName == 'mobility_request__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                            Mobility Request
+                        </div>
+                    </th>
+                            </aura:if> 
+                    
+                      <aura:if isTrue="{!pass.FieldName == 'ordexp_TAD_Order__r.ordexp_deal__c' }">
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                           Deal
+                        </div>
+                    </th>
+                    </aura:if>    
+                    -->
+                  
+
+                      
+                            <th scope="row">
+                        <div class="slds-truncate" >
+                         {!pass.FieldName}
+                        </div>
+                    </th>
+                     
+                                           
+                    <th scope="row" style="">
+                        <div class="slds-truncate" >
+                          {!pass.OrginalValue}
+                        </div>
+                    </th>
+                    
+                    
+ 
+                      <aura:if isTrue="{!or(pass.FieldName == 'Dietary Requests' || pass.FieldName == 'Other Requests' || pass.FieldName == 'Medical Request' || pass.FieldName == 'Mobility Request')}">
+                        
+                        <th scope="row" style="">
+                             <div class="slds-truncate" >
+                                <h6 style="background:yellow">Please check your email for updated changes.</h6>                      
+                            </div>
+                        </th>
+                        <aura:set attribute="else">
+                            <th scope="row" style="">
+                                <div class="slds-truncate" >
+                                    <h6 style="background:yellow">{!pass.NewValue}</h6>
+                                </div>
+                            </th>
+                        </aura:set>
+                    </aura:if>
+                    
+                   
+                </tr>  
+            </aura:iteration>
+        </tbody>
+</table>
+    
+
+</aura:component>

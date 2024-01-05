@@ -1,0 +1,132 @@
+<apex:page standardController="order__c">
+    <apex:pageBlock title="Deal Information">
+      <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact">
+        <apex:column style="width:=16.6%">
+        <apex:facet name="header">Field Name</apex:facet>
+    
+          <apex:outputText value="Deal ID"/>
+
+          
+        </apex:column>
+<apex:column style="width:16.6%">
+        <apex:facet name="header">Content</apex:facet>
+    
+          <apex:outputText value="{!order__c.Deal_ID__c}"/>
+
+          
+        </apex:column>
+        <apex:column style="width:16.6%">
+        <apex:facet name="header">Line Price (Gross)</apex:facet>
+    
+          <apex:outputText value="{!order__c.empty_text_field__c}"/>
+
+          
+        </apex:column>
+        <apex:column style="width:16.6%">
+        <apex:facet name="header">Quantity (Gross)</apex:facet>
+    
+          <apex:outputText value="{!order__c.empty_text_field__c}"/>
+
+          
+        </apex:column>
+        <apex:column style="width:16.6%">
+        <apex:facet name="header">Net Price (Qty)</apex:facet>
+    
+          <apex:outputText value="{!order__c.empty_text_field__c}"/>
+
+          
+        </apex:column>
+        <apex:column style="width:16.6%">
+        <apex:facet name="header">Commission (Qty)</apex:facet>
+    
+          <apex:outputText value="{!order__c.empty_text_field__c}"/>
+
+          
+        </apex:column>
+         
+      </apex:pageBlockTable>
+      <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Deal Name"/>
+        </apex:column>
+         <apex:column style="{width:83.4%;text-align:left;}" value="{!order__c.Deal_and_Option__c}"/>
+         <!--<apex:column style="{width:83.4%;text-align:left;}" value="{!order__c.empty_text_field__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>-->
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Option"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.Option_Purchased_TC__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.option_line_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.option_qty_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.Option_Qty_Net_Price__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.Option_Qty_Commission__c}"/>
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Sub Option"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.Sub_Option_Purchasedq__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.sub_option_line_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.sub_option_qty_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.Sub_Option_Qty_Net_Price__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.Sub_Option_Qty_Commission__c}"/>
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Departure Date"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.departure_date__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.hss_line_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.hss_qty_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.HSS_Qty_Net_Price__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.HSS_Qty_Commission__c}"/>
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Departure City"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.Dep_City__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.departure_city_line_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.departure_city_qty_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.Departure_City_Qty_Net_Price__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.Departure_City_Qty_Commission__c}"/>
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Quantity"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.qty__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+      </apex:pageBlockTable>
+            <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+       <apex:column style="width:16.6%">
+          <apex:outputText value="Solo Traveller"/>
+
+          
+        </apex:column>
+         <apex:column style="width:16.6%" value="{!order__c.HSS__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.solo_surcharge_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.solo_surcharge_price__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.Solo_Surcharge_Qty_Net_Price__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.Solo_Surcharge_Qty_Commission__c}"/>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+   <style>body{padding:0!important}</style>
+</apex:page>

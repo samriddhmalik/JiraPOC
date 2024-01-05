@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>the_Flight_Schedule_change</fullName>
+    <active>false</active>
+    <description>TS - 008517: As a System, I want to implement a validation and show a validation message when a user tries to tick the Flight Schedule change checkbox at the TAD Order when Order substatus is not equal to TP Sent</description>
+    <errorConditionFormula>( NOT(ISPICKVAL( ordexp_sub_status__c, &apos;Travel Pack Sent&apos;))  &amp;&amp;  
+   (ordexp_flight_schedule_change__c = true) )</errorConditionFormula>
+    <errorDisplayField>ordexp_flight_schedule_change__c</errorDisplayField>
+    <errorMessage>Order Sub Status is not &quot; Travel Pack Sent&quot;  you can not change Flight Schedule</errorMessage>
+</ValidationRule>

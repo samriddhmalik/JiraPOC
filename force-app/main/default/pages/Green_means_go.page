@@ -1,0 +1,8 @@
+<apex:page standardController="order__c" >
+
+<apex:form >
+<apex:image url="https://tripadeal--c.ap6.content.force.com/sfc/servlet.shepherd/version/download/06928000007H2Ff" />
+
+
+</apex:form>
+</apex:page>

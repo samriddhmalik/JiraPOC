@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Journal_Rate__c</fullName>
+    <defaultValue>null</defaultValue>
+    <description>Spot rate as per FFA</description>
+    <externalId>false</externalId>
+    <label>Journal Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>9</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

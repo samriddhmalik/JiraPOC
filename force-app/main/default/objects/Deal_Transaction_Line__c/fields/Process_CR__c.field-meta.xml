@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_CR__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+    or(
+       Deal_Transaction__r.Is_Escape_Deal__c,
+       and(
+           Deal_Transaction__r.Transaction_Date__c &gt;= Recognition_Date__c,
+           not(isblank(Recognition_Journal__c))
+       )
+    ),
+    Status1__c = &quot;Superseded&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>To reverse Revenue Recognition journal in case of Escapes</inlineHelpText>
+    <label>Process CR</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

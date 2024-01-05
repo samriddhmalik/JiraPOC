@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="numberOfTimesToIterate" label="No of PAX" description="attribute in no of PAX created in the OLI shall be passed"/>
+    <design:attribute name="orderLineItemId" label="OLI Id" description="to store the OLI ID"/>
+    <design:attribute name="tadOrderId" label="TAD Order Id" description="to store the TAD Order ID"/>
+    <design:attribute name="sourceObject" label="Source Object" description="To store the Object from where Component is being initiated"/>
+</design:component>

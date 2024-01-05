@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HSS_Amount_must_be_nominated</fullName>
+    <active>true</active>
+    <errorConditionFormula>and( HSS__c ,  ISBLANK( HSS_Amount__c ) )</errorConditionFormula>
+    <errorDisplayField>HSS_Amount__c</errorDisplayField>
+    <errorMessage>HSS amount must be nominated if HSS is selected.</errorMessage>
+</ValidationRule>

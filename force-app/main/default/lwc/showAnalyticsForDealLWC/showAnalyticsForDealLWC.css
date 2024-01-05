@@ -1,0 +1,13 @@
+.empFamilyTable td {
+    text-align: left !important;
+  }
+  .empFamilyTable td {
+    text-align: left !important;
+  }
+ .slds-th__action:hover{
+    
+    background-color: #01bfd7 !important;
+}
+.slds-select{
+  width : 100%;   
+}

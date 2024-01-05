@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocation_at_OLI_Level</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( (RecordType.Name=&apos;TAD&apos; || RecordType.Name=&apos;TC&apos;) &amp;&amp;  TEXT(ordexp_deal__r.Allocation_by__c) =&apos;Sub Option&apos; &amp;&amp; ordexp_departure_date__c !=null , true,  IF((RecordType.Name=&apos;TNZ&apos; || RecordType.Name=&apos;WT&apos;) &amp;&amp; TEXT(ordexp_deal__r.Allocation_By_NZ__c)=&apos;Sub Option&apos; &amp;&amp; ordexp_departure_date__c !=null, true, false) )</errorConditionFormula>
+    <errorMessage>Hi For This Deal Departure date is selected at OLI Level.</errorMessage>
+</ValidationRule>

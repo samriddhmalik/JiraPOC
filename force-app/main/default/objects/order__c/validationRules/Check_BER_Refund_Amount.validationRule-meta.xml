@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_BER_Refund_Amount</fullName>
+    <active>false</active>
+    <description>Validate that BER Refund Amount is less than (Payment Received + Coupons)</description>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK( BER_Refund_Amount__c )) ,
+BER_Refund_Amount__c  &gt;  ( Total_Payments__c +  total_discounts__c )  
+)</errorConditionFormula>
+    <errorDisplayField>BER_Refund_Amount__c</errorDisplayField>
+    <errorMessage>Check the BER Refund Amount - this cannot be greater than the total paid + any coupons used</errorMessage>
+</ValidationRule>

@@ -1,0 +1,179 @@
+<template>
+    <div class="slds-theme_default" style="width: 51vw; height :100%; overflow:auto; margin:auto; border-radius:0.25rem">
+        <template lwc:if={showSpinner}><lightning-spinner class="spinnerClass" variant="brand" size="medium"></lightning-spinner></template>
+        
+<template lwc:if={isComponent}>
+    <div class="slds-modal__header">
+        <h2 class ="slds-modal__title slds-hyphenate slds-text-heading--medium">New Component</h2>
+    </div>
+    <div class="form-legend" style="padding:8px; margin:8px; text-align:right; border-radius:0.25rem">
+        <abbr class="slds-required">*</abbr> = Required Information</div>
+    <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Information</h3>
+    <div class= "container-body" style ="padding-left: 0.6rem; margin: 0.5rem;">
+        <div class="slds-form">
+            <lightning-record-edit-form
+            object-api-name='Component__c'
+        >
+        <div class="slds-form_stacked slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" name="compName" data-id="compfield" field-name="Name" value={componentObj.compName} onchange={compInputHandler} required></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="mercName" field-name="Merchant_Name__c" value={componentObj.mercName} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="mptJoin" field-name="MPT_JOIN__c" value={componentObj.mptJoin} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" field-name="Deal__c" name="dealId" value={componentObj.dealId} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="canPolicy" field-name="Cancellation_Policy__c" value={componentObj.canPolicy} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <template lwc:if={isLandActivity}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="landActivity" field-name="Land_Activity__c" value={componentObj.landActivity} onchange={compInputHandler}></lightning-input-field>
+            </div></template>
+            <template lwc:if={isAesb}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field  data-id="compfield" name="aesb" field-name="AE_SB__c" value={componentObj.aesb} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            </template>
+            <template lwc:if={isMpAesb}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="mpAesb" field-name="mp_AE_SB_Accommodation__c" value={componentObj.mpAesb} onchange={compInputHandler}></lightning-input-field>
+            </div></template>
+            <template lwc:if={isStopover}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field data-id="compfield" name="stopover" field-name="Stopover__c" value={componentObj.stopover} onchange={compInputHandler}></lightning-input-field>
+            </div>
+             </template>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="departed" field-name="Departed__c" value={componentObj.departed} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="cName" field-name="name__c" value={componentObj.cName} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <template lwc:if={isAirline}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="airlineUpgrade" field-name="Airline_Upgrade__c" value={componentObj.airlineUpgrade} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            </template>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="partDeadline" field-name="Partner_Deadline__c" value={componentObj.partDeadline} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <template lwc:if={isDepCity}>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" field-name="City__c" name="depCityId" value={componentObj.depCityId} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            </template>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="identifier" field-name="Identifier__c" value={componentObj.identifier} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="tieredCostedRate" field-name="ff_Pricing_structure__c" value={componentObj.tieredCostedRate} onchange={compInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin-top: 0.5rem;">Component Details</h3>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class ="compfield" data-id="compfield" name="compType" field-name="Component_Type__c" value={componentObj.compType} onchange={compInputHandler} required></lightning-input-field>
+            </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field class ="compfield" data-id="compfield" name="productPricing" field-name="Product_FX_Pricing__c" value={componentObj.productPricing} onchange={compInputHandler}></lightning-input-field>
+                </div>
+                 <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field class ="compfield" data-id="compfield" name="compPartnerSharing" field-name="Partner_Sharing_Deadline__c" value={componentObj.compPartnerSharing} onchange={compInputHandler}></lightning-input-field>
+                </div>
+        </div>
+    </lightning-record-edit-form>
+        </div>
+    </div>
+    <div class="slds-card__footer slds-align_absolute-center slds-theme--shade">
+        <lightning-button class ="slds-m-horizontal_small" label="Cancel" onclick={handleCancel} variant="neutral"></lightning-button>
+        <lightning-button class ="slds-m-horizontal_small" label="Save &amp; New" onclick={handleCompSave} variant="brand"></lightning-button>
+        <lightning-button class ="slds-m-horizontal_small" label="Save &amp; Next" onclick={handleCompNext} variant="brand"></lightning-button>
+    </div>
+</template>
+<template lwc:if={isComponentPricing}>
+    <div class="slds-modal__header">
+        <h2 class ="slds-modal__title slds-hyphenate slds-text-heading--medium">New Component Pricing</h2>
+    </div>
+    <div class="form-legend" style="padding:8px; margin:8px; text-align:right; border-radius:0.25rem">
+        <abbr class="slds-required">*</abbr> = Required Information</div>
+    <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Information</h3>
+    <div class= "container-body" style ="padding-left: 0.6rem; margin: 0.5rem;">
+        <div class="slds-form">
+            <lightning-record-edit-form
+            object-api-name='Component_Pricing__c'
+        >
+        <div class="slds-form_stacked slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingName" field-name="Name" value={comPricingobj.pricingName} onchange={compPricingInputHandler} required></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingCategory" field-name="Category__c" value={comPricingobj.pricingCategory} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingCurrency" field-name="CurrencyIsoCode" value={comPricingobj.pricingCurrency} onchange={compPricingInputHandler} ></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingCosted" field-name="Costed_FX_Rate__c" value={comPricingobj.pricingCosted} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="LinkedDeal_D_O_S__c" name="pricingDeal" value={comPricingobj.pricingDeal}  onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="Component__c" name="componentId" value={comPricingobj.componentId} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+            <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin-top: 0.5rem;">Cost</h3>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingGrossCost" field-name="Cost__c" value={comPricingobj.pricingGrossCost} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingSoloCost" field-name="solo_rate_total__c" value={comPricingobj.pricingSoloCost} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+            <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin-top: 0.5rem;">Dates</h3>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingDateFrom" field-name="Date_From__c" value={comPricingobj.pricingDateFrom} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingDateto" field-name="Date_To__c" value={comPricingobj.pricingDateto} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingBdateFrom" field-name="Booking_Date_from__c" value={comPricingobj.pricingBdateFrom} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingBdateTo" field-name="Booking_Date_to__c" value={comPricingobj.pricingBdateTo} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+            <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin-top: 0.5rem;">PAX Details</h3>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingMinPax" field-name="Min_Pax__c" value={comPricingobj.pricingMinPax} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingMaxPax" field-name="Max_Pax__c" value={comPricingobj.pricingMaxPax} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+            <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin-top: 0.5rem;">System Information</h3>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field class="pricingfield" name="pricingJoin" field-name="Join__c" value={comPricingobj.pricingJoin} onchange={compPricingInputHandler}></lightning-input-field>
+            </div>
+        </div>
+    </lightning-record-edit-form>
+        </div>
+    </div>
+    <div class="slds-card__footer slds-align_absolute-center slds-theme--shade">
+        <lightning-button class ="slds-m-horizontal_small" label="Cancel" onclick={handleCancel} variant="neutral"></lightning-button>
+        <lightning-button class ="slds-m-horizontal_small" label="Save &amp; New" onclick={handleCompPriceNew} variant="brand" ></lightning-button>
+        <lightning-button class ="slds-m-horizontal_small" label="Save" onclick={handleCompPriceSave} variant="brand" ></lightning-button>
+    </div>
+</template>
+    </div>
+</template>

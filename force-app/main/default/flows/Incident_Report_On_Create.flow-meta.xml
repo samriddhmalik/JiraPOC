@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Incident_Report_Notification_After_Hours</name>
+        <label>Incident Report Notification After Hours</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <actionName>Incident_Report__c.Incident_Report_Notification_After_Hours</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Incident_Report_Notification</name>
+        <label>Send Incident Report Notification</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <actionName>Incident_Report__c.Incident_Report_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>AfterHoursIncidentReportNotification</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>AfterHoursIncidentReportNotification</name>
+        <label>AfterHoursIncidentReportNotification</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AfterHours</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsWeekend</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Incident_Report_Notification_After_Hours</targetReference>
+            </connector>
+            <label>AfterHours</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>IsWeekend</name>
+        <dataType>Boolean</dataType>
+        <expression>IF((WEEKDAY(DATEVALUE({!$Record.CreatedDate})) = 7) || (WEEKDAY(DATEVALUE({!$Record.CreatedDate})) = 1), true, false)</expression>
+    </formulas>
+    <interviewLabel>Incident Report - On Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Incident Report - On Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Incident_Report_Notification</targetReference>
+        </connector>
+        <object>Incident_Report__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

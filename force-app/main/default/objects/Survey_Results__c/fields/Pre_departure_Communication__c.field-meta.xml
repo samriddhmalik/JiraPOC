@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_departure_Communication__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(MID(Survey_Response__c, 18, 1),
+&quot;1&quot;, &quot;1-Poor&quot;,
+&quot;2&quot;, &quot;2-Satisfactory&quot;,
+&quot;3&quot;, &quot;3-Excellent&quot;,
+&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>How would you rate the pre-departure communications to prepare you for the trip?</inlineHelpText>
+    <label>Pre-departure Communication</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

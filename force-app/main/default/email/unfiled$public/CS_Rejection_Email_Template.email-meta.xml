@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When a Refund/Cancellation Request gets Rejected by Customer Service Manager</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TAD_Logo_Letterhead</letterhead>
+    <name>CS Rejection Email Template</name>
+    <style>freeForm</style>
+    <subject>Request for {!Cancellation_Refund_POE__c.TAD_Order_Name__c} - Rejected by Customer Service Manager</subject>
+    <textOnly>Hello,
+
+
+Your request for {!Cancellation_Refund_POE__c.Cancelled_Records_Information__c} has been rejected by the Customer Service Manager.
+
+
+Customer Service Manager Rejection Reason:
+{!Cancellation_Refund_POE__c.CS_Refund_Rejection_Reason__c}
+
+
+
+Please contact the customer to notify them.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

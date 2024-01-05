@@ -1,0 +1,13 @@
+<apex:page standardController="order__c" tabStyle="order__c" recordSetVar="AllOrders" >
+    <!-- Add below each field you reference in your Flow -->
+    <apex:repeat value="{!AllOrders}" var="row" rendered="false">
+        {!row.Name}
+        {!row.coach_colour__c}
+        {!row.order_information__c}
+    </apex:repeat>
+    <!-- Runs your Flow -->
+    <flow:interview name="ManipulateSelectedOrders"
+            finishLocation="{!URLFOR($Action.order__c.Tab, $ObjectType.order__c)}">
+        <apex:param name="selectedOrders" value="{!Selected}"/>
+    </flow:interview>
+</apex:page>

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Marketing Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>YouTube</fullName>
+                <default>false</default>
+                <label>YouTube</label>
+            </value>
+            <value>
+                <fullName>GOOGLE</fullName>
+                <default>false</default>
+                <label>GOOGLE</label>
+            </value>
+            <value>
+                <fullName>Facebook &amp; Instagram</fullName>
+                <default>false</default>
+                <label>Facebook &amp; Instagram</label>
+            </value>
+            <value>
+                <fullName>Spotify</fullName>
+                <default>false</default>
+                <label>Spotify</label>
+            </value>
+            <value>
+                <fullName>Nine &amp; ARN</fullName>
+                <default>false</default>
+                <label>Nine &amp; ARN</label>
+            </value>
+            <value>
+                <fullName>Channel 7</fullName>
+                <default>false</default>
+                <label>Channel 7</label>
+            </value>
+            <value>
+                <fullName>Channel 9</fullName>
+                <default>false</default>
+                <label>Channel 9</label>
+            </value>
+            <value>
+                <fullName>Channel 10</fullName>
+                <default>false</default>
+                <label>Channel 10</label>
+            </value>
+            <value>
+                <fullName>SBS</fullName>
+                <default>false</default>
+                <label>SBS</label>
+            </value>
+            <value>
+                <fullName>Foxtel</fullName>
+                <default>false</default>
+                <label>Foxtel</label>
+            </value>
+            <value>
+                <fullName>7, 9, 10, SBS, Foxtel</fullName>
+                <default>false</default>
+                <label>7, 9, 10, SBS, Foxtel</label>
+            </value>
+            <value>
+                <fullName>The Sunday Telegraph</fullName>
+                <default>false</default>
+                <label>The Sunday Telegraph</label>
+            </value>
+            <value>
+                <fullName>The Sunday Hearld Sun</fullName>
+                <default>false</default>
+                <label>The Sunday Hearld Sun</label>
+            </value>
+            <value>
+                <fullName>The Sunday Mail</fullName>
+                <default>false</default>
+                <label>The Sunday Mail</label>
+            </value>
+            <value>
+                <fullName>Sunday Mail (SA)</fullName>
+                <default>false</default>
+                <label>Sunday Mail (SA)</label>
+            </value>
+            <value>
+                <fullName>Sunday Times (WA)</fullName>
+                <default>false</default>
+                <label>Sunday Times (WA)</label>
+            </value>
+            <value>
+                <fullName>Other Print Publication</fullName>
+                <default>false</default>
+                <label>Other Print Publication</label>
+            </value>
+            <value>
+                <fullName>Media Group</fullName>
+                <default>false</default>
+                <label>Media Group</label>
+            </value>
+            <value>
+                <fullName>I Know the Pilot</fullName>
+                <default>false</default>
+                <label>I Know the Pilot</label>
+            </value>
+            <value>
+                <fullName>Event Sponsorship</fullName>
+                <default>false</default>
+                <label>Event Sponsorship</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <label>Billboard</label>
+            </value>
+            <value>
+                <fullName>ROKT</fullName>
+                <default>false</default>
+                <label>ROKT</label>
+            </value>
+            <value>
+                <fullName>BING</fullName>
+                <default>false</default>
+                <label>BING</label>
+            </value>
+            <value>
+                <fullName>Cruise Critic</fullName>
+                <default>false</default>
+                <label>Cruise Critic</label>
+            </value>
+            <value>
+                <fullName>Listnr</fullName>
+                <default>false</default>
+                <label>Listnr</label>
+            </value>
+            <value>
+                <fullName>Cruise Passenger</fullName>
+                <default>false</default>
+                <label>Cruise Passenger</label>
+            </value>
+            <value>
+                <fullName>WIN Network</fullName>
+                <default>false</default>
+                <label>WIN Network</label>
+            </value>
+            <value>
+                <fullName>2GB / BAY FM (NSW)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2GB / BAY FM (NSW)</label>
+            </value>
+            <value>
+                <fullName>3AW (VIC)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3AW (VIC)</label>
+            </value>
+            <value>
+                <fullName>4BC (QLD)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4BC (QLD)</label>
+            </value>
+            <value>
+                <fullName>Adelaide Advertiser (NewsCorp) - ADELAIDE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adelaide Advertiser (NewsCorp) - ADELAIDE</label>
+            </value>
+            <value>
+                <fullName>Best Weekend Liftout (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Best Weekend Liftout (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Body &amp; Soul Liftout (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Body &amp; Soul Liftout (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Byron Shire News</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Byron Shire News</label>
+            </value>
+            <value>
+                <fullName>Central Coast Express Advocate (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Central Coast Express Advocate (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Digital Display</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Display</label>
+            </value>
+            <value>
+                <fullName>Editorial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Editorial</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Bulletin (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gold Coast Bulletin (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Herald Sun (NewsCorp) - MELBOURNE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Herald Sun (NewsCorp) - MELBOURNE</label>
+            </value>
+            <value>
+                <fullName>Hills Shire Times (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hills Shire Times (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Hornsby Advocate (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hornsby Advocate (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Inner West Courier (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inner West Courier (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Liverpool Leader (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Liverpool Leader (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Mailbox Drop</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mailbox Drop</label>
+            </value>
+            <value>
+                <fullName>Manawatu Standard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manawatu Standard</label>
+            </value>
+            <value>
+                <fullName>Marlborough Express</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marlborough Express</label>
+            </value>
+            <value>
+                <fullName>Multiple Radio Stations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Multiple Radio Stations</label>
+            </value>
+            <value>
+                <fullName>Nelson Mail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nelson Mail</label>
+            </value>
+            <value>
+                <fullName>New Zealand Herald</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Zealand Herald</label>
+            </value>
+            <value>
+                <fullName>North Shore Times (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Shore Times (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Northern District Times (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Northern District Times (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Otago Daily Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Otago Daily Times</label>
+            </value>
+            <value>
+                <fullName>Paramatta Advertiser (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Paramatta Advertiser (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Road Show</label>
+            </value>
+            <value>
+                <fullName>SUPERZONE (144 Stations NZ)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SUPERZONE (144 Stations NZ)</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Southern Courier (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Southern Courier (Newscorp)</label>
+            </value>
+            <value>
+                <fullName>Stellar Magazine (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stellar Magazine (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Sunday Herald Sun (NewsCorp) - MELBOURNE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sunday Herald Sun (NewsCorp) - MELBOURNE</label>
+            </value>
+            <value>
+                <fullName>Sunday Mail (NewsCorp) - ADELAIDE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sunday Mail (NewsCorp) - ADELAIDE</label>
+            </value>
+            <value>
+                <fullName>Sunday Star Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sunday Star Times</label>
+            </value>
+            <value>
+                <fullName>Sunshine Coast Daily</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sunshine Coast Daily</label>
+            </value>
+            <value>
+                <fullName>Sydney Morning Herald (NINE) - SYDNEY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sydney Morning Herald (NINE) - SYDNEY</label>
+            </value>
+            <value>
+                <fullName>TOP 10 Bargins (Editorial Blurb NINE)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TOP 10 Bargins (Editorial Blurb NINE)</label>
+            </value>
+            <value>
+                <fullName>TOP 10 Deals (Editorial Blurb NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TOP 10 Deals (Editorial Blurb NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Taranaki Daily News</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Taranaki Daily News</label>
+            </value>
+            <value>
+                <fullName>The Age (NINE) - MELBOURNE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Age (NINE) - MELBOURNE</label>
+            </value>
+            <value>
+                <fullName>The Australian (NewsCorp) - NATIONAL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Australian (NewsCorp) - NATIONAL</label>
+            </value>
+            <value>
+                <fullName>The Canberra Times (NINE)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Canberra Times (NINE)</label>
+            </value>
+            <value>
+                <fullName>The Courier Mail (NewsCorp) - BRISBANE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Courier Mail (NewsCorp) - BRISBANE</label>
+            </value>
+            <value>
+                <fullName>The Daily Telegraph (NewsCorp) - SYDNEY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Daily Telegraph (NewsCorp) - SYDNEY</label>
+            </value>
+            <value>
+                <fullName>The Dominion Post</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Dominion Post</label>
+            </value>
+            <value>
+                <fullName>The Manly Daily (NewsCorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Manly Daily (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>The NewsMail (Bundaberg)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The NewsMail (Bundaberg)</label>
+            </value>
+            <value>
+                <fullName>The Press</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Press</label>
+            </value>
+            <value>
+                <fullName>The Southland Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Southland Times</label>
+            </value>
+            <value>
+                <fullName>The Sun-Herald (NINE) - SYDNEY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Sun-Herald (NINE) - SYDNEY</label>
+            </value>
+            <value>
+                <fullName>The Sunday Age (NINE) - MELBOURNE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Sunday Age (NINE) - MELBOURNE</label>
+            </value>
+            <value>
+                <fullName>The Sunday Mail (NewsCorp) - BRISBANE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Sunday Mail (NewsCorp) - BRISBANE</label>
+            </value>
+            <value>
+                <fullName>The Sunday Telegraph (NewsCorp) - SYDNEY</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Sunday Telegraph (NewsCorp) - SYDNEY</label>
+            </value>
+            <value>
+                <fullName>The Toowoomba Chronicle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>The Toowoomba Chronicle</label>
+            </value>
+            <value>
+                <fullName>Timaru Herald</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Timaru Herald</label>
+            </value>
+            <value>
+                <fullName>Waikato Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Waikato Times</label>
+            </value>
+            <value>
+                <fullName>Wentworth Courier (Newscorp)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wentworth Courier (Newscorp)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

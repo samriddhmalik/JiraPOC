@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_Send_COVID_Email_Offer__c</fullName>
+    <externalId>false</externalId>
+    <label>Send COVID Email Offer</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Dynamic TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Dynamic TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>TADDefer only</fullName>
+                <default>false</default>
+                <label>TADDefer only</label>
+            </value>
+            <value>
+                <fullName>Open Credit with Fee - only</fullName>
+                <default>false</default>
+                <label>Open Credit with Fee - only</label>
+            </value>
+            <value>
+                <fullName>Open Credit no Fee - only</fullName>
+                <default>false</default>
+                <label>Open Credit no Fee - only</label>
+            </value>
+            <value>
+                <fullName>Custom Offer</fullName>
+                <default>false</default>
+                <label>Custom Offer</label>
+            </value>
+            <value>
+                <fullName>China Open Credit with Fee</fullName>
+                <default>false</default>
+                <label>China Open Credit with Fee</label>
+            </value>
+            <value>
+                <fullName>Japan Defer with Fee</fullName>
+                <default>false</default>
+                <label>Japan Defer with Fee</label>
+            </value>
+            <value>
+                <fullName>Reoffer TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Reoffer TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>MyDeals Offer</fullName>
+                <default>false</default>
+                <label>MyDeals Offer</label>
+            </value>
+            <value>
+                <fullName>Sent - TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - Dynamic TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - Dynamic TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - TADDefer only</fullName>
+                <default>false</default>
+                <label>Sent - TADDefer only</label>
+            </value>
+            <value>
+                <fullName>Sent - Open Credit with Fee</fullName>
+                <default>false</default>
+                <label>Sent - Open Credit with Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - Open Credit no Fee</fullName>
+                <default>false</default>
+                <label>Sent - Open Credit no Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - China Open Credit with Fee</fullName>
+                <default>false</default>
+                <label>Sent - China Open Credit with Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - Custom Offer</fullName>
+                <default>false</default>
+                <label>Sent - Custom Offer</label>
+            </value>
+            <value>
+                <fullName>Sent - Japan Defer with Fee</fullName>
+                <default>false</default>
+                <label>Sent - Japan Defer with Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - Reoffer TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - Reoffer TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - MyDeals Offer</fullName>
+                <default>false</default>
+                <label>Sent - MyDeals Offer</label>
+            </value>
+            <value>
+                <fullName>Excl Credit/Open Credit</fullName>
+                <default>false</default>
+                <label>Excl Credit/Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - Excl Credit/Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - Excl Credit/Open Credit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wholesale</fullName>
+    <columns>NAME</columns>
+    <columns>ordexp_master_status__c</columns>
+    <columns>ordexp_sub_status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>ordexp_purchase_date__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Agency_Id__c</columns>
+    <columns>Account_Email_Address__c</columns>
+    <columns>ordexp_account__c</columns>
+    <columns>Purchaser_Account__c</columns>
+    <columns>ordexp_email_purchaser__c</columns>
+    <columns>ordexp_deal__c</columns>
+    <columns>ordexp_departure_date__c</columns>
+    <columns>ordexp_deal_type__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>TAD_Order__c.WT,TAD_Order__c.TC</value>
+    </filters>
+    <label>Wholesale</label>
+</ListView>

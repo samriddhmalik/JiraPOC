@@ -1,0 +1,249 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-02-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <div class="slds-p-around_large THIS1" style="background-color: white;margin-top: 50px;">
+        <lightning-layout>
+            <lightning-layout-item >
+               <!-- <lightning-icon icon-name="standard:avatar" alternative-text="Contact" 
+                style="zoom: 130%;" ></lightning-icon>-->
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-m-left--small">
+              <!--
+                   <p style="font-size:18px"  class="slds-text-title--caps slds-line-height--reset">PROFILE</p>
+
+              --> 
+                <template for:each={userlist} for:item="acc1">
+                <p style="font-size:18px" key={acc1.id}  class="slds-text-title--caps slds-line-height--reset">
+               
+                {acc1.Name}
+                </p>
+                </template>
+                <template for:each={userlist} for:item="acc1">
+                    <p style="font-size:13px" key={acc1.id}  class=" slds-line-height--reset">
+                    
+                 
+            </p>
+                
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+
+
+       <!--    <div>
+                <lightning-icon  icon-name="standard:avatar" alternative-text="Approved" title="Approved">
+                </lightning-icon>
+    
+             &nbsp;&nbsp;
+             
+                ROFILE DETAILS
+             
+             
+                ABHIMANYU MANDAL
+             </p>
+             
+            
+
+            </div>--> 
+               
+           
+            
+      
+    
+        
+  
+            <hr>
+ 
+            
+  
+
+        <lightning-layout-item class="slds-m-left--small">
+<div style="margin-left: 15px;"> <h2>ACCOUNT</h2> </div>
+          
+        </lightning-layout-item>
+        
+         <div class="slds-p-around_medium" style="background-color: white;">
+           
+        
+
+
+            <div class="slds-grid" style="background-color: white;">
+
+                <div class="slds-col slds-size_1-of-2 " style="background-color: white;">
+                    <lightning-layout-item padding="around-small" >
+                        <div class="header-column" style="background-color: white;">
+                           <template for:each={userlist} for:item="acc1">
+                            <h3 key={acc1.id}  class="field-title" title="Field 1">Username</h3>
+                           
+                            {acc1.Username}
+                           </template>
+                        </div>
+                    </lightning-layout-item>
+                     </div>
+    
+            <div class="slds-col slds-size_2-of-2 " style="background-color: white;">
+                <lightning-layout-item padding="around-small" >
+                    <div class="header-column" style="background-color: white;">
+                       <template for:each={userlist} for:item="acc2">
+                        <h3 key={acc2.id} class="field-title" title="Field 1">Email</h3>
+                        <p  key={acc2.id}><lightning-formatted-email value={acc2.Email} hide-icon></lightning-formatted-email></p>   
+                    </template>
+                    </div>
+                </lightning-layout-item>
+            </div>
+    
+            </div>
+
+
+
+
+        
+     <div class="slds-grid" style="background-color: white;">
+
+           
+
+                    <div class="slds-col slds-size_1-of-2 " style="background-color: white;">
+                        <lightning-layout-item padding="around-small" >
+                            <div class="header-column" style="background-color: white;">
+                                <h3 class="field-title" title="Field 1">Address</h3>
+                                <template if:true={isAddressEmpty}>
+                               <template  for:each={userlist} for:item="acc1">
+                              
+                               
+                         <p key={acc1.id} style="color:blue"></p>
+                                {acc1.Street} {acc1.City} 
+                             
+                                <p key={acc1.id}  class="field-title" title="Field 1" style="color:blue"></p>
+                                {acc1.State} {acc1.PostalCode} 
+                                <p key={acc1.id}  class="field-title" title="Field 1" style="color:blue"></p>
+                                 {acc1.Country} 
+                          
+                                </template>
+                            </template>
+                            </div>
+                        </lightning-layout-item>
+                         </div>
+        
+              
+        
+              
+
+        <div class="slds-col slds-size_2-of-2 " style="background-color: white;">
+            <lightning-layout-item padding="around-small" >
+                <!---->
+                <div class="header-column" style="background-color: white;">
+                   <template for:each={userlist} for:item="acc2">
+                    <h3 key={acc2.id} class="field-title" title="Field 1">Phone</h3>
+              {acc2.Phone}
+           <!--          <lightning-record-edit-form  object-api-name="Case"  key={acc2.id}  record-type-id="" onsuccess={handleUpload}>
+                <lightning-input name="phone" class="validate" type="tel" label="Phone" value={acc2.Phone} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}$" message-when-pattern-mismatch="Please enter a valid phone number" style="margin-right:1145px;" onchange={phoneChange} required=""></lightning-input>
+
+                    <lightning-input  type="Decimal" label="Decimal" field-name="Subject" value={acc2.Phone} variant="label-hidden" style="margin-right:1145px;" onchange={phoneChange} required="">
+                    </lightning-input>
+                </lightning-record-edit-form>
+                <br  key={acc2.id}/>
+                <template if:true={isClicked1}>
+                    <lightning-button key={acc2.id} variant="brand" label="Update Phone Number" title="Update Phone Number" onclick={saveclick1} style="margin-left: -3px;"></lightning-button>
+                    <lightning-button key={acc2.id} variant="Neutral" label="Cancel" title="Cancel" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+                </template>
+                         -->
+                    </template>
+                </div>
+            </lightning-layout-item>
+         
+        </div>
+
+        
+
+        </div>
+        
+        
+        
+      
+       
+  
+
+
+
+
+        
+        <div class="slds-grid">
+
+            <div class="slds-col slds-size_1-of-2 ">
+                <lightning-layout-item padding="around-small" >
+                    <div class="header-column">
+                       <template for:each={userlist} for:item="acc1">
+                        <h3 key={acc1.id}  class="field-title" title="Field 1">Password</h3>
+                     
+                <!--   <a key={acc1.id} href={label.commURL} target="_blank"><u>Change Password</u></a> -->
+                   
+                        <lightning-button key={acc1.id} variant="Neutral" label="Change Password" title="Change Password" onclick={changePassword} style="margin-left: -3px;"></lightning-button>
+                       
+                       </template>
+                    </div>
+                </lightning-layout-item>
+                 </div>
+
+       
+
+        </div>
+
+        <hr>
+        <div>
+            <template for:each={userlist} for:item="acc1">
+            <h2 key={acc1.id} class="header">Email Notifications</h2>
+            <div class="slds-grid" key={acc1.id}>
+             <div class="slds-col">
+            <lightning-input type="checkbox" label="Send PIF changes once per day" checked={acc1.isPIFSettingsEnabled}  value={acc1.isPIFSettingsEnabled} onchange={onChangePIFSettings} style="margin-right: 15px;" > 
+            </lightning-input>
+            </div>
+
+             <div class="slds-col">
+                <lightning-input type="checkbox" label="Enable email notifications" checked={acc1.isEmailEnable}  value={acc1.isEmailEnable} onchange={checkboxchange} style="margin-right: 15px;" > 
+            </lightning-input>
+             </div>
+             </div>
+            
+            </template>
+        </div>
+
+
+        <hr>
+ 
+        
+        
+        </div>
+
+        <div class="slds-m-top_small slds-m-bottom_medium slds-float_right">
+
+            <template if:true={isLoading}>
+                <div class="slds-p-around_x-large">
+                    <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+                </div>
+            </template>
+             <template if:true={isEMAilLoading}>
+                <div class="slds-p-around_x-large">
+                    <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+                </div>
+            </template>
+            
+            <template if:true={isClicked}>
+            <lightning-button variant="Neutral" label="Cancel" title="Cancel" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+            <lightning-button variant="brand" label="Save" title="Primary action" onclick={saveclick} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        </div>
+
+
+     
+   
+   
+</div>
+
+</template>

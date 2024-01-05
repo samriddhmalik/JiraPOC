@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coupon_For_Account</fullName>
+    <active>false</active>
+    <description>Coupon Account must be same as order Account</description>
+    <errorConditionFormula>AND( NOT( ISNULL( coupon__r.account__c ) ), NOT( order__r.Account__c  = coupon__r.account__c),  coupon__r.Name__c &lt;&gt; &quot;TADROADSHOWGC17&quot;)</errorConditionFormula>
+    <errorDisplayField>order__c</errorDisplayField>
+    <errorMessage>This coupon is not for the account attached to this order.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentGmaac__c</fullName>
+    <externalId>false</externalId>
+    <formula>(((Total_Marketing_Spend__c/0.065)*(Estimated_Margin__c))/(Total_Marketing_Spend__c/0.065)*100)-((Total_Marketing_Spend__c/Total_Revenue_AU__c)*100)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CurrentGmaac</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

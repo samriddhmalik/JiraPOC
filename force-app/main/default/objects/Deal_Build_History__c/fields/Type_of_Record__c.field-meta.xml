@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Record__c</fullName>
+    <description>This field describe the history sored in this record is of which type.</description>
+    <externalId>false</externalId>
+    <label>Type of Record</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Itinerary</fullName>
+                <default>false</default>
+                <label>Itinerary</label>
+            </value>
+            <value>
+                <fullName>Attach Inclusion</fullName>
+                <default>false</default>
+                <label>Attach Inclusion</label>
+            </value>
+            <value>
+                <fullName>Tour Inclusion</fullName>
+                <default>false</default>
+                <label>Tour Inclusion</label>
+            </value>
+            <value>
+                <fullName>About the Property</fullName>
+                <default>false</default>
+                <label>About the Property</label>
+            </value>
+            <value>
+                <fullName>Deal</fullName>
+                <default>false</default>
+                <label>Deal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

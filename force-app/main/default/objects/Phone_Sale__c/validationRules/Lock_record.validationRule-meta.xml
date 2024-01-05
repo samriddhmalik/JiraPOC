@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_record</fullName>
+    <active>true</active>
+    <description>Locks the processed record by stopping a validation on Status change from confirmed</description>
+    <errorConditionFormula>IF(NOT(PRIORVALUE(hidden_checkbox__c)) &amp;&amp;  NOT(hidden_checkbox__c) &amp;&amp; PRIORVALUE(record_locked__c), true, false)</errorConditionFormula>
+    <errorMessage>Processed records are locked!</errorMessage>
+</ValidationRule>

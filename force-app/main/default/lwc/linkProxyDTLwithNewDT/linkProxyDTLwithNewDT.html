@@ -1,0 +1,123 @@
+<template >
+<template if:true={showInvoice}>
+    <template if:true={isLoading}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>
+        </div>
+    </template>
+<div class="slds-grid">
+<div class="slds-p-horizontal_large slds-large-size--1-of-2">    
+<div class="slds-box">
+    <div class="slds-text-align_center">
+        Invoice
+    </div> 
+    <br/>   
+<lightning-input type="text" label="Merchant" value ={defaultData.merchantName} disabled="true"> </lightning-input>
+<lightning-input type="text" label="Invoice Number" value={defaultData.invoiceNumber} onchange={setInvoiceNumber} required="true"> </lightning-input>
+<lightning-input type="date" label="Invoice Date"  value ={defaultData.invoiceDate} onchange={setInvoiceDate}> </lightning-input>
+<lightning-input type="number" label="SubTotal" formatter="currency" step="0.01" onchange={setSubTotal}> </lightning-input>
+<lightning-input type="number" label="Total GST" value ={defaultData.totalGST} formatter="currency" step="0.01" onchange={setTotalGST}> </lightning-input>
+<lightning-input type="number" label="Total Amount" value ={defaultData.totalAmount} formatter="currency" step="0.01" onchange={setTotalAmount}> </lightning-input>
+<lightning-input type="number" label="Selected DTL Amount" formatter="currency" step="0.01" value={defaultData.selectedDTLAmount} disabled="true"> </lightning-input>
+<lightning-input type="number" label="Difference" formatter="currency" step="0.01" value={defaultData.difference} disabled="true" > </lightning-input>
+</div>
+</div>
+
+<div class="slds-p-horizontal_large slds-large-size--1-of-2">    
+<div class="slds-box">
+    <div class="slds-text-align_center">
+        Filters
+    </div> 
+    <br/>
+<lightning-input type="date" label="Transaction Date From" value ={defaultData.dateFrom}  onchange={setTransactionDateFrom} required="true"> </lightning-input>
+<lightning-input type="date" label="Transaction Date To" value ={defaultData.dateTo}  onchange={setTransactionDateTo} required="true"> </lightning-input>
+
+<lightning-combobox name="Company Selection" label="Company" value ={defaultData.companyId} placeholder="Select Company" options={companyList} onchange={setCompanyRecord} required="true"></lightning-combobox>
+
+<div class="slds-card">
+    <label for="fieldid">Deal</label>
+    <lightning-record-edit-form object-api-name='Deal_Transaction__c'>
+        <lightning-input-field id="fieldid" variant="label-hidden" field-name='Deal__c' value ={defaultData.dealId} onchange={setDealRecord} >
+        </lightning-input-field>
+    </lightning-record-edit-form>
+</div>
+
+<lightning-combobox name="Dep Selection" label="Departure Date" value ={defaultData.departuredateId} placeholder="Select Date" options={depDateList} onchange={setDDRecord}></lightning-combobox>
+<lightning-input type="text" label="Order Number" value ={defaultData.orderNumber} onchange={setOrderNumber} placeholder="Enter ',' seperated Order Numbers"> </lightning-input>
+<br/>
+<lightning-input type="checkbox" label="Allocatated DTL's Only" checked ={showAllocated} onchange={showAllocatedDTL}> </lightning-input>
+
+<br/>
+<div class="slds-text-align_center slds-gutters">
+<lightning-button  label="Clear" title="Clear" onclick={clearFilters} class="slds-m-left_x-small"></lightning-button>
+<lightning-button variant="brand" label="Apply" title="Apply" onclick={getDTLRecords} class="slds-m-left_x-small"></lightning-button>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<br/>
+<template if:true={showDtlList}>
+<div class="slds-box">
+<table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+    <thead class="header">
+        <tr class="slds-line-height_reset slds-text-heading_small">
+            <th scope="col" width="12%" class="slds-text-align_center"><b>DTL Name</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Deal</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Component Name</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Departure Date</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Order Number</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Amount</b></th>
+            <th scope="col" width="8%" class="slds-text-align_center"><b>Currency</b></th>
+            <th scope="col" width="12%" class="slds-text-align_center"><b>Invoice Amount</b></th>
+            <th scope="col" width="8%" class="slds-text-align_center"><b>Allocate</b></th>
+        </tr>      
+    </thead> 
+    
+    <tbody class="body">
+        <template for:each={DTLList} for:item="dtl" for:index="index">                
+            <tr key={dtl.Id}>
+                <td scope="row" class="slds-text-align_center">{dtl.dtlName}</td> 
+                <td scope="row" class="slds-text-align_center">{dtl.deal}</td>
+                <td scope="row" class="slds-text-align_center">{dtl.company}</td>
+                <td scope="row" class="slds-text-align_center">{dtl.departureDate}</td>
+                <td scope="row" class="slds-text-align_center">{dtl.orderNumber}</td>
+                <td scope="row" class="slds-text-align_center">{dtl.amount}</td>
+                <td scope="row" class="slds-text-align_center">{dtl.merchantCurrency}</td>
+                <td scope="row">
+                    <lightning-input name={index} type="text" value ={dtl.invoiceAmount} onchange={setInvoiceAmount} ></lightning-input>
+                </td>
+                <td scope="row">
+                    <lightning-input name={index} class="slds-text-align_center" checked ={dtl.allocation} type="checkbox" onchange={setAllocation} ></lightning-input>
+                </td>
+        
+            </tr>
+            
+    </template>
+    </tbody>
+    
+</table>
+<br/>
+<div class="slds-text-align_center slds-gutters">
+<lightning-button variant="brand" label="Save" title="Save" onclick={createDTRecordDraft} class="slds-m-left_x-small"></lightning-button>
+<lightning-button variant="brand" label="Create DT" title="Create DT" onclick={validateDataAndCreateDt} class="slds-m-left_x-small"></lightning-button>
+<lightning-button  label="Cancel" title="Cancel" onclick={closeQuickAction} class="slds-m-left_x-small"></lightning-button>
+</div>
+
+</div>
+</template>
+</template>
+<template if:false={showInvoice}>
+<br/>  
+<br/> 
+<div class="slds-text-align_center">
+<h3><b>Invoice can only be Generated for MLE type Merchant. </b> </h3>
+</div>
+<br/>  
+<br/>  
+</template>
+</template>

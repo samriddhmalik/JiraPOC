@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accommodation_Booking</fullName>
+    <active>true</active>
+    <label>Accommodation Booking</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Accepted_and_Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>AE Accom</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Custom Accom %28AE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Accom %28SB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Note Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SB Accom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

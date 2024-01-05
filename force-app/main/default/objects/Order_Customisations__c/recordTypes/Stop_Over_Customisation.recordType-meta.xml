@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Over_Customisation</fullName>
+    <active>true</active>
+    <label>Stop Over Customisation</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Accepted_and_Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Misc Charge</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Post SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre SO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_City__c</fullName>
+    <externalId>false</externalId>
+    <label>Departure City</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adelaide</fullName>
+                <default>false</default>
+                <label>Adelaide</label>
+            </value>
+            <value>
+                <fullName>Brisbane</fullName>
+                <default>false</default>
+                <label>Brisbane</label>
+            </value>
+            <value>
+                <fullName>Cairns</fullName>
+                <default>false</default>
+                <label>Cairns</label>
+            </value>
+            <value>
+                <fullName>Darwin</fullName>
+                <default>false</default>
+                <label>Darwin</label>
+            </value>
+            <value>
+                <fullName>Hobart</fullName>
+                <default>false</default>
+                <label>Hobart</label>
+            </value>
+            <value>
+                <fullName>Gold Coast</fullName>
+                <default>false</default>
+                <label>Gold Coast</label>
+            </value>
+            <value>
+                <fullName>Melbourne</fullName>
+                <default>false</default>
+                <label>Melbourne</label>
+            </value>
+            <value>
+                <fullName>Perth</fullName>
+                <default>false</default>
+                <label>Perth</label>
+            </value>
+            <value>
+                <fullName>Sydney</fullName>
+                <default>false</default>
+                <label>Sydney</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SINGLE</fullName>
+        <default>false</default>
+        <label>SINGLE</label>
+    </customValue>
+    <customValue>
+        <fullName>TWIN</fullName>
+        <default>false</default>
+        <label>TWIN</label>
+    </customValue>
+    <customValue>
+        <fullName>TRIPLE</fullName>
+        <default>false</default>
+        <label>TRIPLE</label>
+    </customValue>
+    <customValue>
+        <fullName>QUAD</fullName>
+        <default>false</default>
+        <label>QUAD</label>
+    </customValue>
+    <masterLabel>CPQ - Berth</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

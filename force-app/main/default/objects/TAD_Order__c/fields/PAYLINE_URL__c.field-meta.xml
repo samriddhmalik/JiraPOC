@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAYLINE_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;https://www.tripadeal.com.au/_pline?agent=&quot;&amp; $User.Payline_Username__c &amp;&quot;&amp;instance=tadprod&amp;token=&quot;&amp; $User.Payline_Token__c &amp;&quot;&amp;customer_reference_number1=&quot;&amp; Name &amp;&quot;&amp;customer_reference_number1_read_only=true&amp;amount=&quot;&amp; TEXT(ordexp_amount_outstanding__c *100)&amp;&quot;&amp;display_customer_reference_number2_field=true&amp;crn2_field_name=Email&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PAYLINE URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

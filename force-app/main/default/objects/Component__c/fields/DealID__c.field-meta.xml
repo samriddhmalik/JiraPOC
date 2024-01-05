@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DealID__c</fullName>
+    <externalId>false</externalId>
+    <formula>Deal__r.Name&amp;Options__r.Deal__r.Name&amp;Sub_Options__r.options__r.Deal__r.Name&amp;Land_Activity__r.Deal__r.Name&amp;AE_SB__r.Deal__r.Name&amp;Stopover__r.Deal__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DealID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

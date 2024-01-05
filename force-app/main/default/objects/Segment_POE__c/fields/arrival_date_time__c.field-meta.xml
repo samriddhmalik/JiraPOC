@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>arrival_date_time__c</fullName>
+    <externalId>false</externalId>
+    <formula>DATETIMEVALUE( LEFT(Arrival_Date_Time_Text__c, 10) &amp; &quot; &quot; &amp; RIGHT(Arrival_Date_Time_Text__c, 8) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Arrival Date Time</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

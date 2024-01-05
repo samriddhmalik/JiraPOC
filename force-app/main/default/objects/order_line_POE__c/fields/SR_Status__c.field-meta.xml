@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SR_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TAD_Order__r.ordexp_tp_sent__c=true, &quot;TP Sent&quot;, IF( ISPICKVAL(mp_Merchant_Acknowledgement_Status__c	, &quot;Acknowledged&quot;), &quot;Acknowledged&quot;, IF(TAD_Order__r.ordexp_bc_sent__c=true, &quot;BC Sent&quot;, IF(TAD_Order__r.ordexp_amount_outstanding__c &lt;= 0 , &quot;Sold&quot;,&apos;&apos; ) ) ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SR Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

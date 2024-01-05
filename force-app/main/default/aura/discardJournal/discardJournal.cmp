@@ -1,0 +1,27 @@
+<aura:component controller="discardJournalController" implements="flexipage:availableForAllPageTypes,force:lightningQuickAction,force:appHostable" access="global" >
+    
+    <aura:attribute name="journalValueFromVf" type="String"/>
+    <aura:attribute name="discardMessage" type="string"/>
+    <aura:attribute name="displayError" type="string" default=''/>
+    <aura:attribute name="displaySuccess" type="string" default=''/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <div class="slds-theme_default" style="width: inherit;padding: 16px; height :inherit">
+        
+        <aura:if isTrue="{!not(equals(v.displayError, ''))}">
+            <div align="center" style="font-size: 20px ;color: red " class="slds-text"><b>{!v.displayError}</b></div> 
+        </aura:if>
+        
+        <aura:if isTrue="{!not(equals(v.displaySuccess, ''))}">
+            <div  align="center" style="font-size: 20px ;color: green" class="slds-text"><b>{!v.displaySuccess}</b></div> 
+        </aura:if>
+        
+        <br></br>
+        <lightning:input label="Discard Reason" required="true" value ="{!v.discardMessage}" type="text" />
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Discard Journal" onclick="{! c.validateDiscardJournal }"/>
+            <lightning:button variant="brand" label="Cancel" onclick="{! c.redirectToView }"/>
+        </div> 
+    </div> 
+    
+</aura:component>

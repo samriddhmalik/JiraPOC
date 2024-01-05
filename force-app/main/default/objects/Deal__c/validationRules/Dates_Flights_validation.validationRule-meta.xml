@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dates_Flights_validation</fullName>
+    <active>false</active>
+    <description>If the dates flights field has been selected as &quot;Dates/International Flights&quot;, the &quot;Primary Inboard departure airport&quot; and &quot;Primary outbound arrival airport&quot; fields are mandatory.</description>
+    <errorConditionFormula>AND( ISPICKVAL( Dates_Flights__c , &apos;Dates/International Flights&apos;) , OR( Primary_inbound_departure_airport__c =&apos;&apos;,  Primary_outbound_arrival_airport__c =&apos;&apos;) )</errorConditionFormula>
+    <errorDisplayField>Additional_Charges__c</errorDisplayField>
+    <errorMessage>If the dates flights field has been selected as &quot;Dates/International Flights&quot;, the &quot;Primary Inboard departure airport&quot; and &quot;Primary outbound arrival airport&quot; fields are mandatory.</errorMessage>
+</ValidationRule>

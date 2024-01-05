@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1636</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>full_name_purchaser__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>qty__c</columns>
+    <columns>created_date__c</columns>
+    <columns>Sale_Value__c</columns>
+    <columns>Merchant_Booking_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_IDTC__c</field>
+        <operation>equals</operation>
+        <value>1636</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,Ready For Export,Exported</value>
+    </filters>
+    <label>1636 Star</label>
+    <sharedTo>
+        <group>Stay_BDM</group>
+        <portalRole>TheGrandApartmentsCustomerUser</portalRole>
+    </sharedTo>
+</ListView>

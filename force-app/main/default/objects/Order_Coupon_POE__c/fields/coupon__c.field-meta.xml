@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>coupon__c</fullName>
+    <externalId>false</externalId>
+    <label>Coupon</label>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <errorMessage>Coupon Status - Value does not exist or does not match filter criteria.</errorMessage>
+        <filterItems>
+            <field>coupon__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Enabled</value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Is_Migrated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>coupon__c</referenceTo>
+    <relationshipLabel>Orders Coupons</relationshipLabel>
+    <relationshipName>Orders_Coupons_POE</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

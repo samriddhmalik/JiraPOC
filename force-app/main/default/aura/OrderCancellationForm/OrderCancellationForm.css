@@ -1,0 +1,8 @@
+.THIS .nolabel .slds-form-element__label{
+    display: none; 
+    visibility: hidden;
+}
+
+.THIS .centeredAlign {
+    margin-right:8px;
+}

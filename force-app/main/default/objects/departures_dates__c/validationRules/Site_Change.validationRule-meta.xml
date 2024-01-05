@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Change</fullName>
+    <active>true</active>
+    <description>This rule prevents Site change if Total Hold or Sold &gt; 0</description>
+    <errorConditionFormula>AND(
+OR( Total_Sold_Hold_POE__c &gt;0),
+ISCHANGED( site__c )
+)</errorConditionFormula>
+    <errorDisplayField>site__c</errorDisplayField>
+    <errorMessage>You cannot change the SITE/S as there are CONFIRMED or ON HOLD orders linked to this departure date. Please create a new departure date instead.</errorMessage>
+</ValidationRule>

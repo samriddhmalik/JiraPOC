@@ -1,0 +1,14 @@
+.THIS .data-column {
+   white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+                
+.THIS .toggle {
+    width: 0px;
+  	transition: width 1s;
+}
+                
+.THIS .layoutWidth {
+  width:520px;
+  transition: width 1s;
+}

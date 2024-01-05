@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Itinerary__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(MID(Product_Question_Answer__c, 1, 1) = &quot;3&quot;, &quot;3-Excellent&quot;,
+IF(MID(Product_Question_Answer__c, 1, 1) = &quot;2&quot;, &quot;2-Satisfied&quot;,
+IF(MID(Product_Question_Answer__c, 1, 1) = &quot;1&quot;, &quot;1-Poor&quot;, 
+&quot;0-No Answer&quot;)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Itinerary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

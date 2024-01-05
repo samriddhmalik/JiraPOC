@@ -1,0 +1,102 @@
+<aura:component controller="editTadOrderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    <aura:attribute name="editChangeType" type="string" default=""/>
+    <aura:attribute name="tadOrderData" type="TAD_Order__c"/>
+    <aura:attribute name="proceedCheck" type="String"/>
+    <aura:attribute name="proceedCheckOli" type="Boolean"/>
+    <aura:attribute name="changeStatus" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 95rem !important;
+        width:95% !important;
+        }
+        .modal-body{ 
+        height : 85vh !important; 
+        max-height: 85vh !important; 
+        } 
+        .closeIcon {
+        display:none !important;
+        }
+    </aura:html>
+    
+    <div class="slds-theme_default">
+        
+        <div class="modal-header slds-modal__header slds-size_1-of-1">
+            <h4 class="title slds-text-heading--medium">Edit Order</h4>
+        </div>
+        
+        <br></br>
+        
+        <aura:if isTrue="{!equals(v.proceedCheck, 'NoProceed')}">
+            <br></br>
+            <br></br>
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>You can't edit the Order.</b></div>
+            <br></br>
+            <br></br>
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopup }"/>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.proceedCheckOli, false)}">
+            <br></br>
+            <br></br>
+            <div  align="center" style="font-size: 20px" class="slds-text"><b>You can't edit the Order. No Active OLI.</b></div>
+            <br></br>
+            <br></br>
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopup }"/>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.proceedCheckOli, true)}">  
+            
+                
+                <lightning:select label="Select an Action" aura:id="orderRecordType" value ="{!v.editChangeType}">
+                    <aura:if isTrue="{!or(equals(v.proceedCheck, 'Blank'),equals(v.proceedCheck, 'Booked'))}">
+                    <option value="" text="--- NONE ---"/> 
+                    <aura:if isTrue="{!equals(v.proceedCheck, 'Blank')}">  
+                        <option value="dateChange" text="Departure Date Change"/>
+                    </aura:if>  
+                    <option value="cityChange" text="Departure City Change"/>
+                    </aura:if>
+                    <aura:if isTrue="{!equals(v.changeStatus,true)}">
+                    <option value="putOntempHold" text="Put order on Temporary Hold"/>
+                    </aura:if>
+                </lightning:select>
+                <br></br>
+                
+                <aura:if isTrue="{!equals(v.editChangeType, 'dateChange')}">
+                    <c:departureDateChangeComponent recordId="{!v.recordId}"/>   
+                </aura:if>
+            
+            
+            <aura:if isTrue="{!equals(v.editChangeType, 'cityChange')}">
+                <c:departureCityChange recordId="{!v.recordId}"/>   
+            </aura:if> 
+            <aura:if isTrue="{!equals(v.editChangeType, 'putOntempHold')}">
+                <br></br><br></br><br></br><br></br>
+                <div class="slds-text-align--center" style="font-size: 20px">Change Order Status To Temporary Hold? </div>
+                <br></br><br></br>
+                
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Yes" title="Yes" onclick="{! c.temOrdStatusCntrl }"/>
+                    
+                    
+                    
+                    <lightning:button variant="neutral" label="No" title="No" onclick="{! c.closePopup }"/>
+                </div>
+            </aura:if> 
+            
+            <aura:if isTrue="{!and(equals(v.editChangeType, ''),not(equals(v.proceedCheck, 'NoProceed')))}">
+                <br></br>
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopup }"/>
+                </div>
+            </aura:if>  
+        </aura:if>
+    </div>
+    
+</aura:component>

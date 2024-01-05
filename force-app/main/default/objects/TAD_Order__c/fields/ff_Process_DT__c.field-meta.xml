@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ff_Process_DT__c</fullName>
+    <externalId>false</externalId>
+    <formula>and( Or( text(ordexp_master_status__c) = &quot;Secured&quot;, text(ordexp_master_status__c) = &quot;Cancelled&quot; ), ordexp_amount_outstanding__c &lt;= 0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Process DT</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

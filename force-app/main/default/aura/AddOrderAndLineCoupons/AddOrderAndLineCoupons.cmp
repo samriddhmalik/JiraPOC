@@ -1,0 +1,652 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,lightning:actionOverride,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AddOrderAndLineCouponController" >
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+    
+    <aura:attribute name="hideThisForConversion" type="Boolean" default="false" />
+    <aura:attribute name="hideDiscoundPercentage" type="Boolean" default="false" /><!--PSAG - 255 -->
+    <aura:attribute name="discoundPercentage" type="Decimal" default="false" /><!--PSAG - 255 -->
+    <aura:attribute name="showConversionMessage" type="Boolean" default="false" />
+    <aura:attribute name="isModalOpen" type="Boolean" default="false" />  
+    <aura:attribute name="orderRecordType" type="String"/>
+    <aura:attribute name="showCouponInformation" type="Boolean" default="true" />  
+    <aura:attribute name="test1" type="Boolean" default="true" />  
+    <aura:attribute name="test2" type="Boolean" default="false" />
+    <aura:attribute name="showButton" type="Boolean" default="false" />
+    <aura:attribute name="openCouponformfromHotel" type="Boolean" default="false" />
+    <aura:attribute name="recordTypeChecking" type="Boolean" default="false" />
+    
+    <aura:attribute name="selectedOli" type="String"/>
+    <aura:attribute name="lstOfOli" type="order_line_item__c" default="[]" />
+    <aura:attribute name="selectedCoupon" type="coupon__c"/>
+    <aura:attribute name="coupounAppValue" type="String" default=""/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="couponAmount" type="Decimal"/>
+    <aura:attribute name="orderDetails" type="TAD_Order__c"/>
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="validation" type="String" default="process"/>
+    <aura:attribute name="openCouponform" type="Boolean" default="false" />
+    
+    <aura:attribute name="tadorderid" type="String"/>
+    <aura:attribute name="iscase" type="Boolean" default="false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="sourceObject" type="String"/>
+    <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    <aura:attribute name="btnlabel" type="String" default="Cancel"/>
+    
+    <force:recordData aura:id="recordLoader"
+                      fields="ordexp_amount_outstanding__c,ordexp_gross_amount__c"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.orderDetails}"
+                      />
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:85% !important;
+        }
+        
+    </aura:html>
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    
+    <aura:if isTrue="{!equals(v.openCouponform, false)}">
+        <aura:if isTrue="{!equals(v.validation, 'process')}">
+            <div class="slds-modal__container " style="width:100%;">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading--medium">Validating Please Wait..</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                    <div class="slds-spinner_container">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--small" role="alert">
+                            <span class="slds-assistive-text">Validating...</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.validation, 'failed')}">
+            <div class="slds-align_absolute-center">
+                <lightning:icon iconName="action:close" alternativeText="Validation Failed"/>
+                <br></br>
+                <div aura:id="addOnModel" class="slds-text-heading_medium slds-align_absolute-center slds-hide">One or more Passengers can't be a part of twin share Add-ON.</div>
+                <br></br>
+                <div aura:id="oilModel" class="slds-text-heading_medium slds-align_absolute-center slds-hide">There is an error with the twin and solo pricing on one or more of the Order Line Items. Check this and try again</div> 
+                <br></br>
+                
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closePopup}" />
+            </div>
+        </aura:if> 
+        
+        <aura:if isTrue="{!equals(v.validation, 'success')}">
+            <div class="slds-align_absolute-center">
+                <lightning:icon iconName="action:approval" alternativeText="Validation Successful"/>
+            </div>
+            <br></br>
+            <br></br>
+            <div class="slds-text-heading_medium slds-align_absolute-center">Validation Successful.</div>
+            <br></br>
+            <br></br>
+            <div class="slds-align_absolute-center">
+                <lightning:button variant="brand" label="Proceed to Apply Coupon" onclick="{! c.openapplycouponform}" />
+            </div>
+        </aura:if>
+    </aura:if>
+    
+    <aura:if isTrue="{!equals(v.openCouponform, true)}">
+        <aura:if isTrue="{!equals(v.openCouponformfromHotel, true)}">
+            <aura:if isTrue="{!greaterthan(v.orderDetails.ordexp_amount_outstanding__c, 0)}">
+                <lightning:layout multipleRows="true"  >
+                    
+                    <lightning:layoutItem flexibility="auto" padding="around-small" size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+                        <div class="slds-text-heading_medium slds-box slds-theme_shade" align="center"> ADD COUPON </div>
+                    </lightning:layoutItem>
+                    
+                    
+                    <lightning:layoutItem  size="12"  padding="around-small">
+                        
+                        <div aura:id="inputPill" class="slds-pill-container slds-hide">
+                            <lightning:pill class="pillSize" label="{!v.selectedCoupon.Name__c}" name="{!v.selectedCoupon.Name__c}" onremove="{! c.clear }">
+                            </lightning:pill>
+                        </div>
+                        
+                        <div aura:id="inputField" class="slds-show">
+                            <ui:inputText label="Coupons" required="true" aura:id="coupSearch" placeholder="Enter Coupon Code"/>
+                            <lightning:button class="slds-show slds-align_absolute-left" aura:id="addCoupoun" variant="brand" label="Apply Coupon" onclick="{!c.searchCoupon}" />
+                        </div>   
+                        
+                    </lightning:layoutItem>
+                    <aura:if isTrue="{!v.showCouponInformation}">
+                        
+                        
+                        <lightning:layoutItem size="12"  padding="around-small" class="slds-hide slds-box"  aura:id="couponInfo">
+                            <aura:if isTrue="{!v.test1}">
+                                <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                    Coupon Information
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                        <lightning:outputField fieldName="Usage__c" />
+                                        <div class="slds-border_top"></div>
+                                    </aura:renderIf>
+                                    
+                                    <lightning:outputField fieldName="Discount__c" />
+                                    <div class="slds-border_top"></div>
+                                    
+                                    <div class="slds-border_top"></div>
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                        <lightning:outputField fieldName="aggregate_used__c" />
+                                        <div class="slds-border_top"></div>
+                                        <lightning:outputField fieldName="balance_remaining__c" />
+                                        <div class="slds-border_top"></div>
+                                        <aura:set attribute="else">
+                                            <lightning:outputField fieldName="Status__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Expiry_Date__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usage_count__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usable_count__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:set>
+                                    </aura:renderIf>
+                                </lightning:recordViewForm>   </aura:if>
+                            <aura:if isTrue="{!v.test2}">
+                                <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                    Coupon Information
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                        <lightning:outputField fieldName="Usage__c" />
+                                        <div class="slds-border_top"></div>
+                                    </aura:renderIf>
+                                    
+                                    <lightning:outputField fieldName="Discount__c" />
+                                    <div class="slds-border_top"></div>
+                                    
+                                    <div class="slds-border_top"></div>
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                        <lightning:outputField fieldName="aggregate_used__c" />
+                                        <div class="slds-border_top"></div>
+                                        <lightning:outputField fieldName="balance_remaining__c" />
+                                        <div class="slds-border_top"></div>
+                                        <aura:set attribute="else">
+                                            <lightning:outputField fieldName="Status__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Expiry_Date__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usage_count__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usable_count__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:set>
+                                    </aura:renderIf>
+                                </lightning:recordViewForm>
+                            </aura:if>
+                            
+                            
+                        </lightning:layoutItem>
+                    </aura:if>
+                    
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <aura:if isTrue="{!v.showConversionMessage}">
+                        <div class="slds-align_absolute-center" style="height:5rem">
+                            <b>This current coupon you are trying to apply is in NZD. Do you wish to convert this coupon into AUD ?</b>
+                        </div>
+                    </aura:if>
+                    <lightning:layoutItem size="12"  padding="around-small">
+                        
+                        <aura:if isTrue="{!v.hideThisForConversion}">
+                            <div class="slds-box slds-hide slds-col slds-size_1-of-1 slds-m-top_x-small"  aura:id="couponDetails" >
+                                
+                                <lightning:radioGroup name="radioGroup"
+                                                      label="Where do you want to apply this Coupon?"
+                                                      options="{! v.options }"
+                                                      value="{! v.coupounAppValue }"
+                                                      type="radio" class="customRadioCls"  onchange="{! c.showOrderLineList }"/>
+                                
+                                
+                                <div aura:id="newCoupon">
+                                    
+                                    <lightning:layoutItem>
+                                        <div class="slds-hide" aura:id="TAD">
+                                            <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="TAD_Order__c">
+                                                <lightning:outputField fieldName="ordexp_amount_outstanding__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="ordexp_master_status__c" />
+                                                <div class="slds-border_top"></div>
+                                            </lightning:recordViewForm>
+                                        </div>
+                                        <div class="slds-hide" aura:id="OLI">
+                                            <lightning:recordViewForm recordId="{!v.selectedOli}" objectApiName="order_line_item__c">
+                                                <label class="slds-form-element__label" for="form-element-01">Total Amount Outstanding</label> 
+                                                <lightning:outputField  variant="label-hidden" fieldName="orderxp_total_amount__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="OLI_Status__c" />
+                                                <div class="slds-border_top"></div>
+                                            </lightning:recordViewForm>
+                                        </div>
+                                        <div class="slds-hide slds-col slds-size_1-of-2" aura:id="Amount">
+                                            <lightning:input type="number" label = "Enter the coupon amount to be applied" value="{!v.couponAmount}" disabled="{!v.hideDiscoundPercentage}"/>
+                                        </div>
+                                    </lightning:layoutItem></div>
+                            </div>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <br/>
+                <div class="slds-grid ">
+                    <div class="slds-align_absolute-center">
+                        <aura:if isTrue="{!v.showConversionMessage}">
+                            <lightning:button aura:id="saveButton" variant="brand" label="Convert Coupon" onclick="{! c.convertCoupon }" />
+                        </aura:if>
+                        <aura:if isTrue="{!v.showButton}">
+                            
+                            <lightning:button class="slds-show slds-align_absolute-right" aura:id="saveButton" variant="brand" label="Apply Coupon" onclick="{! c.saveClick }" />
+                        </aura:if>
+                        <lightning:button class="slds-show slds-align_absolute-left" aura:id="cancelButton" variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}" />
+                    </div>  
+                    <aura:if isTrue="{! v.loaded }">
+                        <aura:set attribute="else">
+                            <lightning:spinner alternativeText="Loading" />
+                        </aura:set>
+                    </aura:if>
+                </div> 
+            </aura:if>
+            <aura:if isTrue="{!not(greaterthan(v.orderDetails.ordexp_amount_outstanding__c, 0))}">
+                <lightning:layout multipleRows="true"  >
+                    
+                    <lightning:layoutItem flexibility="auto" padding="around-small" size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+                        <div class="slds-text-heading_medium slds-box slds-theme_shade" align="center"> ADD COUPON </div>
+                    </lightning:layoutItem>
+                    
+                    
+                    <lightning:layoutItem  size="12"  padding="around-small">
+                        
+                        <div aura:id="inputPill" class="slds-pill-container slds-hide">
+                            <lightning:pill class="pillSize" label="{!v.selectedCoupon.Name__c}" name="{!v.selectedCoupon.Name__c}" onremove="{! c.clear }">
+                            </lightning:pill>
+                        </div>
+                        
+                        <div aura:id="inputField" class="slds-show">
+                            <ui:inputText label="Coupons" required="true" aura:id="coupSearch" placeholder="Enter Coupon Code"/>
+                            <lightning:button class="slds-show slds-align_absolute-left" aura:id="addCoupoun" variant="brand" label="Apply Coupon" onclick="{!c.searchCoupon}" />
+                        </div>   
+                        
+                    </lightning:layoutItem>
+                    <aura:if isTrue="{!v.showCouponInformation}">
+                        
+                        
+                        <lightning:layoutItem size="12"  padding="around-small" class="slds-hide slds-box"  aura:id="couponInfo">
+                            <aura:if isTrue="{!v.test1}">
+                                <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                    Coupon Information
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                        <lightning:outputField fieldName="Usage__c" />
+                                        <div class="slds-border_top"></div>
+                                    </aura:renderIf>
+                                    
+                                    <lightning:outputField fieldName="Discount__c" />
+                                    <div class="slds-border_top"></div>
+                                    
+                                    <div class="slds-border_top"></div>
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                        <lightning:outputField fieldName="aggregate_used__c" />
+                                        <div class="slds-border_top"></div>
+                                        <lightning:outputField fieldName="balance_remaining__c" />
+                                        <div class="slds-border_top"></div>
+                                        <aura:set attribute="else">
+                                            <lightning:outputField fieldName="Status__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Expiry_Date__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usage_count__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usable_count__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:set>
+                                    </aura:renderIf>
+                                </lightning:recordViewForm>   </aura:if>
+                            <aura:if isTrue="{!v.test2}">
+                                <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                    Coupon Information
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                        <lightning:outputField fieldName="Usage__c" />
+                                        <div class="slds-border_top"></div>
+                                    </aura:renderIf>
+                                    
+                                    <lightning:outputField fieldName="Discount__c" />
+                                    <div class="slds-border_top"></div>
+                                    
+                                    <div class="slds-border_top"></div>
+                                    <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                        <lightning:outputField fieldName="aggregate_used__c" />
+                                        <div class="slds-border_top"></div>
+                                        <lightning:outputField fieldName="balance_remaining__c" />
+                                        <div class="slds-border_top"></div>
+                                        <aura:set attribute="else">
+                                            <lightning:outputField fieldName="Status__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Expiry_Date__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usage_count__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="usable_count__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:set>
+                                    </aura:renderIf>
+                                </lightning:recordViewForm>
+                            </aura:if>
+                            
+                            
+                        </lightning:layoutItem>
+                    </aura:if>
+                    
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <aura:if isTrue="{!v.showConversionMessage}">
+                        <div class="slds-align_absolute-center" style="height:5rem">
+                            <b>This current coupon you are trying to apply is in NZD. Do you wish to convert this coupon into AUD ?</b>
+                        </div>
+                    </aura:if>
+                    <lightning:layoutItem size="12"  padding="around-small">
+                        
+                        <aura:if isTrue="{!v.hideThisForConversion}">
+                            <div class="slds-box slds-hide slds-col slds-size_1-of-1 slds-m-top_x-small"  aura:id="couponDetails" >
+                                
+                                <lightning:radioGroup name="radioGroup"
+                                                      label="Where do you want to apply this Coupon?"
+                                                      options="{! v.options }"
+                                                      value="{! v.coupounAppValue }"
+                                                      type="radio" class="customRadioCls"  onchange="{! c.showOrderLineList }"/>
+                                
+                                
+                                <div aura:id="newCoupon">
+                                    
+                                    <lightning:layoutItem>
+                                        <div class="slds-hide" aura:id="TAD">
+                                            <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="TAD_Order__c">
+                                                <lightning:outputField fieldName="ordexp_amount_outstanding__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="ordexp_master_status__c" />
+                                                <div class="slds-border_top"></div>
+                                            </lightning:recordViewForm>
+                                        </div>
+                                        <div class="slds-hide" aura:id="OLI">
+                                            <lightning:recordViewForm recordId="{!v.selectedOli}" objectApiName="order_line_item__c">
+                                                <label class="slds-form-element__label" for="form-element-01">Total Amount Outstanding</label> 
+                                                <lightning:outputField  variant="label-hidden" fieldName="orderxp_total_amount__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="OLI_Status__c" />
+                                                <div class="slds-border_top"></div>
+                                            </lightning:recordViewForm>
+                                        </div>
+                                        <div class="slds-hide slds-col slds-size_1-of-2" aura:id="Amount">
+                                            <lightning:input type="number" label = "Enter the coupon amount to be applied" value="{!v.couponAmount}" disabled="{!v.hideDiscoundPercentage}"/>
+                                        </div>
+                                    </lightning:layoutItem></div>
+                            </div>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <br/>
+                <div class="slds-grid ">
+                    <div class="slds-align_absolute-center">
+                        <aura:if isTrue="{!v.showConversionMessage}">
+                            <lightning:button aura:id="saveButton" variant="brand" label="Convert Coupon" onclick="{! c.convertCoupon }" />
+                        </aura:if>
+                        <aura:if isTrue="{!v.showButton}">
+                            
+                            <lightning:button class="slds-show slds-align_absolute-right" aura:id="saveButton" variant="brand" label="Apply Coupon" onclick="{! c.saveClick }" />
+                        </aura:if>
+                        <lightning:button class="slds-show slds-align_absolute-left" aura:id="cancelButton" variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}" />
+                    </div>  
+                    <aura:if isTrue="{! v.loaded }">
+                        <aura:set attribute="else">
+                            <lightning:spinner alternativeText="Loading" />
+                        </aura:set>
+                    </aura:if>
+                </div> 
+            </aura:if>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!greaterthan(v.orderDetails.ordexp_amount_outstanding__c, 0)}">
+                    <lightning:layout multipleRows="true"  >
+                        
+                        <lightning:layoutItem flexibility="auto" padding="around-small" size="12" largeDeviceSize="12" mediumDeviceSize="12" smallDeviceSize="12">
+                            <div class="slds-text-heading_medium slds-box slds-theme_shade" align="center"> ADD COUPON </div>
+                        </lightning:layoutItem>
+                        
+                        
+                        <lightning:layoutItem  size="12"  padding="around-small">
+                            
+                            <div aura:id="inputPill" class="slds-pill-container slds-hide">
+                                <lightning:pill class="pillSize" label="{!v.selectedCoupon.Name__c}" name="{!v.selectedCoupon.Name__c}" onremove="{! c.clear }">
+                                </lightning:pill>
+                            </div>
+                            
+                            <div aura:id="inputField" class="slds-show">
+                                <ui:inputText label="Coupons" required="true" aura:id="coupSearch" placeholder="Enter Coupon Code"/>
+                                <lightning:button class="slds-show slds-align_absolute-left" aura:id="addCoupoun" variant="brand" label="Apply Coupon" onclick="{!c.searchCoupon}" />
+                            </div>   
+                            
+                        </lightning:layoutItem>
+                        <aura:if isTrue="{!v.showCouponInformation}">
+                            
+                            
+                            <lightning:layoutItem size="12"  padding="around-small" class="slds-hide slds-box"  aura:id="couponInfo">
+                                <!--  <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                        Coupon Information
+                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                            <lightning:outputField fieldName="Usage__c" />
+                            <div class="slds-border_top"></div>
+                        </aura:renderIf>
+                        
+                        <lightning:outputField fieldName="Discount__c" />
+                        <div class="slds-border_top"></div>
+                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                            <lightning:outputField fieldName="aggregate_used__c" />
+                            <div class="slds-border_top"></div>
+                            <lightning:outputField fieldName="balance_remaining__c" />
+                            <div class="slds-border_top"></div>
+                            <aura:set attribute="else">
+                                <lightning:outputField fieldName="Status__c" />
+                                <div class="slds-border_top"></div>
+                                <lightning:outputField fieldName="Expiry_Date__c" />
+                                <div class="slds-border_top"></div>
+                                <lightning:outputField fieldName="usage_count__c" />
+                                <div class="slds-border_top"></div>
+                                <lightning:outputField fieldName="usable_count__c" />
+                                <div class="slds-border_top"></div>
+                            </aura:set>
+                        </aura:renderIf>
+                    </lightning:recordViewForm> -->
+                                <aura:if isTrue="{!v.test1}">
+                                    <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                        Coupon Information
+                                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                            <lightning:outputField fieldName="Usage__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:renderIf>
+                                        
+                                        <lightning:outputField fieldName="Discount__c" />
+                                        <div class="slds-border_top"></div>
+                                        <!--PSAG - 255 Start-->
+                                        <aura:if isTrue="{!v.hideDiscoundPercentage }">
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Discount_percentage__c"/>
+                                        </aura:if><!--PSAG - 255 Stop-->
+                                        <div class="slds-border_top"></div>
+                                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                            <lightning:outputField fieldName="aggregate_used__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="balance_remaining__c" />
+                                            <div class="slds-border_top"></div>
+                                            <aura:set attribute="else">
+                                                <lightning:outputField fieldName="Status__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="Expiry_Date__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="usage_count__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="usable_count__c" />
+                                                <div class="slds-border_top"></div>
+                                            </aura:set>
+                                        </aura:renderIf>
+                                    </lightning:recordViewForm>   </aura:if>
+                                <aura:if isTrue="{!v.test2}">
+                                    <lightning:recordViewForm recordId="{!v.selectedCoupon.Id}" objectApiName="coupon__c">
+                                        Coupon Information
+                                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c != 'Multi'}">
+                                            <lightning:outputField fieldName="Usage__c" />
+                                            <div class="slds-border_top"></div>
+                                        </aura:renderIf>
+                                        
+                                        <lightning:outputField fieldName="Discount__c" />
+                                        <div class="slds-border_top"></div>
+                                        <!--PSAG - 255 Start-->
+                                        <aura:if isTrue="{!v.hideDiscoundPercentage }">
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="Discount_percentage__c"/>
+                                        </aura:if><!--PSAG - 255 Stop-->
+                                        <div class="slds-border_top"></div>
+                                        <aura:renderIf isTrue="{!v.selectedCoupon.Usage__c == 'Balance'}">
+                                            <lightning:outputField fieldName="aggregate_used__c" />
+                                            <div class="slds-border_top"></div>
+                                            <lightning:outputField fieldName="balance_remaining__c" />
+                                            <div class="slds-border_top"></div>
+                                            <aura:set attribute="else">
+                                                <lightning:outputField fieldName="Status__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="Expiry_Date__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="usage_count__c" />
+                                                <div class="slds-border_top"></div>
+                                                <lightning:outputField fieldName="usable_count__c" />
+                                                <div class="slds-border_top"></div>
+                                            </aura:set>
+                                        </aura:renderIf>
+                                    </lightning:recordViewForm>
+                                </aura:if>
+                                
+                                
+                            </lightning:layoutItem>
+                        </aura:if>
+                        
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <aura:if isTrue="{!v.showConversionMessage}">
+                            <div class="slds-align_absolute-center" style="height:5rem">
+                                <b>This current coupon you are trying to apply is in NZD. Do you wish to convert this coupon into AUD ?</b>
+                            </div>
+                        </aura:if>
+                        <lightning:layoutItem size="12"  padding="around-small">
+                            
+                            <aura:if isTrue="{!v.hideThisForConversion}">
+                                <div class="slds-box slds-hide slds-col slds-size_1-of-1 slds-m-top_x-small"  aura:id="couponDetails" >
+                                    
+                                    <lightning:radioGroup name="radioGroup"
+                                                          label="Where do you want to apply this Coupon?"
+                                                          options="{! v.options }"
+                                                          value="{! v.coupounAppValue }"
+                                                          type="radio" class="customRadioCls"  onchange="{! c.showOrderLineList }"/>
+                                    
+                                    
+                                    <div aura:id="newCoupon">
+                                        <!-- <lightning:select aura:id="selectOli" name="selectOli" label="Select an Order Line Item" value="{!v.selectedOli}" onchange="{!c.enableDisableButton }">
+                                    <option value="">choose one...</option>
+                                    <aura:iteration items="{!v.lstOfOli}" var="oli">
+                                        <option value="{!oli.Id}" >{!oli.Name}  {!oli.Departure_cities__r.Name} </option>
+                                    </aura:iteration>
+                                </lightning:select> -->
+                                        <lightning:layoutItem>
+                                            <div class="slds-hide" aura:id="TAD">
+                                                <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="TAD_Order__c">
+                                                    <lightning:outputField fieldName="ordexp_amount_outstanding__c" />
+                                                    <div class="slds-border_top"></div>
+                                                    <lightning:outputField fieldName="ordexp_master_status__c" />
+                                                    <div class="slds-border_top"></div>
+                                                </lightning:recordViewForm>
+                                            </div>
+                                            <div class="slds-hide" aura:id="OLI">
+                                                <lightning:recordViewForm recordId="{!v.selectedOli}" objectApiName="order_line_item__c">
+                                                    <label class="slds-form-element__label" for="form-element-01">Total Amount Outstanding</label> 
+                                                    <lightning:outputField  variant="label-hidden" fieldName="orderxp_total_amount__c" />
+                                                    <div class="slds-border_top"></div>
+                                                    <lightning:outputField fieldName="OLI_Status__c" />
+                                                    <div class="slds-border_top"></div>
+                                                </lightning:recordViewForm>
+                                            </div>
+                                            <div class="slds-hide slds-col slds-size_1-of-2" aura:id="Amount">
+                                                <lightning:input type="number" label = "Enter the coupon amount to be applied" value="{!v.couponAmount}" disabled="{!v.hideDiscoundPercentage}"/>
+                                            </div>
+                                        </lightning:layoutItem></div>
+                                </div>
+                            </aura:if>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <br/>
+                    <div class="slds-grid ">
+                        <div class="slds-align_absolute-center">
+                            <aura:if isTrue="{!v.showConversionMessage}">
+                                <lightning:button aura:id="saveButton" variant="brand" label="Convert Coupon" onclick="{! c.convertCoupon }" />
+                            </aura:if>
+                            <aura:if isTrue="{!v.showButton}">
+                                
+                                <lightning:button class="slds-show slds-align_absolute-right" aura:id="saveButton" variant="brand" label="Apply Coupon" onclick="{! c.saveClick }" />
+                            </aura:if>
+                            <lightning:button class="slds-show slds-align_absolute-left" aura:id="cancelButton" variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}" />
+                        </div>  
+                        <aura:if isTrue="{! v.loaded }">
+                            <aura:set attribute="else">
+                                <lightning:spinner alternativeText="Loading" />
+                            </aura:set>
+                        </aura:if>
+                    </div> 
+                </aura:if>
+                <aura:if isTrue="{!not(greaterthan(v.orderDetails.ordexp_amount_outstanding__c, 0))}">
+                    <br></br>
+                    <br></br>
+                    <div  align="center" style="font-size: 20px" class="slds-text"><b>
+                        Their is no Outstanding Amount hence No Coupon need to be applied.</b>
+                    </div>
+                </aura:if>
+            </aura:set>
+        </aura:if>
+    </aura:if> 
+    
+    <aura:if isTrue="{!v.isModalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Coupon Conversion Confirmation</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-align_absolute-center"><b>Your current NZD Coupon will be converted to AUD. Your current balance of NZD ${!v.selectedCoupon.balance_remaining__c} will be converted to AUD ${!v.selectedCoupon.NZD_Conversion_Amount__c}.</b></div>
+                    <br></br>
+                    <br></br>
+                    <div class="slds-align_absolute-center"><b>Are you happy to proceed?</b></div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral"
+                                      label="No"
+                                      title="No"
+                                      onclick="{! c.closeModel }"/>
+                    <lightning:button variant="brand"
+                                      label="Yes"
+                                      title="Yes"
+                                      onclick="{!c.doFinalConversion}"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

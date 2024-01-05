@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Channels</fullName>
+    <columns>NAME</columns>
+    <columns>marketing_channel__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>marketing_channel__c</field>
+        <operation>equals</operation>
+        <value>Roadshow</value>
+    </filters>
+    <label>Marketing Channels</label>
+    <sharedTo>
+        <role>Marketing_Manager</role>
+    </sharedTo>
+</ListView>

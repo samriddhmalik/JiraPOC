@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Options__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Note :-  For Stay type Orders, change to Sub-Option will be applied to all the OLIs of this Order</inlineHelpText>
+    <label>Sub Options</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>sub_options__c.options__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ordexp_Options__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>sub_options__c</referenceTo>
+    <relationshipLabel>Order Line Items</relationshipLabel>
+    <relationshipName>Order_Line_Items</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<apex:page standardController="Marketing_Spend__c">
+
+
+<apex:pageBlock rendered="{!Marketing_Spend__c.JV__c}">
+<apex:iframe src="https://tripadeal.au.looker.com/embed/dashboards/30?Y%20Value=>%3D{!Marketing_Spend__c.X_Value__c}&Date=after%20{!Marketing_Spend__c.Book_By__c}&NonRevShareWindow=before%20{!Marketing_Spend__c.NonRevShareWindow__c}"
+  width="1200px" height="1200px" id="account_app_usage" scrolling="true"/>   
+ 
+</apex:pageBlock>
+<apex:pageBlock rendered="{!Marketing_Spend__c.Not_RevShare__c}">
+<apex:iframe src="https://tripadeal.au.looker.com/embed/dashboards/30?Y%20Value=>%3D{!Marketing_Spend__c.X_Value__c}&Date=after%20{!Marketing_Spend__c.Book_By__c}&RevShareWindow=before%20{!Marketing_Spend__c.RevShareWindow__c}"
+  width="1200px" height="1200px" id="account_app_usage" scrolling="true"/>   
+ 
+</apex:pageBlock>
+
+  
+  
+   
+</apex:page>

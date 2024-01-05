@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Coupon_Comms__c</fullName>
+    <externalId>false</externalId>
+    <label>Send Coupon Comms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Expiry Date only</fullName>
+                <default>false</default>
+                <label>Expiry Date only</label>
+            </value>
+            <value>
+                <fullName>Book By &amp; Travel By</fullName>
+                <default>false</default>
+                <label>Book By &amp; Travel By</label>
+            </value>
+            <value>
+                <fullName>Sent - Expiry Date only</fullName>
+                <default>false</default>
+                <label>Sent - Expiry Date only</label>
+            </value>
+            <value>
+                <fullName>Sent - Book By &amp; Travel By</fullName>
+                <default>false</default>
+                <label>Sent - Book By &amp; Travel By</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

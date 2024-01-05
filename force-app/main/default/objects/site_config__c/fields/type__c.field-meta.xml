@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>type__c</fullName>
+    <externalId>false</externalId>
+    <label>type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>home</fullName>
+                <default>false</default>
+                <label>home</label>
+            </value>
+            <value>
+                <fullName>stay</fullName>
+                <default>false</default>
+                <label>stay</label>
+            </value>
+            <value>
+                <fullName>travel</fullName>
+                <default>false</default>
+                <label>travel</label>
+            </value>
+            <value>
+                <fullName>cruise</fullName>
+                <default>false</default>
+                <label>cruise</label>
+            </value>
+            <value>
+                <fullName>campaign</fullName>
+                <default>false</default>
+                <label>campaign</label>
+            </value>
+            <value>
+                <fullName>home hero</fullName>
+                <default>false</default>
+                <label>home hero</label>
+            </value>
+            <value>
+                <fullName>site wide</fullName>
+                <default>false</default>
+                <label>site wide</label>
+            </value>
+            <value>
+                <fullName>competition</fullName>
+                <default>false</default>
+                <label>competition</label>
+            </value>
+            <value>
+                <fullName>experience</fullName>
+                <default>false</default>
+                <label>experience</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

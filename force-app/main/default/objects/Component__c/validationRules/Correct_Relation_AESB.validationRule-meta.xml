@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Relation_AESB</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(TEXT(Component_Type__c) = &quot;AE&quot;, TEXT(Component_Type__c) = &quot;SB&quot;),ISBLANK(AE_SB__c))</errorConditionFormula>
+    <errorDisplayField>AE_SB__c</errorDisplayField>
+    <errorMessage>You can&apos;t relate the Component Type &quot;AE&quot; or &quot;SB&quot; by anything else but an AE/SB.</errorMessage>
+</ValidationRule>

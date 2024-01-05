@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>order_record_type_name__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Record Type Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TAD</fullName>
+                <default>false</default>
+                <label>TAD</label>
+            </value>
+            <value>
+                <fullName>TNZ</fullName>
+                <default>false</default>
+                <label>TNZ</label>
+            </value>
+            <value>
+                <fullName>TC</fullName>
+                <default>false</default>
+                <label>TC</label>
+            </value>
+            <value>
+                <fullName>NRMA</fullName>
+                <default>false</default>
+                <label>NRMA</label>
+            </value>
+            <value>
+                <fullName>WT</fullName>
+                <default>false</default>
+                <label>WT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

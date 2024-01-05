@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terms_and_Conditions_need_to_be_signed</fullName>
+    <active>false</active>
+    <description>AND( 
+Merchant__r.TAD_TCs_Contract_Signed__c = False, 
+ISPICKVAL( Status__c ,&quot;Published&quot;), 
+Override_Publish_Deal_Esign_Requirement__c = False, 
+NOT(OR($Profile.Name = &quot;System Administrator&quot;, 
+$Profile.Name = &quot;TAD Logistics Consultant&quot;)) 
+
+)</description>
+    <errorConditionFormula>AND( 
+Merchant__r.TAD_TCs_Contract_Signed__c = False, 
+ISPICKVAL( Status__c ,&quot;Published&quot;), 
+Override_Publish_Deal_Esign_Requirement__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>We are unable to publish this deal until the partner merchant signs our general Terms and conditions.
+Chris, Rich or Norm can over ride this</errorMessage>
+</ValidationRule>

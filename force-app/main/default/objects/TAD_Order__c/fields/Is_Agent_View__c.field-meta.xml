@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Agent_View__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(((ordexp_is_web_order__c=true &amp;&amp; CreatedBy.LastName &lt;&gt; &apos;TripADeal&apos;) ||( ordexp_is_web_order__c = true &amp;&amp; (CreatedBy.LastName == &apos;TripADeal&apos; &amp;&amp;   Is_Web_Agent_Available__c =true)) ) , true, false)</formula>
+    <label>Is Agent View</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

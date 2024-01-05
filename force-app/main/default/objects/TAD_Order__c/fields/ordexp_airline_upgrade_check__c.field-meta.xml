@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_airline_upgrade_check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>PBP-69 - Changes/Additions Required - AddOnTriggerHandler
+If Airline Upgrade record type of AddOns are added to a TAD Order then please check this check box on the related TAD Order. And conversely if all Airline Upgrade record type of AddOns is deleted/cancelled please uncheck this field.</description>
+    <externalId>false</externalId>
+    <label>Airline Upgrade Check</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

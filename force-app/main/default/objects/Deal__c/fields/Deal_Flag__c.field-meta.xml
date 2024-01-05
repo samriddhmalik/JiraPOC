@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Flag__c</fullName>
+    <externalId>false</externalId>
+    <label>Deal Flag</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NRL</fullName>
+                <default>false</default>
+                <label>NRL</label>
+            </value>
+            <value>
+                <fullName>NBA</fullName>
+                <default>false</default>
+                <label>NBA</label>
+            </value>
+            <value>
+                <fullName>BBL</fullName>
+                <default>false</default>
+                <label>BBL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

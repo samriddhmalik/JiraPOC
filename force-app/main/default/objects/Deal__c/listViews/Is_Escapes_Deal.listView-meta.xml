@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Escapes_Deal</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>deal_type__c</columns>
+    <columns>Dates_Flights__c</columns>
+    <columns>UJ_Portal_Access__c</columns>
+    <columns>Flights_Ticketed_by_UJ__c</columns>
+    <columns>Is_PAF_flights__c</columns>
+    <columns>Ticketing_Consultant__c</columns>
+    <columns>Is_Escapes__c</columns>
+    <columns>show_as_escape__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Is_Escapes__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>show_as_escape__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Is Escapes Deal</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

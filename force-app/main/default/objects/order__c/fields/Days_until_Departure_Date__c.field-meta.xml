@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_until_Departure_Date__c</fullName>
+    <description>To count days left until DD</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(pre_tour_stopover__c)),
+    departure_date__c - Sub_Stop_over_nights_date__c,
+    IF(
+        AND(
+            NOT(ISBLANK(AE_Nights__c)),
+            AE_Nights__c &gt; 0
+        ),
+        True_departure_date_from_AE_nights__c -TODAY(),
+        departure_date__c -  TODAY()
+    )
+)
+- IF(day_zero_departure__c, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days until Departure Date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

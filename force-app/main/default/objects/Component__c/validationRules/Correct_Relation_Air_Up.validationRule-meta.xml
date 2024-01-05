@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Relation_Air_Up</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(Component_Type__c) = &quot;Flight Upgrade&quot;, ISBLANK(Airline_Upgrade__c))</errorConditionFormula>
+    <errorDisplayField>Airline_Upgrade__c</errorDisplayField>
+    <errorMessage>You can&apos;t relate the Component Type &quot;Flight Upgrade&quot; by anything else but an Airline Upgrade.</errorMessage>
+</ValidationRule>

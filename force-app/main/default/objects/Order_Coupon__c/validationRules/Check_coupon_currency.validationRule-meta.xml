@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_coupon_currency</fullName>
+    <active>true</active>
+    <description>Compares coupon currency with order record type</description>
+    <errorConditionFormula>OR(
+AND(TEXT( coupon__r.currency_code__c ) = &quot;AUD&quot;,  order__r.RecordType.Name = &quot;TNZ&quot;, order__r.RecordType.Name = &quot;WT&quot;),
+AND(TEXT( coupon__r.currency_code__c ) = &quot;NZD&quot;,  order__r.RecordType.Name &lt;&gt; &quot;TNZ&quot;,order__r.RecordType.Name &lt;&gt; &quot;WT&quot;)
+)</errorConditionFormula>
+    <errorMessage>This coupon is not made in the currency of the order. Update the coupon or use another coupon.</errorMessage>
+</ValidationRule>

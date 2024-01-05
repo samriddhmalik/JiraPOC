@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kate_Check_2</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Deal_for_Reporting__c</columns>
+    <columns>online_status__c</columns>
+    <columns>Minimum__c</columns>
+    <columns>min_numbers_met__c</columns>
+    <columns>Active__c</columns>
+    <columns>recently_expired__c</columns>
+    <columns>Deal_Status__c</columns>
+    <columns>Remaining_Allocation__c</columns>
+    <columns>Deal__c</columns>
+    <columns>options__c</columns>
+    <columns>sub_options__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_for_Reporting__c</field>
+        <operation>equals</operation>
+        <value>4115</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>departures_dates__c.Departure_Date</value>
+    </filters>
+    <label>Kate - Check 2</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

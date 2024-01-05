@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <name>Assigning_the_Saved_Deal_Record_Type_Lead_Source_as_App</name>
+        <label>Assigning the Saved Deal Record Type Lead Source as App</label>
+        <locationX>50</locationX>
+        <locationY>551</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Lead_Source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>App</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>If_the_Saved_Deal_Record_Type_is_App</name>
+        <label>If the Saved Deal Record Type is App</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_the_Record_Type_is_App</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Getting_the_App_RecordType_from_the_Saved_Deal_Object.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assigning_the_Saved_Deal_Record_Type_Lead_Source_as_App</targetReference>
+            </connector>
+            <label>If the Record Type is App</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Auto Assigning Saved Deal Lead Source as APP in Mobile App Wishlist cases {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Assigning Saved Deal Lead Source as APP in Mobile App Wishlist cases</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Getting_the_App_RecordType_from_the_Saved_Deal_Object</name>
+        <label>Getting the App RecordType from the Saved Deal Object</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>If_the_Saved_Deal_Record_Type_is_App</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Saved_Deals__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>App</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Getting_the_App_RecordType_from_the_Saved_Deal_Object</targetReference>
+        </connector>
+        <object>Saved_Deals__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

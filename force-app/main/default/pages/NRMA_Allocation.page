@@ -1,0 +1,5 @@
+<apex:page showHeader="false" title="DisplayImage" sidebar="false">
+
+  <apex:iframe src="/00O0K00000A4wTE"/>  
+
+</apex:page>

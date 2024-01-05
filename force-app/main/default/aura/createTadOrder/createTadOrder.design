@@ -1,0 +1,11 @@
+<design:component>
+    <design:attribute name="AccountId" label="Account Id" description="to store the Account ID"/>
+    <design:attribute name="accountName" label="Account Name" description="to store the Account Name"/>
+    
+    <design:attribute name="tadOrderId" label="TAD Order Id" description="to store the TAD Order ID"/>
+    <design:attribute name="DealId" label="Deal Id" description="to store the Deal of Interest ID"/>
+    <design:attribute name="DealName" label="Deal Name" description="to store the Deal of Interest Name"/>
+    
+    <design:attribute name="sourceObject" label="Source Object" description="To store the Object from where Component is being initiated"/>
+     <design:attribute name="caseID" label="Case" description="To store case Id"/>
+</design:component>

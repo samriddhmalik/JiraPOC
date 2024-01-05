@@ -1,0 +1,41 @@
+<template>
+  <lightning-card
+    style="width: 500px"
+    title="Pax Travelling by Date"
+    icon-name="utility:chart"
+  >
+    <template if:true={chartConfiguartion}>
+      <c-gen_barchart chart-config={chartConfiguartion}></c-gen_barchart>
+    </template>
+    <div slot="footer" class="slds-var-m-vertical_medium">
+      <lightning-layout>
+        <lightning-layout-item>
+          <lightning-button
+            label="Previous"
+            icon-name="utility:chevronleft"
+            onclick={previousHandler}
+            disabled={disablePrevious}
+          >
+          </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow">
+          <p
+            class="slds-text-align_center"
+            style="font-size: 10px; font-weight: normal"
+          >
+            Page {currentPage}/{totalPage}
+          </p>
+        </lightning-layout-item>
+        <lightning-layout-item>
+          <lightning-button
+            label="next"
+            icon-name="utility:chevronright"
+            icon-position="right"
+            onclick={nextHandler}
+            disabled={disableNext}
+          ></lightning-button>
+        </lightning-layout-item>
+      </lightning-layout>
+    </div>
+  </lightning-card>
+</template>

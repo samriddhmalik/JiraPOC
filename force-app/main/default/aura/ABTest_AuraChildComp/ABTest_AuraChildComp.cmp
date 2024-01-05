@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="iframeUrl" type="String"/>
+    <div class="slds-align_absolute-center">
+    <iframe src="{!v.iframeUrl}"
+            width="600px"
+            height="1100px"
+            target="_blank"/>
+    </div>
+    
+</aura:component>

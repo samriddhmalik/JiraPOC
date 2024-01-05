@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="slds-text-heading_large slds-align--absolute-center">Search Bookings</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="center-block slds-p-vertical_large">
+				<c:ordercSearchBar />
+            </div>
+        </div>
+    	<div class="row">
+        	<c:ordercList />
+        </div>
+    </div>
+    
+</aura:component>

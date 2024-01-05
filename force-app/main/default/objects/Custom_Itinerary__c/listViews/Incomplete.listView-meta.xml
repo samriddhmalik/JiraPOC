@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incomplete</fullName>
+    <columns>NAME</columns>
+    <columns>deal__c</columns>
+    <columns>order__c</columns>
+    <columns>comment__c</columns>
+    <columns>itinerary_competed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>itinerary_competed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Incomplete</label>
+</ListView>

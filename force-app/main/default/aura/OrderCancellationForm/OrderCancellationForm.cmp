@@ -1,0 +1,607 @@
+<aura:component controller="orderCancellationFormController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="confirmationScreen" type="Boolean" default="false"/>
+    <aura:attribute name="confirmationScreenDelete" type="Boolean" default="false"/>
+    <aura:attribute name="enableApproval" type="Boolean" default="false"/>
+     <aura:attribute name="creditTypeCancellation" type="Boolean" default="false"/>
+    <aura:attribute name="cancelButtonSelection" type="Decimal"/>
+    
+    <aura:attribute name="minNotMetApprovalState" type="orderCancellationFormController.minNotMetCheckData" default=""/>
+    <aura:attribute name="minNotMetOptions" type="List"/>
+    <aura:attribute name="minNotMetRefundOptions" type="Set"/>
+    
+    <aura:attribute name="cancellationLevel" type="String" default=''/>
+    <aura:attribute name="addOnRefundStatus" type="List"/>
+    <aura:attribute name="addOnRefundReason" type="List"/>
+    <aura:attribute name="refundAmount" type="Decimal" default="0"/>
+    <aura:attribute name="creditAmount" type="Decimal" default="0"/>
+    <aura:attribute name="coupounAmount" type="Decimal" default="0"/>
+    <aura:attribute name="refundAmountApproval" type="Decimal" default="0"/>
+    <aura:attribute name="creditAmountApproval" type="Decimal" default="0"/>
+    <aura:attribute name="coupounAmountApproval" type="Decimal" default="0"/>
+    <aura:attribute name="editableCheckbox" type="Boolean" default="false"/>
+    <aura:attribute name="documentationBox" type="Boolean" default="false"/>
+    <aura:attribute name="documentationReceived" type="Boolean" default="false"/>
+    <aura:attribute name="documentationRequired" type="Boolean" default="false"/>
+    <aura:attribute name="recordsData" type="orderCancellationFormController.recordDataWrapper[]"/>
+    <aura:attribute name="recordsDataAll" type="orderCancellationFormController.recordDataWrapper[]"/>
+    <aura:attribute name="recordsDataDelete" type="orderCancellationFormController.recordDataWrapper[]"/>
+    <aura:attribute name="recordsDataApproval" type="orderCancellationFormController.recordDataWrapper[]"/>
+    <aura:attribute name="recordsDataApprovalHistory" type="List[]"/>
+    <aura:attribute name="validatedForCustomerAccept" type="Boolean" default="false"/>
+    <aura:attribute name="validatedForCustomerAcceptInProgress" type="Boolean" default="false"/>
+    <aura:attribute name="isCustomAccepted" type="Boolean" default="false"/>
+    <aura:attribute name="sendCouponColumnHide" type="Boolean" default="false"/>
+    <aura:attribute name="isCustomAcceptedInProgress" type="Boolean" default="false"/>
+    <aura:attribute name="richtext" type="String"/>
+    <aura:attribute name="oldRefundReason" type="String" default=''/>
+    <aura:attribute name="disableReason" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:85% !important;
+        }
+    </aura:html>
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    
+    <aura:if isTrue="{!equals(v.minNotMetApprovalState, '')}">
+        <div class="exampleHolder">
+            <lightning:spinner alternativeText="Loading" size="medium" />
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.minNotMetApprovalState!=''}">
+        
+        <aura:if isTrue="{!or(equals(v.minNotMetApprovalState.minMetState, 'On Hold'),equals(v.minNotMetApprovalState.minMetState, 'Proceed Cancellation'))}">
+            <br></br>
+            <div  align="center" style="font-size: 15px" class="slds-text"><b>Select records to delete.</b></div>
+            <br></br>
+            <div class="slds-box">
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                    <thead class="header">
+                        <tr class="slds-line-height_reset slds-text-heading_small">
+                            <th scope="col" width="4%"></th>
+                            <th scope="col" width="10%" class="slds-text-align_center"><b>Level</b></th>
+                            <th scope="col" width="21%" class="slds-text-align_center"><b>Name</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Price</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Status</b></th>
+                        </tr>      
+                    </thead> 
+                    
+                    <tbody class="body">
+                        <aura:iteration items="{!v.recordsDataDelete}" var="rd" indexVar="index">
+                            <aura:if isTrue="{!and(equals(rd.oliAddonStatus, 'On Hold'),not(equals(rd.level, 'Customisation')))}">
+                               <!--<tr class="{!equals(rd.level, 'OLI')? 'slds-theme_shade': ''}" >-->
+                              <tr>
+                                    <td scope="row">
+                                        <ui:inputCheckbox aura:id="recordSelected" value="{!rd.check}" change="c.checkChilds1" name="{!index}"/> </td>
+                                    <td scope="row" class="{!and(equals(rd.level, 'AddOn'),equals(v.cancellationLevel, 'OLI'))? 'slds-text-align--right': ''}">{!rd.level}</td>
+                                    <td scope="row">{!rd.name}</td>
+                                    <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.price}</td>
+                                    <td scope="row" class="slds-text-align--center">{!rd.oliAddonStatus}</td>
+                                </tr>
+                            </aura:if>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+                <br></br>
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Submit" onclick="{! c.deleteRecordsConfirmation }"/>
+                </div> 
+            </div> 
+            <br></br>
+            
+            <aura:if isTrue="{!equals(v.confirmationScreenDelete, true)}">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        
+                        <header class="slds-modal__header">
+                            <h2 id="modal-heading-01" class="slds-text-heading_small slds-hyphenate"> Warning! </h2>
+                        </header>
+                        
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            
+                            <div  align="center" style="font-size: 20px" class="slds-text"><b> You are going to delete permanently the record. Are you sure? </b></div>
+                            <br></br>
+                            <br></br>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <div class="slds-text-align--center">
+                                <lightning:button variant="brand" label="Yes" onclick="{! c.deleteRecords }" />
+                                <lightning:button variant="neutral" label="No" title="No" onclick="{! c.closeDeleteModal }"/>
+                            </div> 
+                        </footer>
+                    </div>
+                </section>
+            </aura:if>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.minNotMetApprovalState.minMetState, 'Initiated')}">
+            <br></br>
+            <br></br>
+            <div  align="center" style="font-size: 20px" class="slds-text"><b> Min Not Met Approval is In Progress. Please wait till it is Approved.</b></div>
+            <br></br>
+            <br></br>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.minNotMetApprovalState.minMetState, 'Processed')}">
+            <!--    <aura:if isTrue="{!v.showCoupon == false}">  -->
+            <div  align="center" style="font-size: 20px" class="slds-text"><b> Min Not Met Cancellation.</b></div> 
+            <br></br>
+            <div class="slds-text-longform">
+                <h4 class="slds-text-heading_small"><b>Options Available to Customers:-</b></h4>
+                <aura:iteration items="{!v.minNotMetOptions}" var="item" indexVar="index">
+                    <ul>
+                        <li><ui:outputText value="{!item}"/></li>
+                    </ul>           
+                </aura:iteration> 
+            </div>    
+            <br></br>
+            <div class="slds-box">
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                    <thead class="header">
+                        <tr class="slds-line-height_reset slds-text-heading_small">
+                            <th scope="col" width="4%"></th>
+                            <th scope="col" width="10%" class="slds-text-align_center"><b>Level</b></th>
+                            <th scope="col" width="21%" class="slds-text-align_center"><b>Name</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Price</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Status</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Reason</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Type</b></th>
+                            <th scope="col" width="13%" class="slds-text-align_center"><b>Amount</b></th>
+                        </tr>      
+                    </thead> 
+                    
+                    <tbody class="body">
+                        <aura:iteration items="{!v.recordsData}" var="rd" indexVar="index">
+                            
+                            <tr class="{!equals(rd.level, 'OLI')? 'slds-theme_shade': ''}" >
+                                <td scope="row">
+                                    <ui:inputCheckbox aura:id="recordSelected" value="{!rd.check}" change="c.checkChilds" name="{!index}" disabled="{!v.editableCheckbox}"/> </td>
+                                <td scope="row" class="{!and(equals(rd.level, 'AddOn'),equals(v.cancellationLevel, 'OLI'))? 'slds-text-align--right': ''}">{!rd.level}</td>
+                                <td scope="row">{!rd.name}</td>
+                                <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.price}</td>
+                                <td scope="row" class="slds-text-align--center">{!rd.oliAddonStatus}</td>
+                                
+                                <aura:if isTrue="{!equals(rd.check, true)}">
+                                    <td scope="row">
+                                        <lightning:select class="nolabel" variant="label-hidden" aura:id="refundReason" name="{!index}" value ="{!rd.refundReason}" disabled="true">
+                                            <option value="Internal - Min Numbers not met" text="Internal - Min Numbers not met"/>
+                                        </lightning:select>
+                                    </td>
+                                    <td scope="row">
+                                        <lightning:select class="nolabel" variant="label-hidden" aura:id="recordStatus" name="{!index}" value ="{!rd.status}" onchange="{!c.minNotMetStatusValidation}" disabled="{!(index!=0)}" >
+                                            <option value="" text="--- NONE ---"/> 
+                                            <aura:iteration items="{!v.addOnRefundStatus}" var="item">
+                                                <option value="{!item}" text="{!item}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                    </td>
+                                    <td scope="row">
+                                        <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.refund}" type="number" formatter="currency" onchange="{!c.totalRefund}" 
+                                                         disabled="{!or(or(rd.status=='Full Credit',rd.status=='Full Coupon'),or(rd.status=='Full Refund',rd.status=='No Refund/Credit'))}"/>
+                                    </td>
+                                </aura:if> 
+                                
+                                <aura:if isTrue="{!equals(rd.check, false)}">
+                                    <td scope="row">
+                                        <lightning:input variant="label-hidden" name="myname1" value ="" type="number" disabled="true"/>
+                                    </td>
+                                    <td scope="row">
+                                        <lightning:input variant="label-hidden" name="myname2" value ="" type="number" disabled="true"/>
+                                    </td>
+                                    <td scope="row">
+                                        <lightning:input variant="label-hidden" name="myname3" value ="" type="number" disabled="true"/>
+                                    </td>
+                                </aura:if>
+                            </tr>
+                            
+                        </aura:iteration>
+                    </tbody>
+                    
+                </table>
+                
+                <br/>
+                
+                <div class="slds-grid slds-text-align--center slds-text-heading_small">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                        <b>Total Refund: </b> <ui:outputCurrency value="{!v.refundAmount}"/>
+                    </div> 
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                        <b>Total Credit: </b> <ui:outputCurrency value="{!v.creditAmount}"/>
+                    </div> 
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                        <b>Total Coupon: </b> <ui:outputCurrency value="{!v.coupounAmount}"/>
+                    </div> 
+                </div> 
+                <br/>
+                
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Cancel Order" onclick="{! c.minNotMetCancellation }"/>
+                </div> 
+            </div> 
+            <!--  </aura:if>  -->
+        </aura:if>    
+        
+        <aura:if isTrue="{!or(or(equals(v.minNotMetApprovalState.minMetState, 'Not Required'),equals(v.minNotMetApprovalState.minMetState, 'MinCancelled')),equals(v.minNotMetApprovalState.minMetState, 'Proceed Cancellation'))}">
+            
+            <aura:if isTrue="{!not(equals(v.minNotMetApprovalState.minMetState, 'MinCancelled'))}">
+                
+                <lightning:select aura:id="cancellationLevel" name="selectOli" label="Select Cancellation Level" value ="{!v.cancellationLevel}"  onchange="{!c.getRequestedRecords}" >
+                    <option value="" text="--- NONE ---"/> 
+                    <option value="Order" text="Order"/> 
+                    <option value="OLI" text="Order Line Items"/> 
+                    <option value="Addon" text="AddOns"/> 
+                </lightning:select>
+                
+                <br></br>
+            </aura:if>
+            
+            <aura:if isTrue="{!and(not(empty(v.recordsData)),v.cancellationLevel!='')}">
+                <div class="slds-box">
+                    <ui:inputCheckbox aura:id="documentationCheckbox" label="Documentation Required ?" value="{!v.documentationBox}" />
+                    <br></br>
+                    
+                    <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                        <thead class="header">
+                            <tr class="slds-line-height_reset slds-text-heading_small">
+                                <th scope="col" width="3%"></th>
+                                <th scope="col" width="8%" class="slds-text-align_center"><b>Level</b></th>
+                                <th scope="col" width="14%" class="slds-text-align_center"><b>Name</b></th>
+                                <th scope="col" width="9%" class="slds-text-align_center"><b>Price</b></th>
+                                <th scope="col" width="9%" class="slds-text-align_center"><b>Status</b></th>
+                                <th scope="col" width="12%" class="slds-text-align_center"><b>Reason</b></th>
+                                <th scope="col" width="12%" class="slds-text-align_center"><b>Type</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Refund</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Credit</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Coupon</b></th>
+                            </tr>            
+                        </thead> 
+                        
+                        <tbody class="body">
+                            <aura:iteration items="{!v.recordsData}" var="rd" indexVar="index">
+                                
+                                <tr class="{!equals(rd.level, 'OLI')? 'slds-theme_shade': ''}" >
+                                    <td scope="row">
+                                        <ui:inputCheckbox aura:id="recordSelected" value="{!rd.check}" change="c.checkChilds" name="{!index}" disabled="{!v.editableCheckbox}"/> </td>
+                                    <td scope="row" class="slds-text-align--center">{!rd.level}</td>
+                                    <aura:if isTrue="{!rd.level == 'Customisation'}">
+                                        <td scope="row" class="slds-text-align--center">{!rd.type} - {!rd.paxName}</td>
+                                        <aura:set attribute="else">
+                                            <td scope="row" class="slds-text-align--center">{!rd.name} - {!rd.paxName}</td>   
+                                        </aura:set> 
+                                    </aura:if>
+                                    <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.price}</td>
+                                    <td scope="row" class="slds-text-align--center">{!rd.oliAddonStatus}</td>
+                                    
+                                    <aura:if isTrue="{!equals(rd.check, true)}">
+                                        <td scope="row">
+                                                <lightning:select class="nolabel" variant="label-hidden" aura:id="refundReason" name="{!index}" value ="{!rd.refundReason}" onchange="{!c.populateOthersReason}" disabled="{!v.disableReason}">
+                                                    <option value="" text="--- NONE ---"/> 
+                                                    <aura:iteration items="{!v.addOnRefundReason}" var="item">
+                                                        <option value="{!item}" text="{!item}"/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:select class="nolabel" variant="label-hidden" aura:id="recordStatus" name="{!index}" value ="{!rd.status}" onchange="{!c.autoPopulateRefund}" >
+                                                <option value="" text="--- NONE ---"/> 
+                                                <aura:iteration items="{!v.addOnRefundStatus}" var="item">
+                                                    <option value="{!item}" text="{!item}"/>
+                                                </aura:iteration>
+                                            </lightning:select>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.refund}" type="number" formatter="currency" onchange="{!c.totalRefund}" 
+                                                             disabled="{!not(or(rd.status=='Partial Refund',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.credit}" type="number" formatter="currency" onchange="{!c.totalRefund}" 
+                                                             disabled="{!not(or(rd.status=='Partial Credit',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.coupon}" type="number" formatter="currency" onchange="{!c.totalRefund}" 
+                                                             disabled="{!not(or(rd.status=='Partial Coupon',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                    </aura:if> 
+                                    
+                                    <aura:if isTrue="{!equals(rd.check, false)}">
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname1" value ="" type="number" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname2" value ="" type="number" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname3" value ="" type="number" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname4" value ="" type="number" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname5" value ="" type="number" disabled="true"/>
+                                        </td>
+                                    </aura:if>
+                                </tr>
+                                
+                            </aura:iteration>
+                        </tbody>
+                        
+                    </table>
+                    
+                    <br/>
+                    
+                    <div class="slds-grid slds-text-align--center slds-text-heading_small">
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Refund: </b> <ui:outputCurrency value="{!v.refundAmount}"/>
+                        </div> 
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Credit: </b> <ui:outputCurrency value="{!v.creditAmount}"/>
+                        </div> 
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Coupon: </b> <ui:outputCurrency value="{!v.coupounAmount}"/>
+                        </div> 
+                    </div> 
+                    <br/>
+                    
+                    <div class="slds-text-align--center">
+                        <lightning:button variant="brand" label="Request Documentation" onclick="{! c.requestDocumentation }" disabled="{!equals(v.documentationBox, false)}" /> &nbsp;
+                        <lightning:button variant="brand" label="Submit" onclick="{! c.sendApproval }" disabled="{!equals(v.documentationBox, true)}"/> &nbsp;
+                        <lightning:button variant="brand" label="Back" onclick="{! c.primaryScreen }"/>
+                    </div> 
+                    <aura:if isTrue="{!v.validatedForCustomerAccept}">
+                        <br/><div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <span><lightning:formattedRichText value="{!v.richtext}" class="slds-text-body_small"/></span>
+                        </div>
+                        <div class="slds-col">
+                            <span><ui:inputCheckbox aura:id="checkbox" label="Customer Accepts" change="{!c.onCheck}"/></span>
+                        </div>
+                        
+                        </div>
+                        
+                        
+                    </aura:if>
+                </div>   
+            </aura:if> 
+            
+            <aura:if isTrue="{!and(not(empty(v.recordsDataApproval)),v.cancellationLevel=='')}">
+                <div class="slds-box">
+                    <div class="slds-text-heading_medium slds-text-align--center"><b>Submitted/Rejected Cancellations</b></div>
+                    <br></br>
+                    <aura:if isTrue="{!v.documentationRequired==true}">
+                        <ui:inputCheckbox aura:id="documentationReceived" label="Documentation Received ?" value="{!v.documentationReceived}" change="{!c.autoCheckPendingDocs}" />
+                        <br></br>
+                    </aura:if>
+                    <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                        <thead class="header">
+                            <tr class="slds-line-height_reset slds-text-heading_small">
+                                <th scope="col" width="3%"></th>
+                                <th scope="col" width="14%" class="slds-text-align_center"><b>Name</b></th>
+                                <th scope="col" width="10%" class="slds-text-align_center"><b>Price</b></th>
+                                <th scope="col" width="10%" class="slds-text-align_center"><b>Status</b></th>
+                                <th scope="col" width="12%" class="slds-text-align_center"><b>Reason</b></th>
+                                <th scope="col" width="12%" class="slds-text-align_center"><b>Type</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Refund</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Credit</b></th>
+                                <th scope="col" width="11%" class="slds-text-align_center"><b>Coupon</b></th>
+                                <th scope="col" width="12%" class="slds-text-align_center"><b>Approval Stage</b></th>
+                            </tr>      
+                        </thead> 
+                        
+                        <tbody class="body">
+                            <aura:iteration items="{!v.recordsDataApproval}" var="rd" indexVar="index">
+                                
+                                <tr class="{!equals(rd.level, 'OLI')? 'slds-theme_shade': ''}" >
+                                    <td scope="row" class="slds-text-align--center">
+                                        <ui:inputCheckbox aura:id="recordSelected" value="{!rd.check}" name="{!index}" change="c.totalRefundApproval" disabled="true"/> </td>
+                                    <td scope="row" class="slds-text-align--center">{!rd.name}</td>
+                                    <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.price}</td>
+                                    <td scope="row" class="slds-text-align--center">{!rd.oliAddonStatus}</td>
+                                    
+                                    <aura:if isTrue="{!equals(rd.check, true)}">
+                                        <td scope="row">
+                                            <lightning:select class="nolabel" variant="label-hidden" aura:id="refundReason" name="{!index}" value ="{!rd.refundReason}">
+                                                <option value="" text="--- NONE ---"/> 
+                                                <aura:iteration items="{!v.addOnRefundReason}" var="item">
+                                                    <option value="{!item}" text="{!item}"/>
+                                                </aura:iteration>
+                                            </lightning:select>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:select class="nolabel" variant="label-hidden" aura:id="recordStatus" name="{!index}" value ="{!rd.status}" onchange="{!c.autoPopulateRefundApproval}" >
+                                                <option value="" text="--- NONE ---"/> 
+                                                <aura:iteration items="{!v.addOnRefundStatus}" var="item">
+                                                    <option value="{!item}" text="{!item}"/>
+                                                </aura:iteration>
+                                            </lightning:select>
+                                        </td>
+                                         <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.refund}" type="number" formatter="currency" onchange="{!c.totalRefundApproval}" 
+                                                             disabled="{!not(or(rd.status=='Partial Refund',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.credit}" type="number" formatter="currency" onchange="{!c.totalRefundApproval}" 
+                                                             disabled="{!not(or(rd.status=='Partial Credit',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="{!index}" value ="{!rd.coupon}" type="number" formatter="currency" onchange="{!c.totalRefundApproval}" 
+                                                             disabled="{!not(or(rd.status=='Partial Coupon',rd.status=='Partial Refund/Coupon/Credit'))}"/>
+                                        </td>
+                                    </aura:if> 
+                                    
+                                    <aura:if isTrue="{!equals(rd.check, false)}">
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname1" value ="" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname2" value =""  disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" type="number" name="myname3" value="" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname4" value ="" type="number" disabled="true"/>
+                                        </td>
+                                        <td scope="row">
+                                            <lightning:input variant="label-hidden" name="myname5" value ="" type="number" disabled="true"/>
+                                        </td>
+                                    </aura:if>
+                                    
+                                    <td scope="row">{!rd.approvalStage}</td>
+                                </tr>
+                                
+                            </aura:iteration>
+                        </tbody>
+                        
+                    </table>
+                    
+                    <br/>
+                    
+                    <div class="slds-grid slds-text-align--center slds-text-heading_small">
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Refund: </b> <ui:outputCurrency value="{!v.refundAmountApproval}"/>
+                        </div> 
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Credit: </b> <ui:outputCurrency value="{!v.creditAmountApproval}"/>
+                        </div> 
+                        <div class="slds-p-horizontal--large slds-large-size--1-of-3">
+                            <b>Total Coupon: </b> <ui:outputCurrency value="{!v.coupounAmountApproval}"/>
+                        </div> 
+                    </div> 
+                    <br/>
+                    
+                    <div class="slds-text-align--center">
+                        <lightning:button variant="brand" label="Submit" onclick="{! c.sendForApprovalInProgress }"/>
+                    </div> 
+                    <aura:if isTrue="{!v.validatedForCustomerAcceptInProgress}">
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col">
+                                <span><lightning:formattedRichText value="{!v.richtext}" class="slds-text-body_small"/></span>
+                            </div>
+                            <div class="slds-col">
+                                <span><ui:inputCheckbox aura:id="checkbox" label="Customer Accepts" change="{!c.onCheckInProgress}"/></span>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </aura:if>
+                </div>   
+            </aura:if> 
+            <br></br>
+            
+            <aura:if isTrue="{!and(not(empty(v.recordsDataApprovalHistory)),v.cancellationLevel=='')}">
+                <div class="slds-box">
+                    <div class="slds-text-heading_medium slds-text-align--center"><b>Approval History</b></div>
+                    
+                    <ul class="slds-accordion">
+                        <aura:iteration items="{!v.recordsDataApprovalHistory}" var="acc" indexVar="index"> 
+                            <li class="slds-accordion__list-item">
+                                <section class="slds-accordion__section" data-row-index="{!index}" onclick="{!c.sectionCollapse}">
+                                    <div class="slds-accordion__summary">
+                                        <aura:if isTrue="{!acc.isCollapse}">
+                                            <lightning:buttonIcon class="centeredAlign" iconName="utility:chevronright" variant="bare" alternativeText="" title="Collapse" />
+                                            <aura:set attribute="else">
+                                                <lightning:buttonIcon class="centeredAlign" iconName="utility:chevrondown" variant="bare" alternativeText="" title="Collapse" />
+                                            </aura:set>
+                                        </aura:if>     	
+                                        <h3 class="slds-accordion__summary-heading">
+                                            <button aria-expanded="true" class="slds-button slds-button_reset slds-accordion__summary-action">
+                                                <span class="slds-accordion__summary-content" title="{!acc.approvalName}">
+                                                    {!acc.approvalName}
+                                                </span>
+                                            </button>
+                                        </h3>
+                                    </div>
+                                    
+                                    <aura:if isTrue="{!not(empty(acc.oliAddonData))}">
+                                        <div class="slds-accordion__content">
+                                            <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+                                                   role="grid">
+                                                <thead>
+                                                    <tr class="slds-line-height_reset slds-text-heading_small">
+                                                        <th scope="col" width="22%" class="slds-text-align_center"><b>Name</b></th>
+                                                        <th scope="col" width="13%" class="slds-text-align_center"><b>Level</b></th>
+                                                        <th scope="col" width="13%" class="slds-text-align_center"><b>Price</b></th>
+                                                        <th scope="col" width="13%" class="slds-text-align_center"><b>Type</b></th>
+                                                        <th scope="col" width="11%" class="slds-text-align_center"><b>Refund</b></th>
+                                                        <th scope="col" width="11%" class="slds-text-align_center"><b>Credit</b></th>
+                                                        <th scope="col" width="11%" class="slds-text-align_center"><b>Coupon</b></th>
+                                                        <th scope="col" width="13%" class="slds-text-align_center"><b>Approval</b></th>
+                                                        
+                                                        <aura:if isTrue="{!equals(v.sendCouponColumnHide, true)}">
+                                                            <th scope="col" width="13%" class="slds-text-align_center">Button</th>
+                                                        </aura:if> 
+                                                    </tr>      
+                                                </thead>
+                                                <tbody>
+                                                    <aura:iteration items="{!acc.oliAddonData}" var="rd">
+                                                        <tr class="slds-hint-parent">
+                                                            <aura:if isTrue="{!rd.level == 'Customisation'}">
+                                                                <td scope="row" class="slds-text-align--center">{!rd.type}</td>
+                                                                <aura:set attribute="else">
+                                                                    <td scope="row" class="slds-text-align--center">{!rd.name}</td>   
+                                                                </aura:set> 
+                                                            </aura:if>
+                                                            <td scope="row" class="slds-text-align--center">{!rd.level}</td>
+                                                            <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.price}</td> 
+                                                            <td scope="row" class="slds-text-align--center">{!rd.status}</td>
+                                                            <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.refund}</td>
+                                                            <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.credit}</td>
+                                                            <td scope="row" class="slds-text-align--center">$&nbsp;{!rd.coupon}</td>
+                                                            <td scope="row" class="slds-text-align--center">{!rd.approvalStage}</td>
+                                                            
+                                                            <aura:if isTrue="{!equals(v.sendCouponColumnHide,true)}">
+                                                                <td data-label="Edit Button" class="slds-text-align--center" value="{!index}">
+                                                                    <lightning:button name="EditAuraID" label="Send Coupon" value="{!index}" variant="brand" onclick="{!c.onSendCouponButtonPressed}" disabled ="{!or(and(rd.approvalStage != 'Approved-Not Processed',or(rd.status != 'Full Coupon',rd.status != 'Partial Coupon')),equals(acc.sendCouponButton,true))}"/>
+                                                                </td>
+                                                            </aura:if>
+                                                        </tr>
+                                                    </aura:iteration>  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </aura:if>
+                                </section>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                    
+                </div>   
+            </aura:if> 
+            <!--  </aura:if>  -->
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.confirmationScreen, true)}">
+            <!--    <aura:if isTrue="{!v.showCoupon == false}">  -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-text-heading_small slds-hyphenate"> Warning! </h2>
+                    </header>
+                    
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        
+                        <div  align="center" style="font-size: 20px" class="slds-text"><b> Cancelling these OLI's will Cancel the Order completely. Do you wish to proceed? </b></div>
+                        <br></br>
+                        <br></br>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-text-align--center">
+                            <lightning:button variant="brand" label="Proceed" onclick="{! c.cancelOrder }" />
+                            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModal }"/>
+                        </div> 
+                    </footer>
+                </div>
+            </section>
+            
+            <!--    </aura:if>  -->
+        </aura:if>
+    </aura:if>
+    <div class="{!or(equals(v.confirmationScreen, true),equals(v.confirmationScreenDelete, true))? 'slds-backdrop slds-backdrop_open': ''}"></div>
+</aura:component>

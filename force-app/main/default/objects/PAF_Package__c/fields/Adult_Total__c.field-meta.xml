@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adult_Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>Adult_Fare_Allocation__c 
++ 
+(IF( TEXT(Stopover_Inclusion__c) = &quot;INC&quot; ,  Stopover_Allocation__c , 0))
+ + 
+(IF( TEXT(Transfer_Inclusion__c) = &quot;INC&quot;  ,  Transfers_Allocation__c , 0))
++
+(IF( TEXT(Lounge_Inclusion__c) = &quot;INC&quot;   ,  Lounge_Allocation__c , 0))
++
+(IF( TEXT(Insurance_Inclusion__c) = &quot;INC&quot;   ,  Insurance_Allocation__c , 0))
++
+(IF( TEXT(Other_Inclusion__c) = &quot;INC&quot;  ,  Other_Allocation__c , 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Adult Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stopover_Cost__c</fullName>
+    <externalId>false</externalId>
+    <formula>((   Stopover_PP_Nn__c   *  value(text( Nighs_Inbound__c )) * value(text( Total_PAX__c )))+(( Stopover_PP_Nn__c *  value(text( Nights__c)) *  value(text( Total_PAX__c )))))* IF( Single_Supplement__c , 2, 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stopover Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

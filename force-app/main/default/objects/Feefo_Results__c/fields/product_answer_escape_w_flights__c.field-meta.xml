@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>product_answer_escape_w_flights__c</fullName>
+    <description>Product Answer for &quot;Escape with Flights&quot; Campaign - Feefo</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Escapes with Flights Campaign</inlineHelpText>
+    <label>Product Answer - Escape w Flights</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

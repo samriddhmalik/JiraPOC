@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Populate_Ticketing_Side</fullName>
+    <active>false</active>
+    <errorConditionFormula>(ISPICKVAL(Component_Type__c  , &apos;Flight&apos;) &amp;&amp;  ISPICKVAL( Ticketing_Side__c , &quot;&quot;)   &amp;&amp;   INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Flights&apos;))  ||
+ 
+(
+ISPICKVAL(Component_Type__c  , &apos;Total Package&apos;) &amp;&amp; ISPICKVAL( Ticketing_Side__c , &quot;&quot;) &amp;&amp; (
+
+INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Flights&apos; )  || INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Cruise&apos; ))
+
+) || 
+
+(
+ISPICKVAL(Component_Type__c  , &apos;Land Tour&apos;) &amp;&amp;  ISPICKVAL( Ticketing_Side__c , &quot;&quot;) &amp;&amp; (
+
+INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Flights&apos; )  || INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Cruise&apos; ))
+
+) || 
+
+(ISPICKVAL(Component_Type__c  , &apos;Cruise&apos;) &amp;&amp;  ISPICKVAL( Ticketing_Side__c , &quot;&quot;)  &amp;&amp;   INCLUDES( LinkedDeal_D_O_S__r.Inclusion_Icons__c , &apos;Cruise&apos;))</errorConditionFormula>
+    <errorMessage>Please select a value in &apos;Ticketing Site&apos;</errorMessage>
+</ValidationRule>

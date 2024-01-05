@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Number_Resolution</fullName>
+    <active>true</active>
+    <label>Min Number Resolution</label>
+    <picklistValues>
+        <picklist>Enquiry_Status__c</picklist>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To be Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ff_Invoiced_Amount_Internal__c</fullName>
+    <externalId>false</externalId>
+    <label>Invoiced Amount Internal</label>
+    <summarizedField>Deal_Transaction_Line__c.Expected_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Deal_Transaction_Line__c.ff_Is_Invoiced_Internal__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Deal_Transaction_Line__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Deal_Transaction_Line__c.Deal_Transaction__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

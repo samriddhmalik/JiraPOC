@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Partner__c</fullName>
+    <externalId>false</externalId>
+    <label>Media Partner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Country__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NINE</fullName>
+                <default>false</default>
+                <label>NINE</label>
+            </value>
+            <value>
+                <fullName>NewsCorp</fullName>
+                <default>false</default>
+                <label>NewsCorp</label>
+            </value>
+            <value>
+                <fullName>Macquarie Media</fullName>
+                <default>false</default>
+                <label>Macquarie Media</label>
+            </value>
+            <value>
+                <fullName>TripADeal (In-House)</fullName>
+                <default>false</default>
+                <label>TripADeal (In-House)</label>
+            </value>
+            <value>
+                <fullName>Travel Zoo (TZ)</fullName>
+                <default>false</default>
+                <label>Travel Zoo (TZ)</label>
+            </value>
+            <value>
+                <fullName>I Know The Pilot (IKTP)</fullName>
+                <default>false</default>
+                <label>I Know The Pilot (IKTP)</label>
+            </value>
+            <value>
+                <fullName>STUFF Media</fullName>
+                <default>false</default>
+                <label>STUFF Media</label>
+            </value>
+            <value>
+                <fullName>NZME</fullName>
+                <default>false</default>
+                <label>NZME</label>
+            </value>
+            <value>
+                <fullName>GOOGLE</fullName>
+                <default>false</default>
+                <label>GOOGLE</label>
+            </value>
+            <value>
+                <fullName>GOA</fullName>
+                <default>false</default>
+                <label>GOA</label>
+            </value>
+            <value>
+                <fullName>Allied Press Limited</fullName>
+                <default>false</default>
+                <label>Allied Press Limited</label>
+            </value>
+            <value>
+                <fullName>Otago Daily Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Otago Daily Times</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>NINE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>NewsCorp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Macquarie Media</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>TripADeal (In-House)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>I Know The Pilot (IKTP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>GOA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Travel Zoo (TZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>STUFF Media</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>NZME</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>GOOGLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Allied Press Limited</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

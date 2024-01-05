@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>TripaDeal Chat Team</name>
+    <queueMembers>
+        <users>
+            <user>alexandra@tripadeal.com.au</user>
+            <user>divyanshee.bansal@psagtechnologies.com</user>
+            <user>kapil.sharma@psagtechnologies.com</user>
+            <user>kushagra@psagtechnologies.com</user>
+            <user>munesh.singh@psagtechnologies.com</user>
+            <user>shannon.knapp@tripadeal.com.au</user>
+            <user>yanyan.yan@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

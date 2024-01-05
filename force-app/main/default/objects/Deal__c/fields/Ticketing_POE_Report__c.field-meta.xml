@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticketing_POE_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS(Deal_ID_Title__c, &quot;4711&quot;)  , HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+&quot;/lightning/r/00O2x000003g2hwEAA/view?fv0=&quot;,
+&quot;/00O2x000003es1H?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Ticketing (POE) Report v1.0&quot;) + BR()+
+HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+&quot;/lightning/r/00O2x000003g2KEEAY/view?fv0=&quot;,
+&quot;/00O2x000003es1H?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Ticketing (POE) Report v2.0&quot;), HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+&quot;/lightning/r/00O2x000003es1H/view?fv0=&quot;,
+&quot;/00O2x000003es1H?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Ticketing (POE) Report&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is Ticketing report for the new TAD Orders (POE)</inlineHelpText>
+    <label>Ticketing (POE) Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

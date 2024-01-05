@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_currency_Internal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Product_FX_Pricing__r.RBA_Exchange_Rate__c!=null, TEXT(Product_FX_Pricing__r.RBA_Exchange_Rate__r.currency_code__c)!=TEXT(CurrencyIsoCode), TEXT(Product_FX_Pricing__r.To_Currency__c) !=TEXT(CurrencyIsoCode))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>To currency Internal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

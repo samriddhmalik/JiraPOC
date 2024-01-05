@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dates_Allocations__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is to be updated by BMDs to outline the key information for dates and allocations for the deal. Product Analysts will use this information to complete the relevant sections of the deal wizard.</inlineHelpText>
+    <label>Dates &amp; Allocations</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

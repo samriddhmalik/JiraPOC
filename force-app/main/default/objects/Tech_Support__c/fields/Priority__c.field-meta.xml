@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <externalId>false</externalId>
+    <label>Priority</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Low - No loss of service. The result does not prevent operation</fullName>
+                <default>true</default>
+                <label>Low - No loss of service. The result does not prevent operation</label>
+            </value>
+            <value>
+                <fullName>Normal - Minor loss of service. Temporary workaround exists</fullName>
+                <default>false</default>
+                <label>Normal - Minor loss of service. Temporary workaround exists</label>
+            </value>
+            <value>
+                <fullName>High - Severe impact to the business and no workaround exists.</fullName>
+                <default>false</default>
+                <label>High - Severe impact to the business and no workaround exists.</label>
+            </value>
+            <value>
+                <fullName>Urgent - Complete loss of service or a significant failure, no workaround exists.</fullName>
+                <default>false</default>
+                <label>Urgent - Complete loss of service or a significant failure, no workaround exists.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

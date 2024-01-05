@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wholesale_Orders_on_Update</fullName>
+    <columns>NAME</columns>
+    <columns>update_order__c</columns>
+    <columns>order_status__c</columns>
+    <columns>Account__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>Referrer__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>update_order__c</field>
+        <operation>equals</operation>
+        <value>Updating Order</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TC,order__c.NRMA</value>
+    </filters>
+    <label>Wholesale - Orders on Update</label>
+    <sharedTo></sharedTo>
+</ListView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Date_Field_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>Departures_dates__c !=null &amp;&amp; ( Price_AUD__c !=0 || Solo_Surcharge_AUD__c !=0 || Price_NZD__c !=0 || Solo_Surcharge_NZD__c !=0 )</errorConditionFormula>
+    <errorMessage>Sub Option Section fields can&apos;t be filled</errorMessage>
+</ValidationRule>

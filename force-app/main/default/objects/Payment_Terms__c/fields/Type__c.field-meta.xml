@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment Due</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Date of purchase</fullName>
+                <default>false</default>
+                <label>Date of purchase</label>
+            </value>
+            <value>
+                <fullName>Date of departure</fullName>
+                <default>false</default>
+                <label>Date of departure</label>
+            </value>
+            <value>
+                <fullName>Days prior to departure</fullName>
+                <default>false</default>
+                <label>Days prior to departure</label>
+            </value>
+            <value>
+                <fullName>Days after purchase</fullName>
+                <default>false</default>
+                <label>Days after purchase</label>
+            </value>
+            <value>
+                <fullName>Days after departure</fullName>
+                <default>false</default>
+                <label>Days after departure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

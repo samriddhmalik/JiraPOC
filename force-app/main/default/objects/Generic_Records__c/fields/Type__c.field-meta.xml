@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NRL</fullName>
+                <default>false</default>
+                <label>NRL</label>
+            </value>
+            <value>
+                <fullName>TAD</fullName>
+                <default>false</default>
+                <label>TAD</label>
+            </value>
+            <value>
+                <fullName>BBL</fullName>
+                <default>false</default>
+                <label>BBL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

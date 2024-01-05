@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UJv2</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>qty__c</columns>
+    <columns>Booking_Validation__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Ready For Export</value>
+    </filters>
+    <filters>
+        <field>Merchant__c</field>
+        <operation>equals</operation>
+        <value>0012800000kdHIQ</value>
+    </filters>
+    <label>UJ V2</label>
+    <sharedTo>
+        <portalRole>UnitedJourneyCustomerUser</portalRole>
+        <portalRole>adamtestcoCustomerUser</portalRole>
+        <portalRole>adamtestcoPartnerUser</portalRole>
+    </sharedTo>
+</ListView>

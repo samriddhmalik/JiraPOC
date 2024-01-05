@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>X24_hr_After_Temp_Hold</name>
+        <label>24 hr After Temp Hold</label>
+        <locationX>50</locationX>
+        <locationY>408</locationY>
+        <actionName>TAD_Order__c.X24_hr_After_Temp_Hold</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>X48_hr_After_Temp_Hold</name>
+        <label>48 hr After Temp Hold</label>
+        <locationX>314</locationX>
+        <locationY>408</locationY>
+        <actionName>TAD_Order__c.X48_hr_After_Temp_Hold</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Check_statusCheck</name>
+        <label>Check statusCheck</label>
+        <locationX>710</locationX>
+        <locationY>408</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_back_To_Prev_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_StatusCheck_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getOrder.ordexp_status_check__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>back_To_Prev_Status</targetReference>
+            </connector>
+            <label>If StatusCheck True</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Tad Order Scheduled path Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Tad Order Scheduled path Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Copy_1_of_Create_Order_Comms</name>
+        <label>Copy 1 of Create Order Comms</label>
+        <locationX>314</locationX>
+        <locationY>288</locationY>
+        <connector>
+            <targetReference>X48_hr_After_Temp_Hold</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>TAD_Order__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>communication_code__c</field>
+            <value>
+                <stringValue>Temporary Hold Status(48 Hr)</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>email_purchaser__c</field>
+            <value>
+                <elementReference>$Record.ordexp_email_purchaser__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Order_Communication_POE__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Order_Comms</name>
+        <label>Create Order Comms</label>
+        <locationX>50</locationX>
+        <locationY>288</locationY>
+        <connector>
+            <targetReference>X24_hr_After_Temp_Hold</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>TAD_Order__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>communication_code__c</field>
+            <value>
+                <stringValue>Temporary Hold Status(24 Hr)</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>email_purchaser__c</field>
+            <value>
+                <elementReference>$Record.ordexp_email_purchaser__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Order_Communication_POE__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>getOrder</name>
+        <label>getOrder</label>
+        <locationX>710</locationX>
+        <locationY>288</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_statusCheck</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>TAD_Order__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>back_To_Prev_Status</name>
+        <label>back To Prev Status</label>
+        <locationX>578</locationX>
+        <locationY>528</locationY>
+        <inputAssignments>
+            <field>ordexp_status_check__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_1_of_back_To_Prev_Status</name>
+        <label>Copy 1 of back To Prev Status</label>
+        <locationX>842</locationX>
+        <locationY>528</locationY>
+        <inputAssignments>
+            <field>ordexp_status_check__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ordexp_master_status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Temporary Hold</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ordexp_sub_status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Customer Request</stringValue>
+            </value>
+        </filters>
+        <object>TAD_Order__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>X24_Hr_after_Temporary_Hold</name>
+            <connector>
+                <targetReference>Create_Order_Comms</targetReference>
+            </connector>
+            <label>24 Hr after Temporary Hold</label>
+            <offsetNumber>24</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>Temporary_Hold_On__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X48_Hr_after_Temporary_Hold</name>
+            <connector>
+                <targetReference>Copy_1_of_Create_Order_Comms</targetReference>
+            </connector>
+            <label>48 Hr after Temporary Hold</label>
+            <offsetNumber>48</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>Temporary_Hold_On__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X72_Hr_after_Temporary_Hold</name>
+            <connector>
+                <targetReference>getOrder</targetReference>
+            </connector>
+            <label>72 Hr after Temporary Hold</label>
+            <offsetNumber>72</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>Temporary_Hold_On__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>after24HrtempHold</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear TripADeal Traveller,
+Your order has currently been placed on a Temporary Hold. This may mean that we are waiting for your feedback or action. 
+Please call our team on 1300 861 736 at your earliest convenience so that you don’t miss out on your related request.
+
+Thank you 
+
+TripADeal</text>
+    </textTemplates>
+    <textTemplates>
+        <name>after48hrtemHold</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear TripADeal Traveller,
+Your order is still currently on a Temporary Hold. This may mean that we are waiting for your feedback or action. If we do not hear from you within the next 24 hours your order will revert back to its original offering.
+Please call our team on 1300 861 736 at your earliest convenience so that you don’t miss out on your request.
+
+Thank you 
+
+TripADeal</text>
+    </textTemplates>
+</Flow>

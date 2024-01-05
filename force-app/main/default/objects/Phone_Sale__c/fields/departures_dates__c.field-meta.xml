@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>departures_dates__c</fullName>
+    <externalId>false</externalId>
+    <label>Departures Dates</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>(1 OR 2 OR 3) AND (4 OR 5)</booleanFilter>
+        <errorMessage>The departure date is not valid any more.</errorMessage>
+        <filterItems>
+            <field>departures_dates__c.sub_options__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.sub_options__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.options__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.options__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.Deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.recently_expired__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>departures_dates__c</referenceTo>
+    <relationshipLabel>Phone Sales</relationshipLabel>
+    <relationshipName>Phone_Sales</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Channel__c</fullName>
+    <externalId>false</externalId>
+    <label>Marketing Channel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>BVOD</fullName>
+                <default>false</default>
+                <label>BVOD</label>
+            </value>
+            <value>
+                <fullName>Sports Brand Integration</fullName>
+                <default>false</default>
+                <label>Sports Brand Integration</label>
+            </value>
+            <value>
+                <fullName>Management Fee</fullName>
+                <default>false</default>
+                <label>Management Fee</label>
+            </value>
+            <value>
+                <fullName>Electronic Direct Mail (eDM)</fullName>
+                <default>false</default>
+                <label>eDM</label>
+            </value>
+            <value>
+                <fullName>Print</fullName>
+                <default>false</default>
+                <label>Print</label>
+            </value>
+            <value>
+                <fullName>Audio(Radio)</fullName>
+                <default>false</default>
+                <label>Audio(Radio)</label>
+            </value>
+            <value>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <label>Outdoor</label>
+            </value>
+            <value>
+                <fullName>TV Free to air</fullName>
+                <default>false</default>
+                <label>TV Free to air</label>
+            </value>
+            <value>
+                <fullName>Social(Facebook &amp; IG)</fullName>
+                <default>false</default>
+                <label>Social(Facebook &amp; IG)</label>
+            </value>
+            <value>
+                <fullName>Social(Youtube)</fullName>
+                <default>false</default>
+                <label>Social(Youtube)</label>
+            </value>
+            <value>
+                <fullName>Paid Search</fullName>
+                <default>false</default>
+                <label>Paid Search</label>
+            </value>
+            <value>
+                <fullName>Digital Display</fullName>
+                <default>false</default>
+                <label>Digital Display</label>
+            </value>
+            <value>
+                <fullName>News Video</fullName>
+                <default>false</default>
+                <label>News Video</label>
+            </value>
+            <value>
+                <fullName>Lead Generation</fullName>
+                <default>false</default>
+                <label>Lead Generation</label>
+            </value>
+            <value>
+                <fullName>App</fullName>
+                <default>false</default>
+                <label>App</label>
+            </value>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Incentive</fullName>
+                <default>false</default>
+                <label>Incentive</label>
+            </value>
+            <value>
+                <fullName>Digital Media</fullName>
+                <default>false</default>
+                <label>Digital Media</label>
+            </value>
+            <value>
+                <fullName>Revenue Share</fullName>
+                <default>false</default>
+                <label>Revenue Share</label>
+            </value>
+            <value>
+                <fullName>Magazine</fullName>
+                <default>false</default>
+                <label>Magazine</label>
+            </value>
+            <value>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+                <label>Direct Mail</label>
+            </value>
+            <value>
+                <fullName>3rd Party eDM</fullName>
+                <default>false</default>
+                <label>3rd Party eDM</label>
+            </value>
+            <value>
+                <fullName>Sponsorship</fullName>
+                <default>false</default>
+                <label>Sponsorship</label>
+            </value>
+            <value>
+                <fullName>Audio(Digital)</fullName>
+                <default>false</default>
+                <label>Audio(Digital)</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Billboard</label>
+            </value>
+            <value>
+                <fullName>Digital Audio</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Audio</label>
+            </value>
+            <value>
+                <fullName>Mailbox Drop</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mailbox Drop</label>
+            </value>
+            <value>
+                <fullName>Print Media (Newspaper)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Print Media (Newspaper)</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Revenue Share Print Media (Newspaper)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Revenue Share Print Media (Newspaper)</label>
+            </value>
+            <value>
+                <fullName>Road Show</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Road Show</label>
+            </value>
+            <value>
+                <fullName>SEARCH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SEARCH</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>TV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

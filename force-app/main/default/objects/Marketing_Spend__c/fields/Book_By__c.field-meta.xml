@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Book_By__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(YEAR(Date__c+28))+&apos;%2f&apos;+IF( LEN(TEXT(Month(Date__c+28))) &gt; 1 , TEXT(Month(Date__c+28)), &quot;0&quot; + TEXT(Month(Date__c+28))) + &quot;%2f&quot; + IF(LEN(TEXT(Day(Date__c+28))) &gt; 1 , TEXT(Day(Date__c+28)), &quot;0&quot; + TEXT(Day(Date__c+28)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Book By</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

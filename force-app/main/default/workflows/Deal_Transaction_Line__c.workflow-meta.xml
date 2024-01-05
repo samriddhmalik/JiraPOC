@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Transaction_Date</fullName>
+        <field>Transaction_Date__c</field>
+        <formula>Today()</formula>
+        <name>Update Transaction Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Transaction Date</fullName>
+        <actions>
+            <name>Update_Transaction_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Deal_Transaction_Line__c.Status1__c</field>
+            <operation>notEqual</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Deal_Transaction_Line__c.Is_Escape_Deal__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Update Transaction Date with Supersede or Cancellation Date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

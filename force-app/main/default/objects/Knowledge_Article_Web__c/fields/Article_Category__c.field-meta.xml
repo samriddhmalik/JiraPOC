@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Article_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Article Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Travel information</fullName>
+                <default>false</default>
+                <label>Travel information</label>
+            </value>
+            <value>
+                <fullName>Booking</fullName>
+                <default>false</default>
+                <label>Booking</label>
+            </value>
+            <value>
+                <fullName>Payments</fullName>
+                <default>false</default>
+                <label>Payments</label>
+            </value>
+            <value>
+                <fullName>General enquiry</fullName>
+                <default>false</default>
+                <label>General enquiry</label>
+            </value>
+            <value>
+                <fullName>Before you travel</fullName>
+                <default>false</default>
+                <label>Before you travel</label>
+            </value>
+            <value>
+                <fullName>Terms and conditions</fullName>
+                <default>false</default>
+                <label>Terms and conditions</label>
+            </value>
+            <value>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+                <label>FAQ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

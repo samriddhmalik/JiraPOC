@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD_AU_CANCELLATION-Trip Summary</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TAD_AU_CANCELLATION-Trip Summary</name>
+    <style>none</style>
+    <subject>Here are the details of your cancelled trip</subject>
+    <textOnly>Dear {!order__c.Account__c},
+
+The cancellation of your tour is now finalised. Please find below a summary of your booking details that may be required for your Travel Insurance claim:
+
+Order Reference Number: {!order__c.Name}
+Deal ID: {!order__c.Deal_ID__c}
+Deal: {!order__c.DealFC__c} - {!order__c.OptionPC__c}
+Purchaser Name: {!order__c.full_name_purchaser__c}
+Travellers To Cancel: {!order__c.Passengers_to_Cancel__c}
+Order Quantity: {!order__c.qty__c}
+No. of Passengers: {!order__c.PAX_Travelling__c}
+Departure Date: {!order__c.departure_date__c}
+Departure City: {!order__c.departure_city__c}
+
+Extra Options: {!order__c.extras_summary__c}
+
+Total Amount Paid: {!order__c.total_payment_received__c}
+Payment Date: {!order__c.time_confirmed__c}
+
+Total Claimable Amount : {!order__c.total_payment_received__c}
+
+You will also receive a copy of your original Payment Receipt via email.
+
+TripADeal can not itemise the cost of each individual component as it was sold as a heavily discounted promotional package. Regrettably, there are no refunds for any unused portion of the package including unused flights. TripADeal cannot offer any refund of monies paid based on these circumstances.
+
+Please note: You may be required to provide a copy of our Terms &amp; Conditions and Refund Policy to your insurer to assist in your claim. This information can be found via the following links:
+Terms &amp; Conditions
+Cancellation &amp; Refund Policy
+
+Please let us know if we can be of any further assistance to you at all.
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   135 777.
+
+Regards,
+The TripADeal Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

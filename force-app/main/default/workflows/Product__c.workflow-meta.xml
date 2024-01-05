@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Flights_Pending</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Flight</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Flights Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Flights_Priced</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Flights_Response</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Flights Priced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

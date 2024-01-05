@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(AND(QTY_Sold__c   &gt;=  Min_Pax__c ,QTY_Sold__c  &lt;= Max_Pax__c),
+AND(QTY_Sold__c   &gt;=  Min_Pax__c ,ISNULL(Max_Pax__c)),
+AND(ISNULL(Max_Pax__c),ISNULL(Min_Pax__c)))</formula>
+    <label>Active</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

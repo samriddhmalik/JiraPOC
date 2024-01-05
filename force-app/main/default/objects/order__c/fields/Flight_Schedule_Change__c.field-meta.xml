@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Schedule_Change__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When ever this field changes to checked(true) it will fire an email to let the customer know that there has been a change in their flights</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When ever this field changes to checked(true) it will fire an email to let the customer know that there has been a change in their flights</inlineHelpText>
+    <label>Flight Schedule Change</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

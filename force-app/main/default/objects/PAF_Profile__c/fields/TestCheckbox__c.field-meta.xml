@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TestCheckbox__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(PAF_Quote__r.PAFPACKQUOTEJUNC__r.Inbound_Gateway__c) = &quot;ADL&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TestCheckbox</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Amount_Missing</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(
+   not(isblank(Vendor_Invoice_Number__c)),
+   isblank(Tax_Amount__c)
+)</errorConditionFormula>
+    <errorMessage>A Vendor Invoice Number has been entered, Tax Amount cannot be Nill</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>SYD</fullName>
+        <default>false</default>
+        <label>SYD</label>
+    </customValue>
+    <customValue>
+        <fullName>BNE</fullName>
+        <default>false</default>
+        <label>BNE</label>
+    </customValue>
+    <customValue>
+        <fullName>MEL</fullName>
+        <default>false</default>
+        <label>MEL</label>
+    </customValue>
+    <customValue>
+        <fullName>ADL</fullName>
+        <default>false</default>
+        <label>ADL</label>
+    </customValue>
+    <customValue>
+        <fullName>PER</fullName>
+        <default>false</default>
+        <label>PER</label>
+    </customValue>
+    <masterLabel>Aust Gateways</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

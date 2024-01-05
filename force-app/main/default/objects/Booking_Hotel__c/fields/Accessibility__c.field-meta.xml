@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accessibility__c</fullName>
+    <externalId>false</externalId>
+    <label>Accessibility</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accessible Bathroom</fullName>
+                <default>false</default>
+                <label>Accessible Bathroom</label>
+            </value>
+            <value>
+                <fullName>Accessible Path</fullName>
+                <default>false</default>
+                <label>Accessible Path</label>
+            </value>
+            <value>
+                <fullName>Braille or raised signage</fullName>
+                <default>false</default>
+                <label>Braille or raised signage</label>
+            </value>
+            <value>
+                <fullName>Equipment For Deaf</fullName>
+                <default>false</default>
+                <label>Equipment For Deaf</label>
+            </value>
+            <value>
+                <fullName>In Room Accessbility</fullName>
+                <default>false</default>
+                <label>In Room Accessbility</label>
+            </value>
+            <value>
+                <fullName>Roll-in Shower</fullName>
+                <default>false</default>
+                <label>Roll-in Shower</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

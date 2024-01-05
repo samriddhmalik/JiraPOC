@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Comms_Now__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This gets updated to True when your TP Sent on TAD Order is set to true</description>
+    <externalId>false</externalId>
+    <label>Send Comms Now</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

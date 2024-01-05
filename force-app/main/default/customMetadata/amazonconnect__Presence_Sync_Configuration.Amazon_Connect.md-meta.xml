@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Amazon Connect</label>
+    <protected>false</protected>
+    <values>
+        <field>amazonconnect__Call_Center__c</field>
+        <value xsi:type="xsd:string">AmazonConnectSFCCPAdapterLightning311</value>
+    </values>
+    <values>
+        <field>amazonconnect__Rule__c</field>
+        <value xsi:type="xsd:string">[ 
+{ 
+&quot;source&quot;: &quot;connect.stateChange&quot;, 
+&quot;destination&quot;: &quot;salesforce&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;connect.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Offline&quot; 
+}, 
+&quot;state&quot;: &quot;Offline&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;connect.stateChange&quot;, 
+&quot;destination&quot;: &quot;salesforce&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;connect.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Busy&quot; 
+}, 
+&quot;state&quot;: &quot;Busy&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Offline&quot; 
+}, 
+&quot;state&quot;: &quot;Offline&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Available_Chat_Only&quot; 
+}, 
+&quot;state&quot;: &quot;Offline&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;unavailable&quot; 
+}, 
+&quot;state&quot;: &quot;Offline&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Available_Case_Only&quot; 
+}, 
+&quot;state&quot;: &quot;Offline&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Available_Phone_Only&quot; 
+}, 
+&quot;state&quot;: &quot;Available&quot; 
+}, 
+{ 
+&quot;source&quot;: &quot;omni.stateChange&quot;, 
+&quot;destination&quot;: &quot;connect&quot;, 
+&quot;criteria&quot;: { 
+&quot;operandA&quot;: &quot;omni.agentState&quot;, 
+&quot;comparator&quot;: &quot;===&quot;, 
+&quot;operandB&quot;: &quot;Available&quot; 
+}, 
+&quot;state&quot;: &quot;Available&quot; 
+}, 
+{ &quot;source&quot;: &quot;connect.stateChange&quot;, &quot;destination&quot;: &quot;salesforce&quot;, &quot;criteria&quot;: { &quot;operandA&quot;: &quot;connect.agentState&quot;, &quot;comparator&quot;: &quot;===&quot;, &quot;operandB&quot;: &quot;Busy&quot; }, &quot;state&quot;: &quot;Busy&quot; } 
+]</value>
+    </values>
+</CustomMetadata>

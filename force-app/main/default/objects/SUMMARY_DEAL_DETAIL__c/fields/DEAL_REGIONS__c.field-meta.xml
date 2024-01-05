@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DEAL_REGIONS__c</fullName>
+    <externalId>false</externalId>
+    <label>DEAL REGIONS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AFRICA</fullName>
+                <default>false</default>
+                <label>AFRICA</label>
+            </value>
+            <value>
+                <fullName>AU - NSW</fullName>
+                <default>false</default>
+                <label>AU - NSW</label>
+            </value>
+            <value>
+                <fullName>AU - NT</fullName>
+                <default>false</default>
+                <label>AU - NT</label>
+            </value>
+            <value>
+                <fullName>AU - QLD</fullName>
+                <default>false</default>
+                <label>AU - QLD</label>
+            </value>
+            <value>
+                <fullName>AU - SA</fullName>
+                <default>false</default>
+                <label>AU - SA</label>
+            </value>
+            <value>
+                <fullName>AU - TAS</fullName>
+                <default>false</default>
+                <label>AU - TAS</label>
+            </value>
+            <value>
+                <fullName>AU - VIC</fullName>
+                <default>false</default>
+                <label>AU - VIC</label>
+            </value>
+            <value>
+                <fullName>AU - WA</fullName>
+                <default>false</default>
+                <label>AU - WA</label>
+            </value>
+            <value>
+                <fullName>BORNEO</fullName>
+                <default>false</default>
+                <label>BORNEO</label>
+            </value>
+            <value>
+                <fullName>BURMA</fullName>
+                <default>false</default>
+                <label>BURMA</label>
+            </value>
+            <value>
+                <fullName>CAMBODIA</fullName>
+                <default>false</default>
+                <label>CAMBODIA</label>
+            </value>
+            <value>
+                <fullName>CARIBBEAN</fullName>
+                <default>false</default>
+                <label>CARIBBEAN</label>
+            </value>
+            <value>
+                <fullName>CHINA</fullName>
+                <default>false</default>
+                <label>CHINA</label>
+            </value>
+            <value>
+                <fullName>EUROPE</fullName>
+                <default>false</default>
+                <label>EUROPE</label>
+            </value>
+            <value>
+                <fullName>HAWAII</fullName>
+                <default>false</default>
+                <label>HAWAII</label>
+            </value>
+            <value>
+                <fullName>ICELAND</fullName>
+                <default>false</default>
+                <label>ICELAND</label>
+            </value>
+            <value>
+                <fullName>INDIA</fullName>
+                <default>false</default>
+                <label>INDIA</label>
+            </value>
+            <value>
+                <fullName>INDONESIA</fullName>
+                <default>false</default>
+                <label>INDONESIA</label>
+            </value>
+            <value>
+                <fullName>JAPAN</fullName>
+                <default>false</default>
+                <label>JAPAN</label>
+            </value>
+            <value>
+                <fullName>MIDDLE EAST</fullName>
+                <default>false</default>
+                <label>MIDDLE EAST</label>
+            </value>
+            <value>
+                <fullName>NTH AMER</fullName>
+                <default>false</default>
+                <label>NTH AMER</label>
+            </value>
+            <value>
+                <fullName>PACIFIC</fullName>
+                <default>false</default>
+                <label>PACIFIC</label>
+            </value>
+            <value>
+                <fullName>RTW</fullName>
+                <default>false</default>
+                <label>RTW</label>
+            </value>
+            <value>
+                <fullName>STH AMER</fullName>
+                <default>false</default>
+                <label>STH AMER</label>
+            </value>
+            <value>
+                <fullName>THAILAND</fullName>
+                <default>false</default>
+                <label>THAILAND</label>
+            </value>
+            <value>
+                <fullName>VIETNAM</fullName>
+                <default>false</default>
+                <label>VIETNAM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

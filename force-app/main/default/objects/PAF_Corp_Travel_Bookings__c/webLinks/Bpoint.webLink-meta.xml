@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bpoint</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Bpoint</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>import com.BPOINT.api.*;
+
+Credentials credentials = new Credentials(&quot;API User&quot;, &quot;v12x8A6dPR&quot;, &quot;5353109290681696&quot;);
+CreditCardDetails cc = new CreditCardDetails();
+Sender s = new Sender();
+
+cc.setCardNumber(&quot;4444333322221111&quot;);
+cc.setExpiryDate(&quot;0517&quot;);
+cc.setCVN(&quot;123&quot;);
+cc.setCardHolderName(&quot;MR C CARDHOLDER&quot;);
+		
+TxnRequest txn = new TxnRequest(credentials);
+TxnResp resp;
+		
+txn.setBaseUrl(&quot;https://www.bpoint.com.au/webapi/v2&quot;);
+txn.setAction(&quot;payment&quot;);
+txn.setAmount((long) 1000);
+txn.setCrn1(&quot;Test Ref 1&quot;);
+txn.setType(&quot;internet&quot;);
+txn.setTestMode(false);
+txn.setSubType(&quot;single&quot;);
+txn.setCurrency(&quot;AUD&quot;);
+txn.setStoreCard(false);
+txn.setAmountOriginal((long) 0);
+txn.setAmountSurcharge((long) 0);
+txn.setCardDetails(cc);
+txn.setCredentials(credentials);
+txn.setTokenisationMode(TokenisationMode.TOKENISE);
+		
+Address ad = new Address();
+ad.setAddressLine1(&quot;123 Fake Street&quot;);
+ad.setCity(&quot;Melbourne&quot;);
+ad.setCountryCode(&quot;AUS&quot;);
+ad.setPostCode(&quot;3000&quot;);
+ad.setState(&quot;VIC&quot;);
+
+ContactDetails cd = new ContactDetails();
+cd.setEmailAddress(&quot;example@email.com&quot;);
+
+PersonalDetails pd = new PersonalDetails();
+pd.setDateOfBirth(&quot;1900-01-01&quot;);
+pd.setFirstName(&quot;John&quot;);
+pd.setLastName(&quot;Smith&quot;);
+pd.setSalutation(&quot;Mr&quot;);
+
+OrderAddress ba = new OrderAddress();
+ba.setAddress(ad);
+ba.setContactDetails(cd);
+ba.setPersonalDetails(pd);
+
+OrderAddress sa = new OrderAddress();
+sa.setAddress(ad);
+sa.setContactDetails(cd);
+sa.setPersonalDetails(pd);
+
+OrderItem or_item_1 = new OrderItem();
+or_item_1.setDescription(&quot;an item&quot;);
+or_item_1.setQuantity(1);
+or_item_1.setUnitPrice((long)1000);
+
+ArrayOfOrderItem order_items = new ArrayOfOrderItem();
+order_items.getOrderItem().add(or_item_1);
+
+OrderRecipient order_recipient_1 = new OrderRecipient();
+order_recipient_1.setAddress(ad);
+order_recipient_1.setContactDetails(cd);
+order_recipient_1.setPersonalDetails(pd);
+
+ArrayOfOrderRecipient order_recipients = new ArrayOfOrderRecipient();
+order_recipients.getOrderRecipient().add(order_recipient_1);
+
+Order or = new Order();
+or.setBillingAddress(ba);
+or.setShippingAddress(sa);
+or.setOrderItems(order_items);
+or.setOrderRecipients(order_recipients);
+or.setShippingMethod(&quot;Boat&quot;);
+
+txn.setOrder(or);
+
+Customer cust = new Customer();
+cust.setCustomerNumber(&quot;1234&quot;);
+cust.setAddress(ad);
+cust.setExistingCustomer(false);
+cust.setContactDetails(cd);
+cust.setPersonalDetails(pd);
+cust.setDaysOnFile(1);
+
+txn.setCustomer(cust);
+
+FraudScreeningRequest fs = new FraudScreeningRequest();
+fs.setPerformFraudScreening(true);
+fs.setDeviceFingerprint(&quot;0400l1oURA1kJHkN&lt;1900 characters removed&gt;+ZKFOkdULYCXsUu0Oxk=&quot;);
+
+txn.setFraudScreeningRequest(fs);		
+		
+resp = s.submit(txn);</url>
+</WebLink>

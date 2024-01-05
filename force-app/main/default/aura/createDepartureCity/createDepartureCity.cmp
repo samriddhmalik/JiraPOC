@@ -1,0 +1,93 @@
+<aura:component controller="Tad_createDepCityController" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global">
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:attribute name="tabId" type="String"/>
+    <aura:attribute name="recId" type="String"/>
+    <aura:attribute name="fromDealPage" type="Boolean" default="false"/>
+    <aura:attribute name="isConsoleApp" type="Boolean" default="false"/>
+    <aura:attribute name="isNext" type="Boolean" default="false"/>
+     <aura:attribute name="isDepNext" type="Boolean" default="false"/>
+    <aura:attribute name="isDepCity" type="Boolean" default="true"/>
+    <aura:attribute name="depCityId" type="String"/>
+    <aura:attribute name="depCityData" type="Tad_createDepCityController.depCityData"/>
+    <aura:attribute name="depName" type="String"/>
+    <aura:attribute name="deal" type="String"/>
+    <aura:attribute name="orderFilter" type="String"/>
+    <aura:attribute name="feeApplication" type="String" default="Per PAX"/>
+    <aura:attribute name="site" type="String"/>
+    <aura:attribute name="city" type="String"/>
+    <aura:attribute name="surcharge" type="Decimal"/>
+    <aura:attribute name="surchargeNZD" type="Decimal"/>
+    <aura:attribute name="herokuId" type="String"/>
+    <aura:attribute name="currency" type="String" default="AUD"/>
+    <aura:attribute name="dataRefresh" type="boolean" default="false"/>
+    <aura:attribute name="isActive" type="boolean" default="true"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.isDepCity}">
+    <div class="slds-theme_default" style="width: 51vw; height :inherit; overflow:auto; margin:auto; border-radius:0.25rem">
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+            <div class="slds-modal__header">
+                <h2 class ="slds-modal__title slds-hyphenate slds-text-heading--medium">New departure cities</h2>
+            </div>
+            <div class="form-legend" style="padding:8px; margin:8px; text-align:right; border-radius:0.25rem">
+                <abbr class="slds-required">*</abbr> = Required Information</div>
+            <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Information</h3>
+            <div class= "container-body" style ="padding-left: 0.6rem; margin: 0.5rem;">
+                <!-- Form Fields Section -->
+                <div class="slds-form">
+                    <lightning:recordEditForm objectApiName="departure_cities__c">
+                        <lightning:messages />
+                        <div class="slds-form_stacked slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="Name" value="{!v.depName}" required="true" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="order_filter__c" value="{!v.orderFilter}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField fieldName="Deal__c" value="{!v.deal}" required="true"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="fee_application__c" value="{!v.feeApplication}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="site__c" value="{!v.site}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="city__c" value="{!v.city}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="Surcharge__c" value="{!v.surcharge}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="surcharge_nz__c" value="{!v.surchargeNZD}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="herokuid__c" value="{!v.herokuId}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="CurrencyIsoCode" value="{!v.currency}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="depfield" fieldName="data_refresh__c" value="{!v.dataRefresh}" onclick="{!c.getDataCheckedValue}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField fieldName="Active__c" value="{!v.isActive}" onclick="{!c.getActiveCheckedValue}"/>
+                            </div>
+                        </div>
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+            <!-- Footer Section -->
+            <div class="slds-card__footer slds-align_absolute-center slds-theme--shade">
+                <lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-right_small" />
+                <lightning:button variant="brand" label="Save &amp; New" onclick="{!c.handleDepSave}" class="slds-m-right_small" />
+                <lightning:button variant="brand" label="Save &amp; Next" onclick="{!c.handleDepNext}" />
+            </div>
+           </div> 
+         </aura:if>
+    <aura:if isTrue="{!v.isDepNext}">
+        <c:tad_createComponentAndPricing addId = "{!v.depCityId}" type ="departure_cities__c" oncancel="{!c.handleCancel}" onclosetab="{!c.closePreviousTab}"/>
+    </aura:if>
+</aura:component>

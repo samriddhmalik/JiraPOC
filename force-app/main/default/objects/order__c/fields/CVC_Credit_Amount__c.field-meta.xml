@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVC_Credit_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( RecordType.Name ,
+&quot;TC&quot;,(total_discounts__c + total_payment_received__c + TC_Total_Commission__c ),
+total_discounts__c + total_payment_received__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CVC Credit Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

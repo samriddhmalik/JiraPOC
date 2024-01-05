@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CANCELLED</fullName>
+        <default>false</default>
+        <label>CANCELLED</label>
+    </customValue>
+    <customValue>
+        <fullName>LIVE</fullName>
+        <default>false</default>
+        <label>LIVE</label>
+    </customValue>
+    <customValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+    </customValue>
+    <masterLabel>a_Site_Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

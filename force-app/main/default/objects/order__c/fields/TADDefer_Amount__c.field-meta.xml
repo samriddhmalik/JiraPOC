@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TADDefer_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(TEXT(Send_COVID_Email_Offer__c),&apos;China&apos;),((CVC_Credit_Amount__c)-(99* PAX_Travelling__c) ),
+IF(CONTAINS(TEXT(Send_COVID_Email_Offer__c),&apos;Japan&apos;),((CVC_Credit_Amount__c)-(199* PAX_Travelling__c) ),
+(CVC_Credit_Amount__c-( PAX_Travelling__c *  Defer_Fee__c ))
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TADDefer Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

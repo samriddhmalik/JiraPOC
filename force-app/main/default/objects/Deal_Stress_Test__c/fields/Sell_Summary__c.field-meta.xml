@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sell_Summary__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide a short summary of your analysis, such as &quot;Sun lover Holidays at $2689 twin and $2836 Single gives us a 10% and 8% discount.&quot;</inlineHelpText>
+    <label>Sell Summary</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

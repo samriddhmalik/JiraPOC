@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Referral_Picklist_limit_access</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(
+TEXT(Insurance_Referral__c) = &quot;Insurance Quote Provided&quot;,
+TEXT(Insurance_Referral__c) = &quot;Attempted Contact (VI Team use only)&quot;),
+ISCHANGED( Insurance_Referral__c ), 
+NOT($Permission.Insurance_Referral_Picklist_Limit_Access)
+)</errorConditionFormula>
+    <errorMessage>You cannot select this INSURANCE REFERRAL value - try again</errorMessage>
+</ValidationRule>

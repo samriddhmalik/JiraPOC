@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_for_Mins_if_Finalise_Date</fullName>
+    <active>true</active>
+    <description>Validation to check that either &quot;Min number met?&quot; or &quot;Approved to run under mins?&quot; must be TRUE if &quot;Finalise Date&quot; is changed to TRUE</description>
+    <errorConditionFormula>AND(
+ISCHANGED( finalise_date__c ),
+finalise_date__c = TRUE,
+All_Sold__c &gt; 0 ,
+min_numbers_met__c = FALSE,
+Approved_to_Run_Under_Mins__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>finalise_date__c</errorDisplayField>
+    <errorMessage>Please check MIN NUMBERS MET? or APPROVED TO RUN UNDER MINS? first - one of these must be TRUE before you can tick FINALISE DATE</errorMessage>
+</ValidationRule>

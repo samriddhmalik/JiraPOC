@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:85% !important;
+        }
+        .modal-body{ 
+        height : 85vh !important; 
+        max-height: 85vh !important; 
+        } 
+    </aura:html>
+    <aura:attribute name="recordId" type="Id" />
+    
+    <c:linkProxyDTLwithNewDT recordId="{!v.recordId}" onclose="{!c.closeQA}"/>
+</aura:component>

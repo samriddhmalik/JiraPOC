@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partially_Ticketed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked by user when they have to ticket the flight routing in separate instances. i.e. the International sectors 6 months prior, and the internal sectors on a group ticket 3 months prior</description>
+    <externalId>false</externalId>
+    <label>Partially Ticketed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

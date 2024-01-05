@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Deal_PDF</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://tripadeal--apxtconga4.ap2.visual.force.com/a4A280000000oOjEAI
+27-Sep-2017 11:18:59 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Deal PDF</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://composer.congamerge.com
+?serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Deal__c.Id}
+&amp;TemplateId=a4C0K000000D9iJ
+&amp;DefaultPDF=1
+&amp;DS7=6
+&amp;OFN={!Deal__c.Name}+{!Deal__c.Agents__c}
+&amp;ContentWorkspaceId=0580K000000hRXr
+
+&amp;QueryId=[TCDealItinerary]a4428000000E87L,
+[TCItinerary]a4428000000E87Q,
+[TCOptions1]a4428000000E8Br,
+[TCSubOptions1]a4428000000E8CG,
+[DepartureDate]a4428000000YycL,
+[TCCity]a4428000000YycG,
+[TourInclusions]a4428000000YycV,
+[Media]a4428000000Yyca,
+[Dealpdf]a4428000000Yycu?pv0={!Deal__c.AgentsId__c}</url>
+    <width>900</width>
+</WebLink>

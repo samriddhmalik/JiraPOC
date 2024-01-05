@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>BER_Hardship_Value_Validation</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>CVC_MayJuneCOVID_Validation</name>
+    </customPermissions>
+    <description>Custom Permission used in Validation Rule</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>order__c.CVC__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Validation Rule - CVC_MayJuneCOVID_Validation</label>
+</PermissionSet>

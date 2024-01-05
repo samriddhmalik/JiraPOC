@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(mp_BC_Available_formula__c = &apos;NOT AVAILABLE&apos;, HYPERLINK( &apos;https://cicopy-tad.cs111.force.com/TADMerchantPortal/s/report/00O1e000000F8cO?reportFilters=[{&quot;column&quot;:&quot;departures_dates__c.Name&quot;,&quot;operator&quot;:&quot;equals&quot;,&quot;value&quot;:&quot;&apos; &amp; Name &amp; &apos;&quot;},{&quot;column&quot;:&quot;Deal__c.Name&quot;,&quot;operator&quot;:&quot;equals&quot;,&quot;value&quot;:&quot;&apos; &amp;  Deal__r.Name  &amp; &apos;&quot;}]&apos;,&apos;AVAILABLE&apos;, &quot;_parent&quot; ), &apos;NOT AVAILABLE&apos; )</formula>
+    <label>Sales Report Hyperlink</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1808_UPDATE_REST</fullName>
+    <columns>NAME</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>order_status__c</columns>
+    <columns>Sync_With_AP__c</columns>
+    <columns>order_record_type_name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>departure_date__c</field>
+        <operation>greaterThan</operation>
+        <value>4/24/2019</value>
+    </filters>
+    <filters>
+        <field>deal__c</field>
+        <operation>equals</operation>
+        <value>1808</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,Ready For Export,Exported</value>
+    </filters>
+    <filters>
+        <field>departure_date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>6/14/2019</value>
+    </filters>
+    <label>1808 - UPDATE - REST</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

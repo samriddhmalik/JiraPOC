@@ -1,0 +1,70 @@
+<template>
+    <div style="margin-top: 20px;">
+        <template if:true={CaseData}>
+            <template for:each={CaseData} for:item="caseDetails" for:index="index">
+                <div  key={caseDetails.key}>  
+                    <lightning-icon 
+                    icon-name="standard:case"
+                    size="medium"></lightning-icon>
+                </div>
+                <div key={caseDetails.key} style="margin-top: -35px;padding-left: 45px;width: 623px;">
+<p><b>Case</b></p>
+<p><b>{caseDetails.Subject}</b></p>
+                </div>
+
+                <div class="slds-grid slds-gutters" key={caseDetails.key} style="padding-top: 30px;">
+                    <div class="slds-col" style="width:30%; margin-left:10px;">
+                        <p><b>Priority</b></p>
+                      <span>{caseDetails.Priority}</span>
+                    </div>
+                    <div class="slds-col" style="margin-left: 10px; width:30%">
+                        <p><b>Status</b></p>
+                      <span>{caseDetails.Status}</span>
+                    </div>
+                    <div class="slds-col" style="margin-left: 10px; width:40%">
+                        <p><b>CaseNumber</b></p>
+                      <span>{caseDetails.CaseNumber}</span>
+                    </div>
+                  </div>
+
+                  <!--div key={caseDetails.key} style="padding-top: 30px;">
+                    <h2 style="color: blue;">DETAILS</h2>
+                    </div>-->
+
+                  <div key={caseDetails.key} style="margin-left: -25px;">
+                    <lightning-accordion allow-multiple-sections-open class="slds-m-around_medium" active-section-name={activeSections}>
+                        <lightning-accordion-section name="A" label="Case Information">
+
+                          <div style="    display: flex;
+                          justify-content: left;
+                      " >
+                      <div style="width: 65% !important">
+                        <p><b>Subject</b></p>
+                        <p>{caseDetails.Subject}</p>
+                        </div>
+                        <div style="width:35%">
+                          <p style="margin-left: 10px;"><b>Contact Name</b></p>
+                          <p style="color:blue;margin-left: 10px;">{caseDetails.Contact.Name}</p>
+                          </div>
+                          </div>
+
+                          <div>
+                         
+                            <div style="margin-top: -25px;">
+                                <hr style="width: 100%; color:black">
+                            </div>
+                            <div style="margin-top: -25px;width: 100%">
+                            <p><b>Description</b></p>
+                            <p>{caseDetails.Description}</p>
+                            </div>
+                          </div>  
+
+                          
+                        </lightning-accordion-section>
+                        </lightning-accordion>
+                  </div>
+              
+                </template>
+        </template>
+        </div>
+</template>

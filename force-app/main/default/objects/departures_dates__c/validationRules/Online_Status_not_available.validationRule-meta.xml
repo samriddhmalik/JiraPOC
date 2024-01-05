@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Online_Status_not_available</fullName>
+    <active>false</active>
+    <description>Online Status &quot;Offline-Auto&quot; is not able to be selected manually. Is selected in auto process only.</description>
+    <errorConditionFormula>AND(
+ NOT(Bypass_VR__c ),
+ ISCHANGED(online_status__c ) ,
+ ISPICKVAL( online_status__c , &quot;Offline - Auto&quot;) 
+ )</errorConditionFormula>
+    <errorDisplayField>online_status__c</errorDisplayField>
+    <errorMessage>&quot;Offline - Auto&quot; is not available to you - please try again</errorMessage>
+</ValidationRule>

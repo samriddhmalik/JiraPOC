@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier_Addon_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(   NOT( ISBLANK( AE_SB__r.Name ) )   , &apos;Carrier &apos;+  TEXT(Carrier__r.Carrier_Group__c)  +&apos; - &apos;+    AE_SB__r.Name ,  IF(NOT( ISBLANK( sub_stopover__r.Name ) ), &apos;Carrier &apos;+  TEXT(Carrier__r.Carrier_Group__c)  +&apos; - &apos;+    sub_stopover__r.Name , &apos;Carrier &apos;+  TEXT(Carrier__r.Carrier_Group__c)  +&apos; - &apos;+      airline_upgrade__r.Name  ) )</formula>
+    <label>Carrier Addon Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>emma-jayne.browne@tripadeal.com.au</email>
+    <name>Case Queue-Cruise Customisations</name>
+    <queueMembers>
+        <users>
+            <user>emma-jayne.browne@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>TAD_Web_Chat</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

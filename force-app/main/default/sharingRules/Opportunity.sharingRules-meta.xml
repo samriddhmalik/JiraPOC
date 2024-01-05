@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>External_to_Product_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>External to Product - Sharing</label>
+        <sharedTo>
+            <group>Product_External</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Product</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>OpportunityRW</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>OpportunityRW</label>
+        <sharedTo>
+            <group>OpportunityRW</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Product</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Product_External_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Product (External) - Sharing</label>
+        <sharedTo>
+            <group>Product</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Product_External</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Product_Team_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Product Team - Sharing</label>
+        <sharedTo>
+            <group>Product</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Product</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

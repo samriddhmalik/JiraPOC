@@ -1,0 +1,97 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" controller="dealAttachInclusionsController" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="initWrapper" type="dealAttachInclusionsController.initWrapper"/>
+    <aura:attribute name="listOfDealInclusions" type="Attached_Inclusions__c[]"/>
+    <aura:attribute name="showBothField" type="Boolean" default="false"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container {
+        min-width: 55vw;
+        }
+    </aura:html>     
+    
+    <div class="slds-card" style="font-family: 'Open Sans', sans-serif">
+        
+        
+        <!-- Header -->
+        <header class="slds-card__header slds-media slds-media_center">
+            <div class="slds-media__figure">
+                <img src="{!$Resource.DIPlane}" alt="Test" width="20" height="20"/> 
+            </div>
+            <div class="slds-media__body slds-card__header-title slds-text-title_bold" style="font-size: 14px">
+                Deal Inclusion Creation
+            </div>
+        </header>
+        
+        <!-- Table -->
+        <table class="slds-table slds-table_bordered slds-no-row-hover slds-table_cell-buffer" role="grid">
+            <thead>
+                <tr>
+                    <th scope="col" height="22" style="width: 3rem">Nr.</th>
+                    <th scope="col" height="22">Record Type</th>
+                    <th scope="col" height="22">Publishing Inclusion</th>
+                    <th scope="col" height="22">Text</th>
+                    <aura:if isTrue="{!v.showBothField}">
+                        <th scope="col" height="22">Description</th>
+                    </aura:if>
+                    <th scope="col" height="22" style="width: 3rem"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.listOfDealInclusions}" var="rec">
+                    <tr class="slds-hint-parent">
+                        <td style="font-weight: bold">
+                            <lightning:formattedNumber value="{!rec.index}"/>
+                        </td>
+                        
+                        <td>
+                            <lightning:select class="setWidth" aura:id="RecordTypePicklist" name="selectRT" label="Record Type" variant="label-hidden" value="{!rec.RecordTypeId}">
+                                <option value="" text="--- NONE ---"/>  
+                                <aura:iteration items="{!v.initWrapper.RecordTypeWrapper}" var="RType">
+                                    <option value="{!RType.RecordTypeId}">{!RType.RecordTypeName}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </td>
+                        
+                        <td>
+                            <br></br>
+                            <c:lookupField            
+                                           objectAPIName="Publishing_Inclusions__c" 
+                                           label="Pulishing Inclusion"
+                                           variant="label-hidden"
+                                           returnFields="['Full_Name_Formula__c']" 
+                                           queryFields="['Full_Name_Formula__c']"
+                                           selectedId="{!rec.Publishing_Inclusions__c}"/>
+                        </td>
+                        
+                        <td>
+                            <lightning:textarea style="width:250px" name="attText" value="{!rec.Text__c}" />
+                        </td>
+                        
+                        <aura:if isTrue="{!v.showBothField}">
+                            <td>
+                                <lightning:textarea style="width:150px" name="attText" value="{!rec.Description__c}" />
+                            </td>
+                        </aura:if>
+                        
+                        <td>
+                            <br></br>
+                            <lightning:buttonIcon iconName="utility:delete" alternativeText="Remove" title="Remove" name="{!rec.index}" onclick="{!c.removeRow}"/>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        <div class="slds-p-left_small slds-p-vertical_small">
+            <lightning:button variant="destructive" label="Delete All Rows" title="delete all rows" iconName="utility:recycle_bin_full" onclick="{!c.removeAllRows}"/>
+            <lightning:button variant="neutral" label="Add Additional Row" title="add additional row" iconName="utility:add" onclick="{!c.addNewRow}"/>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="slds-modal__footer" style="padding: 0.50rem 1rem;">
+            <lightning:button variant="brand" label="Create Deal Inclusions" title="Create Deal Inclusions" iconName="utility:save" onclick="{!c.createDealInclusions}"/>
+        </footer>
+    </div>
+    
+</aura:component>

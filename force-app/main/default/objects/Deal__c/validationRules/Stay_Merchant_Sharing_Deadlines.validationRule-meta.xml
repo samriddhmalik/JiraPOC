@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stay_Merchant_Sharing_Deadlines</fullName>
+    <active>true</active>
+    <description>If Deal Status equals to &quot;Published&quot; then Merchant Sharing Deadline - Days or Date cannot both be populated. It must be one or the other or none.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Deal_Status__c,&quot;Published&quot;),
+  OR(Escape_Stay_Deal__c = TRUE, Send_Merchant_Confirmation_email__c = TRUE),
+  AND(
+    NOT(ISBLANK( merchant_sharing_deadline__c )),
+    NOT(ISBLANK( merchant_sharing_deadline_date__c ))
+      )
+)</errorConditionFormula>
+    <errorDisplayField>merchant_sharing_deadline__c</errorDisplayField>
+    <errorMessage>If Deal Status equals to &quot;Published&quot; then Merchant Sharing Deadline - Days or Date cannot both be populated. It must be one or the other or none (Stay deal)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cs_Attribution_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Attribution Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customisation</fullName>
+                <default>false</default>
+                <label>Customisation</label>
+            </value>
+            <value>
+                <fullName>OLI</fullName>
+                <default>false</default>
+                <label>OLI</label>
+            </value>
+            <value>
+                <fullName>Addon</fullName>
+                <default>false</default>
+                <label>Addon</label>
+            </value>
+            <value>
+                <fullName>Sub Option</fullName>
+                <default>false</default>
+                <label>Sub Option</label>
+            </value>
+            <value>
+                <fullName>Dep Date HSS</fullName>
+                <default>false</default>
+                <label>Dep Date HSS</label>
+            </value>
+            <value>
+                <fullName>Dep City Surcharge</fullName>
+                <default>false</default>
+                <label>Dep City Surcharge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

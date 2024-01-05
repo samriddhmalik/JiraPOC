@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Publishing_AU_Needs_Account_Treat</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISCHANGED( Status__c ) ,
+OR(ISPICKVAL(Status__c,&quot;Hero&quot;),ISPICKVAL(Status__c,&quot;Published&quot;)),
+ISPICKVAL(Accounting_Treatment_AU__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Accounting_Treatment_AU__c</errorDisplayField>
+    <errorMessage>Deal Cannot be published. Deal needs Accounting Treatment nominated (Finance)</errorMessage>
+</ValidationRule>

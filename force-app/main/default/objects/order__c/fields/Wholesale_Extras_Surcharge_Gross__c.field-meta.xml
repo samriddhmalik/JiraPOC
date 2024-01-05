@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wholesale_Extras_Surcharge_Gross__c</fullName>
+    <externalId>false</externalId>
+    <formula>ae_qty_price__c +
+ sb_qty_price__c +
+ land_activity_a_qty_price__c +
+ land_activity_b_qty_price__c +
+ land_activity_c_qty_price__c +
+ land_activity_qty_price__c +
+ hss_qty_price__c + 
+ departure_city_qty_price__c
+ +
+Total_Order_Customisation__c
++
+ Total_Surcharge__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Wholesale Extras/Surcharge Gross</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

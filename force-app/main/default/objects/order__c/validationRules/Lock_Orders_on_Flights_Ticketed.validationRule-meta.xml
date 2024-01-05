@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Orders_on_Flights_Ticketed</fullName>
+    <active>false</active>
+    <description>Updated validation rule to look to Flights Ticketed checkbox - previously order status was used (Exported / Ready for Export)</description>
+    <errorConditionFormula>AND( Flights_Ticketed__c = true, 
+NOT ( ISCHANGED(Cancellation_Request__c)),
+NOT ( ISCHANGED( update_order__c )),
+NOT ( $Permission.Lock_Orders_On_Export ) 
+)</errorConditionFormula>
+    <errorMessage>This order has been Ticketed for Flights - you are unable to make changes to this booking. Please refer to your TL for further assistance.</errorMessage>
+</ValidationRule>

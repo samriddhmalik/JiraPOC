@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transfer_cost_confirmed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cost must be calculated and confirmed manually if Child seat, Multi Pickup or Oversize Luggage is selected</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Cost must be calculated and confirmed manually if Child seat, Multi Pickup or Oversize Luggage is selected</inlineHelpText>
+    <label>Transfer cost confirmed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

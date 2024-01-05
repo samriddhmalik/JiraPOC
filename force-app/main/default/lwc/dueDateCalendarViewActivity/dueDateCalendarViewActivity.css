@@ -1,0 +1,12 @@
+.calendar {
+    max-width: 1100px;
+    margin: 40px auto;
+  }
+  .slds-modal__container{
+    max-width: 98rem !important;
+    width:98% !important;
+    }
+    .modal-body{ 
+    height : 65vh !important; 
+    max-height: 65vh !important; 
+    }

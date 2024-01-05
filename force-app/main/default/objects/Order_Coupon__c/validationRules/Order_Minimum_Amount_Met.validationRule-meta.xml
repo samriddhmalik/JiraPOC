@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Minimum_Amount_Met</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(OR(
+ $Profile.Name = &apos;System Administrator&apos;,
+ $User.Username = &apos;sally@tripadeal.com.au&apos;,
+ $User.Username = &apos;shannon.knapp@tripadeal.com.au&apos;
+)),
+ order__r.total_price__c &lt; minimum_order_value__c 
+)</errorConditionFormula>
+    <errorMessage>This order has not met the minimum amount to use the chosen coupon. The C/S Manager can override this if required.</errorMessage>
+</ValidationRule>

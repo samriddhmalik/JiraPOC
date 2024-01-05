@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_COVID19__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(  ordexp_CVC__c ),
+&quot;Issued&quot;,&quot;CustActionRequired&quot;,
+
+&quot;NYCE&quot;,&quot;Processed&quot;,
+&quot;TADCredit&quot;,&quot;Processed&quot;,
+&quot;Return Home&quot;,&quot;Processed&quot;,
+&quot;Proceed&quot;,&quot;Processed&quot;,
+&quot;POM&quot;,&quot;Processed&quot;,
+&quot;Open Credit&quot;,&quot;Processed&quot;,
+&quot;Open Credit(Revised)&quot;,&quot;Processed&quot;,
+&quot;DateChange&quot;,&quot;Processed&quot;,
+&quot;Declined&quot;,&quot;Processed&quot;,
+&quot;Cancel &amp; Credit&quot;,&quot;Processed&quot;,
+&quot;Cancelled&quot;,&quot;Processed&quot;,
+&quot;Forced Credit&quot;,&quot;Processed&quot;,
+&quot;1939PaymentReceivedReissue&quot;,&quot;Processed&quot;,
+&quot;DateChange&quot;,&quot;Processed&quot;,
+&quot;TADDefer&quot;,&quot;Processed&quot;,
+&quot;3237ExclCredit&quot;,&quot;Processed&quot;,
+&quot;CancelManualCredit&quot;,&quot;Processed&quot;,
+&quot;TADCredit&quot;,&quot;Processed&quot;,
+
+&quot;3111Opt1&quot;,&quot;Goodwill&quot;,
+&quot;3111Opt2&quot;,&quot;Goodwill&quot;,
+&quot;Goodwill&quot;,&quot;Goodwill&quot;,
+&quot;Unaffected&quot;,&quot;BAU&quot;,
+
+&quot;Voucher&quot;,&quot;TADActionRequired&quot;,
+&quot;TADActionRequired&quot;,&quot;TADActionRequired&quot;,
+
+&quot;TADRefund&quot;,&quot;BERefund&quot;,
+&quot;BERefund&quot;,&quot;BERefund&quot;,
+
+&quot;RefundProcessed&quot;,&quot;RefundProcessed&quot;,
+
+&quot;Chargeback&quot;,&quot;Chargeback&quot;,
+
+
+IF( AND(ISBLANK(TEXT(ordexp_CVC__c )),TEXT( ordexp_TAD_Order__r.ordexp_master_status__c ) &lt;&gt; &quot;Expired&quot;,TEXT(ordexp_TAD_Order__r.ordexp_master_status__c) &lt;&gt; &quot;Cancelled&quot;) ,
+
+
+
+&quot;BAU&quot;, &quot;-&quot;)
+
+)</formula>
+    <label>COVID19</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

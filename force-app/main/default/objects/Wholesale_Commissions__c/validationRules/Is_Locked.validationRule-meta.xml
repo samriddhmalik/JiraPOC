@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Locked</fullName>
+    <active>false</active>
+    <description>Ensures not percentages change in time.</description>
+    <errorConditionFormula>locked__c</errorConditionFormula>
+    <errorMessage>Don&apos;t change these percentages. They are locked you will possibly affect orders related to these percentages. If you really need to edit this record, turn off this validation otherwise create a new record with new percentages and update the processes.</errorMessage>
+</ValidationRule>

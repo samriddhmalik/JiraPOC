@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>price_text_picklist__c</fullName>
+    <externalId>false</externalId>
+    <label>PP/ # People</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>per person twin share</fullName>
+                <default>false</default>
+                <label>per person twin share</label>
+            </value>
+            <value>
+                <fullName>for 2 people</fullName>
+                <default>false</default>
+                <label>for 2 people</label>
+            </value>
+            <value>
+                <fullName>for 3 people</fullName>
+                <default>false</default>
+                <label>for 3 people</label>
+            </value>
+            <value>
+                <fullName>for 4 people</fullName>
+                <default>false</default>
+                <label>for 4 people</label>
+            </value>
+            <value>
+                <fullName>for 2 adults &amp; 1 child</fullName>
+                <default>false</default>
+                <label>for 2 adults &amp; 1 child</label>
+            </value>
+            <value>
+                <fullName>for 2 adults &amp; 2 children</fullName>
+                <default>false</default>
+                <label>for 2 adults &amp; 2 children</label>
+            </value>
+            <value>
+                <fullName>for 2 adults &amp; 3 children</fullName>
+                <default>false</default>
+                <label>for 2 adults &amp; 3 children</label>
+            </value>
+            <value>
+                <fullName>per person</fullName>
+                <default>false</default>
+                <label>per person</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

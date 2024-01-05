@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specify_who_costs_will_be_reimbursed_by</fullName>
+    <active>true</active>
+    <description>Specify who costs will be reimbursed by</description>
+    <errorConditionFormula>AND
+(ISPICKVAL(
+Will_these_costs_be_re_imbursed__c , &quot;Yes&quot;),
+(ISPICKVAL(If_yes_by_who__c,&quot;&quot;)))</errorConditionFormula>
+    <errorDisplayField>If_yes_by_who__c</errorDisplayField>
+    <errorMessage>Please specify who these costs will be reimbursed by</errorMessage>
+</ValidationRule>

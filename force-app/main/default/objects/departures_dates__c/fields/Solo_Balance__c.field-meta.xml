@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solo_Balance__c</fullName>
+    <externalId>false</externalId>
+    <label>Solo Balance</label>
+    <summarizedField>order__c.qty__c</summarizedField>
+    <summaryFilterItems>
+        <field>order__c.qty__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>order__c.twin_solo_override__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>order__c.order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled, Expired</value>
+    </summaryFilterItems>
+    <summaryForeignKey>order__c.departures_dates__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

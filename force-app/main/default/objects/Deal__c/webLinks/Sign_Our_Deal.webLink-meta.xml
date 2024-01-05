@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sign_Our_Deal</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Sign Our Deal</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1 
+&amp;serverUrl={!API.Partner_Server_URL_370} 
+&amp;Id={!Deal__c.Id} 
+&amp;QueryId=[DealQuery]a44p00000008ryq,
+[DealSubOptions]a44p00000008ryv,
+[Departuredate]a44p00000008sX5,
+[Component]a44p00000008sYt,
+[Componentviasub]a44p00000008t2E,
+[ComponentPriceviasub]a44p00000008soD,
+[ComponentPricing]a44p00000008scH,
+&amp;TemplateId=a4Cp0000000M8Ig</url>
+</WebLink>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>extras_summary__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK( ae__c )),&quot;Arrive Early: &quot; &amp; ae__r.City__c ,&quot;&quot;) &amp;
+IF(NOT(ISBLANK( sb__c )),&quot; | Stay Behind: &quot; &amp; sb__r.City__c ,&quot;&quot;) &amp;
+IF(NOT(ISBLANK( pre_tour_stopover__c )),&quot; | Pre Stop Over: &quot; &amp; pre_tour_stopover__r.Destination__c ,&quot;&quot;) &amp;
+IF(NOT(ISBLANK( post_tour_stopover__c )),&quot; | Post Stop Over: &quot; &amp; post_tour_stopover__r.Destination__c ,&quot;&quot;) &amp;
+IF(NOT(ISBLANK( land_activity__c )),&quot; | Land Actvity: &quot; &amp; land_activity__r.title__c ,&quot;&quot;)&amp;
+IF(NOT(ISBLANK( land_activity_a__c )),&quot; | Land Actvity: &quot; &amp; land_activity_a__r.title__c ,&quot;&quot;)&amp;
+IF(NOT(ISBLANK( land_activity_b__c )),&quot; | Land Actvity: &quot; &amp; land_activity_b__r.title__c ,&quot;&quot;)&amp;
+IF(NOT(ISBLANK( land_activity_c__c )),&quot; | Land Actvity: &quot; &amp; land_activity_c__r.title__c ,&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Extras Summary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

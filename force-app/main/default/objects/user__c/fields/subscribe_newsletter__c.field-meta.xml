@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>subscribe_newsletter__c</fullName>
+    <externalId>false</externalId>
+    <label>subscribe newsletter</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>on</fullName>
+                <default>true</default>
+                <label>on</label>
+            </value>
+            <value>
+                <fullName>off</fullName>
+                <default>false</default>
+                <label>off</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

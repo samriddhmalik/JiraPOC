@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postcode_from_PIF__c</fullName>
+    <externalId>false</externalId>
+    <label>Postcode from PIF</label>
+    <summarizedField>customer__c.Postcode_Number__c</summarizedField>
+    <summaryFilterItems>
+        <field>customer__c.Postcode_Number__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>customer__c.order__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

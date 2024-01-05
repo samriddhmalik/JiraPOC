@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_to_AP</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Sync_to_AP__c</columns>
+    <columns>has_flights__c</columns>
+    <columns>Status__c</columns>
+    <columns>deal_type__c</columns>
+    <columns>deal_type_nz__c</columns>
+    <columns>Deal_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sync_to_AP__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Published,Hero</value>
+    </filters>
+    <label>Sync to AP + Live</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master</fullName>
+    <active>true</active>
+    <label>Master</label>
+    <picklistValues>
+        <picklist>Email_Comms__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send1652-310719</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send1768-090819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send1793-020819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send1793-070819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send1960-060819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent1652-310719</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent1768-090819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent1793-020819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent1793-070819</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent1960-060819</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Passenger_Replacement__c</picklist>
+        <values>
+            <fullName>Allow Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Replacement Completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Passport_Update__c</picklist>
+        <values>
+            <fullName>Form Returned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Form Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Form</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

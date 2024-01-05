@@ -1,0 +1,21 @@
+.THIS .slds-form-element__label {
+  font-size: 0.85rem !important;
+  color: black;
+}
+
+.THIS .selected {
+  color: orange;
+}
+
+.THIS .blackColor a {
+  color: black !important;
+  text-decoration: underline;
+}
+
+.THIS .custom-loading-text {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: -1.5rem;
+  left: -1rem;
+  white-space: nowrap;
+}

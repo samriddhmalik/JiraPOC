@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finalised_Tech_Support</fullName>
+    <columns>NAME</columns>
+    <columns>Subject__c</columns>
+    <columns>Description__c</columns>
+    <columns>Department__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Who_is_impacted__c</columns>
+    <columns>Status__c</columns>
+    <columns>Issue_Feature__c</columns>
+    <columns>Priority__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>ETA__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Actioned,Withdrawn,Draft</value>
+    </filters>
+    <label>Finalised Tech Support</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin_of_Call__c</fullName>
+    <externalId>false</externalId>
+    <label>Origin of Call</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct from Merchant</fullName>
+                <default>false</default>
+                <label>Direct from Merchant</label>
+            </value>
+            <value>
+                <fullName>Direct from Customer</fullName>
+                <default>false</default>
+                <label>Direct from Customer</label>
+            </value>
+            <value>
+                <fullName>Referred from TAD Employee</fullName>
+                <default>false</default>
+                <label>Referred from TAD Employee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

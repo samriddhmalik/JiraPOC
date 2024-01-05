@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Welcome_home_today</fullName>
+    <columns>NAME</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>Fire_Feefo_today__c</columns>
+    <columns>survey_sent__c</columns>
+    <columns>purchaser_full_name__c</columns>
+    <columns>Deal__c</columns>
+    <columns>Welcome_home_date__c</columns>
+    <columns>Welcome_home_sent__c</columns>
+    <columns>return_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Welcome_home_date__c</field>
+        <operation>equals</operation>
+        <value>yes</value>
+    </filters>
+    <label>Welcome home today</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

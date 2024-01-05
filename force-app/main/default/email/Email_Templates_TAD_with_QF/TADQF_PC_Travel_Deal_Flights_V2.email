@@ -1,0 +1,534 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+<div style="margin:0;margin:0;background-color:#fff;height:100%!important;width:100%!important;background-color: #f8f8fa;padding: 0;">
+
+ <table border="0" cellpadding="0" cellspacing="0" height="100%" style="border-collapse:collapse;margin:0;background-color:#fff;height:100%!important;width: 100%;max-width: 600px!important;
+margin: auto;border: 1px solid #c8c8c8;margin-top: 0;">
+
+  <tbody>
+
+
+  <tr>
+
+   <td style="width:5%;color: #fff;"> . </td>
+
+   <td align="center" style="margin:0;margin:0;padding-top:20px;padding-bottom:20px;/*! background-color:#f8f8fa; */height:100%!important;width:90%!important" valign="top"><table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background-color:#fff;max-width:600px;/*! border:1px solid #c8c8c8 */" width="100%">
+
+     <tbody>
+
+     
+
+     <tr>
+
+      <td align="center" style="margin-left:0px;margin-right:0px;padding-top:26px;padding-bottom:20px" valign="top"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+
+        <tbody>
+
+         <tr>
+
+          <td align="center" valign="top"><img style="max-width: 600px!important; border: 0; outline: none; text-decoration: none;" src="https://3039.s3.ap-southeast-2.amazonaws.com/TAD-QFF-EDM-Header-600px.jpg" alt="tripadeal logo" width="100%" align="middle" /></td>
+
+         </tr>
+
+        </tbody>
+
+       </table></td>
+
+     </tr>
+
+     <tr>
+
+      <td><table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+
+        <tbody>
+
+        
+
+        <tr>
+
+         <td><table id="main-table" style="border-collapse:collapse;width: 100%">
+
+              <tbody>
+
+               <tr>
+
+                <td align="left" style="width:100%;padding-bottom:20px;" valign="top"><table style="border-collapse:collapse">
+
+                  <tbody>
+
+					<tr>
+
+					<td style="color: #00bfd6; font-family: Lato, Arial, sans-serif; font-size: 22px; line-height: 140%; font-weight: 400; text-align: left;" valign="top">Congratulations!</td>
+
+					</tr>
+
+					<tr>
+
+					<td style="color: #000000; text-align: left; font-family: Lato, Arial, sans-serif; font-size: 15px; line-height:22px;" valign="top">Hi {!Order_Communication_POE__c.ordexp_Purchaser_First_Name__c}, here are the details of your purchase, along with a breakdown of what happens next.</td>
+
+					</tr>
+
+					</tbody>
+
+                 </table></td>
+
+               </tr>
+
+              
+
+				  <tr>
+
+                <td height="10" style="font-size:0px;background:#fff;line-height:20px;padding-bottom:10px;border-top-style:solid;border-color:#D2D2D2;border-width:1px;"> </td>
+
+               </tr>
+
+               <tr>
+
+		<td style="color: #000000; text-align: left; font-family: Lato, Arial, sans-serif; font-size: 15px; line-height:22px;" valign="top"><p><span style="font-weight: bold; text-decoration: none;">YOUR ORDER DETAILS:</span> <br>
+		 <span style="color: #00bfd6;">Order Reference Number:</span> {!Order_Communication_POE__c.order_number__c} <br>
+		 <span style="color: #00bfd6;">Deal:</span> {!Order_Communication_POE__c.ordexp_DealFC_fromTADOrder__c} - {!Order_Communication_POE__c.OptionsPC_fromTADOrder__c} <br>
+		 <span style="color: #00bfd6;">Deal ID:</span> {!Order_Communication_POE__c.Deal_and_Title__c} <br>
+		 <span style="color: #00bfd6;">Departure Date:</span> {!Order_Communication_POE__c.Day_Month_Year__c} <br>
+		 <span style="color: #00bfd6;">Departure City:</span> 
+{!Order_Communication_POE__c.departure_city__c}  <br>
+                 <span style="color: #00bfd6;">Quantity:</span> {!Order_Communication_POE__c.ordexp_PAX_Quantity__c} <br/>
+                 <span style="color: #00bfd6;">Additional Options:</span> {!Order_Communication_POE__c.Add_On_Information__c} <br /><br/>
+		<span style="color: #000;">Want the details of your deal? You can download them <a style="color: #00bfd6;font-weight:bold;text-decoration: none"  href="{!Order_Communication_POE__c.Deal_PDF_plain__c}">here.</a><br>
+		Our standard Terms and Conditions are <a style="color: #00bfd6;font-weight:bold;text-decoration: none;" href="https://www.tripadeal.com.au/terms" target="_blank" rel="noopener noreferrer">here.</a></p></td>
+
+				</tr>
+
+				<tr>
+
+                <td height="30" style="font-size:0px;background:#fff;line-height:30px;"> </td>
+
+               </tr>
+
+				   <tr>
+
+				  <td valign="top" style="background-color: #fff;padding:16px 0 16px 0;border-top:#D2D2D2 1px solid;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:center;font-family:Lato, Arial, sans-serif;font-size:22px;line-height:28px;color: #00bfd6;">
+
+								What happens next?</p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+				  
+
+ <!-- Point 1 -->
+
+				  <tr>
+
+				  <td valign="top" style="background-color: #F0FDFE;padding:6px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+								<span style="color: #00bfd6;font-size:24px;line-height:28px;font-weight: bold;">1</span><br>
+<!--
+								If you haven’t already, please complete your <span style="font-weight:bold;">Passenger Information Form within 72 hours of purchase.*</span> You can find this by logging into your TripADeal account.-->
+
+First time logging in ?  Use your booking email address to create a password for your TripADeal Account. <br><br>
+
+Complete your Passenger Information Form, if you haven't already done so, within 72 hours of purchase*. Login to your TripADeal account to complete this step.</p>
+
+						  </td>
+
+						</tr>
+
+						  <tr>
+<!--
+                      <td valign="top" class="mcnTextContent;"><p style="text-align:center;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;color:#00bfd6;padding-top:10px;">Click the link below to be directed to your TripADeal account.</p></td>-->
+
+                     </tr>
+
+ <!-- BUTTON : BEGIN -->
+
+               <tr>
+
+                <td style="background-color:#F0FDFE;padding: 6px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin:auto;">
+
+                  <tbody>
+
+                   <tr>
+
+                    <td style=""><a href="https://www.tripadeal.com.au/signin" style="background:#00bfd6;border:#00bdf6 1px solid;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:15px;text-decoration:none;margin:10px;color:#ffffff;display:block;border-radius:4px;border-radius: 4px;background: #00bfd6;display: block;padding: 14px 30px;" target="_blank"> Login or Set Up Your Password Now </a></td>
+
+                   </tr>
+
+                  </tbody>
+
+                 </table></td>
+
+               </tr>
+
+						  <tr>
+<!--
+                    <td valign="top" style="background-color: #F0FDFE;padding:0px 0 20px 0;"><p style="text-align:center;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;"> If you have not already set a password, you can do so <a style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;color: #00bfd6;text-decoration: none;font-weight: bold;"  href="http://www.tripadeal.com.au/password/reset/{!Order_Communication_POE__c.Order_Link_Token__c}">here.</a> </p></td>-->
+
+                   </tr>
+
+	  				 <!-- BUTTON : END -->
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="10" style="font-size:0px;background:#fff;line-height:10px;"> </td>
+
+            </tr>
+
+ <!-- APP MODULE START -->
+ 
+  <tr>
+ 
+  <td height="24" style="font-size:0px;background:#F0FDFE;line-height:24px;">¬†</td>
+ 
+  </tr>
+ 
+  <tr>
+ 
+  <td align="center" style="margin:20px 20px 20px 20px;background:#F0FDFE;"><span style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;color:#1a1a1a;font-weight:400;text-align:center; padding: 0px 40px;"> <span style="font-weight: bold;letter-spacing: 0.25px;font-size: 16px; padding"> <strong>Manage your booking with the TripADeal App</strong></span>
+ <br>Check your itinerary and more - download the TripADeal app and keep track of your trip.  </span>
+ 
+  </tr>
+ 
+
+     <tr>
+       <td style="padding: 20px 10px 10px;background: #F0FDFE;"> 
+           <table align="center" width="100%" style="width: 100%; max-width: 100%;" cellpadding="0" cellspacing="0" border="0" margin="0">
+             <tr>
+               <td align="right" width="50%" style="width: 50%; padding-right: 4px;">
+                 
+                  <a href="https://apps.apple.com/app/apple-store/id1550615510?pt=122562721&ct=Email&mt=8 " style="text-decoration: none;">
+                 <img width="150px" align="right" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/9d441d25-8416-404a-9f2b-6ed0b70d86ff.png" style="width: 150px;" >
+                 </a>
+               </td> 
+             
+               <td   align="left" width="50%" style="width: 50%; padding-left: 4px;" > <a href="https://play.google.com/store/apps/details?id=com.tadapp&referrer=utm_source%3DTripADeal%26utm_medium%3Demail" style="text-decoration: none;">
+                  <img  width="165.4px" align="left" src="https://image.e.tripadeal.com.au/lib/fe3011717164047f7d1077/m/3/ddaec0b5-ee87-4d31-8bc7-f818f5c3b4c7.png" style="width: 165.4px;" >
+               </a>
+               </td>
+             </tr>
+         </table>    
+       </td>
+  </tr>
+  <tr>
+ 
+  <td height="10" style="font-size:0px;background:#F0FDFE;line-height:10px;">¬†</td>
+ 
+  </tr>
+  <tr>
+ 
+  <td height="30" style="font-size:0px;background:#fff;line-height:30px;">&nbsp;</td>
+ 
+  </tr>
+    
+    
+    
+ 
+  <!-- APP MODULE FINISH -->
+
+
+
+<!-- Important note-->
+
+				  <tr>
+
+				  <td valign="top" style="background-color: #FFF6F6;padding:10px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+							<span style="color:#B50003;">*Important: If you make a ‘last minute booking’ within 8 weeks of departure, you must submit your Passenger Information <span style="font-weight:bold;">within 24 hours of purchase.</span> These bookings may not receive their final travel documentation until as little as 1 week prior to departure, however they will be fast-tracked to process all visa requirements.</span></p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="10" style="font-size:0px;background:#fff;line-height:10px;"> </td>
+
+            </tr>
+
+
+
+<!-- Point 2-->
+
+				  <tr>
+
+				  <td valign="top" style="background-color: #F0FDFE;padding:8px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+								<span style="color: #00bfd6;font-size:24px;line-height:28px;font-weight: bold;">2</span><br>
+
+								Once we’ve got your information, we’ll send you an email to let you know and your booking will be processed.<br><br>If you have purchased a tour package without flights included, we will send a follow-up confirmation email once the required minimum numbers for the tour are met and the departure is guaranteed so you may begin to make your own travel arrangements either side of this tour. Please do not make any non-refundable travel arrangements prior to receiving this confirmation.<br><br>If you have purchased a tour package with flights included, we suggest you wait until you receive your final travel documentation from TripADeal which will include your flight details before making any non-refundable travel arrangements.</p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="10" style="font-size:0px;background:#fff;line-height:10px;"> </td>
+
+            </tr>
+
+
+
+<!-- Point 3-->
+
+				  <tr>
+
+				  <td valign="top" style="background-color: #F0FDFE;padding:8px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+								<span style="color: #00bfd6;font-size:24px;line-height:28px;font-weight: bold;">3</span><br>
+
+								We strongly recommend that you purchase travel insurance immediately after making your booking. Your policy should include cancellation, baggage, theft, personal liability, accident and medical cover, plus any other requirements specific to your travel. </a></p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="10" style="font-size:0px;background:#fff;line-height:10px;"> </td>
+
+            </tr>
+
+
+
+<!-- Point 4-->
+<!--
+				  <tr>
+
+				  <td valign="top" style="background-color: #F0FDFE;padding:8px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+								<span style="color: #00bfd6;font-size:24px;line-height:28px;font-weight: bold;">4</span><br>
+
+								If travelling overseas, it's essential you organise all relevant visas prior to travelling. Where a visa is required, you'll often need to wait till you receive your travel documentation in order to apply for your visa.<br><br>TripADeal offers a visa processing service for several of our popular destinations. Advice on how to apply will be provided in your final documentation.</p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="10" style="font-size:0px;background:#fff;line-height:10px;"> </td>
+
+            </tr>-->
+
+
+
+<!-- Point 5-->
+
+				  <tr>
+
+				  <td valign="top" style="background-color: #F0FDFE;padding:8px 0;">
+
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:95%;min-width:95%;" width="95%">
+
+					  <tbody>
+
+						<tr>
+
+						  <td valign="top">
+
+							<p style="text-align:left;font-family:Lato, Arial, sans-serif;font-size:15px;line-height:22px;">
+
+								<span style="color: #00bfd6;font-size:24px;line-height:28px;font-weight: bold;">4</span><br>
+
+								You will receive your final travel documentation approximately 4-6 weeks prior to departure (unless otherwise stated in your booking instructions).</p>
+
+						  </td>
+
+						</tr>
+
+				  </tbody>
+
+				</table>
+
+			  </td>
+
+			</tr>
+
+			<tr>
+
+               <td height="30" style="font-size:0px;background:#fff;line-height:30px;"> </td>
+
+            </tr>
+
+                             <!-- FOOTER:START -->
+
+               <tr>
+
+                <td height="24" style="font-size:0px;background:#F2F1F1;line-height:24px;"> </td>
+
+               </tr>
+
+               <tr>
+
+                <td align="center" style="margin:20px 20px 20px 20px;background:#F2F1F1;"><span style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;color:#1a1a1a;font-weight:400;text-align:center"> <span style="font-weight: bold;letter-spacing: 0.25px;font-size: 16px;"> We're here to help you.</span>
+<br/>If you have any questions, please visit our <a href="https://support.tripadeal.com.au" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> Support Page.</span></a>
+<br/>Or call us on <a href="tel:1300861736" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> 1300 861 736. </span> </a> </span></td>
+
+               </tr>
+
+               <tr>
+
+                <td align="center" style="margin:0px 20px 0px 20px;background: #F2F1F1"><p style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;font-weight:400;text-align:center"> Regards, <br/>
+
+                  The TripADeal Team </p></td>
+
+               </tr>
+
+               <tr>
+
+                <td height="10" style="font-size:0px;background:#F2F1F1;line-height:10px;"> </td>
+
+               </tr>
+
+               <!-- FOOTER:END -->
+
+              </tbody>
+
+             </table>
+<!-- QF FOOTER:START -->
+</br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td style="color: #1a1a1a; font-family: Lato, Arial, sans-serif; font-size: 15px; line-height: 140%; font-weight: 400; text-align: center;">
+            You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.
+<br>
+Apple® and Apple logo® are trademarks of Apple Inc.
+Google Play and the Google Play logo are trademarks of Google LLC.
+        </td>
+    </tr>
+</table>
+<!-- QF FOOTER:END -->
+</td>
+
+           </tr>
+
+          </tbody>
+
+         </table></td>
+
+       </tr>
+
+      </tbody>
+
+     </table></td>
+
+    <td style="width:5%;color: #fff;"> . </td>
+
+   </tr>
+
+  </tbody>
+
+ </table>
+
+</div>

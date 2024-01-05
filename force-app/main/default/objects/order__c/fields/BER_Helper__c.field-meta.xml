@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BER_Helper__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Flights_Ticketed__c ,&apos;HasFlightsTicketed&apos;,&apos;NoFlightsTicketed&apos;)&amp;&apos; / &apos;&amp; 
+IF( Flights_ticketed_by_UJ__c  ,&apos;IsUJ&apos;,&apos;NotUJ&apos;)&amp;&apos; / &apos;&amp;
+IF( Cruise__c ,  IF( Cabins_Booked__c &gt; 0,&apos;HasCruiseBooked&apos;, &apos;HasCruise&apos;) ,&apos;NoCruise&apos;)&amp;&apos; / &apos;&amp; 
+IF( Order_Customisation_Count__c &gt;0,&apos;HasCusto&apos;,&apos;NoCusto&apos;)&amp;&apos; / &apos;&amp; 
+IF( Total_Payments__c  &gt;0,&apos;HasPayment&apos;,&apos;NoPayment&apos;)&amp;&apos; / &apos;&amp; 
+IF( COVID_Prepayments_Count__c &gt;0,&apos;HasPrepayments&apos;, &apos;NoPrepayments&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>BER Helper</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

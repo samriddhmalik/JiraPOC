@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DealPDF3Portal__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id +
+&quot;&amp;templateid=a4C0K000000D9iJ&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;ofn=&quot; + Name + &quot; &quot; +  Agents__c + 
+&quot;&amp;queryid=[TCDealItinerary]a4428000000E87L,[TCItinerary]a440K000001R5co,[TCOptions1]a4428000000E8Br,[TCSubOptions1]a4428000000E8CG,[DepartureDate]a4428000000YycL,[TCCity]a4428000000YycG,[TourInclusions]a4428000000YycV,[Media]a4428000000Yyca,[Dealpdf]a4428000000Yycu?pv0=&quot; + Agents__r.Acct_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DealPDF3Portal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,98 @@
+<apex:page controller="IngenicoHostedPaymentController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton id="backtoorder" value="Back to Order" action="{!redirectToOrder}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:actionFunction action="{!updateAmounts}" name="UpdateAmounts_JS" reRender="visa-amount, mc-amount, amex-amount, visa-surcharge, mc-surcharge, amex-surcharge"/>
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+            <apex:pageBlockSection >
+
+                <apex:outputText label="Order" value="{!orderName}" />
+                <apex:outputText label="Order Record Type" value="{!orderRecordType}" />
+
+                <apex:outputText label="Description" value="{!description}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+
+                <apex:inputText label="Payment Amount" value="{!pageAmount}" onChange="UpdateAmounts_JS();"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+
+                <apex:inputText label="Payer Name" value="{!payerName}"/>
+                <apex:inputText label="Payer Email" value="{!payerEmail}"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem><apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputText label="Currency" value="{!currencyCode}" id="currency-code"/>
+                <apex:outputText label="Update Order Status" value="{!updateOrderStatus}" id="update-order"/>
+                <apex:outputText label="Total Visa Amount" value="{!visaAmount}" id="visa-amount"/>
+                <apex:outputText label="Visa 2% Card Surcharge" value="{!visaSurcharge}" id="visa-surcharge"/>
+
+                <apex:outputText label="Total MasterCard Amount" value="{!mcAmount}" id="mc-amount"/>
+                <apex:outputText label="MasterCard  2% Card Surcharge" value="{!mcSurcharge}" id="mc-surcharge"/>
+
+                <apex:outputText label="Total Amex Amount" value="{!amexAmount}" id="amex-amount"/>
+                <apex:outputText label="Amex 2.95% Card Surcharge" value="{!amexSurcharge}" id="amex-surcharge"/>
+
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Pay with Visa" action="{!showPopup}" rerender="visa-popup, showmsg"/>
+                <apex:commandButton value="Pay MasterCard" action="{!showPopup}" rerender="mc-popup, showmsg"/>
+                <apex:commandButton value="Pay with Amex" action="{!showPopup}" rerender="amex-popup, showmsg"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:outputPanel id="visa-popup">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                <apex:commandButton value="Close" action="{!closePopup}" rerender="visa-popup" styleClass="close-button"/>
+                <apex:iframe src="{!visaUrl}" height="610px" scrolling="false" id="visa-iframe"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:outputPanel id="mc-popup">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                <apex:commandButton value="Close" action="{!closePopup}" rerender="mc-popup" styleClass="close-button"/>
+                <apex:iframe src="{!mcUrl}" height="610px" scrolling="false" id="mc-iframe"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:outputPanel id="amex-popup">
+            <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/>
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                <apex:commandButton value="Close" action="{!closePopup}" rerender="amex-popup" styleClass="close-button"/>
+                <apex:iframe src="{!amexUrl}" height="610px" scrolling="false" id="amex-iframe"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+
+    <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 460px;
+            margin-left: -250px;
+            top:-50px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+        .close-button{
+            float:right;
+            margin:5px;
+        }
+    </style>
+
+</apex:page>

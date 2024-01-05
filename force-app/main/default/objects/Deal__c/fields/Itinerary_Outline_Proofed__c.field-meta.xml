@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Itinerary_Outline_Proofed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will be completed by the Product Analysts and then used by the Content and Publishing Team.</inlineHelpText>
+    <label>Itinerary Outline - Proofed</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

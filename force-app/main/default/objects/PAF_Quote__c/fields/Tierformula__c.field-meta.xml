@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tierformula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( City__c , &quot;LON&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;MAN&quot;),&quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;NYC&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;MIA&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;DFW&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;BOG&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;BUE&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;GIG&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;NBO&quot;), &quot;2&quot;, 
+IF(ISPICKVAL( City__c , &quot;VIE&quot;), &quot;3&quot;, 
+IF(ISPICKVAL( City__c , &quot;PRG&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;HAM&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;LED&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;YVR&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;MRU&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;LIM&quot;), &quot;3&quot;,
+IF(ISPICKVAL( City__c , &quot;DUB&quot;), &quot;2&quot;, &quot;1&quot;)))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tier</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

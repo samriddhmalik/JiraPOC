@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QFF_File_Coupon__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Total_Order_Coupons_Discount__c&gt;0,
+
+&apos; &apos;&amp;
+
+RPAD(UPPER(Purchaser_Last_Name__c),25,&apos; &apos;)&amp;
+
+RPAD(LEFT(UPPER(Purchaser_First_Name__c),1),2,&apos; &apos;)&amp;
+
+RPAD(UPPER(&quot;MR&quot;),6,&apos; &apos;)&amp;
+
+RPAD(LPAD(Qantas_Frequent_Flyer_Number__c,16,&apos;0&apos;),17,&apos; &apos;)&amp;
+
+RPAD(
+RIGHT(TEXT(year(ordexp_final_departure_date__c)),2)&amp;MID(TEXT(ordexp_final_departure_date__c),6,2)&amp;MID(TEXT(ordexp_final_departure_date__c),9,2),6,&apos; &apos;)&amp;
+
+LPAD(&quot;TRIPADEAL EARN REF&quot;,34,&apos; &apos;)&amp;
+
+Name&amp;
+
+LPAD(&quot;COUPON&quot;,12,&apos; &apos;)&amp;
+
+LPAD(TEXT(CEILING(Total_Order_Coupons_Discount__c)),9,&apos;0&apos;)&amp;&apos; &apos;&amp;
+
+LPAD(TEXT(CEILING(Total_Order_Coupons_Discount__c)*3),7,&apos;0&apos;)&amp;&apos; &apos;&amp;
+
+/*LPAD(&apos;0&apos;,6,&apos;0&apos;)&amp;&apos; &apos;&amp;*/LPAD(TEXT(CEILING(Bonus_Points_Coupon__c)),6,&apos;0&apos;)&amp;&apos; &apos;&amp;
+
+LPAD(TEXT((CEILING(Total_Order_Coupons_Discount__c)*3)+Bonus_Points_Coupon__c ),7,&apos;0&apos;)
+
+
+,&quot;NULL&quot;)
+
+
+
+
+
+/* This was created based on Qantas Loyalty - Points File Specification General Products v1.8 18th July 2013*/
+
+/*06/06/2020 - Changes based on email from sanjeev.singh@qantasloyalty.com the requirement to capture the payment method (Cash/Coupon) for transactions.*/
+
+/*
+IF (Total_Order_Coupons_Discount__c&gt;0,
+
+&apos; &apos;&amp;
+
+RPAD(UPPER(Purchaser_Last_Name__c),25,&apos; &apos;)&amp;
+
+LEFT(UPPER(Purchaser_First_Name__c),1)&amp;
+&quot; &quot;&amp;
+RPAD(UPPER(&quot;MR&quot;),5,&apos;  &apos;)&amp;
+
+&apos; &apos;&amp;
+
+
+LPAD(Qantas_Frequent_Flyer_Number__c,16,&apos;0&apos;)&amp;
+&quot; &quot;&amp;
+RPAD(
+RIGHT(TEXT(year(ordexp_final_departure_date__c)),2)&amp;MID(TEXT(ordexp_final_departure_date__c),6,2)&amp;MID(TEXT(ordexp_final_departure_date__c),9,2),16,&quot; &quot;)&amp;
+
+&apos;                &apos;&amp;
+
+
+RPAD(&quot;TRIPADEAL EARN REF &quot;&amp;Name,28,&apos; &apos;)&amp;
+
+RPAD(&quot;COUPON&quot;,8,&apos; &apos;)&amp;
+
+LPAD(TRIM(TEXT(Total_Order_Coupons_Discount__c))&amp;&apos;00&apos;,8,&apos;0&apos;)&amp;
+&quot; &quot;&amp;
+LPAD(TEXT(CEILING(Total_Order_Coupons_Discount__c)*3),7,&apos;0&apos;)&amp;
+&quot; &quot;&amp;
+LPAD(&apos;0&apos;,6,&apos;0&apos;) &amp;
+&quot; &quot;&amp;
+LPAD(TEXT(CEILING(Total_Order_Coupons_Discount__c)*3),7,&apos;0&apos;)&amp;
+&quot; &quot;,&quot;NULL&quot;) */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>QFF File Coupon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

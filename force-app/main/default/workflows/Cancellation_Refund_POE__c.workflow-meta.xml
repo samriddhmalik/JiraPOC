@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>AU_Send_Coupon_Details_to_Account_Holder_POE</fullName>
+        <description>AU Send Coupon Details to Account Holder (POE)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Service_Cloud_Customer_Comms/AU_Send_Coupon_Details_to_Account_Holder_POE</template>
+    </alerts>
+    <alerts>
+        <fullName>CS_Rejection_Email_when_Approval_is_Rejected</fullName>
+        <description>CS Rejection Email when Approval is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ordexp_Initial_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Rejection_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>CXL_Refund_Rejection_Notification_from_Finance</fullName>
+        <description>CXL/Refund Rejection Notification - from Finance</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ordexp_Initial_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CXL_Refund_Rejection_Notification_from_Finance</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_For_Auto_Approved_Refund</fullName>
+        <description>Email Alert For Auto Approved Refund</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ordexp_Initial_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Date_City_Change_Refund_Pending</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Finance_team_member</fullName>
+        <ccEmails>accounts@tripadeal.com.au</ccEmails>
+        <description>Email Alert to Finance team member</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lilian.sweetnam@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lindsay.osullivan@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Cancellation_Refund_Email_Template_For_CS</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_For_Cancellation_of_Coupon</fullName>
+        <description>Email Notification For Cancellation of Coupon</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ordexp_Initial_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TAD_with_QF/Email_Notification_For_Cancellation_of_Coupon</template>
+    </alerts>
+    <alerts>
+        <fullName>NZ_Send_Coupon_Details_to_Account_Holder_POE</fullName>
+        <description>NZ Send Coupon Details to Account Holder (POE)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>NZ_Service_Cloud_Comms/NZ_Send_Coupon_Details_to_Account_Holder_POE</template>
+    </alerts>
+    <alerts>
+        <fullName>TADQF_Coupon_Send</fullName>
+        <description>TADQF Coupon Send</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TAD_with_QF/TADQF_Coupon_Send</template>
+    </alerts>
+    <alerts>
+        <fullName>TNZQF_Coupon_Send</fullName>
+        <description>TNZQF Coupon Send</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.co.nz</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TNZ_with_QF/TNZQF_Coupon_Send</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Finance Rejected</literalValue>
+        <name>Approval Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Updated_Again</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved-Refund Not Processed</literalValue>
+        <name>Approval Status Updated Again</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Not_Processed</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved-Not Processed</literalValue>
+        <name>Approved Not Processed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Processed</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Processed</literalValue>
+        <name>Approved Processed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Status_Pending</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Approved Status - Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Status_Rejection</fullName>
+        <field>Approved_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approved Status - Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Booking_Hotel_Update_Can_Refund_Status</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved-Refund Not Processed</literalValue>
+        <name>Booking Hotel Update Can/Refund Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_Submitter_Email_Capture</fullName>
+        <field>ordexp_Initial_Submitter__c</field>
+        <formula>$User.Email</formula>
+        <name>Initial Submitter Email Capture</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Can_Refund_Status_to_CS_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>CS Approved</literalValue>
+        <name>Update Can/Refund Status to CS Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Can_Refund_Status_to_CS_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>CS Rejected</literalValue>
+        <name>Update Can/Refund Status to CS Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Can_Refund_Status_to_Finance_Appr</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Finance Approved</literalValue>
+        <name>Update Can/Refund Status to Finance Appr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Can_Refund_Status_to_Finance_Reje</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Finance Rejected</literalValue>
+        <name>Update Can/Refund Status to Finance Reje</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,200 @@
+<aura:component controller="TAD_DealCreationViewOpportunity" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="mapOfRecordType" type="Map" />
+    <aura:attribute name="isButtonView" type="boolean" default="false"/>
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:attribute name="isDealExist" type="boolean" default="false"/>
+    <aura:attribute name="OppFieldBlank" type="boolean" default="false"/>
+    <aura:attribute name="openmodel" type="boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="DealTypeList" type="List" default="[]" description="Deal Type Picklist Values"/>
+    <aura:attribute name="selectedDealType" type="List" default="[]" description="Selected Deal Type Picklist Values"/>
+    <aura:attribute name="DateFlight" type="List" default="[]" description="Date Flight Picklist Values"/>
+    <aura:attribute name="selectedDateFlight" type="String" description="Selected Date Flight Picklist Values"/>
+    <aura:attribute name="dealIdValue" type="String"/>
+    <aura:attribute name="dealName" type="String"/>
+    
+    <lightning:navigation aura:id="navService"/>
+    
+    <aura:if isTrue="{!equals(v.isButtonView, 'true')}">
+        <!--
+        <button class="slds-button slds-button-neutral" onclick="{!c.showModal}">Create Deal</button>
+        <div  align="center" style="font-size: 20px" class="slds-text"><b> No Order Customisation is there for the acknowledgement</b></div>-->
+    </aura:if>
+    
+    <aura:if isTrue="{!equals(v.isOpen, 'true')}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open"> 
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:select aura:id="recordTypePickList" name="selectRecordType" label="Select a Record Type" required="true" value="{!v.selectedValue}">
+                        
+                        <option value="" text="--NONE--"/>
+                        
+                        <aura:iteration items="{!v.mapOfRecordType}" var="item" indexVar="key">
+                            
+                            
+                            <option text="{!item.value}" value="{!item.key}" selected="{!item.key == v.selectedValue}"></option>
+                        </aura:iteration>
+                        
+                    </lightning:select>
+                    
+                    <div class="slds-align_absolute-center" >
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Next" title="Next"  onclick="{!c.navigateToRecordCreation}"/>
+                            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModal }"/>
+                        </footer>              
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+        <!--aura:if isTrue="{!v.isDealExist}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open"> 
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"><p>This Opportunity Contains Deal</p>
+                </div>
+            </div>
+        </section>
+        </aura:if>-->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    <aura:if isTrue="{!v.isDealExist}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" 
+                 aria-modal="true" aria-describedby="modal-content-id-1" 
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.hideModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>This Opportunity Has Already Linked With This Deal <span style="color: Blue">{!v.dealName}</span>.
+                        </b>
+                    </p>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                        <lightning:button variant="neutral"
+                                          label="Ok"
+                                          title="Ok"
+                                          onclick="{! c.hideModel }"/>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.openmodel}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" 
+                 aria-modal="true" aria-describedby="modal-content-id-1" 
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" aura:id = "MyModal">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.hideDealCreateModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    
+                    <lightning:input name="input1" label="Deal Id" value="{!v.dealIdValue}" />
+                    <lightning:dualListbox name="languages"
+                                           label= "Deal Type"
+                                           sourceLabel="Available"
+                                           selectedLabel="Selected"
+                                           fieldLevelHelp="Select your preferred languages"
+                                           options="{!v.DealTypeList}"
+                                           value="{!v.selectedDealType}"
+                                           onchange="{! c.handleDealTypeChange }"/>
+                    <lightning:combobox 
+                                        name="DateFlights" 
+                                        label="Date Flights" 
+                                        value="{!v.selectedDateFlight}"  
+                                        options="{!v.DateFlight}" 
+                                        onchange="{!c.handleDateFlightChange }"/>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer ">
+                    <div class="slds-align_absolute-center">
+                        <lightning:button variant="neutral"
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{!c.hideDealCreateModal}"
+                                          />
+                        <lightning:button variant="brand"
+                                          label="Save"
+                                          title="Save"
+                                          onclick="{!c.saveDeal}"
+                                          
+                                          />
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.OppFieldBlank}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" 
+                 aria-modal="true" aria-describedby="modal-content-id-1" 
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeOppModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>Please Popoulate These Fields <span style="color: Red">[Title,Price,Proposed Go Live Date,Physical Region,Physical Country,
+                        Approx Allocations,Travel From,Travel To]</span> Before Creating Deal.
+                        </b>
+                    </p>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                        <lightning:button variant="neutral"
+                                          label="Ok"
+                                          title="Ok"
+                                          onclick="{! c.closeOppModal }"/>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+    
+</aura:component>

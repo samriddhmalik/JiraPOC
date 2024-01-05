@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutheader" access="global" >
+	<!--<ltng:require styles="{!$Resource.actionModalPopupSize}" />	-->
+    <aura:attribute name="cloneType" type="string" default = "Departure City"/>
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <h4 class="title slds-text-heading--medium">Departure City Clone</h4>
+    </div>
+    <c:clonechildrecord recordId="{!v.recordId}" cloneType = "Departure City" oncancel="{!c.handleCancel}" onclose ="{!c.handleCancel}" ></c:clonechildrecord> 
+    <aura:html tag="style">
+     <!--   .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+        .slds-modal__footer{
+            visibility:hidden;
+        }
+        .quick-actions-panel{
+    	overflow:hidden !important;
+		}-->
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+        .modal-header{
+            margin-bottom: 10px !important;
+        }
+    </aura:html>
+</aura:component>

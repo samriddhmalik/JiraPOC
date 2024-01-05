@@ -1,0 +1,3213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Activity_Approval_Radio</fullName>
+        <description>Activity Approval Radio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Pending_Publishing_Approval_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Approval_Tad_EDM</fullName>
+        <description>Activity Approval Tad EDM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Pending_Publishing_Approval_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Newspaper_Hero_template_chosen</fullName>
+        <description>Activity Newspaper Hero template chosen</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Newspaper_Hero_template_chosen</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Radio_Is_Rejected</fullName>
+        <description>Activity Radio Is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Rejection_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Radio_Submitted_For_Approval</fullName>
+        <description>Activity Radio Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Radio_Submitted_For_Final_Approval</fullName>
+        <description>Activity Radio Submitted For Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Rejected_for_Newspaper</fullName>
+        <description>Activity Rejected for Newspaper</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Rejected_for_Radio</fullName>
+        <description>Activity Rejected for Radio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Rejected_for_Search</fullName>
+        <description>Activity Rejected for Search</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_For_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Rejected_for_Tad_EDM</fullName>
+        <description>Activity Rejected for  Tad EDM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Search_Submitted_For_Approval</fullName>
+        <description>Activity Search Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Search_Submitted_For_Final_Approval</fullName>
+        <description>Activity Search Submitted For Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Submited_For_Approval_Tad_EDM</fullName>
+        <description>Activity Submited For Approval Tad EDM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_TAD_EDM_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Submitted_For_Approval_Radio</fullName>
+        <description>Activity Submitted For Approval Radio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Activity_Website_Is_Rejected</fullName>
+        <description>Activity Website Is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_For_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_Change_Sub_Status_to_Pending_Publishing_Approval</fullName>
+        <description>Alert - Change Sub Status to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_Status_and_Sub_Status_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_on_InSub_Change_Sub_Status_to_Pending_Publishing_Approval</fullName>
+        <description>Alert on InSub - Change Sub Status to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_Status_and_Sub_Status_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Approval_Process_for_Sub_Status_to_Finalised_Submitted_to_IKTP</fullName>
+        <description>Approval_Process_for_Sub_Status_to_Finalised_Submitted_to_IKTP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_Process_for_Sub_Status_to_Finalised_Submitted_to_IKTP</template>
+    </alerts>
+    <alerts>
+        <fullName>Change_Sub_Status_to_Pending_Publishing_Approval</fullName>
+        <description>Change Sub Status to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_Status_and_Sub_Status_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Channel_Search_Is_Rejected</fullName>
+        <description>Channel Search Is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_For_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Channel_Search_Submitted_For_Approval</fullName>
+        <description>Channel Search Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Channel_Search_Submitted_For_Final_Approval</fullName>
+        <description>Channel Search Submitted For Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Channel_Website_Submitted_For_Approval</fullName>
+        <description>Channel Website Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Channel_Website_Submitted_For_Final_Approval</fullName>
+        <description>Channel Website Submitted For Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>EDM_IKTP_Sub_Status_Alert</fullName>
+        <description>EDM IKTP Sub Status Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/IKTP_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>EDM_TAD_Template_Complete</fullName>
+        <description>EDM TAD Template Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Tad_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>EDM_TAD_Test_Sent</fullName>
+        <description>EDM TAD Test Sent</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Tad_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_IKTP_Is_Complete</fullName>
+        <description>Email IKTP Is Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_IKTP_is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Complete</fullName>
+        <description>Email TAD Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EDM_Tad_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Product_Approval</fullName>
+        <description>Email TAD Product Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_TAD_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Product_Approval_Rejected</fullName>
+        <description>Email TAD Product Approval Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_TAD_Publishing_Approval_Rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Publishing_Approval</fullName>
+        <description>Email_TAD_Publishing_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_TAD_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Publishing_Approval_Rejection</fullName>
+        <description>Email TAD Publishing Approval Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_TAD_Publishing_Approval_Rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_TAD_Submit_For_Approval</fullName>
+        <description>Email_TAD_Submit_For_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_TAD_Submit_For_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Tad_Approval_Status_changes_to_In_Progress_AND_Sub_Status_Template_In_Prog</fullName>
+        <description>Email Tad - Approval Status changes to In-Progress AND Sub Status Template In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Tad_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>FinalRejection_Action_Change_Sub_Status_to_Pending_Product_Approval</fullName>
+        <description>FinalRejection_Action_Change_Sub_Status_to_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Action_Change_Sub_Status_to_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Action_Change_SubStatus_to_Pending_Product_Approval</fullName>
+        <description>Final_Approval_Action_Change_SubStatus_to_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Action_Change_Sub_Status_to_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Action_Change_Sub_Status_to_Pending_Product_Approval</fullName>
+        <description>Final_Approval_Action_Change_Sub_Status_to_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Action_Change_Sub_Status_to_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Action_for_SubStatus_to_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final_Approval_Action_for_SubStatus_to_Finalised_Submitted_to_IKTP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Change_SubStatus_to_Pending_Publishing_Approval</fullName>
+        <description>Final Approval - Change SubStatus to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Pending_Publishing_Approval</fullName>
+        <description>Final Approval - Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Final_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Radio</fullName>
+        <description>Final Approval Radio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_of_SubStatus_to_Pending_Publishing_Approval</fullName>
+        <description>Final Approval of SubStatus to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approv_ApStat_InProg_SubStat_BrfInProg</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_of_Sub_Status_to_Pending_Publishing_Approval</fullName>
+        <description>Final Approval of Sub Status to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Approval_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Action_Change_Sub_Status_to_Pending_Product_Approval</fullName>
+        <description>Final_Rejection_Action_Change_Sub_Status_to_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Action_Change_Sub_Status_to_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Action_for_SubStatus_for_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final Rejection Action for SubStatus for Finalised, Submitted to IKTP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final Rejection Action for Sub Status to Finalised, Submitted to IKTP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Change_SubStatus_to_Pending_Publishing_Approval</fullName>
+        <description>Final Rejection - Change SubStatus to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Change_Sub_Status_to_Pending_Publishing_Approval</fullName>
+        <description>Final Rejection - Change Sub Status to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Final_Rejection_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Pending_Product_Approval</fullName>
+        <description>Final Rejection - Pending Product Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Final_Rejection_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Pending_Publishing_Approval</fullName>
+        <description>Final Rejection - Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Final_Rejection_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>IKTP_Approval_Status_changes_to_In_Progress_AND_Sub_Status_Brief_In_Progress</fullName>
+        <description>IKTP - Approval Status changes to In-Progress AND Sub Status Brief In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/IKTP_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>IKTP_EDM_NOT_MARKED_COMPLETE_24HR_PRI_DUE_DATE</fullName>
+        <description>IKTP_EDM_NOT_MARKED_COMPLETE_24HR_PRI_DUE_DATE</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/IKTP_EDM_NOT_MARKED_COMPLETE_24HR_PRI_DUE_DATE</template>
+    </alerts>
+    <alerts>
+        <fullName>ITKP_Approval_Status_and_Sub_Status_Not_Started</fullName>
+        <description>ITKP Approval Status and Sub Status - Not Started</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ITKP_ApprovalStatus_and_SubStatus_Not_Started</template>
+    </alerts>
+    <alerts>
+        <fullName>Initial_Submission_Alert_for_Sub_Status_change_to_Pending_Publishing_Approval</fullName>
+        <description>Initial Submission Alert for Sub-Status change to Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Initial_Submission_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Marketing_activity_is_Not_Started_for_channel_Radio</fullName>
+        <description>Marketing activity is Not Started for channel Radio</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Creation_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Creation_Email_Alert</fullName>
+        <description>New Marketing Spend Creation Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Creation_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Newspaper_Creation_Email_Alert</fullName>
+        <description>New Marketing Spend Newspaper Creation Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Creation_Newspaper_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Not_Scheduled_2h_Email_Alert</fullName>
+        <description>New Marketing Spend Not Scheduled 2h Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Not_Scheduled_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Not_Scheduled_3h_Email_Alert</fullName>
+        <description>New Marketing Spend Not Scheduled 3h Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Not_Scheduled_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Onhold_Email_Alert</fullName>
+        <description>New Marketing Spend Onhold Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Onhold_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Marketing_Spend_Onhold_Newspaper_Email_Alert</fullName>
+        <description>New Marketing Spend Onhold Newspaper Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Onhold_Newspaper_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Approval_Status_Final_Template</fullName>
+        <description>Newspaper Approval Status Final Template</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Approval_Status_Template_Complete</fullName>
+        <description>Newspaper Approval Status Template Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Approval_Status_changes_to_In_Progress_AND_Sub_Status_Template_In_Prog</fullName>
+        <description>Newspaper - Approval Status changes to In-Progress AND Sub Status Template In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Complete</fullName>
+        <description>Newspaper Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Approval_Status_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Complete_Alert</fullName>
+        <description>Newspaper Complete Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Publishing_Approval</fullName>
+        <description>Newspaper Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Newspaper_Submitted_For_Approval</fullName>
+        <description>Newspaper Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Submitted_For_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>ON_HOLD_SUB_STATUS</fullName>
+        <description>ON_HOLD_SUB_STATUS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ON_HOLD_SUB_STATUS</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_Roll_On_Hold</fullName>
+        <description>Pre- Roll On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Completed</fullName>
+        <description>Pre-roll Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Is_Complete</fullName>
+        <description>Pre_roll_Is_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Is_Not_Complete</fullName>
+        <description>Pre_roll_Is_Not_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_Not_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Is_On_Hold</fullName>
+        <description>Pre_roll_Is_On_Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Not_Started</fullName>
+        <description>Pre_roll_Not_Started</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Is_Not_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_ProductApproval</fullName>
+        <description>Pre_roll_Pending_ProductApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Product_Approval_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_ProductApproval_FinRejection</fullName>
+        <description>Pre_roll_Pending_ProductApproval_FinRejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_ProductApproval_FinRejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_Product_Approval</fullName>
+        <description>Pre_roll_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Product_Approval_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_PublishingApproval</fullName>
+        <description>Pre_roll_Pending_PublishingApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_PublishingFinalApproval</fullName>
+        <description>Pre_roll_Pending_Publishing_FinalApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_FinalApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_Publishing_Approval</fullName>
+        <description>Pre_roll_Pending_Publishing_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_Publishing_Approval_FinalRejection</fullName>
+        <description>Pre_roll_Pending_Publishing_Approval_FinalRejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_FinalRejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_Publishing_FinalApproval</fullName>
+        <description>Pre_roll_Pending_Publishing_FinalApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_FinalApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Pending_Publishing_FinalRejection</fullName>
+        <description>Pre_roll_Pending_Publishing_FinalRejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Pre_roll_Pending_Publishing_FinalRejection</template>
+    </alerts>
+    <alerts>
+        <fullName>Pre_roll_Sub_Status_Creative_In_Progress</fullName>
+        <description>Pre-roll Sub-Status Creative In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Newspaper_Approval_Status_IP_Sub_Status_TIP</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_48_Hours</fullName>
+        <description>Radio 48 Hours</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Is_Not_Marked_as_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_72_Hours</fullName>
+        <description>Radio 72 Hours</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Is_Not_Marked_as_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Is_Complete</fullName>
+        <description>Radio Activity Is Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Approval_Status_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Is_Not_In_Progress</fullName>
+        <description>Radio Activity Is Not In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Creation_Newspaper_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Is_Rejected</fullName>
+        <description>Radio Activity Is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Rejection_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Rejected</fullName>
+        <description>Radio Activity Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Rejection_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Submitted_For_Approval</fullName>
+        <description>Radio Activity Submitted For Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Activity_Submitted_For_Final_Approval</fullName>
+        <description>Radio Activity Submitted For Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Channel_Initial_Submit_For_Approval_Alert</fullName>
+        <description>Radio Channel Initial Submit For Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Final_Approval_Alert</fullName>
+        <description>Radio Final Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Final_Rejection_Alert</fullName>
+        <description>Radio Final Rejection Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Radio_Activity_Rejection_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_Initial_Submit_For_Approval_Alert</fullName>
+        <description>Radio Initial Submit For Approval Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Radio_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Radio_On_Hold</fullName>
+        <description>Radio On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Onhold_Newspaper_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_2_Hours</fullName>
+        <description>Search 2 Hours</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Search_Activity_Is_Not_Marked_as_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_3_Hours</fullName>
+        <description>Search 3 Hours</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Search_Activity_Is_Not_Marked_as_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_Activity_Is_Not_In_Progress</fullName>
+        <description>Search Activity Is Not In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Channel_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_Final_Rejection_Alert</fullName>
+        <description>Search Final Rejection Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Rejection_For_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_Initial_Alert</fullName>
+        <description>Search Initial Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Search_On_Hold</fullName>
+        <description>Search On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Search_On_Hold_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>SocialMedia_Organic_Not_Marked_Complete</fullName>
+        <description>SocialMedia_Organic_Not_Marked_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SocialMedia_Organic_Not_Marked_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Final_Rejection_Action_Pending_Product_Approval</fullName>
+        <description>Social - Final Rejection Action - Pending Product Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Final_Rejection_Action_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Is_not_marked_Complete</fullName>
+        <description>Social Media Is not marked Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_FinalRejection_Pending_ProductApproval</fullName>
+        <description>Social_Media_Organic_FinalRejection_Pending_ProductApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_FinalRejection_Pending_ProductApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_FinalRejection_Pending_Product_Approval</fullName>
+        <description>Social_Media_Organic_FinalRejection _Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_FinalRejection_Pending_ProductApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Is_Not_In_Progress</fullName>
+        <description>Social_Media_Organic_Is_Not_In_Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_Is_Not_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Is_On_Hold</fullName>
+        <description>Social_Media_Organic_Is_On_Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_Is_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_PendingPublishApproval</fullName>
+        <description>Social_Media_Organic_PendingPublishApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_PendingPublishApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Pending_ProductApproval</fullName>
+        <description>Social_Media_Organic_Pending_ProductApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Pending_Product_Approval</fullName>
+        <description>Social_Media_Organic_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Pending_Publish_Approval</fullName>
+        <description>Social_Media_Organic_Pending_Publish_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic_PendingPublishApproval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Sub_Status_Draft_Post_Completed</fullName>
+        <description>Social Media Organic Sub-Status Draft Post Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Organic_Sub_Status_Draft_Post_In_Progress</fullName>
+        <description>Social Media Organic Sub-Status Draft Post In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Organic</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Paid_Is_Not_In_Progress</fullName>
+        <description>Social_Media_Paid_Is_Not_In_Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Is_Not_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Paid_On_Hold</fullName>
+        <description>Social Media Paid On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Is_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Paid_Sub_Status_Draft_Post_Completed</fullName>
+        <description>Social Media Paid Sub-Status Draft Post Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Sub_Status_Draft_Post_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Media_Paid_Sub_Status_Draft_Post_In_Progress</fullName>
+        <description>Social Media Paid Sub Status Draft Post In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Sub_Status_Draft_Post_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Not_Started_Saturday_Before_Start_Date</fullName>
+        <description>Social - Not Started - Saturday Before Start Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Not_Started_Saturday_Before_Start_Date</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Organic_Media_Approval_Status_Complete</fullName>
+        <description>Social_Organic_Media_Approval_Status_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Organic_Media_Approval_Status_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Organic_Media_FinalRejection_PendingProduct_Approval</fullName>
+        <description>Social_Organic_Media_FinalRejection_PendingProduct_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Organic_Media_FinalRejection_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Organic_Media_FinalRejection_Pending_Product_Approval</fullName>
+        <description>Social_Organic_Media_FinalRejection_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Organic_Media_FinalRejection_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Organic_Media_PendingProductApproval</fullName>
+        <description>Social Organic Media PendingProductApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Organic_Media_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Organic_Media_Pending_Product_Approval</fullName>
+        <description>Social_Organic_Media_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Organic_Media_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Paid_Activity_Is_Complete</fullName>
+        <description>Social Paid Activity Is Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Media_Paid_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Paid_Is_Not_In_Progress</fullName>
+        <description>Social Paid Is Not In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Channel_Social_Media_Paid_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Pend_Prod_Approval</fullName>
+        <description>Social_Pend_Prod_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Pending_Product_Approval</fullName>
+        <description>Social_Pending_Product_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Pending_Product_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Pending_Publishing_Approval</fullName>
+        <description>Social - Pending Publishing Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Change_Sub_Status_to_Pending_Publishing_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Social_Sub_Status_Finalised_Ready_for_Scheduling</fullName>
+        <description>Social - Sub-Status - Finalised Ready for Scheduling</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Social_Final_Approval_Action_Sub_Status_Finalised_Ready_for_Scheduling</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Status_Brief_in_progress</fullName>
+        <description>Sub Status Brief in progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Status_Brief_in_progress_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Status_Brief_sent_to_Thumpe_Media</fullName>
+        <description>Sub Status Brief sent to Thumpe Media</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Status_Brief_sent_to_Thumpe_Media_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Status_Copy_in_Progress</fullName>
+        <description>Sub Status Copy in Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Status_Copy_in_Progress_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Sub_Status_Script_received_from_Thumpe_Media</fullName>
+        <description>Sub Status Script received from Thumpe Media</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sub_Status_Script_received_from_Thumpe_Media_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>WebCamp_PendingBrandMarktngMangrAppr_FinalAppAct</fullName>
+        <description>WebCamp_PendingBrandMarktngMangrAppr_FinalAppAct</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalAppAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Banner_Is_Complete</fullName>
+        <description>Web_Banner_Is_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Banner_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Banner_Is_Not_Complete</fullName>
+        <description>Web_Banner_Is_Not_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Banner_Is_Not_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_CampaWeb_Campaign_PendPublishApprvl_FinRejectionActnign_PendPublishApprvl_Fi</fullName>
+        <description>Web_Campaign_PendPublishApprvl_FinRejectionActn</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Campaign_PendPublishApprvl_FinRejectionActn</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Campaign_Is_Complete</fullName>
+        <description>Web_Campaign_Is_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Campaign_Is_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Campaign_Is_Not_Complete</fullName>
+        <description>Web_Campaign_Is_Not_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Campaign_Is_Not_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Campaign_PendPublishApprvl_FinApprovalAct</fullName>
+        <description>Web_Campaign_PendPublishApprvl_FinApprovalAct</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Campaign_Pend_Publish_Apprvl_FinApprovalAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Web_Campaign_Pend_Publish_Apprvl_FinApprovalAct</fullName>
+        <description>Web_Campaign_Pend_Publish_Apprvl_FinApprovalAct</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Web_Campaign_Pend_Publish_Apprvl_FinApprovalAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Approved_Alert</fullName>
+        <description>Website Banner Approved Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Is_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Initial_Submission_Alert</fullName>
+        <description>Website Banner Initial Submission Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Submit_For_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Is_Not_In_Progress</fullName>
+        <description>Website_Banner_Is_Not_In_Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Is_Not_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Is_Not_Marked_Complete</fullName>
+        <description>Website_Banner_Is_Not_Marked_Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Is_Not_Marked_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Is_On_Hold</fullName>
+        <description>Website_Banner_Is_On_Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Is_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Banner_Rejection_Alert</fullName>
+        <description>Website Banner Rejection Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Banner_Is_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Brief_In_Progress</fullName>
+        <description>Website_Campaign_Brief_In_Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Brief_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Brief_In_Progress_InSub</fullName>
+        <description>Website_Campaign_Brief_In_Progress_InSub</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Brief_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_FinalApprovalAction_Brief_Pending_Approval</fullName>
+        <description>Website_Campaign_FinalApprovalAction_Brief_Pending_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Final_Approval_Action_Brief_Pending_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_FinalRejectionAction_Brief_Pending_Approval</fullName>
+        <description>Website_Campaign_FinalRejectionAction_Brief_Pending_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Final_Rejection_Action_Brief_Pending_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Final_Approval_Action_Brief_Pending_Approval</fullName>
+        <description>Website_Campaign_Final_Approval_Action_Brief_Pending_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Final_Approval_Action_Brief_Pending_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Final_Rejection_Action_Brief_Pending_Approval</fullName>
+        <description>Website_Campaign_Final_Rejection_Action_Brief_Pending_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Final_Rejection_Action_Brief_Pending_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Is_Not_In_Progress</fullName>
+        <description>Website_Campaign_Is_Not_In_Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Is_Not_In_Progress</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_On_Hold</fullName>
+        <description>Website Campaign On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_On_Hold_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_PendingBrand_Marketing_Manager_Approval_FinalRejectAct</fullName>
+        <description>Website_Campaign_PendingBrand_Marketing_Manager_Approval_FinalRejectAct</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalRejectAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Pending_Brand_Marketing_Manager_Approval</fullName>
+        <description>Website_Campaign_Pending_Brand_Marketing_Manager_Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalAppAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalRejectAct</fullName>
+        <description>Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalRejectAct</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Pending_Brand_Marketing_Manager_Approval_FinalRejectAct</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Sub_Status_Brief_In_Progress</fullName>
+        <description>Website Campaign Sub Status Brief In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Sub_Status_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Website_Campaign_Sub_Status_Brief_Pending_Approval</fullName>
+        <description>Website Campaign Sub Status Brief Pending Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Website_Campaign_Sub_Status_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>search_Final_Approved_Alert</fullName>
+        <description>search Final Approved Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Submited_For_Final_Approval_Search_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>xyz_alert</fullName>
+        <description>xyz alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Activity_Creation_Newspaper_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Activity_Approval_Channel_Radio</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Activity Approval Channel Radio</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Radio_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Activity Radio Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Radio_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Activity Radio Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Radio_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Activity Radio Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Reject_Channel_Radio</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Activity Reject Channel Radio</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Search_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Activity Search Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activity_Website_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Banner in Progress</literalValue>
+        <name>Activity Website Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sub_Status_to_Pending_Publishing</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Change Sub Status to Pending Publishing</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Channel_Search_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Channel Search Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Channel_Search_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Channel Search Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Channel_Search_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Channel Search Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Channel_Website_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for Completion</literalValue>
+        <name>Channel Website Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EDM_TAD_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>EDM TAD Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EDM_TAD_Final_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Template in Progress</literalValue>
+        <name>EDM TAD Final Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EDM_Tad_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>EDM Tad Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Email_TAD_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Template in Progress</literalValue>
+        <name>Email TAD Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FRejct_Chg_SubStatus_to_BrfInProg</fullName>
+        <description>Final_Rejection_Action_Change_SubStatus to BrfInProg</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>FRejct Chg_SubStatus to BrfInProg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FReject_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final Rejection Action for Sub Status to Finalised, Submitted to IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>FReject Finalised, Submitted to IKTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FinalRejct_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final_Rejection_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>FinalRejct_Finalised_Submitted_to_IKTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approval_Action_Change_Sub_Status</fullName>
+        <description>Final_Approval_Action_Change_Sub_Status_to_Pending_Product_Approval</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Final_Approval_Action_Change_Sub_Status_</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Rejection_Action_Change_Sub_Status</fullName>
+        <description>Final_Rejection_Action_Change_Sub_Status_to_Pending_Product_Approval</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Final_Rejection_Action_Change_Sub_Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Rejection_FldUpd_SubStat_BrfInPrg</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Final Rejection FldUpd SubStat BrfInPrg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Rejection_FldUpd_SubStat_BrfInProg</fullName>
+        <description>Final Rejection Field Update - Revert Sub-Status as Brief in Progress!</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Final Rejection FldUpd SubStat BrfInProg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finalised_Submitted_to_IKTP</fullName>
+        <description>Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised -Submitted to IKTP</literalValue>
+        <name>Final_Approval_Action_for_Sub_Status_to_</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_Submission_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Initial Submission Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MS_Activity_Approval_tad_EDM_01</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Activity Approval tad EDM 01</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>NewsPaper_Product_Approve_field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised Ready for delivery</literalValue>
+        <name>NewsPaper Product Approve field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PendBrandMarketng_FinRejAct_FldUpdate</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Creative in Progress</literalValue>
+        <name>PendBrandMarketng_FinRejAct_FldUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pre_roll_InSubmission_Sub_Status_Update</fullName>
+        <description>Pre-roll InSubmission Sub-Status Update</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Pre-roll InSubmission Sub-Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pre_roll_Pending_Publishing_Approval_Fin</fullName>
+        <description>Pre_roll_Pending_Publishing_Approval_FinalRejection Sub Stutus Update</description>
+        <field>Sub_status__c</field>
+        <literalValue>Creative in Progress</literalValue>
+        <name>Pre_roll_Pending_Publishing_Approval_Fin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pre_roll_Sub_Status_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for Submission</literalValue>
+        <name>Pre-roll Sub Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pre_roll_Sub_Status_Update_FinRejection</fullName>
+        <description>Pre_roll_Sub_Status_Update_FinRejection</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Pre_roll_Sub_Status_Update_FinRejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Activity_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Radio Activity Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Activity_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Radio Activity Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Activity_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Radio Activity Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Radio Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Initial_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Radio Initial Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Initial_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Radio Initial Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Substatus_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Radio Substatus Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Radio_Substatus_Rejection_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Radio Substatus Rejection Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Search_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for ad creation</literalValue>
+        <name>Search Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Search_Initial_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Search Initial Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Search_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Copy in Progress</literalValue>
+        <name>Search Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Change_Sub_Status_to_Pending_Publ</fullName>
+        <description>Social_Change_Sub_Status_to_Pending_Publishing_Approval</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Social_Change_Sub_Status_to_Pending_Publ</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Social Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_FinalReject_Action_Pend_Prod_Appr</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Draft post in progress</literalValue>
+        <name>Social_FinalReject_Action_Pend_Prod_Appr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Final_Approval_Action</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Social_Final_Approval_Action</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Social Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Final_Rejection_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Social Final Rejection Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Media_Organic_Pending_Publish_App</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Social_Media_Organic_Pending_Publish_App</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Media_Organic_SubStatusUpdate</fullName>
+        <description>Social_Media_Organic_SubStatus_Update</description>
+        <field>Sub_status__c</field>
+        <literalValue>Draft post in progress</literalValue>
+        <name>Social_Media_Organic_SubStatusUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Media_Organic_SubStatus_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Social_Media_Organic_SubStatus_Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Organic_FinlReject_SubStat_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Draft post in progress</literalValue>
+        <name>Social_Organic_FinlReject_SubStat_Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Organic_Media_SubStatus_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Social Organic Media SubStatus Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Pending_Publishing_Approval</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Social - Pending Publishing Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Social_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Draft post in progress</literalValue>
+        <name>Social Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SubStatus_Brief_Submitted_to_IKTP</fullName>
+        <description>SubStatus - Brief Submitted to IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief submitted to IKTP</literalValue>
+        <name>SubStatus - Brief Submitted to IKTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SubStatus_to_Pending_Publishing_Approval</fullName>
+        <description>In Sub Fld Update SubStat to PendinPubApproval</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>SubStatus to Pending Publishing Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_Brief_Submitted_to_IKTP</fullName>
+        <description>Sub Status - Brief Submitted to IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Brief submitted to IKTP</literalValue>
+        <name>Sub Status - Brief Submitted to IKTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Confirm Approval with Thumpe media</literalValue>
+        <name>Sub Status Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_Pending_Publishing_Approval</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Sub Status - Pending Publishing Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_Update_Final_Rejection</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Creative in Progress</literalValue>
+        <name>Sub Status Update Final Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_to_Brief_Pending_Approval</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief Pending Approval</literalValue>
+        <name>Sub-Status to Brief Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_Status_to_Pending_Product_Approval</fullName>
+        <description>Sub_Status_to_Pending_Product_Approval</description>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Product Approval</literalValue>
+        <name>Sub_Status_to_Pending_Product_Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_status</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Sub-status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sub_status_On_Hold</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>On Hold</literalValue>
+        <name>Sub-status On Hold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WebCamp_PendBrandMarktng_FinApp_FldUpdte</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>WebCamp_PendBrandMarktng_FinApp_FldUpdte</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WebCamp_PendPubApprvl_FinAppAct_FldUpdte</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for Completion</literalValue>
+        <name>WebCamp_PendPubApprvl_FinAppAct_FldUpdte</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Web_Camp_PendPublishApprvl_FinRej_FldUpt</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Creative in Progress</literalValue>
+        <name>Web_Camp_PendPublishApprvl_FinRej_FldUpt</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Web_Campaign_FinRejectAction_FldUpdate</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Brief in progress</literalValue>
+        <name>Web_Campaign_FinRejectAction_FldUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Website_Banenr_Final_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for Completion</literalValue>
+        <name>Website Banenr Final Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Website_Banner_Initial_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>Website Banner Initial Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Website_Banner_Rejection_Field_Update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Banner in Progress</literalValue>
+        <name>Website Banner Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Website_Campaign_FinAppAction_FldUpdate</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Creative in Progress</literalValue>
+        <name>Website_Campaign_FinAppAction_FldUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>inprogress</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>inprogress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_Activity_Approval_tad_EDM_02</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Activity Approval tad EDM 02</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_Activity_Reject_Tad_EDM</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Template in Progress</literalValue>
+        <name>Activity Reject Tad EDM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_Activity_Reject_Tad_EDM_02</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Template in Progress</literalValue>
+        <name>Activity Reject Tad EDM 02</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_Finalised_Sub_Status_radio</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised ready for submission to Thumpe media</literalValue>
+        <name>Finalised Sub Status Radio</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_Finalised_Sub_Status_tad_EDM</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Finalized ready for Scheduling</literalValue>
+        <name>Finalised Sub Status tad EDM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ms_PendingPublishingApproval</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>Pending Publishing Approval</literalValue>
+        <name>PendingPublishingApproval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ss_to_Finalised_Submitted_to_IKTP</fullName>
+        <description>Final_Approval_Action_for_Sub_Status_to_Finalised_Submitted_to_IKTP</description>
+        <field>Sub_status__c</field>
+        <literalValue>Finalised -Submitted to IKTP</literalValue>
+        <name>ss to Finalised_Submitted_to_IKTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>sub_status_update</fullName>
+        <field>Sub_status__c</field>
+        <literalValue>On Hold</literalValue>
+        <name>sub status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email IKTP</fullName>
+        <actions>
+            <name>EDM_IKTP_Sub_Status_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sub_status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Supplier_Name__c</field>
+            <operation>equals</operation>
+            <value>IKTP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <description>Approval Status changes to &apos;In-Progress&apos; and sub-status to Brief in Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email Tad</fullName>
+        <actions>
+            <name>Email_Tad_Approval_Status_changes_to_In_Progress_AND_Sub_Status_Template_In_Prog</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Template in Progress</value>
+        </criteriaItems>
+        <description>Approval Status changes to &apos;In-Progress&apos; and sub-status to Template in Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email TripADeal</fullName>
+        <actions>
+            <name>EDM_TAD_Template_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Template Completed</value>
+        </criteriaItems>
+        <description>Approval Status changes to &apos;In-Progress&apos; and sub-status to Template Completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Email TripADeal Test Sent</fullName>
+        <actions>
+            <name>EDM_TAD_Test_Sent</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Test sent</value>
+        </criteriaItems>
+        <description>Approval Status changes to &apos;In-Progress&apos; and sub-status to Test Sent</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Newspaper</fullName>
+        <actions>
+            <name>Newspaper_Approval_Status_changes_to_In_Progress_AND_Sub_Status_Template_In_Prog</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>contains</operation>
+            <value>Newspaper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Template in Progress</value>
+        </criteriaItems>
+        <description>Newspaper - Approval Status changes to &apos;In-Progress&apos; and sub-status to &apos;Template In Progress&apos;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Newspaper Completed</fullName>
+        <actions>
+            <name>Newspaper_Complete_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Newspaper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Ad Delivered</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Newspaper Final Template</fullName>
+        <actions>
+            <name>Newspaper_Approval_Status_Final_Template</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>contains</operation>
+            <value>Newspaper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Final template in progress</value>
+        </criteriaItems>
+        <description>Newspaper - Approval Status changes to &apos;In-Progress&apos; and sub-status to &apos;Final Template&apos;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Newspaper Template completed</fullName>
+        <actions>
+            <name>Newspaper_Approval_Status_Template_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>contains</operation>
+            <value>Newspaper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Template Completed</value>
+        </criteriaItems>
+        <description>Newspaper - Approval Status changes to &apos;In-Progress&apos; and sub-status to &apos;Template completed&apos;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pre-roll On hold</fullName>
+        <actions>
+            <name>Pre_Roll_On_Hold</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sub_status_On_Hold</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Pre-roll</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>On Hold</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pre-roll Sub-Status Creative In Progress</fullName>
+        <actions>
+            <name>Pre_roll_Sub_Status_Creative_In_Progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Pre-roll</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Creative in Progress</value>
+        </criteriaItems>
+        <description>Pre-roll Sub-Status Creative In Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Social Media Organic Draft Post Completed</fullName>
+        <actions>
+            <name>Social_Media_Organic_Sub_Status_Draft_Post_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Social</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Placement__c</field>
+            <operation>equals</operation>
+            <value>Organic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Draft post completed</value>
+        </criteriaItems>
+        <description>Social Media Organic Draft Post Completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Social Media Organic Draft Post In Progress</fullName>
+        <actions>
+            <name>Social_Media_Organic_Sub_Status_Draft_Post_In_Progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Social</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Placement__c</field>
+            <operation>equals</operation>
+            <value>Organic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Draft post in progress</value>
+        </criteriaItems>
+        <description>Social Media Paid Draft Post In Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Social Media Paid Draft Post Completed</fullName>
+        <actions>
+            <name>Social_Media_Paid_Sub_Status_Draft_Post_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Social</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Placement__c</field>
+            <operation>equals</operation>
+            <value>Paid</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Draft post completed</value>
+        </criteriaItems>
+        <description>Social Media Paid Draft Post Completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Social Media Paid Sub-Status Draft Post In Progress</fullName>
+        <actions>
+            <name>Social_Media_Paid_Sub_Status_Draft_Post_In_Progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Social</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Placement__c</field>
+            <operation>equals</operation>
+            <value>Paid</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Draft post in progress</value>
+        </criteriaItems>
+        <description>Social Media Paid Sub-Status Draft Post In Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Status Field Update ON HOLD</fullName>
+        <actions>
+            <name>sub_status_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>On Hold</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub Status change to Confirm approval with Thumpe Media</fullName>
+        <actions>
+            <name>Sub_Status_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub_Status_Brief_in_progres</fullName>
+        <actions>
+            <name>Sub_Status_Brief_in_progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Brief in progress</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub_Status_Brief_sent_to_Thumpe_Media</fullName>
+        <actions>
+            <name>Sub_Status_Brief_sent_to_Thumpe_Media</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Brief sent to Thumpe Media</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sub_Status_Script_received_from_Thumpe_Media</fullName>
+        <actions>
+            <name>Sub_Status_Script_received_from_Thumpe_Media</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Script received from Thumpe Media</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Website Campaign</fullName>
+        <actions>
+            <name>Website_Campaign_Sub_Status_Brief_In_Progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Website</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Placement__c</field>
+            <operation>equals</operation>
+            <value>campaign</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Brief in progress</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

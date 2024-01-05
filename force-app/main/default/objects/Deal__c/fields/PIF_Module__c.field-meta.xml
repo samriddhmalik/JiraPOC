@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIF_Module__c</fullName>
+    <externalId>false</externalId>
+    <label>PIF Module</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hotel Only</fullName>
+                <default>false</default>
+                <label>Hotel Only</label>
+            </value>
+            <value>
+                <fullName>Passenger Detail</fullName>
+                <default>false</default>
+                <label>Passenger Detail</label>
+            </value>
+            <value>
+                <fullName>Passenger Address</fullName>
+                <default>false</default>
+                <label>Passenger Address</label>
+            </value>
+            <value>
+                <fullName>Passenger Passport</fullName>
+                <default>false</default>
+                <label>Passenger Passport</label>
+            </value>
+            <value>
+                <fullName>Requests</fullName>
+                <default>false</default>
+                <label>Requests</label>
+            </value>
+            <value>
+                <fullName>Emergency Contact</fullName>
+                <default>false</default>
+                <label>Emergency Contact</label>
+            </value>
+            <value>
+                <fullName>Height and Weight</fullName>
+                <default>false</default>
+                <label>Height and Weight</label>
+            </value>
+            <value>
+                <fullName>Passport Mandatory</fullName>
+                <default>false</default>
+                <label>Passport Mandatory</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

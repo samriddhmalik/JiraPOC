@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ross Farley</fullName>
+        <default>false</default>
+        <label>Ross Farley</label>
+    </customValue>
+    <customValue>
+        <fullName>Gemma Burnham</fullName>
+        <default>false</default>
+        <label>Gemma Burnham</label>
+    </customValue>
+    <customValue>
+        <fullName>Maite De Hedarvey</fullName>
+        <default>false</default>
+        <label>Maite De Hedarvey</label>
+    </customValue>
+    <customValue>
+        <fullName>Jodie Thatchell</fullName>
+        <default>false</default>
+        <label>Jodie Thatchell</label>
+    </customValue>
+    <customValue>
+        <fullName>Norm Black</fullName>
+        <default>false</default>
+        <label>Norm Black</label>
+    </customValue>
+    <masterLabel>TAD BDM&apos;s</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

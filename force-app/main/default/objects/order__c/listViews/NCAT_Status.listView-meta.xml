@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NCAT_Status</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>CVC__c</columns>
+    <columns>NCAT_Tribunal__c</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>departure_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NCAT_Tribunal__c</field>
+        <operation>equals</operation>
+        <value>Application Received,Withdrawn,Resolved at Mediation,Proceed to Hearing,Resolved at hearing</value>
+    </filters>
+    <label>NCAT Status</label>
+</ListView>

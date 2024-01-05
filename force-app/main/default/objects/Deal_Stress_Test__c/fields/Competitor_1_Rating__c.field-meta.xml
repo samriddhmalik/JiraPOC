@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_1_Rating__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select the overall rating of the competitor relative to TAD, e.g. if you select &quot;worse&quot;, that means the competitor is worse than TAD.</inlineHelpText>
+    <label>Competitor #1 Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Better</fullName>
+                <default>false</default>
+                <label>Better</label>
+            </value>
+            <value>
+                <fullName>Equal</fullName>
+                <default>false</default>
+                <label>Equal</label>
+            </value>
+            <value>
+                <fullName>Worse</fullName>
+                <default>false</default>
+                <label>Worse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

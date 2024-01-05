@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>First_Name__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Deal__c</columns>
+    <columns>options__c</columns>
+    <columns>sub_options__c</columns>
+    <columns>departure_cities__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>Status__c</columns>
+    <columns>Total__c</columns>
+    <columns>PDF__c</columns>
+    <columns>sub_stopover__c</columns>
+    <columns>Post_Tour_StopOver__c</columns>
+    <columns>AE_SB__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+    </filters>
+    <label>All</label>
+</ListView>

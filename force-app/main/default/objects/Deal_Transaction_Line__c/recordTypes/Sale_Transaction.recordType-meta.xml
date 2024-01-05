@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sale_Transaction</fullName>
+    <active>true</active>
+    <label>Sale Transaction</label>
+    <picklistValues>
+        <picklist>Commission_Revenue_Account__c</picklist>
+        <values>
+            <fullName>220 Payment Surcharges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>240 Sales - Travel Visa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>245 Sales - Travel Insurance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel with Coupon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel with Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Superseded</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

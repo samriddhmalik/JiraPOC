@@ -1,0 +1,93 @@
+<apex:component ><div id="search" class="CoveoSearchInterface" data-design="new">
+
+<div class="CoveoAnalytics"></div>
+<div class="coveo-tab-section">
+
+<a class="CoveoTab" data-id="Orders " data-caption="Orders " data-expression="@objecttype==(order__c, Agents__c) " data-endpoint="default" data-icon="coveo-sprites-calendar"></a>
+<div class="CoveoTab" data-id="Passengers" data-caption="Passengers" data-icon="coveo-sprites-file" data-expression="@objecttype==(customer__c) " data-sort="date descending"></div></div>
+<div class="coveo-search-section"><div class="CoveoCommunityStateManager" data-enable-lowercase-operators="true" data-partial-match-keywords="5"></div></div>
+<div class="coveo-main-section">
+    <div class="coveo-facet-column"><div class="CoveoFacet" data-title="Agent" data-field="@Sfagent_name__c" data-number-of-values="3"></div>
+<div class="CoveoFacet" data-title="Object Type" data-field="@objecttype" data-tab="Orders " data-is-multi-value-field="true"></div>
+<div class="CoveoFacet" data-title="Created By" data-field="@sfcreatedbyname" data-tab="Orders "></div>
+<div class="CoveoFacet" data-title="Type" data-field="@sftype" data-tab="Orders "></div>
+<div class="CoveoFacet" data-title="Object Type" data-field="@objecttype" data-tab="Orders "></div></div>
+    <div class="coveo-results-column">
+        
+        
+        <div class="CoveoTriggers"></div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="CoveoSearchAlerts"></div>
+        <div class="coveo-results-header">
+            <div class="coveo-summary-section">
+                <span class="CoveoQuerySummary"></span>
+                <span class="CoveoQueryDuration"></span>
+            </div>
+            <div class="coveo-result-layout-section">
+                <span class="CoveoResultLayout"></span>
+            </div>
+            <div class="coveo-sort-section">
+                
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span><span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span></div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoDidYouMean"></div>
+        <div class="CoveoErrorReport" data-pop-up="false"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-fields-to-include="@Sforder_id__c, @Sfagency_id__c, @Sfagency_id__rAcct_ID__c, @SfDeparture_DateTC__c">
+            
+        <script type="text/html" class="result-template" id="orders/agent" data-fields="@SfDeal_ID__c, @Sforder_id__c, @SfOrder_Number__c, @Sforder_status__c, @SfDeal_and_Option__c, @Sfagency_id__c, @Sfagent_name__c"><div class="coveo-result-frame">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:85px;text-align:center;padding-top:7px;">
+      <span class="CoveoIcon">
+      </span>
+      
+    </div>
+    <div class="coveo-result-cell" style="padding-left:15px;">
+      <div class="coveo-result-row">
+        <div class="coveo-result-cell" style="font-size:18px"><div class="CoveoQuickview">
+      </div>
+<a class="CoveoResultLink">
+          </a>
+<table class="CoveoFieldTable">
+        <tbody>
+          <tr data-field="@author" data-caption="Author">
+          </tr>
+          <tr data-field="@source" data-caption="Source">
+          </tr>
+          <tr data-field="@language" data-caption="Language">
+          </tr>
+        </tbody>
+      </table></div>
+        <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:12px">
+          <span class="CoveoFieldValue" data-field="@date" data-helper="date">
+          </span>
+        </div>
+      </div>
+      <div class="coveo-result-row">
+        <div class="coveo-result-cell"><span class="CoveoExcerpt">
+          </span>
+<span class="CoveoQuickview"></span></div>
+      </div>
+    </div>
+  </div><div class="coveo-result-row"><div class="coveo-result-cell"></div></div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:85px;text-align:center">
+    </div>
+    <div class="coveo-result-cell" style="font-size:13px;padding-left: 15px;">
+      
+    </div>
+  </div>
+</div>
+</script></div>
+        <div class="CoveoPager"></div><style>
+        .coveo-facet-value-count {
+          visibility: hidden;
+        }
+        </style>
+        <div class="CoveoLogo"></div>
+        <div class="CoveoResultsPerPage"></div>
+    </div>
+    
+</div>
+</div>
+</apex:component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>NewsXtend_Coupon</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>NewsXtend-Coupon</label>
+        <sharedTo>
+            <group>NewsXtend</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Enabled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account_Email__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>AUD</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

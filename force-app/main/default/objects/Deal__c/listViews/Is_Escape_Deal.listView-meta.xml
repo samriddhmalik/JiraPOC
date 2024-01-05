@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Escape_Deal</fullName>
+    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+    <columns>title__c</columns>
+    <columns>NAME</columns>
+    <columns>show_as_escape__c</columns>
+    <columns>Is_Escapes__c</columns>
+    <columns>deal_type__c</columns>
+    <columns>deal_type_nz__c</columns>
+    <columns>has_flights__c</columns>
+    <columns>Status__c</columns>
+    <columns>description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>deal_type__c</field>
+        <operation>includes</operation>
+        <value>stay</value>
+    </filters>
+    <filters>
+        <field>Is_Escapes__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>show_as_escape__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Is Escape Deal</label>
+    <sharedTo>
+        <group>Finance</group>
+    </sharedTo>
+</ListView>

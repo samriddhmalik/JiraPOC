@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PP_Details_Not_Back_61_days__c</fullName>
+    <externalId>false</externalId>
+    <label>PP Details Not Back &lt; 61 days</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contact Made - Fire Email</fullName>
+                <default>false</default>
+                <label>Contact Made - Fire Email</label>
+            </value>
+            <value>
+                <fullName>Contact Not Made - Fire SMS</fullName>
+                <default>false</default>
+                <label>Contact Not Made - Fire SMS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

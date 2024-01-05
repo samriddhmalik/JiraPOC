@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field shows the overall status of the PLDC.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BDM Submitted</fullName>
+                <default>false</default>
+                <label>BDM Submitted</label>
+            </value>
+            <value>
+                <fullName>QC Review</fullName>
+                <default>false</default>
+                <label>QC Review</label>
+            </value>
+            <value>
+                <fullName>Submitted to Publishing Team</fullName>
+                <default>false</default>
+                <label>Submitted to Publishing Team</label>
+            </value>
+            <value>
+                <fullName>Published to Website!</fullName>
+                <default>false</default>
+                <label>Published to Website!</label>
+            </value>
+            <value>
+                <fullName>Post publish review</fullName>
+                <default>false</default>
+                <label>Post publish review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

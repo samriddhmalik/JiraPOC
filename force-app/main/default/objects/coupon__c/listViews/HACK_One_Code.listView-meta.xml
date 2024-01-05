@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HACK_One_Code</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <columns>Discount__c</columns>
+    <columns>Status__c</columns>
+    <columns>type__c</columns>
+    <columns>usable_count__c</columns>
+    <columns>usage_count__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Name__c</field>
+        <operation>equals</operation>
+        <value>TADCW010618A2</value>
+    </filters>
+    <label>HACK - One Code</label>
+</ListView>

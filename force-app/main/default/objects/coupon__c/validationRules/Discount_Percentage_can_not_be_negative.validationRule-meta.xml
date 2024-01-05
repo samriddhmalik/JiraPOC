@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Percentage_can_not_be_negative</fullName>
+    <active>true</active>
+    <description>PSAG-255</description>
+    <errorConditionFormula>Discount_percentage__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Discount_percentage__c</errorDisplayField>
+    <errorMessage>Percentage should not be in -ve and should always be positive.</errorMessage>
+</ValidationRule>

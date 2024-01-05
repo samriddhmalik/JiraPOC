@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Passport_Update__c</fullName>
+    <externalId>false</externalId>
+    <label>Passport Update</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Send Form</fullName>
+                <default>false</default>
+                <label>Send Form</label>
+            </value>
+            <value>
+                <fullName>Form Sent</fullName>
+                <default>false</default>
+                <label>Form Sent</label>
+            </value>
+            <value>
+                <fullName>Form Returned</fullName>
+                <default>false</default>
+                <label>Form Returned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

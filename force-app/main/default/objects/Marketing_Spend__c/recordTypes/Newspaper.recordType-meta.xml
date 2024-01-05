@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Newspaper</fullName>
+    <active>true</active>
+    <label>Newspaper</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Country__c</picklist>
+        <values>
+            <fullName>Australia</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>New Zealand</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Creative_Dimensions_Size__c</picklist>
+        <values>
+            <fullName>Billboard%2Fs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broadsheet%2C 560mm x 380mm %28NZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPS%2C 374mm x 550mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPS%2C 380mm x 551mm %28NewsCorp%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Banner%2Fs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escape Multi%2C 600px x 450px</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escape Solus%2C 600px x 690px</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Page%2C 366mm x 254mm %28NZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Page%2C 374mm x 260mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Page%2C 380mm x 262mm %28NewsCorp%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glossy DPS%2C 556mm x 355mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glossy DPS%2C 556mm x 355mm %28NZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glossy FP%2C 378mm x 278mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I Know The Pilot %28IKTP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEARCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strip Ad%2C 254mm x 90mm %28NZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strip Ad%2C 92mm x 260mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strip Ad%2C 92mm x 262mm %28NewsCorp%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Multi%2C 560px x 240px</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Solus%2C 560px x 515px</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Zoo %28TZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrap Cover %26 Back%2C 260mm x 380mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrap%2C Inside spread%2C 550mm x 380mm %28NINE%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Allocation__c</picklist>
+        <values>
+            <fullName>%3Efour-way split</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Four-way split</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No split</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Three-way split</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two-way split ad</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Channel__c</picklist>
+        <values>
+            <fullName>3rd Party eDM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audio%28Digital%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audio%28Radio%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BVOD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronic Direct Mail %28eDM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incentive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magazine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>News Video</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Share</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social%28Facebook %26 IG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social%28Youtube%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sponsorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Brand Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV Free to air</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Source__c</picklist>
+        <values>
+            <fullName>7%2C 9%2C 10%2C SBS%2C Foxtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel 9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cruise Critic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cruise Passenger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Sponsorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook %26 Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foxtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GOOGLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I Know the Pilot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Listnr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nine %26 ARN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Print Publication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROKT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spotify</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunday Mail %28SA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sunday Times %28WA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Sunday Hearld Sun</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Sunday Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Sunday Telegraph</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIN Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouTube</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Media_Buyer__c</picklist>
+        <values>
+            <fullName>GOOGLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>THUMP Media</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Media_Partner__c</picklist>
+        <values>
+            <fullName>Allied Press Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GOOGLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I Know The Pilot %28IKTP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macquarie Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NZME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NewsCorp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STUFF Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Zoo %28TZ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TripADeal %28In-House%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Section__c</picklist>
+        <values>
+            <fullName>EGN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESCAPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FLIPBOOK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRAVELLER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>ACT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QFF Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAD Database</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_status__c</picklist>
+        <values>
+            <fullName>Ad Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banner in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banner set live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief Pending Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief in progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief ready for IKTP Submission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief sent to Thumpe Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brief submitted to IKTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Page Set Live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirm Approval with Thumpe media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Content Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Copy in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Creative in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Pulled Waiting for New Selection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft post completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft post in progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final template in progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised -Submitted to IKTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised Ready for delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised ready for Completion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised ready for Submission</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised ready for ad creation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalised ready for submission to Thumpe media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalized ready for Scheduling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hero Template chosen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Marketing%2FBrand Manager Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Product Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Publishing Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected Product Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected Publishing Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected marketing%2FBrand Manager Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Script received from Thumpe Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Template Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Template in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>15%22%2C 30%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30%22 x 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blurb</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Page Ad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Half Page Ad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LARGE FORMAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mega Wrap - Back Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mega Wrap - Front Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mega Wrap - IBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mega Wrap - IFC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Page 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Page 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum Wrap - Back cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum Wrap - Front Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum Wrap - Page 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum Wrap - Page 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strap Ad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strip Ad</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ms_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

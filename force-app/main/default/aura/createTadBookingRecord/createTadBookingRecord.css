@@ -1,0 +1,11 @@
+.THIS.slds-modal__container{
+    max-width: 70rem !important;
+    width:120% !important;
+}
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+}
+ 
+.THIS .pillSize{
+ width:100%;
+}

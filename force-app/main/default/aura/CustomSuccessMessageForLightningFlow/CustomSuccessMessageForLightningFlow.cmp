@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens" access="global" >
+    <!-- Determine which actions are available -->
+    <aura:attribute name="recId" type="String"/>
+    <aura:attribute name="context" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="change" value="{!this}" action="{!c.init}" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <div class="slds-m-bottom_large flowruntimeRichTextWrapper flowruntimeDisplayText" data-aura-rendered-by="3438:0" data-aura-class="flowruntimeRichTextWrapper flowruntimeDisplayText">
+        <div dir="ltr" data-aura-rendered-by="3441:0" class="uiOutputRichText" data-aura-class="uiOutputRichText">
+            <p data-aura-rendered-by="3442:0">
+                <a style="background-color: rgb(255, 255, 255);" onclick="{!c.handleClose}">
+                    <u>Click here to go to the record.</u>
+                </a>
+            </p>
+        </div>
+    </div>
+    
+</aura:component>

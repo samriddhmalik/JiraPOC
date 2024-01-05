@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>payment_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bank Transfer</fullName>
+                <default>false</default>
+                <label>Bank Transfer</label>
+            </value>
+            <value>
+                <fullName>ZipMoney</fullName>
+                <default>false</default>
+                <label>ZipMoney</label>
+            </value>
+            <value>
+                <fullName>TAD Credit Code</fullName>
+                <default>false</default>
+                <label>TAD Credit Code</label>
+            </value>
+            <value>
+                <fullName>TAD Gift Voucher</fullName>
+                <default>false</default>
+                <label>TAD Gift Voucher</label>
+            </value>
+            <value>
+                <fullName>PayPal</fullName>
+                <default>false</default>
+                <label>PayPal</label>
+            </value>
+            <value>
+                <fullName>Bpoint Transferred Receipt Number</fullName>
+                <default>false</default>
+                <label>Bpoint Transferred Receipt Number</label>
+            </value>
+            <value>
+                <fullName>Competition Winner</fullName>
+                <default>false</default>
+                <label>Competition Winner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

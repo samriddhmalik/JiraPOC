@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GC_Closed_Converted_Phone_Lead</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Deal__c</columns>
+    <columns>TAD_Order__c</columns>
+    <columns>Status__c</columns>
+    <columns>Lead_Source__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Closed Converted</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>monica mcdonald,danielle lewis,priscilla garmin-vik,callum teague,natasha tickner,michelle mulder,charles matthews,fiona tilman,jade hansen,bailey sands,susan davies,brodie carey,tracee kirkwood,emma-jayne brown,trudy mcfarlane</value>
+    </filters>
+    <label>GC -  Closed Converted Phone Lead</label>
+</ListView>

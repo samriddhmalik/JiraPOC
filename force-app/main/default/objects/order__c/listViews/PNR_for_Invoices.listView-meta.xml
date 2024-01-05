@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PNR_for_Invoices</fullName>
+    <columns>Booking_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>order_status__c</columns>
+    <columns>PNR__c</columns>
+    <columns>PNR_QTY__c</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>first_name_purchaser__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>qty__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>amount_outstanding__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PNR_QTY__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>PNR for Invoices</label>
+</ListView>

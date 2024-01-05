@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Option_Change</fullName>
+    <active>true</active>
+    <description>This rule prevents Option change if Total Hold or Sold &gt; 0</description>
+    <errorConditionFormula>AND(
+OR( Total_Sold_Hold_POE__c &gt;0),
+ISCHANGED( options__c )
+)</errorConditionFormula>
+    <errorDisplayField>options__c</errorDisplayField>
+    <errorMessage>You cannot change the OPTION as there are CONFIRMED or ON HOLD orders linked to this departure date. Please create a new departure date instead.</errorMessage>
+</ValidationRule>

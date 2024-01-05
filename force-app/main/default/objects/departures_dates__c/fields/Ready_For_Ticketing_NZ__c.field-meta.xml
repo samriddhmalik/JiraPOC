@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_For_Ticketing_NZ__c</fullName>
+    <externalId>false</externalId>
+    <label>Ready For Ticketing - NZ</label>
+    <summarizedField>order__c.qty__c</summarizedField>
+    <summaryFilterItems>
+        <field>order__c.Booking_Validation__c</field>
+        <operation>equals</operation>
+        <value>Ticket Flight</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>order__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>TNZ, WT</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>order__c.order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed, Ready For Export, Exported</value>
+    </summaryFilterItems>
+    <summaryForeignKey>order__c.departures_dates__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

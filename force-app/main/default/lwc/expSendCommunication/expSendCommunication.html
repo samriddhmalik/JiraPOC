@@ -1,0 +1,43 @@
+<template>
+		<div class="slds-m-around_medium">
+				<lightning-card>
+						<div class="slds-text-heading_medium slds-box slds-theme_shade">Select Communication Type</div>
+						<div class="slds-form-element slds-m-top_x-large">
+								<label class="slds-form-element__label" for="select-01">Select a Communication Type to Send</label>
+								<div class="slds-form-element__control">
+										<div class="slds-select_container">
+												<template if:true={hotelCancelledStatus}>
+														<select class="slds-select" onchange={handleGetSelectedValue}>
+														
+																<template for:each={commTypeList} for:item="option">
+																		<option key={option.Id} class="uiInputSelectOption" value={option.Id}>{option}</option>
+																</template>
+														</select>
+												</template>
+												<template if:true={hotelNotCancelledStatus}>
+														<select class="slds-select" onchange={handleGetSelectedValue}>
+														
+																<template for:each={commTypeConfirmList} for:item="option">
+																		<option key={option.Id} class="uiInputSelectOption" value={option.Id}>{option}</option>
+																</template>
+														</select>
+												</template>
+										</div>
+								</div>
+								<div class="slds-align_absolute-center" style="margin-top:20px;">
+											<template if:true={checkCommTypeNone}>
+									 
+								       <lightning-button variant="brand" label="Cancel" onclick={closeQuickAction} style="margin-left:10px"></lightning-button>
+										</template>
+											<template if:true={checkCommTypeOther}>
+									   	<lightning-button variant="brand" name="Finish" label="Send " onclick={saveButtoncaseDetails}></lightning-button>
+								       <lightning-button variant="brand" label="Cancel" onclick={closeQuickAction} style="margin-left:10px"></lightning-button>
+										</template>
+								</div>
+						</div>
+
+				</lightning-card>
+		</div>
+
+
+</template>

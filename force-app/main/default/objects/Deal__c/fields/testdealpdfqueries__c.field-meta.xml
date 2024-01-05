@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>testdealpdfqueries__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;id=&quot; + Id + 
+&quot;&amp;templateid=a4C0K000000D9iJ&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;qmode=Attachments&quot; + 
+&quot;&amp;ofn=&quot; + Name + &quot; &quot; + Agents__c + 
+&quot;&amp;queryid=[TCItinerary]a4428000000E87Q,[TCOptions1]a4428000000E8Br,[TCSubOptions1]a4428000000E8CG,[TourInclusions]a4428000000YycV,[Dealpdf]a4428000000Yycu?pv0=&quot; + Agents__r.Acct_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>testdealpdfqueries</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

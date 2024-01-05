@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAD_Orders_on_Hold_0</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>qty__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>amount_outstanding__c</columns>
+    <columns>total_payment_received__c</columns>
+    <columns>order_status__c</columns>
+    <columns>update_order__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>On Hold</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TNZ,order__c.TAD</value>
+    </filters>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>departure_date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>TAD Orders on Hold ≥ $0</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Finance</group>
+        <group>Team_Leaders_CS</group>
+        <group>Travel_Consultants_CS</group>
+    </sharedTo>
+</ListView>

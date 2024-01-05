@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>case(
+  RecordType.Name, 
+  &quot;Coupon Transaction&quot;, 
+    Coupon__r.Discount__c - Coupon__r.Discount_Applied__c,
+  &quot;Multi-Line Expense&quot;,
+  Amount_Rollup__c - Tax_Amount__c,
+  Net_Amount_Rollup__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>On Sale and Expense Transactions this value represents the amount of the sale or purchase amount net of GST. On Coupon Transactions, this value represents the unused portion on the coupon value at expiry.</inlineHelpText>
+    <label>Net Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

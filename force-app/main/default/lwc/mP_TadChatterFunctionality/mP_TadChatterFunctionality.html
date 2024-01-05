@@ -1,0 +1,237 @@
+<!-- sldsValidatorIgnore -->
+<template>
+<div class = "slds-m-around_large">
+  <template if:true={insertCommentData}>
+    <div class="slds-p-around_x-large">
+      <lightning-spinner alternative-text="Loading" size="small" variant="brand"></lightning-spinner>
+    </div>
+  </template>
+
+  <template if:false={insertCommentData}>
+    <div style="background-color: white" class="slds-box slds-m-right_small slds-m-left_large slds-m-top_large">
+      <template for:each={feedcommentdata} for:item="feed" for:index="index">
+        <div class="slds-theme_default" key={feed}>
+          <template if:false={feed.commentByMerchant}>
+            <table>
+              <tr>
+                <td rowspan="4" style="width: 50px; vertical-align: top; padding-top: 20px">
+                  <lightning-icon icon-name="utility:user" size="medium"></lightning-icon>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="color: #015ba7; padding-top: 20px;font-size: 14px;font-family: Arial;">
+                    {feed.userName}({feed.CompanyName})
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="color: black;padding-top: 5px;font-size: 12px;word-break: break-all;">
+                    <lightning-formatted-rich-text value={feed.commentTime}></lightning-formatted-rich-text>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p style="color: black; padding-top: 10px; font-size: 14px;word-break: break-all;">
+                    <lightning-formatted-rich-text value={feed.feedcommentBody}></lightning-formatted-rich-text>
+                  </p>
+                  <template for:each={feed.attachmentWrapperLst} for:item="attachment" for:index="index">
+                  <template if:true={attachment.isFileTypeImage}>             
+              <p style="padding-top:20px;" key={attachment}>
+                <span>Download: &nbsp;<lightning-icon icon-name={attachment.AttachmentExtension} title={attachment.AttachmentName} size="x-small"></lightning-icon></span>
+                <span style="padding-left:5px"><a download={attachment.AttachmentName} target="_blank" href={attachment.AttachmentURL} data-item={attachment}>{attachment.AttachmentName}</a></span>
+              </p>
+              <p style="padding-top:5px;" key ={attachment}>
+                <span><img src={attachment.AttachmentURL} width="150px" height="150px"></img></span>
+              </p>
+            </template>
+
+            <template if:false={attachment.isFileTypeImage}>
+              <p key={attachment} style="padding-top:10px;">
+                <span>Download: &nbsp;<lightning-icon icon-name={attachment.AttachmentExtension} title={attachment.AttachmentName} size="x-small"></lightning-icon></span>
+                <span style="padding-left:5px"><a download={attachment.AttachmentName} target="_blank" href={attachment.AttachmentURL} data-item={attachment}>{attachment.AttachmentName}</a></span>
+              </p>
+
+              <!--<p key={attachment} style = "padding-top:5px;">
+                  <span>
+                      <iframe src={attachment.AttachmentURL} width="100%" height="150px" referrerpolicy="no-referrer" sandbox =''></iframe>
+                  </span>
+                </p>-->
+            </template>
+                  </template>
+                </td>
+              </tr>
+
+             <!-- <tr>
+                <td>
+                  <lightning-formatted-rich-text
+                    value={feed.fee}
+                  ></lightning-formatted-rich-text>
+                </td>
+              </tr>-->
+              <tr>
+                <td><br/></td>
+              </tr>
+            </table>
+          </template>
+
+          <template if:true={feed.commentByMerchant}>
+            <div
+              style="background-color: #f2f2f2"
+              class="slds-m-left_xx-large slds-m-right_large slds-m-top_x-small"
+            >
+              <table class="slds-m-left_medium slds-m-right_medium"  style="width:85%">
+                <tr>
+                  <td
+                    rowspan="4"
+                    style="vertical-align: top; padding-top: 20px"
+                  >
+                    <lightning-icon
+                      icon-name="utility:user"
+                      size="medium"
+                    ></lightning-icon>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p
+                      style="
+                        color: #015ba7;
+                        padding-top: 20px;
+                        font-size: 14px;
+                        font-family: Arial;
+                      "
+                    >
+                      {feed.userName}({feed.CompanyName})
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p
+                      style="
+                        color: black;
+                        padding-top: 5px;
+                        font-size: 12px;
+                        word-break: break-all;
+                      "
+                    >
+                      <lightning-formatted-rich-text
+                        value={feed.commentTime}
+                      ></lightning-formatted-rich-text>
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p
+                      style="
+                        color: black;
+                        padding-top: 10px;
+                        font-size: 14px;
+                        word-break: break-all;
+                      "
+                    >
+                      <lightning-formatted-rich-text
+                        value={feed.feedcommentBody}
+                      ></lightning-formatted-rich-text>
+                    </p>
+
+                    <template for:each={feed.attachmentWrapperLst} for:item="attachment" for:index="index">
+
+              <template if:true={attachment.isFileTypeImage}>                
+                <p key={attachment} style = "padding-top:20px; word-break: break-all;">
+                  <span>Download: &nbsp;<lightning-icon icon-name={attachment.AttachmentExtension} title={attachment.AttachmentName} size="x-small"></lightning-icon></span>
+                  <span style="padding-left:5px"><a download={attachment.AttachmentName} target="_blank" href={attachment.AttachmentURL} data-item={attachment}>{attachment.AttachmentName}</a></span>
+                </p>
+                <p key={attachment} style = "padding-top:5px;">
+                  <span>
+                    <img src={attachment.AttachmentURL} width="150px" height="150px"></img>
+                  </span>
+                </p>
+              </template>
+
+              <template if:false={attachment.isFileTypeImage}>
+                
+                <p key={attachment} style = "padding-top:10px; word-break: break-all;">
+                  <span>Download: &nbsp;<lightning-icon icon-name={attachment.AttachmentExtension} title={attachment.AttachmentName} size="x-small"></lightning-icon></span>
+                  <span style="padding-left:5px"><a download={attachment.AttachmentName}  href={attachment.AttachmentURL} data-item={attachment} target="_blank">{attachment.AttachmentName}</a></span>
+                </p>
+                
+              </template>
+              </template>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <lightning-formatted-rich-text
+                      value={feed.fee}
+                    ></lightning-formatted-rich-text>
+                  </td>
+                </tr>
+
+                <!--<tr>
+                  <td colspan="3" style="text-align: end">
+                    <p style="color: rgb(84, 84, 88); margin-right: 30px">
+                      <i>Sent</i>
+                    </p>
+                  </td>
+                </tr>-->
+                <tr>
+                  <td><br /></td>
+                </tr>
+              </table>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <template if:true={CaseStatus}>
+      <div style="margin-top: 40px">
+        <p>
+          <span style="padding-left: 50px">
+            <lightning-icon icon-name="utility:comments" size="small"></lightning-icon></span>
+            <span style="padding-left: 30px">Comment</span>
+        </p>
+
+  <lightning-textarea style="margin-top: -15px; padding-left: 50px; padding-right: 30px" onchange={handleChange}></lightning-textarea>
+
+    <p style="margin-left : 50px; margin-bottom:10px;">
+      <span><lightning-input type="file" 
+        accept = "image/jpeg, image/png, image/jpg, .doc, .docx, .pdf, .csv, .csvx, .xls, .xlsx" 
+        multiple ="false"  class="removeDropZone" onchange={handleFileUploaded} record-id={urlId}></lightning-input></span>
+      
+      <span>           
+      <template if:true={filesData}> 
+        <template for:each={filesData} for:item="imgName" for:index="index">
+        <b key={imgName.key}>{imgName.fileName}</b>
+        <lightning-button-icon icon-name="utility:delete" key={imgName.key} alternative-text="Delete"
+          class="test slds-m-left_xx-small"
+          aria-label="Delete"
+          title="Delete"
+          onclick={removeReceiptImage}></lightning-button-icon>
+      </template>
+    </template>       
+  </span>       
+    </p>
+
+<div style="text-align: center; margin-top: 10px">
+  <lightning-button
+    variant="success"
+    label="Comment"
+    title="Comment"
+    onclick={handleClick}
+  ></lightning-button>
+</div>
+      </div>
+      </template>
+
+    </div>
+  </template>
+</div>
+</template>

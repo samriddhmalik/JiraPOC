@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area_of_opportunity__c</fullName>
+    <externalId>false</externalId>
+    <label>Area of opportunity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>System Review</fullName>
+                <default>false</default>
+                <label>System Review</label>
+            </value>
+            <value>
+                <fullName>Process Review(Internal)</fullName>
+                <default>false</default>
+                <label>Process Review(Internal)</label>
+            </value>
+            <value>
+                <fullName>Process Review(Merchant)</fullName>
+                <default>false</default>
+                <label>Process Review(Merchant)</label>
+            </value>
+            <value>
+                <fullName>Staff Training</fullName>
+                <default>false</default>
+                <label>Staff Training</label>
+            </value>
+            <value>
+                <fullName>User Error</fullName>
+                <default>false</default>
+                <label>User Error</label>
+            </value>
+            <value>
+                <fullName>Communication(Internal)</fullName>
+                <default>false</default>
+                <label>Communication(Internal)</label>
+            </value>
+            <value>
+                <fullName>Communication(Merchant)</fullName>
+                <default>false</default>
+                <label>Communication(Merchant)</label>
+            </value>
+            <value>
+                <fullName>Communication(Customer)</fullName>
+                <default>false</default>
+                <label>Communication(Customer)</label>
+            </value>
+            <value>
+                <fullName>Deal Config</fullName>
+                <default>false</default>
+                <label>Deal Config</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

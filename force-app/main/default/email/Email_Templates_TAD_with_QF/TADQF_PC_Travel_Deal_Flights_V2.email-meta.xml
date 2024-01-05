@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD Purchase Confirmation Travel Deal Flights V2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF PC Travel Deal Flights V2</name>
+    <style>none</style>
+    <subject>Congratulations, you&apos;ve purchased a TripADeal holiday</subject>
+    <textOnly>.
+
+Congratulations!
+Hi {!Order_Communication_POE__c.ordexp_Purchaser_First_Name__c}, here are the details of your purchase, along with a breakdown of what happens next.
+
+YOUR ORDER DETAILS:
+Order Reference Number: {!Order_Communication_POE__c.order_number__c}
+Deal: {!Order_Communication_POE__c.ordexp_DealFC_fromTADOrder__c} - {!Order_Communication_POE__c.OptionsPC_fromTADOrder__c}
+Deal ID: {!Order_Communication_POE__c.Deal_and_Title__c}
+Departure Date: {!Order_Communication_POE__c.Day_Month_Year__c}
+Departure City:
+Quantity: {!Order_Communication_POE__c.ordexp_PAX_Quantity__c}
+Additional Options: {!Order_Communication_POE__c.Add_On_Information__c}
+
+Want the details of your deal? You can download them here.
+Our standard Terms and Conditions are here.
+
+What happens next?
+
+1
+First time logging in? Use your booking email address to create a password for your TripADeal Account. 
+
+Complete your Passenger Information Form, if you haven&apos;t already done so, within 72 hours of purchase*. Login to your TripADeal account to complete this step.
+
+[Login or Set Up Your Password Now]
+
+*Important: If you make a ‘last minute booking’ within 8 weeks of departure, you must submit your Passenger Information within 24 hours of purchase. These bookings may not receive their final travel documentation until as little as 1 week prior to departure, however they will be fast-tracked to process all visa requirements.
+
+2
+Once we’ve got your information, we’ll send you an email to let you know and your booking will be processed.
+
+If you have purchased a tour package without flights included, we will send a follow-up confirmation email once the required minimum numbers for the tour are met and the departure is guaranteed so you may begin to make your own travel arrangements either side of this tour. Please do not make any non-refundable travel arrangements prior to receiving this confirmation.
+
+If you have purchased a tour package with flights included, we suggest you wait until you receive your final travel documentation from TripADeal which will include your flight details before making any non-refundable travel arrangements.
+
+3
+We strongly recommend that you purchase travel insurance immediately after making your booking. Your policy should include cancellation, baggage, theft, personal liability, accident and medical cover, plus any other requirements specific to your travel.
+
+4
+You will receive your final travel documentation approximately 4-6 weeks prior to departure (unless otherwise stated in your booking instructions).
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

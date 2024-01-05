@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoiced_DTOLs__c</fullName>
+    <externalId>false</externalId>
+    <label>Invoiced DTOLs</label>
+    <summarizedField>DTOrderLineJunction__c.ff_OL_Gross_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>DTOrderLineJunction__c.ff_Is_Invoiced__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>DTOrderLineJunction__c.DTTermsJunction__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

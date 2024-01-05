@@ -1,0 +1,210 @@
+<aura:component controller="CruiseCabinBooking" implements="force:appHostable,force:lightningQuickAction,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,forceCommunity:searchInterface" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="orderLineItems" type="order_line_item__c" default="{ 'sobjectType': 'order_line_item__c' }" />
+    <aura:attribute name="proceed" type="Boolean"/>
+    <aura:attribute name="merchantButton" type="Boolean"/>
+    <aura:attribute name="isCruisePartnerBooked" type="Boolean" default="false"/>
+    <aura:attribute name="IconName" type="String" access="public" default="standard:account"/>
+    
+    <aura:attribute name="cruiseCabinRecord" type="Cruise_Cabin_Booking_POE__c" default="{'sObjectType':'Cruise_Cabin_Booking_POE__c'}"/>
+    <aura:attribute name="selectedRecord" type="String"/>
+    <aura:attribute name="listOfSearchRecords" type="Account"/>
+    <aura:attribute name="cabinQuantity" type="String"/>
+    <aura:attribute name="cabinNumbers" type="String"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="lstOfCruiseCompany" type="String[]"/>
+    
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isButtonView" type="boolean" default="false"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 60rem !important;
+        width:60% !important;
+        }
+        .modal-body{ 
+        height : 60vh !important; 
+        max-height: 60vh !important; 
+        } 
+    </aura:html>
+    
+    <!--Use aura:if tag to display Model Box, on the bese of conditions. [isOpen boolean attribute] --> 
+    <aura:if isTrue="{!equals(v.merchantButton, true)}">
+        <button class="slds-button slds-button--neutral" onclick="{!c.showModal}">Book Cruise Cabins</button>
+    </aura:if>
+    
+    <aura:if isTrue="{!equals(v.isOpen, 'true')}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        	<div class="slds-modal__container">
+                
+                <lightning:spinner aura:id="mySpinner" class="slds-hide" />
+                
+        		 <header class="slds-modal__header">
+                     
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModal }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_small slds-hyphenate"> Cruise Cabin Booking </h2>
+                    </header>
+        <!--<div  align="center" style="color: #ffffff;font-size: 40px" class="slds-text-heading_large"><b> Cruise Cabin Booking </b></div>-->
+         <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            
+            <aura:if isTrue="{!equals(v.proceed, false)}">
+                <div  align="center" style="font-size: 20px" class="slds-text"><b> Cruise Cabin can't be booked</b></div>
+            </aura:if>
+            
+            <aura:if isTrue="{!equals(v.proceed, true)}">            
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2 ">
+                        <lightning:select aura:id="cruiseCompanyPickList" name="selectCruiseCompany" value="{!v.cruiseCabinRecord.mp_Cruise_Company__c}" label="Select a Cruise Company" required="true">
+                            <option value="" text=""/>
+                            <aura:iteration items="{!v.lstOfCruiseCompany}" var="item">
+                                <option value="{!item}" text="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div> 
+                    
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputText required="true" label="Cruise Booking Reference"  aura:id="referenceNumber" value="{!v.cruiseCabinRecord.cruise_booking_reference__c}"/> 
+                    </div>
+                </div>  
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputText required="true" label="Ship Name" aura:id="shipName" value="{!v.cruiseCabinRecord.ship_name__c}"/> 
+                    </div>
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputDate required="true" label="Ship Sail Date" aura:id="shipSailDate" value="{!v.cruiseCabinRecord.ship_sail_date__c}" displayDatePicker="true"/>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputSelect  required="true" label="Cabin Quantity" aura:id="cabinQuantity" value="{!v.cabinQuantity}">
+                            <ui:inputSelectOption text="1"/>
+                            <ui:inputSelectOption text="2"/>
+                            <ui:inputSelectOption text="3"/>
+                            <ui:inputSelectOption text="4"/>
+                            <ui:inputSelectOption text="5"/>
+                            <ui:inputSelectOption text="6"/>
+                            <ui:inputSelectOption text="7"/>
+                            <ui:inputSelectOption text="8"/>
+                            <ui:inputSelectOption text="9"/>
+                            <ui:inputSelectOption text="10"/> 
+                        </ui:inputSelect>
+                    </div>
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputCurrency required="true" label="Cabin Price" aura:id="cabinPrice" value="{!v.cruiseCabinRecord.cabin_price__c}"/> 
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-1">
+                        <div class="slds-list_horizontal">
+                            <label class="slds-form-element__label">Cabin Numbers</label>
+                            <lightning:helptext iconName="utility:info" content="Please enter Cabin Numbers in seperate lines." />    
+                        </div>
+                        <ui:inputTextArea  required="true" aura:id="cabinNumbers" value="{!v.cabinNumbers}" />
+                    </div> 
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-1">
+                        <ui:inputCheckbox aura:id="partnerPurchased" label="Partner Purchased?" value="{!v.isCruisePartnerBooked }"/> 
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Save" onclick="{! c.saveClick }" />
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModal }"/>
+                </div>   
+            </aura:if>
+        </div>
+            </div>
+        </section>
+         <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>   
+    
+     <aura:if isTrue="{!equals(v.merchantButton, false)}">
+         
+         <lightning:spinner aura:id="mySpinner" class="slds-hide" />
+                  
+        <div  align="center" style="color: #ffffff;font-size: 40px" class="slds-text-heading_large"><b> Cruise Cabin Booking </b></div>
+         
+            <aura:if isTrue="{!equals(v.proceed, false)}">
+                <div  align="center" style="font-size: 20px" class="slds-text"><b> Cruise Cabin can't be booked</b></div>
+            </aura:if>
+            
+            <aura:if isTrue="{!equals(v.proceed, true)}">            
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2 ">
+                        <lightning:select aura:id="cruiseCompanyPickList" name="selectCruiseCompany" value="{!v.cruiseCabinRecord.mp_Cruise_Company__c}" label="Select a Cruise Company" required="true">
+                            <option value="" text=""/>
+                            <aura:iteration items="{!v.lstOfCruiseCompany}" var="item">
+                                <option value="{!item}" text="{!item}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div> 
+                    
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputText required="true" label="Cruise Booking Reference"  aura:id="referenceNumber" value="{!v.cruiseCabinRecord.cruise_booking_reference__c}"/> 
+                    </div>
+                </div>  
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputText required="true" label="Ship Name" aura:id="shipName" value="{!v.cruiseCabinRecord.ship_name__c}"/> 
+                    </div>
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputDate required="true" label="Ship Sail Date" aura:id="shipSailDate" value="{!v.cruiseCabinRecord.ship_sail_date__c}" displayDatePicker="true"/>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputSelect  required="true" label="Cabin Quantity" aura:id="cabinQuantity" value="{!v.cabinQuantity}">
+                            <ui:inputSelectOption text="1"/>
+                            <ui:inputSelectOption text="2"/>
+                            <ui:inputSelectOption text="3"/>
+                            <ui:inputSelectOption text="4"/>
+                            <ui:inputSelectOption text="5"/>
+                            <ui:inputSelectOption text="6"/>
+                            <ui:inputSelectOption text="7"/>
+                            <ui:inputSelectOption text="8"/>
+                            <ui:inputSelectOption text="9"/>
+                            <ui:inputSelectOption text="10"/> 
+                        </ui:inputSelect>
+                    </div>
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                        <ui:inputCurrency required="true" label="Cabin Price" aura:id="cabinPrice" value="{!v.cruiseCabinRecord.cabin_price__c}"/> 
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-1">
+                        <div class="slds-list_horizontal">
+                            <label class="slds-form-element__label">Cabin Numbers</label>
+                            <lightning:helptext iconName="utility:info" content="Please enter Cabin Numbers in seperate lines." />    
+                        </div>
+                        <ui:inputTextArea  required="true" aura:id="cabinNumbers" value="{!v.cabinNumbers}" />
+                    </div> 
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-p-horizontal--large slds-large-size--1-of-1">
+                        <ui:inputCheckbox aura:id="partnerPurchased" label="Partner Purchased?" value="{!v.isCruisePartnerBooked }"/> 
+                    </div>
+                </div>
+                <br/>
+                <div class="slds-text-align--center">
+                    <lightning:button variant="brand" label="Save" onclick="{! c.saveClick }" />
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.closeModal }"/>
+                </div>   
+            </aura:if>
+        
+    </aura:if>     
+    
+</aura:component>

@@ -1,0 +1,91 @@
+<aura:component controller="Tad_createDepCityController" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global">
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="tabId" type="String"/>
+    <aura:attribute name="recId" type="String"/>
+    <aura:attribute name="fromDealPage" type="Boolean" default="false"/>
+    <aura:attribute name="isConsoleApp" type="Boolean" default="false"/>
+    <aura:attribute name="isAirline" type="Boolean" default="True"/>
+    <aura:attribute name="isNext" type="Boolean" default="false"/>
+    <aura:attribute name="isAirNext" type="Boolean" default="false"/>
+    <aura:attribute name="airlineId" type="String"/>
+    <aura:attribute name="getName" type="String"/>
+    <aura:attribute name="getDeal" type="String"/>
+    <aura:attribute name="getSite" type="String"/>
+    <aura:attribute name="getIsActive" type="Boolean" default="True"/>
+    <aura:attribute name="getCurrency" type="String"/>
+    <aura:attribute name="getAirline" type="String"/>
+    <aura:attribute name="getCabin" type="String"/>
+    <aura:attribute name="getPrice" type="Decimal"/>
+    <aura:attribute name="getPriceNZ" type="Decimal"/>
+    <aura:attribute name="getFlightPriceType" type="String"/>
+    <aura:attribute name="getFeeApp" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <aura:if isTrue="{!v.isAirline}">
+    <div class="slds-theme_default" style="width: 51vw; height :inherit; overflow:auto; margin:auto; border-radius:0.25rem">
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+        <div class="slds-modal__header">
+            <h2 class ="slds-modal__title slds-hyphenate slds-text-heading--medium">New Air Upgrade</h2>
+        </div>
+        <div class="form-legend" style="padding:8px; margin:8px; text-align:right; border-radius:0.25rem">
+            <abbr class="slds-required">*</abbr> = Required Information</div>
+        <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Key Details</h3>
+        <div class= "container-body" style ="padding-left: 0.6rem; margin: 0.5rem;">
+            <div class="slds-form">
+                <lightning:recordEditForm objectApiName="airline_upgrade__c">
+                    <lightning:messages />
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="Name" value="{!v.getName}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="Deal__c" value="{!v.getDeal}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="site__c" value="{!v.getSite}" required="true" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField  aura:id="ssfield" fieldName="Active__c" value="{!v.getIsActive}" onclick="{!c.checkIsActive}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField fieldName="CurrencyIsoCode" value="{!v.getCurrency}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                        <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Airline Details</h3>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="Airline__c" value="{!v.getAirline}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="Cabin__c" value="{!v.getCabin}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                        <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Price Details</h3>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="price__c" value="{!v.getPrice}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="price_nz__c" value="{!v.getPriceNZ}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="Flight_Price_Type__c" value="{!v.getFlightPriceType}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="ssfield" fieldName="fee_application__c" value="{!v.getFeeApp}" />
+                        </div>
+                    </div>
+                </lightning:recordEditForm>
+            </div>
+        </div>
+        <div class="slds-card__footer slds-align_absolute-center slds-theme--shade">
+            <lightning:button label="Cancel" title="Cancel" class="slds-m-right_small" onclick="{!c.handleCancel}"/>
+            <lightning:button variant="brand" label="Save &amp; New" title="Save &amp; New" class="slds-m-right_small" onclick="{!c.handleAirUpgradeSave}"/>
+            <lightning:button variant="brand" label="Save &amp; Next" title="Save" onclick="{!c.handleAirUpgradeNext}"/>
+        </div>
+    </div>
+    </aura:if>
+    <aura:if isTrue="{!v.isAirNext}">
+        <c:tad_createComponentAndPricing addId = "{!v.airlineId}" type ="airline_upgrade__c" oncancel="{!c.handleCancel}" onclosetab="{!c.closePreviousTab}"/>
+    </aura:if>
+</aura:component>

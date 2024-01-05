@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WT_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>deal__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>order_status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Referrer__c</columns>
+    <columns>Created_DateTC__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.WT</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Expired</value>
+    </filters>
+    <filters>
+        <field>departure_date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>WT Orders</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

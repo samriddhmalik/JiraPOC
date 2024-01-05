@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sent_from_ac</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>account__c</columns>
+    <columns>Feefo_Coupon__c</columns>
+    <columns>usable_count__c</columns>
+    <columns>usage_count__c</columns>
+    <columns>Deal_from_Survey__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Coupon_code_sent_to_AP__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>usage_count__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>have used</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>IT_Team</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Extension_and_Crossover_Day</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+TEXT(itinerary_context__c) = &quot;Pre Extension&quot;,
+ISBLANK( TEXT(prex_crossover_day__c) )
+)</errorConditionFormula>
+    <errorMessage>Itinerary Context is Pre Extension and PreX Crossover Day is not populated!</errorMessage>
+</ValidationRule>

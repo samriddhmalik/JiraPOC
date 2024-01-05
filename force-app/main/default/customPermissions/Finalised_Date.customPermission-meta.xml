@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Associated to &apos;Finalised_Date&quot; permission set and assigned to users that are exempt to the Finalised _Date allocation rule on the departure dates object</description>
+    <isLicensed>false</isLicensed>
+    <label>Finalised_Date</label>
+</CustomPermission>

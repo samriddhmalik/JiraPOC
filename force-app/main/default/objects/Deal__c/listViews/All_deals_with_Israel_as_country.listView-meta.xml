@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_deals_with_Israel_as_country</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>deal_type__c</columns>
+    <columns>Status__c</columns>
+    <columns>Country__c</columns>
+    <columns>BDM__c</columns>
+    <columns>Allocation_by__c</columns>
+    <columns>PAX_included_per_deal__c</columns>
+    <columns>Flight_Book_By__c</columns>
+    <columns>Real_End_Date__c</columns>
+    <columns>number_of_days_options__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Country__c</field>
+        <operation>includes</operation>
+        <value>Israel</value>
+    </filters>
+    <label>All deals with Israel as country</label>
+</ListView>

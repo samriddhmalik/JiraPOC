@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Days_Poe_Check</fullName>
+    <active>true</active>
+    <description>If date_Notes__c field at the Departure date has value in it, and user tick the Create Days POE checkbox, throw a validation message “Please refer to the Date Notes“ and if its blank don’t throw any validation message.</description>
+    <errorConditionFormula>AND( NOT(ISBLANK( date_notes__c )) , Create_Days_POE__c = True )</errorConditionFormula>
+    <errorDisplayField>date_notes__c</errorDisplayField>
+    <errorMessage>Please refer to the Date Notes</errorMessage>
+</ValidationRule>

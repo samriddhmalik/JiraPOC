@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa</fullName>
+    <active>true</active>
+    <label>Visa</label>
+    <picklistValues>
+        <picklist>Courier_Service_Type__c</picklist>
+        <values>
+            <fullName>One Way</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cover_Type__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comprehensive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Essentials</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Region__c</picklist>
+        <values>
+            <fullName>Africa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia%2FPacific</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Europe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USA Americas</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Status__c</picklist>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Type__c</picklist>
+        <values>
+            <fullName>MyTravel Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAD Insurance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visa_Type__c</picklist>
+        <values>
+            <fullName>China Double Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China Single Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One way Courier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Courier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transsiberia</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

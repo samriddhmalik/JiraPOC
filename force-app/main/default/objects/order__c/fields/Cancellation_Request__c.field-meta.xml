@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Request__c</fullName>
+    <externalId>false</externalId>
+    <label>Cancellation Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>true</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Send Request Form</fullName>
+                <default>false</default>
+                <label>Send Request Form</label>
+            </value>
+            <value>
+                <fullName>Request Sent</fullName>
+                <default>false</default>
+                <label>Request Sent</label>
+            </value>
+            <value>
+                <fullName>Request Actioned</fullName>
+                <default>false</default>
+                <label>Request Actioned</label>
+            </value>
+            <value>
+                <fullName>Form Returned Pending Action</fullName>
+                <default>false</default>
+                <label>Form Returned Pending Action</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

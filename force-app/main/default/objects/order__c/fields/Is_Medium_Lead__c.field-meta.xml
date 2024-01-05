@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Medium_Lead__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(departure_date__c - DATEVALUE(time_confirmed__c) &gt;= 90 &amp;&amp; departure_date__c - DATEVALUE(time_confirmed__c) &lt;= 127, &quot;Yes&quot;, &quot;No&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Medium Lead</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>has_flights__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( OR(ISPICKVAL( Dates_Flights__c,&apos;Dates/Domestic Flights&apos;),ISPICKVAL( Dates_Flights__c,&apos;Dates/International Flights&apos;)) ,true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>has flights</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

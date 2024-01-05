@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>hss_qty_price__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(Deal_ID__c=&apos;3335&apos;,is_phone_sale__c), hss_line_price__c ,
+
+
+
+IF( TEXT(departures_dates__r.fee_application__c) = &quot;Per PAX&quot;,
+(number_of_adults__c  +  number_of_children__c) * hss_line_price__c, 
+hss_line_price__c * qty__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HSS Qty Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,47 @@
+<template>
+    <div class="slds-grid slds-gutters">
+				<div class="slds-col slds-p-top_large"><span>Allocation Level</span></div>
+				<div class = "slds-col"><lightning-combobox
+        name="progress"
+        value={AllocationSelectionLevelValues}
+        placeholder="None"
+        options={AllocationSelectionLevelValues}
+        onchange={handleChangeAllocationLevelSelection} ></lightning-combobox></div>
+    </div>
+		<br/>
+		<br/>
+		<div>
+	  <template if:true={showAllocationDataTable}>
+		<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                   role="grid" style="table-layout:fixed;">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Select">{SelectedAllocationLevel}</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Minimum">Minimum</div>
+                                        </th>
+									</tr>	
+                                </thead>
+                                <tbody><template for:each = {AllocationDataTable} for:item="option" for:index="index">
+									<tr key={option.index}>
+										<td>
+                                     <div class="slds-cell-wrap">{option.optionName}</div></td>
+										<td>
+                                     <div class="slds-cell-wrap">
+                                     <lightning-input type="number" value={option.minumum} data-id="Data" data-id1={index} onchange={AllocationDataChangeHandler} disabled={option.disabled}></lightning-input>
+                                    </div></td>
+									</tr></template>
+								</tbody>
+
+				</table>
+				</template>
+		</div>
+		<br/>
+		<br/>
+		<div align="center">
+			<lightning-button variant="success" label="Save" title="Successful action" onclick={saveClick} class="slds-m-left_x-small" disabled={buttonDisabled}></lightning-button>
+			<lightning-button variant="cancel" label="Cancel" title="Cancel action" onclick={cancelHandler} class="slds-m-left_x-small" disabled={buttonDisabled}></lightning-button>
+		</div>
+</template>

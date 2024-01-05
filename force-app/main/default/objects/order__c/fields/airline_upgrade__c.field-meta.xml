@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>airline_upgrade__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Airline Upgrade</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.deal__c</field>
+            <operation>equals</operation>
+            <valueField>airline_upgrade__c.Deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>airline_upgrade__c.order_filter__c</field>
+            <operation>contains</operation>
+            <valueField>$Source.order_record_type_name__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>airline_upgrade__c</referenceTo>
+    <relationshipLabel>order</relationshipLabel>
+    <relationshipName>order</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

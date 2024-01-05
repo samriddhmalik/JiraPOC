@@ -1,0 +1,13 @@
+<apex:page standardController="PNR__c">
+    <apex:pageBlock rendered="{!IF(PNR__c.Tickets_Attached__c = 0,true,false)}" >
+        <apex:pageBlockSection title="Please Add PNR accounting Lines(Ticket Numbers) " collapsible="false">
+        <apex:outputText value="Please Add PNR accounting Lines(Ticket Numbers)" />
+    
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+ 
+
+   
+
+</apex:page>

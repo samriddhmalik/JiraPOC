@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Value__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Business benefit category</inlineHelpText>
+    <label>Business Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Revenue Generation</fullName>
+                <default>false</default>
+                <label>Revenue Generation</label>
+            </value>
+            <value>
+                <fullName>Revenue Enablement</fullName>
+                <default>false</default>
+                <label>Revenue Enablement</label>
+            </value>
+            <value>
+                <fullName>Operational/role efficiency</fullName>
+                <default>false</default>
+                <label>Operational/role efficiency</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

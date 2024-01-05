@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Binna Burra Lodge &amp; Rainforest Campsite Customer User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Binna Burra Lodge &amp; Rainforest Campsite Customer User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>BDM_Tour_Cruise_Escapes</parentRole>
+</Role>

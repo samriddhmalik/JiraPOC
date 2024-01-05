@@ -1,0 +1,75 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-08-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride" access="global" Controller ="MP_AccountHistory" >
+	 <!--Attributes-->
+    <aura:attribute name="accList" type="List"/>
+    <aura:attribute name="recordId" type="String"/>     
+    <!--Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     
+    <h1>Account History</h1>
+    
+   <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities" style="margin-top:20px">
+<thead>
+<tr class="slds-line-height_reset">
+<th class="" scope="col">
+<div class="slds-truncate" title="Opportunity Name">Date</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Account Name">Field</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Close Date">Original Value</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Stage">New Value</div>
+</th>
+
+</tr>
+</thead>
+  <tbody>
+            <aura:iteration items="{!v.accList}" var="acc">
+                <tr>
+                     <th scope="row">
+                        <div class="slds-truncate" >
+                          {!acc.EditedDate}
+                        </div>
+                    </th>
+            
+                      
+                            <th scope="row">
+                        <div class="slds-truncate" >
+                         {!acc.FieldName}
+                        </div>
+                    </th>
+                     
+                                           
+                    <th scope="row" style="">
+                        <div class="slds-truncate" >
+                          {!acc.OrginalValue}
+                        </div>
+                    </th>
+                    
+                    
+ 
+                    
+                            <th scope="row" style="">
+                                <div class="slds-truncate" >
+                                    <h6 style="background:yellow">{!acc.NewValue}</h6>
+                                </div>
+                            </th>
+                   
+                    
+                   
+                </tr>  
+            </aura:iteration>
+        </tbody>
+</table>
+    
+
+</aura:component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>BDM__c</columns>
+    <columns>Merchant__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Hidden</value>
+    </filters>
+    <label>Hidden</label>
+</ListView>

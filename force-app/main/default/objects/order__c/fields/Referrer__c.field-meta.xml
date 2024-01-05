@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referrer__c</fullName>
+    <externalId>false</externalId>
+    <label>Referrer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TripADeal</fullName>
+                <default>false</default>
+                <label>TripADeal</label>
+            </value>
+            <value>
+                <fullName>NRMA Blue</fullName>
+                <default>false</default>
+                <label>NRMA Blue</label>
+            </value>
+            <value>
+                <fullName>facebook</fullName>
+                <default>false</default>
+                <label>facebook</label>
+            </value>
+            <value>
+                <fullName>TC</fullName>
+                <default>false</default>
+                <label>TC</label>
+            </value>
+            <value>
+                <fullName>NRMA</fullName>
+                <default>false</default>
+                <label>NRMA</label>
+            </value>
+            <value>
+                <fullName>World Traveller</fullName>
+                <default>false</default>
+                <label>World Traveller</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

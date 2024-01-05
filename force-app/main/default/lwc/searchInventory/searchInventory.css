@@ -1,0 +1,63 @@
+.completed{
+    font-size: 15px;
+}
+.row-color {
+    background: #01bfd7;
+    color: white;
+   }
+
+   
+ 
+.flex-container {
+    flex-flow: row wrap;
+    height:125px; 
+    overflow: auto;
+    border-radius: 2px;
+}
+
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.tableforamt {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.tableforamt1 {
+    text-align: center;
+    
+}
+
+.b-container {
+    border: 2px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.box {
+    
+    margin: 3px;
+    font-size: 15px;
+    text-align: center;
+    
+}
+.deal {
+    
+    margin: 3px;
+    font-size: 15px;
+    text-align: center;
+    
+}
+
+.badges {
+    background-color:#01bfd7;
+    font-size: 15px;  
+    color: #fff;
+    --sds-c-badge-sizing-border: 1px;
+}
+
+.heightClass{
+ height:250px;   
+
+}

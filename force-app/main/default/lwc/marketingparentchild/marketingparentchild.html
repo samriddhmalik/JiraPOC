@@ -1,0 +1,110 @@
+<template>
+<lightning-card >
+    <template if:true={showtable}>
+
+    <div class="slds-box">
+
+        
+        <!--<div class="slds-table--header-fixed_container slds-combobox__form-element" > -->
+
+            <!-- <div class="slds-scrollable_y heightClass" data-id="myDiv" >  -->
+
+
+            <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid" width="100%">
+            <thead>
+                <tr class="slds-text-title_caps" style="height: 35px;">
+                    <th scope="col"  class="row-color">
+                        Marketing Activity Name
+                    </th>
+        <th scope="col"  class="row-color">
+            Start Date
+        </th>
+
+<th scope="col"  class="row-color">
+    End Date
+</th>
+<th scope="col"  class="row-color">
+    Marketing Activity Date
+</th>
+<th scope="col"  class="row-color">
+    Status
+</th>
+</tr>
+            </thead>
+
+
+            <tbody>
+                <template for:each={parentActivity} for:item="key" for:index="index">
+            
+                <tr key={key.index}>
+                    
+                    <td>{key.MarketingActivityName}</td>
+                    <td>{key.StartDate}</td>
+                    <td>{key.Enddate}</td>
+                    <td>{key.ActivityDate}</td>
+                    
+                    <td>
+                        <lightning-combobox
+                                    name={index}
+                                    label="Status"
+                                    value={key.ActivityStatus}
+                                    placeholder="Select Progress"
+                                    options={StatusPicklist}
+                                    onchange={handleChangeParent}
+                                    >
+                        </lightning-combobox>
+                    </td>
+                        
+                
+                </tr>
+</template>
+<template if:true={showchild}>
+                         
+<template for:each={childActivity} for:item="key" for:index="index">
+            
+<tr key={key.index}>
+    
+    <td>{key.MarketingActivityName}</td>
+    <td>{key.StartDate}</td>
+    <td>{key.Enddate}</td>
+    <td>{key.ActivityDate}</td>
+    
+    <td>
+        <lightning-combobox
+                    name={index}
+                    label="Status"
+                    value={key.ActivityStatus}
+                    placeholder="Select Progress"
+                    options={StatusPicklist}
+                    onchange={handleChangeChild}
+                    >
+        </lightning-combobox>
+    </td>
+        
+
+</tr>
+</template>
+</template>
+</tbody>
+            </table>
+          <!--  </div> -->
+        </br>
+        <br>
+        <div>
+            <center>
+          <lightning-button variant="brand" label="Save" title={saveTitle} onclick={updateActivityRecordNow} class="slds-p-around_small" ></lightning-button>
+        </center>  
+        </div>
+        
+        </div>    
+    </template>
+    <template if:true={showmsg}>
+<div style="font-size: 25px; color: red;"> 
+</br>
+</br>
+    <center>  Marketing activity is in deferred status and cannot be updated </center>
+</div>
+
+    </template>
+</lightning-card>
+</template>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>P_C</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>P&amp;C</label>
+        <sharedTo>
+            <role>Head_of_IT</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Subject__c</field>
+            <operation>contains</operation>
+            <value>Termination</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Tech_Support_for_All_Permission</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Tech Support for All Permission</label>
+        <sharedTo>
+            <group>Tech_Support_with_All_Permission</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>is_P_C_Tech_Ticket__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>is_P_C_Tech_Ticket__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Tech_Support_for_Without_P_C_Permission</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Tech Support for Without P&amp;C Permission</label>
+        <sharedTo>
+            <group>Tech_Support_for_Without_P_C_Permission</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>is_P_C_Tech_Ticket__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

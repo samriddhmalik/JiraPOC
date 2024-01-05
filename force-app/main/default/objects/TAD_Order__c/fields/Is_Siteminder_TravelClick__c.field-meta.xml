@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Siteminder_TravelClick__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(
+ordexp_deal__r.RecordType.Name = &quot;Hotel&quot;,
+NOT(ISNULL(TEXT(ordexp_deal__r.Channel_Partner__c)))
+),&quot;Yes&quot;, &quot;No&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Result of this field = Is this a Siteminder or TravelClick deal?</inlineHelpText>
+    <label>Is Siteminder/TravelClick?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

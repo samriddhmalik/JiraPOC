@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Badges__c</fullName>
+    <externalId>false</externalId>
+    <label>Badges</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>type -quality</fullName>
+                <default>false</default>
+                <label>type -quality</label>
+            </value>
+            <value>
+                <fullName>type -premium</fullName>
+                <default>false</default>
+                <label>type -premium</label>
+            </value>
+            <value>
+                <fullName>type -5 star</fullName>
+                <default>false</default>
+                <label>type -5 star</label>
+            </value>
+            <value>
+                <fullName>type -5 star luxury</fullName>
+                <default>false</default>
+                <label>type -5 star luxury</label>
+            </value>
+            <value>
+                <fullName>type -home stay</fullName>
+                <default>false</default>
+                <label>type -home stay</label>
+            </value>
+            <value>
+                <fullName>type -speciality</fullName>
+                <default>false</default>
+                <label>type -speciality</label>
+            </value>
+            <value>
+                <fullName>type -heritage</fullName>
+                <default>false</default>
+                <label>type -heritage</label>
+            </value>
+            <value>
+                <fullName>type -lodge</fullName>
+                <default>false</default>
+                <label>type -lodge</label>
+            </value>
+            <value>
+                <fullName>type -boutique hotel</fullName>
+                <default>false</default>
+                <label>type -boutique hotel</label>
+            </value>
+            <value>
+                <fullName>type -resort</fullName>
+                <default>false</default>
+                <label>type -resort</label>
+            </value>
+            <value>
+                <fullName>alternatives-deluxe</fullName>
+                <default>false</default>
+                <label>alternatives-deluxe</label>
+            </value>
+            <value>
+                <fullName>alternatives-luxury</fullName>
+                <default>false</default>
+                <label>alternatives-luxury</label>
+            </value>
+            <value>
+                <fullName>alternatives-superior</fullName>
+                <default>false</default>
+                <label>alternatives-superior</label>
+            </value>
+            <value>
+                <fullName>star ratings-5 star</fullName>
+                <default>false</default>
+                <label>star ratings-5 star</label>
+            </value>
+            <value>
+                <fullName>star ratings-5 star cruise</fullName>
+                <default>false</default>
+                <label>star ratings-5 star cruise</label>
+            </value>
+            <value>
+                <fullName>star ratings-4-5 star</fullName>
+                <default>false</default>
+                <label>star ratings-4-5 star</label>
+            </value>
+            <value>
+                <fullName>star ratings-4-5 star cruise</fullName>
+                <default>false</default>
+                <label>star ratings-4-5 star cruise</label>
+            </value>
+            <value>
+                <fullName>star ratings-4.5 star</fullName>
+                <default>false</default>
+                <label>star ratings-4.5 star</label>
+            </value>
+            <value>
+                <fullName>star ratings-4 star cruise</fullName>
+                <default>false</default>
+                <label>star ratings-4 star cruise</label>
+            </value>
+            <value>
+                <fullName>star ratings-4 star</fullName>
+                <default>false</default>
+                <label>star ratings-4 star</label>
+            </value>
+            <value>
+                <fullName>star ratings-5 star luxury</fullName>
+                <default>false</default>
+                <label>star ratings-5 star luxury</label>
+            </value>
+            <value>
+                <fullName>specialty-luxury</fullName>
+                <default>false</default>
+                <label>specialty-luxury</label>
+            </value>
+            <value>
+                <fullName>specialty-premium airlines</fullName>
+                <default>false</default>
+                <label>specialty-premium airlines</label>
+            </value>
+            <value>
+                <fullName>specialty-boutique hotels</fullName>
+                <default>false</default>
+                <label>specialty-boutique hotels</label>
+            </value>
+            <value>
+                <fullName>specialty-premium hotel</fullName>
+                <default>false</default>
+                <label>specialty-premium hotel</label>
+            </value>
+            <value>
+                <fullName>specialty-hotel included</fullName>
+                <default>false</default>
+                <label>specialty-hotel included</label>
+            </value>
+            <value>
+                <fullName>specialty-new hotel</fullName>
+                <default>false</default>
+                <label>specialty-new hotel</label>
+            </value>
+            <value>
+                <fullName>specialty-new cruise ship</fullName>
+                <default>false</default>
+                <label>specialty-new cruise ship</label>
+            </value>
+            <value>
+                <fullName>specialty-luxury cruise</fullName>
+                <default>false</default>
+                <label>specialty-luxury cruise</label>
+            </value>
+            <value>
+                <fullName>experience-cultural tour</fullName>
+                <default>false</default>
+                <label>experience-cultural tour</label>
+            </value>
+            <value>
+                <fullName>experience-historic tour</fullName>
+                <default>false</default>
+                <label>experience-historic tour</label>
+            </value>
+            <value>
+                <fullName>experience-heritage site</fullName>
+                <default>false</default>
+                <label>experience-heritage site</label>
+            </value>
+            <value>
+                <fullName>experience-tour included</fullName>
+                <default>false</default>
+                <label>experience-tour included</label>
+            </value>
+            <value>
+                <fullName>experience-day trips</fullName>
+                <default>false</default>
+                <label>experience-day trips</label>
+            </value>
+            <value>
+                <fullName>experience-choose your itinerary</fullName>
+                <default>false</default>
+                <label>experience-choose your itinerary</label>
+            </value>
+            <value>
+                <fullName>experience-eco tour</fullName>
+                <default>false</default>
+                <label>experience-eco tour</label>
+            </value>
+            <value>
+                <fullName>experience-small group tour</fullName>
+                <default>false</default>
+                <label>experience-small group tour</label>
+            </value>
+            <value>
+                <fullName>experience-private touring</fullName>
+                <default>false</default>
+                <label>experience-private touring</label>
+            </value>
+            <value>
+                <fullName>experience-brand new tour</fullName>
+                <default>false</default>
+                <label>experience-brand new tour</label>
+            </value>
+            <value>
+                <fullName>experience-romantic getaway</fullName>
+                <default>false</default>
+                <label>experience-romantic getaway</label>
+            </value>
+            <value>
+                <fullName>experience-safari</fullName>
+                <default>false</default>
+                <label>experience-safari</label>
+            </value>
+            <value>
+                <fullName>experience-glamping</fullName>
+                <default>false</default>
+                <label>experience-glamping</label>
+            </value>
+            <value>
+                <fullName>experience-camping</fullName>
+                <default>false</default>
+                <label>experience-camping</label>
+            </value>
+            <value>
+                <fullName>experience-private camping</fullName>
+                <default>false</default>
+                <label>experience-private camping</label>
+            </value>
+            <value>
+                <fullName>experience-wildlife tour</fullName>
+                <default>false</default>
+                <label>experience-wildlife tour</label>
+            </value>
+            <value>
+                <fullName>experience-nature tour</fullName>
+                <default>false</default>
+                <label>experience-nature tour</label>
+            </value>
+            <value>
+                <fullName>experience-shore excursions</fullName>
+                <default>false</default>
+                <label>experience-shore excursions</label>
+            </value>
+            <value>
+                <fullName>experience-island hopping</fullName>
+                <default>false</default>
+                <label>experience-island hopping</label>
+            </value>
+            <value>
+                <fullName>experience-private island</fullName>
+                <default>false</default>
+                <label>experience-private island</label>
+            </value>
+            <value>
+                <fullName>experience-balloon flight</fullName>
+                <default>false</default>
+                <label>experience-balloon flight</label>
+            </value>
+            <value>
+                <fullName>experience-free bike hire</fullName>
+                <default>false</default>
+                <label>experience-free bike hire</label>
+            </value>
+            <value>
+                <fullName>experience-ski passes</fullName>
+                <default>false</default>
+                <label>experience-ski passes</label>
+            </value>
+            <value>
+                <fullName>experience-surf lessons</fullName>
+                <default>false</default>
+                <label>experience-surf lessons</label>
+            </value>
+            <value>
+                <fullName>timing/dates-red hot deal</fullName>
+                <default>false</default>
+                <label>timing/dates-red hot deal</label>
+            </value>
+            <value>
+                <fullName>timing/dates-early bird 2024</fullName>
+                <default>false</default>
+                <label>timing/dates-early bird 2024</label>
+            </value>
+            <value>
+                <fullName>timing/dates-early bird 2025</fullName>
+                <default>false</default>
+                <label>timing/dates-early bird 2025</label>
+            </value>
+            <value>
+                <fullName>timing/dates-last minute</fullName>
+                <default>false</default>
+                <label>timing/dates-last minute</label>
+            </value>
+            <value>
+                <fullName>timing/dates-limited time only</fullName>
+                <default>false</default>
+                <label>timing/dates-limited time only</label>
+            </value>
+            <value>
+                <fullName>timing/dates-final days</fullName>
+                <default>false</default>
+                <label>timing/dates-final days</label>
+            </value>
+            <value>
+                <fullName>timing/dates-selling fast</fullName>
+                <default>false</default>
+                <label>timing/dates-selling fast</label>
+            </value>
+            <value>
+                <fullName>timing/dates-summer dates</fullName>
+                <default>false</default>
+                <label>timing/dates-summer dates</label>
+            </value>
+            <value>
+                <fullName>timing/dates-winter dates</fullName>
+                <default>false</default>
+                <label>timing/dates-winter dates</label>
+            </value>
+            <value>
+                <fullName>timing/dates-offer extended</fullName>
+                <default>false</default>
+                <label>timing/dates-offer extended</label>
+            </value>
+            <value>
+                <fullName>timing/dates-new dates</fullName>
+                <default>false</default>
+                <label>timing/dates-new dates</label>
+            </value>
+            <value>
+                <fullName>timing/dates-one date only</fullName>
+                <default>false</default>
+                <label>timing/dates-one date only</label>
+            </value>
+            <value>
+                <fullName>timing/dates-xmas dates available</fullName>
+                <default>false</default>
+                <label>timing/dates-xmas dates available</label>
+            </value>
+            <value>
+                <fullName>timing/dates-cherry blossom dates available</fullName>
+                <default>false</default>
+                <label>timing/dates-cherry blossom dates available</label>
+            </value>
+            <value>
+                <fullName>timing/dates-free date change*</fullName>
+                <default>false</default>
+                <label>timing/dates-free date change*</label>
+            </value>
+            <value>
+                <fullName>timing/dates-flash sale</fullName>
+                <default>false</default>
+                <label>timing/dates-flash sale</label>
+            </value>
+            <value>
+                <fullName>timing/date-2023 date</fullName>
+                <default>false</default>
+                <label>timing/date-2023 date</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2023 dates</fullName>
+                <default>false</default>
+                <label>timing/dates-2023 dates</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2023 dates added</fullName>
+                <default>false</default>
+                <label>timing/dates-2023 dates added</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2023 dates available</fullName>
+                <default>false</default>
+                <label>timing/dates-2023 dates available</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2023 dates until</fullName>
+                <default>false</default>
+                <label>timing/dates-2023 dates until</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2023 sailing</fullName>
+                <default>false</default>
+                <label>timing/dates-2023 sailing</label>
+            </value>
+            <value>
+                <fullName>timing/date-2024 date</fullName>
+                <default>false</default>
+                <label>timing/date-2024 date</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2024 dates</fullName>
+                <default>false</default>
+                <label>timing/dates-2024 dates</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2024 dates added</fullName>
+                <default>false</default>
+                <label>timing/dates-2024 dates added</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2024 dates until</fullName>
+                <default>false</default>
+                <label>timing/dates-2024 dates until</label>
+            </value>
+            <value>
+                <fullName>timing/dates-2024 sailing</fullName>
+                <default>false</default>
+                <label>timing/dates-2024 sailing</label>
+            </value>
+            <value>
+                <fullName>timing/dates-23/24 dates</fullName>
+                <default>false</default>
+                <label>timing/dates-23/24 dates</label>
+            </value>
+            <value>
+                <fullName>timing-xmas package</fullName>
+                <default>false</default>
+                <label>timing-xmas package</label>
+            </value>
+            <value>
+                <fullName>timing-last chance</fullName>
+                <default>false</default>
+                <label>timing-last chance</label>
+            </value>
+            <value>
+                <fullName>extras-massage</fullName>
+                <default>false</default>
+                <label>extras-massage</label>
+            </value>
+            <value>
+                <fullName>extras-spa package</fullName>
+                <default>false</default>
+                <label>extras-spa package</label>
+            </value>
+            <value>
+                <fullName>extras-spa credit</fullName>
+                <default>false</default>
+                <label>extras-spa credit</label>
+            </value>
+            <value>
+                <fullName>extras-breakfast &amp; massages</fullName>
+                <default>false</default>
+                <label>extras-breakfast &amp; massages</label>
+            </value>
+            <value>
+                <fullName>extras-yoga &amp; meditation</fullName>
+                <default>false</default>
+                <label>extras-yoga &amp; meditation</label>
+            </value>
+            <value>
+                <fullName>extras-surf &amp; yoga lessons</fullName>
+                <default>false</default>
+                <label>extras-surf &amp; yoga lessons</label>
+            </value>
+            <value>
+                <fullName>extras-late checkout</fullName>
+                <default>false</default>
+                <label>extras-late checkout</label>
+            </value>
+            <value>
+                <fullName>extras-luggage transfers</fullName>
+                <default>false</default>
+                <label>extras-luggage transfers</label>
+            </value>
+            <value>
+                <fullName>extras-parking included</fullName>
+                <default>false</default>
+                <label>extras-parking included</label>
+            </value>
+            <value>
+                <fullName>extras-bike included</fullName>
+                <default>false</default>
+                <label>extras-bike included</label>
+            </value>
+            <value>
+                <fullName>extras-porter included</fullName>
+                <default>false</default>
+                <label>extras-porter included</label>
+            </value>
+            <value>
+                <fullName>extras-rooftop pool</fullName>
+                <default>false</default>
+                <label>extras-rooftop pool</label>
+            </value>
+            <value>
+                <fullName>extras-local discounts</fullName>
+                <default>false</default>
+                <label>extras-local discounts</label>
+            </value>
+            <value>
+                <fullName>extras-discounts included</fullName>
+                <default>false</default>
+                <label>extras-discounts included</label>
+            </value>
+            <value>
+                <fullName>extras-accom included</fullName>
+                <default>false</default>
+                <label>extras-accom included</label>
+            </value>
+            <value>
+                <fullName>extras-welcome hamper</fullName>
+                <default>false</default>
+                <label>extras-welcome hamper</label>
+            </value>
+            <value>
+                <fullName>extras-welcome gifts</fullName>
+                <default>false</default>
+                <label>extras-welcome gifts</label>
+            </value>
+            <value>
+                <fullName>transport-flights included</fullName>
+                <default>false</default>
+                <label>transport-flights included</label>
+            </value>
+            <value>
+                <fullName>transport-1 way flights included</fullName>
+                <default>false</default>
+                <label>transport-1 way flights included</label>
+            </value>
+            <value>
+                <fullName>transport-domestic flights included</fullName>
+                <default>false</default>
+                <label>transport-domestic flights included</label>
+            </value>
+            <value>
+                <fullName>transport-transfer flights included</fullName>
+                <default>false</default>
+                <label>transport-transfer flights included</label>
+            </value>
+            <value>
+                <fullName>transport-internal flights included</fullName>
+                <default>false</default>
+                <label>transport-internal flights included</label>
+            </value>
+            <value>
+                <fullName>transport-premium airlines</fullName>
+                <default>false</default>
+                <label>transport-premium airlines</label>
+            </value>
+            <value>
+                <fullName>transport-stopover included</fullName>
+                <default>false</default>
+                <label>transport-stopover included</label>
+            </value>
+            <value>
+                <fullName>transport-scenic flight</fullName>
+                <default>false</default>
+                <label>transport-scenic flight</label>
+            </value>
+            <value>
+                <fullName>transport-5 star airline</fullName>
+                <default>false</default>
+                <label>transport-5 star airline</label>
+            </value>
+            <value>
+                <fullName>transport-airport pickup</fullName>
+                <default>false</default>
+                <label>transport-airport pickup</label>
+            </value>
+            <value>
+                <fullName>transport-return transfer</fullName>
+                <default>false</default>
+                <label>transport-return transfer</label>
+            </value>
+            <value>
+                <fullName>transport-airport transfer</fullName>
+                <default>false</default>
+                <label>transport-airport transfer</label>
+            </value>
+            <value>
+                <fullName>transport-cruise transfers</fullName>
+                <default>false</default>
+                <label>transport-cruise transfers</label>
+            </value>
+            <value>
+                <fullName>transport-helicopter ride</fullName>
+                <default>false</default>
+                <label>transport-helicopter ride</label>
+            </value>
+            <value>
+                <fullName>transport-seaplane transfers included</fullName>
+                <default>false</default>
+                <label>transport-seaplane transfers included</label>
+            </value>
+            <value>
+                <fullName>transport-cruise included</fullName>
+                <default>false</default>
+                <label>transport-cruise included</label>
+            </value>
+            <value>
+                <fullName>transport-expedition cruise</fullName>
+                <default>false</default>
+                <label>transport-expedition cruise</label>
+            </value>
+            <value>
+                <fullName>transport-cruise &amp; rail</fullName>
+                <default>false</default>
+                <label>transport-cruise &amp; rail</label>
+            </value>
+            <value>
+                <fullName>transport-river cruise</fullName>
+                <default>false</default>
+                <label>transport-river cruise</label>
+            </value>
+            <value>
+                <fullName>transport-small ship</fullName>
+                <default>false</default>
+                <label>transport-small ship</label>
+            </value>
+            <value>
+                <fullName>transport-new ship</fullName>
+                <default>false</default>
+                <label>transport-new ship</label>
+            </value>
+            <value>
+                <fullName>transport-5 star river cruise</fullName>
+                <default>false</default>
+                <label>transport-5 star river cruise</label>
+            </value>
+            <value>
+                <fullName>transport-ensuite cabin</fullName>
+                <default>false</default>
+                <label>transport-ensuite cabin</label>
+            </value>
+            <value>
+                <fullName>transport-onboard credit</fullName>
+                <default>false</default>
+                <label>transport-onboard credit</label>
+            </value>
+            <value>
+                <fullName>transport-cruise tips included</fullName>
+                <default>false</default>
+                <label>transport-cruise tips included</label>
+            </value>
+            <value>
+                <fullName>transport-all inclusive cruise</fullName>
+                <default>false</default>
+                <label>transport-all inclusive cruise</label>
+            </value>
+            <value>
+                <fullName>transport-halong bay cruise</fullName>
+                <default>false</default>
+                <label>transport-halong bay cruise</label>
+            </value>
+            <value>
+                <fullName>transport-self drive</fullName>
+                <default>false</default>
+                <label>transport-self drive</label>
+            </value>
+            <value>
+                <fullName>transport-car hire included</fullName>
+                <default>false</default>
+                <label>transport-car hire included</label>
+            </value>
+            <value>
+                <fullName>transport-4wd tour</fullName>
+                <default>false</default>
+                <label>transport-4wd tour</label>
+            </value>
+            <value>
+                <fullName>transport-rail included</fullName>
+                <default>false</default>
+                <label>transport-rail included</label>
+            </value>
+            <value>
+                <fullName>transport-rail upgrade available</fullName>
+                <default>false</default>
+                <label>transport-rail upgrade available</label>
+            </value>
+            <value>
+                <fullName>transport-luxury rail included</fullName>
+                <default>false</default>
+                <label>transport-luxury rail included</label>
+            </value>
+            <value>
+                <fullName>food-breakfast included</fullName>
+                <default>false</default>
+                <label>food-breakfast included</label>
+            </value>
+            <value>
+                <fullName>food-daily meals</fullName>
+                <default>false</default>
+                <label>food-daily meals</label>
+            </value>
+            <value>
+                <fullName>food-gourmet meals</fullName>
+                <default>false</default>
+                <label>food-gourmet meals</label>
+            </value>
+            <value>
+                <fullName>food-gourmet</fullName>
+                <default>false</default>
+                <label>food-gourmet</label>
+            </value>
+            <value>
+                <fullName>food-dining credit</fullName>
+                <default>false</default>
+                <label>food-dining credit</label>
+            </value>
+            <value>
+                <fullName>food-meals included</fullName>
+                <default>false</default>
+                <label>food-meals included</label>
+            </value>
+            <value>
+                <fullName>food-food &amp; wine tasting</fullName>
+                <default>false</default>
+                <label>food-food &amp; wine tasting</label>
+            </value>
+            <value>
+                <fullName>food-cheese platter</fullName>
+                <default>false</default>
+                <label>food-cheese platter</label>
+            </value>
+            <value>
+                <fullName>food-dinner for 2</fullName>
+                <default>false</default>
+                <label>food-dinner for 2</label>
+            </value>
+            <value>
+                <fullName>food-meals all inclusive</fullName>
+                <default>false</default>
+                <label>food-meals all inclusive</label>
+            </value>
+            <value>
+                <fullName>food-dining credit $100</fullName>
+                <default>false</default>
+                <label>food-dining credit $100</label>
+            </value>
+            <value>
+                <fullName>food-cocktails &amp; meals included</fullName>
+                <default>false</default>
+                <label>food-cocktails &amp; meals included</label>
+            </value>
+            <value>
+                <fullName>food-premium food &amp; wine</fullName>
+                <default>false</default>
+                <label>food-premium food &amp; wine</label>
+            </value>
+            <value>
+                <fullName>food-gourmet food &amp; wine</fullName>
+                <default>false</default>
+                <label>food-gourmet food &amp; wine</label>
+            </value>
+            <value>
+                <fullName>food-dining credit $250</fullName>
+                <default>false</default>
+                <label>food-dining credit $250</label>
+            </value>
+            <value>
+                <fullName>food-dinner included</fullName>
+                <default>false</default>
+                <label>food-dinner included</label>
+            </value>
+            <value>
+                <fullName>food-hotel credit</fullName>
+                <default>false</default>
+                <label>food-hotel credit</label>
+            </value>
+            <value>
+                <fullName>beverages-cocktails</fullName>
+                <default>false</default>
+                <label>beverages-cocktails</label>
+            </value>
+            <value>
+                <fullName>beverages-daily cocktail</fullName>
+                <default>false</default>
+                <label>beverages-daily cocktail</label>
+            </value>
+            <value>
+                <fullName>beverages-wine on arrival</fullName>
+                <default>false</default>
+                <label>beverages-wine on arrival</label>
+            </value>
+            <value>
+                <fullName>beverages-bottle of wine</fullName>
+                <default>false</default>
+                <label>beverages-bottle of wine</label>
+            </value>
+            <value>
+                <fullName>beverages-welcome drink</fullName>
+                <default>false</default>
+                <label>beverages-welcome drink</label>
+            </value>
+            <value>
+                <fullName>beverages-all inclusive onboard</fullName>
+                <default>false</default>
+                <label>beverages-all inclusive onboard</label>
+            </value>
+            <value>
+                <fullName>beverages-all inclusive</fullName>
+                <default>false</default>
+                <label>beverages-all inclusive</label>
+            </value>
+            <value>
+                <fullName>beverages-drinks package</fullName>
+                <default>false</default>
+                <label>beverages-drinks package</label>
+            </value>
+            <value>
+                <fullName>beverages-daily drinks</fullName>
+                <default>false</default>
+                <label>beverages-daily drinks</label>
+            </value>
+            <value>
+                <fullName>beverages-wine tasting</fullName>
+                <default>false</default>
+                <label>beverages-wine tasting</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-cabin upgrade</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-cabin upgrade</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-arrive early stay behind</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-arrive early stay behind</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-upgrades included</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-upgrades included</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-reverse itinerary available</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-reverse itinerary available</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-premium upgrades available</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-premium upgrades available</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-bonus upgrade</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-bonus upgrade</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-free arrive early stay behind</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-free arrive early stay behind</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-deluxe room upgrade</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-deluxe room upgrade</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-extension available</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-extension available</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-bonus room upgrade</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-bonus room upgrade</label>
+            </value>
+            <value>
+                <fullName>upgrades &amp; extensions-new extension available</fullName>
+                <default>false</default>
+                <label>upgrades &amp; extensions-new extension available</label>
+            </value>
+            <value>
+                <fullName>endorsement-bucket list</fullName>
+                <default>false</default>
+                <label>endorsement-bucket list</label>
+            </value>
+            <value>
+                <fullName>endorsement-back by popular demand</fullName>
+                <default>false</default>
+                <label>endorsement-back by popular demand</label>
+            </value>
+            <value>
+                <fullName>endorsement-award winning</fullName>
+                <default>false</default>
+                <label>endorsement-award winning</label>
+            </value>
+            <value>
+                <fullName>endorsement-best seller</fullName>
+                <default>false</default>
+                <label>endorsement-best seller</label>
+            </value>
+            <value>
+                <fullName>endorsement-staff pick</fullName>
+                <default>false</default>
+                <label>endorsement-staff pick</label>
+            </value>
+            <value>
+                <fullName>locations-great location</fullName>
+                <default>false</default>
+                <label>locations-great location</label>
+            </value>
+            <value>
+                <fullName>locations-central location</fullName>
+                <default>false</default>
+                <label>locations-central location</label>
+            </value>
+            <value>
+                <fullName>locations-beach front</fullName>
+                <default>false</default>
+                <label>locations-beach front</label>
+            </value>
+            <value>
+                <fullName>locations-overwater villa</fullName>
+                <default>false</default>
+                <label>locations-overwater villa</label>
+            </value>
+            <value>
+                <fullName>locations-beach escape</fullName>
+                <default>false</default>
+                <label>locations-beach escape</label>
+            </value>
+            <value>
+                <fullName>locations-ocean views</fullName>
+                <default>false</default>
+                <label>locations-ocean views</label>
+            </value>
+            <value>
+                <fullName>couples/family-family friendly</fullName>
+                <default>false</default>
+                <label>couples/family-family friendly</label>
+            </value>
+            <value>
+                <fullName>couples/family-free kids club</fullName>
+                <default>false</default>
+                <label>couples/family-free kids club</label>
+            </value>
+            <value>
+                <fullName>couples/family-infants stay free</fullName>
+                <default>false</default>
+                <label>couples/family-infants stay free</label>
+            </value>
+            <value>
+                <fullName>couples/family-kids stay free</fullName>
+                <default>false</default>
+                <label>couples/family-kids stay free</label>
+            </value>
+            <value>
+                <fullName>couples/family-couples package</fullName>
+                <default>false</default>
+                <label>couples/family-couples package</label>
+            </value>
+            <value>
+                <fullName>price sale discounts-price dropped</fullName>
+                <default>false</default>
+                <label>price sale discounts-price dropped</label>
+            </value>
+            <value>
+                <fullName>transport-unlimited cruise</fullName>
+                <default>false</default>
+                <label>transport-unlimited cruise</label>
+            </value>
+            <value>
+                <fullName>food-meals unlimited</fullName>
+                <default>false</default>
+                <label>food-meals unlimited</label>
+            </value>
+            <value>
+                <fullName>beverages-unlimited onboard</fullName>
+                <default>false</default>
+                <label>beverages-unlimited onboard</label>
+            </value>
+            <value>
+                <fullName>beverages-unlimited</fullName>
+                <default>false</default>
+                <label>beverages-unlimited</label>
+            </value>
+            <value>
+                <fullName>TripADeal Exclusive</fullName>
+                <default>false</default>
+                <label>TripADeal Exclusive</label>
+            </value>
+            <value>
+                <fullName>2025 dates</fullName>
+                <default>false</default>
+                <label>2025 dates</label>
+            </value>
+            <value>
+                <fullName>2025 dates added</fullName>
+                <default>false</default>
+                <label>2025 dates added</label>
+            </value>
+            <value>
+                <fullName>24/25 dates</fullName>
+                <default>false</default>
+                <label>24/25 dates</label>
+            </value>
+            <value>
+                <fullName>2025 dates available</fullName>
+                <default>false</default>
+                <label>2025 dates available</label>
+            </value>
+            <value>
+                <fullName>2024_Last_Chance</fullName>
+                <default>false</default>
+                <label>2024_Last_Chance</label>
+            </value>
+            <value>
+                <fullName>2023_Last_Chance</fullName>
+                <default>false</default>
+                <label>2023_Last_Chance</label>
+            </value>
+            <value>
+                <fullName>4 Star</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4 Star</label>
+            </value>
+            <value>
+                <fullName>4 Star Cruise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4 Star Cruise</label>
+            </value>
+            <value>
+                <fullName>4-5 Star</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4-5 Star</label>
+            </value>
+            <value>
+                <fullName>4-5 Star Cruise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4-5 Star Cruise</label>
+            </value>
+            <value>
+                <fullName>4.5 Star</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4.5 Star</label>
+            </value>
+            <value>
+                <fullName>5 Star</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5 Star</label>
+            </value>
+            <value>
+                <fullName>5 Star Cruise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5 Star Cruise</label>
+            </value>
+            <value>
+                <fullName>5 Star Luxury</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5 Star Luxury</label>
+            </value>
+            <value>
+                <fullName>Boutique Hotel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Boutique Hotel</label>
+            </value>
+            <value>
+                <fullName>Deluxe</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Deluxe</label>
+            </value>
+            <value>
+                <fullName>Escape</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Escape</label>
+            </value>
+            <value>
+                <fullName>Heritage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Heritage</label>
+            </value>
+            <value>
+                <fullName>Home Stay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home Stay</label>
+            </value>
+            <value>
+                <fullName>Hotel Included</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hotel Included</label>
+            </value>
+            <value>
+                <fullName>Lodge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lodge</label>
+            </value>
+            <value>
+                <fullName>Luxury</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Luxury</label>
+            </value>
+            <value>
+                <fullName>Luxury Cruise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Luxury Cruise</label>
+            </value>
+            <value>
+                <fullName>New Cruise Ship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Cruise Ship</label>
+            </value>
+            <value>
+                <fullName>New Hotel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Hotel</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>Premium Airline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Premium Airline</label>
+            </value>
+            <value>
+                <fullName>Premium Airlines</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Premium Airlines</label>
+            </value>
+            <value>
+                <fullName>Premium Hotel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Premium Hotel</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Resort</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Resort</label>
+            </value>
+            <value>
+                <fullName>Simple</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Simple</label>
+            </value>
+            <value>
+                <fullName>Specialty</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Specialty</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Superior</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Superior</label>
+            </value>
+            <value>
+                <fullName>Top Luxury</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Top Luxury</label>
+            </value>
+            <value>
+                <fullName>Ultra</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ultra</label>
+            </value>
+            <value>
+                <fullName>available&quot;</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>available&quot;</label>
+            </value>
+            <value>
+                <fullName>time only&quot;</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>time only&quot;</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

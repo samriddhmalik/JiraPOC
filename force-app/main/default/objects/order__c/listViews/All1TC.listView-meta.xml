@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All1TC</fullName>
+    <booleanFilter>1 or 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>order_status__c</columns>
+    <columns>deal__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Options__c</columns>
+    <columns>Sub_Options__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>departure_cities__c</columns>
+    <columns>qty__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>25970</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>25964</value>
+    </filters>
+    <label>My Agencies Orders</label>
+    <sharedTo>
+        <portalRole>derekdoCustomerPersonAccount</portalRole>
+    </sharedTo>
+</ListView>

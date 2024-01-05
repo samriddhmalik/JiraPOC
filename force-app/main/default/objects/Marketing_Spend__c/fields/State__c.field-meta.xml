@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State__c</fullName>
+    <externalId>false</externalId>
+    <label>State/Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>QLD</fullName>
+                <default>false</default>
+                <label>QLD</label>
+            </value>
+            <value>
+                <fullName>NSW</fullName>
+                <default>false</default>
+                <label>NSW</label>
+            </value>
+            <value>
+                <fullName>VIC</fullName>
+                <default>false</default>
+                <label>VIC</label>
+            </value>
+            <value>
+                <fullName>SA</fullName>
+                <default>false</default>
+                <label>SA</label>
+            </value>
+            <value>
+                <fullName>WA</fullName>
+                <default>false</default>
+                <label>WA</label>
+            </value>
+            <value>
+                <fullName>NT</fullName>
+                <default>false</default>
+                <label>NT</label>
+            </value>
+            <value>
+                <fullName>ACT</fullName>
+                <default>false</default>
+                <label>ACT</label>
+            </value>
+            <value>
+                <fullName>TAS</fullName>
+                <default>false</default>
+                <label>TAS</label>
+            </value>
+            <value>
+                <fullName>National</fullName>
+                <default>false</default>
+                <label>National</label>
+            </value>
+            <value>
+                <fullName>Regional</fullName>
+                <default>false</default>
+                <label>Regional</label>
+            </value>
+            <value>
+                <fullName>TAD Database</fullName>
+                <default>false</default>
+                <label>TAD Database</label>
+            </value>
+            <value>
+                <fullName>QFF Database</fullName>
+                <default>false</default>
+                <label>QFF Database</label>
+            </value>
+            <value>
+                <fullName>App Users</fullName>
+                <default>false</default>
+                <label>App Users</label>
+            </value>
+            <value>
+                <fullName>Auckland</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Auckland</label>
+            </value>
+            <value>
+                <fullName>Australia (Multiple)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Australia (Multiple)</label>
+            </value>
+            <value>
+                <fullName>Australia (National)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Australia (National)</label>
+            </value>
+            <value>
+                <fullName>Bay Of Plenty</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bay Of Plenty</label>
+            </value>
+            <value>
+                <fullName>Canterbury</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Canterbury</label>
+            </value>
+            <value>
+                <fullName>Hawkes Bay</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hawkes Bay</label>
+            </value>
+            <value>
+                <fullName>Manawatu-Wanganui_Palmerston_North</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Manawatu-Wanganui (Palmerston North)</label>
+            </value>
+            <value>
+                <fullName>Marlborough</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marlborough</label>
+            </value>
+            <value>
+                <fullName>Nelson</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nelson</label>
+            </value>
+            <value>
+                <fullName>New Zealand (Multiple)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Zealand (Multiple)</label>
+            </value>
+            <value>
+                <fullName>New Zealand (National)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Zealand (National)</label>
+            </value>
+            <value>
+                <fullName>Northland</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Northland</label>
+            </value>
+            <value>
+                <fullName>Otago</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Otago</label>
+            </value>
+            <value>
+                <fullName>Southland</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Southland (Invercargill)</label>
+            </value>
+            <value>
+                <fullName>Taranaki</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Taranaki (New Plymouth)</label>
+            </value>
+            <value>
+                <fullName>Waikato</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Waikato (Hamilton)</label>
+            </value>
+            <value>
+                <fullName>Wellington</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wellington</label>
+            </value>
+            <value>
+                <fullName>West Coast</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>West Coast</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

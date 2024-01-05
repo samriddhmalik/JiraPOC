@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Validation_Rule_Exception</name>
+    </customPermissions>
+    <description>Custom Permission used in Validation Rule</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Validation Rule - Departure_City_must_be_Active</label>
+</PermissionSet>

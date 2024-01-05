@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rooms_and_Nights__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(No_of_Rooms__c )&amp;&apos; &apos;&amp; &quot;Rooms&quot; &amp;&apos; &apos;&amp;&quot;X&quot;&amp;&apos; &apos;&amp;TEXT(Number_of_Nights_Stay__c )&amp;&apos; &apos;&amp;&quot;Nights&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rooms and Nights</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ingenico_Pay</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Ingenico Pay</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/IngenicoHostedPayment?referenceId={!order__c.Id}
+&amp;amt={!order__c.amount_outstanding__c}</url>
+</WebLink>

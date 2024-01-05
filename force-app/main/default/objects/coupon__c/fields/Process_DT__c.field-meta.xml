@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_DT__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+   or(text(Status__c) = &quot;Enabled&quot;,
+      text(Status__c) = &quot;Disabled&quot;),
+    Discount__c &lt;&gt;0 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Process DT</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

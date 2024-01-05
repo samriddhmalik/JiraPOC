@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_Is_Allocation_by_SubOption__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Text(Allocation_by__c)=&apos;Sub option&apos;, true ,  IF( Text(Allocation_By_NZ__c) = &apos;Sub option&apos;, true, false) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Allocation by SubOption</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,69 @@
+<aura:component controller="dealMerchantInfoListController"  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    
+    <aura:attribute name="recordsDataMerchant" type="List"/>
+    <aura:attribute name="recordsDataMerchantTerms" type="List"/>
+    <aura:attribute name="relatedListInfo" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!or(equals(v.relatedListInfo, '0'),equals(v.relatedListInfo, '1'))}">
+        <div class="slds-box slds-theme_default">
+            <lightning:card variant="Narrow" title="Merchant Information" iconName="standard:account"> 
+            </lightning:card>
+            <br></br>
+            <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                <thead class="header">
+                    <tr class="slds-line-height_reset slds-text-heading_small">
+                        <th scope="col" width="33%" class="slds-text-align_center"><b>Merchant</b></th>
+                        <th scope="col" width="33%" class="slds-text-align_center"><b>Account Trading Currency</b></th>
+                        <th scope="col" width="33%" class="slds-text-align_center"><b>Merchant Type</b></th>
+                         <th scope="col" width="33%" class="slds-text-align_center"><b>BC Required</b></th>
+                    </tr>      
+                </thead> 
+                
+                <tbody class="body">
+                    <aura:iteration items="{!v.recordsDataMerchant}" var="rd" indexVar="index">
+                        <tr>
+                            <td scope="row" class="slds-text-align--left">{!rd.Name}</td>
+                            <td scope="row" class="slds-text-align--left">{!rd.c2g__CODAAccountTradingCurrency__c}</td>
+                            <td scope="row" class="slds-text-align--left">{!rd.Merchant_Type__c}</td>
+                             <td scope="row" class="slds-text-align--left">{!rd.BC_Required__c}</td>
+                        </tr>    
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!or(equals(v.relatedListInfo, '0'),equals(v.relatedListInfo, '2'))}">
+        <div class="slds-box slds-theme_default">
+            <lightning:card variant="Narrow" title="Merchant Payment Terms" iconName="standard:account"> 
+            </lightning:card>
+            <br></br>
+            <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+                <thead class="header">
+                    <tr class="slds-line-height_reset slds-text-heading_small">
+                        <th scope="col" width="33%" class="slds-text-align_center"><b>Merchant</b></th>
+                        <th scope="col" width="33%" class="slds-text-align_center"><b>MPT Name</b></th>
+                    </tr>      
+                </thead> 
+                
+                <tbody class="body">
+                    <aura:iteration items="{!v.recordsDataMerchantTerms}" var="rd" indexVar="index">
+                        <tr>
+                            <td scope="row" class="slds-text-align--left">
+                                <lightning:formattedUrl label="{!rd.Account__r.Name}" value="{!'/' + rd.Account__c}" target="_blank"> </lightning:formattedUrl>
+                            </td>
+                            
+                            <td scope="row" class="slds-text-align--left">
+                                <lightning:formattedUrl label="{!rd.Name}" value="{!'/' + rd.Id}" target="_blank"> </lightning:formattedUrl>
+                            </td>
+                        </tr>    
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </aura:if>
+    
+</aura:component>

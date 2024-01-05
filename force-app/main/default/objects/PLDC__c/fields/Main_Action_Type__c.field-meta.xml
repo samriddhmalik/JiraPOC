@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_Action_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select if this change is either to Add or Remove text.</inlineHelpText>
+    <label>Main Action Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Add / Remove Allocations</fullName>
+                <default>false</default>
+                <label>Add / Remove Allocations</label>
+            </value>
+            <value>
+                <fullName>Add Dates</fullName>
+                <default>false</default>
+                <label>Add Dates</label>
+            </value>
+            <value>
+                <fullName>Add Deal Option</fullName>
+                <default>false</default>
+                <label>Add Deal Option</label>
+            </value>
+            <value>
+                <fullName>Change Departure Cities</fullName>
+                <default>false</default>
+                <label>Change Departure Cities</label>
+            </value>
+            <value>
+                <fullName>Change HSS</fullName>
+                <default>false</default>
+                <label>Change HSS</label>
+            </value>
+            <value>
+                <fullName>Change Min / Max</fullName>
+                <default>false</default>
+                <label>Change Min / Max</label>
+            </value>
+            <value>
+                <fullName>Close Deal</fullName>
+                <default>false</default>
+                <label>Close Deal</label>
+            </value>
+            <value>
+                <fullName>Close Departure Date</fullName>
+                <default>false</default>
+                <label>Close Departure Date</label>
+            </value>
+            <value>
+                <fullName>Extend Book By</fullName>
+                <default>false</default>
+                <label>Extend Book By</label>
+            </value>
+            <value>
+                <fullName>Reactivate Deal</fullName>
+                <default>false</default>
+                <label>Reactivate Deal</label>
+            </value>
+            <value>
+                <fullName>Remove Deal Option</fullName>
+                <default>false</default>
+                <label>Remove Deal Option</label>
+            </value>
+            <value>
+                <fullName>Update About the Deal</fullName>
+                <default>false</default>
+                <label>Update About the Deal</label>
+            </value>
+            <value>
+                <fullName>Update Important Information</fullName>
+                <default>false</default>
+                <label>Update Important Information</label>
+            </value>
+            <value>
+                <fullName>Update What You Get</fullName>
+                <default>false</default>
+                <label>Update What You Get</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

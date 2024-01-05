@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trents_View</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Deal_Status__c</columns>
+    <columns>Deal_BDM__c</columns>
+    <columns>Merchant__c</columns>
+    <columns>Published_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Published,Hero</value>
+    </filters>
+    <filters>
+        <field>deal_type__c</field>
+        <operation>includes</operation>
+        <value>stay,Siteminder Hotel</value>
+    </filters>
+    <filters>
+        <field>Deal_BDM__c</field>
+        <operation>notContain</operation>
+        <value>Silvia,Alanna</value>
+    </filters>
+    <label>Trents View</label>
+</ListView>

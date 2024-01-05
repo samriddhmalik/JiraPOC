@@ -1,0 +1,91 @@
+<apex:Page >
+
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"></link>
+    <script src="https://unpkg.com/vanilla-text-mask@5.1.1/dist/vanillaTextMask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      window.onload = function () {
+        var startDate = document.getElementById('pv0')
+        var endDate = document.getElementById('pv1')
+        var dealID = document.getElementById('pv2')
+        vanillaTextMask.maskInput({
+          inputElement: dealID,
+          mask: function (r) {
+            return r.split('').filter(function (e) {
+              return (/\d/).test(e)
+            }).map(function () { return /\d/ })
+          }
+
+        })
+        function padZero(num) {
+          return num < 10 ? '0' + num : num
+        }
+        function formatDate(date) {
+          return padZero(date.getMonth() + 1) + '/' + padZero(date.getDate()) + '/' + date.getFullYear()
+        }
+        flatpickr('#pv0-pv1', {
+          mode: 'range',
+          dateFormat: 'd/m/Y',
+          onChange: function (selectedDates) {
+            startDate.value = selectedDates[0] ? formatDate(selectedDates[0]) : ''
+            endDate.value = selectedDates[1] ? formatDate(selectedDates[1]) : ''
+          }
+        })
+      }
+    </script>
+    <style>
+      .report-form{
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      border-radius: 0.5em;
+      box-shadow: 0 0 3px rgba(0,0,0,0.6);
+      background-color: #d6ecf3;
+      max-width:800px;
+      margin: 10px auto;
+      padding: 1em;
+      text-align: center;
+      font-size: 18px;
+    }
+    .report-form .title{
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: underline;
+      padding: 0.2em;
+    }
+    .report-form .field{
+      padding: 0.2em;
+    }
+    .report-form label{
+      display:block;
+      font-weight: bold;
+      margin-bottom: 0.15em;
+    }
+    .report-form input{
+      font-size: 0.8em;
+      width: 250px;
+      max-width: 100%;
+    }
+  </style>
+  </head>
+  <form class="report-form" method="GET" action="/00O0K00000AOsGg">
+    <div class="title">Departure Calendar - Logistics:</div>
+    <input type="hidden" id="pv0" name="pv0" />
+    <input type="hidden" id="pv1" name="pv1" />
+    <div class="field"><label>Date Range:</label><input type="date" id="pv0-pv1" name="pv0-pv1" /></div>
+    <div class="field"><input type="submit" value="Submit" class="submit" /></div>
+  </form>
+  <form class="report-form" method="GET" action="/00O0K00000AOsGg">
+    <div class="title">Departure Calendar - Logistics:</div>
+    <input type="hidden" id="pv0" name="pv0" />
+    <input type="hidden" id="pv1" name="pv1" />
+    <div class="field"><label>Date Range:</label><input type="date" id="pv0-pv1" name="pv0-pv1" /></div>
+    <div class="field"><input type="submit" value="Submit" class="submit" /></div>
+  </form>
+  <form class="report-form" method="GET" action="/00O0K00000AOsGg">
+    <div class="title">Departure Calendar - Logistics:</div>
+    <input type="hidden" id="pv0" name="pv0" />
+    <input type="hidden" id="pv1" name="pv1" />
+    <div class="field"><label>Date Range:</label><input type="date" id="pv0-pv1" name="pv0-pv1" /></div>
+    <div class="field"><input type="submit" value="Submit" class="submit" /></div>
+  </form>
+</apex:Page>

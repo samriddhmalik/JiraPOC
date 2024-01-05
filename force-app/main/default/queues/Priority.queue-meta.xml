@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>abc@abc.com</email>
+    <name>Case Queue - Priority</name>
+    <queueMembers>
+        <roles>
+            <role>After_Hours_Team</role>
+            <role>Customer_Operations_and_Logistics_Manager</role>
+            <role>Customer_Service_Manager</role>
+            <role>Sales_Service_Manager</role>
+            <role>Team_Leader_Travel_Consultant</role>
+            <role>Travel_Consultant</role>
+        </roles>
+        <users>
+            <user>alexandra@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Priority</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveAgentSession</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>

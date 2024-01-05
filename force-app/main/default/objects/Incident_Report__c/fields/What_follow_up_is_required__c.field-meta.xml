@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_follow_up_is_required__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide any important information on what the customer will be expecting from us and how best to get in touch with the customer.</inlineHelpText>
+    <label>What follow up is required?</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

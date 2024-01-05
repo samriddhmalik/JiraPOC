@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consultant__c</fullName>
+    <externalId>false</externalId>
+    <label>Consultant</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alex Videcak</fullName>
+                <default>false</default>
+                <label>Alex Videcak</label>
+            </value>
+            <value>
+                <fullName>Anna Maria Isusqui</fullName>
+                <default>false</default>
+                <label>Anna Maria Isusqui</label>
+            </value>
+            <value>
+                <fullName>Anthony Nguyen</fullName>
+                <default>false</default>
+                <label>Anthony Nguyen</label>
+            </value>
+            <value>
+                <fullName>Bee Nguyen</fullName>
+                <default>false</default>
+                <label>Bee Nguyen</label>
+            </value>
+            <value>
+                <fullName>Brad Johnstone</fullName>
+                <default>false</default>
+                <label>Brad Johnstone</label>
+            </value>
+            <value>
+                <fullName>Eda Yag</fullName>
+                <default>false</default>
+                <label>Eda Yag</label>
+            </value>
+            <value>
+                <fullName>Hancy Furtado</fullName>
+                <default>false</default>
+                <label>Hancy Furtado</label>
+            </value>
+            <value>
+                <fullName>Jo Hynes</fullName>
+                <default>false</default>
+                <label>Jo Hynes</label>
+            </value>
+            <value>
+                <fullName>Kerri-Ann Taylor</fullName>
+                <default>false</default>
+                <label>Kerri-Ann Taylor</label>
+            </value>
+            <value>
+                <fullName>Lana Hamer</fullName>
+                <default>false</default>
+                <label>Lana Hamer</label>
+            </value>
+            <value>
+                <fullName>Malcolm loong</fullName>
+                <default>false</default>
+                <label>Malcolm loong</label>
+            </value>
+            <value>
+                <fullName>Matthew Telfer</fullName>
+                <default>false</default>
+                <label>Matthew Telfer</label>
+            </value>
+            <value>
+                <fullName>Michelle Dawson</fullName>
+                <default>false</default>
+                <label>Michelle Dawson</label>
+            </value>
+            <value>
+                <fullName>Natalie Succar</fullName>
+                <default>false</default>
+                <label>Natalie Succar</label>
+            </value>
+            <value>
+                <fullName>Patrice Sydor</fullName>
+                <default>false</default>
+                <label>Patrice Sydor</label>
+            </value>
+            <value>
+                <fullName>Pradnya Padma</fullName>
+                <default>false</default>
+                <label>Pradnya Padma</label>
+            </value>
+            <value>
+                <fullName>Sarah Bower</fullName>
+                <default>false</default>
+                <label>Sarah Bower</label>
+            </value>
+            <value>
+                <fullName>Segran Menon</fullName>
+                <default>false</default>
+                <label>Segran Menon</label>
+            </value>
+            <value>
+                <fullName>Tania Rennie</fullName>
+                <default>false</default>
+                <label>Tania Rennie</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

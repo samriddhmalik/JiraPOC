@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Check_Allocation</name>
+    </customPermissions>
+    <description>Custom Permission used in Validation Rule</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Validation Rule - Check_Allocation</label>
+</PermissionSet>

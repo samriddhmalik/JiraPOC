@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>supplier_populated_if_they_reimburse</fullName>
+    <active>true</active>
+    <description>If yes by who = picklist (merchant/customer/TAD)
+Validation= if merchant then make sure supplier/merchant is populated</description>
+    <errorConditionFormula>AND 
+(ISPICKVAL(
+If_yes_by_who__c , &quot;Merchant&quot;),
+ISBLANK( Supplier_Merchant_Responsible__c))</errorConditionFormula>
+    <errorDisplayField>Supplier_Merchant_Responsible__c</errorDisplayField>
+    <errorMessage>Please make sure the Supplier/Merchant field is populated if they are responsible for reimbursing costs</errorMessage>
+</ValidationRule>

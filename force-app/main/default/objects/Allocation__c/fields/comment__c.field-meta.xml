@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>comment__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Which option/suboption is this allocation for? Include a list of targeted options/suboption titles for this date allocation...</inlineHelpText>
+    <label>Comment</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

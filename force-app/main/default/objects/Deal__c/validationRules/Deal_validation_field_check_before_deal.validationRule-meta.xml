@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_validation_field_check_before_deal</fullName>
+    <active>true</active>
+    <description>User/Publishers can make the deal live without running the deal validation for now which should not happen(quick action button)
+Restrict user/publisher if validation is not yet run. (User cannot publish deal is the deal validation is not run)</description>
+    <errorConditionFormula>AND(
+Deal_Validation_Initiated__c != True,
+OR(ISCHANGED(Status__c),ISCHANGED(Status_NZ__c)), 				
+OR(ISPICKVAL(Status__c, &apos;Published&apos;),ISPICKVAL(Status__c, &apos;Hero&apos;),ISPICKVAL(Status_NZ__c, &apos;Published&apos;),ISPICKVAL(Status_NZ__c, &apos;Hero&apos;)))</errorConditionFormula>
+    <errorDisplayField>Validation_Result__c</errorDisplayField>
+    <errorMessage>Please validate the deal before publishing it</errorMessage>
+</ValidationRule>

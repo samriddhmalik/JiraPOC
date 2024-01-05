@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Approval Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Documentation</fullName>
+                <default>false</default>
+                <label>Pending Documentation</label>
+            </value>
+            <value>
+                <fullName>Pending CS Approval</fullName>
+                <default>false</default>
+                <label>Pending CS Approval</label>
+            </value>
+            <value>
+                <fullName>CS Approved</fullName>
+                <default>false</default>
+                <label>CS Approved</label>
+            </value>
+            <value>
+                <fullName>CS Rejected</fullName>
+                <default>false</default>
+                <label>CS Rejected</label>
+            </value>
+            <value>
+                <fullName>Pending Finance Approval</fullName>
+                <default>false</default>
+                <label>Pending Finance Approval</label>
+            </value>
+            <value>
+                <fullName>Finance Approved</fullName>
+                <default>false</default>
+                <label>Finance Approved</label>
+            </value>
+            <value>
+                <fullName>Finance Rejected</fullName>
+                <default>false</default>
+                <label>Finance Rejected</label>
+            </value>
+            <value>
+                <fullName>More Information Required by Finance</fullName>
+                <default>false</default>
+                <label>More Information Required by Finance</label>
+            </value>
+            <value>
+                <fullName>Processed</fullName>
+                <default>false</default>
+                <label>Processed</label>
+            </value>
+            <value>
+                <fullName>Approved-Refund Not Processed</fullName>
+                <default>false</default>
+                <label>Approved-Refund Not Processed</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Approved-Not Processed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Approved - Refund Not Processed</label>
+            </value>
+            <value>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Approved</label>
+            </value>
+            <value>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Submitted</label>
+            </value>
+            <value>
+                <fullName>Submitted and Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Submitted and Pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

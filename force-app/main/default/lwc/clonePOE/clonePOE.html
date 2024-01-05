@@ -1,0 +1,32 @@
+<template>
+    <template if:true={isVisible}>
+		 <lightning-quick-action-panel header="Edit Fields Action">
+     <!-- Lightning Button-->
+   
+
+    <!-- hide/show Data table-->
+    
+        <!--datatable section starts here-->
+				 <template if:true={dataTable}>
+        <lightning-datatable 
+            data={dataTable}
+            columns={columns}
+            key-field="Id"
+					 max-row-selection="1"
+					 onrowselection={handlecheck}>
+						
+        </lightning-datatable>
+    
+				 <br/><br/>
+        <div align ="center">
+        <lightning-button variant="brand" label="Save" onclick={closeAction}></lightning-button>
+						
+						 </div>
+				 </template>
+		</lightning-quick-action-panel>
+    </template>
+	<div align ="center">
+    <template if:false={isVisible}>
+        <span><p>{activeMessage}</p></span>
+			</template></div>
+</template>

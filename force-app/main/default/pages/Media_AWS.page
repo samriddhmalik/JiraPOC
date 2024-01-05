@@ -1,0 +1,4 @@
+<!-- Page to Upload Files Directly from Account Page -->
+<apex:page standardController="media__c" docType="html-5.0" id="page">
+ <TVA_CFB:QuickUploadFiles CloudBucketName=""/>
+</apex:page>

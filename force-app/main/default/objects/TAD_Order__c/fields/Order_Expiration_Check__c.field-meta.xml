@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Expiration_Check__c</fullName>
+    <description>Checks is An Order Have Expired</description>
+    <externalId>false</externalId>
+    <formula>IF(Total_OIi_Coupons_Discount__c  = 0 &amp;&amp; Total_Order_Coupons_Discount__c = 0 &amp;&amp; ordexp_total_payment_received__c=0,  
+IF(ISNULL(ordexp_extend_on_hold_time__c),
+IF( Tad_Created_Day__c=&apos;Monday&apos; || Tad_Created_Day__c=&apos;Tuesday&apos;, (NOW() - CreatedDate)&gt;3,
+IF( Tad_Created_Day__c=&apos;Sunday&apos;, (NOW() - CreatedDate)&gt;4, (NOW() - CreatedDate)&gt;5))
+, NOW() &gt; ordexp_extend_on_hold_time__c) , false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Expiration Check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

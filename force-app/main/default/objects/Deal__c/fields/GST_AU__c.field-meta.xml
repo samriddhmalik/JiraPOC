@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GST_AU__c</fullName>
+    <externalId>false</externalId>
+    <label>GST AU: TAD Orders</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST free</fullName>
+                <default>false</default>
+                <label>GST free</label>
+            </value>
+            <value>
+                <fullName>GST on commission</fullName>
+                <default>false</default>
+                <label>GST on commission</label>
+            </value>
+            <value>
+                <fullName>GST on Total Amount</fullName>
+                <default>false</default>
+                <label>GST on Total Amount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Day__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  zzzOutbound_datetime__c  = 0 , &quot;Saturday&quot;, 
+IF( zzzOutbound_datetime__c = 1 , &quot;Sunday&quot;,
+IF( zzzOutbound_datetime__c = 2 , &quot;Monday&quot;,
+IF( zzzOutbound_datetime__c = 3 , &quot;Tuesday&quot;,
+IF( zzzOutbound_datetime__c = 4 , &quot;Wednesday&quot;,
+IF( zzzOutbound_datetime__c = 5 , &quot;Thursday&quot;,
+IF( zzzOutbound_datetime__c = 6 , &quot;Friday&quot;,&quot;Error&quot;)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Departure - Day</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

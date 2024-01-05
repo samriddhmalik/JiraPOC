@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>TEXT(CurrencyIsoCode) !=  TEXT(Product_FX_Pricing__r.RBA_Exchange_Rate__r.currency_code__c)</errorConditionFormula>
+    <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+    <errorMessage>Both the Currency Field should have same value</errorMessage>
+</ValidationRule>

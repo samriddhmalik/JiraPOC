@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Confirmed_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>qty__c</columns>
+    <columns>PAX_Travelling__c</columns>
+    <columns>total_price__c</columns>
+    <columns>order_status__c</columns>
+    <columns>Created_DateTC__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Created_By_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,Ready For Export,Exported,Pending Cancellation,Cancelled</value>
+    </filters>
+    <label>My Confirmed Orders</label>
+</ListView>

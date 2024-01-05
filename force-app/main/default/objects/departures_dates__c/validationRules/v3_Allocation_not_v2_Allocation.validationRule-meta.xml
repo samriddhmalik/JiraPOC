@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>v3_Allocation_not_v2_Allocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+special_date__c ,  
+allocation__c &lt;&gt; PRIORVALUE(allocation__c) 
+)</errorConditionFormula>
+    <errorMessage>Snitty says NO! You can&apos;t change me! So go change Esmae, the Total v3 Allocation Field on Allocation record instead. I am a special date!</errorMessage>
+</ValidationRule>

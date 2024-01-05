@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cruise_Customisation</fullName>
+    <active>true</active>
+    <label>Cruise Customisation</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Accepted_and_Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote_Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Customisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misc Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Note Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re%2FNew Ticket Charge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ticket Changes %28Corrections%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade Cabin</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

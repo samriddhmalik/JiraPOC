@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Dates_with_Flights</fullName>
+    <columns>NAME</columns>
+    <columns>date__c</columns>
+    <columns>Deal_Title__c</columns>
+    <columns>options__c</columns>
+    <columns>sub_options__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Has_Flights__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Departure Dates with Flights</label>
+</ListView>

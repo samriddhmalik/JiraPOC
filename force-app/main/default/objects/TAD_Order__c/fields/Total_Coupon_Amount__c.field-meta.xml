@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Coupon_Amount__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Coupon Amount</label>
+    <summarizedField>Cancellation_Refund_POE__c.Coupon_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Cancellation_Refund_POE__c.Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Processed,Approved-Refund Not Processed</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Cancellation_Refund_POE__c.Cancellation_Type__c</field>
+        <operation>equals</operation>
+        <value>Cancellation</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Cancellation_Refund_POE__c.ordexp_tad_order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

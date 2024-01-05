@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Payment_Receipt</fullName>
+        <description>Send Payment Receipt</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Order_Emails/TAD_Order_Receipt</template>
+    </alerts>
+    <alerts>
+        <fullName>TADQF_Payment_Transaction_Receipt</fullName>
+        <description>TADQF Payment Transaction Receipt</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Email_Templates_TAD_with_QF/TADQF_Payment_Transaction_Receipt_V2</template>
+    </alerts>
+</Workflow>

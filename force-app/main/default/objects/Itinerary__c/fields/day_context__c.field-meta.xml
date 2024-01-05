@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>day_context__c</fullName>
+    <externalId>false</externalId>
+    <label>Day Context</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PreX Transit Day</fullName>
+                <default>false</default>
+                <label>PreX Transit Day</label>
+            </value>
+            <value>
+                <fullName>PreX Tour Check In Day</fullName>
+                <default>false</default>
+                <label>PreX Tour Check In Day</label>
+            </value>
+            <value>
+                <fullName>PreX Tour Start Day</fullName>
+                <default>false</default>
+                <label>PreX Tour Start Day</label>
+            </value>
+            <value>
+                <fullName>PreX Tour Day</fullName>
+                <default>false</default>
+                <label>PreX Tour Day</label>
+            </value>
+            <value>
+                <fullName>Main Arrival Transit Day</fullName>
+                <default>false</default>
+                <label>Main Arrival Transit Day</label>
+            </value>
+            <value>
+                <fullName>Main Tour Check In Day</fullName>
+                <default>false</default>
+                <label>Main Tour Check In Day</label>
+            </value>
+            <value>
+                <fullName>Main Tour Start Day</fullName>
+                <default>false</default>
+                <label>Main Tour Start Day</label>
+            </value>
+            <value>
+                <fullName>Main Tour Day</fullName>
+                <default>false</default>
+                <label>Main Tour Day</label>
+            </value>
+            <value>
+                <fullName>Upgrade Day</fullName>
+                <default>false</default>
+                <label>Upgrade Day</label>
+            </value>
+            <value>
+                <fullName>Main Tour End Day</fullName>
+                <default>false</default>
+                <label>Main Tour End Day</label>
+            </value>
+            <value>
+                <fullName>Main Departure Transit / PstX Tour Start Day</fullName>
+                <default>false</default>
+                <label>Main Departure Transit / PstX Tour Start Day</label>
+            </value>
+            <value>
+                <fullName>Main Departure Transit Day</fullName>
+                <default>false</default>
+                <label>Main Departure Transit Day</label>
+            </value>
+            <value>
+                <fullName>PstX Tour Day</fullName>
+                <default>false</default>
+                <label>PstX Tour Day</label>
+            </value>
+            <value>
+                <fullName>PstX Tour End Day</fullName>
+                <default>false</default>
+                <label>PstX Tour End Day</label>
+            </value>
+            <value>
+                <fullName>PstX Transit Day</fullName>
+                <default>false</default>
+                <label>PstX Transit Day</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Not_Converted_L2__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason Not Converted L2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason_Not_Converted__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Requested triple share</fullName>
+                <default>false</default>
+                <label>Requested triple share</label>
+            </value>
+            <value>
+                <fullName>Doesn&apos;t accommodate family</fullName>
+                <default>false</default>
+                <label>Doesn&apos;t accommodate family</label>
+            </value>
+            <value>
+                <fullName>Doesn&apos;t accommodate children U12</fullName>
+                <default>false</default>
+                <label>Doesn&apos;t accommodate children U12</label>
+            </value>
+            <value>
+                <fullName>Free text section for answer</fullName>
+                <default>false</default>
+                <label>Free text section for answer</label>
+            </value>
+            <value>
+                <fullName>Booked with a competitor - Price</fullName>
+                <default>false</default>
+                <label>Booked with a competitor - Price</label>
+            </value>
+            <value>
+                <fullName>Booked with a competitor - More suitable Itinerary</fullName>
+                <default>false</default>
+                <label>Booked with a competitor - More suitable Itinerary</label>
+            </value>
+            <value>
+                <fullName>Booked with a competitor - can customise</fullName>
+                <default>false</default>
+                <label>Booked with a competitor - can customise</label>
+            </value>
+            <value>
+                <fullName>Blackout dates on AE and SB</fullName>
+                <default>false</default>
+                <label>Blackout dates on AE and SB</label>
+            </value>
+            <value>
+                <fullName>Requested 2024 dates</fullName>
+                <default>false</default>
+                <label>Requested 2024 dates</label>
+            </value>
+            <value>
+                <fullName>Dates pax want NA</fullName>
+                <default>false</default>
+                <label>Dates pax want NA</label>
+            </value>
+            <value>
+                <fullName>Availability specifically too close to travel date</fullName>
+                <default>false</default>
+                <label>Availability specifically too close to travel date</label>
+            </value>
+            <value>
+                <fullName>Wanted business class and not available</fullName>
+                <default>false</default>
+                <label>Wanted business class and not available</label>
+            </value>
+            <value>
+                <fullName>Wanted specific airline booked</fullName>
+                <default>false</default>
+                <label>Wanted specific airline booked</label>
+            </value>
+            <value>
+                <fullName>Can&apos;t customise</fullName>
+                <default>false</default>
+                <label>Can&apos;t customise</label>
+            </value>
+            <value>
+                <fullName>Didn&apos;t want flights included/wanted flight with it</fullName>
+                <default>false</default>
+                <label>Didn&apos;t want flights included/wanted flight with it</label>
+            </value>
+            <value>
+                <fullName>Tour</fullName>
+                <default>false</default>
+                <label>Tour</label>
+            </value>
+            <value>
+                <fullName>Cruise</fullName>
+                <default>false</default>
+                <label>Cruise</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Notes section</fullName>
+                <default>false</default>
+                <label>Notes section</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Internal - Unable to complete purchase</controllingFieldValue>
+            <valueName>Requested triple share</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal - Unable to complete purchase</controllingFieldValue>
+            <valueName>Doesn&apos;t accommodate family</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal - Unable to complete purchase</controllingFieldValue>
+            <valueName>Doesn&apos;t accommodate children U12</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal - Unable to complete purchase</controllingFieldValue>
+            <valueName>Free text section for answer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Date affected</controllingFieldValue>
+            <valueName>Blackout dates on AE and SB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Date affected</controllingFieldValue>
+            <valueName>Requested 2024 dates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Date affected</controllingFieldValue>
+            <valueName>Dates pax want NA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Date affected</controllingFieldValue>
+            <valueName>Availability specifically too close to travel date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booked with a competitor</controllingFieldValue>
+            <valueName>Booked with a competitor - Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booked with a competitor</controllingFieldValue>
+            <valueName>Booked with a competitor - More suitable Itinerary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Booked with a competitor</controllingFieldValue>
+            <valueName>Booked with a competitor - can customise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flight affected</controllingFieldValue>
+            <valueName>Wanted business class and not available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flight affected</controllingFieldValue>
+            <valueName>Wanted specific airline booked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flight affected</controllingFieldValue>
+            <valueName>Can&apos;t customise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Flight affected</controllingFieldValue>
+            <valueName>Didn&apos;t want flights included/wanted flight with it</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>We didn&apos;t have want the customer was after</controllingFieldValue>
+            <valueName>Tour</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>We didn&apos;t have want the customer was after</controllingFieldValue>
+            <valueName>Cruise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>We didn&apos;t have want the customer was after</controllingFieldValue>
+            <valueName>Hotel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Notes section</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

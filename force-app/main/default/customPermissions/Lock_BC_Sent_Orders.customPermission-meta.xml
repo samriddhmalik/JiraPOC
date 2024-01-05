@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>&quot;This order has been finalised with the merchant so no changes can be made, ever, EVER! unless you ask logistics nicely... and we like skittles...&quot;</description>
+    <isLicensed>false</isLicensed>
+    <label>Lock_BC_Sent_Orders</label>
+</CustomPermission>

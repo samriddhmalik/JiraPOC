@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HIGH_SEASON_DATES_AND_SURCHARGES__c</fullName>
+    <externalId>false</externalId>
+    <label>HIGH SEASON DATES AND SURCHARGES</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Min_Numbers_Email_Sent_no_changes</name>
+    </customPermissions>
+    <description>Custom Permission used in Validation Rule</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Validation Rule - Min_Numbers_Email_Sent_no_changes</label>
+</PermissionSet>

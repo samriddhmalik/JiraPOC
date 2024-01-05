@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COVID_Prepayments_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>COVID Prepayments Count</label>
+    <summarizedField>COVID_Prepayments__c.Approx_Payment__c</summarizedField>
+    <summaryForeignKey>COVID_Prepayments__c.orders__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

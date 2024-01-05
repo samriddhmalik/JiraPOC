@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Create_NZ_Record_For_Deal_Site_Au</fullName>
+    <active>false</active>
+    <errorConditionFormula>(  INCLUDES( ordexp_deal__r.site__c , &apos;AU&apos;) &amp;&amp; ( RecordType.DeveloperName = &apos;TNZ&apos;|| RecordType.DeveloperName = &apos;WT&apos; ))</errorConditionFormula>
+    <errorMessage>Cannot create TNZ and WT type Order for AU type deal</errorMessage>
+</ValidationRule>

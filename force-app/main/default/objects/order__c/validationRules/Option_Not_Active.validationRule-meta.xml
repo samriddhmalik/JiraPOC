@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Option_Not_Active</fullName>
+    <active>true</active>
+    <description>This rule is specific to CS Sales Team - cannot select option unless it is &quot;Active&quot;</description>
+    <errorConditionFormula>AND(
+$Profile.Name = &quot;~TAD Customisation Team&quot;,
+OR(ISNEW() , ISCHANGED( Options__c)),
+Options__r.Active__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Options__c</errorDisplayField>
+    <errorMessage>You cannot select this Option - it is not Active</errorMessage>
+</ValidationRule>

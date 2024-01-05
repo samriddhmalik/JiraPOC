@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_MLE__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+   RecordType.Name = &quot;Multi-Line Expense&quot;,
+    Account__c &lt;&gt; &quot;Trip a Deal Pty Ltd (Merchant)&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is MLE</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

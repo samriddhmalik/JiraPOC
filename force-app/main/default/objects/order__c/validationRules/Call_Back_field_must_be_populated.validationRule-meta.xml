@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Back_field_must_be_populated</fullName>
+    <active>true</active>
+    <description>Call Back Status field must be populated if Call Back requested</description>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(TEXT(Call_Back_Type__c))),
+ISBLANK(TEXT(Call_Back_Status__c))
+)</errorConditionFormula>
+    <errorMessage>Call Back Status field must be populated IF Call Back requested</errorMessage>
+</ValidationRule>

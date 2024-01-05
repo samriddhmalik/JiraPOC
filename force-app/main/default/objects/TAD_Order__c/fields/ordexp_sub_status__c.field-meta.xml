@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_sub_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>ordexp_master_status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Payment Pending</fullName>
+                <default>false</default>
+                <label>Initial Payment Pending</label>
+            </value>
+            <value>
+                <fullName>Cancellation Request</fullName>
+                <default>false</default>
+                <label>Cancellation Request</label>
+            </value>
+            <value>
+                <fullName>Class (Sub Option) - Accom/Cabin Upgrade</fullName>
+                <default>false</default>
+                <label>Class (Sub Option) - Accom/Cabin Upgrade</label>
+            </value>
+            <value>
+                <fullName>Duration/Extention (Option) - Upgrade</fullName>
+                <default>false</default>
+                <label>Duration/Extention (Option) - Upgrade</label>
+            </value>
+            <value>
+                <fullName>Flight Quote Request</fullName>
+                <default>false</default>
+                <label>Flight Quote Request</label>
+            </value>
+            <value>
+                <fullName>Internal Correction/Change</fullName>
+                <default>false</default>
+                <label>Internal Correction/Change</label>
+            </value>
+            <value>
+                <fullName>PAX Change Pending</fullName>
+                <default>false</default>
+                <label>PAX Change Pending</label>
+            </value>
+            <value>
+                <fullName>Paid - PIF/s Overdue</fullName>
+                <default>false</default>
+                <label>Paid - PIF/s Overdue</label>
+            </value>
+            <value>
+                <fullName>Paid - PIF/s Due</fullName>
+                <default>false</default>
+                <label>Paid - PIF/s Due</label>
+            </value>
+            <value>
+                <fullName>Stay Booking - No Ticketing Required</fullName>
+                <default>false</default>
+                <label>Stay Booking - No Ticketing Required</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending - Mins Not Met</fullName>
+                <default>false</default>
+                <label>Cabins Pending - Mins Not Met</label>
+            </value>
+            <value>
+                <fullName>Flights Pending - Mins Not Met</fullName>
+                <default>false</default>
+                <label>Flights Pending - Mins Not Met</label>
+            </value>
+            <value>
+                <fullName>Flights Pending - Out of Range</fullName>
+                <default>false</default>
+                <label>Flights Pending - Out of Range</label>
+            </value>
+            <value>
+                <fullName>Flights Pending - Ready to Ticket</fullName>
+                <default>false</default>
+                <label>Flights Pending - Ready to Ticket</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Booked - Cabin Ready to Ticket</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights Booked - Cabin Ready to Ticket</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked</fullName>
+                <default>false</default>
+                <label>Cabins Booked</label>
+            </value>
+            <value>
+                <fullName>Flights Booked</fullName>
+                <default>false</default>
+                <label>Flights Booked</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Booked</fullName>
+                <default>false</default>
+                <label>Cabins Booked/Flights Booked</label>
+            </value>
+            <value>
+                <fullName>BC Sent</fullName>
+                <default>false</default>
+                <label>BC Sent</label>
+            </value>
+            <value>
+                <fullName>TP Sent &amp; Cruise Ticket Pending</fullName>
+                <default>false</default>
+                <label>TP Sent &amp; Cruise Ticket Pending</label>
+            </value>
+            <value>
+                <fullName>Travelling</fullName>
+                <default>false</default>
+                <label>Travelling</label>
+            </value>
+            <value>
+                <fullName>Survey Sent</fullName>
+                <default>false</default>
+                <label>Survey Sent</label>
+            </value>
+            <value>
+                <fullName>Survey Returned</fullName>
+                <default>false</default>
+                <label>Survey Returned</label>
+            </value>
+            <value>
+                <fullName>Expired/Time out</fullName>
+                <default>false</default>
+                <label>Expired/Time out</label>
+            </value>
+            <value>
+                <fullName>Offloaded</fullName>
+                <default>false</default>
+                <label>Offloaded</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Customer Request</fullName>
+                <default>false</default>
+                <label>Customer Request</label>
+            </value>
+            <value>
+                <fullName>Min Number - Credit/Refund</fullName>
+                <default>false</default>
+                <label>Min Number - Credit/Refund</label>
+            </value>
+            <value>
+                <fullName>Pax No Show</fullName>
+                <default>false</default>
+                <label>Pax No Show</label>
+            </value>
+            <value>
+                <fullName>Flights Ticketed - NO S/O</fullName>
+                <default>false</default>
+                <label>Flights Ticketed - NO S/O</label>
+            </value>
+            <value>
+                <fullName>Flights Ticketed - S/O Req</fullName>
+                <default>false</default>
+                <label>Flights Ticketed - S/O Req</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Ticketed - NO S/O</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights Ticketed - NO S/O</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Ticketed - S/O Req</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights Ticketed - S/O Req</label>
+            </value>
+            <value>
+                <fullName>Flight Quote Accepted (Customer)</fullName>
+                <default>false</default>
+                <label>Flight Quote Accepted (Customer)</label>
+            </value>
+            <value>
+                <fullName>Name Change Pending</fullName>
+                <default>false</default>
+                <label>Name Change Pending</label>
+            </value>
+            <value>
+                <fullName>Replacement Passenger details pending</fullName>
+                <default>false</default>
+                <label>Replacement Passenger details pending</label>
+            </value>
+            <value>
+                <fullName>Name Correction Pending</fullName>
+                <default>false</default>
+                <label>Name Correction Pending</label>
+            </value>
+            <value>
+                <fullName>Departure City Change Request</fullName>
+                <default>false</default>
+                <label>Departure City Change Request</label>
+            </value>
+            <value>
+                <fullName>Linked Orders Request</fullName>
+                <default>false</default>
+                <label>Linked Orders Request</label>
+            </value>
+            <value>
+                <fullName>Land Activities - Additional</fullName>
+                <default>false</default>
+                <label>Land Activities - Additional</label>
+            </value>
+            <value>
+                <fullName>Class (Sub Option) - Cabin Upgrade</fullName>
+                <default>false</default>
+                <label>Class (Sub Option) - Cabin Upgrade</label>
+            </value>
+            <value>
+                <fullName>Class (Sub Option) - Tour Upgrade</fullName>
+                <default>false</default>
+                <label>Class (Sub Option) - Tour Upgrade</label>
+            </value>
+            <value>
+                <fullName>Class (Sub Option) - Flight Upgrade</fullName>
+                <default>false</default>
+                <label>Class (Sub Option) - Flight Upgrade</label>
+            </value>
+            <value>
+                <fullName>Offload pending</fullName>
+                <default>false</default>
+                <label>Offload pending</label>
+            </value>
+            <value>
+                <fullName>Feedback Returned (Positive)</fullName>
+                <default>false</default>
+                <label>Feedback Returned (Positive)</label>
+            </value>
+            <value>
+                <fullName>Feedback Returned (Negative)</fullName>
+                <default>false</default>
+                <label>Feedback Returned (Negative)</label>
+            </value>
+            <value>
+                <fullName>Min Number - Deal Changed</fullName>
+                <default>false</default>
+                <label>Min Number - Deal Changed</label>
+            </value>
+            <value>
+                <fullName>Min Number - Credit issued</fullName>
+                <default>false</default>
+                <label>Min Number - Credit issued</label>
+            </value>
+            <value>
+                <fullName>Min Number - Refunded</fullName>
+                <default>false</default>
+                <label>Min Number - Refunded</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending - Ready to book</fullName>
+                <default>false</default>
+                <label>Cabins Pending - Ready to book</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Pending</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights Pending</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Pending</fullName>
+                <default>false</default>
+                <label>Cabins Booked/Flights Pending</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Ticketed - NO S/O</fullName>
+                <default>false</default>
+                <label>Cabins Booked/Flights Ticketed - NO S/O</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Ticketed - S/O Req</fullName>
+                <default>false</default>
+                <label>Cabins Booked/Flights Ticketed - S/O Req</label>
+            </value>
+            <value>
+                <fullName>Travel Pack Sent &amp; MSC Cruise Ticket Pending</fullName>
+                <default>false</default>
+                <label>Travel Pack Sent &amp; Cruise Ticket Pending (Emergency Changes Only)</label>
+            </value>
+            <value>
+                <fullName>Travel Pack Sent</fullName>
+                <default>false</default>
+                <label>Travel Pack Sent</label>
+            </value>
+            <value>
+                <fullName>Travel Pack Sent &amp; MSC Cruise Ticket Sent</fullName>
+                <default>false</default>
+                <label>Travel Pack Sent &amp; Cruise Ticket Sent (Emergency Changes Only)</label>
+            </value>
+            <value>
+                <fullName>Pending Customisation</fullName>
+                <default>false</default>
+                <label>Pending Customisation</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>External</fullName>
+                <default>false</default>
+                <label>External</label>
+            </value>
+            <value>
+                <fullName>Mins Not Met</fullName>
+                <default>false</default>
+                <label>Mins Not Met</label>
+            </value>
+            <value>
+                <fullName>Accommodation Only</fullName>
+                <default>false</default>
+                <label>Accommodation Only</label>
+            </value>
+            <value>
+                <fullName>Travelled</fullName>
+                <default>false</default>
+                <label>Travelled</label>
+            </value>
+            <value>
+                <fullName>Quote Sent</fullName>
+                <default>false</default>
+                <label>Quote Sent</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights out of range</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights out of range</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Pending - Mins not met</fullName>
+                <default>false</default>
+                <label>Cabins Pending/Flights Pending - Mins Not Met</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights out of range</fullName>
+                <default>false</default>
+                <label>Cabins Booked/Flights out of range</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Pending - Flight Out of Range</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cabins Booked/Flights Pending - Flight Out of Range</label>
+            </value>
+            <value>
+                <fullName>Cabins Booked/Flights Pending - Flight Ready to Ticket</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cabins Booked/Flights Pending - Flight Ready to Ticket</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending - Ready to Ticket</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cabins Pending - Ready to Ticket</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Pending - Flight Out of Range</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cabins Pending/Flights Pending - Flight Out of Range</label>
+            </value>
+            <value>
+                <fullName>Cabins Pending/Flights Pending - Ready to Ticket</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cabins Pending/Flights Pending - Ready to Ticket</label>
+            </value>
+            <value>
+                <fullName>TP Sent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TP Sent</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>On Hold</controllingFieldValue>
+            <valueName>Initial Payment Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Cancellation Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Duration/Extention (Option) - Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Flight Quote Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Internal Correction/Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Customer Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Flight Quote Accepted (Customer)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Name Change Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Replacement Passenger details pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Name Correction Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Departure City Change Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Linked Orders Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Land Activities - Additional</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Class (Sub Option) - Cabin Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Class (Sub Option) - Tour Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Class (Sub Option) - Flight Upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Offload pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Temporary Hold</controllingFieldValue>
+            <valueName>Pending Customisation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Secured</controllingFieldValue>
+            <valueName>Paid - PIF/s Overdue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Secured</controllingFieldValue>
+            <valueName>Paid - PIF/s Due</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Secured</controllingFieldValue>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Accommodation Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending - Mins Not Met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Pending - Mins Not Met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Pending - Out of Range</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Pending - Ready to Ticket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights Booked - Cabin Ready to Ticket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Booked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked/Flights Booked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>BC Sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Travelling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Ticketed - NO S/O</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Flights Ticketed - S/O Req</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights Ticketed - NO S/O</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights Ticketed - S/O Req</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending - Ready to book</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked/Flights Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked/Flights Ticketed - NO S/O</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked/Flights Ticketed - S/O Req</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Travel Pack Sent &amp; MSC Cruise Ticket Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Travel Pack Sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Travel Pack Sent &amp; MSC Cruise Ticket Sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights out of range</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Pending/Flights Pending - Mins not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Progress</controllingFieldValue>
+            <valueName>Cabins Booked/Flights out of range</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travelled</controllingFieldValue>
+            <valueName>Survey Sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travelled</controllingFieldValue>
+            <valueName>Feedback Returned (Positive)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travelled</controllingFieldValue>
+            <valueName>Feedback Returned (Negative)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Travelled</controllingFieldValue>
+            <valueName>Travelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Expired/Time out</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Offloaded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Pax No Show</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Min Number - Deal Changed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Min Number - Credit issued</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Min Number - Refunded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Internal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>External</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancelled</controllingFieldValue>
+            <valueName>Mins Not Met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Quote Sent</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

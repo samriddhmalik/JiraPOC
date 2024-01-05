@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_On_Info__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.DeveloperName =&quot;AE_SB&quot;, Add_On_Type__c+&apos;-&apos;+AE_SB__r.City__c+&apos;-&apos;+AE_SB__r.Deal__r.Name+&apos;, &apos;+ TEXT(DAY(ordexp_new_aesb_date__c))+&apos;/&apos;+ TEXT(MONTH(ordexp_new_aesb_date__c))+&apos;/&apos;+ TEXT (YEAR(ordexp_new_aesb_date__c)),
+ IF(RecordType.DeveloperName =&quot;mp_AE_SB_Accommodation&quot;, Add_On_Type__c+&apos;-&apos;+AE_SB_Accommodation__r.Name,
+ IF(RecordType.DeveloperName =&quot;Airline_Upgrade&quot;, Add_On_Type__c+&apos;-&apos;+Airline_Upgrade__r.Name,
+ IF(RecordType.DeveloperName =&quot;Land_Activity&quot;, Add_On_Type__c+&apos;-&apos;+land_activity__r.Name,
+ IF(RecordType.DeveloperName =&quot;SubStopover&quot;, Add_On_Type__c+&apos;-&apos;+Sub_Stopover__r.Name,
+ IF(RecordType.DeveloperName =&quot;Insurance&quot;, Add_On_Type__c+&apos;-&apos;+RecordType.Name, null))))))</formula>
+    <label>Add On Info</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

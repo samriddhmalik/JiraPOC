@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This number relates to which number payment this is out of all the required payments for this deal. For example, there may be three payments in total. This is the second payment, therefore, this would be &quot;2&quot;.</inlineHelpText>
+    <label>Payment #</label>
+    <precision>4</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

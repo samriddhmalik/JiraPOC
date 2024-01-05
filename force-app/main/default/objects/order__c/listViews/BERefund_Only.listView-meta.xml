@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BERefund_Only</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>Account__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>order_status__c</columns>
+    <columns>CVC__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CVC__c</field>
+        <operation>equals</operation>
+        <value>BERefund,BERefund - Partial</value>
+    </filters>
+    <label>BERefund Only</label>
+    <sharedTo>
+        <group>IT_Team</group>
+        <role>Head_of_Product</role>
+    </sharedTo>
+</ListView>

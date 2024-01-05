@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Line_Item__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Line Item</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.TAD_Order__c</field>
+            <operation>equals</operation>
+            <valueField>order_line_item__c.ordexp_TAD_Order__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>order_line_item__c.OLI_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>order_line_item__c</referenceTo>
+    <relationshipLabel>Cruise Upgrades</relationshipLabel>
+    <relationshipName>Cruise_Upgrades</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

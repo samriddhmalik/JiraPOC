@@ -1,0 +1,5 @@
+<apex:page standardController="order__c"   >
+    <apex:listViews type="Order_Customisations__c">
+        <apex:facet name="header">&nbsp;</apex:facet>
+    </apex:listViews>
+</apex:page>

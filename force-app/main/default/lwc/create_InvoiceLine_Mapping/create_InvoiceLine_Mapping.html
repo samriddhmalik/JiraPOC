@@ -1,0 +1,182 @@
+<template>		<!-- <div class="slds-box slds-box_x-large slds-text-align_center " > -->
+	<!-- <lightning-accordion allow-multiple-sections-open class="example-accordion" active-section-name="A"> -->
+	<div if:true={loading} class="slds-align--absolute-center" >
+        <lightning-spinner variant="brand" 
+                           alternative-text="Loading Cases"     
+                           size="medium">
+        </lightning-spinner>
+    </div>
+		
+		<template if:true={showExpenseLineItems}><!--expense Item Table-->
+
+
+		<div slot="footer" class="slds-grid">
+			<div class="slds-col slds-align_absolute-center">
+				<template if:true={expList}>			 
+					<lightning-button variant="brand" label="Select All Order Lines" title="Primary action" onclick={selecgtAllOL} style='margin-right:16px'></lightning-button>
+					<lightning-button variant="brand" label="Clear All Order Lines" title="Primary action" onclick={clearAllOL} style='margin-right:16px'></lightning-button>
+					<lightning-button variant="brand" label="Submit" title="Primary action" onclick={mapOl} ></lightning-button>
+				</template>
+				</div>
+		</div>
+		<br>
+			<lightning-card  title="PIN Expense Line Items">
+				
+
+							<table class="slds-table  slds-table_fixed-layout" role="grid" style="margin-right: 20px;" >
+									<!-- <thead>
+											<tr class="slds-line-height_reset">
+													<th class="slds-text-align_center" scope="col">
+															<div title="Index">Index</div>
+													</th>
+													<th class="slds-text-align_center" scope="col">
+															<div title="PIN Expense Line Items">PIN Expense Line Items</div>
+													</th>
+													<th class="slds-text-align_center" scope="col">
+															<div  title="TAD Order">Deal</div>
+													</th>
+													<th class="slds-text-align_center" scope="col">
+															<div title="TAD Order">Departure Date</div>
+													</th>
+													<th class="slds-text-align_center" scope="col">
+															<div class="slds-truncate slds-text-align_center " title="TAD Order">TAD Order</div>
+													</th>
+													<th class="slds-cell-wrap slds-text-align_center " style="width:200px" scope="col">
+															<div class="slds-truncate slds-text-align_center slds-cell_action-mode" style="width: 200px;" title="General Ledger Account ID">General Ledger Account ID</div>
+													</th>
+													<th class="slds-text-align_center slds-cell_action-mode" scope="col">
+														<div class="slds-truncate" title="Net Value">Net Value</div>
+													</th>
+													<th class="slds-text-align_center slds-cell_action-mode" scope="col">
+														<div class="slds-truncate" title="PIN Currency">PIN Currency</div>
+													</th>
+											</tr>
+									</thead> -->
+
+									<tbody>
+											<template for:each={expList} for:item="Ex" for:index="index">
+
+												<tr   key={Ex.ExpId} data-key={Ex.ExpId} class=" slds-line-height_reset " style ="background-color:rgb(240, 249, 161)" >
+													<!-- <td class="slds-text-align_center slds-cell_action-mode"><b>Index</b></td> -->
+													<td class="slds-text-align_center slds-cell_action-mode"><b>PIN Expense Line Items</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>Deal</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>Departure Date</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>TAD Order</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode" style="width:200px"><div class="slds-text-align_center slds-cell_action-mode slds-line-clamp" style="width: 170px;"><b>General Ledger Account ID</b></div></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>Net Value</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>PIN Currency</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>Sub Total</b></td>
+													<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.grossRoll}</b></td>
+													
+													
+											</tr>
+													
+													<tr  key={Ex.ExpId} data-key={Ex.ExpId} class=" slds-line-height_reset" >
+															<!-- <td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.Index}</b></td> -->
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.Name}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.deal}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.depDate}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.TadOrder}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><div class="slds-text-align_center slds-cell_action-mode slds-line-clamp" style="width: 170px;"><b>{Ex.Account}</b></div></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.netvalue}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.pinCurrency}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.olsubtotal}</b></td>
+															<td class="slds-text-align_center slds-cell_action-mode"><b>{Ex.grossRoll}</b></td>
+															
+															
+													</tr>
+												
+													<template if:true={Ex.check}>
+														<div key={Ex.ExpId} >
+															<table key={Ex.ExpId} class="" role="grid" style="table-layout:auto; margin-top: 10px; margin-right: 25px; margin-left: 30px; margin-bottom: 55px;" >
+	 																<thead>
+																	<tr   class="slds-hint-parent" style ="background-color:rgba(236, 184, 184, 0.988)">
+																			<th class="div-1" scope="col">
+																					<div class="div-1 slds-text-align_center slds-cell_action-mode" title="Checkbox">Select</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="div-1 slds-text-align_center slds-cell_action-mode" title="Checkbox">Name</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="div-1 slds-text-align_center slds-cell_action-mode" title="Checkbox">Status</div>
+																			</th>
+																			<th class=”slds-cell-wrap” style=”width:250px” scope="col">
+																					<div class="slds-cell-wrap slds-truncate slds-text-align_center slds-cell_action-mode" title="Account">Account</div>
+																			</th>
+																			<th class=”slds-cell-wrap” style=”width:250px” scope="col">
+																					<div class="slds-cell-wrap slds-truncate slds-text-align_center slds-cell_action-mode" title="component type">Component Type</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="Deal">Deal</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="TAD Order">TAD Order</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="Departure Date">Departure Date</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="OLI Name">OLI Name</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="div-1 slds-text-align_center slds-cell_action-mode" title="OLI Pax/Qty">OLI Pax/Qty</div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="Gross Cost">Gross Cost </div>
+																			</th>
+																			<th class="div-1" scope="col">
+																					<div class="slds-truncate slds-text-align_center slds-cell_action-mode" title="Currency">Currency</div>
+																			</th>
+																	</tr>
+															</thead>
+																	<tbody>
+																			<template for:each={Ex.expOLList} for:item="Ol" for:index="Indexchild" >
+																				
+																				<tr  key={Ol.olId} data-key={Ol.olId} class="slds-hint-parent">
+																							<td>
+																									<input id={olcheckbox} type="checkbox" name="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" data-key={Ol.olId} checked={Ol.check} value={Ol.check} onchange={expOlticked} data-id="Order LIne" data-id1={index} data-id2={Indexchild} data-id3={Ol.olId}/>
+																							</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.Name}</td>
+																							<td  class="slds-text-align_center slds-cell_action-mode" >{Ol.status}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode"><div class="slds-line-clamp slds-text-align_center slds-cell_action-mode" style="width: 250px;">{Ol.Account}</div></td>
+																							<td  class="slds-text-align_center slds-cell_action-mode" > <div class=" slds-text-align_center slds-cell_action-mode slds-line-clamp" style="width: 250px;">{Ol.cmptype}</div></td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.deal}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.tadorder}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.depdt}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.oli}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.paxQty}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.grossCost}</td>
+																							<td class="slds-text-align_center slds-cell_action-mode">{Ol.curency}</td>
+
+																					</tr>
+																			</template>
+																			<!--Order Line Ends Here for Expense Item-->  
+																	</tbody>
+
+															</table>
+													</div>
+														</template><!--child show end-->
+													
+											</template><!--parent end-->
+									</tr><!--parent body row end-->
+							</tbody><!--parent body-->
+					</table><!--parent table end-->
+
+
+			
+	</lightning-card>
+<!-- <lightning-datatable key-field="Id" data={expenseData} columns={exptemColoums} onrowselection ={handleRowAction}>
+
+</lightning-datatable> -->
+</template>
+
+<br>
+<br>
+
+
+<!-- <lightning-accordion-section name="Expense Line Items" label="Expense Line Items">      
+</lightning-accordion-section> -->
+
+
+
+</template>

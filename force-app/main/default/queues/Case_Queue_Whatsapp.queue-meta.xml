@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Case Queue - Whatsapp</name>
+    <queueMembers>
+        <users>
+            <user>alexandra@tripadeal.com.au</user>
+            <user>alvin.inciso@tripadeal.com.au</user>
+            <user>april.pateno@tripadeal.com.au</user>
+            <user>belle.prajes@tripadeal.com.au</user>
+            <user>christijem.crisol@tripadeal.com.au</user>
+            <user>christine.caraga@tripadeal.com.au</user>
+            <user>denise.cruz@tripadeal.com.au</user>
+            <user>elaine.cordero@tripadeal.com.au</user>
+            <user>grace.sadler@tripadeal.com.au</user>
+            <user>honey.tieng@tripadeal.com.au</user>
+            <user>jeancarlo.ramos@tripadeal.com.au</user>
+            <user>joace.mendoza@tripadeal.com.au</user>
+            <user>jonas.martin@tripadeal.com.au</user>
+            <user>jonathan.meneses@tripadeal.com.au</user>
+            <user>karl.adriano@tripadeal.com.au</user>
+            <user>kaye.alejandrino@tripadeal.com.au</user>
+            <user>lauren.harding@tripadeal.com.au</user>
+            <user>lindsay.murovec@tripadeal.com.au</user>
+            <user>maryanne.wirkkanen@tripadeal.com.au</user>
+            <user>melanie.king-prime@tripadeal.com.au</user>
+            <user>mikayla.madden@tripadeal.com.au</user>
+            <user>ralph.munda@tripadeal.com.au</user>
+            <user>roy.ferrer@tripadeal.com.au</user>
+            <user>samriddh.malik@psagtechnologies.com</user>
+            <user>shannon.knapp@tripadeal.com.au</user>
+            <user>shinapaula.bucatcat@tripadeal.com.au</user>
+            <user>stephen.borromeo@tripadeal.com.au</user>
+            <user>sunshine.lacasandili@tripadeal.com.au</user>
+            <user>xena.campbell@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Whatsapp</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>

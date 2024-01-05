@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>ContentVersionTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContentVersionTriggerHandlerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateContentVersion</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateContentVersionBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CreateContentVersionTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>To give access to upload content version component on upload files</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>UploadContentVersion</label>
+    <tabSettings>
+        <tab>Upload_Files</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

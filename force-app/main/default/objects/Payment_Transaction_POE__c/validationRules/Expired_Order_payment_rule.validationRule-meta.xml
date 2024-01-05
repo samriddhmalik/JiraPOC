@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expired_Order_payment_rule</fullName>
+    <active>true</active>
+    <description>Error if order status = Expired</description>
+    <errorConditionFormula>AND(ISPICKVAL(ordexp_tad_order__r.ordexp_master_status__c, &quot;Cancelled&quot;),ISPICKVAL(ordexp_tad_order__r.ordexp_sub_status__c,&quot;Expired/Time out&quot;))</errorConditionFormula>
+    <errorMessage>Order is Expired - you cannot add a payment to this order</errorMessage>
+</ValidationRule>

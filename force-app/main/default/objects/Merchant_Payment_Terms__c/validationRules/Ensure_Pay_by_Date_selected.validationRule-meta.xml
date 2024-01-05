@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Pay_by_Date_selected</fullName>
+    <active>true</active>
+    <description>When &quot;Paid by specific date&quot; is selected, forces user to select a Pay by Date in the calender</description>
+    <errorConditionFormula>AND(
+(ISPICKVAL(Type__c, &quot;Paid by Specific Date&quot;)), 
+ISBLANK(Pay_by_Date__c))</errorConditionFormula>
+    <errorDisplayField>Pay_by_Date__c</errorDisplayField>
+    <errorMessage>Please select a Pay by Date!</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_AE_date_under_30days_dd</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT( $Permission.AddOn_AESB_date_override ),
+RecordType.DeveloperName  = &apos;AE_SB&apos; ,
+ISPICKVAL(AE_SB__r.Type__c, &apos;Arrive Early&apos;), 
+OR((Order_Line_Item__r.ordexp_TAD_Order__r.ordexp_departure_date__r.date__c - 30  )&gt; ordexp_new_aesb_date__c,
+(Order_Line_Item__r.ordexp_TAD_Order__r.ordexp_departure_date__r.date__c) &lt;= ordexp_new_aesb_date__c) ) 
+&amp;&amp;  (Order_Line_Item__r.ordexp_TAD_Order__r.Converted_from_Legacy__c =false)</errorConditionFormula>
+    <errorMessage>Arrive early should be no more than 30 days before departure date</errorMessage>
+</ValidationRule>

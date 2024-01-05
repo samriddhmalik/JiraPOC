@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Airline_Upgrade</fullName>
+    <active>true</active>
+    <label>Airline Upgrade</label>
+    <picklistValues>
+        <picklist>AddOn_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Secured</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted and Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing_Model__c</picklist>
+        <values>
+            <fullName>Solo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RecordType_Select__c</picklist>
+        <values>
+            <fullName>AE%2FSB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airline Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Land Activity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SubStopover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Refund_Reason__c</picklist>
+        <values>
+            <fullName>Customer - Unable to Travel - Change of Mind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Unable to Travel - Customer Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Unable to Travel - Death</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Unable to travel - Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External - Force Majeure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External - Merchant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External - Partner%2F 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Customer Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Goodwill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Merchant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Min Numbers not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Offload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Partner%2F 3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - Staff Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - System Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Refund_Status__c</picklist>
+        <values>
+            <fullName>Full Coupon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Refund%2FCredit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Coupon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial Refund%2FCoupon%2FCredit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ffStatus__c</picklist>
+        <values>
+            <fullName>Pending Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed - Addon Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing - Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unprocessed</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ordexp_approval_status__c</picklist>
+        <values>
+            <fullName>Approved-Refund Not Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More Information Required by Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending CS Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Documentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Finance Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

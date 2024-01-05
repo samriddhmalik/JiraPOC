@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-theme_default">
+        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+            <div class="slds-size_2-of-3">
+                <c-t-a-d-_-show-filter-inventory-l-w-c iscalender = false></c-t-a-d-_-show-filter-inventory-l-w-c>
+            </div>
+            <div class="slds-size_1-of-3 slds-grid slds-wrap">
+                <lightning-input type="text"
+                    value={searchValueForBooking}
+                    placeholder="Search by Booking ID"
+                    onchange={searchKeyword} class="slds-box_x-small" data-id="bookingId"></lightning-input>
+                    <lightning-input type="text"
+                        value={searchValueForDeal}
+                        placeholder="Search by Deal ID/Deal Title"
+                        onchange={searchKeyword} class="slds-box_x-small" data-id="Deal"></lightning-input>
+            </div>
+        </div>
+       
+        
+    </div>
+</template>

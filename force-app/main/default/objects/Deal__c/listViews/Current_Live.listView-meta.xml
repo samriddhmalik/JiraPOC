@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Live</fullName>
+    <columns>NAME</columns>
+    <columns>Sync_to_AP__c</columns>
+    <columns>has_flights__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>deal_type__c</columns>
+    <columns>deal_type_nz__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Published,Hero</value>
+    </filters>
+    <filters>
+        <field>has_flights__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Current Live not stay</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

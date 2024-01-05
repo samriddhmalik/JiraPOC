@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Amount_Rollup__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The amount of tax entered on the Deal Transaction Lines</inlineHelpText>
+    <label>Tax Amount Rollup</label>
+    <summarizedField>Deal_Transaction_Line__c.Tax_Amount__c</summarizedField>
+    <summaryForeignKey>Deal_Transaction_Line__c.Deal_Transaction__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

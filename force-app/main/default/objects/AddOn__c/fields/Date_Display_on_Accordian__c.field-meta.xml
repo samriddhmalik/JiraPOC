@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Display_on_Accordian__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.DeveloperName ==&apos;AE_SB&apos;,  ordexp_new_aesb_date__c ,  Order_Line_Item__r.ordexp_TAD_Order__r.ordexp_departure_date__r.date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Date Display on Accordian</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

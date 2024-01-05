@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD_AU_CANCELLATION-Trip Summary</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TAD_AU_CANCELLATION-Trip Summary</name>
+    <style>none</style>
+    <subject>Here are the details of your cancelled trip</subject>
+    <textOnly>.
+
+Dear {!Order_Communication__c.Account_Name__c},
+
+The cancellation of your tour is now finalised. Please find below a summary of your booking details that may be required for your Travel Insurance claim:
+
+Order Reference Number: {!Order_Communication__c.order_number__c}
+Deal ID: {!Order_Communication__c.Deal__c}
+Deal: {!Order_Communication__c.Deal_and_Title__c}
+Purchaser Name: {!Order_Communication__c.Account_Name__c}
+Travellers To Cancel: {!Order_Communication__c.ordexp_Cancelled_PAX_Quantity__c}
+Order Quantity: {!Order_Communication__c.ordexp_PAX_Quantity__c}
+No. of Passengers: {!Order_Communication__c.ordexp_PAX_Quantity__c}
+Departure Date: {!Order_Communication__c.ordexp_Departure_Date__c}
+
+
+Total Amount Paid: $ {!Order_Communication__c.ordexp_Total_Payment_Received__c}
+Payment Date: {!Order_Communication__c.ordexp_Purchase_Date__c}
+
+Total Claimable Amount : $ {!Order_Communication__c.ordexp_Total_Payment_Received__c}
+
+You will also receive a copy of your original Payment Receipt via email.
+
+TripADeal can not itemise the cost of each individual component as it was sold as a heavily discounted promotional package. There are no refunds for any unused portion of the package including unused flights. TripADeal cannot offer any refund of monies paid based on these circumstances.
+
+Please note: You may be required to provide a copy of our Terms &amp; Conditions and Refund Policy to your insurer to assist in your claim. This information can be found via the following links:
+Terms &amp; Conditions
+Cancellation &amp; Refund Policy
+
+Please let us know if we can be of any further assistance to you at all.
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticketing_Over_Nett_Info__c</fullName>
+    <description>This field is for exclusive use for Flight Ticketing team - to provide notations on amounts where flights are over nett price &amp; relevant correspondence</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flight Ticketing team use</inlineHelpText>
+    <label>Ticketing Over Nett Info</label>
+    <length>10000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

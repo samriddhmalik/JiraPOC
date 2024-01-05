@@ -1,0 +1,148 @@
+<aura:component controller ="ScheduleCallbackTask" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global" >
+    
+    <aura:attribute type="String" name="days"/>
+    <aura:attribute type="String" name="time"/>
+    <aura:attribute type="Boolean" name="showSpinner"/>
+    <aura:attribute type="Boolean" name="isEmpty"/>
+    <aura:attribute name="selectedId" type="String" />
+    <aura:attribute name="mainWrapper" type="List" default="[]"/>
+    <aura:attribute name="bccolumns" type="List"/>
+  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-box slds-theme_default slds-scrollable "> 
+        
+        <aura:if isTrue="{!v.showSpinner}">
+            <div class="exampleHolder">
+                <lightning:spinner alternativeText="Loading" size="small" />
+            </div>
+        </aura:if>
+        
+        <h1 class="slds-text-heading_medium slds-align_absolute-center">Schedule callback</h1>
+        <br></br> 
+        
+        <div class="slds-grid slds-gutters custom-container ">
+            <div class="slds-col slds-size_1-of-4 slds-text-left slds-align_absolute-center slds-p-top_large">
+                <h1 class="slds-text-body_regular">Select Day*</h1>
+            </div>
+            <div class="slds-col slds-size_3-of-4 slds-m-right_xx-large">
+                <lightning:select value="{!v.days}">
+                    <option value="-None-">-None-</option>
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>   
+                </lightning:select>
+            </div>
+        </div>
+        
+        
+        <div class="slds-grid slds-gutters ">
+            <div class="slds-col slds-size_1-of-4 slds-p-top_large slds-text-left slds-align_absolute-center">
+                <h1 class="slds-text-body_regular">Select Time*</h1>
+            </div>
+            <div class="slds-col slds-size_3-of-4 slds-m-right_xx-large ">
+               <aura:if isTrue="{!v.days == 'Today'}">
+                <lightning:select  value="{!v.time}">
+                    <option value="-None-">-None-</option>
+                    <option value="12:00 pm">12PM-1PM</option>
+                    <option value="1:00 pm">1PM-2PM</option>
+                    <option value="2:00 pm">2PM-3PM</option>
+                    <option value="3:00 pm">3PM-4PM</option>
+                    <option value="4:00 pm">4PM-5PM</option>
+                    <option value="5:00 pm">5PM-6PM</option>
+                    <option value="6:00 pm">6PM-7PM</option>
+                    <option value="7:00 pm">7PM-8PM</option>
+                    <option value="8:00 pm">8PM-9PM</option>
+                    <option value="9:00 pm">9PM-10PM</option>
+                    <option value="10:00 pm">10PM-11PM</option>
+                    <option value="11:00 pm">11PM-12AM</option>                     
+                </lightning:select>
+                     <aura:set attribute="else">
+                    <lightning:select  value="{!v.time}">
+                    <option value="-None-">-None-</option>                    
+                    <option value="12:00 am">12AM-1AM</option>
+                    <option value="1:00 am">1AM-2AM</option>
+                    <option value="2:00 am">2AM-3AM</option>
+                    <option value="3:00 am">3AM-4AM</option>
+                    <option value="4:00 am">4AM-5AM</option>
+                    <option value="5:00 am">5AM-6AM</option>
+                    <option value="6:00 am">6AM-7AM</option>
+                    <option value="7:00 am">7AM-8AM</option>
+                    <option value="8:00 am">8AM-9AM</option>
+                    <option value="9:00 am">9AM-10AM</option> 
+                    <option value="10:00 am">10AM-11AM</option> 
+                    <option value="11:00 am">11AM-12PM</option> 
+                    <option value="12:00 pm">12PM-1PM</option> 
+                    <option value="1:00 pm">1PM-2PM</option>
+                    <option value="2:00 pm">2PM-3PM</option>
+                    <option value="3:00 pm">3PM-4PM</option>
+                    <option value="4:00 pm">4PM-5PM</option>
+                    <option value="5:00 pm">5PM-6PM</option>
+                    <option value="6:00 pm">6PM-7PM</option>
+                    <option value="7:00 pm">7PM-8PM</option>
+                    <option value="8:00 pm">8PM-9PM</option>
+                    <option value="9:00 pm">9PM-10PM</option>
+                    <option value="10:00 pm">10PM-11PM</option>
+                    <option value="11:00 pm">11PM-12AM</option>  
+                             
+                </lightning:select>  
+                        </aura:set>
+                </aura:if>
+            </div>
+        </div>
+        
+        
+        
+        <div class="slds-grid slds-gutters custom-container ">
+            <div class="slds-col slds-size_1-of-4 slds-p-top_large slds-text-left slds-align_absolute-center">
+                <h1 class="slds-text-body_regular">Select Deal*</h1>
+            </div>
+            <div class="slds-col slds-size_3-of-4 slds-m-right_xx-large">
+                <c:lookupField 
+                               objectAPIName="Deal__c"                        
+                               returnFields="['Name']" 
+                               queryFields="['Name']"
+                               selectedId="{!v.selectedId}"/>
+            </div>
+        </div>  
+        
+        
+        
+        <br></br> 
+        <br></br> 
+        <div class="slds-align_absolute-center">
+            <lightning:buttonGroup>
+                <lightning:button variant="brand" label="Submit" onclick="{!c.Submit}"/>&nbsp;&nbsp;    
+                
+            </lightning:buttonGroup>
+        </div>
+        <br></br> 
+        <br></br>
+         <aura:if isTrue="{!v.isEmpty}">
+        <div>
+            <lightning:accordion allowMultipleSectionsOpen="true">
+                <lightning:accordionSection name="Section1" label="Task">
+                    <div>
+                        
+                        <lightning:datatable data="{!v.mainWrapper}" 
+                                             columns="{!v.bccolumns}" 
+                                             keyField="id"
+                                             hideCheckboxColumn="true"
+                                             class="slds-scrollable_x"
+                                             column-widths-mode="auto"/>
+                    </div> 
+                </lightning:accordionSection>
+                
+            </lightning:accordion>
+            
+        </div>
+  
+              <aura:set attribute="else">
+                            
+                         <div></div>   
+                        </aura:set>
+                    </aura:if> 
+        </div>
+    
+    
+</aura:component>

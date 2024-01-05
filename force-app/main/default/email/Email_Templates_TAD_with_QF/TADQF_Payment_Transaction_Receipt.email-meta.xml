@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD Payment Transaction Receipt</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF Payment Transaction Receipt</name>
+    <style>none</style>
+    <subject>TripADeal payment receipt</subject>
+    <textOnly>.
+
+Trip A Deal Pty Ltd
+15 Wollongbar St
+Byron Bay, NSW 2481
+
+ABN: 50 149 240 433
+
+Receipt #: {!Payment_Transaction_POE__c.Name}
+Order #: {!Payment_Transaction_POE__c.ordexp_tad_order__c}
+Transaction Date: {!Payment_Transaction_POE__c.transaction_date__c}
+
+{!Payment_Transaction_POE__c.paid_by_name__c}
+{!Payment_Transaction_POE__c.paid_by_email__c}
+
+{!Payment_Transaction_POE__c.transaction_type__c}
+
+Method: {!Payment_Transaction_POE__c.method__c}
+Reference #: {!Payment_Transaction_POE__c.transaction_idenifier__c}
+Original Amount: $ {!TEXT(Payment_Transaction_POE__c.amount_original__c)}
+Description: {!Payment_Transaction_POE__c.comments__c}
+Surcharge: $ {!TEXT(Payment_Transaction_POE__c.amount_surcharge__c)}
+
+Total: $ {!TEXT(Payment_Transaction_POE__c.amount_charged__c)}
+
+Kind Regards,
+The Qantas Holidays Team
+
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

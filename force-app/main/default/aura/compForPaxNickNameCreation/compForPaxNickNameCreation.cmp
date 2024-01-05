@@ -1,0 +1,79 @@
+<aura:component implements="lightning:availableForFlowScreens,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="paxNickNameCreationController" >
+    <aura:attribute name="numberOfTimesToIterate" type="Integer"/>
+    <aura:attribute name="orderLineItemId" type="String"/>
+    <aura:attribute name="tadOrderId" type="String"/>
+    <aura:attribute name="listOfNumbersForIteration" type="paxNickNameCreationController.paxInfo[]"/>
+    <aura:attribute name="booleanToShow" type="Boolean" default="false"/>
+    <aura:attribute name="inputValues" type="List"/>
+    <aura:attribute name="successMessageBoolean" type="Boolean" default="false"/>
+    <aura:attribute name="disableSubmitBoolean" type="Boolean" default="true"/>
+    <aura:attribute name="ifHotelRecordTypeBoolean" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <!--   <aura:if isTrue="{!v.successMessageBoolean}">
+        <p><b>Congratulations, your Passenger record(s) have been created.</b></p>  
+    </aura:if>    -->
+    
+    <aura:if isTrue="{!v.booleanToShow}">
+        <p>Please enter all the Nicknames:</p>
+        <aura:if isTrue = "{!v.ifHotelRecordTypeBoolean}">
+            <aura:iteration items="{!v.listOfNumbersForIteration}" var="t">
+                <fieldset class="slds-form-element slds-form-element_compound slds-form-element_address">
+                    <div class="slds-form-element__control">
+                        <div class="slds-form-element__row">
+                            <div class="slds-size_4-of-8">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label">PAX Nickname</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="NickName" label="Please enter Nickname" variant="label-hidden" value="{!t.paxName}" required="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="slds-size_2-of-8">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label">PAX DOB Month</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="DOB Month" variant="label-hidden" label="DOB Month" value="{!t.dobMonth}" pattern="[0-9]{1,2}" required="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-size_2-of-8">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label">PAX DOB Year</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning:input name="DOB Year" variant="label-hidden" label="DOB Year" value="{!t.dobYear}" pattern="[0-9]{4}" required="true"/>
+                                    </div>
+                                </div>
+                            </div>          
+                        </div>
+                    </div>
+                </fieldset>
+            </aura:iteration>
+            <aura:set attribute="else">
+                <aura:iteration items="{!v.listOfNumbersForIteration}" var="t">
+                    <fieldset class="slds-form-element slds-form-element_compound slds-form-element_address">
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__row">
+                                <div class="slds-size_8-of-8">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label">PAX Nickname</label>
+                                        <div class="slds-form-element__control">
+                                            <lightning:input name="NickName" label="Please enter Nickname" variant="label-hidden" value="{!t.paxName}" required="true"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </aura:iteration>            	
+            </aura:set>
+        </aura:if>
+    </aura:if> 
+    <br></br>
+    <div class="slds-float_right">
+        <lightning:button aura:id="NEXT" label="Next" 
+                          variant="brand" onclick="{!c.createNewPAXInfoPass}" />
+    </div>
+</aura:component>

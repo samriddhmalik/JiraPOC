@@ -1,0 +1,49 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="ordercSearchController" >
+	
+    <aura:attribute name="orders" type="order__c[]"/>
+    <aura:attribute name="page" type="integer"/>
+    <aura:attribute name="pages" type="integer"/>
+    <aura:attribute name="total" type="integer"/>
+    
+    <aura:handler event="aura:locationChange" action="{!c.agentChange}"/>
+    <aura:handler event="c:PageChange" action="{!c.pageChange}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <c:Paginator page="{!v.page}" pages="{!v.pages}" total="{!v.total}"/>
+
+    <div class="container">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Order Name">Order #</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Purchaser Full Name">Purchaser</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Purchaser Email">Email</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Description">Deal Id | Deal Title</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Amount">Amount</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Consultant">Consultant</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.orders}" var="order">
+                    <c:ordercListItem order="{!order}"/>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Book_By__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Flight_book_by_extension__c), date__c - Deal_for_Reporting__r.Flight_Book_By__c, Flight_book_by_extension__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flight Book By</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

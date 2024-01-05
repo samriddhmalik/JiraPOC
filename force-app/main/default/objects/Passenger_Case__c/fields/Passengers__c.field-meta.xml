@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Passengers__c</fullName>
+    <externalId>false</externalId>
+    <label>Passengers</label>
+    <referenceTo>customer_POE__c</referenceTo>
+    <relationshipLabel>Passenger Cases</relationshipLabel>
+    <relationshipName>Passenger_Cases</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

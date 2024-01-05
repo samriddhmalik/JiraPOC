@@ -1,0 +1,158 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="TAD_ValidateOrderController" access="global">
+    <aura:attribute name="validating" type="Boolean" default="true"/>
+    <aura:attribute name="successFlag" type="Boolean" default="false"/>
+    <aura:attribute name="accountName" type="String"/>
+    <aura:attribute name="recordType" type="String"/>
+    <aura:attribute name="recordError" type="String" />
+    <aura:attribute name="recordTypeHotel" type="Boolean" default="false"/>
+    <aura:attribute name="accountEmail" type="String"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute type="Object" name="record"/>
+    <aura:attribute name="iframeUrl" type="String"/>
+    <aura:attribute name="paytoUrl" type="String"/>
+    <aura:attribute name="payLineiframeUrl" type="String"/>
+    
+    <aura:attribute name="failFlag" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+  
+    <aura:if isTrue="{!v.validating}">
+        <div class="slds-modal__container " style="width:100%;">
+             <aura:if isTrue="{!v.recordTypeHotel}">
+            <div class="slds-modal__header">
+                
+                <h2 class="slds-text-heading--medium">Validating Please Wait..</h2>
+            </div>
+            </aura:if>
+               <aura:if isTrue="{!v.recordTypeHotel}">
+            <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                <div class="slds-spinner_container">
+                  
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--small" role="alert">
+                        <span class="slds-assistive-text">Validating...</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                   
+                </div>
+            </div>
+                      <aura:set attribute="else">
+                          <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                <div class="slds-spinner_container">
+                  
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--small" role="alert">
+                        <span class="slds-assistive-text">Validating...</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                   
+                </div>
+            </div>
+                   </aura:set>
+               </aura:if>
+        </div>
+            
+    </aura:if>
+        
+    
+    <aura:if isTrue="{!v.successFlag}">
+        
+        <aura:if isTrue="{!v.recordTypeHotel}">
+        <div class="slds-align_absolute-center">
+            <lightning:icon iconName="action:approval" alternativeText="Validation Successful"/>
+        </div>
+        <br></br>
+        <br></br>
+        <div class="slds-text-heading_medium slds-align_absolute-center">Validation Successful.</div>
+        <br></br>
+        <br></br>
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center">
+            <lightning:icon iconName="action:approval" alternativeText="Validation Successful"/>
+        </div>
+        <br></br>
+        <br></br>
+        <div class="slds-text-heading_medium slds-align_absolute-center">Validation Successful.</div>
+        <br></br>
+        <br></br>
+            </aura:set>
+        </aura:if>
+        
+        <!--
+         <aura:if isTrue="{!v.recordTypeHotel}">
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Proceed to Payment" title="Close" onclick="{! c.paymentFormOpen}" />
+        </div>
+        <br></br>
+              aura:set attribute="else">
+     <div class="slds-align_absolute-center"  style="width:100%;margin-top:100px" >
+            <lightning:button variant="brand" label="Proceed to Payment" title="Close" onclick="{! c.paymentFormOpen}" />
+        </div>
+    </aura:set>
+        </aura:if> -->
+        
+             <aura:if isTrue="{!v.recordTypeHotel}">
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="QFF Redeem" title="AB Test" onclick="{! c.openSourceURL}" />
+        </div>
+        <br></br>
+              <aura:set attribute="else">
+     <div class="slds-align_absolute-center"  style="width:100%;margin-top:20px" >
+            <lightning:button variant="brand" label="QFF Redeem" title="AB Test" onclick="{! c.openSourceURL}" />
+        </div>
+                  <br/>
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Pay Via PayLine" title="Pay Via PayLine" onclick="{! c.openPaylineSourceURL}" />
+        </div>
+                  <!--
+             <br/>
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Pay Via PayTo" title="Pay Via PayTo" onclick="{! c.PayTo}" />
+        </div>-->
+       
+    </aura:set>
+        </aura:if>
+        
+      
+        <br></br>
+         <aura:if isTrue="{!v.recordTypeHotel}">
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Pay Via PayLine" title="Pay Via PayLine" onclick="{! c.openPaylineSourceURL}" />
+        </div>
+             <!--
+           <br/>
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Pay Via PayTo" title="Pay Via PayTo" onclick="{! c.PayTo}" />
+        </div>-->
+        </aura:if>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.failFlag}">
+        <div class="slds-align_absolute-center">
+            <lightning:icon iconName="action:close" alternativeText="Validation Failed"/>
+        </div>
+    </aura:if>   
+    <br></br>
+    <div aura:id="addOnModel" class="slds-text-heading_medium slds-align_absolute-center slds-hide">One or more Passengers can't be a part of twin share Add-ON.</div>
+    <br></br>
+    <div aura:id="oilModel" class="slds-text-heading_medium slds-align_absolute-center slds-hide">There is an error with the twin and solo pricing on one or more of the Order Line Items. Check this and try again</div> 
+    <br></br>
+    <!--sso-74 status=quote validation fails-->
+    <div aura:id="oilModel2" class="slds-text-heading_medium slds-align_absolute-center slds-hide oilModel2">Payment cannot be made unless order allocations are secured</div> 
+    <br></br>
+    <aura:if isTrue="{!v.failFlag}"> 
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.close}" />
+        </div>
+    </aura:if> 
+    
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.record}"            
+                      fields="ordexp_account__c,Name,ordexp_amount_outstanding__c,RecordType.Name"                     
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.doInit}"
+                      /> 
+</aura:component>

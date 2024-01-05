@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD Min Number Met email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF Min Numbers Met</name>
+    <style>none</style>
+    <subject>We hope you&apos;re getting excited about your holiday!</subject>
+    <textOnly>.
+
+Dear {!Order_Communication_POE__c.purchaser_first_name__c},
+
+We hope you are excited for your upcoming holiday!
+
+We just want to let you know that the tour departure date with TripADeal has now reached its minimum required group size to operate. You may now proceed to make any additional travel arrangements in relation to this holiday package.
+
+
+Order Number: {!Order_Communication_POE__c.order_number__c}
+Deal: {!Order_Communication_POE__c.Deal_and_Title__c}
+Departure Date: {!Order_Communication_POE__c.Day_Month_Year__c}
+Order Description: {!Order_Communication_POE__c.ordexp_DealFC_fromTADOrder__c} - {!Order_Communication_POE__c.OptionsPC_fromTADOrder__c}
+
+Your final travel documentation will be emailed to you approximately 4 - 6 weeks prior to your core departure date.
+
+Please note that in the event your booking is impacted by the COVID-19 pandemic, you are bound to the terms listed in the Important Information of the holiday package you have booked and TripADeal&apos;s general terms and conditions.
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,1014 @@
+<template>
+  <!-- 		<lightning-tabset variant="scoped"> -->
+  <!-- 				<lightning-tab label={dealdata.dealname}> -->
+  <lightning-card title="" style="">
+    <template if:true={itinload}>
+      <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div align="center">
+      <h3>
+        <b>{dealdata.dealname}</b>
+      </h3>
+    </div>
+    <div class="slds-var-m-around_medium">
+				<template if:true={showdealpopup}>
+					<c-deal-lookup-pop-up  dealid={recordId} onhidepopup={closePopup} ></c-deal-lookup-pop-up>
+				</template>
+      <template if:true={showModal}>
+        <c-modal-popupfor-fields dealid={recordId} disableddata={datadisabled} itinnumber={itinNumber} itindata={itindataPopUp} countryoptions={countryOptions} meals-options={mealsOptions} onhidepopup={closePopup} onhandlefieldvalue={childFieldChange}></c-modal-popupfor-fields>
+      </template>
+      <template if:true={showtour}>
+        <c-magnifier-for-tour dealid={recordId} disableddata={datadisabled} tourdata={tourdataPopUp} name={tourname} site-options={toursites} onhidepopup={closePopup} onhandletoursave={tourfieldsChange}></c-magnifier-for-tour>
+      </template>
+      <template if:true={showproperty}>
+        <c-magnifier-view-for-about-the-property disableddata={datadisabled} dealid={recordId} propertydata={propertydataPopUp} site-options={toursites} onhidepopup={closePopup} onhandlepropertysave={propertyfieldsChange}></c-magnifier-view-for-about-the-property>
+      </template>
+    </div>
+    <template if:false={dealdata.isFlightbookbynull}>
+    <lightning-tabset variant="scoped">
+
+      <lightning-tab label="Final Deal">
+        <!--<lightning-button onclick={handleSetActiveSectionC} label="Open Section "></lightning-button>-->
+        <lightning-accordion allow-multiple-sections-open class="example-accordion parentSection">
+
+          <!--<lightning-accordion-section name="Highlights" label="Highlights" class="parentSection">
+            <lightning-textarea name="input1" label="Highlights" value={highlights} placeholder="type here..."></lightning-textarea>
+            <div class="slds-m-top_large" align="center">
+              <lightning-button variant="Success" label="Attach Inclusion" title="Successful action" class="slds-m-left_x-small" onclick={handleShowModal} data-id="attachInclusions" data-id1="" data-id2=""></lightning-button>
+            </div>
+          </lightning-accordion-section>-->
+
+        <div class="slds-m-around_large">
+					<table class="slds-table  slds-table--cell-buffer  slds-cell-wrap" role="grid" style="table-layout:auto;">
+							<tr>
+									<td class="slds-size_3-of-12"  style="vertical-align:top">
+											<lightning-input disabled={restrictInput} class="requiredBody" label="Deal Title" max-length="250"  value={dealtitle} data-id = "dealtitle" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-input>
+									</td>							
+									<td class="slds-size_6-of-12" >
+												<lightning-textarea disabled={restrictInput} label="Deal Highlights" max-length="250"  class = "requiredBody attachtextAreaBody"   value={dealhighlights} data-id="dealhighlights" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-textarea>
+									</td>									
+									<td class="slds-size_3-of-12" >
+									<div class="slds-m-top_large" align="center">
+                    <lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Save Highlights" title="Successful action" class="slds-m-left_x-small slds-p-top_small" data-id="highlights" onclick={saveHandler}></lightning-button>
+                  </div>
+									</td>
+							</tr>
+					</table>					
+			</div>
+
+
+          
+
+          <lightning-accordion-section name="Attach Inclusions" label="Attach Inclusions">
+          <div onclick ={handleRemoveCombo}>		
+            <template if:true={listOfAttachInclusions}>
+              <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-size_1-of-12"></th>
+                    <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                      <div title="Record Type"> Record Type </div>
+                    </th>
+                    <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                      <div title="Publishing Inclusions"> Publishing Inclusions </div>
+                    </th>
+                    <th class="slds-size_4-of-12" rowspan="3" style="text-align:center" scope="col">
+                      <div title="Text">Text</div>
+                    </th>
+                    <th class="slds-size_1-of-12"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={listOfAttachInclusions} for:item="attachInclusions" for:index="IndexChild">
+                    <tr key={attachInclusions.id}>
+                      <td class="slds-cell-wrap" style="vertical-align:top;padding-top:20px;text-align:center" align="center" scope="col">
+                        <div>
+                          <lightning-button-icon icon-name="utility:add" title="Add Inclusion" variant="container" disabled={restrictInput} data-id="Attach" data-id1={IndexChild} data-id2="Attach" class="slds-button__icon_large" onclick={handleAddRow}></lightning-button-icon>
+                        </div>
+                      </td>
+                      <td style="vertical-align:top">
+                        <lightning-combobox disabled={restrictInput} name="Record Type" value={attachInclusions.selectedRecordType} options={TypeOptions} data-id="RecordType" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" onchange={OnchangeFieldValue}></lightning-combobox>
+                      </td>
+                      <td style="vertical-align:top" scope="col">
+                        <c-lwc-Lookup disableddata={restrictInput} object-api-name="Publishing_Inclusions__c" field-api-name="Full_Name_Formula__c" other-field-api-name="Icon_Label_Image__c" data-id="Publish" data-id3="Attach" data-id1={IndexChild} onchange={OnchangeFieldValue} getparticularinclusion={attachInclusions.selectedPublishedInclusions} getinclusiondetail={attachInclusions.selectedPublishedInclusionsDetail} onoptionselected={OnchangeFieldValue}></c-lwc-Lookup>
+                      </td>
+                      <td scope="col" style="height:50px;">
+                        <lightning-textarea value={attachInclusions.selectedText} disabled={restrictInput} class="slds-align_absolute-center attachtextAreaBody" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" data-id="Text" onchange={OnchangeFieldValue}></lightning-textarea>
+                      </td>
+                      <td style="vertical-align:bottom;padding-bottom:10px" scope="col">
+                        <div>
+                          <lightning-button-icon icon-name="utility:delete" title="Delete Inclusion" disabled={restrictInput} variant="border-filled" alternative-text="Delete" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" onclick={deleteRowHandler}></lightning-button-icon>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+              <div class="slds-m-top_large" align="center">
+                <lightning-button variant="Success" icon-name="utility:save" disabled={restrictInput} label="Save Inclusions" title="Successful action" class="slds-m-left_x-small" data-id="Attach" onclick={saveHandler}></lightning-button>
+              </div>
+            </template>
+          </div>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Overview" label="Overview">
+            <lightning-accordion-section name="Summary AU" label="Summary AU">
+              <div>
+                <br>
+                <lightning-input-rich-text disabled={restrictInput} label="Summary" variant="top-toolbar" class="summarytextAreaBody" value={dealdata.summaryAU} onchange={feildvaluechange} data-id="summaryAU"></lightning-input-rich-text>
+              </div>
+            </lightning-accordion-section>
+            <!-- 				<lightning-accordion-section  name="Summary NZ" label="Summary NZ"><div><br><b>Summary - NZ</b><lightning-input-rich-text label="Summary - NZ" variant="top-toolbar" class="summarytextAreaBody" value={dealdata.summaryNZ} onchange={feildvaluechange} data-id="summaryNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+            <br>
+            <br>
+            <div class="slds-m-top_large" align="center">
+              <lightning-button disabled={restrictInput} variant="success" label="Save Overview" icon-name="utility:save" title="Successful action" class="slds-m-left_x-small" data-id="Overview" onclick={saveHandler}></lightning-button>
+            </div>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Tour Instruction" label="Tour Inclusions">
+            <template if:true={tourInclusion}>
+              <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="" align="center" scope="col">
+                      <div title="Checkbox" align="center"></div>
+                    </th>
+                    <th class="slds-size_1-of-12" align="center" scope="col">
+                      <div title="Title" align="center"> Title </div>
+                    </th>
+                    <th class="slds-size_5-of-12" align="center" scope="col">
+                      <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                    </th>
+                    <th class="slds-size_1-of-12" align="center" scope="col">
+                      <div class="slds-truncate" title="Site" align="center">Site</div>
+                    </th>
+                    <th class="" align="center" scope="col">
+                      <div class="slds-truncate" title="Order" align="center">Order <lightning-button-icon if:false={dealdata.toursort} icon-name="utility:arrowup" size="x-small" data-id="tour" data-id1="" onclick={sortRecs} name="Order"></lightning-button-icon>
+                        <lightning-button-icon if:true={dealdata.toursort} icon-name="utility:arrowdown" size="x-small" data-id="tour" data-id1="" onclick={sortRecs} name="Order"></lightning-button-icon>
+                      </div>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={tourInclusion} for:item="tour" for:index="IndexChild">
+                    <tr key={tour.id}>
+                      <td class="slds-cell-wrap" align="center" scope="col">
+                        <div class="slds-col" style="margin-bottom: 145px">
+                          <lightning-button-icon icon-name="utility:add" disabled={restrictInput} variant="container" data-id="tour" data-id1={IndexChild} data-id2="tour" class=" slds-button__icon_large" label="Add Row" key={tour.id} alternative-text="Add" title="Add tour" onclick={handleAddRow} style="margin-bottom: 80px;"></lightning-button-icon>
+                        </div>
+                      </td>
+                      <td>
+                        <lightning-textarea disabled={restrictInput} class="slds-align_absolute-center tourtextAreaBody" value={tour.title} onchange={OnchangeFieldValue} data-id="tourtitle" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <div>
+                          <lightning-input-rich-text disabled={restrictInput} label="Description" class="textAreaBodytour" value={tour.description} onchange={OnchangeFieldValue} data-id="tour description" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width:auto"></lightning-input-rich-text>
+                        </div>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <lightning-dual-listbox disabled={restrictInput} class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={tour.selectedsite} options={toursites} size="4" data-id="tour site" data-id1={IndexChild} data-id2="tour" data-id3="tour" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <lightning-input disabled={restrictInput} class="slds-align_absolute-center" type="number" max="99" value={tour.order} onchange={OnchangeFieldValue} data-id="tour order" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                      </td>
+                      <td>
+                        <div style="marginleft:5px">
+                          <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="tour" data-id1={IndexChild} data-id2="" data-id3="Final" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom tour" onclick={handleShowModal}></lightning-button-icon>
+                        </div>
+                        <div class="slds-m-top_x-large" style="padding-bottom:8px; margin-top: 94px;">
+                          <lightning-button-icon disabled={restrictInput} icon-name="utility:delete" variant="border-filled" alternative-text="Delete" data-id1={IndexChild} data-id2="tour" data-id3="tour" class="slds-m-top_x-large slds-m-left_xx-small  slds-button__icon_small" style="margin-top:50px" title="Delete tour" onclick={deleteRowHandler}></lightning-button-icon>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+              <div class="slds-m-top_large" align="center">
+                <lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Save Tour Inclusions" title="Successful action" class="slds-m-left_x-small" data-id="tour" onclick={saveHandler}></lightning-button>
+              </div>
+            </template>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Itinerary" label="Itinerary">
+            <template if:true={iteneraries}>
+              <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                <tbody>
+                  <template for:each={iteneraries} for:item="itins" for:index="index">
+                    <lightning-accordion-section key={iteneraries} name={itins.itinNumber} label={itins.itinNumber} style="scrollbar-gutter:inherit">
+                      <div class='slds-grid slds-wrap'>
+                        <div class="" style="margin-top: 5px;">
+                          <b>Itinerary #</b>
+                        </div>
+                        <div class="slds-col slds-size_1-of-22 " style="padding-left: 10px;margin-bottom: 15px;">
+                          <lightning-input disabled={restrictInput} type="number" variant="label-hidden" name="input8" required="true" onchange={changeOrder} value={itins.itinNumber} label="Itinerary #" max="10" style="width:50px" data-id1={index}></lightning-input>
+                          <!-- <lightning-button variant="Brand" label="Change Order" title="Change Order For all Itineraries Under this Section" class="slds-button_stretch" data-id="index" data-id2={index} onclick={changeOrder}></lightning-button> -->
+                        </div>
+                      </div>
+                      <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                        <thead>
+                          <tr class="slds-line-height_reset">
+                            <th class="" align="center" scope="col">
+                              <div title="Checkbox" align="center">
+																	<input key={itin.id} type="checkbox" label="Select" disabled={restrictInput} checked={itins.check} value={itins.check}   onchange={handelcheckItinToDelete} data-id="itins" data-id1="itins" data-id2={index} title="Check to select all" style="margin-right: 10px;">
+																	Select
+															</div>
+                            </th>
+                            <th class="" align="center" scope="col">
+                              <!-- 														<a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button" tabindex="0" data-id="itinaries" data-id1={index} onclick={sortRecs} name="Day">  --> Day <lightning-button-icon if:false={itins.sortup} icon-name="utility:arrowup" size="x-small" data-id="itinaries" data-id1={index} onclick={sortRecs} name="Day"></lightning-button-icon>
+                              <lightning-button-icon if:true={itins.sortup} icon-name="utility:arrowdown" size="x-small" data-id="itinaries" data-id1={index} onclick={sortRecs} name="Day"></lightning-button-icon>
+                              <!-- 											</a>  -->
+                            </th>
+                            <th class="" align="center" scope="col">
+                              <div class="slds-truncate" title="title" align="center">Itinerary Title&nbsp;
+                                <!--lightning-helptext content="Information About column"></lightning-helptext-->
+                              </div>
+                            </th>
+                            <th class="slds-size_6-of-8" align="center" scope="col">
+                              <div class="slds-truncate " align="center" title="Description" style="width:auto ; ">Description</div>
+                            </th>
+                            <th class="" align="center" scope="col">
+                              <div class="slds-truncate" title="Accommodation" align="center">Accommodation</div>
+                            </th>
+                            <th class="" align="center" scope="col">
+                              <div class="slds-truncate" title="Inclusion" align="center">Inclusions</div>
+                            </th>
+                            <th></th>
+                            <!--th class="" align ="center" scope="col"><div class="slds-truncate" title="Order" align ="center">Order</div></th-->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <template for:each={itins.itinorderlist} for:item="itin" for:index="IndexChild">
+                            <tr key={itins.itinNumber}>
+                              <td class="slds-cell-wrap" align="center" scope="col">
+                                <div class="slds-grid" style="margin-bottom: 150px;">
+                                  <div class="slds-col ">
+                                    <input key={itin.id} type="checkbox" label="Select" disabled={itin.disable} checked={itin.check} value={itin.check} onchange={handelcheckItenararies} data-id="itin" data-id1={IndexChild} data-id2={index} title="Check to Clone Itinerary" style="margin-top:12px;margin-right:10px;">
+                                  </div>
+                                  <div class="slds-col ">
+                                    <lightning-button-icon disabled={restrictInput} icon-name="utility:add" variant="container" data-id="itin" data-id1={IndexChild} data-id2={index} class=" slds-button__icon_large" label="Add Row" key={itin.id} alternative-text="Add" title="Add Itinerary" onclick={handleAddItinRow} style="margin-bottom: 80px;"></lightning-button-icon>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="slds-cell-wrap" align="center" scope="col">
+                                <lightning-input disabled={restrictInput} type="number" max="999" class="slds-align_absolute-center" value={itin.day} onchange={OnchangeFieldValue} data-id="day" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:50px;margin-bottom: 160px;"></lightning-input>
+                              </td>
+                              <td>
+                                <lightning-textarea disabled={restrictInput} class="slds-align_absolute-center tourtextAreaBody" value={itin.title} onchange={OnchangeFieldValue} data-id="title" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px"></lightning-textarea>
+                              </td>
+                              <td class="slds-cell-wrap" align="center" scope="col">
+                                <!-- 							  <div class="myColor slds-rich-text-area__content slds-grow " align="center" style="min-height: 94px; max-height: 94px; border:0.3px solid black; width:auto"> -->
+                                <div>
+                                  <lightning-input-rich-text disabled={restrictInput} class="textAreaBodytour" value={itin.description} onchange={OnchangeFieldValue} data-id4="finalcopy" data-id="description" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:auto;"></lightning-input-rich-text>
+                                </div>
+                                <!-- 							  </div> -->
+                              </td>
+                              <td>
+                                <lightning-textarea disabled={restrictInput} value={itin.accommodation} class="slds-align_absolute-center tourtextAreaBody" onchange={OnchangeFieldValue} data-id="accommodation" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px;width: 7rem;"></lightning-textarea>
+                              </td>
+                              <td class="slds-cell-wrap" scope="col">
+                                <lightning-dual-listbox disabled={restrictInput} source-label="Available Meals" selected-label="Selected Meals" value={itin.selectedmeals} options={mealsOptions} size="3" data-id="Selected Meals" data-id1={IndexChild} data-id2={index} data-id3="itin" onchange={OnchangeFieldValue} style="margin-bottom: 24px;"></lightning-dual-listbox>
+                              </td>
+                              <!--<td>{option.passengerType}</td>-->
+                              <!--td class="slds-cell-wrap" scope="col"><lightning-input class="slds-align_absolute-center" type="number" value={itin.order} onchange={itinselectChangeHandler} data-id="order" data-id1={IndexChild} data-id2={index} style="width:50px"></lightning-input></td-->
+                              <td>
+                                <div style="marginleft:5px">
+                                  <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="itin" data-id1={IndexChild} data-id2={index} data-id3="Final" class=" slds-button__icon_large" label="Zoom Record" key={itin.id} alternative-text="Zoom" title="Zoom Itinerary" onclick={handleShowModal}></lightning-button-icon>
+                                </div>
+                                <div class="slds-m-top_x-large" style="margin-top: 105px;">
+                                  <lightning-button-icon disabled={restrictInput} icon-name="utility:delete" variant="border-filled" alternative-text="Delete" data-id1={IndexChild} data-id2={index} data-id3="itin" class="slds-m-top_x-large slds-m-left_xx-small  slds-button__icon_small" title="Delete Itinerary" onclick={deleteRowHandler}></lightning-button-icon>
+                                </div>
+                              </td>
+                            </tr>
+                          </template>
+                        </tbody>
+                      </table>
+											<lightning-button disabled={restrictInput}  variant="neutral" label="New" title="Click to add blank itinerary" class="slds-button_stretch slds-m-left_x-small" data-id="index" data-id2={index} onclick={addBlankItinerary}></lightning-button>
+                      <template if:true={itins.showclone}>
+                        <lightning-button disabled={restrictInput} variant="Brand" label="Clone Itineraries" title="Click to Clone Selected Itineraries" class="slds-button_stretch slds-m-left_x-small" data-id="index" data-id2={index} onclick={handelclone}></lightning-button>
+										</template>
+                    </lightning-accordion-section>
+                  </template>
+                </tbody>
+              </table>
+              <div class="slds-m-top_large" align="center">
+								<lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Clone Deal Itinerary" title="Click to Clone Deal Itinerary" class="slds-m-left_x-small" data-id="clone itin records" data-id1="" data-id2="" data-id3="" onclick={handleShowModal}></lightning-button>	
+                <lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Save Itineraries" title="Successful action" class="slds-m-left_x-small" data-id="itineraries" onclick={saveHandler}></lightning-button>
+                <lightning-button disabled={restrictInput} variant="destructive" label="Delete All" title="Click to Delete Selected Itineraries" class="slds-button_stretch slds-m-left_x-small" data-id="delete Itineraries" data-id2="" onclick={handelDeleteItinerary}></lightning-button>              
+							</div>
+            </template>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="About the Property" label="About the Property">
+            <template if:true={properties}>
+              <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                <thead>
+                  <tr class="slds-line-height_reset">
+                    <th class="" align="center" scope="col">
+                      <div title="addrow" align="center"></div>
+                    </th>
+                    <th class="slds-size_1-of-12" align="center" scope="col">
+                      <div title="Title" align="center"> Title </div>
+                    </th>
+                    <th class="slds-size_5-of-12" align="center" scope="col">
+                      <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                    </th>
+                    <th class="slds-size_1-of-12" align="center" scope="col">
+                      <div class="slds-truncate" title="Site" align="center">Site</div>
+                    </th>
+                    <th class="" align="center" scope="col">
+                      <div class="slds-truncate" title="Order" align="center">Order <lightning-button-icon if:false={dealdata.propertysort} icon-name="utility:arrowup" size="x-small" data-id="property" data-id1="" onclick={sortRecs} name="Order"></lightning-button-icon>
+                        <lightning-button-icon if:true={dealdata.propertysort} icon-name="utility:arrowdown" size="x-small" data-id="property" data-id1="" onclick={sortRecs} name="Order"></lightning-button-icon>
+                      </div>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template for:each={properties} for:item="property" for:index="IndexChild">
+                    <tr key={property.id}>
+                      <td class="slds-cell-wrap" align="center" scope="col">
+                        <div class="slds-col" style="margin-bottom: 145px">
+                          <lightning-button-icon disabled={restrictInput} icon-name="utility:add" variant="container" data-id="property" data-id1={IndexChild} data-id2="property" class=" slds-button__icon_large" label="Add Row" key={property.id} alternative-text="Add" title="Add property" onclick={handleAddRow} style="margin-bottom: 80px;"></lightning-button-icon>
+                        </div>
+                      </td>
+                      <td>
+                        <lightning-textarea disabled={restrictInput} class="slds-align_absolute-center tourtextAreaBody" value={property.title} onchange={OnchangeFieldValue} data-id="propertytitle" data-id1={IndexChild} data-id2="property" data-id3="property" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <div>
+                          <lightning-input-rich-text disabled={restrictInput} label="Description" class="textAreaBodytour" value={property.description} onchange={OnchangeFieldValue} data-id="property description" data-id1={IndexChild} data-id2="property" data-id3="property" style="width:550px"></lightning-input-rich-text>
+                        </div>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <lightning-dual-listbox disabled={restrictInput} class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={property.selectedsite} options={toursites} size="4" data-id="property site" data-id1={IndexChild} data-id2="property" data-id3="property" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                      </td>
+                      <td class="slds-cell-wrap" scope="col">
+                        <lightning-input disabled={restrictInput} class="slds-align_absolute-center" type="number" max="99" value={property.order} onchange={OnchangeFieldValue} data-id="property order" data-id1={IndexChild} data-id2="property" data-id3="property" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                      </td>
+                      <td>
+                        <div style="marginleft:5px">
+                          <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="property" data-id1={IndexChild} data-id2="" data-id3="Final" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom property" onclick={handleShowModal}></lightning-button-icon>
+                        </div>
+                        <div class="slds-m-top_x-large" style="padding-bottom:8px; margin-top: 94px;">
+                          <lightning-button-icon disabled={restrictInput} icon-name="utility:delete" variant="border-filled" alternative-text="Delete" data-id1={IndexChild} data-id2="property" data-id3="property" class="slds-m-top_x-large slds-m-left_xx-small  slds-button__icon_small" style="margin-top:50px" title="Delete property" onclick={deleteRowHandler}></lightning-button-icon>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+              <div class="slds-m-top_large" align="center">
+                <lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Save Properties" title="Successful action" class="slds-m-left_x-small" data-id="property" onclick={saveHandler}></lightning-button>
+              </div>
+            </template>
+          </lightning-accordion-section>
+
+          <lightning-accordion-section name="Important Information" label="Important Information">
+            <lightning-accordion-section name="Important Information AU" label="Important Information AU">
+              <div>
+                <br>
+                <lightning-input-rich-text disabled={restrictInput} label="Important Information" variant="top-toolbar" class="textAreaBody" value={dealdata.importantinfoAU} onchange={feildvaluechange} data-id="impinfoAU"></lightning-input-rich-text>
+              </div>
+            </lightning-accordion-section>
+            <!-- 				<lightning-accordion-section  name="Important Information NZ" label="Important Information NZ"><div><br><b>Important Information NZ</b><lightning-input-rich-text label="Important Information NZ" variant="top-toolbar" class="textAreaBody" value={dealdata.importantinfoNZ} onchange={feildvaluechange} data-id="impinfoNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+            <br>
+            <br>
+            <div class="slds-m-top_large" align="center">
+              <lightning-button disabled={restrictInput} variant="Success" icon-name="utility:save" label="Save Important Information" title="Successful action" class="slds-m-left_x-small" data-id="Important Information" onclick={saveHandler}></lightning-button>
+            </div>
+          </lightning-accordion-section>
+
+        </lightning-accordion>
+      </lightning-tab>
+
+
+				
+      <template if:true={showBDMCopy}>
+				<lightning-tab label="BDM Finalized Deal">
+          <lightning-accordion allow-multiple-sections-open class="example-accordion parentSection">
+
+                    <div class="slds-m-around_large">
+                  <table class="slds-table  slds-table--cell-buffer  slds-cell-wrap" role="grid" style="table-layout:auto;">
+                      <tr>
+                          <td class="slds-size_3-of-12"  style="vertical-align:top">
+                              <lightning-input disabled="true" label="Deal Title"   value={BDMData.dealtitle} data-id = "dealtitle" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-input>
+                          </td>							
+                          <td class="slds-size_6-of-12" >
+                                <lightning-textarea disabled="true" label="Deal Highlights" class = "attachtextAreaBody"   value={BDMData.highlights} data-id="dealhighlights" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-textarea>
+                          </td>									
+                      </tr>
+                  </table>					
+              </div>
+						
+            <lightning-accordion-section name="Attach Inclusions" label="Attach Inclusions">
+              <template if:true={BDMData.attachInclusionList}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="slds-size_1-of-12"></th>
+                      <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                        <div title="Record Type"> Record Type </div>
+                      </th>
+                      <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                        <div title="Publishing Inclusions"> Publishing Inclusions </div>
+                      </th>
+                      <th class="slds-size_4-of-12" rowspan="3" style="text-align:center" scope="col">
+                        <div title="Text">Text</div>
+                      </th>
+                      <th class="slds-size_1-of-12"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={BDMData.attachInclusionList} for:item="attachInclusions" for:index="IndexChild">
+                      <tr key={attachInclusions.id}>
+                        <td class="slds-cell-wrap" style="vertical-align:top;padding-top:20px;text-align:center" align="center" scope="col">
+                          <div>
+                            <lightning-button-icon icon-name="utility:add" variant="container" disabled="true" data-id="Attach" data-id1={IndexChild} data-id2="Attach" class="slds-button__icon_large" onclick={handleAddRow}></lightning-button-icon>
+                          </div>
+                        </td>
+                        <td style="vertical-align:top">
+                          <lightning-combobox disabled="true" name="Record Type" value={attachInclusions.selectedRecordType} options={TypeOptions} data-id="RecordType" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" onchange={OnchangeFieldValue}></lightning-combobox>
+                        </td>
+                        <td style="vertical-align:top" scope="col">
+                          <c-lwc-Lookup disableddata={disableloockup} object-api-name="Publishing_Inclusions__c" field-api-name="Full_Name_Formula__c" other-field-api-name="Icon_Label_Image__c" data-id="Publish" data-id3="Attach" data-id1={IndexChild} onchange={OnchangeFieldValue} getparticularinclusion={attachInclusions.selectedPublishedInclusions} getinclusiondetail={attachInclusions.selectedPublishedInclusionsDetail} onoptionselected={OnchangeFieldValue}></c-lwc-Lookup>
+                        </td>
+                        <td scope="col" style="height:50px;">
+                          <lightning-textarea value={attachInclusions.selectedText} disabled="true" class="slds-align_absolute-center attachtextAreaBody" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" data-id="Text" onchange={OnchangeFieldValue}></lightning-textarea>
+                        </td>
+                        <td style="vertical-align:bottom;padding-bottom:10px" scope="col">
+                         
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+                <div class="slds-m-top_large" align="center">
+                </div>
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Overview" label="Overview">
+              <lightning-accordion-section name="Summary AU" label="Summary AU">
+                <div>
+                  <br>
+                  <lightning-input-rich-text disabled="true" label="Summary" variant="top-toolbar" class="summarytextAreaBody" value={BDMData.summaryAU} onchange={feildvaluechange} data-id="summaryAU"></lightning-input-rich-text>
+                </div>
+              </lightning-accordion-section>
+              <!-- 				<lightning-accordion-section  name="Summary NZ" label="Summary NZ"><div><br><b>Summary - NZ</b><lightning-input-rich-text label="Summary - NZ" variant="top-toolbar" class="summarytextAreaBody" value={dealdata.summaryNZ} onchange={feildvaluechange} data-id="summaryNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+              <br>
+              <br>
+              
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Tour Instruction" label="Tour Inclusions">
+              <template if:true={BDMData.tours}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="" align="center" scope="col">
+                        <div title="Checkbox" align="center"></div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div title="Title" align="center"> Title </div>
+                      </th>
+                      <th class="slds-size_5-of-12" align="center" scope="col">
+                        <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div class="slds-truncate" title="Site" align="center">Site</div>
+                      </th>
+                      <th class="" align="center" scope="col">
+                        <div class="slds-truncate" title="Order" align="center">Order</div>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={BDMData.tours} for:item="tour" for:index="IndexChild">
+                      <tr key={tour.id}>
+                        <td class="slds-cell-wrap" align="center" scope="col">
+                        </td>
+                        <td>
+                          <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={tour.title} onchange={OnchangeFieldValue} data-id="tourtitle" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <div>
+                            <lightning-input-rich-text disabled="true" label="Description" class="textAreaBodytour" value={tour.description} onchange={OnchangeFieldValue} data-id="tour description" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width:auto"></lightning-input-rich-text>
+                          </div>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-dual-listbox disabled="true" class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={tour.selectedsite} options={toursites} size="4" data-id="tour site" data-id1={IndexChild} data-id2="tour" data-id3="tour" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-input disabled="true" class="slds-align_absolute-center" type="number" max="99" value={tour.order} onchange={OnchangeFieldValue} data-id="tour order" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                        </td>
+                        <td>
+                          <div style="marginleft:5px; margin-bottom: 140px;">
+                            <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="tour" data-id1={IndexChild} data-id2="" data-id3="BDM" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom tour" onclick={handleShowModal}></lightning-button-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+                
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Itinerary" label="Itinerary">
+              <template if:true={BDMData.iteneraries}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <tbody>
+                    <template for:each={BDMData.iteneraries} for:item="itins" for:index="index">
+                      <lightning-accordion-section key={BDMData.iteneraries} name={itins.itinNumber} label={itins.itinNumber} style="scrollbar-gutter:inherit">
+                        <div class='slds-grid slds-wrap'>
+                          <div class="" style="margin-top: 5px;">
+                            <b>Itinerary #</b>
+                          </div>
+                          <div class="slds-col slds-size_1-of-22 " style="padding-left: 10px;margin-bottom: 15px;">
+                            <lightning-input disabled="true" type="number" variant="label-hidden" name="input8" required="true" onchange={changeOrder} value={itins.itinNumber} label="Itinerary #" max="10" style="width:50px" data-id1={index}></lightning-input>
+                            <!-- <lightning-button variant="Brand" label="Change Order" title="Change Order For all Itineraries Under this Section" class="slds-button_stretch" data-id="index" data-id2={index} onclick={changeOrder}></lightning-button> -->
+                          </div>
+                        </div>
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                          <thead>
+                            <tr class="slds-line-height_reset">
+                              <th class="" align="center" scope="col">
+                                <div title="Checkbox" align="center">Select</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                               Day
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="title" align="center">Itinerary Title&nbsp;
+                                  <!--lightning-helptext content="Information About column"></lightning-helptext-->
+                                </div>
+                              </th>
+                              <th class="slds-size_6-of-8" align="center" scope="col">
+                                <div class="slds-truncate " align="center" title="Description" style="width:auto ; ">Description</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="Accommodation" align="center">Accommodation</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="Inclusion" align="center">Inclusions</div>
+                              </th>
+                              <th></th>
+                              <!--th class="" align ="center" scope="col"><div class="slds-truncate" title="Order" align ="center">Order</div></th-->
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <template for:each={itins.itinorderlist} for:item="itin" for:index="IndexChild">
+                              <tr key={itins.itinNumber}>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                 
+                                </td>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                  <lightning-input disabled="true" type="number" max="999" class="slds-align_absolute-center" value={itin.day} onchange={OnchangeFieldValue} data-id="day" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:50px;margin-bottom: 160px;"></lightning-input>
+                                </td>
+                                <td>
+                                  <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={itin.title} onchange={OnchangeFieldValue} data-id="title" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px"></lightning-textarea>
+                                </td>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                  <!-- 							  <div class="myColor slds-rich-text-area__content slds-grow " align="center" style="min-height: 94px; max-height: 94px; border:0.3px solid black; width:auto"> -->
+                                  <div>
+                                    <lightning-input-rich-text disabled="true" class="textAreaBodytour" value={itin.description} onchange={OnchangeFieldValue} data-id="description" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:auto;"></lightning-input-rich-text>
+                                  </div>
+                                  <!-- 							  </div> -->
+                                </td>
+                                <td>
+                                  <lightning-textarea disabled="true" value={itin.accommodation} class="slds-align_absolute-center tourtextAreaBody" onchange={OnchangeFieldValue} data-id="accommodation" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px;width: 7rem;"></lightning-textarea>
+                                </td>
+                                <td class="slds-cell-wrap" scope="col">
+                                  <lightning-dual-listbox disabled="true" source-label="Available Meals" selected-label="Selected Meals" value={itin.selectedmeals} options={mealsOptions} size="3" data-id="Selected Meals" data-id1={IndexChild} data-id2={index} data-id3="itin" onchange={OnchangeFieldValue} style="margin-bottom: 24px;"></lightning-dual-listbox>
+                                </td>
+                                <!--<td>{option.passengerType}</td>-->
+                                <!--td class="slds-cell-wrap" scope="col"><lightning-input class="slds-align_absolute-center" type="number" value={itin.order} onchange={itinselectChangeHandler} data-id="order" data-id1={IndexChild} data-id2={index} style="width:50px"></lightning-input></td-->
+                                <td>
+                                  <div style="marginleft:5px; margin-bottom: 140px;">
+                                    <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="itin" data-id1={IndexChild} data-id2={index} data-id3="BDM" class=" slds-button__icon_large" label="Zoom Record" key={itin.id} alternative-text="Zoom" title="Zoom Itinerarry" onclick={handleShowModal}></lightning-button-icon>
+                                  </div>
+                                  
+                                </td>
+                              </tr>
+                            </template>
+                          </tbody>
+                        </table>
+                      
+                      </lightning-accordion-section>
+                    </template>
+                  </tbody>
+                </table>
+                
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="About the Property" label="About the Property">
+              <template if:true={BDMData.properties}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="" align="center" scope="col">
+                        <div title="addrow" align="center"></div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div title="Title" align="center"> Title </div>
+                      </th>
+                      <th class="slds-size_5-of-12" align="center" scope="col">
+                        <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div class="slds-truncate" title="Site" align="center">Site</div>
+                      </th>
+                      <th class="" align="center" scope="col">
+                        <div class="slds-truncate" title="Order" align="center">Order 
+                        </div>
+                      </th>
+                     <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={BDMData.properties} for:item="property" for:index="IndexChild">
+                      <tr key={property.id}>
+                        <td class="slds-cell-wrap" align="center" scope="col">
+                          
+                        </td>
+                        <td>
+                          <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={property.title} onchange={OnchangeFieldValue} data-id="propertytitle" data-id1={IndexChild} data-id2="property" data-id3="property" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <div>
+                            <lightning-input-rich-text disabled="true" label="Description" class="textAreaBodytour" value={property.description} onchange={OnchangeFieldValue} data-id="property description" data-id1={IndexChild} data-id2="property" data-id3="property" style="width:550px"></lightning-input-rich-text>
+                          </div>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-dual-listbox disabled="true" class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={property.selectedsite} options={toursites} size="4" data-id="property site" data-id1={IndexChild} data-id2="property" data-id3="property" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-input disabled="true" class="slds-align_absolute-center" type="number" max="99" value={property.order} onchange={OnchangeFieldValue} data-id="property order" data-id1={IndexChild} data-id2="property" data-id3="property" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                        </td>
+                        <td>
+                          <div style="marginleft:5px;margin-bottom: 140px;">
+                            <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="property" data-id1={IndexChild} data-id2="" data-id3="BDM" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom property" onclick={handleShowModal}></lightning-button-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Important Information" label="Important Information">
+              <lightning-accordion-section name="Important Information AU" label="Important Information AU">
+                <div>
+                  <br>
+                  <lightning-input-rich-text disabled="true" label="Important Information" variant="top-toolbar" class="textAreaBody" value={BDMData.importantinfoAU} onchange={feildvaluechange} data-id="impinfoAU"></lightning-input-rich-text>
+                </div>
+              </lightning-accordion-section>
+              <!-- 				<lightning-accordion-section  name="Important Information NZ" label="Important Information NZ"><div><br><b>Important Information NZ</b><lightning-input-rich-text label="Important Information NZ" variant="top-toolbar" class="textAreaBody" value={dealdata.importantinfoNZ} onchange={feildvaluechange} data-id="impinfoNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+              <br>
+              <br>
+              
+            </lightning-accordion-section>
+  
+          </lightning-accordion>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </lightning-tab>
+      </template>
+
+				
+				
+      <template if:true={showAnalystCopy}>
+        <lightning-tab label="Analyst Finalized Deal">
+          <lightning-accordion allow-multiple-sections-open class="example-accordion parentSection">
+            
+            <div class="slds-m-around_large">
+					<table class="slds-table  slds-table--cell-buffer  slds-cell-wrap" role="grid" style="table-layout:auto;">
+							<tr>
+									<td class="slds-size_3-of-12"  style="vertical-align:top">
+											<lightning-input disabled="true" label="Deal Title"   value={AnalystData.dealtitle} data-id = "dealtitle" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-input>
+									</td>							
+									<td class="slds-size_6-of-12" >
+												<lightning-textarea disabled="true" label="Deal Highlights" class = "attachtextAreaBody"   value={AnalystData.highlights} data-id="dealhighlights" data-id3 = "highlights" onchange = {OnchangeFieldValue}></lightning-textarea>
+									</td>									
+							</tr>
+					</table>					
+			</div>
+						
+            <lightning-accordion-section name="Attach Inclusions" label="Attach Inclusions">
+              <template if:true={AnalystData.attachInclusionList}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="slds-size_1-of-12"></th>
+                      <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                        <div title="Record Type"> Record Type </div>
+                      </th>
+                      <th class="slds-size_2-of-12" style="text-align:center" scope="col">
+                        <div title="Publishing Inclusions"> Publishing Inclusions </div>
+                      </th>
+                      <th class="slds-size_4-of-12" rowspan="3" style="text-align:center" scope="col">
+                        <div title="Text">Text</div>
+                      </th>
+                      <th class="slds-size_1-of-12"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={AnalystData.attachInclusionList} for:item="attachInclusions" for:index="IndexChild">
+                      <tr key={attachInclusions.id}>
+                        <td class="slds-cell-wrap" style="vertical-align:top;padding-top:20px;text-align:center" align="center" scope="col">
+                          <div>
+                            <lightning-button-icon icon-name="utility:add" variant="container" disabled="true" data-id="Attach" data-id1={IndexChild} data-id2="Attach" class="slds-button__icon_large" onclick={handleAddRow}></lightning-button-icon>
+                          </div>
+                        </td>
+                        <td style="vertical-align:top">
+                          <lightning-combobox disabled="true" name="Record Type" value={attachInclusions.selectedRecordType} options={TypeOptions} data-id="RecordType" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" onchange={OnchangeFieldValue}></lightning-combobox>
+                        </td>
+                        <td style="vertical-align:top" scope="col">
+                          <c-lwc-Lookup disableddata={disableloockup} object-api-name="Publishing_Inclusions__c" field-api-name="Full_Name_Formula__c" other-field-api-name="Icon_Label_Image__c" data-id="Publish" data-id3="Attach" data-id1={IndexChild} onchange={OnchangeFieldValue} getparticularinclusion={attachInclusions.selectedPublishedInclusions} getinclusiondetail={attachInclusions.selectedPublishedInclusionsDetail} onoptionselected={OnchangeFieldValue}></c-lwc-Lookup>
+                        </td>
+                        <td scope="col" style="height:50px;">
+                          <lightning-textarea value={attachInclusions.selectedText} disabled="true" class="slds-align_absolute-center attachtextAreaBody" data-id1={IndexChild} data-id2="Attach" data-id3="Attach" data-id="Text" onchange={OnchangeFieldValue}></lightning-textarea>
+                        </td>
+                        <td style="vertical-align:bottom;padding-bottom:10px" scope="col">
+                         
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+                <div class="slds-m-top_large" align="center">
+                </div>
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Overview" label="Overview">
+              <lightning-accordion-section name="Summary AU" label="Summary AU">
+                <div>
+                  <br>
+                  <lightning-input-rich-text disabled="true" label="Summary" variant="top-toolbar" class="summarytextAreaBody" value={AnalystData.summaryAU} onchange={feildvaluechange} data-id="summaryAU"></lightning-input-rich-text>
+                </div>
+              </lightning-accordion-section>
+              <!-- 				<lightning-accordion-section  name="Summary NZ" label="Summary NZ"><div><br><b>Summary - NZ</b><lightning-input-rich-text label="Summary - NZ" variant="top-toolbar" class="summarytextAreaBody" value={dealdata.summaryNZ} onchange={feildvaluechange} data-id="summaryNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+              <br>
+              <br>
+              
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Tour Instruction" label="Tour Inclusions">
+              <template if:true={AnalystData.tours}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="" align="center" scope="col">
+                        <div title="Checkbox" align="center"></div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div title="Title" align="center"> Title </div>
+                      </th>
+                      <th class="slds-size_5-of-12" align="center" scope="col">
+                        <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div class="slds-truncate" title="Site" align="center">Site</div>
+                      </th>
+                      <th class="" align="center" scope="col">
+                        <div class="slds-truncate" title="Order" align="center">Order</div>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={AnalystData.tours} for:item="tour" for:index="IndexChild">
+                      <tr key={tour.id}>
+                        <td class="slds-cell-wrap" align="center" scope="col">
+                        </td>
+                        <td>
+                          <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={tour.title} onchange={OnchangeFieldValue} data-id="tourtitle" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <div>
+                            <lightning-input-rich-text disabled="true" label="Description" class="textAreaBodytour" value={tour.description} onchange={OnchangeFieldValue} data-id="tour description" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width:auto"></lightning-input-rich-text>
+                          </div>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-dual-listbox disabled="true" class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={tour.selectedsite} options={toursites} size="4" data-id="tour site" data-id1={IndexChild} data-id2="tour" data-id3="tour" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-input disabled="true" class="slds-align_absolute-center" type="number" max="99" value={tour.order} onchange={OnchangeFieldValue} data-id="tour order" data-id1={IndexChild} data-id2="tour" data-id3="tour" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                        </td>
+                        <td>
+                          <div style="marginleft:5px;margin-bottom: 140px;">
+                            <lightning-button-icon icon-name="utility:zoomin" variant="container" data-id="tour" data-id1={IndexChild} data-id2="" data-id3="Analyst" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom tour" onclick={handleShowModal}></lightning-button-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+                
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Itinerary" label="Itinerary">
+              <template if:true={AnalystData.iteneraries}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <tbody>
+                    <template for:each={AnalystData.iteneraries} for:item="itins" for:index="index">
+                      <lightning-accordion-section key={AnalystData.iteneraries} name={itins.itinNumber} label={itins.itinNumber} style="scrollbar-gutter:inherit">
+                        <div class='slds-grid slds-wrap'>
+                          <div class="" style="margin-top: 5px;">
+                            <b>Itinerary #</b>
+                          </div>
+                          <div class="slds-col slds-size_1-of-22 " style="padding-left: 10px;margin-bottom: 15px;">
+                            <lightning-input disabled="true" type="number" variant="label-hidden" name="input8" required="true" onchange={changeOrder} value={itins.itinNumber} label="Itinerary #" max="10" style="width:50px" data-id1={index}></lightning-input>
+                            <!-- <lightning-button variant="Brand" label="Change Order" title="Change Order For all Itineraries Under this Section" class="slds-button_stretch" data-id="index" data-id2={index} onclick={changeOrder}></lightning-button> -->
+                          </div>
+                        </div>
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                          <thead>
+                            <tr class="slds-line-height_reset">
+                              <th class="" align="center" scope="col">
+                                <div title="Checkbox" align="center">Select</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                                Day 
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="title" align="center">Itinerary Title&nbsp;
+                                  <!--lightning-helptext content="Information About column"></lightning-helptext-->
+                                </div>
+                              </th>
+                              <th class="slds-size_6-of-8" align="center" scope="col">
+                                <div class="slds-truncate " align="center" title="Description" style="width:auto ; ">Description</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="Accommodation" align="center">Accommodation</div>
+                              </th>
+                              <th class="" align="center" scope="col">
+                                <div class="slds-truncate" title="Inclusion" align="center">Inclusions</div>
+                              </th>
+                              <th></th>
+                              <!--th class="" align ="center" scope="col"><div class="slds-truncate" title="Order" align ="center">Order</div></th-->
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <template for:each={itins.itinorderlist} for:item="itin" for:index="IndexChild">
+                              <tr key={itins.itinNumber}>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                 
+                                </td>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                  <lightning-input disabled="true" type="number" max="999" class="slds-align_absolute-center" value={itin.day} onchange={OnchangeFieldValue} data-id="day" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:50px;margin-bottom: 160px;"></lightning-input>
+                                </td>
+                                <td>
+                                  <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={itin.title} onchange={OnchangeFieldValue} data-id="title" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px"></lightning-textarea>
+                                </td>
+                                <td class="slds-cell-wrap" align="center" scope="col">
+                                  <!-- 							  <div class="myColor slds-rich-text-area__content slds-grow " align="center" style="min-height: 94px; max-height: 94px; border:0.3px solid black; width:auto"> -->
+                                  <div>
+                                    <lightning-input-rich-text disabled="true" class="textAreaBodytour" value={itin.description} onchange={OnchangeFieldValue} data-id="description" data-id1={IndexChild} data-id2={index} data-id3="itin" style="width:auto;"></lightning-input-rich-text>
+                                  </div>
+                                  <!-- 							  </div> -->
+                                </td>
+                                <td>
+                                  <lightning-textarea disabled="true" value={itin.accommodation} class="slds-align_absolute-center tourtextAreaBody" onchange={OnchangeFieldValue} data-id="accommodation" data-id1={IndexChild} data-id2={index} data-id3="itin" style="padding-bottom: 21px;width: 7rem;"></lightning-textarea>
+                                </td>
+                                <td class="slds-cell-wrap" scope="col">
+                                  <lightning-dual-listbox disabled="true" source-label="Available Meals" selected-label="Selected Meals" value={itin.selectedmeals} options={mealsOptions} size="3" data-id="Selected Meals" data-id1={IndexChild} data-id2={index} data-id3="itin" onchange={OnchangeFieldValue} style="margin-bottom: 24px;"></lightning-dual-listbox>
+                                </td>
+                                <!--<td>{option.passengerType}</td>-->
+                                <!--td class="slds-cell-wrap" scope="col"><lightning-input class="slds-align_absolute-center" type="number" value={itin.order} onchange={itinselectChangeHandler} data-id="order" data-id1={IndexChild} data-id2={index} style="width:50px"></lightning-input></td-->
+                                <td>
+                                  <div style="marginleft:5px;margin-bottom: 140px;">
+                                    <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="itin" data-id1={IndexChild} data-id2={index} data-id3="Analyst"  class=" slds-button__icon_large" label="Zoom Record" key={itin.id} alternative-text="Zoom" title="Zoom Itinerarry" onclick={handleShowModal}></lightning-button-icon>
+                                  </div>
+                                  
+                                </td>
+                              </tr>
+                            </template>
+                          </tbody>
+                        </table>
+                      
+                      </lightning-accordion-section>
+                    </template>
+                  </tbody>
+                </table>
+                
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="About the Property" label="About the Property">
+              <template if:true={AnalystData.properties}>
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal slds-cell-wrap" role="grid" style="table-layout:auto;">
+                  <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="" align="center" scope="col">
+                        <div title="addrow" align="center"></div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div title="Title" align="center"> Title </div>
+                      </th>
+                      <th class="slds-size_5-of-12" align="center" scope="col">
+                        <div class="slds-truncate " align="center" style="width: 550px; max-width: 550px" title="Description">Description</div>
+                      </th>
+                      <th class="slds-size_1-of-12" align="center" scope="col">
+                        <div class="slds-truncate" title="Site" align="center">Site</div>
+                      </th>
+                      <th class="" align="center" scope="col">
+                        <div class="slds-truncate" title="Order" align="center">Order 
+                        </div>
+                      </th>
+                     <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template for:each={AnalystData.properties} for:item="property" for:index="IndexChild">
+                      <tr key={property.id}>
+                        <td class="slds-cell-wrap" align="center" scope="col">
+                          
+                        </td>
+                        <td>
+                          <lightning-textarea disabled="true" class="slds-align_absolute-center tourtextAreaBody" value={property.title} onchange={OnchangeFieldValue} data-id="propertytitle" data-id1={IndexChild} data-id2="property" data-id3="property" style="padding-bottom: 16px;width: 120px;"></lightning-textarea>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <div>
+                            <lightning-input-rich-text disabled="true" label="Description" class="textAreaBodytour" value={property.description} onchange={OnchangeFieldValue} data-id="property description" data-id1={IndexChild} data-id2="property" data-id3="property" style="width:550px"></lightning-input-rich-text>
+                          </div>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-dual-listbox disabled="true" class="dualboxtour" source-label="Available Site" selected-label="Selected Site" value={property.selectedsite} options={toursites} size="4" data-id="property site" data-id1={IndexChild} data-id2="property" data-id3="property" onchange={OnchangeFieldValue} style="margin-bottom: 27px;"></lightning-dual-listbox>
+                        </td>
+                        <td class="slds-cell-wrap" scope="col">
+                          <lightning-input disabled="true" class="slds-align_absolute-center" type="number" max="99" value={property.order} onchange={OnchangeFieldValue} data-id="property order" data-id1={IndexChild} data-id2="property" data-id3="property" style="width: 45px;margin-bottom: 144px;"></lightning-input>
+                        </td>
+                        <td>
+                          <div style="marginleft:5px ; margin-bottom: 140px;">
+                            <lightning-button-icon  icon-name="utility:zoomin" variant="container" data-id="property" data-id1={IndexChild} data-id2="" data-id3="Analyst" class=" slds-button__icon_large" label="Zoom Record" alternative-text="Zoom" title="Zoom property" onclick={handleShowModal}></lightning-button-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </template>
+            </lightning-accordion-section>
+  
+            <lightning-accordion-section name="Important Information" label="Important Information">
+              <lightning-accordion-section name="Important Information AU" label="Important Information AU">
+                <div>
+                  <br>
+                  <lightning-input-rich-text disabled="true" label="Important Information" variant="top-toolbar" class="textAreaBody" value={AnalystData.importantinfoAU} onchange={feildvaluechange} data-id="impinfoAU"></lightning-input-rich-text>
+                </div>
+              </lightning-accordion-section>
+              <!-- 				<lightning-accordion-section  name="Important Information NZ" label="Important Information NZ"><div><br><b>Important Information NZ</b><lightning-input-rich-text label="Important Information NZ" variant="top-toolbar" class="textAreaBody" value={dealdata.importantinfoNZ} onchange={feildvaluechange} data-id="impinfoNZ"></lightning-input-rich-text></div></lightning-accordion-section> -->
+              <br>
+              <br>
+              
+            </lightning-accordion-section>
+  
+          </lightning-accordion>
+        </lightning-tab>
+      </template>
+
+				
+    </lightning-tabset>
+    <br />
+    <br />
+    <div align="center">
+      <lightning-button variant="Brand" label="Preview Deal" title="Successful action" class="slds-m-left_x-small" onclick={dealpreiview}></lightning-button>
+      <!--					<lightning-button variant="Brand" label="Cancel" title="Successful action" class="slds-m-left_x-small"></lightning-button><lightning-button variant="Brand" label="Submmit For Approval" title="Successful action" class="slds-m-left_x-small"></lightning-button> -->
+    
+<!--       <template if:false={isfinaldeal}>
+        <lightning-button variant="Brand" label="Final Deal" title="Successful action" class="slds-m-left_x-small" onclick={finalizedDeal} data-id="final Deal"></lightning-button>
+      </template> -->
+      <template if:true={Analystbutton}>
+        <lightning-button variant="Brand" label="Analyst Finalized" title="Successful action" class="slds-m-left_x-small" onclick={finalizedDeal} data-id="Analyst"></lightning-button>
+      </template>
+      <template if:true={BDMbutton}>
+        <lightning-button variant="Brand" label="BDM Finalized" title="Successful action" class="slds-m-left_x-small" onclick={finalizedDeal} data-id="BDM"></lightning-button>
+      </template>
+      <!--					<lightning-button variant="Brand" label="Cancel" title="Successful action" class="slds-m-left_x-small"></lightning-button><lightning-button variant="Brand" label="Submmit For Approval" title="Successful action" class="slds-m-left_x-small"></lightning-button> -->
+    </div>
+  </template>
+  </lightning-card>
+  <!-- 				</lightning-tab> -->
+  <!-- 		</lightning-tabset> -->
+</template>

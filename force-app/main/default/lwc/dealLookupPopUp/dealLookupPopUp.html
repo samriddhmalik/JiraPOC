@@ -1,0 +1,110 @@
+<template>
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+	  <div class="slds-modal__container" style="width: 700px">
+		<!-- Header Start -->
+		<header class="slds-modal__header">
+		  <lightning-button-icon class="slds-modal__close" title="Close" icon-name="utility:close" icon-class="slds-button_icon-inverse" onclick={handleDialogClose} style="color: red;"></lightning-button-icon>
+		  <h2 class="slds-text-heading_medium slds-hyphenate header-string"> Select Deal To Clone Itinerary </h2>
+		</header>
+		<!-- Header End -->
+		<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="height:450px">
+		  <template if:true={itinload}>
+			<lightning-spinner alternative-text="Loading"></lightning-spinner>
+		  </template>
+		  <slot>
+			<table style="margin-top:10px">
+			  <thead>
+				<td>
+				  <div style="margin-top:10px">
+					<b>Select Deal :</b>
+				  </div>
+				</td>
+				<td>
+				  <div>
+					<div class="slds-form-element" style="width:250px">
+					  <div class="slds-form-element__control">
+						<div class="slds-combobox_container" if:false={isValueSelected}>
+						  <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+							<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+							  <lightning-input class={inputClass} onchange={handleChange} type="search" autocomplete="off" label="" field-level-help="" placeholder="Select Deal" onblur={handleInputBlur}></lightning-input>
+							</div>
+						  </div>
+						</div>
+						<template if:true={isValueSelected}>
+						  <label class="slds-form-element__label" for="combobox-id-5" id="combobox-label-id-35">{label}</label>
+						  <template if:true={required}>
+							<span style="color:red">*</span>
+						  </template>
+						  <div tabindex="0" class="slds-combobox_container slds-has-selection">
+							<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click">
+							  <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right" role="none">
+								<span class="slds-icon_container  slds-combobox__input-entity-icon" title="Deal" style="padding-left:5px">
+								  <lightning-icon icon-name="custom:custom70" alternative-text="custom:custom70" size="x-small"></lightning-icon>
+								</span>
+								<button type="button" class="slds-input_faux slds-combobox__input slds-combobox__input-value" aria-labelledby="combobox-label-id-34 combobox-id-5-selected-value" id="combobox-id-5-selected-value" aria-controls="listbox-id-5" aria-expanded="false" aria-haspopup="listbox">
+								  <span class="slds-truncate" id="combobox-value-id-19">{selectedRecordName}</span>
+  <!--                                   																		<span><img style="height:20px; width:20px; padding-left:5px;" src="custom:custom70"></span>  -->
+								</button>
+								<button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Remove selected option" onclick={handleCommit}>
+								  <lightning-icon icon-name="utility:close" alternative-text="Remove selected option" size="x-small"></lightning-icon>
+								</button>
+							  </div>
+							</div>
+						  </div>
+						</template>
+						<template if:true={showRecentRecords}>
+						  <div id="listbox-id-4" tabindex="0" onblur={handleBlur} onmousedown={handleDivClick} class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+							<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+							  <template for:each={recordsList} for:item="rec">
+								<li role="presentation" key={rec.id} class="slds-listbox__item">
+								  <div onclick={handleSelect} data-id={rec.id} data-mainfield={rec.mainField} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+									<span class="slds-media__body">
+									  <span class="slds-listbox__option-text slds-listbox__option-text_entity">
+										<span>
+																																		  <lightning-icon icon-name="custom:custom70" alternative-text="custom:custom70"
+																																  size="small"></lightning-icon>
+										  <span style="padding-left:5px;">
+											<mark>{rec.mainField}</mark>
+										  </span>
+										  <!-- 																								<span><img style="height:20px; width:20px;padding-left:5px" src={rec.subField}></span>                      -->
+										</span>
+									  </span>
+									</span>
+								  </div>
+								</li>
+							  </template>
+							</ul>
+						  </div>
+						</template>
+					  </div>
+					</div>
+				  </div>
+				</td>
+			  </thead>
+			</table>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div align="center">
+			  <lightning-button variant="success" icon-name="utility:save" label="Clone Deal Itinerary" title="" class="slds-button_stretch" data-id="" data-id2="" onclick={changeDealHandler}></lightning-button>
+			</div>
+		  </slot>
+		</div>
+	  </div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+  </template>

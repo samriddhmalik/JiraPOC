@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Need_Nights</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(ae__c)), 
+OR(AE_Nights__c &lt; 1,ISBLANK(AE_Nights__c)), 
+ISBLANK(ae_date__c), 
+NOT($Permission.AE_Need_Nights) 
+)</errorConditionFormula>
+    <errorMessage>AE Selected - Please Nominate AE nights required or AE Date required</errorMessage>
+</ValidationRule>

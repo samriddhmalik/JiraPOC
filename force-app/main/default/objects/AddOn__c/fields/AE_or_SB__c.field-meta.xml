@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_or_SB__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( (ordexp_new_aesb_date__c &lt;= Order_Line_Item__r.ordexp_TAD_Order__r.ordexp_departure_date__r.date__c ), &apos;AE&apos;, &apos;SB&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>AE or SB?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

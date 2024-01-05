@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Site__c = &quot;AU&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=1000,VALUE(POSTCODE__c)&lt;=2599), &quot;NSW&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=2619,VALUE(POSTCODE__c)&lt;=2899), &quot;NSW&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=2921,VALUE(POSTCODE__c)&lt;=2999), &quot;NSW&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=0200,VALUE(POSTCODE__c)&lt;=0299), &quot;ACT&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=2600,VALUE(POSTCODE__c)&lt;=2618), &quot;ACT&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=2900,VALUE(POSTCODE__c)&lt;=2920), &quot;ACT&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=3000,VALUE(POSTCODE__c)&lt;=3999), &quot;VIC&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=8000,VALUE(POSTCODE__c)&lt;=8999), &quot;VIC&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=4000,VALUE(POSTCODE__c)&lt;=4999), &quot;QLD&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=9000,VALUE(POSTCODE__c)&lt;=9999), &quot;QLD&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=5000,VALUE(POSTCODE__c)&lt;=5999), &quot;SA&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=6000,VALUE(POSTCODE__c)&lt;=6999), &quot;WA&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=7000,VALUE(POSTCODE__c)&lt;=7999), &quot;TAS&quot;,
+IF(AND( VALUE(POSTCODE__c) &gt;=0800,VALUE(POSTCODE__c)&lt;=0999), &quot;NT&quot;,
+&quot;Other&quot;)))))))))))))),
+IF( AND( VALUE(POSTCODE__c) &gt;=0000,VALUE(POSTCODE__c)&lt;=6999), &quot;North Island&quot;,
+IF( AND( VALUE(POSTCODE__c) &gt;=7000,VALUE(POSTCODE__c)&lt;=9999), &quot;South Island&quot;,
+&quot;Other&quot; ))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>State</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

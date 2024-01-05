@@ -1,0 +1,136 @@
+<aura:component controller="Tad_createDepCityController" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global">
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="aesbId" type="String"/>
+    <aura:attribute name="tabId" type="String"/>
+    <aura:attribute name="recId" type="String"/>
+    <aura:attribute name="fromDealPage" type="Boolean" default="false"/>
+    <aura:attribute name="isConsoleApp" type="Boolean" default="false"/>
+    <aura:attribute name="validity" type="Boolean" default="false"/>
+    <aura:attribute name="isNext" type="Boolean" default="false"/>
+     <aura:attribute name="isAesbNext" type="Boolean" default="false"/>
+    <aura:attribute name="isAesb" type="Boolean" default="true"/>
+    <aura:attribute name="getName" type="String"/>
+    <aura:attribute name="getLinkedDeal" type="String"/>
+    <aura:attribute name="getType" type="String"/>
+    <aura:attribute name="getOption" type="String"/>
+    <aura:attribute name="getDeal" type="String"/>
+    <aura:attribute name="getCity" type="String"/>
+    <aura:attribute name="getSite" type="String"/>
+    <aura:attribute name="getNights" type="String"/>
+    <aura:attribute name="getPrice" type="Decimal"/>
+    <aura:attribute name="getPriceNZD" type="Decimal"/>
+    <aura:attribute name="getBlockout" type="String"/>
+    <aura:attribute name="getFeeApp" type="String"/>
+    <aura:attribute name="getImage" type="String"/>
+    <aura:attribute name="getIncludes" type="String"/>
+    <aura:attribute name="getInvoice" type="Decimal"/>
+    <aura:attribute name="getSellPrice" type="Decimal"/>
+    <aura:attribute name="getNamec" type="String"/>
+    <aura:attribute name="getOrderFilter" type="String"/>
+    <aura:attribute name="getIsActive" type="Boolean" default="true"/>
+    <aura:attribute name="getDataRefresh" type="Boolean" default="false"/>
+    <aura:attribute name="getIsAccom" type="Boolean" default="false"/>
+    <aura:attribute name="getOrder" type="Decimal"/>
+    <aura:attribute name="getCurrency" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!v.isAesb}">
+    <div class="slds-theme_default" style="width: 51vw; height :inherit; overflow:auto; margin:auto; border-radius:0.25rem">
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+        <div class="slds-modal__header">
+            <h2 class ="slds-modal__title slds-hyphenate slds-text-heading--medium">New AE/SB</h2>
+        </div>
+        <div class="form-legend" style="padding:8px; margin:8px; text-align:right; border-radius:0.25rem">
+            <abbr class="slds-required">*</abbr> = Required Information</div>
+        <h3 class ="slds-section__title slds-theme--shade" style ="padding-left: 0.6rem; margin: 0.5rem;">Information</h3>
+        <div class= "container-body" style ="padding-left: 0.6rem; margin: 0.5rem;">
+            <div class="slds-form">
+                <lightning:recordEditForm objectApiName="AE_SB__c">
+                    <lightning:messages />
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Name" value="{!v.getName}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="linked_deal__c" value="{!v.getLinkedDeal}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Type__c" value="{!v.getType}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField  aura:id="aesbfield" fieldName="Option__c" value="{!v.getOption}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField fieldName="Deal__c" value="{!v.getDeal}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="City__c" value="{!v.getCity}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="site__c" value="{!v.getSite}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                        </div>
+                             <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Accom__c" value="{!v.getIsAccom}" onclick="{!c.checkAccom}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Night_Ticket__c" value="{!v.getNights}" />
+                        </div>
+                           <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Includes__c" value="{!v.getIncludes}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="price__c" value="{!v.getPrice}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="price_nz__c" value="{!v.getPriceNZD}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Target_Invoice_Price__c" value="{!v.getInvoice}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Target_Sell_Price__c" value="{!v.getSellPrice}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="image__c" value="{!v.getImage}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Blockout__c" value="{!v.getBlockout}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="fee_application__c" value="{!v.getFeeApp}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="name__c" value="{!v.getNamec}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="data_refresh__c" value="{!v.getDataRefresh}" onclick="{!c.checkRefresh}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="order_filter__c" value="{!v.getOrderFilter}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Order__c" value="{!v.getOrder}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="Active__c" value="{!v.getIsActive}" onclick="{!c.checkActive}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:inputField aura:id="aesbfield" fieldName="CurrencyIsoCode" value="{!v.getCurrency}"/>
+                        </div>
+                    </div>
+                </lightning:recordEditForm>
+            </div>
+        </div>
+        <div class="slds-card__footer slds-align_absolute-center slds-theme--shade">
+            <lightning:button label="Cancel" title="Cancel" class="slds-m-right_small" onclick="{!c.handleCancel}"/>
+            <lightning:button variant="brand" label="Save &amp; New" title="Save &amp; New" class="slds-m-right_small" onclick="{!c.handleAESBSave}"/>
+            <lightning:button variant="brand" label="Save &amp; Next" title="Save" onclick="{!c.handleAESBNext}"/>
+        </div>
+    </div>
+        </aura:if>
+    <aura:if isTrue="{!v.isAesbNext}">
+        <c:tad_createComponentAndPricing addId = "{!v.aesbId}" type ="AE_SB__c" oncancel="{!c.handleCancel}" onclosetab="{!c.closePreviousTab}"/>
+    </aura:if>
+</aura:component>

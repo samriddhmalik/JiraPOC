@@ -1,0 +1,12 @@
+<apex:page standardController="Day__c" tabStyle="Day__c" recordSetVar="AllDays" >
+    <!-- Add below each field you reference in your Flow -->
+    <apex:repeat value="{!AllDays}" var="row" rendered="false">
+        {!row.Name}
+        {!row.departures_dates__c}
+    </apex:repeat>
+    <!-- Runs your Flow -->
+    <flow:interview name="DeleteSelectedDays"
+          finishLocation="{!URLFOR($Action.Day__c.Tab, $ObjectType.Day__c)}">
+        <apex:param name="selectedDays" value="{!Selected}"/>
+    </flow:interview>
+</apex:page>

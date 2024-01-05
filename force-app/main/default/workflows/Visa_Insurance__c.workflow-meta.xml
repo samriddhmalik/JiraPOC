@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Insurance_Policy_Date</fullName>
+        <field>Insurance_Policy_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Insurance Policy Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Set Date on Insurance Status of Policy</fullName>
+        <actions>
+            <name>Update_Insurance_Policy_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visa_Insurance__c.Insurance_Status__c</field>
+            <operation>equals</operation>
+            <value>Policy</value>
+        </criteriaItems>
+        <description>This rule time stamps the date when Insurance Status = Policy</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

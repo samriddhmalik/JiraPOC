@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bretts_Live_Deals</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>price__c</columns>
+    <columns>Status__c</columns>
+    <columns>Country__c</columns>
+    <columns>number_of_days__c</columns>
+    <columns>Published_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,Published,Expired,Hero,Hero(Staging)</value>
+    </filters>
+    <filters>
+        <field>BDM__c</field>
+        <operation>equals</operation>
+        <value>Alanna Betz</value>
+    </filters>
+    <label>Alanna&apos;s Deals</label>
+</ListView>

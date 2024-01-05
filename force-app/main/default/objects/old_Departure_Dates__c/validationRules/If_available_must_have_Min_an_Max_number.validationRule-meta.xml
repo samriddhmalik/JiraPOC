@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_available_must_have_Min_an_Max_number</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(Status__c) = &apos;available&apos;, OR(Approved_Min_Allocation__c  &lt; 1,  Approved_Max_Allocation__c &lt; 1,  ISBLANK(Approved_Min_Allocation__c) ,  ISBLANK(Approved_Max_Allocation__c) ))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>If Status is &apos;Available&apos;, both &apos;Approved Min Allocation&apos; and &apos;Approved Max Allocation&apos; bust be nominated.</errorMessage>
+</ValidationRule>

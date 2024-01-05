@@ -1,0 +1,44 @@
+<aura:component implements="forceCommunity:themeLayout">
+   <!-- Pre-defined set of Napili regions to include; each must be defined as an Aura attribute -->        
+  <aura:attribute name="navBar" type="Aura.Component[]" required="false" />
+   <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+  <aura:attribute name="search" type="Aura.Component[]" required="false" />
+  <aura:attribute name="newHeader" type="Aura.Component[]" required="false" />
+
+   <!-- Register initialization handler for component -->
+
+  <!-- Theme Layout Markup -->
+
+    <div>
+      <div class="header">
+            <div class="headerContent">
+                <div class="logoAndNavigation">
+                    <img src="{https://s3-ap-southeast-2.amazonaws.com/cstad/a2z28000000pFmVAAU.jpg}" />
+                        <div class="navigation">{!v.navBar}</div>
+                </div>
+
+                <div class="searchRegion">
+
+                    {!v.search}
+
+                </div>
+
+                <div class="profileMenu">
+
+                    {!v.profileMenu}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mainContentArea">
+
+        {!v.body}
+
+    </div>
+
+</aura:component>

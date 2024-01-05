@@ -1,0 +1,153 @@
+<aura:component controller="BpointTADTC_LightningController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    <aura:attribute name="mainWrapper" type="Object"/>
+    <aura:attribute name="disabledMakePaymentButton" type="Boolean" default="false"/>
+     <aura:attribute name="sourceObject" type="String"/>
+   <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    
+    <aura:attribute name="IsSpinner" type="Boolean"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <!--loading spinner start-->
+   <aura:if isTrue="{!v.IsSpinner}">
+       <lightning:spinner variant="brand"  size="large" />
+      </aura:if>
+    <!-- Loading spinner end-->   
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-text-heading--medium"><b>Make Credit Card Payment</b></h2>
+    </header>
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            Tad Order Number <br></br>
+            <ui:outputText value="{!v.mainWrapper.tadOrderName}"/>
+        </div>  
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            Good to Make Payment?<br></br>
+            <ui:inputCheckbox aura:id="checkbox" value="{!v.mainWrapper.goodToMakePayment}" />
+        </div>  
+    </div>
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="text" value="{!v.mainWrapper.accountHolderName}" label="Invoice To"/>
+        </div>   
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="email" value="{!v.mainWrapper.accountHolderEmail}" label="Email for Receipt"/>
+        </div>  
+    </div>
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="number" label="Payment Amount" value="{!v.mainWrapper.paymentAmount}" formatter="currency" step="0.01"/>
+        </div>   
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            Currency <br></br>
+            <ui:outputText value="{!v.mainWrapper.orderAmountCurrency}"/>
+        </div>  
+    </div>	
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            Card Surcharge <br></br>
+            <ui:outputText value="{!v.mainWrapper.cardSurchargeAmount}"/>
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            Surcharge Percentage<br></br>
+            <ui:outputText value="{!v.mainWrapper.cardSurchargePercentage}"/>
+        </div>
+    </div>
+    
+    <br></br>
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            Payment Total <br></br>
+            <ui:outputText value="{!v.mainWrapper.totalPaymentWithSurcharge}"/>
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            Credit Card Type<br></br>
+            <ui:outputText value="{!v.mainWrapper.cardType}"/>
+        </div>
+    </div>
+    
+    <br></br>
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="text" value="{!v.mainWrapper.cardHolderName}" label="Name On Card"/>
+        </div>   
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="Text" value="{!v.mainWrapper.creditCardNumber}" label="Credit Card Number"/>
+        </div>  
+    </div>
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="number" maxlength="4" value="{!v.mainWrapper.cardExpiryDate}" label="Card Expiry Date"/>
+        </div>   
+        
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:input type="number" value="{!v.mainWrapper.creditCardCCV}" label="CCV"/>
+        </div>  
+    </div>
+    
+    <br></br>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_3-of-3">
+            <lightning:textarea name="Extra Comments" label="Comments" value="{!v.mainWrapper.paymentComments}"/>
+        </div>   
+    </div>
+    
+    <br></br>
+    
+    <footer class="slds-modal__footer">
+        <div class="slds-align_absolute-center" style="height:2rem">
+             <lightning:button class="slds-button slds-button_brand" onclick="{!c.closeModal}" label="Back"/>
+           
+            <lightning:button class="slds-button slds-button_brand" onclick="{!c.updateSurcharges}" label="Update Surcharges"/>
+            <lightning:button class="slds-button slds-button_brand" onclick="{!c.makeFinalPayment}" label="Make Payment" disabled="{!v.disabledMakePaymentButton}"/>
+        </div>
+    </footer>
+    
+</aura:component>

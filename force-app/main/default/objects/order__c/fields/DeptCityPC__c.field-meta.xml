@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeptCityPC__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(description__c, &quot;Adelaide&quot;), &quot;Adelaide&quot;,
+IF(CONTAINS(description__c, &quot;Sydney&quot;), &quot;Sydney&quot;,
+IF(CONTAINS(description__c, &quot;Brisbane&quot;), &quot;Brisbane&quot;,
+IF(CONTAINS(description__c, &quot;Gold Coast&quot;), &quot;Gold Coast&quot;,
+IF(CONTAINS(description__c, &quot;Melbourne&quot;), &quot;Melbourne&quot;,
+IF(CONTAINS(description__c, &quot;Perth&quot;), &quot;Perth&quot;,
+IF(CONTAINS(description__c, &quot;Hobart&quot;), &quot;Hobart&quot;,
+IF(CONTAINS(description__c, &quot;Auckland&quot;), &quot;Auckland&quot;,
+IF(CONTAINS(description__c, &quot;Christchurch&quot;), &quot;Christchurch&quot;,
+IF(CONTAINS(description__c, &quot;Wellington&quot;), &quot;Wellington&quot;,
+&quot;N/A&quot;))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>DeptCityPC</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

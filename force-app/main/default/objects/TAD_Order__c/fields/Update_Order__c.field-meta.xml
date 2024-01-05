@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Order__c</fullName>
+    <externalId>false</externalId>
+    <label>Update Order</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Good</fullName>
+                <default>false</default>
+                <label>All Good!</label>
+            </value>
+            <value>
+                <fullName>Cancel Order</fullName>
+                <default>false</default>
+                <label>Cancel Order</label>
+            </value>
+            <value>
+                <fullName>Expire Order</fullName>
+                <default>false</default>
+                <label>Expire Order</label>
+            </value>
+            <value>
+                <fullName>Unexpire Order</fullName>
+                <default>false</default>
+                <label>Unexpire Order</label>
+            </value>
+            <value>
+                <fullName>Updating Order</fullName>
+                <default>false</default>
+                <label>Updating Order</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

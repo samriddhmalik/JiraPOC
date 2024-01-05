@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Key_for_DealDD_Mapping__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT( ISBLANK(  Deal__c ) ) &amp;&amp; NOT( ISBLANK(   Order_Line_Item__r.ordexp_departure_date__c ) ) , mp_merchant__r.Name + &quot;;&quot;+ Deal__r.Name +&quot;;&quot;+ Order_Line_Item__r.ordexp_departure_date__r.Name , &quot;Deal &amp; Departure Date Is  Empty&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unique Key for DealDD Mapping</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

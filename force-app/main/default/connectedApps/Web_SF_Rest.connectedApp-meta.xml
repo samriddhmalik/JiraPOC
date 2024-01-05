@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>peter.russell@tripadeal.com.au</contactEmail>
+    <description>Rest connection to sf</description>
+    <iconUrl>https://login.salesforce.com/logos/Standard/record/icon.png</iconUrl>
+    <label>Web SF Rest</label>
+    <logoUrl>https://login.salesforce.com/logos/Standard/record/logo.svg</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://login.salesforce.com/services/oauth2/callback</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrD79O5Kcr725qiofqMaAuBiQJMH_.qh0jSW8HreW2_q877xSf1sGabiCA7rmv2zaIVmgjv4</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Web</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

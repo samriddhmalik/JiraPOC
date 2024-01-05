@@ -1,0 +1,2020 @@
+<aura:component
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride"
+  access="global"
+  Controller="MP_SalesReportController"
+>
+  <aura:attribute type="Boolean" name="showDeparture" default="false" />
+  <aura:attribute type="Boolean" name="showOption" default="false" />
+  <aura:attribute type="Boolean" name="showOrder" default="false" />
+  <aura:attribute type="Boolean" name="isEmptyList" default="false" />
+  <aura:attribute type="List" name="dealList" default="[]" />
+  <aura:attribute type="List" name="subOptionList" default="[]" />
+  <aura:attribute type="List" name="tourDeptDateList" default="[]" />
+  <aura:attribute type="List" name="depDateList" default="[]" />
+  <aura:attribute type="List" name="ordList" default="[]" />
+  <aura:attribute type="List" name="componentNameList" default="[]" />
+  <aura:attribute type="List" name="LandActivityNameList" default="[]" />
+  <aura:attribute type="List" name="LandNameList" default="[]" />
+  <aura:attribute type="List" name="LandTourNameList" default="[]" />
+  <aura:attribute type="List" name="FlightNameList" default="[]" />
+  <aura:attribute type="List" name="CruiseNameList" default="[]" />
+  <aura:attribute type="List" name="RailNameList" default="[]" />
+  <aura:attribute type="List" name="TotalPackageNameList" default="[]" />
+  <aura:attribute type="List" name="AccomNameList" default="[]" />
+  <aura:attribute type="List" name="TransferNameList" default="[]" />
+  <aura:attribute type="List" name="AENameList" default="[]" />
+  <aura:attribute type="List" name="SBNameList" default="[]" />
+  <aura:attribute type="List" name="StopOverNameList" default="[]" />
+  <aura:attribute type="List" name="FlightUpgradeNameList" default="[]" />
+  <ltng:require scripts="{!$Resource.XLSX}"/>
+
+  <aura:attribute
+    type="List"
+    name="DepartureCitySurchargeNameList"
+    default="[]"
+  />
+  <aura:attribute type="List" name="AEAccommodationNameList" default="[]" />
+  <aura:attribute type="List" name="SBAccommodationNameList" default="[]" />
+  <aura:attribute type="List" name="DayTourNameList" default="[]" />
+  <aura:attribute type="List" name="ComponentDataList" default="[]" />
+
+  <aura:attribute type="List" name="LandActivityInfoList" default="[]" />
+  <aura:attribute type="List" name="LandNameInfoList" default="[]" />
+  <aura:attribute type="List" name="LandTourInfoList" default="[]" />
+  <aura:attribute type="List" name="FlightInfoList" default="[]" />
+  <aura:attribute type="List" name="CruiseInfoList" default="[]" />
+  <aura:attribute type="List" name="RailInfoList" default="[]" />
+  <aura:attribute type="List" name="TotalPackageInfoList" default="[]" />
+  <aura:attribute type="List" name="AccomInfoList" default="[]" />
+  <aura:attribute type="List" name="TransferInfoList" default="[]" />
+  <aura:attribute type="List" name="AEInfoList" default="[]" />
+  <aura:attribute type="List" name="SBInfoList" default="[]" />
+  <aura:attribute type="List" name="StopOverInfoList" default="[]" />
+  <aura:attribute type="List" name="FlightUpgradeInfoList" default="[]" />
+  <aura:attribute
+    type="List"
+    name="DepartureCitySurchargeInfoList"
+    default="[]"
+  />
+  <aura:attribute type="List" name="AEAccommodationInfoList" default="[]" />
+  <aura:attribute type="List" name="SBAccommodationInfoList" default="[]" />
+  <aura:attribute type="List" name="DayTourInfoList" default="[]" />
+
+  <aura:attribute type="List" name="LandActivityPassInfoList" default="[]" />
+  <aura:attribute type="List" name="LandNamePassInfoList" default="[]" />
+  <aura:attribute type="List" name="LandTourPassInfoList" default="[]" />
+  <aura:attribute type="List" name="FlightPassInfoList" default="[]" />
+  <aura:attribute type="List" name="CruisePassInfoList" default="[]" />
+  <aura:attribute type="List" name="RailPassInfoList" default="[]" />
+  <aura:attribute type="List" name="TotalPackagePassInfoList" default="[]" />
+  <aura:attribute type="List" name="AccomPassInfoList" default="[]" />
+  <aura:attribute type="List" name="TransferPassInfoList" default="[]" />
+  <aura:attribute type="List" name="AEPassInfoList" default="[]" />
+  <aura:attribute type="List" name="SBPassInfoList" default="[]" />
+  <aura:attribute type="List" name="StopOverPassInfoList" default="[]" />
+  <aura:attribute type="List" name="FlightUpgradePassInfoList" default="[]" />
+  <aura:attribute
+    type="List"
+    name="DepartureCitySurchargePassInfoList"
+    default="[]"
+  />
+  <aura:attribute type="List" name="AEAccommodationPassInfoList" default="[]" />
+  <aura:attribute type="List" name="SBAccommodationPassInfoList" default="[]" />
+  <aura:attribute type="List" name="DayTourPassInfoList" default="[]" />
+
+  <aura:attribute name="filter" type="String" />
+  <aura:attribute name="bccolumns" type="List" />
+  <aura:attribute type="String" name="tourdeptdata" />
+  <aura:attribute type="String" name="dealIdTitle" default="" />
+  <aura:attribute type="String" name="dealPDFUrl" default="" />
+  <aura:attribute type="String" name="selectedDeal" default="" />
+  <aura:attribute name="dealId" type="String" default="" />
+  <aura:attribute name="departureDate" type="String" default="" />
+  <aura:attribute name="TourDeptDate" type="String" default="" />
+  <!-- <aura:attribute type="departures_dates__c[]" name="filteredList"/>-->
+  <aura:attribute type="List" name="filteredList" />
+  <aura:attribute name="sortedDirection" type="String" default="desc" />
+  <aura:attribute name="sortedBy" type="String" default="linkName" />
+  <aura:attribute name="enableInfiniteLoading" type="Boolean" default="true" />
+  <aura:attribute name="loadOffset" type="Integer" default="1" />
+  <aura:attribute name="initialRows" type="Integer" default="10" />
+  <aura:attribute name="currentCount" type="Integer" default="10" />
+  <aura:attribute name="totalRows" type="Integer" default="0" />
+
+  <aura:attribute name="allData" type="List" />
+  <aura:attribute name="dataSize" type="Integer" default="0" />
+  <aura:attribute name="currentDataSize" type="Integer" default="0" />
+  <aura:attribute name="currentPageNumber" type="Integer" default="1" />
+  <aura:attribute name="pageSize" type="Integer" default="5" />
+  <aura:attribute name="totalPages" type="Integer" default="0" />
+  <aura:attribute name="pageList" type="List" />
+  <aura:attribute type="String" name="dealName" />
+  <aura:attribute type="String" name="dealIdForTotalPAX" />
+  <aura:attribute type="Date" name="depName" />
+  <aura:attribute type="Date" name="tourDeptName" />
+  <aura:attribute type="String" name="comptName" />
+  <aura:attribute type="String" name="dealOnLoadName" access="global" />
+  <aura:attribute type="String" name="deptOnLoadName" access="global" />
+  <aura:attribute type="String" name="dealPreviousName" />
+  <aura:attribute type="String" name="dealPreviousId" />
+  <aura:attribute type="String" name="datePreviousId" />
+  <aura:attribute type="Date" name="depPreviousName" />
+
+  <aura:attribute type="List" name="componentWrapperList" default="[]" />
+  <aura:attribute type="Integer" name="showDeptDate" default="0" />
+  <aura:attribute name="callLWC" type="boolean" default="false" />
+  <aura:attribute type="Boolean" name="IscomponentPicklist" default="true" />
+  <aura:attribute type="Boolean" name="IsShowcomponentlist" default="false" />
+  <aura:attribute name="callTotalPaxLWC" type="boolean" default="false" />
+
+  <aura:attribute type="String" name="dealtitle" />
+  <aura:attribute type="String" name="dateSuboption" />
+  <aura:attribute name="spinner" type="boolean" default="FALSE" />
+  <aura:attribute name="dataSpinner" type="boolean" default="FALSE" />
+  <aura:attribute name="dealsSpinner" type="boolean" default="FALSE" />  
+  <aura:attribute type="String" name="selectedDealByDefault" />
+  <aura:attribute type="String" name="selectedDepartureDateForGraph"/> 
+  <aura:attribute type="boolean" name="dealSelected" default= "false" />
+  <aura:attribute type="boolean" name="fetchDealsCompleted" default= "false" />
+  <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+
+    
+  <aura:if isTrue="{!v.dealsSpinner}">
+    <div aura:id="dataspinnerId" class="slds-spinner_container">
+      <div
+        class="slds-spinner--brand slds-spinner slds-spinner--large slds-is-relative"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Loading...</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+        <div class="custom-loading-text">
+            <b>Please wait fetching deals...</b>
+      </div>
+      </div>
+    </div>
+  </aura:if>
+    
+  <!--loading spinner start-->
+  <aura:if isTrue="{!v.dataSpinner}">
+    <div aura:id="dataspinnerId" class="slds-spinner_container">
+      <div
+        class="slds-spinner--brand slds-spinner slds-spinner--large slds-is-relative"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Loading...</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+        <div class="custom-loading-text">
+          <b>Please Wait While Loading...</b>
+      </div>
+      </div>
+    </div>
+  </aura:if>
+  <aura:if isTrue="{!v.spinner}">
+    <div aura:id="spinnerId" class="slds-spinner_container">
+      <div
+        class="slds-spinner--brand slds-spinner slds-spinner--large slds-is-relative"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Loading...</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+        <div class="custom-loading-text">
+          <b>Please Wait While Loading...</b>
+      </div>
+      </div>
+    </div>
+  </aura:if>
+  <!-- Loading spinner end-->
+  <!--<aura:handler event="c:MP_SalesReportEvent" action="{!c.getDealSalesAndDepartDate}"/>-->
+  <aura:handler name="init" value="{!this}" action="{!c.getData}" />
+  <!--lightning:spinner aura:id="mySpinner" variant="brand" size="large" class="slds-show"/>-->
+
+  <center>
+    <h2 class="slds-page-header__title slds-truncate">SALES REPORT</h2>
+  </center>
+  <br />
+  <div class="slds-align_absolute-left">
+    <lightning:button
+      variant="brand"
+      label="Raise A Question"
+      title="Case"
+      onclick="{!c.NavigateToCase}"
+    />
+  </div>
+  <br />
+  <div class="slds-box">
+    <h3 class="$color-background-stencil-alt">Filters</h3>
+    <br />
+    <div class="slds-grid">
+      <div class="slds-size_1-of-2">
+        <lightning:select
+          aura:id="dealPicklist"
+          name="deals"
+          label="Select Deal"
+          onchange="{!c.getDeparture}"
+        >
+          <!--option value="">choose one...</option-->
+          <aura:if isTrue="{!v.dealPreviousName != null}">
+            <aura:iteration items="{!v.dealList}" var="deal">
+              <option value="{!deal.Id}">{!deal.Name}-{!deal.title__c}</option>
+            </aura:iteration>
+            <aura:set attribute="else">
+              <aura:iteration items="{!v.dealList}" var="deal">
+               <option value="{!deal.Id}" selected = "{!deal.Id == v.dealList[1].Id}">
+                <!--<option value="{!deal.Id}">-->
+                 <!--{!deal.Name}-{!deal.title__c}-->
+                  {!deal.Name}
+                </option>
+              </aura:iteration>
+            </aura:set>
+          </aura:if>
+        </lightning:select>
+      </div>
+
+      <div class="slds-size_1-of-2">
+        <lightning:select aura:id="tourDepartureDatePicklist" name="TourDeptDate" label="Select Tour Departure Date" onchange="{!c.getTourDeptDate}">
+          <aura:if isTrue="{!v.depPreviousName != null}">
+            <aura:iteration items="{!v.tourDeptDateList}" var="dep">
+              <option value="{!tourDeptDate.Id}">{!tourDeptDate}</option>
+            </aura:iteration>
+            <aura:set attribute="else">
+              <option value="">All Tour Departure Dates</option>
+              <aura:iteration items="{!v.tourDeptDateList}" var="tourDeptDate">
+                <option value="{!tourDeptDate.Id}">{!tourDeptDate}</option>
+
+                  </aura:iteration>
+            </aura:set>
+          </aura:if>
+        </lightning:select>
+      </div>
+    </div>
+    <aura:renderIf isTrue="{!v.showDeparture}">
+      <div class="slds-grid">
+        <div class="slds-size_1-of-2">
+          <lightning:select
+            aura:id="ComponentNamePicklist"
+            name="Component"
+            label="Select Option and Component Name"
+            onchange="{!c.getComponentNameList}"
+          >
+            <option value="">choose one...</option>
+
+            <aura:if isTrue="{!not(empty(v.LandActivityNameList))}">
+              <optgroup label="Land Activity">
+                <aura:iteration items="{!v.LandActivityNameList}" var="landAct">
+                  <option value="{!landAct.value}">{!landAct.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.LandNameList))}">
+              <optgroup label="Land">
+                <aura:iteration items="{!v.LandNameList}" var="LandPic">
+                  <option value="{!LandPic.value}">{!LandPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.LandTourNameList))}">
+              <optgroup label="Land Tour">
+                <aura:iteration items="{!v.LandTourNameList}" var="LandTourPic">
+                  <option value="{!LandTourPic.value}">
+                    {!LandTourPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.FlightNameList))}">
+              <optgroup label="Flight">
+                <aura:iteration items="{!v.FlightNameList}" var="FlightPic">
+                  <option value="{!FlightPic.value}">{!FlightPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.CruiseNameList))}">
+              <optgroup label="Cruise">
+                <aura:iteration items="{!v.CruiseNameList}" var="CruisePic">
+                  <option value="{!CruisePic.value}">{!CruisePic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.RailNameList))}">
+              <optgroup label="Rail">
+                <aura:iteration items="{!v.RailNameList}" var="RailPic">
+                  <option value="{!RailPic.value}">{!RailPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.TotalPackageNameList))}">
+              <optgroup label="Total Package">
+                <aura:iteration
+                  items="{!v.TotalPackageNameList}"
+                  var="TotalPackagePic"
+                >
+                  <option value="{!TotalPackagePic.value}">
+                    {!TotalPackagePic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.AccomNameList))}">
+              <optgroup label="Accom">
+                <aura:iteration items="{!v.AccomNameList}" var="AccomPic">
+                  <option value="{!AccomPic.value}">{!AccomPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.TransferNameList))}">
+              <optgroup label="Transfer">
+                <aura:iteration items="{!v.TransferNameList}" var="TransferPic">
+                  <option value="{!TransferPic.value}">
+                    {!TransferPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.AENameList))}">
+              <optgroup label="AE">
+                <aura:iteration items="{!v.AENameList}" var="AEPic">
+                  <option value="{!AEPic.value}">{!AEPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.SBNameList))}">
+              <optgroup label="SB">
+                <aura:iteration items="{!v.SBNameList}" var="SBPic">
+                  <option value="{!SBPic.value}">{!SBPic.label}</option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.StopOverNameList))}">
+              <optgroup label="S/Over">
+                <aura:iteration items="{!v.StopOverNameList}" var="StopOverPic">
+                  <option value="{!StopOverPic.value}">
+                    {!StopOverPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.FlightUpgradeNameList))}">
+              <optgroup label="Flight Upgrade">
+                <aura:iteration
+                  items="{!v.FlightUpgradeNameList}"
+                  var="FlightUpgradePic"
+                >
+                  <option value="{!FlightUpgradePic.value}">
+                    {!FlightUpgradePic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.DepartureCitySurchargeNameList))}">
+              <optgroup label="Departure City Surcharge">
+                <aura:iteration
+                  items="{!v.DepartureCitySurchargeNameList}"
+                  var="DepartureCitySurchargePic"
+                >
+                  <option value="{!DepartureCitySurchargePic.value}">
+                    {!DepartureCitySurchargePic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.AEAccommodationNameList))}">
+              <optgroup label="AE Accommodation">
+                <aura:iteration
+                  items="{!v.AEAccommodationNameList}"
+                  var="AEAccommodationPic"
+                >
+                  <option value="{!AEAccommodationPic.value}">
+                    {!AEAccommodationPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.SBAccommodationNameList))}">
+              <optgroup label="SB Accommodation">
+                <aura:iteration
+                  items="{!v.SBAccommodationNameList}"
+                  var="SBAccommodationPic"
+                >
+                  <option value="{!SBAccommodationPic.value}">
+                    {!SBAccommodationPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+
+            <aura:if isTrue="{!not(empty(v.DayTourNameList))}">
+              <optgroup label="Day Tour">
+                <aura:iteration items="{!v.DayTourNameList}" var="DayTourPic">
+                  <option value="{!DayTourPic.value}">
+                    {!DayTourPic.label}
+                  </option>
+                </aura:iteration>
+              </optgroup>
+            </aura:if>
+          </lightning:select>
+        </div>
+
+        <div class="slds-size_1-of-2">
+          <lightning:select
+            aura:id="departurePicklist"
+            name="departureDate"
+            label="Select Start Date"
+            onchange="{!c.getOrderList}"
+          >
+            <!--option value="">choose one...</option-->
+
+            <aura:if isTrue="{!v.depPreviousName != null}">
+              <aura:iteration items="{!v.depDateList}" var="dep">
+                <option value="{!dep.Id}">{!dep}</option>
+              </aura:iteration>
+              <aura:set attribute="else">
+                <option value="">All Start Dates</option>
+                <aura:iteration items="{!v.depDateList}" var="dep">
+                  <option value="{!dep.Id}">{!dep}</option>
+                </aura:iteration>
+              </aura:set>
+            </aura:if>
+          </lightning:select>
+        </div>
+      </div>
+      <br />
+      <br />
+      <aura:if isTrue="{!v.IsShowcomponentlist}">
+        <div style="margin-left: 10px;margin-top:30px; font-size:18px;font-weight:bold; color:#000000"><h2 class="slds-page-header__title slds-truncate">PDF Deal itinerary:</h2><lightning:formattedUrl class="blackColor" value ="{!v.dealPDFUrl}" label="{!v.dealIdTitle}"></lightning:formattedUrl></div>
+
+      </aura:if>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 55% !important">
+              <aura:if isTrue="{!v.IsShowcomponentlist}">
+                <aura:if isTrue="{!not(empty(v.ordList))}">
+                  <div style="margin-left: -16px">
+                    <table
+                      class="slds-table slds-table_cell-buffer slds-table_header-hidden"
+                      aria-label="Example table of Opportunities with a single column"
+                    >
+                      <thead>
+                        <tr class="slds-line-height_reset">
+                          <th
+                            class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                            scope="col"
+                            style="text-align: left"
+                          >
+                            <div
+                              class=""
+                              title=""
+                              style="text-align: left; color: black"
+                            >
+                              <b>Total information</b>
+                            </div>
+                          </th>
+                          <th
+                            class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                            scope="col"
+                          >
+                            <div
+                              class="slds-truncate"
+                              title=""
+                              style="color: black"
+                            >
+                              <b>Passengers</b>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <aura:if isTrue="{!not(empty(v.LandActivityInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Land Activity</b>
+                          </div>
+                          <tr class="slds-cell-wrap">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandActivityInfoList}"
+                                var="LandActivity"
+                              >
+                                <tr>
+                                  <div class="slds-cell-wrap">
+                                    {!LandActivity}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandActivityPassInfoList}"
+                                var="LandActivityPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!LandActivityPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.LandNameInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Land</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandNameInfoList}"
+                                var="LandNameInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!LandNameInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandNamePassInfoList}"
+                                var="LandNamePass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!LandNamePass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.LandTourInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Land Tour</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandTourInfoList}"
+                                var="LandTourInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!LandTourInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.LandTourPassInfoList}"
+                                var="LandTourPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!LandTourPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.FlightInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Flight</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.FlightInfoList}"
+                                var="FlightInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!FlightInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.FlightPassInfoList}"
+                                var="FlightPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!FlightPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.RailInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Rail</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.RailInfoList}"
+                                var="RailInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!RailInfo}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.RailPassInfoList}"
+                                var="RailPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!RailPass}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.TransferInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Transfer</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.TransferInfoList}"
+                                var="Transfer"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!Transfer}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.TransferPassInfoList}"
+                                var="Transferpass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!Transferpass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.AEInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>AE</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration items="{!v.AEInfoList}" var="AE">
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!AE}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.AEPassInfoList}"
+                                var="AEPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!AEPass}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.SBInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>SB</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration items="{!v.SBInfoList}" var="SB">
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!SB}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.SBPassInfoList}"
+                                var="SBPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!SBPass}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.StopOverInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>S/Over</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.StopOverInfoList}"
+                                var="StopOverInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!StopOverInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.StopOverPassInfoList}"
+                                var="StopOverPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!StopOverPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if
+                          isTrue="{!not(empty(v.FlightUpgradeInfoList))}"
+                        >
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Flight Upgrade</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.FlightUpgradeInfoList}"
+                                var="FlightUpgradeInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!FlightUpgradeInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.FlightUpgradePassInfoList}"
+                                var="FlightUpgradePass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!FlightUpgradePass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if
+                          isTrue="{!not(empty(v.DepartureCitySurchargeInfoList))}"
+                        >
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Departure City Surcharge</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.DepartureCitySurchargeInfoList}"
+                                var="DepartureCitySurchargeInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!DepartureCitySurchargeInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.DepartureCitySurchargePassInfoList}"
+                                var="DepartureCitySurchargePass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!DepartureCitySurchargePass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if
+                          isTrue="{!not(empty(v.AEAccommodationInfoList))}"
+                        >
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>AE Accommodation</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.AEAccommodationInfoList}"
+                                var="AEAccommodationInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!AEAccommodationInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.AEAccommodationPassInfoList}"
+                                var="AEAccommodationPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!AEAccommodationPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if
+                          isTrue="{!not(empty(v.SBAccommodationInfoList))}"
+                        >
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>SB Accommodation</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.SBAccommodationInfoList}"
+                                var="SBAccommodationInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!SBAccommodationInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.SBAccommodationPassInfoList}"
+                                var="SBAccommodationPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!SBAccommodationPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.DayTourInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Day Tour</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.DayTourInfoList}"
+                                var="DayTourInfo"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!DayTourInfo}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.DayTourPassInfoList}"
+                                var="DayTourPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!DayTourPass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.CruiseInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Cruise</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.CruiseInfoList}"
+                                var="Cruise"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!Cruise}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.CruisePassInfoList}"
+                                var="CruisePass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!CruisePass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.AccomInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Accom</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.AccomInfoList}"
+                                var="Accom"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!Accom}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.AccomPassInfoList}"
+                                var="AccomPass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">{!AccomPass}</div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+
+                        <aura:if isTrue="{!not(empty(v.TotalPackageInfoList))}">
+                          <div
+                            style="
+                              color: black;
+                              width: 300px;
+                              padding-left: 25px;
+                            "
+                          >
+                            <b>Total Package</b>
+                          </div>
+                          <tr class="slds-hint-parent">
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 90% !important;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.TotalPackageInfoList}"
+                                var="TotalPackage"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!TotalPackage}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                            <td
+                              data-label=""
+                              class="slds-form-element slds-size--1-of-12 td-fixed-width"
+                              style="
+                                width: 10% !important;
+                                padding-left: 25px;
+                                color: #393838;
+                                font-size: 12px;
+                              "
+                            >
+                              <aura:iteration
+                                items="{!v.TotalPackagePassInfoList}"
+                                var="TotalPackagePass"
+                              >
+                                <tr class="slds-hint-parent">
+                                  <div class="slds-cell-wrap">
+                                    {!TotalPackagePass}
+                                  </div>
+                                </tr>
+                              </aura:iteration>
+                            </td>
+                          </tr>
+                        </aura:if>
+                      </tbody>
+                    </table>
+                  </div>
+                </aura:if>
+              </aura:if>
+            </th>
+
+            <th style="width: 45% !important">
+              <aura:if isTrue="{!v.IsShowcomponentlist}">
+                <aura:if isTrue="{!not(empty(v.ordList))}">
+                  <div style="">
+                    <c:mP_TotalPaxTravellingBasedonDepartureDate
+                      aura:id="dealId"
+                      CardTitle="{!v.dealIdForTotalPAX}"
+                    ></c:mP_TotalPaxTravellingBasedonDepartureDate>
+                  </div>
+                </aura:if>
+              </aura:if>
+            </th>
+          </tr>
+        </thead>
+      </table>
+
+      <br />
+      <br />
+      <!--<div class=".slds-size_1-of-2">
+                <lightning:input type="search" onchange="{!c.filter}" value="{!v.filter}" placeholder="Search By Order Number,Purchaser Account,Sub Options Purchased or Option Purchased"/>
+            </div>  <br></br>-->
+      <aura:renderIf isTrue="{!v.showOrder}">
+        <div>Showing {!v.currentDataSize} OF {!v.dataSize}</div>
+        <div class="slds-scrollable_x">
+          <!--lightning:datatable data="{!v.ordList}"
+                                         columns="{!v.bccolumns}"
+                                         keyField="id"
+                                         hideCheckboxColumn="true"
+                                         onrowaction="{!c.viewRecord}"
+                                         onsort="{!c.updateColumnSorting}"
+                                         sortedBy="{!v.sortedBy}"  
+                                         sortedDirection="{!v.sortedDirection}"
+                                         enableInfiniteLoading="{!v.enableInfiniteLoading}"
+                                         loadMoreOffset="{!v.loadOffset}"
+                                         onloadmore="{!c.handleLoadMore}"
+                                         class="slds-scrollable_x"
+                                         />-->
+
+          <!--custom table start-->
+
+          <table class="slds-table table-hover" role="grid">
+           <thead >
+                            <tr style="border-top: 2px solid black;" >          
+                                
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-truncate" title="Field Name" Style ="color:black;">Deal</div>
+                                </th>
+                                
+                                <!--th class="slds-is-sortable" scope="col">
+                                    <div  style = "MARGIN-LEFT: -5PX;">Start Date
+                                        <button class="slds-button slds-button-icon-bare">
+                                            <lightning:icon iconName="action:sort" size="x-small" alternativeText="Indicates arrowdown" onclick="{!c.sortDepDate}"/>
+                                           
+                                            <span class="slds-assistive-text">Sort</span>
+                                        </button>
+                                    </div>
+                                </th>-->
+                                
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-line-clamp" title="Field Name" style = "MARGIN-LEFT: 2PX; color:black;">Order Number
+                                    </div>
+                                </th>
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-line-clamp" title="Field Name" style = "MARGIN-LEFT: -5PX; color:black;width:50px">Old Order Number
+                                    </div>
+                                </th>
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-line-clamp" title="Field Name" style = "MARGIN-LEFT: -5PX; color:black;">Min Number Met
+                                    </div>
+                                </th>
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-truncate slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate slds-m-vertical_small slds-m-horizontal_large slds-line-clamp" style = "MARGIN-LEFT: 5PX; color:black;" title="Field Name">Status
+                                    </div>
+                                </th> 
+                                <th class="" scope="col" style="border-top: 2px solid black;">
+                                    <div class="slds-line-clamp" title="Field Name" style = "MARGIN-LEFT: -5PX; color:black;">Account Name</div>
+                                </th>
+                                <th class="slds-is-sortable " scope="col" style="border-top: 2px solid black;">
+                                    <div class ="" style ="color: black; MARGIN-LEFT: -10PX;margin-top:5px;">Tour Departure Date 
+                                        <button class="slds-button slds-button-icon-bare">
+                                            <lightning:icon iconName="action:sort" size="x-small" alternativeText="Indicates arrowdown" onclick="{!c.sortDepDate}"/>
+                                            
+                                            <span class="slds-assistive-text">Sort</span>
+                                        </button>
+                                    </div>
+                                </th>
+                                
+                                <tr>
+                                    <th class="slds-is-sortable" scope="col" >
+                                        <div class ="" style ="color: black; MARGIN-LEFT: -10PX;margin-top:10px;">Start Date
+                                            <button class="slds-button slds-button-icon-bare">
+                                                <lightning:icon iconName="action:sort" size="x-small" alternativeText="Indicates arrowdown" onclick="{!c.sortDepDate}"/>
+                                                
+                                                <span class="slds-assistive-text">Sort</span>
+                                            </button>
+                                        </div>
+                                    </th>
+                                    <th class="" scope="col" WIDTH= "30%" >
+                                        <div class="slds-truncate" title="Field Name" style = "margin-top:8px; margin-left:40px; color:black;width:80px !important;">Option</div>
+                                    </th>
+                                    <th class="" scope="col" WIDTH= "25%" >
+                                        <div class=" slds-line-clamp" title="Field Name" style = "margin-top:8px; margin-left:-5px; color:black;width:120px !important;">Component Name</div>
+                                    </th>
+                                    
+                                    <th class="" scope="col"  WIDTH= "15%" >
+                                        <div class="slds-truncate" style = "margin-top:8px;text-align:right;padding-left:15px; color:black;width:80px !important;" title="Field Name">Passengers</div>
+                                    </th>
+                                    <th class="" scope="col"  WIDTH= "5%" >
+                                        <div class="slds-truncate slds-line-clamp" style = "width:80px;margin-top:8px;text-align:right; color:black; margin-left:8pxwidth:80px !important;" title="Field Name">Room/Cabin Required</div>
+                                    </th>
+                                    
+                                    
+                                    <th style=""></th>  
+                                </tr>
+                            </tr>
+                        </thead>
+                         <tbody>
+              <aura:if isTrue="{!not(empty(v.ordList))}">
+                <aura:iteration
+                  items="{!v.ordList}"
+                  var="tableRow"
+                  indexVar="index"
+                >
+                  <tr
+                    class="hidden-table1 slds-hint-parent"
+                    id="{!index}"
+                    style="border-top: 2px solid black"
+                  >
+                    <td scope="row" style="border-top: 2px solid black">
+                      {!tableRow.Deal}
+                    </td>
+                    <!--<td scope="row" ><div>{!tableRow.StartDate}</div></td>-->
+                    <td
+                      scope="row"
+                      style="
+                        width: 50px;
+                        padding-left: -25px;
+                        border-top: 2px solid black;
+                      "
+                    >
+                      <div>{!tableRow.OrderNumber}</div>
+                    </td>
+                    <td
+                      scope="row"
+                      style="
+                        width: 50px;
+                        padding-left: 25px;
+                        border-top: 2px solid black;
+                      "
+                    >
+                      <div>{!tableRow.OldOrderNumber}</div>
+                    </td>
+                    <td
+                      scope="row"
+                      style="
+                        width: 50px;
+                        padding-left: 15px;
+                        border-top: 2px solid black;
+                      "
+                    >
+                      <div>{!tableRow.MinNumberMet}</div>
+                    </td>
+
+                    <td
+                      scope="row"
+                      style="border-top: 2px solid black"
+                      class="slds-text-align_center slds-cell_action-mode"
+                    >
+                      <div
+                        style="
+                          text-align: center;
+                          width: 40px;
+                          padding-left: -20px;
+                        "
+                      >
+                        {!tableRow.Status}
+                      </div>
+                    </td>
+                    <td scope="row" style="border-top: 2px solid black">
+                      <div
+                        class="slds-line-clamp"
+                        style="
+                          text-align: center;
+                          width: 80px;
+                          padding-left: -10px;
+                        "
+                      >
+                        {!tableRow.AccountName}
+                      </div>
+                    </td>
+                    <td scope="row" style="border-top: 2px solid black">
+                      <div style="margin-left: 25px">
+                        {!tableRow.TourDepartureDate}
+                      </div>
+                    </td>
+
+                    <aura:iteration
+                      items="{!tableRow.component }"
+                      var="componentRow"
+                      indexVar="index"
+                    >
+                      <tr class="hidden-table" id="{!index}">
+                        <aura:if
+                          isTrue="{!and(componentRow.ComponentName,index != 0)}"
+                        >
+                          <td
+                            width="10%"
+                            scope="row"
+                            style="border-top: 1px solid grey"
+                          >
+                            <div
+                              class="slds-line-clamp"
+                              style="text-align: center; margin-left: -40px"
+                            >
+                              {!componentRow.StartDate}
+                            </div>
+                          </td>
+                          <td
+                            width="10%"
+                            scope="row"
+                            style="border-top: 1px solid grey"
+                          >
+                            <div
+                              class="slds-line-clamp"
+                              style="
+                                text-align: center;
+                                width: 120px !important;
+                                margin-left: 15px;
+                              "
+                            >
+                              {!componentRow.OptionData}
+                            </div>
+                          </td>
+                          <td
+                            width="12%"
+                            scope="row"
+                            style="border-top: 1px solid grey"
+                          >
+                            <div
+                              class="slds-line-clamp"
+                              style="
+                                text-align: center;
+                                width: 140px !important;
+                                margin-left: -25px;
+                              "
+                            >
+                              {!componentRow.ComponentName}
+                            </div>
+                          </td>
+                          <td
+                            width="10%"
+                            scope="row"
+                            style="border-top: 1px solid grey"
+                          >
+                            <div
+                              class="slds-line-clamp"
+                              style="
+                                text-align: center;
+                                width: 40px !important;
+                                margin-left: 10px;
+                              "
+                            >
+                              {!componentRow.PaxTravelling}
+                            </div>
+                          </td>
+
+                          <aura:set attribute="else">
+                            <td width="10%" scope="row">
+                              <div
+                                class="slds-line-clamp"
+                                style="text-align: center; margin-left: -40px"
+                              >
+                                {!componentRow.StartDate}
+                              </div>
+                            </td>
+                            <td width="10%" scope="row">
+                              <div
+                                class="slds-line-clamp"
+                                style="
+                                  text-align: center;
+                                  margin-left: 15px;
+                                  width: 120px !important;
+                                "
+                              >
+                                {!componentRow.OptionData}
+                              </div>
+                            </td>
+                            <td width="12%" scope="row">
+                              <div
+                                class="slds-line-clamp"
+                                style="
+                                  text-align: center;
+                                  margin-left: -25px;
+                                  width: 140px !important;
+                                "
+                              >
+                                {!componentRow.ComponentName}
+                              </div>
+                            </td>
+                            <td width="10%" scope="row">
+                              <div
+                                class="slds-line-clamp"
+                                style="
+                                  text-align: center;
+                                  margin-left: 10px;
+                                  width: 40px !important;
+                                "
+                              >
+                                {!componentRow.PaxTravelling}
+                              </div>
+                            </td>
+                          </aura:set>
+                        </aura:if>
+
+                        <aura:if isTrue="{!index != 0}">
+                          <aura:if
+                            isTrue="{!componentRow.RoomsRequired == null }"
+                          >
+                            <td
+                              width="8%"
+                              scope="row"
+                              style="border-top: 1px solid grey"
+                            >
+                              <div
+                                class="slds-line-clamp"
+                                style="text-align: center; margin-left: -20px"
+                              >
+                                N/A
+                              </div>
+                            </td>
+
+                            <aura:set attribute="else">
+                              <td
+                                width="8%"
+                                scope="row"
+                                style="border-top: 1px solid grey"
+                              >
+                                <div
+                                  class="slds-line-clamp"
+                                  style="text-align: center; margin-left: -20px"
+                                >
+                                  {!componentRow.RoomsRequired}
+                                </div>
+                              </td>
+                            </aura:set>
+                          </aura:if>
+                          <aura:set attribute="else">
+                            <aura:if
+                              isTrue="{!componentRow.RoomsRequired == null }"
+                            >
+                              <td width="8%" scope="row" style="">
+                                <div
+                                  class="slds-line-clamp"
+                                  style="text-align: center; margin-left: -20px"
+                                >
+                                  N/A
+                                </div>
+                              </td>
+
+                              <aura:set attribute="else">
+                                <td width="8%" scope="row" style="">
+                                  <div
+                                    class="slds-line-clamp"
+                                    style="
+                                      text-align: center;
+                                      margin-left: -20px;
+                                    "
+                                  >
+                                    {!componentRow.RoomsRequired}
+                                  </div>
+                                </td>
+                              </aura:set>
+                            </aura:if>
+                          </aura:set>
+                        </aura:if>
+                      </tr>
+                    </aura:iteration>
+                  </tr>
+                </aura:iteration>
+                <aura:set attribute="else">
+                  <center>
+                    <h1
+                      class="slds-page-header__title slds-truncate"
+                      style="color: Red"
+                    >
+                      No Orders Yet.
+                    </h1>
+                  </center>
+                </aura:set>
+              </aura:if>
+            </tbody>
+          </table>
+
+          <!-- custom table end-->
+        </div>
+        <div class="slds-clearfix">
+          <lightning:layout>
+            <lightning:layoutItem padding="around-small" flexibility="auto">
+              <lightning:button
+                label="First"
+                iconName="utility:left"
+                iconPosition="left"
+                onclick="{!c.onFirst}"
+                disabled="{! v.currentPageNumber == 1}"
+              />
+              <lightning:button
+                iconName="utility:chevronleft"
+                iconPosition="left"
+                onclick="{!c.onPrev}"
+                disabled="{! v.currentPageNumber == 1}"
+              />
+              <span class="slds-p-horizontal_x-small">
+                <a
+                  onclick="{!c.processMe}"
+                  name="1"
+                  class="{! (v.currentPageNumber == 1) ? 'selected' : ''}"
+                  >1</a
+                >
+              </span>
+              <span class="slds-p-horizontal_xxx-small">
+                <a>...</a>
+              </span>
+
+              <aura:iteration items="{!v.pageList}" var="item">
+                <span class="slds-p-horizontal_x-small">
+                  <a
+                    onclick="{!c.processMe}"
+                    name="{!item}"
+                    class="{! (v.currentPageNumber == item) ? 'selected' : ''}"
+                    >{!item}</a
+                  >
+                </span>
+              </aura:iteration>
+
+              <span class="slds-p-horizontal_xxx-small">
+                <a>...</a>
+              </span>
+              <span class="slds-p-horizontal_x-small">
+                <a
+                  onclick="{!c.processMe}"
+                  name="{!v.totalPages}"
+                  class="{! (v.currentPageNumber == v.totalPages) ? 'selected' : ''}"
+                  >{!v.totalPages}</a
+                >
+              </span>
+              <lightning:button
+                iconName="utility:chevronright"
+                iconPosition="right"
+                disabled="{! v.currentPageNumber == v.totalPages}"
+                onclick="{!c.onNext}"
+              />
+              <lightning:button
+                label="Last"
+                iconName="utility:right"
+                iconPosition="right"
+                disabled="{! v.currentPageNumber == v.totalPages}"
+                onclick="{!c.onLast}"
+              />
+            </lightning:layoutItem>
+            <lightning:layoutItem>
+              <ui:inputSelect
+                aura:Id="noOfRec"
+                multiple="false"
+                label="Records Per Page"
+                change="{!c.onSelectChange}"
+              >
+                <ui:inputSelectOption label="5" text="5" value="true" />
+                <ui:inputSelectOption label="10" text="10" />
+                <ui:inputSelectOption label="20" text="20" />
+                <ui:inputSelectOption label="50" text="50" />
+                <ui:inputSelectOption label="100" text="100" />
+                <ui:inputSelectOption label="200" text="200" />
+                <ui:inputSelectOption label="ALL" text="ALL" /> </ui:inputSelect
+              ><br /><br />
+            </lightning:layoutItem>
+          </lightning:layout>
+        </div>
+        <br />
+        <div class="slds-align_absolute-center" style="margin-left: -170px">
+          <lightning:button
+            variant="brand"
+            label="Export as CSV"
+            title="download"
+            onclick="{!c.downloadCsv}"
+          />
+        </div>
+        <div
+          class="slds-align_absolute-center"
+          style="margin-left: 150px; margin-top: -32px"
+        >
+          <lightning:button
+            variant="brand"
+            label="Export as XLS"
+            title="download"
+            onclick="{!c.downloadXls}"
+          />
+        </div>
+      </aura:renderIf>
+    </aura:renderIf>
+  </div>
+
+  <br />
+  <br />
+  <aura:renderIf isTrue="{!v.showTADOrder}"> </aura:renderIf>
+
+  <aura:if isTrue="{!v.callLWC}">
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+      class="slds-modal slds-fade-in-open"
+    >
+      <div
+        class="slds-modal__container"
+        style="width: 93% !important; max-width: 93% !important"
+      >
+        <header class="slds-modal__header">
+          <lightning:buttonIcon
+            iconName="utility:close"
+            onclick="{! c.closeLWCModal }"
+            alternativeText="close"
+            variant="bare-inverse"
+            class="slds-modal__close"
+          />
+        </header>
+        <!--Modal/Popup Box Body Starts here-->
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+        >
+          <c:raiseAQuestion aura:id="raiseAQuestionId"></c:raiseAQuestion>
+        </div>
+        <!--Modal/Popup Box Footer Starts here-->
+        <footer class="slds-modal__footer">
+          <div class="slds-align_absolute-center">
+            <lightning:button
+              variant="brand"
+              label="Close"
+              title="Close"
+              onclick="{! c.closeLWCModal }"
+            />
+          </div>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+
+  <div class="slds-m-around_xx-large">
+   
+    <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+    <aura:if isTrue="{!v.isModalOpen}">
+         
+        <!-- Modal/Popup Box starts here-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <!--h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal/PopUp Box</h2>-->
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>The report you requested is too large. Please change the filter conditions to select a deal by clicking on 'Cancel' button.
+                        </b>
+                    </p>
+                     
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                        
+                        <lightning:button variant="brand"
+                                          label="Cancel the Request"
+                                          title="Cancel the Request"
+                                          onclick="{! c.closeModel }"
+                                          />
+                    </div>
+                   
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</div>
+</aura:component>

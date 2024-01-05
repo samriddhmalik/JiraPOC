@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>tad</compactLayoutAssignment>
+    <label>App</label>
+    <picklistValues>
+        <picklist>Lead_Source__c</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadpages</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seminar - Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seminar - Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sporting Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Word of mouth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_Not_Converted_L2__c</picklist>
+        <values>
+            <fullName>Availability specifically too close to travel date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blackout dates on AE and SB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booked with a competitor - More suitable Itinerary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booked with a competitor - Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booked with a competitor - can customise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Can%27t customise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cruise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates pax want NA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Didn%27t want flights included%2Fwanted flight with it</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doesn%27t accommodate children U12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doesn%27t accommodate family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free text section for answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notes section</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requested 2024 dates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requested triple share</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wanted business class and not available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wanted specific airline booked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_Not_Converted__c</picklist>
+        <values>
+            <fullName>Customer No Longer Wants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order booked by other Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>too expensive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Closed Converted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Not Converted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>why_lead_not_converted__c</picklist>
+        <values>
+            <fullName>Competitor better price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Didn%E2%80%99t want to include flights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not ready to purchase - general questions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Only wanted to pay deposit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>not the decision-maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>too expensive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

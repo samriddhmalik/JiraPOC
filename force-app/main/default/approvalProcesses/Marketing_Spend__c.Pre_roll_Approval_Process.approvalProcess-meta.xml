@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>ms_Channel_Name__c</field>
+        <field>Approval_Status__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Pre_roll_Pending_PublishingFinalApproval</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Pre_roll_Sub_Status_Update_FinRejection</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>sachin@psagtechnologies.com.p1</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Publishing Approval</description>
+        <label>Publishing Approval</label>
+        <name>Publishing_Approval</name>
+        <rejectionActions>
+            <action>
+                <name>Pre_roll_Pending_Publishing_Approval_Fin</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Pre_roll_Pending_Publishing_Approval_FinalRejection</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Pre_roll_Pending_ProductApproval</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Pre_roll_Sub_Status_Update</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>sachin@psagtechnologies.com.p1</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Product Approval</description>
+        <label>Product Approval</label>
+        <name>Product_Approval</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>Pre_roll_Pending_ProductApproval_FinRejection</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Sub_Status_Update_Final_Rejection</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>Pre-roll Approval Process</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.Sub_status__c</field>
+            <operation>equals</operation>
+            <value>Creative Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Marketing_Spend__c.ms_Channel_Name__c</field>
+            <operation>equals</operation>
+            <value>Pre-roll</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Pre_roll_InSubmission_Sub_Status_Update</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Pre_roll_Pending_PublishingApproval</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Pre-roll Approval Process</label>
+    <processOrder>4</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

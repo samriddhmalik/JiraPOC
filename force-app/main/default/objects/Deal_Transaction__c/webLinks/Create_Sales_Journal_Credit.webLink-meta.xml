@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Sales_Journal_Credit</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create Sales Journal Credit</masterLabel>
+    <openType>sidebar</openType>
+    <page>CL_DT_to_JNL_DC</page>
+    <protected>false</protected>
+</WebLink>

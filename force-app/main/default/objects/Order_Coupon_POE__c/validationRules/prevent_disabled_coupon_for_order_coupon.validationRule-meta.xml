@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_disabled_coupon_for_order_coupon</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(coupon__r.Status__c) =&apos;Disabled&apos; &amp;&amp;  Is_Migrated__c=false &amp;&amp; ISCHANGED(Journal__c) =false</errorConditionFormula>
+    <errorDisplayField>coupon__c</errorDisplayField>
+    <errorMessage>Disabled coupon can&apos;t be modified</errorMessage>
+</ValidationRule>

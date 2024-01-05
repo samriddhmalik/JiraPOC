@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NRMA_Coupon_for_Deal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK( coupon__r.Deal__c )),
+AND(OR(coupon__r.Deal__c &lt;&gt; order__r.deal__c,
+NOT( order__r.Account__r.NRMA_Member_Status_Valid__c ) 
+),
+TEXT(coupon__r.Deal_Promotion__c)= &quot;NRMA&quot;
+)
+)</errorConditionFormula>
+    <errorMessage>This is an NRMA Coupon and must be used with the deal specified and for a valid NRMA member. Please check the deal and the Member status of the NRMA membership number on the Person Account.</errorMessage>
+</ValidationRule>

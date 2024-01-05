@@ -1,0 +1,3 @@
+<apex:page >
+<apex:iframe src="https://help.tripadeal.com.au" height="1000px" width="100%" scrolling="true"/> 
+</apex:page>

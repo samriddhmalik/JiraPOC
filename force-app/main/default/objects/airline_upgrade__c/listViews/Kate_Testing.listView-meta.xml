@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kate_Testing</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>site__c</columns>
+    <columns>order_filter__c</columns>
+    <columns>data_refresh__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>site__c</field>
+        <operation>includes</operation>
+        <value>NZ</value>
+    </filters>
+    <label>Kate Testing</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

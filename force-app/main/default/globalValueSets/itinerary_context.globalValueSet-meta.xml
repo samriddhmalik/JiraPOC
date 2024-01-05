@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Main Package</fullName>
+        <default>false</default>
+        <label>Main Package</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre Extension</fullName>
+        <default>false</default>
+        <label>Pre Extension</label>
+    </customValue>
+    <customValue>
+        <fullName>Post Extension</fullName>
+        <default>false</default>
+        <label>Post Extension</label>
+    </customValue>
+    <customValue>
+        <fullName>Both Extensions</fullName>
+        <default>false</default>
+        <label>Both Extensions</label>
+    </customValue>
+    <customValue>
+        <fullName>Upgrade</fullName>
+        <default>false</default>
+        <label>Upgrade</label>
+    </customValue>
+    <customValue>
+        <fullName>Pre Extension with Upgrade</fullName>
+        <default>false</default>
+        <label>Pre Extension with Upgrade</label>
+    </customValue>
+    <customValue>
+        <fullName>Post Extension with Upgrade</fullName>
+        <default>false</default>
+        <label>Post Extension with Upgrade</label>
+    </customValue>
+    <customValue>
+        <fullName>Both Extensions with Upgrade</fullName>
+        <default>false</default>
+        <label>Both Extensions with Upgrade</label>
+    </customValue>
+    <masterLabel>Itinerary Context</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

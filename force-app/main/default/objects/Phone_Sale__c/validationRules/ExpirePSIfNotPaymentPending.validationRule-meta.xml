@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExpirePSIfNotPaymentPending</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(PRIORVALUE(payment_pending__c),NOT(payment_pending__c), CONTAINS(TEXT(Status__c),&apos;On Hold&apos;))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You must expire the Phone Sale Status</errorMessage>
+</ValidationRule>

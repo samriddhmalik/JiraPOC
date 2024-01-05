@@ -1,0 +1,14 @@
+.THIS .setToPink {
+    background-color: pink;
+}
+
+.THIS .setToblue svg{
+    fill: blue;
+}
+
+/*pbp-227*/
+.THIS.slds-spinner_container {  
+  z-index: 10000;
+  position: fixed;   
+}
+/*pbp-227*/

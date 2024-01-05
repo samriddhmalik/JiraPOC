@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3045_Optional</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>land_activity__c</columns>
+    <columns>land_activity_a__c</columns>
+    <columns>land_activity_b__c</columns>
+    <columns>land_activity_c__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>equals</operation>
+        <value>3045</value>
+    </filters>
+    <filters>
+        <field>land_activity__c</field>
+        <operation>contains</operation>
+        <value>Need International Flights?,Need Pre or Post accomodation</value>
+    </filters>
+    <filters>
+        <field>land_activity_a__c</field>
+        <operation>contains</operation>
+        <value>Need International Flights?,Need Pre or Post accomodation</value>
+    </filters>
+    <filters>
+        <field>land_activity_b__c</field>
+        <operation>contains</operation>
+        <value>Need International Flights?,Need Pre or Post accomodation</value>
+    </filters>
+    <filters>
+        <field>land_activity_c__c</field>
+        <operation>contains</operation>
+        <value>Need International Flights?,Need Pre or Post accomodation</value>
+    </filters>
+    <label>3045 - Optional Flights or Accom</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Customisation_CS</group>
+    </sharedTo>
+</ListView>

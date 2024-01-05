@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>receipted in full</fullName>
+        <default>false</default>
+        <label>receipted in full</label>
+    </customValue>
+    <customValue>
+        <fullName>missing det requested</fullName>
+        <default>false</default>
+        <label>missing det requested</label>
+    </customValue>
+    <customValue>
+        <fullName>npp pending</fullName>
+        <default>false</default>
+        <label>npp pending</label>
+    </customValue>
+    <customValue>
+        <fullName>npp supplied</fullName>
+        <default>false</default>
+        <label>npp supplied</label>
+    </customValue>
+    <customValue>
+        <fullName>npp actioned</fullName>
+        <default>false</default>
+        <label>npp actioned</label>
+    </customValue>
+    <masterLabel>a_Passport_Detail_Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

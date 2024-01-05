@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>TAD Chat Support Queue Final</name>
+    <queueMembers>
+        <users>
+            <user>kapil.sharma@psagtechnologies.com</user>
+            <user>munesh.singh@psagtechnologies.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>TAD_Chat_Support_Queue_Final</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

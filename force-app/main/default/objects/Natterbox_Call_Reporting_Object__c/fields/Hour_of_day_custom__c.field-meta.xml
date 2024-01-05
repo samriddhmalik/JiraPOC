@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hour_of_day_custom__c</fullName>
+    <externalId>false</externalId>
+    <formula>(CASE( VALUE(MID(TEXT(Call_Start_Date_Time__c),12,2)) , 
+0, 11, 
+1, 12, 
+2, 13, 
+3, 14, 
+4, 15, 
+5, 16, 
+6, 17, 
+7, 18, 
+8, 19, 
+9, 20, 
+10, 21, 
+11, 22, 
+12, 23, 
+13, 00, 
+14, 01, 
+15, 02, 
+16, 03, 
+17, 04, 
+18, 05, 
+19, 06, 
+20, 07, 
+21, 08, 
+22, 09, 
+23, 10, 
+0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Hour of day custom</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

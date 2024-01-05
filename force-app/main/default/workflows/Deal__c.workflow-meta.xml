@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approved_Deal_Alert</fullName>
+        <description>Approved Deal Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Online_Publisher</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Template_for_Publishes_Approved_Deal</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Approval_email_alert</fullName>
+        <description>Deal Approval email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Deal_Has_Been_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Rejected_email_alert</fullName>
+        <description>Deal Rejected email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Deal_Has_Been_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Deal_Submitted_for_Approval_Finance_Notification</fullName>
+        <description>Deal Submitted for Approval Finance Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Enter_Merchant_Payment_Terms_for_this_Component</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_For_Finance_Accounting_Treatment</fullName>
+        <description>Email Alert For Finance - Accounting Treatment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Finance_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Finance_Accounting_Treatment_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_For_Logistics_Additional_Service_by_Land_Ops</fullName>
+        <ccEmails>kate.bowie@tripadeal.com.au</ccEmails>
+        <description>Email Alert For Logistics - Additional Service by Land Ops</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Logistics_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Logistics_Add_Services_by_Land_Op</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_To_Notify_About_Deal_Needs_Approval</fullName>
+        <description>Email Alert To Notify About Deal Needs Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>irina.boriskina@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lilian.sweetnam@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lindsay.osullivan@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_for_Deal_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_To_Notify_About_Deal_Needs_Approval_Fin_Manager</fullName>
+        <description>Email Alert To Notify About Deal Needs Approval Fin Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tushar.puri@psagtechnologies.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_for_Deal_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_To_Notify_About_Deal_Needs_Approval_Intial_Step</fullName>
+        <description>Email Alert To Notify About Deal Needs Approval Intial Step</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adam@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_for_Deal_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_to_Fin_Manager_for_Deal_Approval</fullName>
+        <description>Email Notification to Fin Manager for Deal Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chris.cowan@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Template_for_Fin_Manager_When_Deal_Status_BDM_Submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notifications_to_BDM_and_Product_Analyst_when_Approved</fullName>
+        <description>Email Notifications to BDM and Product Analyst when Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_for_Approved_Contract_Draft</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notifications_to_BDM_and_Product_Analyst_when_Rejected</fullName>
+        <description>Email Notifications to BDM and Product Analyst when Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Product_Analyst</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Template_for_Rejected_Contract_Draft</template>
+    </alerts>
+    <alerts>
+        <fullName>Enter_Merchant_Payment_Terms_for_this_Component</fullName>
+        <description>Enter Merchant Payment Terms for this Component</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>michelle.hawes@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tom.gibson@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Enter_Merchant_Payment_Terms_for_this_Component</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Approval_Submitter_Rejection</fullName>
+        <description>Notification to Approval Submitter Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/CS_Rejection_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Deal_Publisher</fullName>
+        <description>Notification to Deal Publisher</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>sachin@psagtechnologies.com.p1</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_Template_for_Fin_Manager_When_Deal_Status_BDM_Submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_to_Deal_Publisher_3</fullName>
+        <description>Notification to Deal Publisher</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Deal_Rejection_Email_Template</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Agent_Address</fullName>
+        <field>Agent_Address__c</field>
+        <formula>Agents__r.Agency_Address__c</formula>
+        <name>Agent Address</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agent_Email</fullName>
+        <field>Agent_Email_Address__c</field>
+        <formula>Agents__r.PersonContact.Email</formula>
+        <name>Agent Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agent_Image_URL</fullName>
+        <field>Agent_Image_URL__c</field>
+        <formula>Agents__r.Image_URl__c</formula>
+        <name>Agent Image URL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agent_Name</fullName>
+        <field>Agent_Name__c</field>
+        <formula>Agents__r.Agent_Name__c</formula>
+        <name>Agent Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Agent_Phone</fullName>
+        <field>Agent_Phone__c</field>
+        <formula>Agents__r.Phone</formula>
+        <name>Agent Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Draft</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>Approval Status to Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Not_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not_approved</literalValue>
+        <name>Approval Status to Not Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Submitted_for_Appr</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Submitted for Approval</literalValue>
+        <name>Approval Status to Submitted for Appr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Deal_Status_to_Approved</fullName>
+        <field>Deal_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Change Deal Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Deal</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Close Deal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_Open_Date</fullName>
+        <field>Deal_Open_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Date Open Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deal_Status_Plan_Configure</fullName>
+        <field>Deal_Status__c</field>
+        <literalValue>Plan &amp; Configure</literalValue>
+        <name>Deal Status - Plan &amp; Configure</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Deal_status_Approved</fullName>
+        <field>Deal_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Deal status - Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_PLDC_Field</fullName>
+        <field>PLDC__c</field>
+        <name>Reset PLDC Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_to_Sync</fullName>
+        <field>Sync_to_AP__c</field>
+        <literalValue>1</literalValue>
+        <name>Set to Sync</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Submitter</fullName>
+        <field>Approval_Submitter__c</field>
+        <formula>$User.Email</formula>
+        <name>Update Approval Submitter email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_as_Deal_Draft_In_Progress</fullName>
+        <field>Deal_Status__c</field>
+        <literalValue>BDM - Deal Draft In Progress</literalValue>
+        <name>Update Status as Deal Draft In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_as_Plan_Confire</fullName>
+        <field>Deal_Status__c</field>
+        <literalValue>Plan &amp; Configure</literalValue>
+        <name>Update Status as Plan &amp; Confire</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Conga_workflow_TC_DEAL_PDF_DEAL</fullName>
+        <apiVersion>41.0</apiVersion>
+        <endpointUrl>https://workflow.congamerge.com/OBMListener.ashx</endpointUrl>
+        <fields>DealPDF3Portal__c</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>adam.bennett@tripadeal.co.nz</integrationUser>
+        <name>Conga workflow TC DEAL PDF(DEAL)</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>AP Sync deal to AP</fullName>
+        <actions>
+            <name>Set_to_Sync</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Deal__c.has_flights__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Conga workflow TC Deal PDF</fullName>
+        <actions>
+            <name>Agent_Address</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Agent_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Agent_Image_URL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Agent_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Agent_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Toggle field to fire formula on deal which allows deal pdf to be attached to the deal record then pulled down into TC site</description>
+        <formula>ISCHANGED (Toggle_Deal_PDF__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Deal Needs Approval Notification</fullName>
+        <actions>
+            <name>Email_Alert_To_Notify_About_Deal_Needs_Approval</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Deal__c.Deal_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted for Approval</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Deal Start date</fullName>
+        <actions>
+            <name>Date_Open_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Deal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Deal__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Hero</value>
+        </criteriaItems>
+        <description>Used to count the number of day that a field is live on site for
+BDM target</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>deal submitted for approval</fullName>
+        <actions>
+            <name>Enter_Merchant_Payment_Terms_for_this_Component</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Deal_Deal_c_Name_Submitted_for_Approval</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Deal__c.Deal_Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted for Approval</value>
+        </criteriaItems>
+        <description>- When the [Deal Status] field = &quot;Submitted for Approval&quot; create a task (&quot;Enter Merchant Payment Terms for this Component&quot;) and assign it to @Simona 
+- Send email notification of this task to Simona</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Deal_Deal_c_Name_Submitted_for_Approval</fullName>
+        <assignedTo>sachin@psagtechnologies.com.p1</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Deal Submitted for Approval</subject>
+    </tasks>
+    <tasks>
+        <fullName>Deal_Deal_c_Name_Submitted_for_Approval_simona_classic</fullName>
+        <assignedTo>sachin@psagtechnologies.com.p1</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Deal Submitted for Approval</subject>
+    </tasks>
+</Workflow>

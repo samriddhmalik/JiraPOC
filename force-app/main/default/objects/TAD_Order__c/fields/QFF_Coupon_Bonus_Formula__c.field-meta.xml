@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QFF_Coupon_Bonus_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( DATEVALUE(CreatedDate) &gt; DATE(2022,05,24) ,
+IF(NOT( ISBLANK(Qantas_Frequent_Flyer_Number__c) ),((Total_Order_Coupons_Discount__c ) * 
+(IF( Deal_Name__c=&apos;4254&apos; &amp;&amp; DATEVALUE(ordexp_purchase_date__c) &gt;= DATE(2023,09,27) &amp;&amp; DATEVALUE(ordexp_purchase_date__c) &lt;= DATE(2023,10,07), 6, 0) ) ), 0), 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>QFF Coupon Bonus Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

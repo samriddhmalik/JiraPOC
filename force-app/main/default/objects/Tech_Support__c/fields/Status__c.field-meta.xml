@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Submitted for approval</fullName>
+                <default>false</default>
+                <label>Submitted for approval</label>
+            </value>
+            <value>
+                <fullName>Approved - Pending assignment</fullName>
+                <default>false</default>
+                <label>Approved - Pending assignment</label>
+            </value>
+            <value>
+                <fullName>Assigned - Under review</fullName>
+                <default>false</default>
+                <label>Assigned - Under review</label>
+            </value>
+            <value>
+                <fullName>Assigned - In progress</fullName>
+                <default>false</default>
+                <label>Assigned - In progress</label>
+            </value>
+            <value>
+                <fullName>Assigned - Further information required</fullName>
+                <default>false</default>
+                <label>Assigned - Further information required</label>
+            </value>
+            <value>
+                <fullName>Actioned</fullName>
+                <default>false</default>
+                <label>Actioned</label>
+            </value>
+            <value>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <label>Deferred</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Scoping</fullName>
+                <default>false</default>
+                <label>Scoping</label>
+            </value>
+            <value>
+                <fullName>Develop</fullName>
+                <default>false</default>
+                <label>Develop</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <label>Testing</label>
+            </value>
+            <value>
+                <fullName>Roadblock</fullName>
+                <default>false</default>
+                <label>Roadblock</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

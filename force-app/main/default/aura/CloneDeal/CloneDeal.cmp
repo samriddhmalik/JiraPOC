@@ -1,0 +1,19 @@
+<aura:component  controller="cloneDealRecords" implements="force:lightningQuickAction,force:hasRecordId" >
+    <aura:attribute name="dealName" type="String" default=''/>
+    <aura:attribute name="dealId" type="String" default=''/>
+    
+    <br></br>
+    <br></br>
+    
+    <div class="slds-text-align--center">
+        <lightning:button variant="brand" label="Clone Deal" onclick="{! c.cloneDealRec }" />
+    </div> 
+    <br></br>
+    <br></br>
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    
+    <aura:if isTrue="{!not(equals(v.dealName, ''))}">
+        <div  align="center" style="font-size: 20px" class="slds-text"><b>Cloned Deal : <a  href="JavaScript:Void(0);" data-record="{!v.dealId}"  onclick="{!c.navigateToRecord}"><p>{!v.dealName}</p></a>  </b></div>
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,21 @@
+<aura:component controller="pnrManualSyncController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute type="String" name="reasonValue"/>
+    <aura:attribute name="accountContactWrapper" type="object"/>
+    <lightning:select name="Please select a Reason" label="Please select a Reason : " required="true" value="{!v.reasonValue}">
+        <option value="">choose one...</option>
+        <option value="Re-Issue">Re-Issue</option>
+      <!--  <option value="Voluntary Change">Voluntary Change</option> -->
+    </lightning:select>
+    
+    <br></br>
+    <br></br>
+    
+    <div>
+        <lightning:buttonGroup>
+            <lightning:button variant="brand" label="Submit" onclick="{!c.Confirm}"/>&nbsp;&nbsp;    
+            <lightning:button variant="destructive" label="Cancel" onclick="{!c.Cancel}"/>    
+        </lightning:buttonGroup>
+    </div>
+    
+</aura:component>

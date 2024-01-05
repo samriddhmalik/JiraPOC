@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DepartureDateOnlineNotification</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*IF(ISPICKVAL(online_status__c,&apos;Online&apos;), finalise_date__c = true, IF(AND(ISPICKVAL(online_status__c,&apos;Online&apos;), Departure_Date_Offline__c  &lt; TODAY()),true,false))*/
+/*
+IF(AND(ISPICKVAL(online_status__c,&apos;Online&apos;), Departure_Date_Offline__c  &lt; TODAY()),true,false)*/
+
+AND(
+ISCHANGED(online_status__c),
+ISPICKVAL(online_status__c,&apos;Online&apos;),
+Departure_Date_Offline__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Active__c</errorDisplayField>
+    <errorMessage>&quot;Departure Date Offline&quot; field should be in future, please populate or change &quot;BC Due Extension&quot; or change the “Flight book by” accordingly to be able to move it online.</errorMessage>
+</ValidationRule>

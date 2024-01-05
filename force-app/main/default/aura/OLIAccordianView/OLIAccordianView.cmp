@@ -1,0 +1,121 @@
+<aura:component controller="OLIAccordianViewController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,forceCommunity:searchInterface,force:lightningQuickAction" access="global">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="accList" type="order_line_item__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true" >
+        <aura:iteration items="{!v.accList}" var="acc">
+            <lightning:accordionSection name="A" label="{!acc.Consolidated_Field__c}" >
+                <aura:set attribute="body">
+                    <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+                           role="grid" style="table-layout:fixed;">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 30%;">
+                                    Name
+                                </th>
+                                <th scope="col">
+                                    Type
+                                </th>
+                                <th scope="col">
+                                    Passenger
+                                </th>                                
+                                <th scope="col">
+                                    Amount
+                                </th>
+                                <th scope="col">
+                                    Departure Date
+                                </th>
+				<th scope="col">
+                                    Status
+                                </th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!acc.AddOns__r}" var="addon">
+                                <tr class="slds-hint-parent">
+                                    <td role="gridcell" class="data-column">
+                                        <div class="">
+                                            <a  href="JavaScript:Void(0);" data-record="{!addon.Id}"  onclick="{!c.navigateToRecord}"> 
+                                                <p>{!addon.ordexp_AddOn_Name_For_Accordian__c }</p></a>
+                                        </div></td>
+                                    <td role="gridcell" class="data-column">
+                                        <div class="">
+                                            {!addon.Add_On_Type__c }
+                                             </div>
+                                    </td>
+                                    <td role="gridcell" class="data-column">
+                                        <div class="" data-label="Role">{!addon.ordexp_passenger_name__c}</div>
+                                    </td>                                    
+                                    <td role="gridcell" class="data-column">
+                                        <div class="" data-label="Role">${!addon.ordexp_amount__c}</div>
+                                    </td>
+                                    <td role="gridcell" class="data-column">
+                                        <div class="" data-label="Role">{!addon.Date_Display_on_Accordian__c}</div>
+                                    </td>
+				    <td role="gridcell" class="data-column">
+                                        <div class="" data-label="Role">{!addon.AddOn_Status__c}</div>
+                                    </td>                                    
+                                </tr>
+                            </aura:iteration>
+                            <aura:iteration items="{!acc.Visa_Insurance_POE__r}" var="visa">
+                                <aura:if isTrue="{!visa.RecordType.Name == 'Visa'}">
+                                    <tr class="slds-hint-parent">
+                                        <td role="gridcell" class="data-column">
+                                            <div class="">
+                                                <a  href="JavaScript:Void(0);" data-record="{!visa.Id}"  onclick="{!c.navigateToRecord}">
+                                                    <p>{!visa.Name}</p></a>
+                                            </div></td>
+                                        <td role="gridcell" class="data-column">
+                                            <div class="">{!visa.RecordType.Name}</div>
+                                        </td>
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role">{!visa.ordexp_passenger_name__c}</div>
+                                        </td>                                    
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role">${!visa.Total_to_TAD__c}</div>
+                                        </td> 
+                                        <td role="gridcell"  class="data-column">
+                                            <div class="" data-label="Role">{!visa.Date_Display_on_Accordian__c}</div>
+                                        </td> 
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role"></div>
+                                        </td> 
+                                    </tr>
+                                </aura:if>
+                                
+                                <aura:if isTrue="{!visa.RecordType.Name == 'Insurance'}">
+                                    <tr class="slds-hint-parent">
+                                        <td role="gridcell" class="data-column">
+                                            <div class="">
+                                                <a  href="JavaScript:Void(0);" data-record="{!visa.Id}"  onclick="{!c.navigateToRecord}">
+                                                    <p>{!visa.Name}</p></a>
+                                            </div></td>
+                                        <td role="gridcell" class="data-column">
+                                            <div class="">{!visa.RecordType.Name}</div>
+                                        </td>
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role">{!visa.ordexp_passenger_name__c}</div>
+                                        </td>                                    
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role">${!visa.Insurance_Sale_Price__c}</div>
+                                        </td> 
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role">{!visa.Date_Display_on_Accordian__c}</div>
+                                        </td> 
+                                        <td role="gridcell" class="data-column">
+                                            <div class="" data-label="Role"></div>
+                                        </td> 
+                                    </tr>
+                                </aura:if>
+                                
+                            </aura:iteration>
+                            
+                        </tbody>
+                    </table>
+                </aura:set>
+            </lightning:accordionSection>
+        </aura:iteration>        
+    </lightning:accordion>    
+</aura:component>

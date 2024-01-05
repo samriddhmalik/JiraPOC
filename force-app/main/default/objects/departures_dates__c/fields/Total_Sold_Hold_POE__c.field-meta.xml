@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Sold_Hold_POE__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*IF( Allocation_Table__r.Cruise_Solo_Check__c ,
+Allocation_Table__r.ON_Held__c + Allocation_Table__r.ON_Sold__c + Allocation_Table__r.ON_Solo_Cruise__c ,
+Allocation_Table__r.ON_Held__c + Allocation_Table__r.ON_Sold__c) */
+
+IF( Allocation_Table__r.Min_Number_Manager__c=null , Allocation_Table__r.Total_Allocation_In_Progress_ON__c+ Allocation_Table__r.Total_Allocation_Secured_ON__c ,Allocation_Table__r.Min_Number_Manager__r.Allocation_In_Progress__c + Allocation_Table__r.Min_Number_Manager__r.Allocation_Secured__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field refers to TAD orders (POE) - is a total of ON Held + ON Sold + counts Solo if &quot;Solo Check&quot; is true</inlineHelpText>
+    <label>Total Sold + Hold (POE)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

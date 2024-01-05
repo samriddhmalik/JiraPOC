@@ -1,0 +1,99 @@
+<aura:component controller="editTadOrderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    <aura:attribute name="tadOrderData" type="TAD_Order__c"/>
+    <aura:attribute name="hssAmountOriginal" type="Decimal" default="0"/>
+    <aura:attribute name="refundAmount" type="Decimal" default="0"/>
+    <aura:attribute name="disableResendPCButton" type="Boolean" default="true"/>
+    <aura:attribute name="isPaymentRecived" type="boolean" default="false"/><!--PSAG - 229-->
+    
+    <aura:attribute name="oliAddonData" type="editTadOrderController.oliAddonTableWrapper[]"/>
+    <aura:attribute name="depCityOptions" type="editTadOrderController.depCityrelatedFields[]"/>
+    <aura:attribute name="depCityStopoverMap" type="Map"/>
+    <aura:attribute name="disableConfirm" type="Boolean" default="true"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 95rem !important;
+        width:95% !important;
+        }
+        .modal-body{ 
+        height : 75vh !important; 
+        max-height: 75vh !important; 
+        } 
+    </aura:html>
+    
+    <div class="slds-theme_default">
+        
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>  
+        
+        <aura:if isTrue="{!(not(empty(v.oliAddonData)))}">
+            
+            <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid">
+                <thead class="header">
+                    <tr class="slds-line-height_reset slds-text-heading_small slds-text-align--center">
+                        <th scope="col" width="55%" class="slds-text-align_center"><b>OLI/Addon Name</b></th>
+                        <th scope="col" width="20%" class="slds-text-align_center"><b>PAX Quantity</b></th>
+                        <th scope="col" width="25%" class="slds-text-align_center"><b>Departure City</b></th>
+                    </tr>      
+                </thead> 
+                
+                <tbody class="body">
+                    <aura:iteration items="{!v.oliAddonData}" var="rd" indexVar="index">
+                        <tr>
+                            <td scope="row" class="slds-text-align--left slds-truncate"><ui:outputText value="{!rd.name}"/></td>
+                            <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.paxQty}"/></td>
+                            
+                            <aura:if isTrue="{!equals(rd.type, 'OLI')}">
+                                <td scope="row" class="slds-text-align--center">
+                                    <lightning:select name ="{!index}" class="nolabel" variant="label-hidden" aura:id="depCity" value ="{!rd.departureCity}" onchange="{!c.validateStopoverInfo}">
+                                        <option value="" text="--- NONE ---"/> 
+                                        <aura:iteration items="{!v.depCityOptions}" var="item">
+                                            <option value="{!item.value}" text="{!item.text}"/>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </td>
+                            </aura:if>
+                            <aura:if isTrue="{!equals(rd.type, 'AddOn')}">
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.addonMessage}"/></td>
+                            </aura:if>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table> 
+        </aura:if>
+        
+        <br></br>
+        <br></br>
+        <aura:if isTrue="{!v.isPaymentRecived==true}"><!--PSAG - 229-->
+        <div class="slds-text-align--left slds-text-heading_small">
+            <div class="slds-p-horizontal--large">
+                <b>FINANCIAL SUMMARY</b>
+            </div> 
+            <br></br>
+            <div class="slds-p-horizontal--large">
+                City Surcharge Amount: &nbsp; <ui:outputCurrency value="{!v.hssAmountOriginal}"/>
+            </div> 
+            <div class="slds-p-horizontal--large">
+                Refund Amount: &nbsp; <ui:outputCurrency value="{!v.refundAmount}"/>
+            </div> 
+        </div>
+        </aura:if>
+        <br></br>
+        
+        
+        <div class="slds-text-align--left slds-text-heading_small">
+        	<ui:inputCheckbox aura:id="confirmationResendCheckbox" label="Resend Purchase Confirmation" disabled="{!v.disableResendPCButton}"/>    
+        </div>
+       
+        
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopup }"/>
+            <lightning:button variant="brand" label="Confirm" title="Confirm" onclick="{! c.updateDepartureCity }" disabled="{!v.disableConfirm}"/>
+        </div>
+        
+    </div>
+    
+</aura:component>

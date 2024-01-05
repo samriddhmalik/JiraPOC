@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Novotel Twin Waters Resort Customer User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Novotel Twin Waters Resort Customer User</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Online_Publisher</parentRole>
+</Role>

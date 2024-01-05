@@ -1,0 +1,55 @@
+.myColor.THIS  {
+		background: white;
+
+}
+.textAreaBody {
+		--sds-c-textarea-sizing-min-height:300px;
+}
+.summarytextAreaBody{
+		--sds-c-textarea-sizing-min-height:300px;
+}
+.textAreaBodytour{
+		--sds-c-textarea-sizing-min-height:82px;
+		--sds-c-textarea-sizing-max-height:82px;
+}
+
+.tourtextAreaBody {
+		--sds-c-textarea-sizing-min-height:166px;
+		--sds-c-textarea-sizing-max-height:166px;
+}
+
+.requiredBody .slds-required {
+		display:none;
+}
+
+.attachtextAreaBody {
+		--sds-c-textarea-sizing-min-height:50px;
+		--sds-c-textarea-sizing-max-height:50px;
+}
+
+.dualboxtour {
+  --slds-dueling-list__column_responsive-min-width: fit-content;
+   	--slds-dueling-list__options-min-width: fit-content; 
+
+/* 	THIS.slds-dueling-list__column_responsive {
+    flex: 1 1 var(--lwc-sizeSmall,15rem);
+    flex-wrap: wrap;
+    overflow: hidden;
+		min-width: fit-content; }*/
+
+    
+}
+
+
+/* .slds-modal__content{  
+    overflow-y: hidden !important;  
+  } 
+  .runtime_platform_actionsQuickActionWrapper .quick-actions-panel {
+    overflow-y: hidden !important;
+}
+.runtime_platform_actionsQuickActionWrapper {
+    overflow-y: hidden !important;
+}
+.quick-actions-panel {
+    overflow-y: hidden !important;
+} */

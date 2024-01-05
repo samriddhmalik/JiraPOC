@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Unsuccessful__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Boolean used to keep the redirect disabled until the payment is successful</description>
+    <externalId>false</externalId>
+    <label>Payment Unsuccessful</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

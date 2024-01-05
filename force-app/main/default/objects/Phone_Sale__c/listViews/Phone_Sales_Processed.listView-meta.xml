@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Sales_Processed</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Status__c</columns>
+    <columns>Purchaser__c</columns>
+    <columns>Deal__c</columns>
+    <columns>options__c</columns>
+    <columns>sub_options__c</columns>
+    <columns>departure_cities__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>QTY_Number__c</columns>
+    <columns>Amount_Outstanding__c</columns>
+    <columns>Total_Price__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Processed</value>
+    </filters>
+    <label>Phone Sales Processed</label>
+    <sharedTo>
+        <role>Customer_Service_Manager</role>
+        <role>Team_Leader_Travel_Consultant</role>
+    </sharedTo>
+</ListView>

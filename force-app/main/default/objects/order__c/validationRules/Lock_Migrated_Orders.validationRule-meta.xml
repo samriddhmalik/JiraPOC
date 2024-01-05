@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Migrated_Orders</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( order_status__c , &quot;Migrated&quot;),
+NOT( $Permission.Legacy_Order_Migrate_Override ) 
+)</errorConditionFormula>
+    <errorMessage>This order has been Migrated to a TAD Order - you cannot change this order now. Please go to TAD Order and make all changes there.</errorMessage>
+</ValidationRule>

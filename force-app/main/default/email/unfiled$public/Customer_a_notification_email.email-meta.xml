@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TAD_Logo_Letterhead</letterhead>
+    <name>Customer a notification email</name>
+    <style>freeForm</style>
+    <subject>Refund Processed with No Cancellation, Internal reasons</subject>
+    <textOnly>Dear {!Cancellation_Refund_POE__c.Account_Name__c},
+
+We apologize for cancelling your order {!Cancellation_Refund_POE__c.TAD_Order_Name__c} due to unavoidable circumstances.
+
+Please accept our sincere apologies.
+Refund Transaction {Transaction Identifier} + {Transaction Date} has been processed for your case.
+
+Payment Transaction Details:
+{!Cancellation_Refund_POE__c.Refund_Amount__c}+ {Currency Code} + {Method}
+
+Terms: Please allow 14 to 21 business days for your money to be credited to your account, depending on your payment method.
+
+Please come again
+
+
+
+Kind Regards,
+The TripADeal Team
+
+www.tripadeal.com.au</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

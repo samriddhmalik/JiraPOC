@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Escape_Deal__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(ordexp_deal__r.Is_Escapes__c,
+ordexp_deal__r.show_as_escape__c,
+INCLUDES( ordexp_deal__r.deal_type__c , &quot;stay&quot;),
+INCLUDES( ordexp_deal__r.deal_type_nz__c , &quot;stay&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Escape Deal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

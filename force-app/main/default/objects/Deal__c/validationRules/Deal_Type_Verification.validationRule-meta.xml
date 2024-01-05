@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Type_Verification</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(  ISNULL(deal_type__c) ||  ISBLANK(deal_type__c)  , true, false)</errorConditionFormula>
+    <errorDisplayField>deal_type__c</errorDisplayField>
+    <errorMessage>Deal Type can&apos;t be null</errorMessage>
+</ValidationRule>

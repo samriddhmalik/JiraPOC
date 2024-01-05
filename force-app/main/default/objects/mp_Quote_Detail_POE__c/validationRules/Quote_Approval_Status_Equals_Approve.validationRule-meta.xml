@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Approval_Status_Equals_Approve</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( Quote_Approval_Status__c , &quot;Approve&quot;),
+OR(
+ ISNULL( mp_Merchant_Price__c ),
+ ISNULL(  mp_Merchant_Quoted_Details__c ),
+ 
+ ISPICKVAL(  Available_For__c , &apos;&apos;))  
+)</errorConditionFormula>
+    <errorMessage>If Quote Status is &apos;Approve&apos;, Merchant Price, Merchant Currency and Available For cannot be empty.</errorMessage>
+</ValidationRule>

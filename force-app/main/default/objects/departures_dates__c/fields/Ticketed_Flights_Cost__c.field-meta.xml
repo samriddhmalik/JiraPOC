@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticketed_Flights_Cost__c</fullName>
+    <externalId>false</externalId>
+    <label>Ticketed Flights Cost</label>
+    <summarizedField>order__c.Total_Flight_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>order__c.Total_Flight_Cost__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>order__c.departures_dates__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

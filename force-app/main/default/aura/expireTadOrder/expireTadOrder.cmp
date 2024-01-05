@@ -1,0 +1,52 @@
+<aura:component controller="expireTadOrderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="Name" type="String"/>
+    <aura:attribute name="price" type="Double"/>
+    <aura:attribute name="outstanding" type="Double"/>	
+    <aura:attribute name="showrecords" type="boolean" default="false"/>
+    <aura:attribute name="showmessage" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:75% !important;
+        }
+    </aura:html>
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    <aura:if isTrue="{!equals(v.showrecords, true)}">
+        <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_resizable-cols" role="grid">
+            <thead class="header">
+                <tr class="slds-line-height_reset slds-text-heading_small">
+                    <!-- <th scope="col" width="4%"></th>-->
+                    
+                    <th scope="col" width="21%" class="slds-text-align_center"><b>Name</b></th>
+                    <th scope="col" width="13%" class="slds-text-align_center"><b>Price</b></th>
+                    <th scope="col" width="13%" class="slds-text-align_center"><b>Outstanding</b></th>
+                </tr>      
+            </thead> 
+            
+            <tbody class="body">
+                
+                
+                <tr>
+                    <!--  <td scope="row">
+                                  <ui:inputCheckbox aura:id="recordSelected" value="{!rd.check}" change="c.checkChilds1" name="{!index}"/> </td>-->
+                    
+                    <td scope="row" class="slds-text-align--center">{!v.Name}</td>
+                    <td scope="row" class="slds-text-align--center">$&nbsp;{!v.price}</td>
+                    <td scope="row" class="slds-text-align--center">{!v.outstanding}</td>
+                </tr>  
+            </tbody>
+        </table>
+        <br/><br/><br/>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="Expire" onclick="{! c.expire }" />
+            
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!equals(v.showmessage,true)}">
+        <p><strong>No Record is available to expire!</strong></p>
+    </aura:if>
+</aura:component>

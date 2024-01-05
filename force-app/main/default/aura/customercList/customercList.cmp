@@ -1,0 +1,48 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="customercSearchController">
+
+    <aura:attribute name="passengers" type="customer__c[]"/>
+    <aura:attribute name="page" type="integer"/>
+    <aura:attribute name="pages" type="integer"/>
+    <aura:attribute name="total" type="integer"/>
+
+    <aura:handler event="aura:locationChange" action="{!c.agentChange}"/>
+    <aura:handler event="c:PageChange" action="{!c.pageChange}"/>
+
+    <c:Paginator page="{!v.page}" pages="{!v.pages}" total="{!v.total}"/>
+
+    <div class="container">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="PIF #">PIF #</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="First Name">First Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="DOB">DOB</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Order #">Order #</div>
+                </th>
+                <!--<th scope="col">-->
+                    <!--<div class="slds-truncate" title="Linked To">Linked To</div>-->
+                <!--</th>-->
+                <th scope="col">
+                    <div class="slds-truncate" title="Final">Final PIF</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:iteration items="{!v.passengers}" var="pax">
+                <c:customercListItem passenger="{!pax}"/>
+            </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    
+</aura:component>

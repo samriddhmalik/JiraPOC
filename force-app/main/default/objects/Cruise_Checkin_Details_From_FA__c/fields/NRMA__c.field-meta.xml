@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NRMA__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>NRMA</label>
+    <referenceTo>NRMA__c</referenceTo>
+    <relationshipLabel>Cruise Checkin Details(From FA)</relationshipLabel>
+    <relationshipName>Cruise_Checkin_Details_From_FA</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

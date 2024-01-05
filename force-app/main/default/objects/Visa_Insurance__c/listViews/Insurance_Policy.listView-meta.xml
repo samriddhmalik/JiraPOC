@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Policy</fullName>
+    <columns>NAME</columns>
+    <columns>orders__c</columns>
+    <columns>Passenger_Name__c</columns>
+    <columns>Contact_Phone__c</columns>
+    <columns>Insurance_Type__c</columns>
+    <columns>Policy_Number__c</columns>
+    <columns>Insurance_Region__c</columns>
+    <columns>Cover_Type__c</columns>
+    <columns>Insurance_Sale_Price__c</columns>
+    <columns>Consultant_Owner__c</columns>
+    <columns>Payment_via_External_Portal_insurance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Visa_Insurance__c.Insurance</value>
+    </filters>
+    <filters>
+        <field>Insurance_Status__c</field>
+        <operation>equals</operation>
+        <value>Policy</value>
+    </filters>
+    <label>Insurance - Policy</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+    </sharedTo>
+</ListView>

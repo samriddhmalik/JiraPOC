@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Deal_Reason__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select the reason why you are closing this deal.</inlineHelpText>
+    <label>Close Deal Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Low sales</fullName>
+                <default>false</default>
+                <label>Low sales</label>
+            </value>
+            <value>
+                <fullName>Reason A</fullName>
+                <default>false</default>
+                <label>Reason A</label>
+            </value>
+            <value>
+                <fullName>Reason B</fullName>
+                <default>false</default>
+                <label>Reason B</label>
+            </value>
+            <value>
+                <fullName>Reason C</fullName>
+                <default>false</default>
+                <label>Reason C</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

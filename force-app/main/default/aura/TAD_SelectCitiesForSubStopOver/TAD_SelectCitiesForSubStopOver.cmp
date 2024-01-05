@@ -1,0 +1,69 @@
+<aura:component implements="force:appHostable,force:hasSObjectName,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" controller="TAD_SelectCitiesForSubStopOver" >
+    
+    <aura:attribute name="recordsData" type="TAD_SelectCitiesForSubStopOver.selectActiveCityWrapper[]"/>
+    <aura:attribute name="options" type="List" default="[]"/>
+    <aura:attribute name="values" type="List" default="[]"/>
+    <aura:attribute name="requiredOptions" type="List" default="[]"/>
+    <aura:attribute name="failFlag" type="Boolean" default="false"/>
+    <aura:attribute name="successFlag" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:html tag="style">
+        .cuf-content {
+        padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        padding: 0rem !important;
+        }       
+        .slds-modal__content{
+        overflow-y:hidden !important;
+        height:unset !important;
+        max-height:unset !important;
+        }
+    </aura:html>
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        
+        <h4 class="title slds-text-heading--medium"><b>Assigning Cities to SubstopOver</b></h4>
+    </div>
+    <div class="slds-modal__content slds-p-around--x-small slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+        <form class="slds-form--stacked">
+            <aura:if isTrue="{!v.failFlag}">
+                <div class="slds-align_absolute-center">
+                    <lightning:icon iconName="action:close" alternativeText="Validation Failed"/>
+                </div>
+            </aura:if>   
+            <br></br>
+            <div aura:id="warningMessage" class="slds-text-heading_medium slds-align_absolute-center slds-hide">No active departure Cities available for this deal on stopOver.</div>
+            <aura:if isTrue="{!v.successFlag}">  
+                <lightning:dualListbox name="multipleOptions" 
+                                       
+                                       sourceLabel="Available" 
+                                       selectedLabel="Chosen" 
+                                       options="{!v.options}" 
+                                       value="{!v.values}" 
+                                       onchange="{! c.handleChange }"/>
+                
+            </aura:if>    
+        </form> 
+    </div>
+    
+    <footer class="slds-modal__footer">
+          <div class="slds-grid">
+        
+        <div class="slds-col slds-text-align--right">
+        <lightning:button  label="Cancel" title="Cancel" onclick="{! c.close }"/>
+            
+        </div>
+         <aura:if isTrue="{!v.successFlag}"> 
+           <div class="slds-col slds-text-align--left">
+            <lightning:button variant="brand"  label="Confirm" title="Confirm"  onclick="{! c.createSubstopOverDeptCity}"/>
+            </div>
+        </aura:if>
+        </div>
+    </footer>              
+    
+    
+    
+    
+    
+    
+</aura:component>

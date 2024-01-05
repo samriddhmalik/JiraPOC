@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stopover_allocation</fullName>
+    <active>true</active>
+    <description>Stopover allocation must be nominated if stopover is an inclusion.</description>
+    <errorConditionFormula>AND( TEXT(Stopover_Inclusion__c)  = &quot;INC&quot;  || TEXT(Stopover_Inclusion__c)  = &quot;OPT&quot;, ISBLANK( Stopover_Allocation__c )||  Stopover_Allocation__c  = 0 )</errorConditionFormula>
+    <errorDisplayField>Stopover_Allocation__c</errorDisplayField>
+    <errorMessage>Stopover allocation must be nominated if stopover is an inclusion.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Error_Caused_By__c</fullName>
+    <externalId>false</externalId>
+    <label>Error Caused By</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Passenger Error</fullName>
+                <default>false</default>
+                <label>Passenger Error</label>
+            </value>
+            <value>
+                <fullName>Sarah Marinatos</fullName>
+                <default>false</default>
+                <label>Sarah Marinatos</label>
+            </value>
+            <value>
+                <fullName>Salome Seikot</fullName>
+                <default>false</default>
+                <label>Salome Seikot</label>
+            </value>
+            <value>
+                <fullName>Clint Gilmore</fullName>
+                <default>false</default>
+                <label>Clint Gilmore</label>
+            </value>
+            <value>
+                <fullName>Madelene Mooney-Smith</fullName>
+                <default>false</default>
+                <label>Madelene Mooney-Smith</label>
+            </value>
+            <value>
+                <fullName>Heather Mckenzie</fullName>
+                <default>false</default>
+                <label>Heather Mckenzie</label>
+            </value>
+            <value>
+                <fullName>Rachael Easterbrook</fullName>
+                <default>false</default>
+                <label>Rachael Easterbrook</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

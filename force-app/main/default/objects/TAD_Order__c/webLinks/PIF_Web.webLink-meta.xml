@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIF_Web</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>PIF(Web)</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>{!IF( TAD_Order__c.RecordType_Name__c = &quot;TNZ&quot;,
+URLFOR(&apos;https://www.tripadeal.co.nz/ws/_office?tad=intra&amp;to=mydeals&amp;sfid=&apos;+TAD_Order__c.Account_SFID__c+&apos;&amp;em=&apos;+TAD_Order__c.ordexp_email_purchaser__c),
+URLFOR(&apos;https://www.tripadeal.com.au/ws/_office?tad=intra&amp;to=mydeals&amp;sfid=&apos;+TAD_Order__c.Account_SFID__c+&apos;&amp;em=&apos;+TAD_Order__c.ordexp_email_purchaser__c))}</url>
+</WebLink>

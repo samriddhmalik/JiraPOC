@@ -1,0 +1,116 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+<div style="margin:0;margin:0;background-color:#fff;height:100%!important;width:100%!important;background-color: #f8f8fa;padding: 0;">
+
+ <table border="0" cellpadding="0" cellspacing="0" height="100%" style="border-collapse:collapse;margin:0;background-color:#fff;height:100%!important;width: 100%;max-width: 600px!important;
+
+margin: auto;border: 1px solid #c8c8c8;margin-top: 0;">
+
+  <tbody>
+
+  <tr>
+
+   <td style="width:5%;color: #fff;"> . </td>
+
+   <td align="center" style="margin:0;margin:0;padding-top:20px;padding-bottom:20px;/*! background-color:#f8f8fa; */height:100%!important;width:90%!important" valign="top"><table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background-color:#fff;max-width:600px;/*! border:1px solid #c8c8c8 */" width="100%">
+
+     <tbody>
+
+     <tr>
+
+      <td align="center" style="margin-left:0px;margin-right:0px;padding-top:26px;padding-bottom:20px" valign="top"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+
+        <tbody>
+
+         <tr>
+
+          <td align="center" valign="top"><img style="max-width: 600px!important; border: 0; outline: none; text-decoration: none;" src="https://3039.s3.ap-southeast-2.amazonaws.com/TAD-QFF-EDM-Header-600px.jpg" alt="tripadeal logo" width="100%" align="middle" /></td>
+
+         </tr>
+
+        </tbody>
+
+       </table></td>
+
+     </tr>
+
+     <tr>
+
+      <td><table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+
+        <tbody>
+
+        <tr>
+
+         <td><table id="main-table" style="border-collapse:collapse;width: 100%">
+
+
+                            <tbody>
+                              <tr>
+                                <td align="center"
+                                      style="width:100%;padding-bottom:0px;border-bottom-style:solid;border-color:#c8c8c8;border-width:0px;line-height:140%"
+                                      valign="top"><table style="border-collapse:collapse">
+                                    <tbody>
+                                      <tr>
+                                        <td align="left"><p style="margin:0;padding-top:10px;font-family:'Lato',Arial,Helvetica,sans-serif;text-align:left;color:#1a1a1a;font-size:16px;font-weight:400;line-height:24px;">Dear
+                                            {!Order_Communication_POE__c.purchaser_first_name__c},</p></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="20"
+                                              style="font-size:0px;background:#fff;line-height:20px;">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td><p style="margin:0;margin:0;font-family:'Lato',Arial,Helvetica,sans-serif;text-align:left;color:#00bfd6!important;font-size:16px;font-weight:400;line-height:24px;">We hope you are excited for your upcoming holiday!<br/><br/>We just want to let you know that the tour departure date with TripADeal has now reached its minimum required group size to operate. You may now proceed to make any additional travel arrangements in relation to this holiday package.<br></p></td>
+                                      </tr>
+                                      <tr>
+                                        <td height="4"
+                                              style="font-size:0px;background:#fff;line-height:4px;">&nbsp;</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+
+                              <tr>
+                                <td align="left"><span style="font-size:16px;display:inline-block;line-height:24px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:16px;color:#1a1a1a;font-weight:400;text-align:left">
+<br><strong>Order Number:</strong> {!Order_Communication_POE__c.order_number__c}<br>
+<strong>Deal:</strong> {!Order_Communication_POE__c.Deal_and_Title__c}<br>
+<strong>Departure Date:</strong> {!Order_Communication_POE__c.Day_Month_Year__c}<br>
+<strong>Order Description:</strong> {!Order_Communication_POE__c.ordexp_DealFC_fromTADOrder__c} - {!Order_Communication_POE__c.OptionsPC_fromTADOrder__c}<br><br>
+Your final travel documentation will be emailed to you approximately 4 - 6 weeks prior to your core departure date.<br><br>
+Please note that in the event your booking is impacted by the COVID-19 pandemic, you are bound to the terms listed in the Important Information of the holiday package you have booked and TripADeal's general terms and conditions.<br>
+</span></td>
+                              </tr>
+                              <tr>
+                                <td height="30"
+                                              style="font-size:0px;background:#fff;line-height:30px;">&nbsp;</td>
+                              </tr>
+                              <!-- FOOTER:START -->
+                              <tr>
+                                <td height="24" style="font-size:0px;background:#F2F1F1;line-height:24px;"> </td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="margin:20px 20px 20px 20px;background:#F2F1F1;"><span style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;color:#1a1a1a;font-weight:400;text-align:center"> <span style="font-weight: bold;letter-spacing: 0.25px;font-size: 16px;"> We're here to help you.</span><br/>
+                                  If you have any questions, please visit our <a href="https://support.tripadeal.com.au" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> Support Page.</span></a><br/>
+                                  Or call us on <a href="tel:1300861736" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> 1300 861 736. </span> </a> </span></td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="margin:0px 20px 0px 20px;background: #F2F1F1"><p style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;font-weight:400;text-align:center"> Regards, <br/>
+                                    The TripADeal Team </p></td>
+                              </tr>
+                              <tr>
+                                <td height="10" style="font-size:0px;background:#F2F1F1;line-height:10px;"> </td>
+                              </tr>
+                              <!-- FOOTER:END -->
+                            </tbody>
+                          </table></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+            </tbody>
+          </table></td>
+        <td style="width:5%;color: #fff;">.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

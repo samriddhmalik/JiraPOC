@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Ticketing_Group_Selected</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Flight_Ticketing_Structure__c , &apos;Group&apos;),
+OR(
+INCLUDES(Airline__c , &apos;None&apos;),
+INCLUDES(Airline__c , &apos;&apos;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>ordexp_account__c</errorDisplayField>
+    <errorMessage>Populate Airline</errorMessage>
+</ValidationRule>

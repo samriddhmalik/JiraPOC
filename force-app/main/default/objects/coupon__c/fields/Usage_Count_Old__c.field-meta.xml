@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Usage_Count_Old__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is usage count related to old Orders</inlineHelpText>
+    <label>Usage Count (Old)</label>
+    <summaryForeignKey>Order_Coupon__c.coupon__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

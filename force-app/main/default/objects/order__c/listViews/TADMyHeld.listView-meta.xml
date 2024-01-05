@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TADMyHeld</fullName>
+    <columns>order_status__c</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>NAME</columns>
+    <columns>departure_date__c</columns>
+    <columns>first_name_purchaser__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>qty__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>amount_outstanding__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TNZ,order__c.TAD</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>On Hold</value>
+    </filters>
+    <filters>
+        <field>Created_By_Current_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Held Orders</label>
+    <sharedTo>
+        <role>Travel_Consultant</role>
+    </sharedTo>
+</ListView>

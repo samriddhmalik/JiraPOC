@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Snapins_Contact_PrechatQuickAction_08h2x000000Cb4r_1670825013930</description>
+    <label>Snapins_Contact_PrechatQuickAction_08h2x000000Cb4r_1670825013930</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsTopToBottom</layoutSectionStyle>
+        <quickActionLayoutColumns/>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>Contact</targetObject>
+    <targetRecordType>Contact.Trip</targetRecordType>
+    <type>Create</type>
+</QuickAction>

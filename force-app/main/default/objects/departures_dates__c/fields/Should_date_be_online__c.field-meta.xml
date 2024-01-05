@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Should_date_be_online__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( TEXT (online_status__c)=&apos;Offline - Auto&apos; &amp;&amp;  Remaining_Allocation__c&gt;0 &amp;&amp; finalise_date__c=false &amp;&amp; Departure_Date_Offline__c&gt;TODAY() &amp;&amp;  TEXT(Deal_for_Reporting__r.Deal_Status__c)=&apos;Published&apos; &amp;&amp; RecordType.Name =&apos;Departure Date&apos;   , true, false) 
+
+
+/*
+IF( TEXT (online_status__c)=&apos;Offline - Auto&apos; &amp;&amp;  Remaining_Allocation__c&gt;0 &amp;&amp; finalise_date__c=false &amp;&amp; Departure_Date_Offline__c&gt;TODAY() &amp;&amp;  Deal_for_Reporting__r.BNCDL__c = true &amp;&amp; RecordType.Name =&apos;Departure Date&apos;   , true, false)
+*/</formula>
+    <label>Should date be online</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

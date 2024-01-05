@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is the URL hit from the Salesforce Platform Event in case of Payment Completion of TAD Order of Deal Record Type Hotel.</description>
+    <disableProtocolSecurity>false</disableProtocolSecurity>
+    <isActive>true</isActive>
+    <url>https://sm.sitemindertad.com</url>
+</RemoteSiteSetting>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seasonality__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( PAF_Packagee__r.Low_Season_Start__c  &lt;=  Departure_Date__c  &amp;&amp;  PAF_Packagee__r.Low_Season_End__c  &gt;=  Departure_Date__c ,     &quot;Low&quot;     ,
+IF( PAF_Packagee__r.Sale_Season_Start__c  &lt;=  Departure_Date__c  &amp;&amp;  PAF_Packagee__r.Sale_Season_End__c  &gt;=  Departure_Date__c ,     &quot;Sale&quot;     ,
+IF( PAF_Packagee__r.Shoulder_Season_Start__c  &lt;=  Departure_Date__c  &amp;&amp;  PAF_Packagee__r.Shoulder_Season_End__c  &gt;=  Departure_Date__c ,     &quot;Shoulder&quot;     ,
+IF( PAF_Packagee__r.High_Season_Start__c  &lt;=  Departure_Date__c  &amp;&amp;  PAF_Packagee__r.High_Season_End__c  &gt;=  Departure_Date__c ,     &quot;High&quot;    ,   &quot;Not Available&quot;  ))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Seasonality</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

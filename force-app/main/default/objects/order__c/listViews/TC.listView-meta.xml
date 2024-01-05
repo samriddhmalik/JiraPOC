@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC</fullName>
+    <columns>NAME</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>TC_Booking_Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>first_name_purchaser__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>exclusive__c</columns>
+    <columns>qty__c</columns>
+    <columns>agent_name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TC</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,Ready For Export,Exported</value>
+    </filters>
+    <filters>
+        <field>isstay__c</field>
+        <operation>notEqual</operation>
+        <value>0</value>
+    </filters>
+    <label>Travellers Choice</label>
+    <sharedTo>
+        <portalRole>AbennCustomerPersonAccount</portalRole>
+        <portalRoleAndSubordinates>derekdoCustomerPersonAccount</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>testbusacCustomerUser</portalRoleAndSubordinates>
+    </sharedTo>
+</ListView>

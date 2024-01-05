@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dep_Date_with_Tkt_Consultant_Min_Nos</fullName>
+    <columns>NAME</columns>
+    <columns>date__c</columns>
+    <columns>Deal_for_Reporting__c</columns>
+    <columns>Ticketing_Consultant__c</columns>
+    <columns>Minimum__c</columns>
+    <columns>min_numbers_met__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal__c</field>
+        <operation>notEqual</operation>
+        <value>1,2,3,Deal-2007,CruiseDeal-2007</value>
+    </filters>
+    <filters>
+        <field>date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Deal__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Has_Flights__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Dep Date with Tkt Consultant &amp; Min Nos</label>
+    <sharedTo>
+        <group>Flight_Ticketers</group>
+        <group>Product</group>
+    </sharedTo>
+</ListView>

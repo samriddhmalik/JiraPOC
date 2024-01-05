@@ -1,0 +1,109 @@
+<apex:Page >
+    <head>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/south-street/jquery-ui.css"/>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css"/>
+        <script>
+            $(function() {
+                $("#pv2").datepicker({changeMonth: true, changeYear: true}); 
+                 $("#pv12").datepicker({changeMonth: true, changeYear: true});          
+                $(".datepick").datepicker({changeMonth: true, changeYear: true, constrainInput: false});      
+              });             
+        </script>       
+       <script>
+           function getComboA(sel,inputId) {
+                document.getElementById(inputId).value = sel.value;
+            }
+       </script>  
+    </head>
+    Hello  {! $User.FirstName}
+    <br/>
+    <B>Use the date and deal fields below to view reports with a specific time period and/or Deal ID</B>
+    <TABLE Border= "3" CELLSPACING="1" CELLPADDING="1" columnClasses="red,green,blue">
+        <br/>
+        <CAPTION><B> Salesforce Reports </B></CAPTION>
+        <br/>
+        <TR>
+            <TD ALIGN = "Center">
+                <B>Directors Report</B>
+            </TD>
+            <TD ALIGN = "Center">
+                <B> Visit Summary Reports</B>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <form method="get" action="/00O0K00000AOmBk" >           
+                <B>Directors Report</B>
+                <BR/>
+                <b>Date Ranges:</b>
+               <br/>
+               Purchase Date From (DD/MM/YYYY):
+                <input type="text" name="pv0" id="pv0" class="datepick" /> <br/>
+                Purchase Date To (DD/MM/YYYY):
+                <input type="text" name="pv1" id="pv1" class="datepick" />
+                <br />
+                Deal ID:
+                <input type="text" name="pv2" id="pv2" style="width: 90px;" onchange="getComboA(pv2,'pv3')"/>
+                <select name ="pv2" id="pv2" onchange="getComboA(pv2,'pv1')">
+                    <option value="This Month">This Month</option>
+                    <option value="Last Month">Last Month</option>
+                    <option value="This Year">This Year</option>
+                    <option value="Last Year">Last Year</option>
+                    <option value="Today">Today</option>
+                    <option value="Yesterday">Yesterday</option>
+                    <option value="This Quarter">This Quarter</option>
+                    <option value="Last Quarter">Last Quarter</option>
+                     <option value="   ">Blank </option>
+                </select><br/>
+                <input type="submit" value="Submit" class="submit" />
+                </form>
+            </TD>
+            <TD>
+                 <form method="get" action="/00OE0000002us1h" >
+                    <B>C- New Visits</B>
+                    <br/>
+                    <B>Date Ranges:</B>
+                    <br/>
+                    Travel Date From (MM/DD/YYYY):
+                    <input type="text" name="pv0" id="pv4" class="datepick" /><br />
+                    Travel Date To (MM/DD/YYYY):
+                    <input type="text" name="pv1" id="pv5" class="datepick" />
+                    <br />
+                    <input type="submit" value="My Visits" class="submit" />
+                </form>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <form method="get" action="/00OE0000002uD4A" >           
+                <B>A- Account Yearly Revenue (by Bus Unit)</B>
+                <BR/>
+                <b>Date Ranges:</b>
+                <br/>
+                Travel Date From (MM/DD/YYYY):
+                <input type="text" name="pv0" id="pv6" class="datepick" /> <br/>
+                Travel Date To (MM/DD/YYYY):
+                <input type="text" name="pv1" id="pv7" class="datepick" />
+                <br />
+                <input type="submit" value="Account Yearly Revenue" class="submit" />
+                </form>
+            </TD>
+            <TD>
+                <form method="get" action="/00OE0000002uHmV" >
+                    <B>C- Conversion Rate by Source</B>
+                    <br/>
+                    <B>Date Ranges:</B>
+                    <br/>
+                    Travel Date From (MM/DD/YYYY):
+                    <input type="text" name="pv0" id="pv8" class="datepick"/><br />
+                    Travel Date To (MM/DD/YYYY):
+                    <input type="text" name="pv1" id="pv9" class="datepick"/>
+                    <br />
+                    <input type="submit" value="Conversion Rate" class="submit" />
+                </form>
+            </TD>
+        </TR>
+    </TABLE>
+</apex:Page>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>CheckDepartureDateIsBefore7weeks</name>
+        <label>CheckDepartureDateIsBefore7weeks</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Departuere_Date_is_before_7_weeks</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Departure_Date_PC__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>DateAfter8WeekFromToday</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Person_Contact</targetReference>
+            </connector>
+            <label>Departuere Date is before 7 weeks</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>DateAfter8WeekFromToday</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 56</expression>
+    </formulas>
+    <interviewLabel>createOrderComms &quot;Travel Pack Is Coming Soon&quot; {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>createOrderComms &quot;Travel Pack Is Coming Soon&quot;</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_OrderComms_Travel_Pack_Is_Coming_Soon</name>
+        <label>Create OrderComms&quot;Travel Pack Is Coming Soon&quot;</label>
+        <locationX>50</locationX>
+        <locationY>516</locationY>
+        <inputAssignments>
+            <field>Contact__c</field>
+            <value>
+                <elementReference>Get_Person_Contact.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TAD_Order__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>communication_code__c</field>
+            <value>
+                <stringValue>Travel Pack Is Coming Soon</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>email_purchaser__c</field>
+            <value>
+                <elementReference>$Record.ordexp_email_purchaser__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Order_Communication_POE__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Person_Contact</name>
+        <label>Get Person Contact</label>
+        <locationX>50</locationX>
+        <locationY>396</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_OrderComms_Travel_Pack_Is_Coming_Soon</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ordexp_account__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CheckDepartureDateIsBefore7weeks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ordexp_master_status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ordexp_sub_status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Accommodation Only</stringValue>
+            </value>
+        </filters>
+        <object>TAD_Order__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-03-13</startDate>
+            <startTime>04:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

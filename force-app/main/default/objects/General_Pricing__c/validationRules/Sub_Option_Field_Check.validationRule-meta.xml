@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Option_Field_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>Sub_Options__c !=null &amp;&amp; ( HSS_Amount__c !=0 || HSS_Amount_NZ__c !=0 || HSS_Cost__c !=0 )</errorConditionFormula>
+    <errorMessage>Departure Date Section fields can&apos;t be filled</errorMessage>
+</ValidationRule>

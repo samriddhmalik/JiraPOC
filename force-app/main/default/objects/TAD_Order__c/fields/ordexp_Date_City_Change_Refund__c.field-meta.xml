@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_Date_City_Change_Refund__c</fullName>
+    <externalId>false</externalId>
+    <label>Date/City Change Refund</label>
+    <summarizedField>Cancellation_Refund_POE__c.Total_Cancellation_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Cancellation_Refund_POE__c.Cancellation_Type__c</field>
+        <operation>equals</operation>
+        <value>Departure date change, Departure city change</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Cancellation_Refund_POE__c.ordexp_tad_order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

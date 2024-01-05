@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transfer_Allocation</fullName>
+    <active>true</active>
+    <description>Transfer allocation must be nominated if transfer is an inclusion.</description>
+    <errorConditionFormula>AND( TEXT(Transfer_Inclusion__c)  = &quot;INC&quot;  || TEXT(Transfer_Inclusion__c)  = &quot;OPT&quot;, ISBLANK( Transfers_Allocation__c )||  Transfers_Allocation__c  = 0 )</errorConditionFormula>
+    <errorDisplayField>Transfers_Allocation__c</errorDisplayField>
+    <errorMessage>Transfer allocation must be nominated if transfer is an inclusion.</errorMessage>
+</ValidationRule>

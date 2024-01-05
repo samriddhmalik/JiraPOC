@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CVC_Picklist_limit_access_CSTL</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT( OR
+(
+ISBLANK(TEXT(CVC__c)),
+ISPICKVAL(CVC__c, &quot;BERefund&quot;),
+ISPICKVAL(CVC__c, &quot;TADRefund&quot;),
+ISPICKVAL(CVC__c, &quot;BERefund - Partial&quot;),
+ISPICKVAL(CVC__c, &quot;EasterCOVID&quot;),
+ISPICKVAL(CVC__c, &quot;MayJuneCOVID - Date Change&quot;),
+ISPICKVAL(CVC__c, &quot;MayJuneCOVID&quot;)
+)
+),
+ISCHANGED(  CVC__c  ), 
+$Permission.CVC_BERefund_Access,
+NOT( $Permission.ByPass_Validation_for_CVC_status ) 
+)</errorConditionFormula>
+    <errorDisplayField>CVC__c</errorDisplayField>
+    <errorMessage>You do not have access to this CVC value - try again (TL)</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>peter.russell@tripadeal.com.au</contactEmail>
+    <description>Used to authenticate the package builder app</description>
+    <label>package builder</label>
+    <oauthConfig>
+        <callbackUrl>https://magicfinger.herokuapp.com/oauth_response</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrD79O5Kcr725mv3VwnSt5j.tnz0ou38DO_KpzOzrB8q.9pNZsBqPC30tpf_AR.qRzoneF7f</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Full</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

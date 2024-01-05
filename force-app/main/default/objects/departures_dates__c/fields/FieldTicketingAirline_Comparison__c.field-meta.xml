@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FieldTicketingAirline_Comparison__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+/*OR(
+AND(
+OR(
+ISPICKVAL(Flight_Ticketing_Structure__c,&apos;None&apos;),
+ISPICKVAL(Flight_Ticketing_Structure__c, &apos;&apos;)
+),
+OR(
+ISPICKVAL(Airline__c,&apos;None&apos;),
+ISPICKVAL(Airline__c, &apos;&apos;)
+)
+),*/
+
+OR
+(
+ AND(
+ NOT(ISBLANK(TEXT(Deal_for_Reporting__r.Flight_Ticketing_Structure__c))),
+ TEXT(Flight_Ticketing_Structure__c) &lt;&gt; 
+ TEXT(Deal_for_Reporting__r.Flight_Ticketing_Structure__c)),
+ AND
+ (
+ NOT(ISBLANK(Deal_for_Reporting__r.Airline__c)), OR( INCLUDES(Airline__c, &apos;None&apos;),  INCLUDES(Airline__c, &apos;Qantas&apos;) ,INCLUDES(Airline__c, &apos;Jetstar&apos;),INCLUDES(Airline__c, &apos;Sri Lankan Airlines&apos;))  &lt;&gt;  OR(INCLUDES(Deal_for_Reporting__r.Airline__c,&apos;None&apos;),INCLUDES(Deal_for_Reporting__r.Airline__c,&apos;Qantas&apos;),INCLUDES(Deal_for_Reporting__r.Airline__c,&apos;Jetstar&apos;),INCLUDES(Deal_for_Reporting__r.Airline__c,&apos;Sri Lankan Airlines&apos;))
+ )
+),true,false
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FieldTicketingAirline Comparison</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

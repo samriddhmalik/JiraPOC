@@ -1,0 +1,18 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" >
+    <center><b>Update Activity Status </b></center>
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:85% !important;
+        }
+        .modal-body{ 
+        height : 65vh !important; 
+        max-height: 65vh !important; 
+        } 
+    </aura:html>
+     <aura:attribute name="inputValue" type="boolean"/>
+    <c:marketingparentchild recordId="{!v.recordId}" onvaluechange="{!c.getValueFromLwc}"/>
+    
+    
+    
+</aura:component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa</fullName>
+    <columns>NAME</columns>
+    <columns>orders__c</columns>
+    <columns>Passenger_Name__c</columns>
+    <columns>Visa__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Visa_Total__c</columns>
+    <columns>Courier__c</columns>
+    <columns>Quantity_Courier__c</columns>
+    <columns>Courier_Total__c</columns>
+    <columns>Payment_via_external_visa__c</columns>
+    <columns>Insurance_Total_TAD__c</columns>
+    <columns>Insurance_Total_External__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Visa_Insurance__c.Visa</value>
+    </filters>
+    <label>Visa</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+    </sharedTo>
+</ListView>

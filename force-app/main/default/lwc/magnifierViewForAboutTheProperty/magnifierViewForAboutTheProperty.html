@@ -1,0 +1,43 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" style="margin-right: 20px;margin-left: 20px;">
+      <div class="slds-modal__container">
+        <!-- Header Start -->
+        <header class="slds-modal__header">
+          <lightning-button-icon class="slds-modal__close" title="Close" icon-name="utility:close" icon-class="slds-button_icon-inverse" onclick={handleDialogClose} style="color: red;"></lightning-button-icon>
+          <h2 class="slds-text-heading_medium slds-hyphenate header-string"> {propertydata.name} </h2>
+        </header>
+        <!-- Header End -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+          <slot>
+            <div class="slds-grid ">
+								
+                <div class="slds-col" style="margin-left: 10px;margin-top:10px;" >
+                    <legend class="slds-form-element__legend slds-form-element__label">Title</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="text" label="title" required="true" class="field" value={propertydata.title} onchange={handleChange} data-id1="title" style="width:400px"></lightning-input>
+                <legend class="slds-form-element__legend slds-form-element__label">Order</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="number" max="99" label="Order" required="true" class="field" value={propertydata.order} onchange={handleChange} data-id1="order" style="width:100px"></lightning-input>
+                <legend class="slds-form-element__legend slds-form-element__label">Site</legend>
+                <lightning-dual-listbox disabled={disableddata} source-label="Available Site" selected-label="Selected Site" value={propertydata.selectedsite} options={siteOptions} size="2" data-id="Selected Site" data-id1="Selected Site" onchange={handleChange} style="width:100px"></lightning-dual-listbox>
+                
+								</div>
+<!--                 <div class="slds-col" style="margin-right: 200px;margin-top:10px;">
+                    <legend class="slds-form-element__legend slds-form-element__label">Site</legend>
+                <lightning-dual-listbox source-label="Tour Sites" selected-label="Selected Site" value={tourdata.selectedsite} options={siteOptions} size="2" data-id="Selected Site" data-id1="Selected Site" onchange={handleChange} style="width:500px"></lightning-dual-listbox>
+                </div> -->
+            </div>
+            <br>
+            <div style="margin-left:10px;margin-top:10px;">
+                <b>Description</b>
+                <lightning-input-rich-text disabled={disableddata} label="Description" variant="top-toolbar" class="textAreaBody" value={propertydata.description} onchange={handleChange} data-id1="description"></lightning-input-rich-text>
+              </div>
+            <br>
+            <br>
+            <div align="center">
+              <lightning-button disabled={disableddata} variant="Success" icon-name="utility:save" label="Save Property" title="Click to save changes" class="slds-button_stretch" data-id="" data-id2="" onclick={handleSaveChanges}></lightning-button>
+            </div>
+          </slot>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FFStatus__c</fullName>
+    <externalId>false</externalId>
+    <label>FFStatus</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unprocessed</fullName>
+                <default>true</default>
+                <label>Unprocessed</label>
+            </value>
+            <value>
+                <fullName>Processing - Initial Sale</fullName>
+                <default>false</default>
+                <label>Processing - Initial Sale</label>
+            </value>
+            <value>
+                <fullName>Processing - Post Sale</fullName>
+                <default>false</default>
+                <label>Processing - Post Sale</label>
+            </value>
+            <value>
+                <fullName>Processing - Cancellation</fullName>
+                <default>false</default>
+                <label>Processing - Cancellation</label>
+            </value>
+            <value>
+                <fullName>Processed - Initial Sale</fullName>
+                <default>false</default>
+                <label>Processed - Initial Sale</label>
+            </value>
+            <value>
+                <fullName>Processed - Post Sale</fullName>
+                <default>false</default>
+                <label>Processed - Post Sale</label>
+            </value>
+            <value>
+                <fullName>Processed - Cancellation</fullName>
+                <default>false</default>
+                <label>Processed - Cancellation</label>
+            </value>
+            <value>
+                <fullName>Pending Processing</fullName>
+                <default>false</default>
+                <label>Pending Processing</label>
+            </value>
+            <value>
+                <fullName>Processed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Processed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>stop_comms_via_order_date_deal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR( stop_order_comms__c ,  departures_dates__r.stop_order_comms__c , deal__r.stop_order_comms__c ),
+TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stop Comms via Order/Date/Deal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

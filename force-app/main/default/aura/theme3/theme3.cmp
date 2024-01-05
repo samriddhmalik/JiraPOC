@@ -1,0 +1,11 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Home page">
+	      
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false" />
+    
+         
+    <div class="mainContentArea">
+            {!v.body}
+        </div>      
+        
+
+</aura:component>

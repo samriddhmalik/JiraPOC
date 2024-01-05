@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Min_or_Max_Price__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Min_Pax__c=0 ,&apos;MinPax&apos;,   IF(Max_Pax__c=0,&apos;MaxPax&apos;,  IF( (Min_Pax__c = Component__r.Max_Min_Pax__c)  , &apos;MaxPax&apos; ,  IF(Min_Pax__c = Component__r.Min_Pax__c, &apos;MinPax&apos;,&apos;NotApplicable&apos;) ) )   )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Min or Max Price</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

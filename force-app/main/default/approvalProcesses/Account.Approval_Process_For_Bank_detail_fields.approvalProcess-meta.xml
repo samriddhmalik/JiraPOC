@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>c2g__CODABankAccountName__c</field>
+        <field>c2g__CODABankAccountNumber__c</field>
+        <field>c2g__CODABankSortCode__c</field>
+        <field>c2g__CODABankSWIFTNumber__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Finance_Status_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>ben.anderson@tripadeal.com.au</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>lilian.sweetnam@tripadeal.com.au</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Ben Approval Notification</label>
+        <name>Ben_Approval_Notification</name>
+        <rejectionActions>
+            <action>
+                <name>Account_Bank_Details_Rejected_For_Update</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Finance_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>TS - 005982: As a Finance Manager, I want an Approval process to be implemented whenever any of the below mentioned Bank detail fields get edited. Refer Description.</description>
+    <emailTemplate>unfiled$public/Email_Notification_to_Ben_For_Account_Detail</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Finance_Approvel_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Approval Process For Bank detail fields</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prelim_Flight_Details_must_have_TripCase</fullName>
+    <active>true</active>
+    <description>To be able to send Preliminary Flight details a &quot;value&quot; must be TripCase field</description>
+    <errorConditionFormula>AND( Send_Prelim_Flight_Info__c ,
+ ISBLANK( TripCase__c ) )</errorConditionFormula>
+    <errorDisplayField>Send_Prelim_Flight_Info__c</errorDisplayField>
+    <errorMessage>To be able to send Preliminary Flight details there must be TripCase value</errorMessage>
+</ValidationRule>

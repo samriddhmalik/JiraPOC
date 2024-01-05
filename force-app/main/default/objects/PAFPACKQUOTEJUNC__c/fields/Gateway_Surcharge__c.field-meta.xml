@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gateway_Surcharge__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(OR(TEXT(Outbound_Gateway__c)=&quot;ADL&quot;,TEXT(Inbound_Gateway__c)=&quot;ADL&quot;),PQJunc_Pack__r.ADL_Surcharge_Applicable__c ),PQJunc_Pack__r.ADL__c,
+IF(AND(OR(TEXT(Outbound_Gateway__c)=&quot;MEL&quot;,TEXT(Inbound_Gateway__c)=&quot;MEL&quot;),PQJunc_Pack__r.MEL_SURCHARGE_APPLICABLE__c ),PQJunc_Pack__r.MEL__c,
+IF(AND(OR(TEXT(Outbound_Gateway__c)=&quot;PER&quot;,TEXT(Inbound_Gateway__c)=&quot;PER&quot;), PQJunc_Pack__r.PER_Surcharge_Applicablercharge_Applicab__c  ),PQJunc_Pack__r.PER__c,0)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Gateway Surcharge</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

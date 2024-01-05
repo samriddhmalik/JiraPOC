@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Publish_Deal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This allows a deal to be publish without the partner E-signing our general terms and conditions</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This allows a deal to be publish without the partner E-signing our general terms and conditions</inlineHelpText>
+    <label>Override Publish Deal</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

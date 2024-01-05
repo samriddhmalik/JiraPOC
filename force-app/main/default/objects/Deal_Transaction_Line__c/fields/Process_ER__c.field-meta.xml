@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_ER__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+    or(
+    Status1__c = &quot;Active&quot;,
+    text(Status__c) = &quot;Active&quot;
+    ),
+    or(
+       today() &lt;= Recognition_Date__c,
+       Is_Escape_Deal__c 
+    ),   
+    or(
+       RecordType.Name= &quot;Multi-Line Expense&quot;,
+       and(
+           RecordType.Name= &quot;Single-Line Expense&quot;,
+           not(CONTAINS(Description__c,&quot;Credit&quot;))
+       )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Process ER</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

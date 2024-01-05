@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Cancellation</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>order_status__c</columns>
+    <columns>Cancellation_Request__c</columns>
+    <columns>Cancellation_Request_Date__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>ae__c</columns>
+    <columns>pre_tour_stopover__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>departure_date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TNZ,order__c.TAD</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Pending Cancellation</value>
+    </filters>
+    <filters>
+        <field>CVC__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Pending Cancellation</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

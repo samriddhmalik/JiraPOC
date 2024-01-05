@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customization_Credit_Utilized__c</fullName>
+    <externalId>false</externalId>
+    <label>Customization Credit Utilized</label>
+    <summarizedField>order_line_item__c.Customization_Credit_Utilized__c</summarizedField>
+    <summaryForeignKey>order_line_item__c.ordexp_TAD_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

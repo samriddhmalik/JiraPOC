@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TNZ_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Booking_Validation__c</columns>
+    <columns>order_status__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>qty__c</columns>
+    <columns>PAX_Travelling__c</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>is_web_order__c</columns>
+    <columns>Created_DateTC__c</columns>
+    <columns>time_confirmed__c</columns>
+    <columns>Referrer__c</columns>
+    <columns>total_price__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TNZ</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Expired</value>
+    </filters>
+    <label>TNZ Orders</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

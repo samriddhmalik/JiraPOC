@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Description__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Coupon_code_sent_to_AP__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Discount__c</columns>
+    <columns>Payment_Transaction__c</columns>
+    <columns>transferrable_amount__c</columns>
+    <columns>usable_count__c</columns>
+    <columns>usage_count__c</columns>
+    <columns>Min_order_value__c</columns>
+    <columns>Usage__c</columns>
+    <columns>balance_remaining__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>balance_remaining__c</field>
+        <operation>greaterThan</operation>
+        <value>AUD 10,AUD 0</value>
+    </filters>
+    <label>All</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

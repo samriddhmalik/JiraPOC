@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_BPoint_Payment_Received__c</fullName>
+    <externalId>false</externalId>
+    <label>Total BPoint Payment Received</label>
+    <summarizedField>TAD_BPoint__c.Amount_Original__c</summarizedField>
+    <summaryForeignKey>TAD_BPoint__c.Phone_Sale__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

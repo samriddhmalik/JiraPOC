@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>travefy_itinerary_url__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;https://app.tripadeal.com.au/trips/&quot; &amp; travefy_trip_id__c &amp; &quot;/&quot; &amp;  travefy_trip_key__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Travefy Itinerary Url</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

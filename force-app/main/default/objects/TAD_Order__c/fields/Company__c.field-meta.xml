@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <externalId>false</externalId>
+    <formula>case(
+RecordType.Name,
+&quot;TAD&quot;, &quot;a9e2x0000000001AAA&quot;,
+&quot;TC&quot;, &quot;a9e2x0000000001AAA&quot;,
+&quot;TNZ&quot;, &quot;a9e2x0000000006AAA&quot;,
+&quot;WT&quot;, &quot;a9e2x0000000006AAA&quot;,
+&quot;a9e2x0000000001AAA&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Company</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

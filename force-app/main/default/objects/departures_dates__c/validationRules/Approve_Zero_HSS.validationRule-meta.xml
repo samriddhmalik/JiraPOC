@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approve_Zero_HSS</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(
+AND(INCLUDES(site__c, &quot;AU&quot;),INCLUDES(site__c, &quot;NZ&quot;)),
+AND(
+ CreatedDate &gt; DATETIMEVALUE(DATE(2019,5,2)),
+ OR( 
+  OR( HSS_amount__c = 0, ISBLANK(HSS_amount__c)), 
+  OR( HSS_amount_nz__c = 0, ISBLANK(HSS_amount_nz__c))
+ ), 
+ approve_zero_hss__c = false
+)
+,
+IF( INCLUDES(site__c, &quot;AU&quot;),
+AND(
+ CreatedDate &gt; DATETIMEVALUE(DATE(2019,5,2)), 
+ OR( HSS_amount__c = 0, ISBLANK(HSS_amount__c)),  
+ approve_zero_hss__c = false
+),
+IF( INCLUDES(site__c, &quot;NZ&quot;),
+AND(
+ CreatedDate &gt; DATETIMEVALUE(DATE(2019,5,2)), 
+ OR( HSS_amount_nz__c = 0, ISBLANK(HSS_amount_nz__c)),  
+ approve_zero_hss__c = false
+),
+false
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>approve_zero_hss__c</errorDisplayField>
+    <errorMessage>Are you sure the HSS is 0?</errorMessage>
+</ValidationRule>

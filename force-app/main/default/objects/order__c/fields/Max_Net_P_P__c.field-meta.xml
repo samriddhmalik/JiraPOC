@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Net_P_P__c</fullName>
+    <externalId>false</externalId>
+    <formula>departures_dates__r.HSS_Flight__c    +   departure_city_line_price__c   +  ae_line_price__c  +   sb_line_price__c   +  airline_upgrade_line_price__c +   Options__r.Flights_Max_Nett__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Max Net P/P</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

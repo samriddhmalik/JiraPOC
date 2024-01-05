@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Charged_Validation</fullName>
+    <active>true</active>
+    <description>Validation - if Error Caused = &quot;Passenger Error&quot; then Client Charge must not be null</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Error_Caused_By__c , &quot;Passenger Error&quot;) ,
+ISBLANK( Client_Charged__c ) 
+)</errorConditionFormula>
+    <errorDisplayField>Client_Charged__c</errorDisplayField>
+    <errorMessage>Field must be populated if Error caused by Passenger</errorMessage>
+</ValidationRule>

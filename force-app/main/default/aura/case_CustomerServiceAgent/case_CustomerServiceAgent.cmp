@@ -1,0 +1,83 @@
+<aura:component controller="case_CustomerServiceAgent" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global" >
+    
+    
+    <aura:attribute name="mainWrapper" type="List" default="[]"/>
+    <aura:attribute name="isList" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    
+    <div class="slds-box slds-theme_default slds-scrollable">
+        
+        <h1 class="slds-text-heading_small"><B>Account Summary</B></h1>
+        <Br></Br>
+        
+         <aura:if isTrue="{!v.mainWrapper.length >0}">
+              <div class="" style="height:12rem;width:20rem">
+        <aura:iteration  items="{!v.mainWrapper}" var="item" indexVar="index" >
+            
+            
+            <div data-record="{!index}" >
+                
+                 <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default"><p>Saved Deal Name :</p></div>
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="StartDate">{!item.savedDealName}</div>
+                    
+                </div>
+                
+                <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default" title="tadOrderId" ><p>Tad Order Name :</p></div>
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="StartDate" ><a id="{!item.tadOrderId}" onclick="{!c.openTab}"  > {!item.tadOrderName} </a></div>
+                    
+                </div>  
+                <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default"><p>Deal :</p></div>
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="StartDate">{!item.dealName}</div>
+                    
+                </div>
+                
+                
+                <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    <aura:if isTrue="{!item.tadOrderId != null}">
+                        <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default" title="tadOrderId" ><p>Tad Order Status :</p> </div>   
+                        <aura:set attribute="else">
+                            <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default" title="tadOrderId" >Deal Status : </div>   
+                        </aura:set>
+                    </aura:if> 
+                    
+                    
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="StartDate"> {!item.status} </div>
+                    
+                </div>
+                
+                <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default" title="price" ><p>Total Price :</p> </div>
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="price"> {!item.totalPrice} </div>
+                    
+                </div>
+                
+                <div class="slds-grid slds-wrap slds-text-align_left custom-container slds-m-bottom_xxx-small">
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1 slds-text-color_default" title="price" ><p>Created On :</p> </div>
+                    <div class="slds-size_1-of-2 slds-max-small-size_1-of-1" title="price"> {!item.createdDate} </div>
+                    
+                </div>
+                
+                <br></br>   
+            </div>
+            
+        </aura:iteration>
+           </div>
+                        <aura:set attribute="else">
+                            
+                         <div class="slds-align_absolute-center" style="height:5rem"><p>No records available</p></div>   
+                        </aura:set>
+                    </aura:if> 
+     
+        
+    </div>
+    
+    
+    
+</aura:component>

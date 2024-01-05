@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TCHeld</fullName>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>booking_status__c</columns>
+    <columns>NAME</columns>
+    <columns>web_update__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>first_name_purchaser__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TC</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>On Hold</value>
+    </filters>
+    <label>Travellers Choice - Held</label>
+    <sharedTo>
+        <portalRole>AbennCustomerPersonAccount</portalRole>
+        <portalRoleAndSubordinates>derekdoCustomerPersonAccount</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>testbusacCustomerUser</portalRoleAndSubordinates>
+    </sharedTo>
+</ListView>

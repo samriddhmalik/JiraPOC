@@ -1,0 +1,94 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Home page">
+
+	
+    <aura:attribute name="container1small" type="Aura.Component[]" />
+    <aura:attribute name="container2small" type="Aura.Component[]" />
+    <aura:attribute name="container3small" type="Aura.Component[]" />
+    <aura:attribute name="container4small" type="Aura.Component[]" />
+    <aura:attribute name="container5small" type="Aura.Component[]" />
+    <aura:attribute name="container6small" type="Aura.Component[]" />
+    <aura:attribute name="container7small" type="Aura.Component[]" />
+    <aura:attribute name="container8small" type="Aura.Component[]" />
+    <aura:attribute name="container9small" type="Aura.Component[]" />
+    <aura:attribute name="container10small" type="Aura.Component[]" />
+    <aura:attribute name="container11small" type="Aura.Component[]" />
+    <aura:attribute name="container12small" type="Aura.Component[]" />
+    <aura:attribute name="container1" type="Aura.Component[]" />
+    <aura:attribute name="container2" type="Aura.Component[]" />
+    <aura:attribute name="container3" type="Aura.Component[]" />
+    <aura:attribute name="container4" type="Aura.Component[]" />
+    <aura:attribute name="container5" type="Aura.Component[]" />
+    <aura:attribute name="container6" type="Aura.Component[]" />
+    <aura:attribute name="container7" type="Aura.Component[]" />
+    <aura:attribute name="container8" type="Aura.Component[]" />
+    <aura:attribute name="container9" type="Aura.Component[]" />
+
+
+    <div class="slds-grid slds-wrap">
+      <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container1small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container2small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container3small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container4small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container5small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container6small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container7small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container8small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container9small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container10small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container11small}</div>
+      </div>
+        <div class="slds-size_1-of-12">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container12small}</div>
+      </div>
+        <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container1}</div>
+      </div>
+      <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container2}</div>
+      </div>
+      <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container3}</div>
+      </div>
+      <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container4}</div>
+      </div>
+      <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container5}</div>
+      </div>
+      <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container6}</div>
+     </div>
+    <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container7}</div>
+      </div>
+    <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container8}</div>
+      </div>
+    <div class="slds-size_1-of-3">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container9}</div>
+      </div>
+    </div>
+    
+          
+</aura:component>

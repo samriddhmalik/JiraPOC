@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>group_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Group Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>INVOICED</fullName>
+                <default>false</default>
+                <label>INVOICED</label>
+            </value>
+            <value>
+                <fullName>AWAITING NAME CONF</fullName>
+                <default>false</default>
+                <label>AWAITING NAME CONF</label>
+            </value>
+            <value>
+                <fullName>AWAITING E-TICKETS</fullName>
+                <default>false</default>
+                <label>AWAITING E-TICKETS</label>
+            </value>
+            <value>
+                <fullName>AWAITING TAD PAYMENT</fullName>
+                <default>false</default>
+                <label>AWAITING TAD PAYMENT</label>
+            </value>
+            <value>
+                <fullName>AWAITING QUOTE ACCEPT</fullName>
+                <default>false</default>
+                <label>AWAITING QUOTE ACCEPT</label>
+            </value>
+            <value>
+                <fullName>PAID</fullName>
+                <default>false</default>
+                <label>PAID</label>
+            </value>
+            <value>
+                <fullName>INVOICE REQUESTED</fullName>
+                <default>false</default>
+                <label>INVOICE REQUESTED</label>
+            </value>
+            <value>
+                <fullName>CANCEL</fullName>
+                <default>false</default>
+                <label>CANCEL</label>
+            </value>
+            <value>
+                <fullName>REQUEST INVOICE</fullName>
+                <default>false</default>
+                <label>REQUEST INVOICE</label>
+            </value>
+            <value>
+                <fullName>AWAITING DATE CONF</fullName>
+                <default>false</default>
+                <label>AWAITING DATE CONF</label>
+            </value>
+            <value>
+                <fullName>TICKETED</fullName>
+                <default>false</default>
+                <label>TICKETED</label>
+            </value>
+            <value>
+                <fullName>CANCELLED</fullName>
+                <default>false</default>
+                <label>CANCELLED</label>
+            </value>
+            <value>
+                <fullName>DEPOSIT PAID</fullName>
+                <default>false</default>
+                <label>DEPOSIT PAID</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creative_Dimensions_Size__c</fullName>
+    <externalId>false</externalId>
+    <label>Creative/Dimensions (Size)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Country__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Page, 380mm x 262mm (NewsCorp)</fullName>
+                <default>false</default>
+                <label>Full Page, 380mm x 262mm (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Full Page, 374mm x 260mm (NINE)</fullName>
+                <default>false</default>
+                <label>Full Page, 374mm x 260mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>DPS, 380mm x 551mm (NewsCorp)</fullName>
+                <default>false</default>
+                <label>DPS, 380mm x 551mm (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>DPS, 374mm x 550mm (NINE)</fullName>
+                <default>false</default>
+                <label>DPS, 374mm x 550mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Strip Ad, 92mm x 262mm (NewsCorp)</fullName>
+                <default>false</default>
+                <label>Strip Ad, 92mm x 262mm (NewsCorp)</label>
+            </value>
+            <value>
+                <fullName>Strip Ad, 92mm x 260mm (NINE)</fullName>
+                <default>false</default>
+                <label>Strip Ad, 92mm x 260mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Wrap Cover &amp; Back, 260mm x 380mm (NINE)</fullName>
+                <default>false</default>
+                <label>Wrap Cover &amp; Back, 260mm x 380mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Wrap, Inside spread, 550mm x 380mm (NINE)</fullName>
+                <default>false</default>
+                <label>Wrap, Inside spread, 550mm x 380mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Glossy FP, 378mm x 278mm (NINE)</fullName>
+                <default>false</default>
+                <label>Glossy FP, 378mm x 278mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Glossy DPS, 556mm x 355mm (NINE)</fullName>
+                <default>false</default>
+                <label>Glossy DPS, 556mm x 355mm (NINE)</label>
+            </value>
+            <value>
+                <fullName>Full Page, 366mm x 254mm (NZ)</fullName>
+                <default>false</default>
+                <label>Full Page, 366mm x 254mm (NZ)</label>
+            </value>
+            <value>
+                <fullName>Broadsheet, 560mm x 380mm (NZ)</fullName>
+                <default>false</default>
+                <label>Broadsheet, 560mm x 380mm (NZ)</label>
+            </value>
+            <value>
+                <fullName>Strip Ad, 254mm x 90mm (NZ)</fullName>
+                <default>false</default>
+                <label>Strip Ad, 254mm x 90mm (NZ)</label>
+            </value>
+            <value>
+                <fullName>Travel Solus, 560px x 515px</fullName>
+                <default>false</default>
+                <label>Travel Solus, 560px x 515px</label>
+            </value>
+            <value>
+                <fullName>Travel Multi, 560px x 240px</fullName>
+                <default>false</default>
+                <label>Travel Multi, 560px x 240px</label>
+            </value>
+            <value>
+                <fullName>Escape Solus, 600px x 690px</fullName>
+                <default>false</default>
+                <label>Escape Solus, 600px x 690px</label>
+            </value>
+            <value>
+                <fullName>Escape Multi, 600px x 450px</fullName>
+                <default>false</default>
+                <label>Escape Multi, 600px x 450px</label>
+            </value>
+            <value>
+                <fullName>Digital Banner/s</fullName>
+                <default>false</default>
+                <label>Digital Banner/s</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>SEARCH</fullName>
+                <default>false</default>
+                <label>SEARCH</label>
+            </value>
+            <value>
+                <fullName>Billboard/s</fullName>
+                <default>false</default>
+                <label>Billboard/s</label>
+            </value>
+            <value>
+                <fullName>Travel Zoo (TZ)</fullName>
+                <default>false</default>
+                <label>Travel Zoo (TZ)</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>I Know The Pilot (IKTP)</fullName>
+                <default>false</default>
+                <label>I Know The Pilot (IKTP)</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Glossy DPS, 556mm x 355mm (NZ)</fullName>
+                <default>false</default>
+                <label>Glossy DPS, 556mm x 355mm (NZ)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Full Page, 380mm x 262mm (NewsCorp)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Full Page, 374mm x 260mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>DPS, 380mm x 551mm (NewsCorp)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>DPS, 374mm x 550mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Strip Ad, 92mm x 262mm (NewsCorp)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Strip Ad, 92mm x 260mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Wrap Cover &amp; Back, 260mm x 380mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Wrap, Inside spread, 550mm x 380mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Glossy FP, 378mm x 278mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <valueName>Glossy DPS, 556mm x 355mm (NINE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Travel Solus, 560px x 515px</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Travel Multi, 560px x 240px</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Escape Solus, 600px x 690px</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Escape Multi, 600px x 450px</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Digital Banner/s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Video</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>SEARCH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Billboard/s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>I Know The Pilot (IKTP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Australia</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Radio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Full Page, 366mm x 254mm (NZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Broadsheet, 560mm x 380mm (NZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Strip Ad, 254mm x 90mm (NZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Travel Zoo (TZ)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Glossy DPS, 556mm x 355mm (NZ)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

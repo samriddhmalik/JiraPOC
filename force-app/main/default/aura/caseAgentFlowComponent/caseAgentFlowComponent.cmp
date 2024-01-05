@@ -1,0 +1,243 @@
+<aura:component controller="case_TadOrderFlow" implements="lightning:availableForFlowScreens,force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global" >
+	    <aura:attribute name="AccountId" type="String"/>
+    <aura:attribute name="SavedDealID" type="String" default=""/>
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="accountName" type="String" default=""/>
+    <aura:attribute name="DealName" type="String" default=""/>
+    <aura:attribute name="tadOrderId" type="String"/>
+    <aura:attribute name="DealId" type="String"/>
+    <aura:attribute name="caseID" type="String"/>
+    <aura:attribute name="sourceObject" type="String"/>
+    <aura:attribute name="storeTheTADOrderRecordId" type="String" default=""/>
+      <aura:attribute name="redirectrender" type="Boolean" default="false"/>
+     <aura:attribute name="redirectrender1" type="Boolean" default="true"/>
+    <aura:attribute name="fromSavedDeal" type="Boolean" default="true"/>
+     
+     <aura:attribute name="isCaseOLIAddon" type="Boolean" default="false"/>
+     <aura:attribute name="ispayment" type="boolean" default="false"/>
+     <aura:attribute name="isPaymentmethod" type="boolean" default="false"/>
+       <aura:attribute name="couponComponent" type="boolean" default="false"/>
+    <aura:attribute name="bpointComponent" type="boolean" default="false"/>
+      <aura:attribute name="sendCommsComponent" type="boolean" default="false"/>
+    <aura:attribute name="OpenIframe" type="boolean" default="false"/>
+     <aura:attribute name="iframeUrl" type="String" default=""/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  
+   <aura:attribute name="options" type="List[]"/>
+     <aura:attribute name="ammount" type="Decimal"/>
+   
+    <lightning:workspaceAPI aura:id="workspace"/>
+	<aura:attribute name="tadOrder" type="String" default=""/>
+    
+    <aura:attribute name="methodvalue" type="String"/>
+     <aura:attribute name="successTadOrder" type="Boolean" default="false"/>
+    
+    <aura:attribute name="showOrderComp" type="boolean" default="false"/>
+     <aura:attribute name="isModalOpenOLI" type="boolean" default="false"/>
+   
+     <aura:handler name="sampleComponentEvent" event="c:caseTADorderEvent" action="{!c.handleComponentEvent}"/>
+    
+      <aura:html tag="style">
+    .slds-modal__container {
+     min-width: 55vw;
+    }
+</aura:html>
+    
+     <div class="slds-box slds-theme_default">
+         
+           <aura:if isTrue="{!v.successTadOrder}"> 
+           <br></br>
+            <div class="slds-text-heading_small">
+               <b>Case Flow For Agent</b> 
+            </div>
+           
+            <br></br>
+            <div class="slds-m-bottom_large flowruntimeRichTextWrapper flowruntimeDisplayText" data-aura-rendered-by="4360:0" data-aura-class="flowruntimeRichTextWrapper flowruntimeDisplayText">
+                <div dir="ltr" data-aura-rendered-by="4363:0" class="uiOutputRichText" data-aura-class="uiOutputRichText">
+                    <p data-aura-rendered-by="4364:0">
+                        Hi, your Order is being created successfully. 
+                        <a style="background-color: rgb(255, 255, 255); font-weight : bold;" href="JavaScript:Void(0);" onclick="{!c.navigateToRecord}" rel="noopener">
+                            Click here
+                        </a>
+                        to go there!
+                    </p>
+                </div>
+            </div>
+        </aura:if>
+         
+         
+     <aura:if isTrue="{!v.showOrderComp}">
+   
+     <c:createTadOrder AccountId="{!v.AccountId}" accountName="{!v.accountName}" DealName="{!v.DealName}" tadOrderId="{!v.tadOrderId}" DealId="{!v.DealId}" caseID="{!v.caseID}" sourceObject="{!v.sourceObject}" SavedDealID="{!v.SavedDealID}"/>
+    </aura:if>
+         
+         <aura:if isTrue="{!v.isModalOpenOLI}">
+        
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Anything else?</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Do you wish to create an OLI?
+                            </b>
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" 
+                                          label="Create an OLI"
+                                          title="Create an OLI"
+                                          onclick="{!c.callFlowNow}"/>
+                        
+                        <lightning:button variant="neutral" 
+                                          label="No"
+                                          title="No"
+                                          onclick="{! c.handleNo }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+                   </aura:if>
+    
+     <aura:if isTrue="{!v.redirectrender}">
+        <div class="slds-box slds-theme_default slds-text-title_bold slds-grid slds-wrap slds-align_absolute-center" >
+        	<lightning:flow aura:id="flowId" onstatuschange="{!c.handleStatusChange}"/>
+        </div>
+    </aura:if>
+     <aura:if isTrue="{!v.redirectrender1}">
+        <div class="slds-theme_default">
+        	<lightning:flow aura:id="flowId2"  onstatuschange="{!c.handleStatusChangeAgent}"/>
+        </div>
+    </aura:if>
+       <aura:if isTrue="{!v.isCaseOLIAddon}">
+        
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Anything else?</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Do you wish to create an OLI or an AddOn further?
+                            </b>
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                         <lightning:button variant="brand" 
+                                          label="Create an OLI"
+                                          title="Create an OLI"
+                                          onclick="{!c.callFlowNow}"/>
+                        
+                        <lightning:button variant="brand" 
+                                          label="Create an AddOn"
+                                          title="Create an AddOn"
+                                          onclick="{! c.callFlowNow1}"/>
+                        
+                        <lightning:button variant="neutral" 
+                                          label="No"
+                                          title="No"
+                                          onclick="{! c.callpayment}"
+                                        />
+                           </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+                   </aura:if>
+    
+      <aura:if isTrue="{!v.ispayment}">
+        
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Anything else?</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b> Do you wish to proceed with payment?
+                                   
+                            </b>
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                               <lightning:button variant="brand" 
+                                          label="Yes"
+                                          title="Yes"
+                                          onclick="{!c.payYes}"/>
+                        
+                        <lightning:button variant="neutral" 
+                                          label="No"
+                                          title="No"
+                                          onclick="{!c.handleNo}"/>
+                        
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+                   </aura:if>
+  
+    
+    
+    <aura:if isTrue="{!v.isPaymentmethod}">
+         <div class="slds-box slds-theme_default">
+        Total Outstanding amount : "{! v.ammount }"
+        <br></br>
+        <br></br>
+         <lightning:radioGroup name="Select Payment Method"
+                          label="Select Payment Method"
+                          options="{! v.options }"
+                          value="{!v.methodvalue}"
+                          type="radio"
+                          onchange="{! c.handleChange }"
+                               />
+         <br></br>
+        <lightning:button variant="neutral" 
+                                          label="Back"
+                                          title="Back"
+                                          onclick="{!c.handleBack}"/>
+                       
+         <lightning:button variant="success" 
+                                          label="Next"
+                                          title="Next"
+                                          onclick="{!c.nextPayment}"/>
+        </div>
+        
+    </aura:if>
+   <aura:if isTrue="{!v.couponComponent}">
+       <c:AddOrderAndLineCoupons recordId="{#v.storeTheTADOrderRecordId}" sourceObject="{!v.sourceObject}"/>
+    </aura:if>
+   <aura:if isTrue="{!v.bpointComponent}">
+       <c:BpointTADTC_LightningComp recordId="{#v.storeTheTADOrderRecordId}" sourceObject="{!v.sourceObject}"/>
+    </aura:if>
+   <aura:if isTrue="{!v.sendCommsComponent}">
+       <c:SendCommunication recordId="{#v.storeTheTADOrderRecordId}" sourceObject="{!v.sourceObject}"/>
+    </aura:if>
+   <aura:if isTrue="{!v.OpenIframe}">
+        <lightning:button variant="brand" 
+                                          label="Click here to Finish"
+                                          title="Click here Finish"
+                                          onclick="{!c.afterPayment}"/>
+                        
+    </aura:if>
+  
+    </div>
+    
+</aura:component>

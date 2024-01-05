@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merchant_Sharing_Deadline</fullName>
+    <columns>NAME</columns>
+    <columns>deal_type__c</columns>
+    <columns>deal_type_nz__c</columns>
+    <columns>merchant_sharing_deadline_date__c</columns>
+    <columns>merchant_sharing_deadline__c</columns>
+    <columns>merchant_sharing_deadline_notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>merchant_sharing_deadline_date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>merchant_sharing_deadline__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Merchant Sharing Deadline</label>
+    <sharedTo>
+        <group>Logistics</group>
+    </sharedTo>
+</ListView>

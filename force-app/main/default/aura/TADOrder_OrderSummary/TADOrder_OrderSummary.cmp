@@ -1,0 +1,235 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="TADOrderSummary" access="global" >
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:attribute name="TADDetails" type="TAD_Order__c" />
+    <aura:attribute name="OLIDetails" type="order_line_item__c[]" />
+    <aura:attribute name="isCollapsed" type="boolean" default="true"/>
+    
+    
+  <div class="slds-grid slds-gutters" style="float:right;">
+  	
+      <div class="slds-col" style="padding-right: 0px; width:30px; margin-left:4px; margin-right:-2px;">
+        <aura:if isTrue="{!v.isCollapsed == false}">
+        	<article class="slds-card" onclick="{! c.collapseClose }" style="height: 100%; width:16px; ">
+            	<lightning:buttonIcon class="centeredAlign" iconName="utility:chevronright" variant="bare" alternativeText="" title="Collapse" />
+            </article>
+        </aura:if>
+        <aura:if isTrue="{!v.isCollapsed}">
+        	<article class="slds-card" style="height:100%; width:16px;" onclick="{! c.collapseOpen }">
+            	<lightning:buttonIcon class="centeredAlign" iconName="utility:chevronleft" variant="bare" alternativeText="" title="Show" />
+            </article>
+            
+        </aura:if> 
+      </div>
+    
+      <div class="slds-col toggle" style="padding-left: 0px;" aura:id="orderSummary">
+        <article class="slds-card" style="overflow:hidden;border: none;">
+            <div class="slds-tabs_card">
+                <ul role="tablist" class="slds-tabs_default__nav" style="margin-bottom: 12.5px;">
+                    <li data-tab="true" title="Order Summary" role="presentation" class="slds-tabs_default__item slds-is-active">
+                        <a role="tab" href="javascript:void(0)" tabindex="0" aria-selected="true" class="slds-tabs_default__link" aria-controls="tab-3">
+                            Order Summary
+                        </a>
+                    </li>
+                 </ul>
+                <div class="slds-form" role="list">                
+                     <div class="slds-form__row">
+                        <div class="slds-form__item" role="listitem">
+                                <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                                    <span class="slds-form-element__label">
+                                        Order Number
+                                    </span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            {!v.TADDetails.Name}
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                         <div class="slds-form__item" role="listitem">
+                                <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                                    <span class="slds-form-element__label">
+                                        Option
+                                    </span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            {!v.TADDetails.ordexp_option_purchased__c  }
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                     </div>
+                     <div class="slds-form__row">
+                          <div class="slds-form__item" role="listitem">
+                                <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                                    <span class="slds-form-element__label">
+                                        Departure Date
+                                    </span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            {!v.TADDetails.ordexp_departure_date__r.Name}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                <lightning:accordion aura:id="accordion" allowMultipleSectionsOpen="true" >
+                <aura:iteration items="{!v.OLIDetails}" var="oli">
+                    <lightning:accordionSection name="A" label="{!oli.Consolidated_Field__c}" >
+                        <aura:set attribute="body">
+                          <aura:if isTrue="{!or(not(empty(oli.Visa_Insurance_POE__r)),(or(not(empty(oli.AddOns__r)),not(empty(oli.Order_Customisations_POE__r)))))}">
+                            <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+                                   role="grid" style="table-layout:fixed;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 25%;">
+                                            Name
+                                        </th>
+                                        <th scope="col" style="width: 20%;" >
+                                            Type
+                                        </th>
+                                        <th scope="col" style="width: 20%;" >
+                                            Details
+                                        </th>
+                                        <th scope="col" style="width: 20%;" >
+                                            Passenger
+                                        </th>
+                                        <th scope="col" style="width: 15%;">
+                                            Price
+                                        </th>                             
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!oli.AddOns__r}" var="addOn" indexVar="index">
+                                        <tr class="slds-hint-parent">
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!addOn.ordexp_AddOn_Name__c}"/>
+                                            </td>
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!addOn.Add_On_Type__c}"/>
+                                            </td>
+                                            <td role="gridcell" class="data-column">
+                                                 <aura:if isTrue="{!or(addOn.AE_SB__c != null, addOn.land_activity__c != null)}">
+                                                      {!addOn.AE_SB__r.Name}
+                                                      {!addOn.land_activity__r.title__c}
+                                                  </aura:if>
+                                            </td> 
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!addOn.ordexp_passenger_name__c}"/>
+                                            </td>
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!'$'+addOn.ordexp_amount__c}"/>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                    
+                                    <aura:iteration items="{!oli.Visa_Insurance_POE__r}" var="visa" indexVar="index">
+                                        <aura:if isTrue="{!visa.RecordType.Name == 'Visa'}">
+                                        
+                                            <tr class="slds-hint-parent">
+                                                <td role="gridcell" class="data-column">
+                                                    <a  href="JavaScript:Void(0);" data-record="{!visa.Id}"  onclick="{!c.navigateToRecord}">
+                                                    	<p>{!visa.Name}</p>
+                                                	</a>
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                    {!visa.RecordType.Name}
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                     {!visa.Date_Display_on_Accordian__c}
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                    <aura:unescapedHtml value="{!visa.ordexp_passenger_name__c}"/>
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                    ${!visa.Total_to_TAD__c}
+                                                </td>
+                                            </tr>
+                                        </aura:if>
+                                        <aura:if isTrue="{!visa.RecordType.Name == 'Insurance'}">
+                                        
+                                            <tr class="slds-hint-parent">
+                                                <td role="gridcell" class="data-column">
+                                                    <a  href="JavaScript:Void(0);" data-record="{!visa.Id}"  onclick="{!c.navigateToRecord}">
+                                                    	<p>{!visa.Name}</p>
+                                                    </a>
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                    {!visa.RecordType.Name}
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                     {!visa.Date_Display_on_Accordian__c}
+                                                </td>  
+                                                 <td role="gridcell" class="data-column">
+                                                    <aura:unescapedHtml value="{!visa.ordexp_passenger_name__c}"/>
+                                                </td>
+                                                <td role="gridcell" class="data-column">
+                                                    ${!visa.Insurance_Sale_Price__c}
+                                                </td>
+                                            </tr>
+                                        </aura:if>
+                                    </aura:iteration>
+                                    
+                                    <aura:iteration items="{!oli.Order_Customisations_POE__r}" var="oc" indexVar="index">
+                                        <tr class="slds-hint-parent">
+                                            <td role="gridcell" class="data-column">
+                                                <a  href="JavaScript:Void(0);" data-record="{!oc.Id}"  onclick="{!c.navigateToRecord}"> 
+                                                <aura:unescapedHtml value="{!oc.Name}"/></a>
+                                            </td>
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!oc.Type__c}"/>
+                                            </td>
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!oc.Requested_Details__c}"/>
+                                            </td>                                    
+                                            <td role="gridcell" class="data-column">
+                                                <aura:unescapedHtml value="{!'$'+oc.Total_Final_Cost__c}"/>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                    
+                                </tbody>
+                            </table>
+                          </aura:if>
+                        </aura:set>
+                    </lightning:accordionSection>
+                </aura:iteration>        
+            </lightning:accordion>    
+                    <div class="slds-form__row">
+                        <div class="slds-form__item" role="listitem">
+                                <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                                    <span class="slds-form-element__label">
+                                        Total Price 
+                                    </span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            ${!v.TADDetails.ordexp_total_price__c }
+                                         </div>
+                                    </div>
+                                </div>
+                            </div> 
+                    </div>
+                    <div class="slds-form__row">
+                          <div class="slds-form__item" role="listitem">
+                                <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+                                    <span class="slds-form-element__label">
+                                        Total Amount Outstanding
+                                    </span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            ${!v.TADDetails.ordexp_amount_outstanding__c}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    	</article>
+      </div>
+  </div> 
+	
+    
+</aura:component>

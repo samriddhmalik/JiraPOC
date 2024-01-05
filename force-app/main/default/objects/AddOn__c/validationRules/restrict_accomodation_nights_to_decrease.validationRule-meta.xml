@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>restrict_accomodation_nights_to_decrease</fullName>
+    <active>true</active>
+    <description>Validate the addon to restrict on decreasing the accommodation nights when the status is active or secured.</description>
+    <errorConditionFormula>(ISPICKVAL( AddOn_Status__c , &apos;Secured&apos;) || ISPICKVAL( AddOn_Status__c , &apos;Active&apos;) ) &amp;&amp; (( PRIORVALUE( AE_Nights__c ) &gt; AE_Nights__c ) || ( PRIORVALUE(  SB_Nights__c  ) &gt; SB_Nights__c ))</errorConditionFormula>
+    <errorMessage>AE Nights cannot be changed, please follow the Credit Type Cancellation Process to make this change.</errorMessage>
+</ValidationRule>

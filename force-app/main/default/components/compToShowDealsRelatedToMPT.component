@@ -1,0 +1,14 @@
+<apex:component controller="ControllerForVfEmailTemplate" access="global">
+     <apex:attribute name="currentRecordId" description="" assignTo="{!mtId}" type="Id"/>
+ <table style="border:collapse  1px">
+   
+    <tr>
+        <td style="border:collapse  1px"> Deal Name</td>
+    </tr>
+      <apex:repeat value="{!dealList}" var="deal">
+       <tr> 
+            <td style="border:collapse  1px"> {!deal.name} </td>
+            </tr>
+    </apex:repeat>
+  </table>
+</apex:component>

@@ -1,0 +1,143 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+
+<div style="margin:0;margin:0;background-color:#fff;height:100%!important;width:100%!important;background-color: #f8f8fa;padding: 0;">
+  <table border="0" cellpadding="0" cellspacing="0" height="100%" style="border-collapse:collapse;margin:0;background-color:#fff;height:100%!important;width: 100%;max-width: 600px!important;
+margin: auto;border: 1px solid #c8c8c8;margin-top: 0;">
+    <tbody>
+      <tr>
+        <td style="width:5%;color: #fff;"> . </td>
+        <td align="center" style="margin:0;margin:0;padding-top:20px;padding-bottom:20px;/*! background-color:#f8f8fa; */height:100%!important;width:90%!important" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;background-color:#fff;max-width:600px;/*! border:1px solid #c8c8c8 */" width="100%">
+            <tbody>
+              <tr>
+                <td align="center" style="margin-left:0px;margin-right:0px;padding-top:26px;padding-bottom:20px" valign="top">
+                  <table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                      <tr>
+                       <td align="center" valign="top"><img style="max-width: 600px!important; border: 0; outline: none; text-decoration: none;" src="https://3039.s3.ap-southeast-2.amazonaws.com/TAD-QFF-EDM-Header-600px.jpg" alt="tripadeal logo" width="100%" align="middle" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table cellpadding="0" cellspacing="0" style="border-collapse:collapse" width="100%">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table id="main-table" style="border-collapse:collapse;width: 100%">
+                            <tbody>
+                              <tr>
+                                <td align="left" style="width:100%;border-bottom-style:solid;border-color:#c8c8c8;border-width:0px;line-height:140%" valign="top">
+                                  <table style="border-collapse:collapse">
+                                    <tbody>
+                                      <tr>
+                                        <td height="20" style="font-size:0px;background:#fff;line-height:20px;"> </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left"><span style="font-size:16px;display:inline-block;line-height:25px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:16px;color:#1a1a1a;font-weight:400;text-align:left">Dear
+                                    {!order__c.Account__c},
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="20" style="font-size:0px;background:#fff;line-height:20px;"> </td>
+                              </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="color: #000000; text-align: left; font-family: Lato, Arial, sans-serif; font-size: 15px; line-height:22px;" valign="top">
+                          <p>
+                            <strong>The cancellation of your tour is now finalised. Please find below a summary of your booking details that may be required for your Travel Insurance claim:</strong><br />
+                            <br />
+
+                            <span style="color: #00bfd6;">Order Reference Number:</span> {!order__c.Name} <br />
+
+                            <span style="color: #00bfd6;">Deal ID:</span> {!order__c.Deal_ID__c} <br />
+
+                            <span style="color: #00bfd6;">Deal:</span> {!order__c.DealFC__c} - {!order__c.OptionPC__c} <br />
+
+                            <span style="color: #00bfd6;">Purchaser Name:</span> {!order__c.full_name_purchaser__c} <br />
+
+                            <span style="color: #00bfd6;">Travellers To Cancel:</span> {!order__c.Passengers_to_Cancel__c} <br />
+
+                            <span style="color: #00bfd6;">Order Quantity:</span> {!order__c.qty__c} <br />
+
+                            <span style="color: #00bfd6;">No. of Passengers:</span> {!order__c.PAX_Travelling__c} <br />
+
+                            <span style="color: #00bfd6;">Departure Date:</span> {!order__c.departure_date__c} <br />
+<!--
+                            <span style="color: #00bfd6;">Departure City:</span> {!order__c.departure_city__c} <br />
+                            <br />
+                            <span style="color: #00bfd6;">Extra Options:</span> {!order__c.extras_summary__c} <br />-->
+                            <br />
+                            <span style="color: #00bfd6;">Total Amount Paid:</span> ${!order__c.total_payment_received__c}<br />
+                            <span style="color: #00bfd6;">Payment Date:</span> {!order__c.time_confirmed__c}<br />
+                            <br />
+                            <span style="color: #00bfd6;">Total Claimable Amount :</span>$ {!order__c.total_payment_received__c}<br />
+                            <br />
+                            You will also receive a copy of your original Payment Receipt via email.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="20" style="font-size:0px;background:#fff;line-height:20px;"> </td>
+                      </tr>
+                      <tr>
+                        <td height="20" style="font-size:0px;background:#fff;line-height:20px;border-top-style:solid;border-color:#D2D2D2;border-width:1px;"> </td>
+                      </tr>
+                      <tr>
+                        <td style="color: #000000; text-align: left; font-family: Lato, Arial, sans-serif; font-size: 15px; line-height:22px;" valign="top">
+                          <p>
+                            <strong>TripADeal can not itemise the cost of each individual component as it was sold as a heavily discounted promotional package. There are no refunds for any unused portion of the package including unused flights. TripADeal cannot offer any refund of monies paid based on these circumstances.</strong>
+                            <br />
+                            <br />
+                            Please note: You may be required to provide a copy of our Terms & Conditions and Refund Policy to your insurer to assist in your claim. This information can be found via the following links:<br />
+                            <a style="color:#00bfd6;" href="https://www.tripadeal.com.au/terms">Terms & Conditions</a><br />
+                            <a style="color:#00bfd6;" href="https://www.tripadeal.com.au/refund-policy">Cancellation & Refund Policy</a><br />
+                            <br />
+                            Please let us know if we can be of any further assistance to you at all.
+                          </p>
+                        </td>
+
+                      </tr>
+
+
+                      <tr>
+                        <td height="20" style="font-size:0px;background:#fff;line-height:30px;"> </td>
+                      </tr>
+                      <!-- FOOTER:START -->
+        <tr>
+          <td height="24" style="font-size:0px;background:#F2F1F1;line-height:24px;"> </td>
+        </tr>
+        <tr>
+          <td align="center" style="margin:20px 20px 20px 20px;background:#F2F1F1;"><span style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;color:#1a1a1a;font-weight:400;text-align:center"> <span style="font-weight: bold;letter-spacing: 0.25px;font-size: 16px;"> We're here to help you.</span><br/>
+            If you have any questions, please visit our <a href="https://support.tripadeal.com.au" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> Support Page.</span></a><br/>
+            Or call us on <a href="tel:1300861736" style="text-decoration: none;"> <span style="color:#00bfd6;font-weight:bold;"> 1300 861 736. </span> </a> </span></td>
+        </tr>
+        <tr>
+          <td align="center" style="margin:0px 20px 0px 20px;background: #F2F1F1"><p style="font-size:15px;display:inline-block;line-height:23px;font-family:Lato,Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;font-weight:400;text-align:center"> Regards, <br/>
+              The TripADeal Team </p></td>
+        </tr>
+        <tr>
+          <td height="10" style="font-size:0px;background:#F2F1F1;line-height:10px;"> </td>
+        </tr>
+        <!-- FOOTER:END -->
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <td style="width:5%;color: #fff;"> . </td>
+
+</div>

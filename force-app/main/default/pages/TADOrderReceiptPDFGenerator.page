@@ -1,0 +1,211 @@
+<apex:page standardController="TAD_Order__c" renderAs="pdf" extensions="TADORderReceiptPDFGeneratorExtension" id="pageId" cache="false" showHeader="false" standardStylesheets="false" applyBodyTag="true" applyHtmlTag="true">
+    
+    <head>
+        
+        <style type="text/CSS">
+            .table-bordered {
+            border-width: 1px solid #000;				
+            }
+            
+            @page {
+            size: letter;
+            margin: 25mm;
+            @top-center {
+            content: "Sample";
+            }
+            @bottom-center {
+            content: "Page " counter(page) " of " counter(pages);
+            }
+            }
+            .page-break {
+            display:block;
+            page-break-after:always;
+            }
+            body {
+            font-family: Arial Unicode MS;
+            }
+            .tableId{
+            width : 100% !important;
+            }
+        </style>
+    </head>
+    
+    <apex:outputText value="{0, DATE, dd MMM',' yyyy}">
+        <apex:param value="{!TODAY()}"/>   
+    </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <apex:outputText value="TripADeal payment receipt. - noreply@tripadeal.com.au - TripA Deal Pty Ltd Mail"/>
+    <br/><br/><br/><br/>
+    <body width="100%">
+        <div class="page-break">
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:26.6%"> 
+                        <apex:image url="{!$Resource.TripADealLogo}" width="200" height="80" id="imgId"></apex:image>
+                    </apex:column><br/><br/><br/><br/>
+                    
+                    <apex:column style="width:26.6%">
+                        <apex:outputText value ="Receipt #:{!receiptNumber} <br>Order {!TAD_Order__c.Name}<br>Tansaction Date: {!transactionDate}" escape="false"/>
+                    </apex:column>
+                </apex:pageBlockTable> 
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="block2">
+                
+                <table id="tableId"  width="100%"  >
+                    <tr>
+                        <td width="50%">Trip A Deal PTY LTD</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15 Wollongbar St.</td>
+                        <td></td>                      
+                    </tr>
+                    <tr>
+                        <td>Byron Bay,NSW 2481</td>
+                        <td style="text-align: right;">{!paidByName}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right;">{!paidByEmail}</td>
+                    </tr>
+                    <tr>
+                        <td>ABN: 50 149 240 433<br/><br/><br/><br/><br/></td>
+                        <td></td>
+                    </tr>
+                     <tr>
+                        <td>Payment Method</td>
+                        <td style="text-align: right;">{!paymentMethod}<br/><br/></td>
+                    </tr>
+                     <tr>
+                        <td>Transaction Identifier</td>
+                        <td style="text-align: right;">{!transactionIdentifier}<br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td>Original Amount</td>
+                        <td style="text-align: right;">{!currencyCode} {!originalAmount}<br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td>{!TAD_Order__c.ordexp_deal_id_title__c}<br/><br/></td>
+                    </tr>
+                     <tr>
+                        <td>Surcharge Amount</td>
+                         <td style="text-align: right;">{!currencyCode} {!surchargeAmount}<br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right;">Total: {!currencyCode} {!sumOfOriginalAndSurcharge}</td>
+                    </tr>
+                    
+					                    
+                </table>
+            </apex:pageBlock>
+            <!--<apex:pageBlock >
+<apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+<apex:column style="width:33%">
+<apex:facet name="header">Trip A Deal PTY LTD</apex:facet>
+<apex:outputText value="15 Wollongbar St<br>Byron Bay<br>NSW 2481<br><br>ABN: 50 149 240 433<br><br><br>" escape="false"/>                      
+</apex:column>
+
+<apex:column style="width:50%">
+</apex:column>
+
+
+<apex:column style="width:26.6%">
+<apex:outputText value="{!paidByName}<br>{!paidByEmail}" escape="false"/>   
+</apex:column>	
+
+</apex:pageBlockTable>   
+</apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:39%">
+                        <apex:outputText value="Payment Method" escape="false"/>                      
+                    </apex:column>
+                    
+                    <apex:column style="width:50%">
+                    </apex:column>
+                    
+                    
+                    <apex:column style="width:26.6% float:right">
+                        <apex:outputText value="{!paymentMethod}<br><br><br>" escape="false"/>   
+                    </apex:column>	
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:45%">
+                        <apex:outputText value="Transaction Identifier" escape="false"/>                      
+                    </apex:column>
+                    
+                    <apex:column style="width:50%">
+                    </apex:column>
+                    
+                    
+                    <apex:column style="width:26.6% float:right">
+                        <apex:outputText value="{!transactionIdentifier}<br><br><br>" escape="false"/>   
+                    </apex:column>	
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:39%">
+                        <apex:outputText value="Original Amount" escape="false"/>                      
+                    </apex:column>
+                    
+                    <apex:column style="width:50%">
+                    </apex:column>
+                    
+                    
+                    <apex:column style="width:26.6% float:right">
+                        <apex:outputText value="{!originalAmount}<br><br><br>" escape="false"/>   
+                    </apex:column>	
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:39%">
+                        <apex:outputText value="{!TAD_Order__c.ordexp_deal_id_title__c}<br><br>" escape="false"/>                      
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:39% float:right">
+                        <apex:outputText value="Surcharge Amount" escape="false"/>                      
+                    </apex:column>
+                    
+                    <apex:column style="width:50%">
+                    </apex:column>
+                    
+                    
+                    <apex:column style="width:26.6% float:right">
+                        <apex:outputText value="{!surchargeAmount}<br><br><br>" escape="false"/>   
+                    </apex:column>	
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!TAD_Order__c.Id}" var="id">
+                    <apex:column style="width:39% float:right">
+                        <apex:outputText value="Total: {!sumOfOriginalAndSurcharge}" escape="false"/>                      
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlock> -->
+            
+        </div>
+        
+        
+    </body>
+    
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Applied__c</fullName>
+    <externalId>false</externalId>
+    <label>Amount Applied</label>
+    <summarizedField>COVID_Inv_Line_Items__c.Calculated_Amount__c</summarizedField>
+    <summaryForeignKey>COVID_Inv_Line_Items__c.COVID_Invoice__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

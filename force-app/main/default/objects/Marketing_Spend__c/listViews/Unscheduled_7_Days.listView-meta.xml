@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unscheduled_7_Days</fullName>
+    <columns>NAME</columns>
+    <columns>Date__c</columns>
+    <columns>Marketing_Channel__c</columns>
+    <columns>Marketing_Source__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Unscheduled - 7 Days</label>
+</ListView>

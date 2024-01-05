@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFT</fullName>
+    <columns>NAME</columns>
+    <columns>communication_code__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>RFT_coupon__c</columns>
+    <columns>coupon__c</columns>
+    <columns>purchaser_full_name__c</columns>
+    <columns>Survey_URL__c</columns>
+    <columns>NPS_URL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>communication_code__c</field>
+        <operation>equals</operation>
+        <value>Return from trip campaign - survey returned</value>
+    </filters>
+    <filters>
+        <field>RFT_coupon__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>RFT</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access to customer enquiry field on Order comm</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Order_Communication_POE__c.Customer_Enquiry__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CustomerEnquiry Access</label>
+</PermissionSet>

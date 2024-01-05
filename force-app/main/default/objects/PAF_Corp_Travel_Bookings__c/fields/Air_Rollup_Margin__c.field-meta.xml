@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Air_Rollup_Margin__c</fullName>
+    <externalId>false</externalId>
+    <label>Air Rollup Margin</label>
+    <summarizedField>PAF_Corp_Air__c.Margin__c</summarizedField>
+    <summaryForeignKey>PAF_Corp_Air__c.AIR__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

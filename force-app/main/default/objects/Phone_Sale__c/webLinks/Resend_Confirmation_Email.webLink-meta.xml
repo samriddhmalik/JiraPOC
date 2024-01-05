@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resend_Confirmation_Email</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Resend Confirmation Email</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+
+var myquery = &quot;SELECT Id, hidden_checkbox__c,  FROM Phone_Sale__c WHERE Id = :&apos;{!Phone_Sale__c.Id}&apos; limit 1&quot;; 
+
+result = sforce.connection.query(myquery, {
+    onSuccess : success,
+    onFailure : failure
+  });
+ 
+records = result.getArray(&quot;records&quot;); 
+
+var myPS = records[0];
+var updatePS = new Array(); 
+
+myPS.hidden_checkbox__c = true;
+updatePS.push(myOpp);
+
+result = sforce.connection.update(updatePS);
+
+if(result[0].getBoolean(&quot;success&quot;)){
+    window.location = &quot;/&quot; + &quot;{!Phone_Sale__c.Id}&quot;;
+    myPS.hidden_checkbox__c = false;
+    updatePS = new Array();
+    updatePS.push(myOpp);
+
+    result = sforce.connection.update(updatePS);
+
+    if(result[0].getBoolean(&quot;success&quot;)){
+        window.location = &quot;/&quot; + &quot;{!Phone_Sale__c.Id}&quot;;
+        alert(&apos;Confirmation email has been resent!&apos;)
+    }else{
+        alert(&apos;Could not lock the record! Please tell your system admin - Error: 
+        &apos; + result); 
+    }
+}else{
+    alert(&apos;Could not resend confirmation email - Error: &apos; + result); 
+}
+
+
+var result = sforce.connection.query(&quot;Select Name,Id from User&quot;, {
+    onSuccess : success,
+    onFailure : failure
+  });
+
+function success(result) {
+  var records = result.getArray(&quot;records&quot;);
+
+  for (var i=0; i&lt;records.length; i++) {
+    var record = records[i];
+    log(record.Name + &quot; -- &quot; + record.Id);
+  }
+}
+
+function failure(error) {
+  log(&quot;An error has occurred &quot; + error);
+}</url>
+</WebLink>

@@ -1,0 +1,43 @@
+.THIS .selected {
+  color: orange;
+}
+
+.THIS .slds-form-element__label {
+  font-size: 0.85rem !important;
+  color: black;
+}
+
+.THIS .redcolor svg {
+  fill: red;
+}
+.THIS .redcolor,
+.THIS .redcolor a {
+  color: red;
+}
+.THIS .redcolor svg {
+  fill: red !important;
+}
+.THIS .blackcolor svg {
+  fill: black;
+}
+.THIS .blackcolor {
+  color: black;
+}
+.THIS .blackcolor a {
+  color: black;
+}
+.THIS .blackcolor svg {
+  color: black !important;
+}
+
+.THIS .titleColor a {
+  color: black !important;
+  text-decoration: underline;
+}
+.THIS .custom-loading-text {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    white-space: nowrap;
+}

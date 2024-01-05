@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_PAX_Sold__c</fullName>
+    <externalId>false</externalId>
+    <formula>Total_PAX_Qty__c  * IF( NOT(ISBLANK( Deal__c )) ,  VALUE(TEXT(Deal__r.PAX_included_per_deal__c))  , IF(NOT(ISBLANK( DealID_from_Option__c )),  VALUE(text(options__r.Deal__r.PAX_included_per_deal__c)) ,  VALUE(text(sub_options__r.options__r.Deal__r.PAX_included_per_deal__c))  ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total PAX Sold</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

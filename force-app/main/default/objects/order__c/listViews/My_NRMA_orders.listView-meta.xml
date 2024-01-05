@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_NRMA_orders</fullName>
+    <columns>NAME</columns>
+    <columns>full_name_purchaser__c</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>order_status__c</columns>
+    <columns>agent_name__c</columns>
+    <columns>created_date__c</columns>
+    <columns>total_price__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.NRMA</value>
+    </filters>
+    <label>My NRMA Orders</label>
+    <sharedTo>
+        <portalRole>AbennCustomerPersonAccount</portalRole>
+    </sharedTo>
+</ListView>

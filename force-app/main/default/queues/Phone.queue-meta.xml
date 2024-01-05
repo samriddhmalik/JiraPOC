@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>abc@abc.com</email>
+    <name>Phone</name>
+    <queueMembers>
+        <users>
+            <user>adam@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>amazonconnect__ACSFCCP_HistoricalReportData__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>amazonconnect__Call_Campaign__c</sobjectType>
+    </queueSobject>
+</Queue>

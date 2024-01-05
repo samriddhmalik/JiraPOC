@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <interviewLabel>Days Number Update On Itinerary junction Point {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Days Number Update On Itinerary junction Point</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Days_Numner</name>
+        <label>Update Days Numner</label>
+        <locationX>516</locationX>
+        <locationY>379</locationY>
+        <inputAssignments>
+            <field>Days_Number__c</field>
+            <value>
+                <elementReference>$Record.Day_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>382</locationX>
+        <locationY>31</locationY>
+        <connector>
+            <targetReference>Update_Days_Numner</targetReference>
+        </connector>
+        <object>Itinerary_Component_Join__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

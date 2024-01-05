@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_EC__c</fullName>
+    <externalId>false</externalId>
+    <formula>and(
+   or(
+     RecordType.Name = &quot;Single-Line Expense&quot;,
+     RecordType.Name = &quot;Multi-Line Expense&quot;
+     ),
+   or(
+     Status1__c = &quot;Superseded&quot;,
+     Status1__c = &quot;Cancelled&quot;,
+     text(Status__c) = &quot;Superseded&quot;,
+     text(Status__c) = &quot;Cancelled&quot;,
+     and(
+         Status1__c = &quot;Active&quot;,
+         Post_Departure_Date__c,
+         not(isblank(Payable_Invoice__c)) 
+        )
+   ),
+   not(isblank( Recognition_Journal__c))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Process EC</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

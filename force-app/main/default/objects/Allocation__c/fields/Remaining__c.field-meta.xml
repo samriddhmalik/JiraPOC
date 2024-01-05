@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remaining__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*IF ( Cruise_Solo_Check__c ,
+Total_Allocation__c - ( ON_Held__c + ON_Sold__c + ON_Solo_Cruise__c + Sold__c +  Held__c + Solo_Balance__c + Order_Nights_Sold_Held__c ),
+Total_Allocation__c - ( ON_Held__c + ON_Sold__c + Sold__c +  Held__c  + Order_Nights_Sold_Held__c )
+)*/
+
+IF ( Cruise_Solo_Check__c ,
+Total_Allocation__c - ( ON_Held__c + ON_Sold__c + ON_Solo_Cruise__c ),
+Total_Allocation__c - ( ON_Held__c + ON_Sold__c )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Remaining</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

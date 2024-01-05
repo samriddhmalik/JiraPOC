@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<table data-pm-slice="1 1 []"><tbody><tr><td class="pm-table-cell-content-wrap"><p>Hello,</p><p><br></p><p>Your request for&nbsp;{!Cancellation_Refund_POE__c.Cancelled_Records_Information__c} has been rejected by the Customer Service Manager.</p><p><br></p><p>Customer Service Manager Rejection Reason:&nbsp;</p><p>{!Cancellation_Refund_POE__c.CS_Refund_Rejection_Reason__c}</p><p><br></p><p>Please contact the customer to notify them.</p></td></tr></tbody></table>]]></td>
+</tr>
+</table>

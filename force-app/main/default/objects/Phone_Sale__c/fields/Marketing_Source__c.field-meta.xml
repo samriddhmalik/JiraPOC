@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Marketing Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email (Newsletter)</fullName>
+                <default>false</default>
+                <label>Email (Newsletter)</label>
+            </value>
+            <value>
+                <fullName>FacebookInstagram</fullName>
+                <default>false</default>
+                <label>FacebookInstagram</label>
+            </value>
+            <value>
+                <fullName>Friend/relative</fullName>
+                <default>false</default>
+                <label>Friend/relative</label>
+            </value>
+            <value>
+                <fullName>Newspaper - (NSW) Sunday Telegraph</fullName>
+                <default>false</default>
+                <label>Newspaper - (NSW) Sunday Telegraph</label>
+            </value>
+            <value>
+                <fullName>Newspaper - (QLD) The Sunday Mail</fullName>
+                <default>false</default>
+                <label>Newspaper - (QLD) The Sunday Mail</label>
+            </value>
+            <value>
+                <fullName>Newspaper - (VIC) The Sunday Herald Sun</fullName>
+                <default>false</default>
+                <label>Newspaper - (VIC) The Sunday Herald Sun</label>
+            </value>
+            <value>
+                <fullName>Newspaper - (SA) The Adelaide Advertiser</fullName>
+                <default>false</default>
+                <label>Newspaper - (SA) The Adelaide Advertiser</label>
+            </value>
+            <value>
+                <fullName>Internet - Banner Advert</fullName>
+                <default>false</default>
+                <label>Internet - Banner Advert</label>
+            </value>
+            <value>
+                <fullName>Internet - YouTube Video</fullName>
+                <default>false</default>
+                <label>Internet - YouTube Video</label>
+            </value>
+            <value>
+                <fullName>Internet - Google Search</fullName>
+                <default>false</default>
+                <label>Internet - Google Search</label>
+            </value>
+            <value>
+                <fullName>Radio - (NSW) 2GB</fullName>
+                <default>false</default>
+                <label>Radio - (NSW) 2GB</label>
+            </value>
+            <value>
+                <fullName>Radio - (NSW) BAY FM</fullName>
+                <default>false</default>
+                <label>Radio - (NSW) BAY FM</label>
+            </value>
+            <value>
+                <fullName>Radio - (VIC) 3AW</fullName>
+                <default>false</default>
+                <label>Radio - (VIC) 3AW</label>
+            </value>
+            <value>
+                <fullName>Radio - (QLD) 4BC</fullName>
+                <default>false</default>
+                <label>Radio - (QLD) 4BC</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Titans NRL - Email</fullName>
+                <default>false</default>
+                <label>Gold Coast Titans NRL - Email</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Titans NRL - Social Media</fullName>
+                <default>false</default>
+                <label>Gold Coast Titans NRL - Social Media</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Titans NRL - Competition</fullName>
+                <default>false</default>
+                <label>Gold Coast Titans NRL - Competition</label>
+            </value>
+            <value>
+                <fullName>Gold Coast Titans NRL - Game Event</fullName>
+                <default>false</default>
+                <label>Gold Coast Titans NRL - Game Event</label>
+            </value>
+            <value>
+                <fullName>Letterbox Flyer</fullName>
+                <default>false</default>
+                <label>Letterbox Flyer</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

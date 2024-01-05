@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD PIF Reminder - 3 Days after purchase</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF PIF Reminder - 3 Days after purchase</name>
+    <style>none</style>
+    <subject>URGENT: Your Passenger Information Form is due today!</subject>
+    <textOnly>.
+
+Dear {!Order_Communication_POE__c.ordexp_Purchaser_First_Name__c},
+
+This is a final reminder that your Passenger Information Form is due.
+
+This form is required to be completed and sent to us in order to retain your order. Please urgently click the link below to complete the attached Passenger Information Form.
+
+Click the button below to be directed to your Passenger Information Form.
+
+GO TO MY DEALS
+
+If you have not already set a password, you can do so here.
+
+
+Please note: If we don&apos;t receive your completed form within the next 12 hours, your booking will be cancelled. You will be issued with a TripADeal credit voucher for the value of your purchase as per the booking terms. Please refer to our  Terms and Conditions for further details.
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

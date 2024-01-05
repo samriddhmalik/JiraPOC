@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_PP__c</fullName>
+    <externalId>false</externalId>
+    <formula>(IF( A_C_I__c = &quot;CNN&quot;,  PAF_Quote__r.PAF_Packagee__r.Child_Total__c , 
+ IF(A_C_I__c = &quot;INF&quot;,  PAF_Quote__r.PAF_Packagee__r.Infant_Total__c ,  PAF_Quote__r.PAF_Packagee__r.Adult_Total__c ) ) )
++ 
+IF(QF_Surcharge__c ,  PAF_Quote__r.PAF_Packagee__r.Qantas_Surcharge__c , 0)
++
+ IF( Business_Class_UpgradePAX1__c ,  PAF_Quote__r.PAF_Packagee__r.Business_Class_Upgrade_Surcharge__c , 0)
++
+
+IF (TEXT(PAF_Quote__r.PAF_Packagee__r.Stopover_Inclusion__c)= &quot;INC&quot;, (IF(Single_Supplement__c ,1,0) * PAF_Quote__r.PAF_Packagee__r.Stopover_Allocation__c) + 50,0)
++
+IF (AND(TEXT(PAF_Quote__r.PAF_Packagee__r.Stopover_Inclusion__c)= &quot;OPT&quot;,VALUE(TEXT( PAF_Quote__r.PAFPACKQUOTEJUNC__r.Stopover_Outbound_Nights__c)) &gt; 0) , (IF(Single_Supplement__c ,1,0) * PAF_Quote__r.PAF_Packagee__r.Stopover_Allocation__c) + 50,0)
+
+
+
++
+(PAF_Quote__r.PAF_Packagee__r.Stopover_Cost__c *( VALUE( TEXT(  Stopover_Inbound__c  ) ) +  VALUE( TEXT(  STOPOVER_OUTBOUND__c  ) ) ))
++
+ (IF( ADL_PER__c ,  PAF_Quote__r.PAF_Packagee__r.ADL_PER__c , 0))
++
+( IF( High_Season__c ,  PAF_Quote__r.PAF_Packagee__r.High_Season_Surcharge__c , 0) )
++
+IF( Insurance__c  &gt;=  PAF_Quote__r.PAF_Packagee__r.Insurance_Allocation__c , Insurance__c , PAF_Quote__r.PAF_Packagee__r.Insurance_Allocation__c)
+-
+PAF_Quote__r.PAF_Packagee__r.Insurance_Allocation__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total PP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

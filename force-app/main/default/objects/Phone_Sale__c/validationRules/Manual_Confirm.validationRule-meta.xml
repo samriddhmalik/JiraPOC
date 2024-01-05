@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_Confirm</fullName>
+    <active>true</active>
+    <description>Must have an amount outstanding of 0 to be confirmed</description>
+    <errorConditionFormula>IF(CONTAINS(TEXT(Status__c), &apos;Confirmed&apos;) &amp;&amp; Amount_Outstanding__c &gt; 0, true, false)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Amount Outstanding must be $0 to change Status to &quot;Confirmed&quot;</errorMessage>
+</ValidationRule>

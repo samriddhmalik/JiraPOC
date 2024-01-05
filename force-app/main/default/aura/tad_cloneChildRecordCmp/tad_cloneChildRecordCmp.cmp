@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--<ltng:require styles="{!$Resource.actionModalPopupSize}" />	-->
+    <aura:attribute name="cloneType" type="string" default = "Option"/>
+    <c:clonechildrecord recordId="{!v.recordId}" cloneType = "option" oncancel="{!c.handleCancel}" onclose ="{!c.handleCancel}" ></c:clonechildrecord> 
+    <aura:html tag="style">
+     <!--   .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+        .slds-modal__footer{
+            visibility:hidden;
+        }
+        .quick-actions-panel{
+    	overflow:hidden !important;
+		}-->
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+    </aura:html>
+</aura:component>

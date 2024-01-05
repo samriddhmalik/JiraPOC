@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSC_Comms__c</fullName>
+    <externalId>false</externalId>
+    <label>MSC Comms</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N/A</fullName>
+                <default>true</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Send_1864_AU</fullName>
+                <default>false</default>
+                <label>Send - 1864 AU</label>
+            </value>
+            <value>
+                <fullName>Sent</fullName>
+                <default>false</default>
+                <label>Sent</label>
+            </value>
+            <value>
+                <fullName>Send - 1864 NZ</fullName>
+                <default>false</default>
+                <label>Send - 1864 NZ</label>
+            </value>
+            <value>
+                <fullName>Send - 1869 AU</fullName>
+                <default>false</default>
+                <label>Send - 1869 AU</label>
+            </value>
+            <value>
+                <fullName>Send - 1869 NZ</fullName>
+                <default>false</default>
+                <label>Send - 1869 NZ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

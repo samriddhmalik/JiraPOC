@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC3</fullName>
+    <columns>Created_DateTC__c</columns>
+    <columns>NAME</columns>
+    <columns>TC_Booking_Status__c</columns>
+    <columns>agent_name__c</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>Departure_DateTC__c</columns>
+    <columns>departure_city__c</columns>
+    <columns>Exclusive_del__c</columns>
+    <columns>qty__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>departures_dates__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>order__c.TC</value>
+    </filters>
+    <label>Agency Orders</label>
+    <sharedTo>
+        <portalRoleAndSubordinates>PorpoiseSpitTravelCustomerUser</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>derekdoCustomerPersonAccount</portalRoleAndSubordinates>
+        <portalRoleAndSubordinates>testbusacCustomerUser</portalRoleAndSubordinates>
+    </sharedTo>
+</ListView>

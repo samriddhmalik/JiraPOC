@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Day_Date_equals_OI_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(day__r.date__c =  date__c)</errorConditionFormula>
+    <errorMessage>The date for the group (Day) does not coincide with the date of the itinerary</errorMessage>
+</ValidationRule>

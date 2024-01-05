@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_filled_within_6_days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  (  DATEVALUE(CreatedDate) - TAD_Order__r.ordexp_final_return_date__c ) &lt;= 6 &amp;&amp; TAD_Order__r.ordexp_final_departure_date__c &gt;  DATE(2023,10,01) &amp;&amp;  (RecordType.Name= &apos;Feefo&apos; || RecordType.Name= &apos;Qualtrics&apos;) , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is filled within 6 days?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Date_with_HSS</fullName>
+    <columns>Deal_D_O_S__c</columns>
+    <columns>Deal_Title__c</columns>
+    <columns>date__c</columns>
+    <columns>HSS__c</columns>
+    <columns>HSS_Flight__c</columns>
+    <columns>HSS_Land__c</columns>
+    <columns>HSS_nz__c</columns>
+    <columns>HSS_Flight_nz__c</columns>
+    <columns>HSS_Land_nz__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Departure Date with HSS</label>
+    <sharedTo>
+        <group>Flight_Ticketers</group>
+    </sharedTo>
+</ListView>

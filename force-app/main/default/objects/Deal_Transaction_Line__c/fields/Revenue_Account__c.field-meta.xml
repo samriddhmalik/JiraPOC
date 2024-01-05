@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Account__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(text(Deal__r.Accounting_Treatment_AU__c)=&quot;Principal&quot;, 
+
+   if(or(text(Deal__r.GST_AU__c) =&quot;GST free&quot;, text(Deal__r.GST_NZ__c) =&quot;GST free&quot;),
+      &quot;4000 - Sales - Int - Tour / Cruise&quot;,
+      &quot;4010 - Sales - Dom- Tour / Cruise&quot;
+      ),
+   
+   if(or(text(Deal__r.GST_AU__c) = &quot;GST free&quot;, text(Deal__r.GST_NZ__c) =&quot;GST free&quot;),
+      &quot;4100 - Sales - Int - Escapes&quot;,
+      &quot;4110 - Sales - Dom - Escapes&quot;
+      )
+)
+
+/* this formula no longer applies. The revenue account is  using process builder to pass value for MLE and SLE */</formula>
+    <label>Revenue Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

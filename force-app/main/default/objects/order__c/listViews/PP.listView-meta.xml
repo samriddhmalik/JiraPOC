@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PP</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>deal__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>City__c</columns>
+    <columns>user_email__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>Sale_Value__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>qty__c</columns>
+    <columns>HSS__c</columns>
+    <columns>Departure_City_Surcharge__c</columns>
+    <columns>payment_type__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>BSB_ZIP_Payment_Pending__c</field>
+        <operation>equals</operation>
+        <value>ZIP,BSB</value>
+    </filters>
+    <filters>
+        <field>POLi_Link_Sent__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>amount_outstanding__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Payment Pending (MY)</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <role>Customer_Service_Manager</role>
+    </sharedTo>
+</ListView>

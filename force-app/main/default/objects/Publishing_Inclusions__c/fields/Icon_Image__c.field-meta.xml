@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Icon_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(Icon__c,&quot;plane&quot;),IMAGE(&quot;/resource/DIPlane&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;bed&quot;),IMAGE(&quot;/resource/DIBed&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;car&quot;),IMAGE(&quot;/resource/DICar&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;calen&quot;), IMAGE(&quot;/resource/DIClndr&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;cutlery&quot;),IMAGE(&quot;/resource/DIFork&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;glass&quot;),IMAGE(&quot;/resource/DIGlass&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;Hotel&quot;),IMAGE(&quot;/resource/DIHotel&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;leaf&quot;),IMAGE(&quot;/resource/DILeaf&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;percent&quot;),IMAGE(&quot;/resource/DIPercent&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;plus&quot;),IMAGE(&quot;/resource/DIPlus&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;ship&quot;),IMAGE(&quot;/resource/DIShip&quot;,&quot;low&quot;,20,20), IF(CONTAINS(Icon__c,&quot;plate&quot;),IMAGE(&quot;/resource/DIUten&quot;,&quot;low&quot;,20,20),IF(CONTAINS(Icon__c,&quot;wifi&quot;),IMAGE(&quot;/resource/DIWifi&quot;,&quot;low&quot;,20,20),&quot;None&quot;) ))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Icon Image</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

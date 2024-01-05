@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Line_Price__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  ISPICKVAL( Deal__r.Allocation_by__c , &quot;&quot;)  , ( sub_options__r.price__c   ), (( options__r.price__c +  sub_options__r.Price_formula__c )))+ 
+departures_dates__r.HSS_amount__c + 
+IF( Solo_Traveller__c , (VALUE(TEXT(QTY__c)) * sub_options__r.solo_surcharge__c) , 0) + 
+(IF(Solo_Traveller__c, Post_Tour_StopOver__r.Price_Solo__c , Post_Tour_StopOver__r.Price__c )) + 
+(IF(Solo_Traveller__c,  sub_stopover__r.Price_Solo__c  ,  sub_stopover__r.Price__c  ))+ 
+departure_cities__r.Surcharge__c +  
+AE_SB__r.price__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Line Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

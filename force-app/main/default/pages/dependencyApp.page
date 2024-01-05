@@ -1,0 +1,15 @@
+<apex:page > 
+    <apex:includeLightning />
+    <div id="showElement" ></div> 
+    <script> 
+        $Lightning.use("c:TAD_LightningDependencyApp", function() { 
+            $Lightning.createComponent("c:dependencyContainer" , 
+                {} , 
+                "showElement" , 
+                function(cmp) 
+                { 
+                    console.log('done');
+                });
+         }); 
+    </script> 
+</apex:page>

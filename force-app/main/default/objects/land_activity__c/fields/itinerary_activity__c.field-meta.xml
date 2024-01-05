@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>itinerary_activity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Itinerary Activity</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Itinerary Activity Value does not exist or does not match filter criteria.</errorMessage>
+        <filterItems>
+            <field>Itinerary_Activity__c.deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Deal__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Itinerary_Activity__c</referenceTo>
+    <relationshipLabel>land activity</relationshipLabel>
+    <relationshipName>land_activity</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

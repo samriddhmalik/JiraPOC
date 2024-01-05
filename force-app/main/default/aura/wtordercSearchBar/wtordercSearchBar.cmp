@@ -1,0 +1,22 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:attribute name="searchKey" type="String"/>
+    <aura:handler event="aura:locationChange" action="{!c.locationChange}"/>
+
+    <div class="search-wrapper">
+        <div class="slds-form-element slds-align--absolute-center">
+            <div class="slds-form-element__icon slds-align-middle">
+                <input id="order-search-agents" type="text" class="form-control slds-m-horizontal--x-large" onkeyup="{!c.searchKeyChange}" value="{!v.searchKey}" placeholder="Find Agency Bookings"/>
+            </div>
+            <div class="slds-form-element__icon" onmouseover="{!c.display}" onmouseout="{!c.displayOut}">
+                <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" >
+                    <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/>
+                    <span class="slds-assistive-text">Help</span>
+                </button>
+            </div>
+            <div class="slds-popover slds-popover--tooltip slds-nubbin--left toggle" role="tooltip" id="tooltip" style="position:relative;top:-4px;left:20px;" aura:id="tooltip">
+                <div class="slds-popover__body">Search keyword can be part or whole Order Number, Purchaser Name or Purchaser Email.</div>
+            </div>
+        </div>
+        <button class="btn btn-link" onclick="{!c.clearText}"><span class="glyphicon glyphicon-remove" aria-hidden="true">Clear Search</span></button>
+    </div>
+</aura:component>

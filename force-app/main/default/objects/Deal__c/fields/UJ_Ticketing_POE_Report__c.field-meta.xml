@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UJ_Ticketing_POE_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/00O2x0000042C1M?pv0=&quot;&amp;Name, Deal_ID_Title__c &amp;&quot; Ticketing (POE) Report&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is Ticketing report for the new TAD Orders (POE)</inlineHelpText>
+    <label>UJ - Ticketing (POE) Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

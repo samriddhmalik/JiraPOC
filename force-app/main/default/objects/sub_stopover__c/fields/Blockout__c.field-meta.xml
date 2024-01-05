@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blockout__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter Blockout dates per below format
+23/09/2018
+01/10/2018-22/10/2018</inlineHelpText>
+    <label>Blockout</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

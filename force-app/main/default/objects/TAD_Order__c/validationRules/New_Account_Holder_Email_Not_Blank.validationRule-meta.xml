@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Account_Holder_Email_Not_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISBLANK(orderexp_New_Account_Holder_Email__c), orderexp_Account_Holder_Change__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>orderexp_New_Account_Holder_Email__c</errorDisplayField>
+    <errorMessage>Please enter the New Account Holder Email Address before proceeding.</errorMessage>
+</ValidationRule>

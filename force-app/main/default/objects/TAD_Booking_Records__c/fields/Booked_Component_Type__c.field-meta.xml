@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booked_Component_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Booked Component Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Flight</fullName>
+                <default>false</default>
+                <label>Flight</label>
+            </value>
+            <value>
+                <fullName>Land Tour</fullName>
+                <default>false</default>
+                <label>Land Tour</label>
+            </value>
+            <value>
+                <fullName>Rail</fullName>
+                <default>false</default>
+                <label>Rail</label>
+            </value>
+            <value>
+                <fullName>Total Package</fullName>
+                <default>false</default>
+                <label>Total Package</label>
+            </value>
+            <value>
+                <fullName>Accom</fullName>
+                <default>false</default>
+                <label>Accom</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+            <value>
+                <fullName>Land Activity</fullName>
+                <default>false</default>
+                <label>Land Activity</label>
+            </value>
+            <value>
+                <fullName>AE</fullName>
+                <default>false</default>
+                <label>AE</label>
+            </value>
+            <value>
+                <fullName>SB</fullName>
+                <default>false</default>
+                <label>SB</label>
+            </value>
+            <value>
+                <fullName>S/Over</fullName>
+                <default>false</default>
+                <label>S/Over</label>
+            </value>
+            <value>
+                <fullName>Flight Upgrade</fullName>
+                <default>false</default>
+                <label>Flight Upgrade</label>
+            </value>
+            <value>
+                <fullName>Departure City Surcharge</fullName>
+                <default>false</default>
+                <label>Departure City Surcharge</label>
+            </value>
+            <value>
+                <fullName>AE Accommodation</fullName>
+                <default>false</default>
+                <label>AE Accommodation</label>
+            </value>
+            <value>
+                <fullName>SB Accommodation</fullName>
+                <default>false</default>
+                <label>SB Accommodation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

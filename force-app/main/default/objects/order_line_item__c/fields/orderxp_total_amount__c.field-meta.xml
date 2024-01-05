@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>orderxp_total_amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>orderxp_addons_amount__c + ordexp_suboption_amount__c + ordexp_total_customisations_amount__c +
+ordexp_city_surcharge_amount__c +ordexp_total_insurance_amount__c + ordexp_total_visa_amount__c +  Total_surcharge__c+on_hss_amount__c - ordexp_oli_CanAmount__c +  sm_Hotel_Price__c + Cruise_Upgrade__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

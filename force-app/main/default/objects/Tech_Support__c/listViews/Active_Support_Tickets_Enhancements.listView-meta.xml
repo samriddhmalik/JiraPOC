@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Support_Tickets_Enhancements</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Category__c</columns>
+    <columns>Requesting_Team__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Subject__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Status__c</columns>
+    <columns>First_Level_Manager__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Jira_Ticket_Number__c</columns>
+    <columns>Business_Value__c</columns>
+    <columns>Business_Value_Sub_Category__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Approved - Pending assignment,Assigned - Under review,Assigned - In progress,Assigned - Further information required,Not Started,Scoping,Develop,Testing,Roadblock</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Tech_Support__c.Improvement</value>
+    </filters>
+    <label>Active Support Tickets (Enhancements)</label>
+</ListView>

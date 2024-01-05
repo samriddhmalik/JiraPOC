@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Update_PP_text_with_picklist</name>
+        <label>Update PP text with picklist</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.price_text__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.price_text_picklist__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Cruise_Cabin_Field_Default_Values</name>
+        <label>Cruise Cabin Field Default Values</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Deal_Status_Change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Cruise_Cabin_Booked_By</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Cruise_Cabin_Booked_by__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Default_Value</targetReference>
+            </connector>
+            <label>Cruise Cabin Booked By</label>
+        </rules>
+        <rules>
+            <name>Cruise_Cabin_Allocation_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Cruise_Cabin_Allocation_Status__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cruise_Cabin_Allocation_Status_Set_Value</targetReference>
+            </connector>
+            <label>Cruise Cabin Allocation Status</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Status AU = Expired, Status NZ = Pending -&gt; Deal Status has to go &quot;On Hold&quot; if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = Expired -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = None -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = Pending -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If one or both of the Status AU/ NZ = Published -&gt; Deal Status has to go &quot;Published&quot;
+
+If Status AU = None, Status NZ = Expired -&gt; Deal Status has to go &quot;Expired&quot;  - (we did it already, but still found this deals with deal status &quot;Published&quot;: 3219, 3042, 3317, 3382, 3259)
+
+If Status AU = Expired, Status NZ = None -&gt; Deal Status has to go &quot;Expired&quot;</description>
+        <name>Deal_Status_Change</name>
+        <label>Deal Status Change</label>
+        <locationX>710</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Deal_Status_Change_To_Published</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Published</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Published</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Deal Status Change To Published</label>
+        </rules>
+        <rules>
+            <name>Deal_Status_Change_To_Expired</name>
+            <conditionLogic>((1 AND 2) OR (3 AND 4) OR (5 AND 6) AND 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Status_Expired</targetReference>
+            </connector>
+            <label>Deal Status Change To Expired</label>
+        </rules>
+        <rules>
+            <name>Deal_Status_Change_To_On_Hold</name>
+            <conditionLogic>((1 AND 2) OR (3 AND 4) OR (5 AND 6) OR (7 AND 8)) AND (9 OR 10)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status_NZ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Deal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Published</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Deal_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hero</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Deal_Status_On_Hold</targetReference>
+            </connector>
+            <label>Deal Status Change To On Hold</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_status_changed</name>
+        <label>Path based on on change conditions</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Cruise_Cabin_Field_Default_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Deal_PP_field_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.price_text_picklist__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PP_text_with_picklist</targetReference>
+            </connector>
+            <label>Is Deal PP field changed?</label>
+        </rules>
+    </decisions>
+    <description>If Status AU = Expired, Status NZ = Pending -&gt; Deal Status has to go &quot;On Hold&quot; if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = Expired -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = None -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If Status AU = Pending, Status NZ = Pending -&gt; Deal Status has to go &quot;On Hold&quot;  if the previous Deal status was &quot;Published&quot; or &quot;Hero&quot;
+
+If one or both of the Status AU/ NZ = Published -&gt; Deal Status has to go &quot;Published&quot;
+
+If Status AU = None, Status NZ = Expired -&gt; Deal Status has to go &quot;Expired&quot;  - (we did it already, but still found this deals with deal status &quot;Published&quot;: 3219, 3042, 3317, 3382, 3259)
+
+If Status AU = Expired, Status NZ = None -&gt; Deal Status has to go &quot;Expired&quot;</description>
+    <interviewLabel>Deal Status Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deal Status Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>“Cruise Cabin Booked By” &amp; ”Cruise Cabin Allocation Status” should have the default value “None”.</description>
+        <name>Cruise_Cabin_Allocation_Status_Set_Value</name>
+        <label>Cruise Cabin Allocation Status Set Value</label>
+        <locationX>710</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Deal_Status_Change</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Cruise_Cabin_Allocation_Status__c</field>
+            <value>
+                <stringValue>None</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Deal_Status_Expired</name>
+        <label>Deal Status Expired</label>
+        <locationX>578</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Deal_Status__c</field>
+            <value>
+                <stringValue>Expired</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Deal_Status_On_Hold</name>
+        <label>Deal Status On Hold</label>
+        <locationX>842</locationX>
+        <locationY>803</locationY>
+        <inputAssignments>
+            <field>Deal_Status__c</field>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>“Cruise Cabin Booked By” &amp; ”Cruise Cabin Allocation Status” should have the default value “None”.</description>
+        <name>Set_Default_Value</name>
+        <label>Set Default Value Cruise Cabin Booked By</label>
+        <locationX>446</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Deal_Status_Change</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Cruise_Cabin_Allocation_Status__c</field>
+            <value>
+                <stringValue>None</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Cruise_Cabin_Booked_by__c</field>
+            <value>
+                <stringValue>None</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_status_changed</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status_NZ__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>price_text_picklist__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Deal__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

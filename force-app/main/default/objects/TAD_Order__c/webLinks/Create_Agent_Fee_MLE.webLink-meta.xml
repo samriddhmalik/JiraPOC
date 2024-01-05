@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Agent_Fee_MLE</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create Agent Fee MLE</masterLabel>
+    <openType>sidebar</openType>
+    <page>OR_TO_DTL_MLE</page>
+    <protected>false</protected>
+</WebLink>

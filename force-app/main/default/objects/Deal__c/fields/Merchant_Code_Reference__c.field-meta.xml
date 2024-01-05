@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merchant_Code_Reference__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will show on Merchant Confirmation email - eg. use for Deal-specific codes</inlineHelpText>
+    <label>Merchant Code/Reference</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

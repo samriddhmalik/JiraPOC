@@ -1,0 +1,9 @@
+.THIS .label{
+    font-size: var(--lwc-fontSizeSmall,0.75rem);
+    font-weight: var(--lwc-fontWeightRegular,400);
+}
+            
+.THIS .slds-input{
+	font-size: var(--lwc-fontSizeSmall,0.75rem);
+    font-weight: var(--lwc-fontWeightRegular,400);                
+}

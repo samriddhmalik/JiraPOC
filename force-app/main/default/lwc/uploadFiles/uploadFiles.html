@@ -1,0 +1,60 @@
+<template>
+    <div if:true={showSpinner}>
+        <lightning-spinner variant="brand" alternative-text="Uploading......">
+        </lightning-spinner>
+    </div>
+    <!--<lightning-card title="Upload CSV File">
+        <div>
+            <lightning-file-upload
+            label="Upload File"
+            name="fileUploader"
+            accept={acceptedFormats}
+            onuploadfinished={handleUploadFinished}
+        >
+        </lightning-file-upload>
+        </div>
+        <br/>
+        <div class="slds-text-body_small slds-text-color_error">{fileName}
+        </div><br/>
+        <div>
+            <lightning-button class="" label="Save" onclick={handleSave} variant="brand"
+                disabled={isTrue}></lightning-button>
+        </div>
+    </lightning-card>-->
+    <template if:true={showCsvHeading}>
+    <lightning-card title="Upload File" >
+        
+                <lightning-combobox name="types" label="Select One" value={value} options={typeOptions} onchange={handleTypeChange} style="color:grey;width:150px;margin-left:16px;"> </lightning-combobox>
+                    
+    </lightning-card>
+    </template>  
+
+    <template if:true={showCsvTab}>
+        <lightning-card title="Upload CSV File">
+
+        
+        <div class="slds-p-around_small">
+            <div>
+                <lightning-input label="(File size - not greater than 3MB)" name="file uploader" onchange={handleUploadFinished} type="file"  accept=".csv">
+                </lightning-input>
+            </div>
+            <div class="slds-text-body_small slds-text-color_success">{fileName}
+            </div>
+            <br/>
+            <div>
+                <lightning-button class="slds-m-top--medium" label="Save" onclick={handleSave} variant="brand"
+                    disabled={isTrue}></lightning-button>
+                <lightning-button class="slds-m-top--medium" style="margin-left:10px;" label="Back" onclick={backToHome} variant="brand"
+                disabled={isTrue}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+    </template>
+
+    <template if:true={showContentTab}>
+        <div class="ContentVersionTab" style="align-items:center">
+            <c-upload-content-version onbacktohomepage={backFromContent}></c-upload-content-version>
+        </div>
+        
+    </template> 
+</template>

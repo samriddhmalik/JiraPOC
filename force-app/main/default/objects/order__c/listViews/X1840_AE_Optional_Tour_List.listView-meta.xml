@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1840_AE_Optional_Tour_List</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR (4 AND 5))</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>ae__c</columns>
+    <columns>AE_City__c</columns>
+    <columns>ae_date__c</columns>
+    <columns>AE_Nights__c</columns>
+    <columns>land_activity__c</columns>
+    <columns>land_activity_a__c</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>Created_DateTC__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>contains</operation>
+        <value>1840</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Cancelled,Expired</value>
+    </filters>
+    <filters>
+        <field>ae__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>land_activity__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>land_activity_a__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>1840 - AE &amp; Optional Tour List</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

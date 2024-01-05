@@ -1,0 +1,62 @@
+<apex:page standardController="Credit_Card_Auth__c" extensions="BpointFlexiPaymentController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <script type="text/javascript">
+                    function hideButton() {
+                        var obj= document.getElementById('payment-button');
+                        obj.style.visibility = 'hidden';
+                        CallBpoint_JS();
+                    }
+                </script>
+                <div id="payment-button"><input name="MakePayment" class="btn" type="button" value="Make Payment" onclick="hideButton();" style="width: 90px; float: left"/></div>
+                <apex:commandButton id="backtotravelbooking" value="Back to Order" action="{!redirectToTravelBooking}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <!--<apex:actionFunction action="{!createCRN}" name="CreateCRN_JS" status="status1" reRender="statuses" onComplete="CallBpoint_JS();"/>-->
+            <apex:actionFunction action="{!makePayment}" name="CallBpoint_JS" status="status2" reRender="statuses, showmsg"/>
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+            <apex:pageBlockSection >
+                <apex:outputPanel id="statuses">
+                    <!--<apex:actionStatus id="status1" startText="...Creating CRN and saving to DB..." />-->
+                    <apex:actionStatus id="status2" startText="...Sending transaction to Bpoint..." />
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputText label="Order" value="{!travelBookingName}" />
+                <apex:inputCheckbox value="{!goodToGo}" label="Good to Make Payment" disabled="true" />
+                <apex:outputText label="Description" value="{!description}" />
+                <apex:outputText label="Update Order Status" value="{!updateOrderStatus}" id="update-order"/>
+                <apex:inputText label="Invoice To" value="{!paxName}" required="true" />
+                <apex:inputText label="Email for Receipt" value="{!paxEmail}" required="true" />
+                <apex:inputText label="Payment Amount" value="{!pageAmount}" />
+                <apex:outputField label="Currency" value="{!payment.Currency__c}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Card Surcharge" for="payment-surcharge" />
+                    <apex:outputText id="payment-surcharge" value="{!surchargeAmountString}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Surcharge Percentage" for="surcharge-percent" />
+                    <apex:outputText id="surcharge-percent" value="{!surchargePercentage}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Payment Total" for="payment-total" />
+                    <apex:outputText id="payment-total" value="{!totalAmountString}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Credit Card Type" for="card-type" />
+                    <apex:outputText id="card-type" value="{!cardType}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputField label="Name on card" value="{!payment.Name_on_card__c}" />
+                <apex:inputField label="Credit Card Number" value="{!payment.Credit_Card__c}" required="true" />
+                <apex:inputField label="Expiry Date" value="{!payment.Exp_Date__c}" required="true" />
+                <apex:inputField label="CCV" value="{!payment.CCV__c}" required="true" />
+                <apex:inputTextarea label="Comments" value="{!comments}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton id="update-surcharges" value="Update Surcharges" action="{!updateSurcharges}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

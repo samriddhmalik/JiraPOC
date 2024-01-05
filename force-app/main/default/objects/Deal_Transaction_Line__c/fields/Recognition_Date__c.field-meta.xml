@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recognition_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+and(
+Is_Escape_Deal__c,
+text(Status__c) = &quot;Active&quot;,
+isblank( Original_Deal_Transaction_Line__c),
+not(CONTAINS(Description__c,&quot;Credit&quot;))
+),
+Purchase_Date__c,
+if(
+or(
+and(
+text(Status__c) = &quot;Active&quot;,
+not(isblank( Original_Deal_Transaction_Line__c))
+),
+Status1__c = &quot;Cancelled&quot;,
+Status1__c = &quot;Superseded&quot;,
+text(Status__c) = &quot;Superseded&quot;,
+text(Status__c) = &quot;Cancelled&quot;,
+(CONTAINS(Description__c,&quot;Credit&quot;))
+),
+Transaction_Date2__c,
+Departure_Date__r.date__c
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Recognition Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

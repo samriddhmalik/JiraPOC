@@ -1,0 +1,162 @@
+<aura:component controller="RefundNoCancellationsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:attribute name="initWrapper" type="RefundNoCancellationsController.initWrapper"/>
+    <aura:attribute name="finalWrapper" type="RefundNoCancellationsController.finalWrapper"/>
+    <aura:attribute name="OliOrAddOn" type="String"/> 
+    <aura:attribute name="validUserBoolean" type="Boolean"/>
+    <aura:attribute name="inValidUser" type="Boolean"/>
+    <aura:attribute name="addOnRefundReason" type="List[]"/>
+    <aura:attribute name="AUD" type="String"/>
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 75rem !important;
+        width:75% !important;
+        }
+    </aura:html>
+    
+    <!--PBP-227-->
+    
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <aura:if isTrue="{!v.Spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <!--PBP-227--> 
+    
+    <aura:if isTrue="{!v.inValidUser}">
+        <p><b>Only System Administrators and Customer Service Managers are allowed to perform this action. </b></p>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.validUserBoolean}">
+        
+        <br></br>
+        <div class="slds-grid slds-gutters;align-right=30px">
+            
+            <p><b>Total Price = </b></p> &nbsp;{!v.AUD}&nbsp;
+            
+            <lightning:formattedNumber value="{!v.initWrapper.totalPrice}" minimumFractionDigits="2"/>
+            
+        </div>
+        
+        
+        <div class="slds-grid slds-gutters;align-right=30px">
+            <p><b>Total Payment Received = </b></p>&nbsp;{!v.AUD}&nbsp;
+            <lightning:formattedNumber value="{!v.initWrapper.totalPaymentReceived}" minimumFractionDigits="2"/>
+            
+        </div>
+        <div class="slds-grid slds-gutters;align-right=30px">
+            <p><b>Total Coupon Amount = </b></p>&nbsp;{!v.AUD}&nbsp;
+            <lightning:formattedNumber value="{!v.initWrapper.totalCouponAmount}" minimumFractionDigits="2"/>
+        </div>
+        
+        
+        <div class="slds-grid slds-gutters;align-right=30px">
+            <p><b>Total Amount Outstanding = </b></p>&nbsp;{!v.AUD}&nbsp;
+            <lightning:formattedNumber value="{!v.initWrapper.totalAmountOutstanding}" minimumFractionDigits="2"/>
+            
+            
+        </div>
+        
+        <br></br>
+        <br></br>
+        
+        <!--<aura:if isTrue='{!greaterthanorequal (v.initWrapper.totalAmountOutstanding,0)}'>    
+            <p><b>Unfortunately, you cannot proceed with the refund: the Total Amount must be less than the payment received and the paid coupon. </b></p>
+            <br></br>
+            <br></br>                   
+            <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.handleCancel }"/>       
+        </aura:if>
+        
+        <aura:if isTrue='{!lessthan (v.initWrapper.totalAmountOutstanding,0)}'>
+            -->
+        <lightning:select name="SelectOliOrAddOn" label="Refund Relates To" required="true" value="{!v.finalWrapper.addOnOrOLI}">
+            <option value="None">--None--</option>
+            <aura:iteration items="{!v.initWrapper.olisAndAddOns}" var="oliOrAddOn">
+                <option value="{!oliOrAddOn}">{!oliOrAddOn}</option>
+            </aura:iteration>
+        </lightning:select> 
+        
+        
+        
+        <aura:if isTrue="{!equals(v.finalWrapper.addOnOrOLI,'OLI')}">
+            <br></br>
+            <br></br>
+            <lightning:select aura:id="oliPickList" name="selectOli" label="Select an Order Line Item" value="{!v.finalWrapper.recordId}">
+                <option value="" text="--- NONE ---"/>  
+                <aura:iteration items="{!v.initWrapper.OLIData}" var="oliObj">
+                    <option value="{!oliObj.recordName}">{!oliObj.recordName}</option>
+                </aura:iteration>
+            </lightning:select>
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.finalWrapper.addOnOrOLI,'AddOn')}">
+            <br></br>
+            <br></br>
+            <lightning:select aura:id="oliPickList" name="selectAddOn" label="Select an AddOn" value="{!v.finalWrapper.recordId}">
+                <option value="" text="--- NONE ---"/>  
+                <aura:iteration items="{!v.initWrapper.AddOnData}" var="addonObj">
+                    <option value="{!addonObj.recordId}">{!addonObj.recordName}</option>
+                </aura:iteration>
+            </lightning:select>
+        </aura:if>
+        
+        <br></br>
+        <br></br>
+        
+        <lightning:select class="nolabel"  label="Refund Reason" aura:id="refundReason" name="{!index}" value ="{!v.finalWrapper.reasonOfRefund}">
+            <option value="" text="--- NONE ---"/> 
+            <aura:iteration items="{!v.addOnRefundReason}" var="item">
+                <option value="{!item}" text="{!item}"/>
+            </aura:iteration>
+        </lightning:select>
+        
+        <br></br>
+        <br></br>
+        
+        <lightning:select name="RefundOrCoupon" label="Type of Refund?" required="true" value="{!v.finalWrapper.couponOrRefund}">
+            <option value="--- NONE ---">--- NONE ---</option>
+            <option value="Refund">Refund</option>
+            <option value="Coupon">Coupon</option>
+        </lightning:select>
+        
+        <br></br>
+        <br></br>
+        
+        <lightning:input type="number" name="input7" label="Refund Amount" value="{!v.finalWrapper.refundAmount}" formatter="currency" required="true" step="0.01"/>
+        
+        <br></br>
+        
+        <!--class="setToblue" class="setToPink"-->
+        <div class="slds-grid slds-gutters">
+            <div class="setToblue" >
+                <lightning:icon iconName="utility:warning" alternativeText="Warning!" title="Warning"  class="setToblue" />
+            </div>
+            <div >
+                <ui:message severity="warning" closable="false" class="setToPink">
+                    Once an OLI or Addon has been selected, its status will not change to Cancelled. If you want to cancel an OLI or Addon, use the Request Cancellation quick action button.
+                </ui:message>
+            </div>
+        </div>
+        
+        
+        <br></br>
+        <br></br>
+        
+        <lightning:button variant="brand" label="Submit" title="Submit" onclick="{! c.handleSubmit }"/>   
+        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.handleCancel }"/>   
+        
+    </aura:if>
+    
+    <!--</aura:if>-->
+    
+</aura:component>

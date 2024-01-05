@@ -1,0 +1,13 @@
+<design:component label="1 Header 1 Left sidebar 1 main panel and 1 flexible Right Sidebar with footer.">
+    <flexipage:template >
+      <flexipage:region name="header" defaultWidth="Large" />
+      <flexipage:region name="column0" defaultWidth="Medium" />
+      <flexipage:region name="column1" defaultWidth="Large" />
+      <flexipage:region name="column2" defaultWidth="Medium" />
+      <flexipage:region name="footer" defaultWidth="Large" />
+  </flexipage:template>
+     <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+</design:component>

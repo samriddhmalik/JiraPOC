@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mIn_540_180__c</fullName>
+    <externalId>false</externalId>
+    <formula>If( Dept_Date_180__c &lt;  Transaction_540__c , Dept_Date_180__c,Transaction_540__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>mIn 540 &amp; 180</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

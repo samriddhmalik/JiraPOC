@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>fine_print_nz__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Label name change - from Fine Print - NZ to Important Info - NZ (KB 27/02/19)</inlineHelpText>
+    <label>Important Information - NZ</label>
+    <length>100000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

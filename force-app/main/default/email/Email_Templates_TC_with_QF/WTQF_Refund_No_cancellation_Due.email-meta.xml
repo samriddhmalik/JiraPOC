@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>WT Refund Due</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WTQF Refund No cancellation Due</name>
+    <style>none</style>
+    <subject>TripADeal - Refund from TripADeal for Order {!Order_Communication_POE__c.order_number__c} - {!Order_Communication_POE__c.purchaser_first_name__c}</subject>
+    <textOnly>.
+
+Dear Agent,
+
+We would like to confirm that a refund for Order {!Order_Communication_POE__c.order_number__c} has now been processed.
+
+As discussed, this will not impact your booking in any way.
+
+Please find the details of your refund below:
+
+REFUND TRANSACTION DETAILS:
+
+{!Order_Communication_POE__c.Payment_Transaction_Amount__c}   {!Order_Communication_POE__c.Payment_Transaction_Method__c}
+
+Refund Terms and Conditions:
+
+Please allow 30 calendar days for the money to be credited back to the nominated account.
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   0800 555 260.
+
+Regards,
+The TripADeal Team
+
+You must be a Qantas Frequent Flyer member to earn points. A joining fee may apply. Membership and points are subject to the Qantas Frequent Flyer program terms and conditions.
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

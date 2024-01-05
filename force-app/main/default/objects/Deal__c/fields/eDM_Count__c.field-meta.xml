@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eDM_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>eDM Count</label>
+    <summaryFilterItems>
+        <field>Marketing_Spend__c.Marketing_Channel__c</field>
+        <operation>equals</operation>
+        <value>Electronic Direct Mail (eDM)</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Marketing_Spend__c.Deal__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

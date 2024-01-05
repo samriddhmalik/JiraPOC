@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>min_numbers_met__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For Flight Ticketing team use - checks as true if number of pax confirmed &gt;= min numbers</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Process Builder - Auto checks as true if number of pax confirmed greater or equal to min. numbers</inlineHelpText>
+    <label>Min Numbers Met?</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

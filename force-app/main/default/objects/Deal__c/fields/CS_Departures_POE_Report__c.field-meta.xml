@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Departures_POE_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+&quot;/lightning/r/00O2x000003esCt/view?fv0=&quot;,
+&quot;/00O2x000003esCt?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Departures (POE) Report&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CS Departures (POE) Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

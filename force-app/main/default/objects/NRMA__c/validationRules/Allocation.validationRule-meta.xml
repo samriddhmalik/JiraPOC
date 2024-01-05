@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>QTY_Number__c &gt;  departures_dates__r.Remaining_Allocation__c</errorConditionFormula>
+    <errorDisplayField>QTY__c</errorDisplayField>
+    <errorMessage>Allocation exceeded</errorMessage>
+</ValidationRule>

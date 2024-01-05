@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment Due</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Date of departure</fullName>
+                <default>false</default>
+                <label>Date of departure</label>
+            </value>
+            <value>
+                <fullName>Days prior to departure</fullName>
+                <default>false</default>
+                <label>Days prior to departure</label>
+            </value>
+            <value>
+                <fullName>Days after purchase</fullName>
+                <default>false</default>
+                <label>Days after purchase</label>
+            </value>
+            <value>
+                <fullName>Days after departure</fullName>
+                <default>false</default>
+                <label>Days after departure</label>
+            </value>
+            <value>
+                <fullName>Days on redemption</fullName>
+                <default>false</default>
+                <label>Days on redemption</label>
+            </value>
+            <value>
+                <fullName>Days after deal expired from website</fullName>
+                <default>false</default>
+                <label>Days after deal expired from website</label>
+            </value>
+            <value>
+                <fullName>Days after invoice is received</fullName>
+                <default>false</default>
+                <label>Days after invoice is received</label>
+            </value>
+            <value>
+                <fullName>On Confirmation</fullName>
+                <default>false</default>
+                <label>On Confirmation</label>
+            </value>
+            <value>
+                <fullName>Days since making booking</fullName>
+                <default>false</default>
+                <label>Days since making booking</label>
+            </value>
+            <value>
+                <fullName>Paid by Specific Date</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Paid by Specific Date</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

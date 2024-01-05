@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_to_OLI_AddOn__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Linked_to_OLI_AddOn__c , &apos;OLI&apos;) ,HYPERLINK(
+  &quot;/&quot; &amp;  OLI_AddOn_Id__c , 
+  &quot;OLI&quot;,
+  &quot;_self&quot;
+), HYPERLINK(
+  &quot;/&quot; &amp; OLI_AddOn_Id__c, 
+  &quot;AddOn&quot;,
+  &quot;_self&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link to OLI/AddOn</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

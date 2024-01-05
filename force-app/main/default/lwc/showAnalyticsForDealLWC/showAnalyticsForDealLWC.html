@@ -1,0 +1,138 @@
+<template>
+<div class="slds-box slds-theme_default">
+<p style="text-align:center;"><b>{headerName}</b></p>
+<lightning-layout multiple-rows>
+<div class="slds-form-element">
+    <lightning-layout-item class="slds-grid slds-gutters" style="text-align:left;" size="12" padding="around-medium">  
+    
+    <div class="slds-form-element__control">
+        <label class="slds-form-element__label slds-col" for="form-element-01"><b>Type</b></label>
+        <select class="slds-select typeList" name = "optionSelect" onchange={changeDealChannelHandler}>
+            <option value="Deal">Deal</option>
+            <option value="Channel">Channel</option>
+        </select> 
+        </div>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        
+        
+        
+        <div class="slds-form-element__control">
+            <label class="slds-form-element__label slds-col" for="form-element-02"><b>Duration</b></label>
+        <select class="slds-select" name = "daysSelect" onchange={durationChange}>
+            <option value="Day" selected>Day</option>
+            <option value="This Week">This Week</option>
+            <option value="This Month">This Month</option>
+        </select>  
+    </div> 
+   
+    </lightning-layout-item>
+
+    
+            <template if:true={dealEnable}>
+                
+            <lightning-layout-item style="text-align:left;" size="12" padding="around-medium">
+                <div class="slds-grid slds-size_12-of-12 slds-gutters">
+
+                <div  class="slds-col slds-size_6-of-12">
+                    <label class="slds-form-element__label" style="text-align:left;"><b>Deal Name</b></label>
+                    <lightning-helptext content="Please enter the Deal Names separated by a Semicolon. Eg - (Deal Name 1; Deal Name 2; ....)" class="customIcon"></lightning-helptext>
+                    <lightning-input type="text"
+                                        name="DealName"
+                                        label="Deal Name"
+                                        value = {dealNametracker}
+                                        variant="label-hidden"
+                                        onkeyup = {dealNameTrackerValue}></lightning-input> <br></br>
+                    </div>
+                    <div class="slds-col slds-size_6-of-12"><br/>
+                        <span><lightning-button variant="brand" label="Submit" title="Submit" onclick={callToFetchSelectedData} class="slds-m-left_x-small"></lightning-button></span>
+                    </div>
+                </div>
+                
+                                
+                                
+            </lightning-layout-item>
+        
+        
+        
+            </template>   
+
+            <template if:true={channelEnable}>
+                <label class="slds-form-element__label" for="combobox-unique-id-3"><b>Select Channel</b></label>
+<div class="slds-form-element__control">
+    <div class="slds-combobox_container">
+        <div class={dropdown} onmouseleave={closeDropDown} data-id="resultBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+            
+            <!--code for input and dropdown icon-->
+            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                <input type="text" class="slds-input slds-combobox__input slds-combobox__input-value"
+                        placeholder="Select Channel" onclick={openDropdown} value={selectedValue}/>
+                <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                    <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                    <span class="slds-assistive-text">Down icon</span>
+                </span>            
+            </div>
+            
+
+
+            <div id="listbox-unique-id" role="listbox">
+                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                    <div class="slds-scrollable">
+                        <!-- code to show list of countrys -->
+                        <template for:each={channelOptions} for:item="item">  
+                            <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                    <div  data-id={item.isChecked} data-name={item.label} onclick={selectOption} class={item.class} role="option">
+                                    <span class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                    </span>
+                                    <span class="slds-media__body">
+                                            <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                    </span>
+                                </div> 
+                            </li>
+                        </template>
+                    </div>
+                </ul>
+            </div>
+        </div>   
+    </div>
+</div>
+
+<template for:each={channelOptions} for:item="option">   
+    <template if:true={option.isChecked}>
+<span key={option.label}>
+    <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small" onremove={removeRecord}>
+        </lightning-pill>
+    </span>
+</template>
+</template>
+<br></br>
+            </template>       
+        </div>    
+</lightning-layout> 
+
+
+
+<template if:true={dealSpinner}>
+<div class="spinner">
+    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+</div>
+</template>
+<template if:true={hidDealDetails}>
+    <lightning-card title="Existing Deals:">
+        <div class="empFamilyTable">
+        <lightning-datatable hide-checkbox-column data={dealList} columns={cols} key-field="Id" class="slds-table_bordered slds-table_col-bordered table-test ">
+        </lightning-datatable>
+    </div>
+    </lightning-card>
+</template>
+
+<template if:true={hidChannelDetails}>
+    <lightning-card title="Existing Channels:">
+        <div class="empFamilyTable">
+        <lightning-datatable hide-checkbox-column data={channelList} columns={colsChannels} key-field="Id" class="slds-table_bordered slds-table_col-bordered table-test ">
+        </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
+</div>
+</template>

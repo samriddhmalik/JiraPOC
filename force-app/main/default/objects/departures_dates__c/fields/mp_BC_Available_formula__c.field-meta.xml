@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mp_BC_Available_formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  ISPICKVAL(mp_bc_available__c , &apos;AVAILABLE&apos;)  ,  HYPERLINK( &apos;https://samrat-tad.cs112.force.com/TADMerchantPortal/s/report/00O0T000000JNJGUA4?reportFilters1=[{&quot;column&quot;:&quot;Deal__c.Order_Line_Items__r$ordexp_TAD_Order__c.ordexp_departure_date__c.Name&quot;,&quot;operator&quot;:&quot;equals&quot;,&quot;value&quot;:&quot;&apos; &amp; Name &amp; &apos;&quot;}]&apos; ,&apos;AVAILABLE&apos; , &quot;_parent&quot;) , IF(ISPICKVAL(mp_bc_available__c , &apos;NOT AVAILABLE&apos;),&apos;NOT AVAILABLE&apos;,&apos;&apos; ))</formula>
+    <label>BC Available</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

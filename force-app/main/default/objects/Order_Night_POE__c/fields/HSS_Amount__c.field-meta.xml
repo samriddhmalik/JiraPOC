@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HSS_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( TAD_Order__r.RecordType.Name == &apos;TNZ&apos; || TAD_Order__r.RecordType.Name==&apos;WT&apos;, 
+IF(Order_Line_Item__r.isSplit__c = true, Order_Line_Item__r.Initial_HSS_NZ_Amount__c , departures_dates__r.HSS_amount_nz__c) , 
+IF(TAD_Order__r.RecordType.Name == &apos;TAD&apos; || TAD_Order__r.RecordType.Name==&apos;TC&apos; , 
+IF(Order_Line_Item__r.isSplit__c = true, Order_Line_Item__r.Initial_HSS_Amount__c , departures_dates__r.HSS_amount__c) , 0) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HSS Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

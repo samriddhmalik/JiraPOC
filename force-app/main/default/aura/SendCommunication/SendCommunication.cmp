@@ -1,0 +1,852 @@
+<aura:component controller="Ordexp_SendCommunicationController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,lightning:actionOverride,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="lstOfRecordType" type="String[]" />
+    
+    <aura:attribute name="tadOrderId" type="String"/>
+    <aura:attribute name="tadOrderInitCheck" type="Ordexp_SendCommunicationController.initWrap" default=""/>
+    
+    <aura:attribute name="spinner" type="boolean" default="False"/>
+    <aura:attribute name="selectComm" type="boolean" default="True"/>
+    <aura:attribute name="showTheCommsPicklist" type="boolean" default="false"/>
+    <aura:attribute name="showOrderCommsBlocked" type="boolean" default="false"/>
+    <aura:attribute name="showNoOrderComms" type="boolean" default="False"/>
+    <aura:attribute name="sourceObject" type="String"/>
+    <aura:attribute name="btnlabel" type="String" default="Cancel"/>
+    <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    <aura:attribute name="colors" type="String[]"/>
+    <aura:attribute name="selectedColor1" type="String"/>
+    <!--aura handler with waiting and donewaiting events-->
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Interrupted" type="boolean"/>
+    <aura:attribute name="pass" type="Decimal" />
+    <aura:attribute name="paxImp" type="string" />
+    <aura:attribute name="missedPart" type="string" />
+    <aura:attribute name="reason" type="string" />
+    <aura:attribute name="onClickPreviewOrSendcancellation" type="Boolean"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="PartialCancellation" type="boolean"/>
+    <aura:attribute name="totalpassenger" type="Decimal" />
+    <aura:attribute name="totalpassengerCancellation" type="Decimal" />
+    
+    <aura:attribute name="passNoCancellation" type="Decimal" />
+    <aura:attribute name="TotalClaimableAmount" type="Decimal" />
+    <aura:attribute name="Cancellationamount" type="Decimal" />
+    <aura:attribute name="CancellationTad" type="Boolean" default="false"/>
+    <aura:attribute name="CancellationTadString" type="String"/>
+    <aura:attribute name="previewTad" type="Boolean" default="false"/>
+    <aura:attribute name="PreviewTadString" type="String"/>
+    <aura:attribute name="CancellationPassname" type="String"/>
+    <aura:attribute name="CancellationPassname1" type="String"/>
+    <aura:attribute name="CancellationPassname2" type="String"/>
+    <aura:attribute name="CancellationPassname3" type="String"/>
+    <aura:attribute name="CancellationPassname4" type="String"/>
+    <aura:attribute name="CancellationPassname5" type="String"/>
+    <aura:attribute name="CancellationPassname6" type="String"/>  
+    <aura:attribute name="CancellationPassname7" type="String"/>
+    
+    <aura:attribute name="CancellationPassname8" type="String"/>
+    <aura:attribute name="CancellationPassname9" type="String"/>
+    <aura:attribute name="CancellationPassname10" type="String"/>
+    <aura:attribute name="CancellationPassname11" type="String"/>
+    <aura:attribute name="CancellationPassname12" type="String"/>
+    <aura:attribute name="CancellationPassname13" type="String"/>  
+    <aura:attribute name="CancellationPassname14" type="String"/>
+    <aura:attribute name="CancellationPassname15" type="String"/>
+    <aura:attribute name="CancellationPassname16" type="String"/>
+    
+    
+    <aura:attribute name="onClickPreviewOrSend" type="Boolean"/>
+    <aura:attribute name="One" type="boolean"/>
+    <aura:attribute name="Two" type="boolean"/>
+    <aura:attribute name="Three" type="boolean"/>
+    <aura:attribute name="Four" type="boolean"/> 
+    <aura:attribute name="Five" type="boolean"/>
+    <aura:attribute name="Six" type="boolean"/>
+    <aura:attribute name="Seven" type="boolean"/>
+    <aura:attribute name="Eight" type="boolean"/>
+    <aura:attribute name="Nine" type="boolean"/> 
+    <aura:attribute name="Ten" type="boolean"/>
+    <aura:attribute name="eleven" type="boolean"/>
+    <aura:attribute name="twelve" type="boolean"/>
+    <aura:attribute name="thirteen" type="boolean"/>
+    <aura:attribute name="fourteen" type="boolean"/>
+    <aura:attribute name="fifteen" type="boolean"/> 
+    <aura:attribute name="sixteen" type="boolean"/>
+    
+    <aura:attribute name="isSendQuote" type="Boolean" default="false"/><!--PSAG 114 And PSAG 115-->
+    <aura:attribute name="quoteDetailsForCustomer" type="String"/><!--PSAG 114 And PSAG 115-->
+    
+    <!--
+    <aura:html tag="style">
+        
+        .slds-modal__container{ 
+        height :  width: 100%; max-width: 100%; 
+        } 
+        .modal-body{ 
+        height : 100% !important; 
+        max-height: 100% !important; 
+        } 
+        .slds-modal__footer{ 
+        display: inline !important; 
+        }
+    </aura:html>
+    -->
+    
+    <!--Show Spinner while loading -->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    
+    <!-- Fetch all available record types after component construction but before rendering -->
+    <aura:if isTrue="{!v.showNoOrderComms}">
+        <div class="slds-text-heading_medium slds-box slds-theme_shade">Select Communication Type</div><br></br>
+        <div style="text-align:center">
+            <p>Sorry, No Comms to be sent across exist for this Order</p><br></br><br></br><br></br>
+            <lightning:button variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}"/>  </div>  
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showOrderCommsBlocked}">
+        <div class="slds-text-heading_medium slds-box slds-theme_shade">Select Communication Type</div><br></br>
+        <div style="text-align:center">
+            <p>Sorry, you have blocked Comms for this order.<br></br>
+                Please unblock them first.</p><br></br><br></br><br></br>
+            <lightning:button variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}"/></div>
+    </aura:if>
+    
+    
+    
+    <aura:if isTrue="{!v.showTheCommsPicklist}">
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+            
+            <lightning:layoutItem flexibility="auto" padding="around-small"
+                                  
+                                  size="12"
+                                  
+                                  largeDeviceSize="12"
+                                  
+                                  mediumDeviceSize="12"
+                                  
+                                  smallDeviceSize="12">
+                
+                <div class="slds-text-heading_medium slds-box slds-theme_shade">Select Communication Type</div>
+                
+            </lightning:layoutItem>
+            
+            
+            
+            
+            <lightning:layoutItem flexibility="auto" padding="around-small"
+                                  
+                                  size="12"
+                                  
+                                  largeDeviceSize="12"
+                                  
+                                  mediumDeviceSize="12"
+                                  
+                                  smallDeviceSize="12">
+                
+                
+                
+                <!-- select to hold all available communication type list -->
+                
+                <lightning:select aura:id="sendCommPicklist" name="selectCommType" label="Select a Communication Type to Send" onchange="{!c.onCommChange}">
+                    <aura:iteration items="{!v.tadOrderInitCheck.listOfPicklistOptions}" var="item" indexVar="index">
+                        <option value="{!item.value}" text="{!item.key}"/>
+                        
+                    </aura:iteration> 
+                    
+                </lightning:select>
+                <br></br>
+            </lightning:layoutItem>
+            
+            <br></br>
+            <!-- PSAG 114 And 115 Start-->
+            <div style="width: 100% !important; max-width: 100% !important;height: 100% !important; max-height: 100% !important">
+                <lightning:layoutItem  flexibility="auto" padding="around-small"
+                                      size="12"
+                                      class="slds-modal__container"
+                                      largeDeviceSize="12"
+                                      mediumDeviceSize="12"
+                                      smallDeviceSize="12">
+                    <aura:if isTrue="{!v.isSendQuote}">
+                        <div><lightning:textarea aura:id="CustomerQuoteDetails" name="Quote Details For Customer" 
+                                                 label="Quote Details For Customer" value="{!v.quoteDetailsForCustomer}" maxlength="300"/> 
+                        </div>
+                    </aura:if>
+                </lightning:layoutItem>
+            </div>
+            <!-- PSAG 114 And 115 End-->
+            
+            <div style="width: 100% !important; max-width: 100% !important;height: 100% !important; max-height: 100% !important">
+                
+                <lightning:layoutItem  flexibility="auto" padding="around-small"
+                                      
+                                      size="12"
+                                      
+                                      class="slds-modal__container"
+                                      
+                                      
+                                      largeDeviceSize="12"
+                                      
+                                      mediumDeviceSize="12"
+                                      
+                                      smallDeviceSize="12">
+                    
+                    <aura:if isTrue="{!v.PartialCancellation}">
+                        <div class="row" style="margin-top:-5%; margin-left:2.5%">
+                            
+                            
+                            <lightning:select aura:id="select1-id" label="No. of Passengers Cancelling" onchange="{!c.ontotalPassengerChangeCancellation}" required="true">
+                                
+                                <option value="">choose one...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                
+                            </lightning:select>
+                            
+                            
+                            <aura:if isTrue="{!v.One}">
+                                <lightning:input aura:id="paxImpacted1" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Two}">
+                                <lightning:input aura:id="paxImpacted2" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted3" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                
+                            </aura:if>
+                            <aura:if isTrue="{!v.Three}">
+                                <lightning:input aura:id="paxImpacted4" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted5" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted6" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Four}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Five}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Name" value="{!v.CancellationPassname5}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Six}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Seven}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Eight}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Nine}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Ten}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.eleven}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.twelve}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.thirteen}">
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.fourteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.fifteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="15th Passenger Name" value="{!v.CancellationPassname15}" required="true"/>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.sixteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="15th Passenger Name" value="{!v.CancellationPassname15}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="16th Passenger Name" value="{!v.CancellationPassname16}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <lightning:input aura:id="paxImpacted" type="number" name="Cancellationamount" label="Cancellation amount" value="{!v.Cancellationamount}" required="true"/>
+                            <lightning:input aura:id="missed" type="number" name="TotalClaimableAmount" label="Total Claimable Amount" value="{!v.TotalClaimableAmount}" required="true"/>
+                            
+                        </div>
+                        
+                    </aura:if>
+                    <br></br>
+                    <br></br>
+                </lightning:layoutItem>
+            </div>
+            
+            <br></br>
+            <br></br>
+            
+            
+            <div style="width: 100% !important; max-width: 100% !important;height: 100% !important; max-height: 100% !important">
+                
+                <lightning:layoutItem  flexibility="auto" padding="around-small"
+                                      
+                                      size="12"
+                                      
+                                      class="slds-modal__container"
+                                      
+                                      
+                                      largeDeviceSize="12"
+                                      
+                                      mediumDeviceSize="12"
+                                      
+                                      smallDeviceSize="12">
+                    
+                    <aura:if isTrue="{!v.Interrupted}">
+                        <div class="row" style="margin-top:-5%; margin-left:2.5%">
+                            
+                            
+                            <lightning:select aura:id="select2-id" label="Passengers Affected" onchange="{!c.ontotalPassengerChange}" required="true">
+                                
+                                <option value="">choose one...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                
+                            </lightning:select>
+                            
+                            <aura:if isTrue="{!v.One}">
+                                <lightning:input aura:id="paxImpacted1" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Two}">
+                                <lightning:input aura:id="paxImpacted2" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted3" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                
+                            </aura:if>
+                            <aura:if isTrue="{!v.Three}">
+                                <lightning:input aura:id="paxImpacted4" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted5" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted6" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Four}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Five}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Name" value="{!v.CancellationPassname5}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Six}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Seven}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Eight}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Nine}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.Ten}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.eleven}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.twelve}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.thirteen}">
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.fourteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.fifteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="15th Passenger Name" value="{!v.CancellationPassname15}" required="true"/>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.sixteen}">
+                                <lightning:input aura:id="paxImpacted" type="String" label="1st Passenger Name" value="{!v.CancellationPassname1}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="2nd Passenger Name" value="{!v.CancellationPassname2}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="3rd Passenger Name" value="{!v.CancellationPassname3}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="4th Passenger Name" value="{!v.CancellationPassname4}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="5th Passenger Name" value="{!v.CancellationPassname5}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="6th Passenger Name" value="{!v.CancellationPassname6}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="7th Passenger Name" value="{!v.CancellationPassname7}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="8th Passenger Name" value="{!v.CancellationPassname8}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="9th Passenger Name" value="{!v.CancellationPassname9}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="10th Passenger Name" value="{!v.CancellationPassname10}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="11th Passenger Name" value="{!v.CancellationPassname11}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="12th Passenger Name" value="{!v.CancellationPassname12}" required="true"/>
+                                
+                                <lightning:input aura:id="paxImpacted" type="String" label="13th Passenger Name" value="{!v.CancellationPassname13}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="14th Passenger Name" value="{!v.CancellationPassname14}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="15th Passenger Name" value="{!v.CancellationPassname15}" required="true"/>
+                                <lightning:input aura:id="paxImpacted" type="String" label="16th Passenger Name" value="{!v.CancellationPassname16}" required="true"/>
+                                
+                            </aura:if>
+                            
+                            <lightning:input aura:id="missed" name="missed" label="Missed Parts" value="{!v.missedPart}"/>
+                            <lightning:input aura:id="reason" name="reason" label="Reason" value="{!v.reason}"/>
+                        </div>
+                        
+                    </aura:if>
+                    <br></br>
+                    <br></br>
+                </lightning:layoutItem>
+            </div>
+            
+            <div class="row" style="margin-top:-5%; margin-left:2.5%">
+                <aura:if isTrue="{!v.PartialCancellation}">
+                    <lightning:button variant="brand" label="Preview" onclick="{!c.previewCancellationComm}"/>
+                </aura:if>
+                <aura:if isTrue="{!v.Interrupted}">
+                    <lightning:button variant="brand" label="Preview" onclick="{!c.previewComm}"/>
+                </aura:if>
+                <lightning:button variant="brand" label="{!v.btnlabel}" onclick="{!c.closeModal}"/>
+                <!--<aura:if isTrue="{!v.PartialCancellation}">
+                <lightning:button variant="brand" label="Send" onclick="{!c.sendCommcancellation}"/>
+                </aura:if>-->
+                <aura:if isTrue="{!v.Interrupted}">
+                    <lightning:button variant="brand" label="Send" onclick="{!c.sendComm}"/>
+                    <aura:set attribute="else">
+                        <lightning:button variant="brand" label="Send" onclick="{!c.sendCommcancellation}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <br></br>
+            <br></br>
+        </lightning:layout>
+    </aura:if>   
+    <br></br><br></br>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    
+    <aura:attribute name="isModalOpencancellation" type="boolean" default="false"/>    
+    
+    <div  style="width: 100% !important; max-width: 100% !important">
+        <aura:if isTrue="{!v.isModalOpencancellation}">
+            
+            <section
+                     role="dialog"
+                     tabindex="-1"
+                     aria-labelledby="modal-heading-01"
+                     aria-modal="true"
+                     aria-describedby="modal-content-id-1"
+                     class="slds-modal slds-fade-in-open"
+                     >
+                <div
+                     class="slds-modal__container"
+                     style="width: 100% !important; max-width: 100% !important">
+                    
+                    
+                    <header class="slds-modal__header" >
+                        <!--lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModelCancellation }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>-->
+                        <!--h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal/PopUp Box</h2>-->
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium slds-scrollable "  id="modal-content-id-1">
+                        <aura:if isTrue="{!v.CancellationTad}">
+                            <aura:unescapedHtml value="{!v.CancellationTadString}" />
+                        </aura:if>
+                        
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer" >
+                        <div class="slds-align_absolute-center">
+                            
+                            <lightning:button variant="brand"
+                                              label="Close"
+                                              title="Close"
+                                              onclick="{! c.closeModelCancellation}"
+                                              />
+                        </div>
+                        
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop" aura:id="myModal-Back"></div>
+        </aura:if>
+    </div>
+    
+    <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+    <div  >
+        <aura:if isTrue="{!v.isModalOpen}">
+            
+            <section
+                     role="dialog"
+                     tabindex="-1"
+                     aria-labelledby="modal-heading-01"
+                     aria-modal="true"
+                     aria-describedby="modal-content-id-1"
+                     class="slds-modal slds-fade-in-open"
+                     >
+                <div
+                     class="slds-modal__container"
+                     style="width: 100% !important; max-width: 100% !important"
+                     >
+                    
+                    
+                    <header class="slds-modal__header" >
+                        <!--lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel1 }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>-->
+                        <!--h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal/PopUp Box</h2>-->
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium slds-scrollable"  id="modal-content-id-1"  style="width: 100% !important; max-width: 100% !important">
+                        <aura:if isTrue="{!v.previewTad}">
+                            <aura:unescapedHtml value="{!v.PreviewTadString}" />
+                        </aura:if>
+                        
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <div class="slds-align_absolute-center">
+                            
+                            <lightning:button variant="brand"
+                                              label="Close"
+                                              title="Close"
+                                              onclick="{! c.closeModel1 }"
+                                              />
+                        </div>
+                        
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop" aura:id="myModal-Back"></div>
+        </aura:if>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Deactivated on Mon, 08 Aug 2022 - further to Mario &amp; Ben A.</description>
+    <masterLabel>DTL-Revenue journals Autolaunched Flow</masterLabel>
+</FlowDefinition>

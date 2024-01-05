@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Bank Account Name
+
+Bank Account Number
+
+Bank Sort Code
+
+Bank SWIFT Number</description>
+        <name>Account_Bank_Fields_Changes_Approvel_Notification</name>
+        <label>Account Bank Fields Changes Approvel Notification</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>Approval_Process_For_Bank_detail_fields</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Submit_To_Approvel_Process</name>
+        <label>Submit To Approvel Process</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Submit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bank_Old_Details__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>BankDetailsNew</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Product_Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Bank_Old_Details__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>NullValueHandler</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Account_Bank_Fields_Changes_Approvel_Notification</targetReference>
+            </connector>
+            <label>Submit</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>BankDetailsNew</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.c2g__CODABankAccountName__c}+&apos;;&apos;+{!$Record.c2g__CODABankAccountNumber__c}+&apos;;&apos;+{!$Record.c2g__CODABankSortCode__c}+&apos;;&apos;+{!$Record.c2g__CODABankSWIFTNumber__c}</expression>
+    </formulas>
+    <formulas>
+        <name>FieldDetails</name>
+        <dataType>String</dataType>
+        <expression>&apos;Bank Account Name | &apos;+{!$Record.c2g__CODABankAccountName__c}+&apos; | &apos;+{!$Record__Prior.c2g__CODABankAccountName__c}
++
+&apos;Bank Account Number | &apos;+{!$Record.c2g__CODABankAccountNumber__c}+&apos; | &apos;+{!$Record__Prior.c2g__CODABankAccountNumber__c} + BR()
++
+&apos;Bank Sort Code | &apos;+{!$Record.c2g__CODABankSortCode__c}+&apos; | &apos;+{!$Record__Prior.c2g__CODABankSortCode__c} + BR()
++
+&apos;Bank Sort Code | &apos;+{!$Record.c2g__CODABankSWIFTNumber__c}+&apos; | &apos;+{!$Record__Prior.c2g__CODABankSWIFTNumber__c} + BR()</expression>
+    </formulas>
+    <formulas>
+        <name>NullValueHandler</name>
+        <dataType>String</dataType>
+        <expression>&apos;null;null;null;null&apos;</expression>
+    </formulas>
+    <interviewLabel>Approvel For Merchant Bank detail fields get edited {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Approvel For Merchant Bank detail fields get edited</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Submit_To_Approvel_Process</targetReference>
+        </connector>
+        <filterLogic>(1 AND 4) OR (2 AND 3)</filterLogic>
+        <filters>
+            <field>Bank_Old_Details__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Finance_Approvel_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Finance_Approvel_Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Bank_Old_Details__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,28 @@
+<template>
+
+    <lightning-card>
+        <p class="slds-p-horizontal_small">
+            <lightning-input  type="search" class="slds-m-bottom_small" placeholder="Search" onchange={searchFaqAction} value={textSearch}></lightning-input>
+            </p>
+    <template for:each={allData} for:item="faq" for:index="index">
+        <div class="" key={faq.knownId}>
+            <template if:true={allData}>
+              
+             <lightning-accordion allow-multiple-sections-open ="true" >
+               
+                <lightning-accordion-section title="Name" name={faq.title} label={faq.title} data-index={index}>
+                    <div style="padding-left:25px">
+                    <lightning-formatted-rich-text  value={faq.answer}> </lightning-formatted-rich-text>
+              </div>
+                  </lightning-accordion-section>
+                 
+            </lightning-accordion>
+
+            
+          </template>
+        </div>
+    </template >
+
+</lightning-card>
+
+</template>

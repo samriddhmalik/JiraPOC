@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Referral_must_be_populated</fullName>
+    <active>false</active>
+    <description>For new orders, this insurance referral field is to be completed by Sales team.</description>
+    <errorConditionFormula>AND(
+ISBLANK(TEXT( ordexp_insurance_referral__c)),
+DATEVALUE(CreatedDate)&gt;= DATE(2018,12,17),
+ordexp_is_phone_sale__c= TRUE,
+OR(RecordType.Name = &quot;TAD&quot;,RecordType.Name = &quot;TNZ&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>ordexp_insurance_referral__c</errorDisplayField>
+    <errorMessage>You must complete Insurance Referral picklist with a relevant value.</errorMessage>
+</ValidationRule>

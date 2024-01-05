@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isPaxReducing</fullName>
+    <active>true</active>
+    <description>User cannot reduce the Pax Quantity. User may have to cancel this order.</description>
+    <errorConditionFormula>PRIORVALUE(PAX_Qty__c) &gt; PAX_Qty__c &amp;&amp;  isSplit__c  =  false</errorConditionFormula>
+    <errorDisplayField>PAX_Quantity__c</errorDisplayField>
+    <errorMessage>You cannot reduce the Pax Quantity. You may have to cancel this order.</errorMessage>
+</ValidationRule>

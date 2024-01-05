@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIF_Module</fullName>
+    <active>true</active>
+    <errorConditionFormula>INCLUDES(PIF_Module__c,&apos;Hotel Only&apos;) &amp;&amp; OR(INCLUDES(PIF_Module__c,&apos;Passenger Detail&apos;),INCLUDES(PIF_Module__c,&apos;Passenger Detail&apos;), INCLUDES(PIF_Module__c,&apos;Passenger Address&apos;), INCLUDES(PIF_Module__c,&apos;Passenger Passport&apos;), INCLUDES(PIF_Module__c,&apos;Requests&apos;), INCLUDES(PIF_Module__c,&apos;Emergency Contact&apos;))</errorConditionFormula>
+    <errorDisplayField>PIF_Module__c</errorDisplayField>
+    <errorMessage>PIF Module cannot be Hotel Only with some other value</errorMessage>
+</ValidationRule>

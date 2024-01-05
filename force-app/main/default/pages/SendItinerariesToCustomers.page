@@ -1,0 +1,28 @@
+<apex:page controller="SendItinerariesController" showHeader="true" sideBar="true">
+    <apex:form >
+        <apex:pageBlock id="pg">
+            <apex:pageBlockSection rendered="{!batchStatusBool}">
+                <apex:actionStatus id="act" startText="Checking..." />
+                Batch Account Status is {!batchStatus}
+                <apex:actionPoller interval="5" action="{!checkBatchStatus}" enabled="{!pollerBool}" reRender="pg" status="act"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton id="back" value="Back to Departure Date" action="{!backToDepartureDate}" immediate="true"/>
+                <apex:commandButton value="Invoke Batch Send" action="{!invokeBatchSend}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+            <apex:pageBlockTable value="{!tds}" var="td" >
+                <apex:column value="{!td.Name}"/>
+                <apex:column value="{!td.order__c}"/>
+                <apex:column value="{!td.tripfull_last_sent__c}"/>
+                <apex:column value="{!td.tripuser_last_sent__c}"/>
+                <apex:column value="{!td.travefy_share_url__c}"/>
+                <apex:column value="{!td.exclude_sending_tp__c}"/>
+                <apex:column value="{!td.send_tp__c}"/>
+                <apex:column value="{!td.tp_email_sent__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

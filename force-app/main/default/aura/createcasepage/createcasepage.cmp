@@ -1,0 +1,22 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Home page">
+
+	
+    <aura:attribute name="container1" type="Aura.Component[]" />
+    <aura:attribute name="container2" type="Aura.Component[]" />
+ 
+    
+    
+    <div class="slds-grid slds-wrap">
+      <div class="slds-size_1-of-2">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container1}</div>
+      </div>
+        <div class="slds-size_1-of-2">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">{!v.container2}</div>
+      </div>
+        
+      
+    
+    </div>
+    
+          
+</aura:component>

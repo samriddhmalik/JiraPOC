@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Number_Level__c</fullName>
+    <defaultValue>&apos;Departure Date&apos;</defaultValue>
+    <externalId>false</externalId>
+    <label>Min Number Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>Departure Date</fullName>
+                <default>false</default>
+                <label>Departure Date</label>
+            </value>
+            <value>
+                <fullName>Allocation</fullName>
+                <default>false</default>
+                <label>Allocation</label>
+            </value>
+            <value>
+                <fullName>Min Number Manager</fullName>
+                <default>false</default>
+                <label>Min Number Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

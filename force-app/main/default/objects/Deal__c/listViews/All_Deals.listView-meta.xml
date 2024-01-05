@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Deals</fullName>
+    <columns>BDM__c</columns>
+    <columns>Merchant__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Estimated_Weighted_Margin__c</columns>
+    <columns>Allocation_by__c</columns>
+    <columns>PAX_included_per_deal__c</columns>
+    <columns>Flight_Book_By__c</columns>
+    <columns>Real_End_Date__c</columns>
+    <columns>Deal_Sales_Allocation_Summary_Report__c</columns>
+    <columns>Sales_Room_Summary_Basic_Report__c</columns>
+    <columns>Sales_Room_Summary_w_Sub_Option_Report__c</columns>
+    <columns>Sales_Room_Summary_w_Option_Report__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Published,Hero</value>
+    </filters>
+    <filters>
+        <field>BDM__c</field>
+        <operation>equals</operation>
+        <value>Silvia Magnani</value>
+    </filters>
+    <label>Silva&apos;s Live Deals</label>
+    <sharedTo>
+        <group>Product</group>
+    </sharedTo>
+</ListView>

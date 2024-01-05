@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FFA. &apos;from DTL
+
+Deactivated on Mon, 08 Aug 2022 - further to Mario &amp; Ben A.</description>
+    <masterLabel>Revenue Journal Creation</masterLabel>
+</FlowDefinition>

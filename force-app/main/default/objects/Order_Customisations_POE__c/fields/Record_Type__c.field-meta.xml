@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Record Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accommodation Booking</fullName>
+                <default>false</default>
+                <label>Accommodation Booking</label>
+            </value>
+            <value>
+                <fullName>Cruise Customisation</fullName>
+                <default>false</default>
+                <label>Cruise Customisation</label>
+            </value>
+            <value>
+                <fullName>Deal Join/Combine</fullName>
+                <default>false</default>
+                <label>Deal Join/Combine</label>
+            </value>
+            <value>
+                <fullName>Flight Customisation</fullName>
+                <default>false</default>
+                <label>Flight Customisation</label>
+            </value>
+            <value>
+                <fullName>Land Customisation</fullName>
+                <default>false</default>
+                <label>Land Customisation</label>
+            </value>
+            <value>
+                <fullName>Note Only</fullName>
+                <default>false</default>
+                <label>Note Only</label>
+            </value>
+            <value>
+                <fullName>Stop Over Customisation</fullName>
+                <default>false</default>
+                <label>Stop Over Customisation</label>
+            </value>
+            <value>
+                <fullName>Transfer Customisation</fullName>
+                <default>false</default>
+                <label>Transfer Customisation</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+                <label>Miscellaneous</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

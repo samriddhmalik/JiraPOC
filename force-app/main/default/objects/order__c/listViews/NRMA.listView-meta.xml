@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NRMA</fullName>
+    <columns>NAME</columns>
+    <columns>created_date__c</columns>
+    <columns>time_confirmed__c</columns>
+    <columns>order_status__c</columns>
+    <columns>agent_name__c</columns>
+    <columns>Account__c</columns>
+    <columns>Purchaser_Name__c</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>Deal_and_Option__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>qty__c</columns>
+    <columns>total_price__c</columns>
+    <columns>Old_NRMA_Order__c</columns>
+    <columns>Referrer__c</columns>
+    <columns>referrer_attribution__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Referrer__c</field>
+        <operation>equals</operation>
+        <value>NRMA</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>On Hold,Expired,Confirmed,Ready For Export,Exported</value>
+    </filters>
+    <label>NRMA</label>
+    <sharedTo></sharedTo>
+</ListView>

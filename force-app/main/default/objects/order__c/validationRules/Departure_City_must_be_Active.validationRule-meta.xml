@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_City_must_be_Active</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+departure_cities__r.Active__c = FALSE,
+NOT($Permission.Validation_Rule_Exception)
+)</errorConditionFormula>
+    <errorMessage>Departure City must be Active for you to select it.</errorMessage>
+</ValidationRule>

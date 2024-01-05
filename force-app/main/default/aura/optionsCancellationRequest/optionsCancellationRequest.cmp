@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="tad_RequestCancellationController" >
+    <aura:attribute name="editChangeType" type="String" default="" />
+    <aura:attribute name="showPartialoption" type="Boolean" default = "false" />
+    <aura:attribute name="showRefundNoCancellation" type="Boolean" default = "false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:75% !important;
+        }
+    </aura:html>
+    <lightning:select label="Select an Action" aura:id="type" value ="{!v.editChangeType}">
+        <option value="" text="--- NONE ---"/> 
+        <option value="expiredOrder" text="Expire Tad Order"/>
+        <aura:if isTrue="{!v.showPartialoption}">
+           <option value="expiredPartialPAidOrder" text="Expire Partial Paid Order"/>
+    </aura:if>
+        <option value="Cancellation" text="Cancellation"/>
+        <aura:if isTrue="{!v.showRefundNoCancellation}">
+        <option value="RefundNoCancellation" text="Refund No Cancellation"/>
+        </aura:if>
+    </lightning:select>
+    
+    <br></br>
+    <aura:if isTrue="{!equals(v.editChangeType, 'expiredOrder')}">
+        <c:expireTadOrder recordId="{!v.recordId}"/>   
+    </aura:if>
+    <aura:if isTrue="{!equals(v.editChangeType, 'expiredPartialPAidOrder')}">
+        <c:tad_cancelPartialPaidorder cancellationType = "expiredPartialPAidOrder" recordId="{!v.recordId}" onback ="{!c.handleCancel}" onclose ="{!c.handleClose}"/>   
+    </aura:if>
+    <aura:if isTrue="{!equals(v.editChangeType, 'Cancellation')}">
+        <c:OrderCancellationForm recordId="{!v.recordId}"/>   
+    </aura:if>   
+    <aura:if isTrue="{!equals(v.editChangeType, 'RefundNoCancellation')}">
+        <c:tad_cancelPartialPaidorder cancellationType = "RefundNoCancellation" recordId="{!v.recordId}" onback ="{!c.handleCancel}" onclose ="{!c.handleClose}"/>   
+    </aura:if>
+</aura:component>

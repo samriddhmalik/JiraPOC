@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nett_Rates_Detail__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is for the BDM to complete the details for the nett rates that will be further broken down in the pricing section of the deal wizard.</inlineHelpText>
+    <label>Nett Rates Detail</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

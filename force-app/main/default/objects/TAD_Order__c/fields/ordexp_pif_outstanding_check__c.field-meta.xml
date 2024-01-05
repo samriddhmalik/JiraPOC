@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_pif_outstanding_check__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISNULL(ordexp_purchase_date__c)),  IF( NOW() - ordexp_purchase_date__c &gt;= 7, true, false) , false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PIF Outstanding Check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

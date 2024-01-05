@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>feedback@tripadeal.com.au</email>
+    <name>Case Queue - Customer Experience</name>
+    <queueMembers>
+        <users>
+            <user>alexandra@tripadeal.com.au</user>
+            <user>genevieve.goman@tripadeal.com.au</user>
+            <user>melanie.king-prime@tripadeal.com.au</user>
+            <user>sarah.mathieson-smith@tripadeal.com.au</user>
+            <user>sarah.zemek@tripadeal.com.au</user>
+            <user>shannon.knapp@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

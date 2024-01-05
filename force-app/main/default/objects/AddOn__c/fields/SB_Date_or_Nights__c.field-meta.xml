@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SB_Date_or_Nights__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Converted_from_Legacy__c ,
+IF(ISBLANK( SB_No_Nights__c ) ,
+TEXT(DAY( SB_Date__c ))&amp;&quot;/&quot;&amp;TEXT(MONTH(SB_Date__c))&amp;&quot;/&quot;&amp;TEXT(YEAR(SB_Date__c))  , 
+SB_No_Nights__c ),
+&quot;&quot;)</formula>
+    <inlineHelpText>Data here has come from information on the linked legacy order. Not to be used for POE orders.</inlineHelpText>
+    <label>SB Date or # Nights</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

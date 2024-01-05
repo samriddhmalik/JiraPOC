@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>16D - Twin</fullName>
+        <default>false</default>
+        <label>16D - Twin</label>
+    </customValue>
+    <customValue>
+        <fullName>16D - Solo</fullName>
+        <default>false</default>
+        <label>16D - Solo</label>
+    </customValue>
+    <customValue>
+        <fullName>16D - Twin ADL</fullName>
+        <default>false</default>
+        <label>16D - Twin ADL</label>
+    </customValue>
+    <customValue>
+        <fullName>16D - Solo ADL</fullName>
+        <default>false</default>
+        <label>16D - Solo ADL</label>
+    </customValue>
+    <masterLabel>a_Option_Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Relation_StopOver</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(Component_Type__c) = &quot;S/Over&quot;, ISBLANK(Stopover__c))</errorConditionFormula>
+    <errorDisplayField>Stopover__c</errorDisplayField>
+    <errorMessage>You can&apos;t relate the Component Type &quot;S/Over&quot; by anything else but a Stopover.</errorMessage>
+</ValidationRule>

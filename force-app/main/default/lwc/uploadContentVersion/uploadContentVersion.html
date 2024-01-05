@@ -1,0 +1,157 @@
+<template>
+
+    <lightning-card title="Upload Content Version" style="margin-left:27px;" >
+
+        <template if:true={showSpinner}>
+            <div class="spinner-class" style="height: 200px; position:relative">
+                <lightning-spinner variant="base" alternative-text="Uploading......">
+                </lightning-spinner>
+            </div>  
+        </template> 
+        <!--<div class="Tad-Order" style="margin-left:26px;">
+            <h4 class="slds-card__header-title">Search Tad Orders</h4>
+        </div><br/>-->
+        <template if:false={showSpinner}>   
+        <div class="Add Button" >
+            <lightning-button variant="neutral" label="Add Additional Row" title="add additional row" icon-name="utility:add" onclick={AddRow} style="margin-left:27px;"></lightning-button>
+        </div>
+        <br/>
+        
+        <div class="c-container" >
+            <div class="custom-lookup slds-form-element">     
+                <div class="slds-form-element__control">  
+                    <template for:each={rows} for:item="r" for:index="index">        
+                    <div class="slds-combobox_container" key={r}>           
+                        <div class="custom-lookup-container slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-has-focus" aria-expanded="true" aria-haspopup="listbox" role="combobox" data-id={index}>
+                           <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right" role="none">
+                            <div key={r} class="search-input-container slds-show slds-form-element__control" data-id={index} data-id1={r}>
+                                <lightning-layout>
+                                    <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" padding="around-small">
+                                    <div class="search-input-container slds-show slds-form-element__control slds-input-has-icon slds-input-has-icon_right" style="display:inline-block;height:25px; " data-id={index}>
+                                        <lightning-input id={index} type="text" onclick={handleClickOnInputBox} onchange={handleKeyChange} is-loading={isSearchLoading} value={searchKeyWord} variant="label-hidden" placeholder="Search Tad Order" style="color:grey;width:168px;margin-left:16px;" data-id={index} data-id1={r}></lightning-input>
+                                        <lightning-icon class="search-icon slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default slds-input-has-icon_right" icon-name="utility:search" size="x-small" alternative-text="icon" data-id={index}>
+                                        </lightning-icon>
+                                        <button class="close-button slds-button slds-hide slds-button_icon slds-input__icon slds-input__icon_right" title="Remove selected option" onclick={clearSelection} style="display:inline-block" data-id={index}>           
+                                            <lightning-icon class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default slds-input__icon_right" icon-name="utility:close" size="x-small" alternative-text="icon">            
+                                            </lightning-icon>
+        
+                                            <span class="slds-assistive-text">Remove selected option</span>
+        
+                                        </button>
+                                        <div class="c-container-onblur" onmouseleave={handleOnblur}>
+                                            <div key={r} class="dropdown slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" data-id={index} style=" width:150px; margin-left:9px; margin-top:15px;">
+                                                <template if:true={spinnerShow}>
+                                                    <div class="spinner-holder">            
+                                                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>            
+                                                    </div>            
+                                                </template>
+                                                <ul class="slds-listbox slds-listbox_vertical" role="presentation" onblur={handleOnblur} style="width:150px;">
+                                                    <template for:each={searchRecordList} for:item="rec">
+                                                        <li key={rec.Id} role="presentation" class="slds-listbox__item">           
+                                                            <div id={rec.Id} data-recid={rec.Id} onclick={handleSelectionRecord} class="slds-media slds-listbox__option slds-listbox__option_entity" role="option"  data-id={index} data-id1={r}>
+                                                                <span style="pointer-events: none;" class="slds-media__figure slds-listbox__option-icon slds-icon-standard-account">
+                                                                    <lightning-icon class="slds-icon slds-icon slds-icon_small" icon-name={iconName} size=“small” alternative-text="icon">           
+                                                                    </lightning-icon>           
+                                                                </span>           
+                                                                <span style="pointer-events: none;" class="slds-media__body">           
+                                                                    <span class="slds-listbox__option-text_entity">{rec.Name}</span>          
+                                                                </span>           
+                                                            </div>           
+                                                        </li>            
+                                                    </template>
+                
+                                                    <template if:true={noRecordFound}>            
+                                                        <li role="presentation" class="slds-listbox__item">           
+                                                            <div class="slds-media slds-listbox__option slds-listbox__option_entity" role="option" >
+                                                                <span style="pointer-events: none;" class="slds-media__body">            
+                                                                    <span class="slds-listbox__option-text_entity">No Records Found….</span>            
+                                                                </span>           
+                                                            </div>            
+                                                        </li>            
+                                                    </template>            
+                                                </ul>            
+                                            </div>     
+                                        </div>  
+                                    </div>
+                                    </lightning-layout-item>
+                                        <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2" padding="around-small">
+                                                <lightning-icon icon-name="action:delete" class="slds-input__icon_right "  alternative-text="Delete Row" size="xx-small" title="Delete Row" onclick={removeRow} data-id={index} data-id1={r}></lightning-icon>
+                                        </lightning-layout-item> 
+                                
+                                </lightning-layout>
+                            </div>
+                                
+                              <!--  <div class="c-container-onblur" onmouseleave={handleOnblur}>
+                                <div key={r} class="dropdown slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" data-id={index} style=" width:150px; margin-left:-505px;">
+                                    <template if:true={spinnerShow}>
+                                        <div class="spinner-holder">            
+                                            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>            
+                                        </div>            
+                                    </template>
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation" onblur={handleOnblur} style="width:150px;">
+                                        <template for:each={searchRecordList} for:item="rec">
+                                            <li key={rec.Id} role="presentation" class="slds-listbox__item">           
+                                                <div id={rec.Id} data-recid={rec.Id} onclick={handleSelectionRecord} class="slds-media slds-listbox__option slds-listbox__option_entity" role="option"  data-id={index} data-id1={r}>
+                                                    <span style="pointer-events: none;" class="slds-media__figure slds-listbox__option-icon slds-icon-standard-account">
+                                                        <lightning-icon class="slds-icon slds-icon slds-icon_small" icon-name={iconName} size=“small” alternative-text="icon">           
+                                                        </lightning-icon>           
+                                                    </span>           
+                                                    <span style="pointer-events: none;" class="slds-media__body">           
+                                                        <span class="slds-listbox__option-text_entity">{rec.Name}</span>          
+                                                    </span>           
+                                                </div>           
+                                            </li>            
+                                        </template>
+    
+                                        <template if:true={noRecordFound}>            
+                                            <li role="presentation" class="slds-listbox__item">           
+                                                <div class="slds-media slds-listbox__option slds-listbox__option_entity" role="option" >
+                                                    <span style="pointer-events: none;" class="slds-media__body">            
+                                                        <span class="slds-listbox__option-text_entity">No Records Found….</span>            
+                                                    </span>           
+                                                </div>            
+                                            </li>            
+                                        </template>            
+                                    </ul>            
+                                </div>     
+                            </div>   -->          
+                            </div>            
+                        </div>           
+                    </div> 
+                </template>            
+                </div>   
+                         
+            </div>                       
+        </div>
+        <br/>
+    
+    <div class="slds-p-around_small" style="margin-left:16px;">
+        <div>
+            <lightning-input label="(File size - not greater than 3MB)" name="file uploader" onchange={openfileUpload} type="file" >
+            </lightning-input>
+        </div>
+        <div class="slds-text-body_small slds-text-color_success">{filename}
+        </div>
+        <br/><br/>
+        <template if:true={showSettings}>
+            <div class="delivery-settings">
+                <h4 class="slds-card__header-title">Add following Details:</h4><br/>
+                <lightning-input type="text" label="Delivery Name" placeholder="type here..." required maxlength="80" style="width:300px;" onchange={deliveryName}></lightning-input><br/>             
+                <lightning-input  class="slds-p-left_xx-small" type="checkbox" label="Notify me of First View or Download" onchange={handleCheckChange}></lightning-input>
+                <lightning-input  class="slds-p-left_xx-small" type="checkbox" label="Remove Access to Content on" onchange={handleCheck2Change} style="display:inline-block; margin-right:35px"></lightning-input>                 
+                <lightning-input  type="datetime" lang="en_gb" label="" data-validation-name="datafield" onchange={handleDateChange} disabled={disableDateField} style="display:inline-block; margin-bottom:18px" ></lightning-input><br/>
+                <!--<lightning-input  class="slds-p-left_xx-small" type="checkbox" label="Require Password to Access Content" onchange={handleCheck3Change} style="margin-top:18px;"></lightning-input><br/>-->
+            </div>
+        </template>
+        
+        <div class="Buttons" style="margin-left:525px;">
+            <lightning-button class="slds-m-top--medium" label="Save" onclick={handleClick} variant="brand"
+                disabled={isSave}></lightning-button>
+            <lightning-button class="slds-m-top--medium" style="margin-left:10px;" label="Back" onclick={backToHomePage} variant="brand"
+            disabled={isTrue}></lightning-button>
+        </div>
+    </div>
+    </template>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,19 @@
+.row-color {
+    background: #01bfd7;
+    color: white;
+   }
+.rowClass{
+    border-bottom: 1px solid #edd8d8 !important;line-height: 1.8em !important;
+}
+
+.tableclass{
+    border-collapse: collapse !important;
+}
+
+.div2Table{
+    width: 100% !important;
+}
+
+.table2class{
+    margin-left: 1% !important;
+}

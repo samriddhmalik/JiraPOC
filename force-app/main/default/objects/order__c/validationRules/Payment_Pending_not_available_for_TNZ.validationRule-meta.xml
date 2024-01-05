@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Pending_not_available_for_TNZ</fullName>
+    <active>true</active>
+    <description>The Payment Pending (checkbox) to fire the email does not work for TNZ orders.</description>
+    <errorConditionFormula>AND( Send_Payment_Pending_info__c ,
+RecordType.Name = &quot;TNZ&quot;)</errorConditionFormula>
+    <errorDisplayField>Send_Payment_Pending_info__c</errorDisplayField>
+    <errorMessage>You cannot send this Payment Pending email to TNZ order - only available for TAD orders.</errorMessage>
+</ValidationRule>

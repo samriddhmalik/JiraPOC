@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LatestMarketing_NonRevShare__c</fullName>
+    <externalId>false</externalId>
+    <label>LatestMarketing(Non-RevShare)</label>
+    <summarizedField>Marketing_Spend__c.Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Marketing_Spend__c.JV__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Marketing_Spend__c.Deal__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

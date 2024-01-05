@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>TIP</fullName>
+        <default>false</default>
+        <label>TIP</label>
+    </customValue>
+    <customValue>
+        <fullName>TAD</fullName>
+        <default>false</default>
+        <label>TAD</label>
+    </customValue>
+    <customValue>
+        <fullName>UJ</fullName>
+        <default>false</default>
+        <label>UJ</label>
+    </customValue>
+    <customValue>
+        <fullName>TTP</fullName>
+        <default>false</default>
+        <label>TTP</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>a_Travel_Pack</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

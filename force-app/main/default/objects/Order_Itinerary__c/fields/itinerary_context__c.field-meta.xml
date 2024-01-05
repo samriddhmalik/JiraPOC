@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>itinerary_context__c</fullName>
+    <externalId>false</externalId>
+    <label>Itinerary Context</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre Stopover</fullName>
+                <default>false</default>
+                <label>Pre Stopover</label>
+            </value>
+            <value>
+                <fullName>Main Package</fullName>
+                <default>false</default>
+                <label>Main Package</label>
+            </value>
+            <value>
+                <fullName>Pre Extension</fullName>
+                <default>false</default>
+                <label>Pre Extension</label>
+            </value>
+            <value>
+                <fullName>Post Extension</fullName>
+                <default>false</default>
+                <label>Post Extension</label>
+            </value>
+            <value>
+                <fullName>Both Extensions</fullName>
+                <default>false</default>
+                <label>Both Extensions</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <label>Upgrade</label>
+            </value>
+            <value>
+                <fullName>Post Stopover</fullName>
+                <default>false</default>
+                <label>Post Stopover</label>
+            </value>
+            <value>
+                <fullName>NA</fullName>
+                <default>false</default>
+                <label>NA</label>
+            </value>
+            <value>
+                <fullName>Post Extension with Upgrade</fullName>
+                <default>false</default>
+                <label>Post Extension with Upgrade</label>
+            </value>
+            <value>
+                <fullName>Pre Extension with Upgrade</fullName>
+                <default>false</default>
+                <label>Pre Extension with Upgrade</label>
+            </value>
+            <value>
+                <fullName>Both Extensions with Upgrade</fullName>
+                <default>false</default>
+                <label>Both Extensions with Upgrade</label>
+            </value>
+            <value>
+                <fullName>Arrive Early</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Arrive Early</label>
+            </value>
+            <value>
+                <fullName>Stay Behind</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stay Behind</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

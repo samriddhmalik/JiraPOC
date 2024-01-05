@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Display Cases" custom-icon="custom:icon13">
+        <div class="slds slds-var-p-horizontal_medium">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_4-of-12 slds-var-m-bottom_medium">
+                    <lightning-Input type="search" placeholder="Search Cases..." value={caseNumber} name="caseNumber"
+                        class="caseNumber" onchange={handleChangeCaseNumber}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-m-top-medium" style="margin-top: 19px; margin-left: 10px;">
+                    <lightning-button label="Search Case Number" size="small" variant="brand" onclick={handleCaseSearch}
+                        icon-name="utility:search" icon-position="right"></lightning-button>
+                </div>
+            </div>
+            <!--h2>Case Number :- <span><strong>{currentCaseNumber}</strong></span></h2--><br />
+            <h3><strong><span style="color:brown;">{dataNotFound}</span></strong></h3><br />
+            <h2 class="slds-var-m-bottom_x-small" style="color:darkslateblue; font-weight:bold;">Displaying Case Records
+                based on Case Number</h2>
+            <template if:true={showtable}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="0"
+                    cellpadding="0" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th>Case Number</th>
+                            <th>Subject</th>
+                            <th>Origin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={records} for:item="cas" for:index="index">
+                            <tr key={cas.id} id={cas.id}  data-id={index} >
+                                <td onclick={openCaseRecord}  data-id={index}>{cas.CaseNumber}</td>
+                                <td onclick={openCaseRecord}  data-id={index}>{cas.Subject}</td>
+                                <td onclick={openCaseRecord}  data-id={index}>{cas.Origin}</td>
+                                <!--td onclick={openCaseRecord}  data-id={index}>{cas.id}</td-->
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+        <br /><br />
+    </lightning-card>
+		<!--template if:true = {showrecord}>
+   <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+        <lightning-record-edit-form
+            id="recordEditForm"
+            record-id={recordIdToShow}
+            object-api-name="Case"
+						density="compact"
+        >
+            <lightning-messages></lightning-messages>
+            <lightning-input-field field-name="CaseNumber">
+            </lightning-input-field>
+            <lightning-input-field field-name="Subject">
+            </lightning-input-field>
+            <lightning-input-field field-name="Origin">
+            </lightning-input-field>
+            <lightning-button
+                type="submit"
+                label="Update Record"
+                class="slds-m-top_medium"
+            >
+            </lightning-button>
+        </lightning-record-edit-form>
+    </div>
+</template-->
+</template>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>method__c</fullName>
+    <externalId>false</externalId>
+    <label>Method</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PayPX</fullName>
+                <default>false</default>
+                <label>PayPX</label>
+            </value>
+            <value>
+                <fullName>Ingenico</fullName>
+                <default>false</default>
+                <label>Ingenico</label>
+            </value>
+            <value>
+                <fullName>BPoint</fullName>
+                <default>false</default>
+                <label>BPoint</label>
+            </value>
+            <value>
+                <fullName>Bank Transfer</fullName>
+                <default>false</default>
+                <label>Bank Transfer</label>
+            </value>
+            <value>
+                <fullName>zipMoney</fullName>
+                <default>false</default>
+                <label>zipmoney</label>
+            </value>
+            <value>
+                <fullName>Paypal</fullName>
+                <default>false</default>
+                <label>PayPal</label>
+            </value>
+            <value>
+                <fullName>Coupon</fullName>
+                <default>false</default>
+                <label>Coupon</label>
+            </value>
+            <value>
+                <fullName>Poli</fullName>
+                <default>false</default>
+                <label>POLi</label>
+            </value>
+            <value>
+                <fullName>eNett</fullName>
+                <default>false</default>
+                <label>eNett</label>
+            </value>
+            <value>
+                <fullName>TravelTek</fullName>
+                <default>false</default>
+                <label>TravelTek</label>
+            </value>
+            <value>
+                <fullName>VT Transaction</fullName>
+                <default>false</default>
+                <label>VT Transaction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

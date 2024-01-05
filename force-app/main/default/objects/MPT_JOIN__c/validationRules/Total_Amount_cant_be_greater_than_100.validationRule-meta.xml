@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Amount_cant_be_greater_than_100</fullName>
+    <active>true</active>
+    <errorConditionFormula>Total_Amount__c &gt;1</errorConditionFormula>
+    <errorMessage>Edit the existing merchant term or delete the existing merchant term to create a new one</errorMessage>
+</ValidationRule>

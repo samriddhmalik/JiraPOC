@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" >
+    
+    <div style="font-size:18px;padding-top:20px" class="slds-align_absolute-center">
+        Are you sure you want to download Deal History ?      
+    </div>
+    
+    <div style="padding-top:20px;"  class="slds-align_absolute-center">
+        <lightning:button label="Yes" variant="brand" onclick="{!c.openVFPage}"/>
+        <lightning:button label="No" variant="brand" onclick="{!c.closeCmp}"/>
+    </div>
+    
+</aura:component>

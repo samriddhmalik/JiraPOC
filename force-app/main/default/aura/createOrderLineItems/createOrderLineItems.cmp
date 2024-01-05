@@ -1,0 +1,205 @@
+<aura:component controller="createOrderLineItemsController" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference" access="global" >
+    
+    <aura:attribute name="numberOfTimesToIterate" type="Integer"/>
+    <aura:attribute name="orderLineItemId" type="String"/>
+    <aura:attribute name="tadOrderId" type="String"/>
+    <aura:attribute name="showError" type="String"/>
+    <aura:attribute name="oliRecordData" type="createOrderLineItemsController.orderLineRecordData"/>    
+    <aura:attribute name="subOptionList" type="createOrderLineItemsController.relatedObjectFields[]"/>
+    <aura:attribute name="departureCityList" type="createOrderLineItemsController.relatedObjectFields[]"/>
+    <aura:attribute name="paxNumberList" type="createOrderLineItemsController.relatedObjectFields[]"/>
+    <aura:attribute name="AllocationData" type="createOrderLineItemsController.allocationData[]"/>
+    <aura:attribute name="occupancyDetails" type="createOrderLineItemsController.occupancyDetails[]"/>
+    <aura:attribute name="occupancyDetailsView" type="createOrderLineItemsController.occupancyDetails"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="isLoading" type="Boolean"/>
+    <aura:attribute name="isSiteminder" type="Boolean"/>
+    <aura:handler event="aura:Waiting" action="{!c.loading}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.loaded}"/>
+     <aura:attribute name="sourceObject" type="String"/>
+    <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+    <aura:attribute name="btnlabel" type="String" default="Cancel"/>
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    
+    
+    <div class="slds-theme_default" style="width: inherit;padding: 16px; height :inherit">
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+        <div class="slds-m-bottom_large flowruntimeRichTextWrapper flowruntimeDisplayText" data-aura-rendered-by="2186:0" data-aura-class="flowruntimeRichTextWrapper flowruntimeDisplayText"><div class="uiOutputRichText" dir="ltr" data-aura-rendered-by="2187:0" data-aura-class="uiOutputRichText"><p data-aura-rendered-by="2188:0" style="text-align: center;"><b style="font-size: 18px;" data-aura-rendered-by="2189:0">Create New OLI</b></p></div></div>
+        
+        <p>
+            <b style="color: rgb(228, 59, 59);">
+                {!v.showError}
+            </b>
+        </p>
+        <table class="slds-table" role="grid" style="table-layout: fixed; width: unset;">
+            <tbody class="body slds-text-heading_small" style="font-size: medium;">
+                <tr class="row-full">
+                    <td class="row-title">TAD Order</td>
+                    <td class="row-detail"><ui:outputText value="{!v.oliRecordData.orderName}"/></td>
+                </tr>
+                <tr class="row-full">
+                    <td class="row-title">Deal</td>
+                    <td class="row-detail"><ui:outputText value="{!v.oliRecordData.dealName}"/></td>
+                </tr>
+                <tr class="row-full">
+                    <td class="row-title">Option</td>
+                    <td class="row-detail"><ui:outputText value="{!v.oliRecordData.OptionName}"/></td>
+                </tr>
+                <tr class="row-full">
+                    <td class="row-title">Departure Date </td>
+                    <td class="row-detail"><ui:outputText value="{!v.oliRecordData.ddDateName}"/></td>
+                </tr>
+                <aura:if isTrue="{!v.isSiteminder==true}">
+                    <tr class="row-full">
+                        <td class="row-title">Default Occupany </td>
+                        <td class="row-detail"><ui:outputText value="{!v.occupancyDetailsView.defaultOccupancy}"/></td>
+                    </tr>
+                    <tr class="row-full">
+                        <td class="row-title">Maximum Occupany </td>
+                        <td class="row-detail"><ui:outputText value="{!v.occupancyDetailsView.maximumOccupancy}"/></td>
+                    </tr>
+                    <tr class="row-full">
+                        <td class="row-title">Maximum Adults </td>
+                        <td class="row-detail"><ui:outputText value="{!v.occupancyDetailsView.maximumAdults}"/></td>
+                    </tr>
+                    <tr class="row-full">
+                        <td class="row-title">Maximum Childs </td>
+                        <td class="row-detail"><ui:outputText value="{!v.occupancyDetailsView.maximumChildren}"/></td>
+                    </tr>
+                    <tr class="row-full">
+                        <td class="row-title">Maximum Infants </td>
+                        <td class="row-detail"><ui:outputText value="{!v.occupancyDetailsView.maximumInfants}"/></td>
+                    </tr>
+                </aura:if>
+            </tbody>  
+        </table>   
+        
+        <br></br>
+        <lightning:select class="body" label="Sub Option" aura:id="subOption" value ="{!v.oliRecordData.subOptionId}" onchange="{!c.fetchAllocation}">
+            <option value="" text="--- None ---"/>
+            <aura:iteration items="{!v.subOptionList}" var="item">
+                <option value="{!item.value}" text="{!item.text}"/>
+            </aura:iteration>
+        </lightning:select>
+        
+        <!-- Code For Old Layout if Not Siteminder Hotel Deal -->
+        
+        <aura:if isTrue="{!not(empty(v.AllocationData))}"> 
+            <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout body" role="grid">
+                <thead >
+                    <tr class="slds-line-height_reset slds-text-align--center">
+                        <th scope="col" width="50%" class="slds-text-align_center">{!v.AllocationData[0].tableHeader}</th>
+                        <th scope="col" width="50%" class="slds-text-align_center">Remaining Allocation</th>
+                    </tr>      
+                </thead> 
+                
+                <tbody class="body">
+                    <aura:iteration items="{!v.AllocationData}" var="rd" indexVar="index">
+                        <tr class="body">
+                            <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.dateValue}"/></td>
+                            <td scope="row" class="slds-text-align--center" ><ui:outputText value="{!rd.remainingAllocation}"/></td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </aura:if> 
+        <br></br>
+        <aura:if isTrue="{!v.isSiteminder==false}">
+            <aura:if isTrue="{!v.oliRecordData.isStay==false}"> 
+                <lightning:select class="body" label="PAX Qty" aura:id="paxQty" value ="{!v.oliRecordData.paxQty}" onchange="{!c.updateDateValue}" disabled="{!(empty(v.AllocationData))}">
+                    <option value="" text="--- None ---"/>
+                    <aura:iteration items="{!v.paxNumberList}" var="item">
+                        <option value="{!item.value}" text="{!item.text}"/>
+                    </aura:iteration>
+                </lightning:select>
+            </aura:if>
+            <aura:if isTrue="{!v.oliRecordData.isStay==true}"> 
+                <lightning:select class="body" label="Quantity" aura:id="quantity" value ="{!v.oliRecordData.quantity}" onchange="{!c.updateDateValue}" disabled="{!(empty(v.AllocationData))}">
+                    <option value="" text="--- None ---"/>
+                    <option value="1" text="1"/>
+                    <option value="2" text="2"/>
+                    <option value="3" text="3"/>
+                    <option value="4" text="4"/>
+                    <option value="5" text="5"/>
+                    <option value="6" text="6"/>
+                    <option value="7" text="7"/>
+                    <option value="8" text="8"/>
+                    <option value="9" text="9"/>
+                    <option value="10" text="10"/>
+                </lightning:select>
+            </aura:if>
+            <br></br>
+            <lightning:select class="body" label="Departure City" aura:id="departureCity" value ="{!v.oliRecordData.departureCityId}">
+                <option value="" text="--- None ---"/>
+                <aura:iteration items="{!v.departureCityList}" var="item">
+                    <option value="{!item.value}" text="{!item.text}"/>
+                </aura:iteration>
+            </lightning:select>
+            <br></br>
+            <aura:if isTrue="{!v.oliRecordData.isQty==true}"> 
+                <lightning:select class="body" label="Pricing Model" aura:id="pricing" value ="{!v.oliRecordData.pricingModel}" disabled="true">
+                    
+                    <option value="QTY" text="QTY"/>
+                </lightning:select>
+            </aura:if>
+            <aura:if isTrue="{!v.oliRecordData.isQty==false}"> 
+                <lightning:select class="body" label="Pricing Model" aura:id="pricing" value ="{!v.oliRecordData.pricingModel}" >
+                    
+                    <option value="" text="--- None ---"/>
+                    <option value="Solo " text="Solo"/>
+                    <option value="Twin" text="Twin"/>
+                </lightning:select>
+            </aura:if>
+            
+        </aura:if>
+        <!-- Code For Old Layout if Not Siteminder Hotel Deal Ends -->
+        
+        <!-- Code For New Layout if Siteminder Hotel Deal -->
+        
+        <aura:if isTrue="{!v.isSiteminder==true}"> 
+            
+            
+            
+            <lightning:select class="body" label="Number Of Adults" aura:id="paxQty" value ="{!v.oliRecordData.adultCount}" >
+                <aura:iteration items="{!v.occupancyDetailsView.defaultOccupancyList}" var="item">
+                    <option value="{!item.value}" text="{!item.text}"/>
+                </aura:iteration>
+            </lightning:select>
+            
+            <!--
+            <lightning:select class="body" label="Number Of Children" aura:id="paxQty" value ="{!v.oliRecordData.childrenCount}" >
+                <aura:iteration items="{!v.occupancyDetailsView.maximumChildrenList}" var="item">
+                    <option value="{!item.value}" text="{!item.text}"/>
+                </aura:iteration>
+            </lightning:select>
+            
+            <lightning:select class="body" label="Number Of Infants " aura:id="paxQty" value ="{!v.oliRecordData.infantCount}" >
+                <aura:iteration items="{!v.occupancyDetailsView.maximumInfantsList}" var="item">
+                    <option value="{!item.value}" text="{!item.text}"/>
+                </aura:iteration>
+            </lightning:select>
+            -->
+            
+            <lightning:select class="body" label="Departure City" aura:id="departureCity" value ="{!v.oliRecordData.departureCityId}" disabled="true">
+                <aura:iteration items="{!v.departureCityList}" var="item">
+                    <option value="{!item.value}" text="{!item.text}"/>
+                </aura:iteration>
+            </lightning:select>
+            <br></br>
+            <br></br>
+            Note :- If you need to Add Any Extra Adult or Child Proceed Forward and create Addon For The Same.
+            <br></br>
+        </aura:if>
+        <!-- Code For New Layout if  Siteminder Hotel Deal Ends -->  
+        
+        <br></br>
+        <div class="slds-text-align--center">
+            <lightning:button variant="brand" label="{!v.btnlabel}" title="Cancel" onclick="{! c.navigateToRecord }"/>
+            <lightning:button aura:id="NEXT" label="Next" variant="brand" onclick="{!c.validateAndSaveOLI}" />
+        </div>
+        
+    </div>
+    
+</aura:component>

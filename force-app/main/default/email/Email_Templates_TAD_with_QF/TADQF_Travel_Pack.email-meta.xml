@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD Your Travel Pack Is Ready</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF Travel Pack</name>
+    <style>none</style>
+    <subject>Get ready to Travel! Your TripADeal Itinerary is ready for order {!Travefy_Document_POE__c.order_number_text__c}!</subject>
+    <textOnly>.
+
+Get ready to travel!
+Hi {!Travefy_Document_POE__c.trip_purchaser_first_name__c},
+Your travel itinerary for {!Travefy_Document_POE__c.option_title__c} is ready!
+
+Click the link below to open your itinerary. Your itinerary includes flight details as well as any other important information relevant to your holiday.
+
+VIEW YOUR TRIP HERE
+
+Click the button above to also:
+Get the Mobile App or Download a Printable PDF
+
+If you have any questions, please do not hesitate to contact us.
+We hope you have an incredible trip!
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

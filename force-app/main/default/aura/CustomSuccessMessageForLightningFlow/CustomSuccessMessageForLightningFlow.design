@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="recId" label="rec Id" description="record created"/>
+    <design:attribute name="context" label="flow type" description="calling from screen"/>
+</design:component>

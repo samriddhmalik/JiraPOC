@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Payable_Credit_Note</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create Payable Credit Note</masterLabel>
+    <openType>sidebar</openType>
+    <page>CL_DTL_TO_PCN</page>
+    <protected>false</protected>
+</WebLink>

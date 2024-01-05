@@ -1,0 +1,115 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="TAD_SplitOliForMultiplePaxController">
+    <aura:attribute name="availableOli" type="Boolean" /> 
+    <aura:attribute name="noOli" type="Boolean" />
+    <aura:attribute name="isStay" type="Boolean" /> 
+    <aura:attribute name="SelectedpaxId" type="String" /> 
+    <aura:attribute name="defaultPaxCount" type="Integer" />
+    <aura:attribute name="oldPaxCount" type="Integer" /> 
+    <aura:attribute name="newPaxCount" type="Integer" default="0" />
+    <aura:attribute name="paxOptions" type="List" /> 
+    <aura:attribute name="isSelected" type="Boolean" default="false" />
+    <aura:attribute name="availableOliList" type="TAD_SplitOliForMultiplePaxController.recordataWrapper[]" /> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>     
+    <aura:html tag="style">
+     <!--   .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+        .slds-modal__footer{
+            visibility:hidden;
+        }
+        .quick-actions-panel{
+    	overflow:hidden !important;
+		}-->
+        .slds-modal__container{
+        max-width: 85rem !important;
+        width:45% !important;
+        }
+    </aura:html>
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+    
+    <aura:if isTrue="{!v.availableOli}">
+        
+        <lightning:select aura:id="selectedId" name="selectOli" label="Select OLI to Split(select only one)"   onchange="{!c.getRequestedRecords}" >
+            <option value="">--None--</option>
+            <aura:iteration items="{!v.availableOliList}" var="oli">
+                <option value="{!oli.oliId}">{!oli.oliname}</option>
+            </aura:iteration>
+        </lightning:select>
+        
+        <br></br>
+        <aura:if isTrue="{!v.isSelected}">
+            <div style="width: inherit;"> 
+                <lightning:dualListbox name="splitOli"
+                                       label= "Select Passengers"
+                                       sourceLabel="Current OLI:"
+                                       selectedLabel="New OLI:"
+                                       fieldLevelHelp="Select PAX you need to move to new OLI"
+                                       options="{!v.paxOptions}"
+                                       onchange="{! c.handlePaxChange }"/>
+            </div>
+            
+            <br></br>
+            <div class="slds-grid">
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    OLI PAX QTY:&nbsp;&nbsp;{!v.oldPaxCount}
+                </div>
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    OLI PAX QTY:&nbsp;&nbsp;{!v.newPaxCount}
+                </div>
+            </div>
+            <br></br>
+            <aura:if isTrue="{!v.isStay==true}">
+            <div class="slds-grid">
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    <lightning:select aura:id="oldPricingModel" label="Select Pricing Model" required="true" disabled="true">
+                        <option value="QTY" text="QTY"/>
+                        
+                    </lightning:select>
+                </div>
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    <lightning:select aura:id="newPricingModel" label="Select Pricing Model" required="true" disabled="true">
+                        <option value="QTY" text="QTY"/>
+                        
+                    </lightning:select>
+                </div>
+            </div>
+                </aura:if>
+        
+        <aura:if isTrue="{!v.isStay==false}">
+            <div class="slds-grid">
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    <lightning:select aura:id="oldPricingModel" label="Select Pricing Model" required="true">
+                        <option value="" text="--None--"/>
+                        <option value="Twin" text="Twin"/>
+                        <option value="Solo" text="Solo"/>
+                    </lightning:select>
+                </div>
+                <div class="slds-p-horizontal--large slds-large-size--1-of-2">
+                    <lightning:select aura:id="newPricingModel" label="Select Pricing Model" required="true">
+                        <option value="" text="--None--"/>
+                        <option value="Twin" text="Twin"/>
+                        <option value="Solo" text="Solo"/>
+                    </lightning:select>
+                </div>
+            </div>
+        </aura:if>
+            <br></br> 
+            </aura:if>
+            <div class="slds-text-align--center">
+                <lightning:button variant="neutral" label="Cancel" onclick="{!c.closeModal}"/>
+                <lightning:button variant="brand" label="Submit" onclick="{! c.doTheDmlForNewOli }"/>
+            </div> 
+        </aura:if>
+    
+    
+    <aura:if isTrue="{!v.noOli}">
+        
+        <div class="slds-align_absolute-center">
+            <lightning:icon iconName="action:close" alternativeText="Validation Failed"/>
+            <br></br>
+            <div aura:id="warningMessage" class="slds-text-heading_medium slds-align_absolute-center slds-show">There are not any eligible OLIs to be Split.</div>
+        </div>
+    </aura:if>
+</aura:component>

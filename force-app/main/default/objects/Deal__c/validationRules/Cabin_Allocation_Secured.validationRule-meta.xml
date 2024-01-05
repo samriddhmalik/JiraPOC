@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cabin_Allocation_Secured</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Cruise_Cabin_Booked_by__c,&quot;Partner&quot;),NOT(ISPICKVAL(Cruise_Cabin_Allocation_Status__c ,&quot;Secured&quot;)))</errorConditionFormula>
+    <errorDisplayField>Cruise_Cabin_Allocation_Status__c</errorDisplayField>
+    <errorMessage>If Cabins are booked by Partner, Cabins are secured</errorMessage>
+</ValidationRule>

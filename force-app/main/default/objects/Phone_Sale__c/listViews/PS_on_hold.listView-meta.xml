@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_on_hold</fullName>
+    <columns>NAME</columns>
+    <columns>Email_Purchaser__c</columns>
+    <columns>UserFullName__c</columns>
+    <columns>Status__c</columns>
+    <columns>Total_BPoint_Payment_Received__c</columns>
+    <columns>Total_Price__c</columns>
+    <columns>processed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>On Hold</value>
+    </filters>
+    <label>PS on hold</label>
+</ListView>

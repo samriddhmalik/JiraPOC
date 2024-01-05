@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_BER_Refund_Coupon_Withholding_Amts</fullName>
+    <active>false</active>
+    <description>Validate that (BER Refund Amount + BER Coupon Amount + BER Withholding Amount) EQUALS (Payment Received + Coupons)</description>
+    <errorConditionFormula>AND( 
+OR(
+ISPICKVAL(CVC__c,&quot;BER Refunded (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c,&quot;BER Accepted (Refund &amp; Coupon)&quot;),
+ISPICKVAL(CVC__c,&quot;BER Send Offer (Refund &amp; Coupon)&quot;)
+),
+NOT( ISCHANGED(Flights_Cancelled__c )),
+NOT( ISBLANK(  BER_Coupon_Amount__c )) ,
+NOT( $Permission.BER_Coupon_Refund_Validation ),
+BER_Offer_Balance__c  &lt;&gt; 0 
+)</errorConditionFormula>
+    <errorDisplayField>BER_Coupon_Amount__c</errorDisplayField>
+    <errorMessage>Check the BER Refund Amount PLUS BER Coupon Amount PLUS BER Withholding Amount. The total of these MUST equal the total paid + any coupons used</errorMessage>
+</ValidationRule>

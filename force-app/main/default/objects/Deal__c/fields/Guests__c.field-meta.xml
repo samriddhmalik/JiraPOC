@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guests__c</fullName>
+    <externalId>false</externalId>
+    <label>Guests</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Family</fullName>
+                <default>false</default>
+                <label>Family</label>
+            </value>
+            <value>
+                <fullName>Romantic</fullName>
+                <default>false</default>
+                <label>Romantic</label>
+            </value>
+            <value>
+                <fullName>Singles</fullName>
+                <default>false</default>
+                <label>Singles</label>
+            </value>
+            <value>
+                <fullName>Older</fullName>
+                <default>false</default>
+                <label>Older</label>
+            </value>
+            <value>
+                <fullName>Middle age</fullName>
+                <default>false</default>
+                <label>Middle age</label>
+            </value>
+            <value>
+                <fullName>Couples</fullName>
+                <default>false</default>
+                <label>Couples</label>
+            </value>
+            <value>
+                <fullName>Groups</fullName>
+                <default>false</default>
+                <label>Groups</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

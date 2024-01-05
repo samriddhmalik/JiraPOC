@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_Calendar</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Package Calendar</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://calendar.google.com/calendar/embed?src=tripadeal.com.au_poeasi6om1qsaee05715dubpd8%40group.calendar.google.com&amp;ctz=Australia/Sydney</url>
+</WebLink>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COVID_Revised_Offers__c</fullName>
+    <externalId>false</externalId>
+    <label>COVID Revised Offers</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sent</fullName>
+                <default>false</default>
+                <label>Sent</label>
+            </value>
+            <value>
+                <fullName>BER Resolution</fullName>
+                <default>false</default>
+                <label>BER Resolution</label>
+            </value>
+            <value>
+                <fullName>OriginalOrder To be Revised</fullName>
+                <default>false</default>
+                <label>OriginalOrder To be Revised</label>
+            </value>
+            <value>
+                <fullName>This Order To be Revised</fullName>
+                <default>false</default>
+                <label>This Order To be Revised</label>
+            </value>
+            <value>
+                <fullName>Offer Not Changed</fullName>
+                <default>false</default>
+                <label>Offer Not Changed</label>
+            </value>
+            <value>
+                <fullName>Reoffer Open Credit No Fee</fullName>
+                <default>false</default>
+                <label>Reoffer Open Credit No Fee</label>
+            </value>
+            <value>
+                <fullName>Reoffer Open Credit With Fee</fullName>
+                <default>false</default>
+                <label>Reoffer Open Credit With Fee</label>
+            </value>
+            <value>
+                <fullName>Reoffer TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Reoffer TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Reoffer Excl Credit and Open Credit</fullName>
+                <default>false</default>
+                <label>Reoffer Excl Credit and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Payment Transaction Refund Req</fullName>
+                <default>false</default>
+                <label>Payment Transaction Refund Req</label>
+            </value>
+            <value>
+                <fullName>Sent - Offer Not Changed</fullName>
+                <default>false</default>
+                <label>Sent - Offer Not Changed</label>
+            </value>
+            <value>
+                <fullName>Sent - Reoffer Open Credit No Fee</fullName>
+                <default>false</default>
+                <label>Sent - Reoffer Open Credit No Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - Reoffer Open Credit With Fee</fullName>
+                <default>false</default>
+                <label>Sent - Reoffer Open Credit With Fee</label>
+            </value>
+            <value>
+                <fullName>Sent - Reoffer TADDefer and Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - Reoffer TADDefer and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - Reoffer Excl Credit and Open Credit</fullName>
+                <default>false</default>
+                <label>Sent - Reoffer Excl Credit and Open Credit</label>
+            </value>
+            <value>
+                <fullName>Sent - Payment Transaction Refund Req</fullName>
+                <default>false</default>
+                <label>Sent - Payment Transaction Refund Req</label>
+            </value>
+            <value>
+                <fullName>Eligible</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eligible</label>
+            </value>
+            <value>
+                <fullName>Not Eligible</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Eligible</label>
+            </value>
+            <value>
+                <fullName>To Be Revised</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>To Be Revised</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

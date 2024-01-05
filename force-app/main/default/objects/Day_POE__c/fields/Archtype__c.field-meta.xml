@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Archtype__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(Sub_Option__r.Id) +&apos;_&apos;+ TEXT(Coach_Color__c) +&apos;_&apos;+  TEXT(Site__c) +&apos;_&apos;+  TEXT(date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Archtype</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

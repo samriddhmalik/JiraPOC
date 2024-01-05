@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>(RecordType.Name =&apos;AE/SB&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Options__c !=null || Land_Activity__c != null ||  Airline_Upgrade__c !=null ||   Sub_Stopover__c  !=null || Departures_dates__c !=null))
+||
+(RecordType.Name =&apos;Airline Upgrade&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Options__c !=null || Land_Activity__c != null ||  AE_SB__c !=null ||   Sub_Stopover__c  !=null || Departures_dates__c !=null))
+||
+(RecordType.Name =&apos;Departure City&apos; &amp;&amp; ( AE_SB__c!=null ||  Sub_Options__c !=null || Land_Activity__c != null ||  Airline_Upgrade__c !=null ||   Sub_Stopover__c  !=null || Departures_dates__c !=null))
+||
+(RecordType.Name =&apos;Departure Date&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Options__c !=null || Land_Activity__c != null ||  Airline_Upgrade__c !=null ||   Sub_Stopover__c  !=null || AE_SB__c!=null))
+||
+(RecordType.Name =&apos;Land Activity&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Options__c !=null || Departures_dates__c != null ||  Airline_Upgrade__c !=null ||   Sub_Stopover__c  !=null || AE_SB__c!=null))
+||
+(RecordType.Name =&apos;Stopover&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Options__c !=null || Departures_dates__c != null ||  Airline_Upgrade__c !=null ||   Land_Activity__c !=null || AE_SB__c!=null))
+||
+(RecordType.Name =&apos;Sub Option&apos; &amp;&amp; ( Departure_City__c !=null ||  Sub_Stopover__c !=null || Departures_dates__c != null ||  Airline_Upgrade__c !=null ||   Land_Activity__c !=null || AE_SB__c!=null))</errorConditionFormula>
+    <errorMessage>Please choose valid record type</errorMessage>
+</ValidationRule>

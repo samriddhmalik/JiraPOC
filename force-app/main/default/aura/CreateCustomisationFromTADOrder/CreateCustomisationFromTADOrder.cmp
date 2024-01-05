@@ -1,0 +1,595 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable,flexipage:availableForAllPageTypes,lightning:actionOverride,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="CreateCustomFromTADOrder">
+    
+    <aura:attribute name="finalRedirectToOrderDetail" type="String"/>
+    <aura:attribute name="readOnlyTotalPrice" type="Decimal"/>
+    
+    <aura:attribute name="dataPNR" type="Object"/>
+    <aura:attribute name="columnsPNR" type="List"/>
+    <aura:attribute name="sendQuotePNREnable" type="Boolean" default="true"/>
+    <aura:attribute name="previewQuote" type="Boolean" default="false"/>
+    <aura:attribute name="quotePreviewString" type="String"/>
+    <aura:attribute name="quotePreviewStringForflightData" type="String"/>
+    
+    <aura:attribute name="proceedCheck" type="Boolean" default="true" />
+    <aura:attribute name="consolidatedPriceToBeSent" type="Decimal" default="0.00"/>
+    <aura:attribute name="selectedQuoteDetailsForStatusUpdate" type="List"/>
+    <aura:attribute name="disableSendQuoteWithoutFlights" type="Boolean" default="true" />
+    <aura:attribute name="previewMinModalWithoutFlight" type="Boolean" default="false" />
+    <aura:attribute name="disableBackButtonWithoutFlights" type="Boolean" default="true" />
+    <aura:attribute name="disableBackButtonWithFlights" type="Boolean" default="true" />
+    <aura:attribute name="previewFlightDetailsOfPNR" type="Boolean" default="false" />
+    
+    
+    
+    <aura:attribute name="noteOnlyVisibilityOption" type="String"/>
+    <aura:attribute name="noteVisibilityOnload" type="String"/>
+    
+    <aura:attribute name="AttachFlightQuote" type="Boolean" default="false"/>
+    <aura:attribute name="sendQuoteToCustomer" type="Boolean" default="false"/>
+    <aura:attribute name="flightTickted" type="Boolean" default="false"/>
+    
+    <aura:attribute name="customizationData" type="CreateCustomFromTADOrder.orderCustomisationWrapper"/>
+    <aura:attribute name="mapOfOli" type="Map"/>
+    <aura:attribute name="lstOfOli" type="List"/>
+    <!-- <aura:attribute name="mapOfPAX" type="Map"/>  -->
+    <aura:attribute name="lstOfPAX" type="List"/>
+    <aura:attribute name="mapOfRecordType" type="Map" />
+    <aura:attribute type="Component__c[]" name="data"/>
+    <aura:attribute type="customer_POE__c[]" name="paxData"/>
+    <aura:attribute type="order_line_POE__c[]" name="readOnlyData"/>
+    <aura:attribute type="mp_Quote_Detail_POE__c[]" name="readOnlyQuoteDetailData"/>
+    <aura:attribute type="Integer" name="noOfPaxSelected" default="0"/>
+    
+    
+    <aura:attribute name="sendQuoteButtonDisable" type="Boolean" default="true"/>
+    
+    
+    <!-- <aura:attribute name="lstOfRecordType" type="String[]"/>  -->
+    <aura:attribute name="lstOfOCStatus" type="String[]"/>   
+    <aura:attribute name="oliSelect" type="Boolean" default="true" />
+    <aura:attribute name="ifOLIisSelected" type="Boolean" default="false"/>
+    <aura:attribute name="isAddOnAvailable" type="Boolean" default="false"/>
+    <aura:attribute name="showAddOn" type="Boolean" default="false"/>
+    <aura:attribute name="selectedAddOn" type="String" default=""/>
+    <aura:attribute name="OLIDetails" type="Boolean" default="false"/>
+    <aura:attribute name="addOnOptions" type="AddOn__c[]"/>
+    <aura:attribute name="makeItReadOnly" type="Boolean" default="false" />
+    <aura:attribute name="saveButtonDisabled" type="Boolean" default="true"/>
+    <aura:attribute name="attForOliIdSave" type="String"/>
+    <aura:attribute name="tadOrderName" type="String"/>
+    <aura:attribute name="oliName" type="String"/>
+    <aura:attribute name="paxNo" type="Decimal"/>
+    <aura:attribute name="selectedRowComponentAndMerchantId" type="List"/>
+    <aura:attribute name="sendComponentIds" type="List"/>
+    
+    <aura:attribute name="selectedPAXIds" type="List"/>
+    <aura:attribute name="defaultStatus" type="String" default ="Quote Requested"/>
+    <aura:attribute name="buttonTextValue" type="String"/>
+    <aura:attribute name="oliIdFromOC" type="String"/>
+    <aura:attribute name="oliIdForOC" type="String"/>
+    <aura:attribute name="tadOrderIdForOC" type="String"/>
+    <aura:attribute name="showAfterCreationCheckboxes" type="Boolean" default="false"/>
+    <aura:attribute name="sObjectId" type="String" />
+    <aura:attribute name="sOobjectName" type="String"/>
+    <aura:attribute name="paxNameInReadOnly" type="String"/>
+    <aura:attribute name="viewOnly" type="Boolean"/>
+    <aura:attribute name="onlyShowPaxName" type="Boolean"/>
+    <aura:attribute name="showPAXList" type="Boolean"/>
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <!--Order Customisations to set values of Picklist type fields  -->
+    <!--  <aura:attribute name="orderCustomType" type="String" default="- NONE -"/>  -->
+    <aura:attribute name="orderCustomConsultant" type="String" default="--- NONE ---"/> 
+    <aura:attribute name="requestedDetailValue" type="String" default="--- NONE ---"/> 
+    <aura:attribute name="orderCustomPAX" type="String" default="--- NONE ---"/>
+    <aura:attribute name="orderCustomRecordType" type="String" default="Select a Record Type"/>
+    <aura:attribute name="orderCustomRecordTypeId" type="String"/>
+    <aura:attribute name="openPnr" type="Boolean" default="false"/>
+    
+    <aura:attribute name="recordAndCutomTypeOnLoad" type="String"/>
+    <aura:attribute name="customTypeOnload" type="String"/>
+    
+    
+    
+    <!-- lightning datatables lists  -->
+    <aura:attribute name="bccolumns" type="List"/>
+    <aura:attribute name="paxColumns" type="List"/>
+    <aura:attribute name="readOnlycolumns" type="List"/>
+    <aura:attribute name="readOnlyQuoteDetailsColumns" type="List"/>
+    
+    <!--Attributes for Read Only  -->
+    <aura:attribute name="readOnlyRT" type="String"/>
+    <aura:attribute name="readOnlyOCType" type="String"/>
+    <aura:attribute name="readOnlyConsName" type="String"/>
+    <aura:attribute name="readOnlyPAXName" type="String"/>
+    <aura:attribute name="readOnlyOcStatus" type="String"/>
+    <aura:attribute name="readOnlyRequestedDetails" type="String"/>
+    
+    <aura:attribute name="selectedRows" type="List"/>
+    <aura:attribute name="selectedPAXRows" type="List"/>
+    <aura:attribute name="mainHeader" type="String" default = "Create a new Order Customisation"/>
+    
+    <!-- input attribute  -->
+    <aura:attribute name="objectAPIName" type="String" access="public" description="API name of object" />
+    <aura:attribute name="fieldAPIName" type="String" access="public" description="API name of field" />
+    <aura:attribute name="recordTypeDeveloperName" type="String" access="public" description="Developer name of Record Type of object" />  
+    <aura:attribute name="required" type="Boolean" default="false" access="public" description="Picklist is required or not" />
+    <!-- input attribute ends -->
+    
+    <!-- output attribute  
+    <aura:attribute name="selectedValue" type="String" access="public" description="Selected picklist value" />  -->
+    
+    <aura:attribute name="pickListOptions" type="object[]" access="public" description="List of picklist values" />
+    <aura:attribute name="customConsultantPicklistOption" type="String" access="public" description="Selected Customisation Consultant" />
+    <aura:attribute name="requestedDetailsPicklistOption" type="String" access="public" description="Selected Requested Details" />
+    <!-- output attribute ends -->
+    
+    <!-- aura attributes-->  
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    
+    <aura:attribute name="objDetail" type="contact" default="{'sobjectType' : 'Order_Customisations_POE__c'}"/>
+    <aura:attribute name="controllingFieldAPI" type="string" default="Record_Type__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="Type__c" description="store field API name of dependent field"/>
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    
+    <aura:attribute name="initErrorMessage" type="String" access="public" description="Selected Requested Details" />
+    
+    <aura:attribute name="finalOCDataWrapper" type="Object"/>
+    <aura:attribute name="finalOCDataWrapperForSavedAndSend" type="Object"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+
+    <aura:html tag="style">
+    .slds-modal__container {
+     min-width: 55vw;
+    }
+</aura:html>
+    
+        <!--loading spinner start-->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <!-- Loading spinner end--> 
+    
+    
+    
+    <div class="slds-box slds-theme_default">
+        
+        <aura:if isTrue="{!equals(v.proceedCheck, false)}">
+            
+            <div  align="center" style="font-size: 20px" class="slds-text">
+            <ui:outputText value="{!v.initErrorMessage}"/>
+                </div>
+            <br></br>
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Cancel" onclick="{!c.closeModal}"/>
+            </div>   
+        </aura:if>
+        
+        <aura:if isTrue="{!equals(v.proceedCheck, true)}">
+            
+            <div class="modal-header slds-modal__header slds-size_1-of-1">
+                <h4 class="title slds-text-heading--medium"><b>{!v.mainHeader}</b></h4>
+            </div>
+            <br></br>
+            <aura:if isTrue="{!v.oliSelect}">
+                <lightning:layoutItem flexibility="auto" padding="around-small"
+                                      
+                                      size="12"
+                                      
+                                      largeDeviceSize="12"
+                                      
+                                      mediumDeviceSize="12"
+                                      
+                                      smallDeviceSize="12">
+                    
+                    <lightning:select aura:id="oliPickList" name="selectOli" value="{v.finalOCDataWrapper.oliId}" label="Select a Order Line Item">
+                        <option value="" text="--- NONE ---"/>  
+                        <aura:iteration items="{!v.lstOfOli}" var="oliObj">
+                            <option value="{!oliObj.Id}">{!oliObj.Consolidated_With_PAX__c}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+                
+                <br></br>
+                <div class="slds-align_absolute-center">
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.closeModal}"/>
+                    <lightning:button variant="brand" label="Next" onclick="{!c.fetchOrderCustomisationRecordTypes}"/>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.ifOLIisSelected}">
+                <lightning:layoutItem flexibility="auto" padding="around-small"
+                                      
+                                      size="12"
+                                      
+                                      largeDeviceSize="12"
+                                      
+                                      mediumDeviceSize="12"
+                                      
+                                      smallDeviceSize="12">
+                    <lightning:input type="checkbox" checked="{!v.isAddOnAvailable}" label="Does this customisation relate to an existing AddOn?" disabled="{!empty(v.addOnOptions)}" aura:id="isAddOnAvailable" name="isAddOnAvailable"/>
+                    <aura:if isTrue="{!empty(v.addOnOptions)}">
+                        	<p style="color:red">No AddOn Available</p>
+                    </aura:if>
+                    
+                    <!--   <h1>Does this customisation relate to an existing AddOn?</h1> -->
+                </lightning:layoutItem>
+                
+                <br></br>
+                
+                <div class="slds-align_absolute-center">
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.closeModal}"/>
+                    <lightning:button variant="brand" label="Next" onclick="{!c.addOnConfirmation}"/>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.showAddOn}">
+                <lightning:layoutItem flexibility="auto" padding="around-small"
+                                      
+                                      size="12"
+                                      
+                                      largeDeviceSize="12"
+                                      
+                                      mediumDeviceSize="12"
+                                      
+                                      smallDeviceSize="12">
+                    
+                        <lightning:select name="selectAddOn" required="true" messageWhenValueMissing="Select an Add On" aura:id="selectAddOn" label="Select AddOn">
+                            <option value="" text="--- NONE ---"/>  
+                            <aura:iteration items="{!v.addOnOptions}" var="addOn">
+                                <option value="{!addOn.AddOn_Name__c + '-' + addOn.Add_On_Type__c}" selected = "{!addOn.AddOn_Name__c + '-' + addOn.Add_On_Type__c == v.selectedAddOn}">{!addOn.AddOn_Name__c} - {!addOn.Add_On_Type__c}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                </lightning:layoutItem>
+                
+                <br></br>
+                <div class="slds-align_absolute-center">
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.closeModal}"/>
+                    <lightning:button variant="brand" label="Next" onclick="{!c.addOnSubmitted}"/>
+                </div>
+            </aura:if>
+            
+            
+            <aura:if isTrue="{!v.OLIDetails}">
+                <lightning:layoutItem>                 
+                    <lightning:select name="controllerFld"
+                                      value="{!v.finalOCDataWrapper.recordType}"
+                                      label="Select a Record Type"
+                                      onchange="{!c.onControllerFieldChange}"
+                                      aura:id="recordTypePickList">
+                        <aura:iteration items="{!v.listControllingValues}" var="val">
+                            <option value="{!val}">{!val}</option>
+                        </aura:iteration>
+                    </lightning:select>  <br></br>
+                    
+                    <lightning:select name="dependentFld"
+                                      value="{!v.finalOCDataWrapper.customType}"
+                                      label="Select a Customisation Type"
+                                      disabled="{!v.bDisabledDependentFld}"
+                                      aura:id="pickListOption">
+                        <aura:iteration items="{!v.listDependingValues}" var="val">
+                            <option value="{!val}">{!val}</option>
+                        </aura:iteration>
+                    </lightning:select>  <br></br>
+                    
+                    <aura:if isTrue="{!equals(v.finalOCDataWrapper.recordType, 'Note Only')}">
+                        <lightning:select aura:id="noteOnlyVisibility" value="{!v.finalOCDataWrapper.noteVisibility}" name="selectNoteVisibility" label="Select Note Visibility">
+                            <option value="" text="--- NONE ---"/> 
+                            <aura:iteration items="{!v.finalOCDataWrapper.noteVisibilityPicklistWrapper}" var="item">
+                                <option value="{!item.picklistValue}">{!item.picklistLabel}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </aura:if>   
+                    <br></br>
+                    
+                    <div class="slds-scrollable_x">
+                        <lightning:datatable data="{!v.data}" 
+                                             columns="{!v.bccolumns}" 
+                                             keyField="id"
+                                             hideCheckboxColumn="flase"
+                                             class="slds-scrollable_x"
+                                             column-widths-mode="auto"
+                                             onrowselection="{! c.getSelectedName }"
+                                             selectedRows="{!v.selectedRows}"/>
+                        
+                    </div>
+                    <br></br>
+                    
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <b>Tad Order Number</b> <br></br>
+                            <ui:outputText value="{!v.finalOCDataWrapper.tadOrderName}"/>
+                        </div>            
+                        
+                        <div class="slds-col slds-size_1-of-2">
+                            <b> Order Line Item Number </b><br></br>
+                            <ui:outputText value="{!v.finalOCDataWrapper.orderLineItemName}"/> 
+                            <aura:if isTrue="{!v.isAddOnAvailable}">
+                                <ul style="font-size: smaller;">
+                                  <li style="color:red">AddOn Item Number</li>
+                                  <li style="color:red">{!v.selectedAddOn}</li>
+                                </ul>
+                            </aura:if>
+                        </div>  
+                    </div>
+                    
+                    <br></br>
+                    
+                    <!--
+                    <lightning:select aura:id="customConsultantPickListOption" value="{!v.finalOCDataWrapper.customConsultantName}" name="selectCustomConsultant" label="Select Customisation Consultant">
+                        <option value="" text="{!v.orderCustomConsultant}"/>
+                        <aura:iteration items="{!v.finalOCDataWrapper.customConsultantWrapper}" var="item">
+                            <option value="{!item.picklistValue}">{!item.picklistLabel}</option>
+                        </aura:iteration>
+                    </lightning:select>
+
+                    
+                    <br></br>  -->
+                    
+                    <aura:if isTrue="{!v.showPAXList}">
+                        <div class="slds-scrollable_x">
+                            <lightning:datatable data="{!v.paxData}" 
+                                                 columns="{!v.paxColumns}" 
+                                                 keyField="paxId"
+                                                 hideCheckboxColumn="flase"
+                                                 column-widths-mode="auto"
+                                                 class="slds-scrollable_x"
+                                                 onrowselection="{! c.getSelectedPaxName }"
+                                                 selectedRows = "{!v.selectedPAXRows}"/>
+                            					 
+                            
+                        </div>
+                        <br></br>
+                        
+                        <b>No of PAX Selected</b><br></br>
+                        <ui:outputText value="{!v.finalOCDataWrapper.selectedPAXQuantity}"/><br></br><br></br>    
+                        
+                    </aura:if>
+                    
+                    <!-- <ui:outputText value="{!v.paxNameInReadOnly}"/> -->
+                    <aura:if isTrue="{!v.onlyShowPaxName}">
+                        <b> Passenger Name</b> <br></br>
+                        <ui:outputText value="{!v.finalOCDataWrapper.paxNames}"/>
+                        <br></br>
+                        <br></br>
+                    </aura:if>
+                    
+                    
+                    
+                  <!--  <b>Status </b><br></br>
+                    <ui:outputText value="{!v.defaultStatus}"/>  -->
+                    
+                    <br></br>
+                    <br></br>
+                   
+                    <lightning:input aura:id="requestedDetails" label="Enter the Requested Detail" name="requestedDetailName" value = "{!v.finalOCDataWrapper.reqDetails}"/>
+               
+                    
+                    <br></br>
+                    
+                    <div class="slds-align_absolute-center">
+                        <lightning:button variant="brand" label="Back" onclick="{!c.back}"/>
+                        <lightning:button variant="brand" label="Save" onclick="{!c.save}"/>  
+                        <lightning:button variant="brand" label="Save and Send" onclick="{!c.saveAndSend}"/>
+                        <lightning:button variant="brand" label="Save and New" onclick="{!c.saveAndNew}"/> 
+                        <lightning:button variant="brand" label="Cancel" onclick="{!c.closeModal}"/>
+                    </div>
+                    
+                </lightning:layoutItem>
+            </aura:if>
+            
+            <aura:if isTrue = "{!v.makeItReadOnly}">
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2">     
+                        <b>Record Type</b> <br></br>
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.RTName}"/><br></br><br></br>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-2">
+                        <b>Order Customisation Type</b><br></br>       
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.ocType}"/><br></br><br></br>
+                    </div>
+                </div>
+                
+                <b>Components Related List</b><br></br>
+                <div class="slds-scrollable_x">
+                    <lightning:datatable data="{!v.finalOCDataWrapperForSavedAndSend.componentWrapList}" 
+                                         columns="{!v.readOnlycolumns}" 
+                                         keyField="id"
+                                         column-widths-mode="auto"
+                                         hideCheckboxColumn="true"
+                                         class="slds-scrollable_x"/>
+                    
+                    
+                </div><br></br>
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2">
+                        <b>Tad Order Number</b> <br></br>
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.orderName}"/>
+                    </div>            
+                    
+                    <div class="slds-col slds-size_1-of-2">
+                        <b>Order Line Item Number</b> <br></br>
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.oliName}"/> 
+                        
+                    </div>  
+                </div><br></br>
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2">
+                        <b>Customisation Consultant Name</b><br></br>       
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.consultantName}"/><br></br><br></br>    
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">  
+                        <b>Passenger Name</b><br></br>       
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.paxName}"/><br></br><br></br>  
+                    </div>
+                </div>
+                
+                <div class="slds-grid slds-wrap">
+                   <!-- <div class="slds-col slds-size_1-of-2">
+                        <b>Order Customisation Status</b><br></br>       
+                        <ui:outputText value="{!v.readOnlyOcStatus}"/><br></br><br></br>  
+                    </div>  -->
+                    <div class="slds-col slds-size_1-of-2">
+                        <b>Requested Details</b><br></br>       
+                        <ui:outputText value="{!v.finalOCDataWrapperForSavedAndSend.requestedDetails}"/><br></br><br></br> 
+                    </div>
+                </div>
+                <b>Quote Details Related List</b><br></br> 
+                <div class="slds-scrollable_x">
+                    <c:CreateCustomisationFromTADOrder_QuoteDetailsRelatedList OCStatus="{!v.readOnlyOcStatus}" recordList="{!v.finalOCDataWrapperForSavedAndSend.quoteDetailWrapList}" consolidatedPriceToBeSent = "{!v.consolidatedPriceToBeSent}" selectedQuoteDetailsId = "{!v.selectedQuoteDetailsForStatusUpdate}"/>
+                    
+                </div><br></br>
+
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-3">
+                        <b> Total Price </b><br></br>
+                        {!v.finalOCDataWrapperForSavedAndSend.tadOrderCurrency} &nbsp; {!v.finalOCDataWrapperForSavedAndSend.customPrice}
+                       <!-- <ui:outputCurrency aura:id="curr" value="{!v.finalOCDataWrapperForSavedAndSend.customPrice}" currencySymbol="{!v.finalOCDataWrapperForSavedAndSend.tadOrderCurrency}"/>--><br></br><br></br>
+                    </div>            
+                    
+                    <div class="slds-col slds-size_1-of-3">
+                        <span class="slds-form-element__label"><b>Send Quote to Customer</b></span>
+                        <ui:inputCheckbox aura:id="sendQuoteToCustomer" value="{!v.sendQuoteToCustomer }"/> 
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-3">
+                        <span class="slds-form-element__label"><b>Attach Flight Quote</b></span>
+                        <ui:inputCheckbox aura:id="AttachFlightQuote" value="{!v.AttachFlightQuote }"/> 
+                    </div>  
+                </div>
+                
+                <br></br><br></br>	
+                
+                
+                
+                <div class="slds-align_absolute-center">
+                    
+                    
+                    <lightning:button variant="brand" label="Send Quote" onclick="{!c.sendQuote}" disabled="{!(!v.consolidatedPriceToBeSent > 0)}"/>
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.redirectToTADOrder}"/>
+                    <lightning:button variant="brand" label="Customer Approved" onclick="{!c.approveOC}" disabled="{!(!v.consolidatedPriceToBeSent > 0)}"/>
+                </div>
+                
+                
+           
+            
+            <aura:if isTrue="{!v.previewMinModalWithoutFlight}">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header slds-theme_shade">
+                                <lightning:buttonIcon iconName="utility:close"
+                                                      onclick="{! c.closeModal }"
+                                                      alternativeText="close"
+                                                      variant="bare-inverse"
+                                                      class="slds-modal__close"/>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add any additional information to the Customer Quote below</h2>
+                            </header>
+                           
+                            <div class="slds-modal__content slds-default slds-p-around_medium slds-theme_shade" id="modal-content-id-1">
+                                
+                                <lightning:textarea  name="addInfoWithoutFlights" label="Info" aura:id="addInfoWithoutFlights" onchange="{!c.buttonDisable}" />
+                                 <aura:if isTrue="{!v.previewQuote}">
+                                <aura:unescapedHtml value="{!v.quotePreviewString}" />
+                                </aura:if>
+                            </div>
+                            <footer class="slds-modal__footer">
+                            <lightning:button variant="neutral" 
+                                              label="Cancel"
+                                              title="Cancel"
+                                              onclick="{! c.closeModal }"/>
+                            <lightning:button variant="brand" 
+                                              label="Back"
+                                              title="Back"
+                                              disabled = "{!v.disableBackButtonWithoutFlights}"
+                                              onclick="{! c.goBackToAdditionalDetailPopup }"/>    
+                            <lightning:button variant="brand" 
+                                              label="Send Quote"
+                                              title="Send Quote"
+                                              disabled = "{!v.disableSendQuoteWithoutFlights}"
+                                              onclick="{! c.sendQuoteWithoutFlightDetails }"/>
+                                <lightning:button variant="brand" 
+                                              label="Preview"
+                                              title="Preview"
+                                              onclick="{! c.controllerMethodToPreviewWithoutFlights}"/>
+                            </footer>
+                        </div>
+                    </section>             
+                </aura:if>
+
+            </aura:if>
+            
+            <aura:if isTrue="{!v.openPnr}">
+                
+                <!--###### MODAL BOX Start######--> 
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        
+                        <header class="slds-modal__header slds-theme_shade">
+                            <lightning:buttonIcon iconName="utility:close"
+                                                  onclick="{! c.closeModal }"
+                                                  alternativeText="close"
+                                                  variant="bare-inverse"
+                                                  class="slds-modal__close"/>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">PNR Details</h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div class="slds-modal__content slds-p-around_medium slds-theme_shade" id="modal-content-id-1">
+                            <lightning:textarea  name="pnr" label="Enter PNR" aura:id="pnrVal" onchange="{!c.buttonDisable}" />
+                            <br></br>
+                         <lightning:textarea  name="addInfoWithFlights" label="Info" aura:id="addInfoWithFlights"/>
+                        <aura:if isTrue="{!v.previewFlightDetailsOfPNR}">
+                            <div style ="width:350px">
+                                <aura:unescapedHtml value="{!v.quotePreviewStringForflightData}" />
+                                </div>
+                         
+                        </aura:if>
+
+                    </div>
+                        <!--###### MODAL BOX FOOTER Part Start ######-->
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="neutral" 
+                                              label="Cancel"
+                                              title="Cancel"
+                                              onclick="{! c.closeModal }"/>
+                            <lightning:button variant="brand" 
+                                              label="Back"
+                                              title="Back"
+                                              disabled = "{!v.disableBackButtonWithFlights}"
+                                              onclick="{! c.goBackToAdditionalDetailFlightsPopup }"/> 
+                            <lightning:button variant="brand" 
+                                              label="Send Quote"
+                                              title="Send Quote"
+                                              disabled="{! v.sendQuotePNREnable }"
+                                              onclick="{! c.sendPnr }"/>
+                            <lightning:button variant="brand" 
+                                              label="Preview"
+                                              title="Preview"
+                                              onclick="{! c.PreviewPnr }"/>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+                <!--###### MODAL BOX Part END Here ######-->
+                
+            </aura:if>
+        </aura:if>
+    </div>  
+    <br></br><br></br>
+</aura:component>

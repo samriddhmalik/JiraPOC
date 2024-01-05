@@ -1,0 +1,14 @@
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+} 
+.THIS .pillSize{
+    width:100%;
+}
+.THIS .changeCursor{
+    cursor:pointer;
+}
+.THIS .popover {
+    position: absolute;
+    left: 14%;
+    bottom: 25%;
+}

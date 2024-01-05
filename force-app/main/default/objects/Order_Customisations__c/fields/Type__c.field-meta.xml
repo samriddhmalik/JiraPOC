@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Upgrade Flight Class</fullName>
+                <default>true</default>
+                <label>Upgrade Flight Class</label>
+            </value>
+            <value>
+                <fullName>Upgrade Carrier</fullName>
+                <default>false</default>
+                <label>Upgrade Carrier</label>
+            </value>
+            <value>
+                <fullName>Customisation AE</fullName>
+                <default>false</default>
+                <label>Customisation AE</label>
+            </value>
+            <value>
+                <fullName>Customisation SB</fullName>
+                <default>false</default>
+                <label>Customisation SB</label>
+            </value>
+            <value>
+                <fullName>Customisation SO</fullName>
+                <default>false</default>
+                <label>Customisation SO</label>
+            </value>
+            <value>
+                <fullName>AE Accom</fullName>
+                <default>false</default>
+                <label>AE Accom</label>
+            </value>
+            <value>
+                <fullName>SB Accom</fullName>
+                <default>false</default>
+                <label>SB Accom</label>
+            </value>
+            <value>
+                <fullName>Custom Accom (AE)</fullName>
+                <default>false</default>
+                <label>Custom Accom (AE)</label>
+            </value>
+            <value>
+                <fullName>Custom Accom (SB)</fullName>
+                <default>false</default>
+                <label>Custom Accom (SB)</label>
+            </value>
+            <value>
+                <fullName>Upgrade Cabin</fullName>
+                <default>false</default>
+                <label>Upgrade Cabin</label>
+            </value>
+            <value>
+                <fullName>Customisation</fullName>
+                <default>false</default>
+                <label>Customisation</label>
+            </value>
+            <value>
+                <fullName>Ticket Changes (Corrections)</fullName>
+                <default>false</default>
+                <label>Ticket Changes (Corrections)</label>
+            </value>
+            <value>
+                <fullName>Re/New Ticket Charge</fullName>
+                <default>false</default>
+                <label>Re/New Ticket Charge</label>
+            </value>
+            <value>
+                <fullName>Misc Charge</fullName>
+                <default>false</default>
+                <label>Misc Charge</label>
+            </value>
+            <value>
+                <fullName>Pre SO</fullName>
+                <default>false</default>
+                <label>Pre SO</label>
+            </value>
+            <value>
+                <fullName>Post SO</fullName>
+                <default>false</default>
+                <label>Post SO</label>
+            </value>
+            <value>
+                <fullName>Lounge Pass</fullName>
+                <default>false</default>
+                <label>Lounge Pass</label>
+            </value>
+            <value>
+                <fullName>Note Only</fullName>
+                <default>false</default>
+                <label>Note Only</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

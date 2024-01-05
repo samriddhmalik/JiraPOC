@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa_Insurance_Contact_Attempted</fullName>
+    <columns>Account__c</columns>
+    <columns>Account_phone_number__c</columns>
+    <columns>NAME</columns>
+    <columns>Visa_Insurance_Comment__c</columns>
+    <columns>Insurance_Referral__c</columns>
+    <columns>Quote_Required_Date__c</columns>
+    <columns>Call_Back_Status__c</columns>
+    <columns>Call_Back_Type__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Customer_Called_Back__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Call_Back_Type__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Expired</value>
+    </filters>
+    <filters>
+        <field>Call_Back_Status__c</field>
+        <operation>equals</operation>
+        <value>Voicemail Left,No Voicemail Available</value>
+    </filters>
+    <label>Visa &amp; Insurance - Contact Attempted</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+    </sharedTo>
+</ListView>

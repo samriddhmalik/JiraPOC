@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Tracker_View</fullName>
+    <columns>NAME</columns>
+    <columns>title__c</columns>
+    <columns>Deal_Status__c</columns>
+    <columns>Status__c</columns>
+    <columns>site__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Published,Expired,Hero,Published(NRMA),Published(Staging),Hero(Staging)</value>
+    </filters>
+    <label>Deal Tracker View</label>
+</ListView>

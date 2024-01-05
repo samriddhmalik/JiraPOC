@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_PDF3</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Deal PDF3</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://composer.congamerge.com
+?serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Deal__c.Id}
+&amp;TemplateId=a4C0K000000D9iJ
+&amp;DefaultPDF=1
+&amp;OFN={!Deal__c.Name}+{!Deal__c.Agents__c}
+
+&amp;QueryId=[TCDealItinerary]a4428000000E87L,
+[TCItinerary]a440K000001R5co,
+[TCOptions1]a4428000000E8Br,
+[TCSubOptions1]a4428000000E8CG,
+[DepartureDate]a4428000000YycL,
+[TCCity]a4428000000YycG,
+[TourInclusions]a4428000000YycV,
+[Media]a4428000000Yyca,
+[Dealpdf]a4428000000Yycu?pv0={!Deal__c.AgentsId__c}</url>
+    <width>900</width>
+</WebLink>

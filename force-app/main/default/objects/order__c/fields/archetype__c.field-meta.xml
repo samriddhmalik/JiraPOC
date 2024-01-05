@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>archetype__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( order_record_type_name__c,
+  &quot;TAD&quot;,
+  IF(ISBLANK(coach_colour__c),
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot;,
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot; &amp; &quot;_&quot; &amp; coach_colour__c
+  ),
+  &quot;TC&quot;,
+  IF(ISBLANK(coach_colour__c),
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot;,
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot; &amp; &quot;_&quot; &amp; coach_colour__c
+  ),
+ &quot;TNZ&quot;,
+  IF(ISBLANK(coach_colour__c),
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TNZ&quot;,
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TNZ&quot; &amp; &quot;_&quot; &amp; coach_colour__c
+  ),
+ &quot;WT&quot;,
+  IF(ISBLANK(coach_colour__c),
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TNZ&quot;,
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TNZ&quot; &amp; &quot;_&quot; &amp; coach_colour__c
+  ),
+  IF(ISBLANK(coach_colour__c),
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot;,
+  Sub_Options__r.Id &amp; &quot;_&quot; &amp; &quot;TAD&quot; &amp; &quot;_&quot; &amp; coach_colour__c
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Archetype</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

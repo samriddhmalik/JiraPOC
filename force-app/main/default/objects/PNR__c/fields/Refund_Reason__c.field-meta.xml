@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Refund Reason</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PAX Voluntary Cancellation</fullName>
+                <default>false</default>
+                <label>PAX Voluntary Cancellation</label>
+            </value>
+            <value>
+                <fullName>IT/Development Error</fullName>
+                <default>false</default>
+                <label>IT/Development Error</label>
+            </value>
+            <value>
+                <fullName>Communication/Internal process error</fullName>
+                <default>false</default>
+                <label>Communication/Internal process error</label>
+            </value>
+            <value>
+                <fullName>Ticketing consultant error (name of the consultant)</fullName>
+                <default>false</default>
+                <label>Ticketing consultant error (name of the consultant)</label>
+            </value>
+            <value>
+                <fullName>PAX Name error (PAX at Fault)</fullName>
+                <default>false</default>
+                <label>PAX Name error (PAX at Fault)</label>
+            </value>
+            <value>
+                <fullName>Airline Invol schedule change</fullName>
+                <default>false</default>
+                <label>Airline Invol schedule change</label>
+            </value>
+            <value>
+                <fullName>TAD Cancellation - COVID-19</fullName>
+                <default>false</default>
+                <label>TAD Cancellation - COVID-19</label>
+            </value>
+            <value>
+                <fullName>Pax No Show</fullName>
+                <default>false</default>
+                <label>Pax No Show</label>
+            </value>
+            <value>
+                <fullName>Airline voluntary cancellation</fullName>
+                <default>false</default>
+                <label>Airline voluntary cancellation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

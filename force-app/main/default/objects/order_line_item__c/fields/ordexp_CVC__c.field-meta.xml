@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_CVC__c</fullName>
+    <externalId>false</externalId>
+    <label>CVC</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Issued</fullName>
+                <default>false</default>
+                <label>Issued</label>
+            </value>
+            <value>
+                <fullName>Proceed</fullName>
+                <default>false</default>
+                <label>Proceed</label>
+            </value>
+            <value>
+                <fullName>Cancel &amp; Credit</fullName>
+                <default>false</default>
+                <label>Cancel &amp; Credit</label>
+            </value>
+            <value>
+                <fullName>Declined (Insurance)</fullName>
+                <default>false</default>
+                <label>Declined (Insurance)</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Return Home</fullName>
+                <default>false</default>
+                <label>Return Home</label>
+            </value>
+            <value>
+                <fullName>Stay on Tour</fullName>
+                <default>false</default>
+                <label>Stay on Tour</label>
+            </value>
+            <value>
+                <fullName>POM</fullName>
+                <default>false</default>
+                <label>POM</label>
+            </value>
+            <value>
+                <fullName>Forced Credit</fullName>
+                <default>false</default>
+                <label>Forced Credit</label>
+            </value>
+            <value>
+                <fullName>1939PaymentReceivedReissue</fullName>
+                <default>false</default>
+                <label>1939PaymentReceivedReissue</label>
+            </value>
+            <value>
+                <fullName>1721 NZ Remain in France 1721</fullName>
+                <default>false</default>
+                <label>1721 NZ Remain in France 1721</label>
+            </value>
+            <value>
+                <fullName>NZ New Flight</fullName>
+                <default>false</default>
+                <label>NZ New Flight</label>
+            </value>
+            <value>
+                <fullName>1721 NZ Own Flight</fullName>
+                <default>false</default>
+                <label>1721 NZ Own Flight</label>
+            </value>
+            <value>
+                <fullName>Voucher</fullName>
+                <default>false</default>
+                <label>Voucher</label>
+            </value>
+            <value>
+                <fullName>TADActionRequired</fullName>
+                <default>false</default>
+                <label>TADActionRequired</label>
+            </value>
+            <value>
+                <fullName>TADRevisedOffer</fullName>
+                <default>false</default>
+                <label>TADRevisedOffer</label>
+            </value>
+            <value>
+                <fullName>DateChange</fullName>
+                <default>false</default>
+                <label>DateChange</label>
+            </value>
+            <value>
+                <fullName>BERefund</fullName>
+                <default>false</default>
+                <label>BERefund</label>
+            </value>
+            <value>
+                <fullName>Unaffected</fullName>
+                <default>false</default>
+                <label>Unaffected</label>
+            </value>
+            <value>
+                <fullName>TADDefer</fullName>
+                <default>false</default>
+                <label>TADDefer</label>
+            </value>
+            <value>
+                <fullName>Open Credit</fullName>
+                <default>false</default>
+                <label>Open Credit</label>
+            </value>
+            <value>
+                <fullName>Goodwill</fullName>
+                <default>false</default>
+                <label>Goodwill</label>
+            </value>
+            <value>
+                <fullName>3111Opt1</fullName>
+                <default>false</default>
+                <label>3111Opt1</label>
+            </value>
+            <value>
+                <fullName>3111Opt2</fullName>
+                <default>false</default>
+                <label>3111Opt2</label>
+            </value>
+            <value>
+                <fullName>ExclCredit</fullName>
+                <default>false</default>
+                <label>ExclCredit</label>
+            </value>
+            <value>
+                <fullName>CancelManualCredit</fullName>
+                <default>false</default>
+                <label>CancelManualCredit</label>
+            </value>
+            <value>
+                <fullName>Open Credit(Revised)</fullName>
+                <default>false</default>
+                <label>Open Credit(Revised)</label>
+            </value>
+            <value>
+                <fullName>TADCredit</fullName>
+                <default>false</default>
+                <label>TADCredit</label>
+            </value>
+            <value>
+                <fullName>TADRefund</fullName>
+                <default>false</default>
+                <label>TADRefund</label>
+            </value>
+            <value>
+                <fullName>NYCE</fullName>
+                <default>false</default>
+                <label>NYCE</label>
+            </value>
+            <value>
+                <fullName>RefundProcessed</fullName>
+                <default>false</default>
+                <label>RefundProcessed</label>
+            </value>
+            <value>
+                <fullName>Chargeback</fullName>
+                <default>false</default>
+                <label>Chargeback</label>
+            </value>
+            <value>
+                <fullName>PartCredit PartRefund</fullName>
+                <default>false</default>
+                <label>PartCredit PartRefund</label>
+            </value>
+            <value>
+                <fullName>MyDealsDefer</fullName>
+                <default>false</default>
+                <label>MyDealsDefer</label>
+            </value>
+            <value>
+                <fullName>MyDealsOpen</fullName>
+                <default>false</default>
+                <label>MyDealsOpen</label>
+            </value>
+            <value>
+                <fullName>MyDealDeferOpen</fullName>
+                <default>false</default>
+                <label>MyDealDeferOpen</label>
+            </value>
+            <value>
+                <fullName>BER Send Offer (Refund)</fullName>
+                <default>false</default>
+                <label>BER Send Offer (Refund)</label>
+            </value>
+            <value>
+                <fullName>BER Send Offer (Refund &amp; Coupon)</fullName>
+                <default>false</default>
+                <label>BER Send Offer (Refund &amp; Coupon)</label>
+            </value>
+            <value>
+                <fullName>BER Accepted (Refund)</fullName>
+                <default>false</default>
+                <label>BER Accepted (Refund)</label>
+            </value>
+            <value>
+                <fullName>BER Accepted (Refund &amp; Coupon)</fullName>
+                <default>false</default>
+                <label>BER Accepted (Refund &amp; Coupon)</label>
+            </value>
+            <value>
+                <fullName>BER Refunded (Refund)</fullName>
+                <default>false</default>
+                <label>BER Refunded (Refund)</label>
+            </value>
+            <value>
+                <fullName>BER Refunded (Refund &amp; Coupon)</fullName>
+                <default>false</default>
+                <label>BER Refunded (Refund &amp; Coupon)</label>
+            </value>
+            <value>
+                <fullName>BER - Hardship</fullName>
+                <default>false</default>
+                <label>BER - Hardship</label>
+            </value>
+            <value>
+                <fullName>BER Accepted - Bank Refund Required</fullName>
+                <default>false</default>
+                <label>BER Accepted - Bank Refund Required</label>
+            </value>
+            <value>
+                <fullName>BER Accepted - Reconciling (IT)</fullName>
+                <default>false</default>
+                <label>BER Accepted - Reconciling (IT)</label>
+            </value>
+            <value>
+                <fullName>BER Bank Details Required (Costa)</fullName>
+                <default>false</default>
+                <label>BER Bank Details Required (Costa)</label>
+            </value>
+            <value>
+                <fullName>BER Bank Details Required (Refund &amp; Coupon)</fullName>
+                <default>false</default>
+                <label>BER Bank Details Required (Refund &amp; Coupon)</label>
+            </value>
+            <value>
+                <fullName>BER Bank Details Required (Refund)</fullName>
+                <default>false</default>
+                <label>BER Bank Details Required (Refund)</label>
+            </value>
+            <value>
+                <fullName>BER Multi (Refund &amp; Coupon)</fullName>
+                <default>false</default>
+                <label>BER Multi (Refund &amp; Coupon)</label>
+            </value>
+            <value>
+                <fullName>BER Multi (Refund)</fullName>
+                <default>false</default>
+                <label>BER Multi (Refund)</label>
+            </value>
+            <value>
+                <fullName>BER Refund - Unsuccessful Payment</fullName>
+                <default>false</default>
+                <label>BER Refund - Unsuccessful Payment</label>
+            </value>
+            <value>
+                <fullName>BER Send Offer (FollowUp)</fullName>
+                <default>false</default>
+                <label>BER Send Offer (FollowUp)</label>
+            </value>
+            <value>
+                <fullName>BER Subrogation</fullName>
+                <default>false</default>
+                <label>BER Subrogation</label>
+            </value>
+            <value>
+                <fullName>BERefund - Partial</fullName>
+                <default>false</default>
+                <label>BERefund - Partial</label>
+            </value>
+            <value>
+                <fullName>BERRefund - PIN</fullName>
+                <default>false</default>
+                <label>BERRefund - PIN</label>
+            </value>
+            <value>
+                <fullName>ExclCredit/OpenCredit</fullName>
+                <default>false</default>
+                <label>ExclCredit/OpenCredit</label>
+            </value>
+            <value>
+                <fullName>MayJuneCOVID</fullName>
+                <default>false</default>
+                <label>MayJuneCOVID</label>
+            </value>
+            <value>
+                <fullName>MayJuneCOVID - Date Change</fullName>
+                <default>false</default>
+                <label>MayJuneCOVID - Date Change</label>
+            </value>
+            <value>
+                <fullName>NCAT</fullName>
+                <default>false</default>
+                <label>NCAT</label>
+            </value>
+            <value>
+                <fullName>TADRefund - Bank Details Required</fullName>
+                <default>false</default>
+                <label>TADRefund - Bank Details Required</label>
+            </value>
+            <value>
+                <fullName>TADRefund - PIN</fullName>
+                <default>false</default>
+                <label>TADRefund - PIN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

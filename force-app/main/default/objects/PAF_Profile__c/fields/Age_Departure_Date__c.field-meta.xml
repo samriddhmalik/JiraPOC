@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Departure_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>YEAR(   PAF_Quote__r.Departure_Date__c   ) - YEAR( Account__r.DOB__c ) -IF(OR (MONTH(PAF_Quote__r.Departure_Date__c) &lt; MONTH(Account__r.DOB__c),AND(MONTH(PAF_Quote__r.Departure_Date__c) == MONTH(Account__r.DOB__c),DAY(PAF_Quote__r.Departure_Date__c) &lt; DAY(Account__r.DOB__c))),1,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Age(Departure Date)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

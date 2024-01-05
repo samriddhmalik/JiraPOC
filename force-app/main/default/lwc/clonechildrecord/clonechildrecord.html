@@ -1,0 +1,232 @@
+<template>
+    <div class="slds-box">
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <div class="slds-text-heading_medium">{activeSectionMessage}</div>
+				<br/>
+				<div>
+					<p>Name: {name}</p></div>
+				<br/>
+				<div>
+					<p>Type: {cloneType}</p></div>
+				<br/>
+				<br/>
+				<template if:true={showIdentifierInput}>
+				<div><lightning-input type="text" class="Identifier" name={Identifier} label="Identifier" onchange={identifierChangeHandler} data-id="component" data-id2={index} placeholder="Identifier" maxlength="79" style="margin-right: 5px;" required="">
+				</lightning-input></div>
+				</template>
+				<div class="slds-col slds-size_6-of-12">
+                    <lightning-output-field field-name="Name" value={name} > </lightning-output-field>
+                </div>
+        <lightning-card>
+						    <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-output-field field-name="Name" value={name} > </lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-output-field field-name="Type" value={cloneType} ></lightning-output-field>
+                </div>
+            </div>
+                <lightning-accordion allow-multiple-sections-open class="example-accordion" active-section-name="A">
+                    <template if:true={showSubOpt}>
+                    <lightning-accordion-section name="Sub Option" label="Sub Option">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                role="grid" style="table-layout:fixed;">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Checkbox">Select</div>
+                                        </th>
+										<th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="Option Name">Option Name</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="SubOption Name">SubOption Name</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each ={suboptions} for:item="suboption" for:index="index">
+                                        <tr key={suboption.name}>
+                                        <td>
+                                        <lightning-input type="checkbox" name={suboption} value={suboption} onchange={checkboxchangeHandler} data-id="suboption" data-id2={index} style="margin-right: 5px;" >
+                                        </lightning-input>
+                                        </td>
+										<td class="slds-cell-wrap" >{suboption.parentName}</td>
+                                        <td class="slds-cell-wrap" >{suboption.name}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                                <tbody>
+                                    <template if:true={showCmpRelatedToSupOption}>
+                                        <lightning-accordion-section name="Components1" label="Component Related to SubOption" style="inline-size: 510px;">
+                                            <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                                    role="grid" style="table-layout:fixed;">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset">
+                                                            <th class="" scope="col">
+                                                                <div class="slds-truncate" title="Checkbox">Select</div>
+                                                            </th>
+                                                            <template lwc:if={depCity}>
+                                                                <th class="" scope="col">   
+                                                                    <div class="slds-truncate slds-cell-wrap" title="Departure City Name">Departure City Name</div>
+                                                                </th>
+                                                            </template>
+                                                            <template lwc:else>
+                                                                <th class="" scope="col">
+                                                                    <div class="slds-truncate slds-cell-wrap" title="Option/Sub Option Name">Sub Option Name</div>
+                                                                </th>
+                                                            </template>
+                                                            <th class="" scope="col">
+                                                                <div class="slds-truncate slds-cell-wrap" title="component Name">Components Name</div>
+                                                            </th>
+                                                            <th class="" scope="col">
+                                                                <div class="slds-truncate slds-cell-wrap" title="component Identifier">Components Identifier</div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each ={components1} for:item="component1" for:index="index">
+                                                            <tr key={component1.name}>
+                                                            <td class="slds-cell-wrap" >
+                                                            <lightning-input type="checkbox" name={component1} value={component1} onchange={checkboxchangeHandler1} data-id="component1" data-id2={index} style="margin-right: 5px;" >
+                                                            </lightning-input>
+                                                            </td>
+                                                            <td class="slds-cell-wrap" >{component1.parentName}</td>
+                                                            <td class="slds-cell-wrap" >{component1.name}</td>
+                                                            <td>		
+                                                            <lightning-input type="text" name={Identifier} value={component1.identifier} onchange={identifierChangeHandler1} maxlength="79" data-id="component1" data-id2={index} placeholder="Identifier" style="margin-right: 5px;" required="">
+                                                            </lightning-input></td>	
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                    <tbody>
+                                                        <template if:true={showCmpPricingForSubOption}>
+                                                            <lightning-accordion-section name="Component Pricing" label="Component Pricing Related to SubOption" style="inline-size: 510px;">
+                                                                <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                                                        role="grid" style="table-layout:fixed;">
+                                                                        <thead>
+                                                                            <tr class="slds-line-height_reset">
+                                                                                <th class="" scope="col">
+                                                                                    <div class="slds-truncate" title="Checkbox">Select</div>
+                                                                                </th>
+                                                                                <th class="" scope="col">
+                                                                                    <div class="slds-truncate slds-cell-wrap" title="Component Name">Component Name</div>
+                                                                                </th>
+                                                                                <th class="" scope="col">
+                                                                                    <div class="slds-truncate slds-cell-wrap" title="Component Pricing Name">Component Pricing Name</div>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <template for:each ={componentpricings1} for:item="componentpricing" for:index="index">
+                                                                                <tr key={componentpricing.name}>
+                                                                                <td>
+                                                                                <lightning-input type="checkbox" name={componentpricing} value={componentpricing} onchange={checkboxchangeHandler2} data-id="component Pricing1" data-id2={index} style="margin-right: 5px;" >
+                                                                                </lightning-input>
+                                                                                </td>
+                                                                                <td class="slds-cell-wrap" >{componentpricing.parentName}</td>		
+                                                                                <td class="slds-cell-wrap" >{componentpricing.name}</td>
+                                                                                </tr>
+                                                                            </template>
+                                                                        </tbody>
+                                                                </table>
+                                                            </lightning-accordion-section>   
+                                                        </template>
+                                                    </tbody>
+                                            </table>
+                                        </lightning-accordion-section>
+                                    </template>
+                                </tbody>
+                               
+                        </table>
+
+                    </lightning-accordion-section>
+                </template>
+
+                    <template if:true={showCmp}>
+                    <lightning-accordion-section name="Components" label="Components">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                role="grid" style="table-layout:fixed;">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Checkbox">Select</div>
+                                        </th>
+                                        <template lwc:if={depCity}>
+                                            <th class="" scope="col">   
+                                                <div class="slds-truncate slds-cell-wrap" title="Departure City Name">Departure City Name</div>
+                                            </th>
+                                        </template>
+                                        <template lwc:else>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate slds-cell-wrap" title="Option/Sub Option Name">Option/Sub Option Name</div>
+                                            </th>
+                                        </template>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="component Name">Components Name</div>
+                                        </th>
+										<th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="component Identifier">Components Identifier</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each ={components} for:item="component" for:index="index">
+                                        <tr key={component.name}>
+                                        <td class="slds-cell-wrap" >
+                                        <lightning-input type="checkbox" name={component} value={component} onchange={checkboxchangeHandler} data-id="component" data-id2={index} style="margin-right: 5px;" >
+                                        </lightning-input>
+                                        </td>
+										<td class="slds-cell-wrap" >{component.parentName}</td>
+										<td class="slds-cell-wrap" >{component.name}</td>
+										<td>		
+                                        <lightning-input type="text" name={Identifier} value={component.identifier} onchange={identifierChangeHandler} maxlength="79" data-id="component" data-id2={index} placeholder="Identifier" style="margin-right: 5px;" required="">
+										</lightning-input></td>	
+                                        </tr>
+                                    </template>
+                                </tbody>
+                        </table>
+                    </lightning-accordion-section>
+                </template>
+                <template if:true={showCmpPricing}>
+                    <lightning-accordion-section name="Component Pricing" label="Component Pricing">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal slds-cell-wrap"
+                                role="grid" style="table-layout:fixed;">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Checkbox">Select</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="Component Name">Component Name</div>
+                                        </th>
+										<th class="" scope="col">
+                                            <div class="slds-truncate slds-cell-wrap" title="Component Pricing Name">Component Pricing Name</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each ={componentpricings} for:item="componentpricing" for:index="index">
+                                        <tr key={componentpricing.name}>
+                                        <td>
+                                        <lightning-input type="checkbox" name={componentpricing} value={componentpricing} onchange={checkboxchangeHandler} data-id="component Pricing" data-id2={index} style="margin-right: 5px;" >
+                                        </lightning-input>
+                                        </td>
+										<td class="slds-cell-wrap" >{componentpricing.parentName}</td>		
+                                        <td class="slds-cell-wrap" >{componentpricing.name}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                        </table>
+                    </lightning-accordion-section>   
+                </template>
+                </lightning-accordion>
+        </lightning-card>
+        </div>
+        <div align ="center" style="margin-top:10px">
+            <lightning-button variant="success" label="Clone" title="Clone" onclick={cloneRecordHanlder} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="cancel" label="Cancel" title="Cancel" onclick={cancelHandler} class="slds-m-left_x-small"></lightning-button>
+        </div>    
+</template>

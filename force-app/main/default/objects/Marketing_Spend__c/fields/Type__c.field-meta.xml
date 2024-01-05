@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type Of Advertisement</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Page Ad</fullName>
+                <default>false</default>
+                <label>Full Page Ad</label>
+            </value>
+            <value>
+                <fullName>Strip Ad</fullName>
+                <default>false</default>
+                <label>Strip Ad</label>
+            </value>
+            <value>
+                <fullName>Solus</fullName>
+                <default>false</default>
+                <label>Solus</label>
+            </value>
+            <value>
+                <fullName>Multi</fullName>
+                <default>false</default>
+                <label>Multi</label>
+            </value>
+            <value>
+                <fullName>Half Page Ad</fullName>
+                <default>false</default>
+                <label>Half Page</label>
+            </value>
+            <value>
+                <fullName>Page 2</fullName>
+                <default>false</default>
+                <label>Page 2</label>
+            </value>
+            <value>
+                <fullName>Page 3</fullName>
+                <default>false</default>
+                <label>Page 3</label>
+            </value>
+            <value>
+                <fullName>Strap Ad</fullName>
+                <default>false</default>
+                <label>Strap Ad</label>
+            </value>
+            <value>
+                <fullName>Blurb</fullName>
+                <default>false</default>
+                <label>Blurb</label>
+            </value>
+            <value>
+                <fullName>Platinum Wrap - Front Cover</fullName>
+                <default>false</default>
+                <label>Platinum Wrap - Front Cover</label>
+            </value>
+            <value>
+                <fullName>Platinum Wrap - Back cover</fullName>
+                <default>false</default>
+                <label>Platinum Wrap - Back cover</label>
+            </value>
+            <value>
+                <fullName>Platinum Wrap - Page 2</fullName>
+                <default>false</default>
+                <label>Platinum Wrap - Page 2</label>
+            </value>
+            <value>
+                <fullName>Platinum Wrap - Page 3</fullName>
+                <default>false</default>
+                <label>Platinum Wrap - Page 3</label>
+            </value>
+            <value>
+                <fullName>Mega Wrap - Front Cover</fullName>
+                <default>false</default>
+                <label>Mega Wrap - Front Cover</label>
+            </value>
+            <value>
+                <fullName>Mega Wrap - Back Cover</fullName>
+                <default>false</default>
+                <label>Mega Wrap - Back Cover</label>
+            </value>
+            <value>
+                <fullName>Mega Wrap - IFC</fullName>
+                <default>false</default>
+                <label>Mega Wrap - IFC</label>
+            </value>
+            <value>
+                <fullName>Mega Wrap - IBC</fullName>
+                <default>false</default>
+                <label>Mega Wrap - IBC</label>
+            </value>
+            <value>
+                <fullName>Banner</fullName>
+                <default>false</default>
+                <label>Banner</label>
+            </value>
+            <value>
+                <fullName>LARGE FORMAT</fullName>
+                <default>false</default>
+                <label>LARGE FORMAT</label>
+            </value>
+            <value>
+                <fullName>15&quot;, 30&quot;</fullName>
+                <default>false</default>
+                <label>15&quot;, 30&quot;</label>
+            </value>
+            <value>
+                <fullName>30&quot; x 2</fullName>
+                <default>false</default>
+                <label>30&quot; x 2</label>
+            </value>
+            <value>
+                <fullName>30&quot;</fullName>
+                <default>false</default>
+                <label>30&quot;</label>
+            </value>
+            <value>
+                <fullName>Ad Words</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ad Words</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Billboard</label>
+            </value>
+            <value>
+                <fullName>Booklet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Booklet</label>
+            </value>
+            <value>
+                <fullName>Broadsheet</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Broadsheet</label>
+            </value>
+            <value>
+                <fullName>Digital Display</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Display</label>
+            </value>
+            <value>
+                <fullName>Double Page Spread (DPS)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Double Page Spread (DPS)</label>
+            </value>
+            <value>
+                <fullName>Editorial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Editorial</label>
+            </value>
+            <value>
+                <fullName>Flyers</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Flyers</label>
+            </value>
+            <value>
+                <fullName>Four-way split ad</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Four-way split ad</label>
+            </value>
+            <value>
+                <fullName>Liftout</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Liftout</label>
+            </value>
+            <value>
+                <fullName>Mega Wrap (4 x Full Pg Ads)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mega Wrap (4 x Full Pg Ads)</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Three-way split ad</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Three-way split ad</label>
+            </value>
+            <value>
+                <fullName>Tour / Cruise / Escape</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tour / Cruise / Escape</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>Wrap (Travel Section Only, 4 x Full Pg Ads)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wrap (Travel Section Only, 4 x Full Pg Ads)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

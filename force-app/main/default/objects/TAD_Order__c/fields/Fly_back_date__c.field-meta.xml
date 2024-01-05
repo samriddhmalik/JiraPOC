@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fly_back_date__c</fullName>
+    <externalId>false</externalId>
+    <formula>ordexp_final_return_date__c -  
+IF( ISBLANK(ordexp_departure_date__r.Tour_End_Day__c), 
+IF(ISBLANK(ordexp_option__r.Tour_End_Day__c), 0, ordexp_option__r.Tour_End_Day__c)  , ordexp_departure_date__r.Tour_End_Day__c)</formula>
+    <label>Fly back date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

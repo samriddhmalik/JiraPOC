@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Class_Surcharge__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Business_Class_UpgradePAX1__c ,  PAF_Quote__r.PAF_Packagee__r.Business_Class_Upgrade_Surcharge__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Business Class Surcharge</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

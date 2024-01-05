@@ -1,0 +1,13 @@
+<aura:component controller="CreateDtOlFromComponentApex" implements="force:lightningQuickAction,force:hasRecordId" access="global">
+    
+    <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="disableButton" type="Boolean" default="true"/>
+    
+    <br></br>
+    <br></br>
+    
+    <div class="slds-text-align--center">
+        <lightning:button variant="brand" label="Sync Cost Lines" onclick="{! c.createOrderLine }" disabled="{!v.disableButton}" />
+    </div> 
+</aura:component>

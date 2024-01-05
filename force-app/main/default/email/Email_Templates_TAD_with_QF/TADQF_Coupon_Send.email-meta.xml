@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD &amp; TC Coupon Send</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF Coupon Send</name>
+    <style>none</style>
+    <subject>Your Coupon from TripADeal</subject>
+    <textOnly>.
+
+Dear {!Cancellation_Refund_POE__c.Account_Name__c},
+
+Please note the conditions of the credit note:
+1. If any destination restrictions are referenced in the offer email, they will be applied.
+2. Vouchers are non-refundable and non-redeemable for cash and cannot be used in conjunction with any other promotion or voucher/gift certificate.
+3. Vouchers cannot be used with any third party retailers or TripADeal wholesalers.
+
+Value:
+
+${!TEXT(Cancellation_Refund_POE__c.Coupon_Amount__c)}
+
+Code:
+
+{!Cancellation_Refund_POE__c.Coupon_Name_Formula__c}
+
+DATE OF ISSUE : {!TODAY()}
+
+How to redeem your voucher
+
+1. Go to www.tripadeal.com.au
+2. Find your preferred new holiday
+3. Use your code at checkout
+
+
+Voucher Terms and Conditions
+
+This voucher is valid for 12 months from the date of issue. TripADeal vouchers cannot be used in conjunction with any other offer. TripADeal vouchers are not valid for use on associated travel services, concierge flight tickets, travel visas, travel insurance, vouchers or any optional extras / supplements / surcharges. TripADeal vouchers cannot be exchanged for cash. All vouchers issued by TripAdeal can only be redeemed by a customer purchasing travel deals directly from TAD, they cannot be redeemed or applied to travel purchased via an intermediary, agent or wholesale partner of TripADeal.
+
+Kind Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

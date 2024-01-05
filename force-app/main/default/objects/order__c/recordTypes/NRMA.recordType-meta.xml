@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NRMA</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Order_Compact_Layout</compactLayoutAssignment>
+    <label>NRMA</label>
+    <picklistValues>
+        <picklist>BER_Withheld_Value__c</picklist>
+        <values>
+            <fullName>Prepayments have been checked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withheld Value Pending - Airline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withheld Value Pending - Costa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withheld Value Pending - MSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withheld Value Pending - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withheld Value Pending - UJ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BSB_ZIP_Payment_Pending__c</picklist>
+        <values>
+            <fullName>BSB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZIP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Booking_Validation__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>COVID_Revised_Offers__c</picklist>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CVC__c</picklist>
+        <values>
+            <fullName>3111Opt1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3111Opt2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3237ExclCredit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BER Multi %28Refund %26 Coupon%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BER Multi %28Refund%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BERefund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel %26 Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CancelManualCredit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issued</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Credit%28Revised%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proceed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RefundProcessed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TADActionRequired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TADRefund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unaffected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Back_Status__c</picklist>
+        <values>
+            <fullName>Existing Order Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready to Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail Left</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Back_Type__c</picklist>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_Request__c</picklist>
+        <values>
+            <fullName>Form Returned Pending Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Request Actioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Request Form</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_not_Made__c</picklist>
+        <values>
+            <fullName>Contact Made</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact NOT made</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Referral__c</picklist>
+        <values>
+            <fullName>Insurance Quote Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Quote Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refused - Already purchased TAD Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refused - Already purchased other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refused - Has Credit Card insurance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Master_status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secured</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travelled</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Merchant_Booking_Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>VCC Redeemed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Min_Numbers_Met_Send_Email__c</picklist>
+        <values>
+            <fullName>Email Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email to Send</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NCAT_Tribunal__c</picklist>
+        <values>
+            <fullName>Application Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proceed to Hearing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved at Mediation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved at hearing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Account_Password__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POM__c</picklist>
+        <values>
+            <fullName>ANY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAME</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PP_Details_Not_Back_61_days__c</picklist>
+        <values>
+            <fullName>Contact Made - Fire Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Not Made - Fire SMS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Referrer__c</picklist>
+        <values>
+            <fullName>NRMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NRMA Blue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Resend_Merchant_Confirmation_Email__c</picklist>
+        <values>
+            <fullName>Resend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Send_COVID_Email_Offer__c</picklist>
+        <values>
+            <fullName>Open Credit only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TADDefer and Open Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TADDefer only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Send_COVID_PRE_Reoffer_Email__c</picklist>
+        <values>
+            <fullName>Original offer not accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent - Original offer not accepted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_status__c</picklist>
+        <values>
+            <fullName>BC Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Booked%2FFlights Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Booked%2FFlights Pending - Flight Out of Range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Booked%2FFlights Pending - Flight Ready to Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending - Mins Not Met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending - Ready to Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending%2FFlights Booked - Cabin Ready to Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending%2FFlights Pending - Flight Out of Range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending%2FFlights Pending - Mins Not Met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cabins Pending%2FFlights Pending - Ready to Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Class %28Sub Option%29 - Accom%2FCabin Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duration%2FExtention %28Option%29 - Upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired%2FTime out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Quote Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flights Booked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flights Pending - Mins Not Met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flights Pending - Out of Range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flights Pending - Ready to Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Payment Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Correction%2FChange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Min Number - Credit%2FRefund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offloaded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAX Change Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid - PIF%2Fs Due</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid - PIF%2Fs Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pax No Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stay Booking - No Ticketing Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Survey Returned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Survey Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP Sent %26 Cruise Ticket Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travelling</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TC_Booking_Status__c</picklist>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIF Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>allocation_status__c</picklist>
+        <values>
+            <fullName>Released</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secured</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>booking_status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Refunded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VCC Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VCC Redeemed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>marketing_channel__c</picklist>
+        <values>
+            <fullName>Billboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email %28Newsletter%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend%2Frelative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Coast Titans NRL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melbourne City Football Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NRMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newspaper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podcast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Agent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>marketing_source_picklist__c</picklist>
+        <values>
+            <fullName>%28NSW%29 2GB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28NSW%29 BAY FM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28NSW%29 Sunday Telegraph</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28NSW%29 The Daily Telegraph %28Friday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28NSW%29 The Daily Telegraph %28Tuesday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28QLD%29 4BC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28QLD%29 The Courier Mail %28Friday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28QLD%29 The Courier Mail %28Tuesday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28QLD%29 The Sunday Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28SA%29 The Adelaide Advertiser %28Friday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28SA%29 The Adelaide Advertiser %28Tuesday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28VIC%29 3AW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28VIC%29 The Herald Sun %28Friday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28VIC%29 The Herald Sun %28Tuesday%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28VIC%29 The Sunday Herald Sun</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banner Advert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email %28Newsletter%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend%2Frelative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Game Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Search</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melbourne City Football Club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NRMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podcast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roadshow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney Morning Herald</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Age</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YouTube Video</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>order_record_type_name__c</picklist>
+        <values>
+            <fullName>NRMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TNZ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>order_status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exported</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready For Export</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ticketing_status__c</picklist>
+        <values>
+            <fullName>Departed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Details Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quotation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ticketed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel Pack Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>update_order__c</picklist>
+        <values>
+            <fullName>All Good%21</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Cancel Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expire Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unexpire Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Updating Order</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

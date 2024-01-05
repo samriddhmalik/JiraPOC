@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Tech_Support_P_C_Record_Custom_Permission</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Tech Support P&amp;C Record Visibility PSet</label>
+</PermissionSet>

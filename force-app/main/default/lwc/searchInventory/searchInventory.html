@@ -1,0 +1,233 @@
+<template>
+    
+<lightning-card class="b-container">
+
+        <p style="font-size:medium;font-family:sans-serif;padding:10px;margin:5px; text-align: center;"><b>Book Marketing Activity</b></p>
+        
+        <br/>
+    <strong class="slds-align_absolute-center">{label.SearchInventoryHint}</strong>
+    <div class="slds-box slds-p-around_small">
+        <div class="slds-col slds-grid slds-size_12-of-12">
+            <div class="slds-col slds-size_3-of-12 slds-box">
+                <div class="slds-text-heading_small slds-text-align_center"><strong>Available Inventories</strong></div>
+            <div class="slds-grid slds-wrap slds-grid_vertical">
+                <div class="slds-col slds-size_12-of-12">
+                <lightning-input type="text"
+                    value={searchValue}
+                    placeholder="Search Inventory"
+                    onchange={searchKeyword}></lightning-input>
+                    
+                </div><br/>
+                <div class="slds-col slds-size_12-of-12">
+                    <template if:true={channels}>  
+                        <div class="flex-container inventorydrop" ondrop={dropbackToInventory} ondragover={allowDrop}> 
+                            <template for:each={channels} for:item="channel">
+                                <div key={channel.Id} class="box" id={channel.Id} data-id={channel.ms_Start_Date__c} data-id2="channelsDiv" data-id3={channel.ms_End_Date__c} data-id4={channel.ms_Date__c} data-id5={channel.Channel_Supplier_Title__c} data-id6={channel.ms_TimeText__c} draggable="true" ondragstart={drag} >
+                                    {channel.Channel_Supplier_Title__c}
+                                </div>
+                            </template>
+                        </div> 
+                    
+                    </template>
+                </div>
+                </div> 
+            
+            </div>
+            <div class="slds-col slds-size_3-of-12">
+                <lightning-badge label="Selected Inventories" class="badges" style="margin-left: 100px;"></lightning-badge>
+                    <div class="flex-container selectedInventory" ondrop={drop} ondragover={allowDrop}>
+                        <div id ="newId" draggable="true" ondragstart={dragbackToInventory} >
+                         
+                        </div>
+                        <div id="1234" class="box completed">
+                            
+                        </div>   
+                    </div>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12">
+                        <lightning-badge label="Selected  Eligible Deals" class=" badges" style="margin-left: 100px;"></lightning-badge>
+                        <div class="flex-container dealClass" ondragover={allowDropForDeal} ondrop={dealsdrop}>
+                            <div  draggable="true" ondragstart={dealsdragbackToInventory} >
+                                
+                            </div>
+                            <div id="5678" class="deal completed">
+                                
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_3-of-12 slds-box">
+                        <div class="slds-text-heading_small slds-text-align_center"><strong>Eligible Deals</strong></div>
+                    
+                    <div class="slds-grid slds-wrap slds-grid_vertical ">
+                        <div class="slds-col slds-size_12-of-12">
+                            
+                                <lightning-input type="text"
+                                value={searchDealValue}
+                                placeholder="Search Deal ID/Title"
+                                onchange={searchDealKeyword}
+                                ></lightning-input>
+                            
+                        </div>
+                        <div class="slds-col slds-grid slds-size_12-of-12">
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-combobox
+                                        name="Status"
+                                        label="Status"
+                                        value={dealStatusvalue}
+                                        placeholder="Select Status"
+                                        options={optionsForDealStatus}
+                                        onchange={handleChangeDealStatus} ></lightning-combobox>
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-combobox
+                                        name="Duration  "
+                                        label="Duration"
+                                        value={durationValue}
+                                        placeholder="Select Duration"
+                                        options={durationOptionsForDeal}
+                                        onchange={handleChangeDealDuration}  disabled={disableDuration}></lightning-combobox>
+                            </div>
+                            
+                        </div>
+                        <template if:true={isCustomDate}>
+                            
+                                <div class="slds-col slds-grid slds-size_12-of-12">
+                                    <lightning-input type="date" name="customdate" label="Select Date" value={custom_date}  onchange={handleStartandEndAndCustomdate} style="width: 336px;"></lightning-input>
+                                </div>
+                            
+                            
+                            </template>
+                        
+                        </div> 
+                        <hr></hr>        
+                        <template if:true={deals}>  
+                            <div class="flex-container dropping" ondrop={dealsdropbackToDeal} ondragover={allowDrop}> 
+                                <template for:each={deals} for:item="deal">
+                                    <div key={deal.Id} class="deal" id={deal.Id} data-id="dealIdDiv" data-id2={deal.Deal_ID_Title__c} draggable="true" ondragstart={dealsdrag} >
+                                        {deal.Deal_ID_Title__c}
+                                    </div>
+                                </template>
+                            </div> 
+                        
+                        </template>
+                </div>
+        </div>
+    
+</div>
+<template if:true={isModalOpen}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- Modal/Popup Box LWC header here -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Book Slots</h2>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class=" slds-m-around_small slds-grid slds-wrap">
+                   
+                        <div class="slds-col slds-grid slds-size_12-of-12">
+                            <template if:true={isStartAndEndDate}>
+                                <div class="slds-col slds-size_12-of-12">Inventory Start Date is : <b>{invstartDate}</b> and End Date is : <b>{invendDate}</b></div>
+                            </template>
+                            <template if:false={isStartAndEndDate}>
+                                <div class="slds-col slds-size_12-of-12">Inventory Date is: {invDate}</div>
+                            </template>
+                        </div>
+                    
+                    
+                   
+                        <template if:true ={isOutsideRange}>
+                            <div class="slds-col slds-size_12-of-12 slds-notify slds-notify_alert slds-alert_warning"  role="alert">
+                                <span class="slds-assistive-text">warning</span>
+                                <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+                                 
+                                </span>
+                                <h2>Inventory Date Range is outside the Activity Dates. Please change the Date range of Activity.
+                                  
+                                </h2>
+                            </div>
+                        </template>
+                    
+                </div>
+                <template if:false={isDateVisible}>
+                    <p><lightning-input value={startDate} type="date" name="startDate" label="Start Date" onchange={handleStartandEndAndCustomdate} min={currentdateplus1} message-when-range-underflow ="Start date should be later than today" message-when-value-missing="Please Fill The Start Date" required >
+                    </lightning-input></p>
+                    <p><lightning-input value={endDate} type="date" name="endDate" label="End Date" onchange={handleStartandEndAndCustomdate} min={currentdateplus1} message-when-range-underflow ="End date should not be earlier than Start Date" message-when-value-missing="Please fill the End Date" required >
+                    </lightning-input></p>
+                </template>
+
+                <template if:true={isDateVisible}>
+                    <p><lightning-input value={invDate} type="text" name="Date" label="Marketing Activity Date"  min={currentdateplus1}  message-when-value-missing="Please fill the Marketing Activity Date" disabled="true" >
+                    </lightning-input></p>
+                    </template>
+    
+
+                <p><lightning-input value={dueDate} type="date" name="dueDate" label="Due Date" onchange={handleDueDateEvent} min={minDueDate} message-when-range-overflow ="It should be earlier than start date"  message-when-value-missing="Please fill the Due Date earlier than start date" required >
+                </lightning-input></p>
+                <p><lightning-input type="time" name="dueTime" label="Due Time" required
+                    value={dueTime} onchange={handleDueTime} min={minDueDate}  message-when-value-missing="Please fill the Due Time"></lightning-input></p><br/><br/>
+            </div>
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+                <!--<button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>-->
+                <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={submitDetails} title="Submit">Submit</button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+<div>
+   
+    <c-t-a-d-_reusable-marketing-activity-view-l-w-c input-label={wrapperUnsavedActivity} input-clone={wrapperUnsavedActivity} country={countryValue}    onnavigateback ={NavigateToFilterRecordsComponent} heading-name = "Unsaved" checkbox-name-parent="checkForParent"  checkbox-name-child="checkForChild" comment-parent-class-name = "comment 02savedparentSectionComment" comment-child-class-name="comment 02savedchildSectionComment" delete-title = "Delete" save-title = "Save"    check-all-name="checkAll" back-title="Back"  onsaveactivity={repopulateTableData} for-inventry-event-child={forInventryEvent} ondeleteunsavedactivity={handledeleteunsavedactivity} ></c-t-a-d-_reusable-marketing-activity-view-l-w-c>
+
+
+
+
+</div>
+
+<div>
+   
+    <c-t-a-d-_reusable-marketing-activity-view-l-w-c input-label={WrapperSavedActivity} input-clone={WrapperSavedActivity} country={countryValue}   onnavigateback ={NavigateToFilterRecordsComponent} heading-name = "Saved"   checkbox-name-parent="checkForParent" checkbox-name-child="checkForChild" comment-parent-class-name = "comment 02savedparentSectionComment" comment-child-class-name="comment 02savedchildSectionComment" delete-title = "Delete" save-title = "Save"   check-all-name="checkAll" back-title="Back" ondeletesavedactivity={handledeletesavedactivity} onsaved={repopulateTableDataSaved}   ></c-t-a-d-_reusable-marketing-activity-view-l-w-c>
+
+
+
+
+</div>
+
+
+
+   
+    <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+   
+    
+
+    
+        
+
+    
+
+
+
+       
+       
+
+        
+        
+            </div><br/>
+</lightning-card>
+
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Incentive__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Team_Threshold_Met__c , IF( CS_Attribution_Amount__c  &gt;=  Tier_1_Threshold__c ,  Tier_1_Bonus__c ,0) , 0)+IF( Team_Threshold_Met__c , IF( CS_Attribution_Amount__c  &gt;=  Tier_2_Threshold__c ,  Tier_2_Bonus__c ,0) , 0)+IF( Team_Threshold_Met__c , IF( CS_Attribution_Amount__c  &gt;=  Tier_3_Threshold__c ,  Tier_3_Bonus__c ,0) , 0)+IF( Team_Threshold_Met__c , IF( CS_Attribution_Amount__c  &gt;=  Tier_4_Threshold__c ,  Tier_4_Bonus__c ,0) , 0)+ Team_Bonus__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Incentive</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

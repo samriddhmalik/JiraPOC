@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>update_order__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Order Status must be &quot;On Hold&quot; to Expire &amp; release allocation or &quot;Confirmed&quot; to set Pending Cancellation &amp; hold the Allocation until it is cancelled by Accounts. Use Updating Order when Order Status is &quot;Confirmed&quot; or &quot;Ready For Export&quot; to change order.</inlineHelpText>
+    <label>Update Order</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Good!</fullName>
+                <default>true</default>
+                <label>All Good!</label>
+            </value>
+            <value>
+                <fullName>Cancel Order</fullName>
+                <default>false</default>
+                <label>Cancel Order</label>
+            </value>
+            <value>
+                <fullName>Expire Order</fullName>
+                <default>false</default>
+                <label>Expire Order</label>
+            </value>
+            <value>
+                <fullName>Unexpire Order</fullName>
+                <default>false</default>
+                <label>Unexpire Order</label>
+            </value>
+            <value>
+                <fullName>Updating Order</fullName>
+                <default>false</default>
+                <label>Updating Order</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

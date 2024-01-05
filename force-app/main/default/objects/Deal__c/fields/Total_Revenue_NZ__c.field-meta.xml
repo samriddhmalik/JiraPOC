@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Revenue_NZ__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Calculation of &quot;Total Price&quot; on orders = TNZ record type + Confirmed order status</inlineHelpText>
+    <label>Total Revenue NZ</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

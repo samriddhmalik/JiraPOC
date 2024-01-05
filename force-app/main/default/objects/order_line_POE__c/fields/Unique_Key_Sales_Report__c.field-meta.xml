@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Key_Sales_Report__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Component__c +&apos;;&apos;+  IF( TEXT(Component__r.Component_Type__c)==&apos;Land Tour&apos; || TEXT(Component__r.Component_Type__c)==&apos;Cruise&apos; || TEXT(Component__r.Component_Type__c)==&apos;Accom&apos; || TEXT(Component__r.Component_Type__c)==&apos;Total Package&apos; || TEXT(Component__r.Component_Type__c)==&apos;Rail&apos; || TEXT(Component__r.Component_Type__c)==&apos;Transfer&apos; || TEXT(Component__r.Component_Type__c)==&apos;Day Tour&apos; || TEXT(Component__r.Component_Type__c)==&apos;Land&apos; || TEXT(Component__r.Component_Type__c)==&apos;Flight&apos; , &apos;st&apos; ,&apos;&apos;) */
+
+Component__c +&apos;;&apos;+ IF( TEXT(Component__r.Component_Type__c)==&apos;Land Tour&apos; || TEXT(Component__r.Component_Type__c)==&apos;Cruise&apos; || TEXT(Component__r.Component_Type__c)==&apos;Accom&apos; || TEXT(Component__r.Component_Type__c)==&apos;Total Package&apos; || TEXT(Component__r.Component_Type__c)==&apos;Rail&apos; || TEXT(Component__r.Component_Type__c)==&apos;Transfer&apos; || TEXT(Component__r.Component_Type__c)==&apos;Land&apos; || TEXT(Component__r.Component_Type__c)==&apos;Flight&apos; , &apos;st&apos; ,&apos;&apos;)</formula>
+    <label>Unique Key Sales Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

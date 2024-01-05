@@ -1,0 +1,37 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="greeting" type="String" default="Hello" access="global" />
+
+    <aura:attribute name="subject" type="String" default="World" access="global" />
+
+ /*global require:false */
+var casper = require('casper').create();
+casper.start('./iframe_test.html');
+
+casper.withFrame('ad_iframe', function () {
+  this.test.assertUrlMatch(/casper_test\.html/, 'i am on inside of iframe');
+
+  this.test.assertVisible('#hoge', 'hoge is clickable');
+  this.clickLabel('clickable hoge');
+});
+
+casper.withFrame('ad_iframe', function () {
+  this.test.assertUrlMatch(/#!\/hoge/, 'hash changed to hoge');
+  this.test.assertNotVisible('#fuga', 'fuga is not clickable');
+  this.clickLabel('unclickable fuga');
+});
+
+casper.withFrame('ad_iframe', function () {
+  this.test.assertUrlMatch(/#!\/hoge/, 'hash not changed to fuga');
+  this.echo("I'm sorry, it's clickable...");
+});
+
+casper.run();
+
+    <div style="box">
+
+      <span class="greeting">{!v.greeting}</span>, {!v.subject}!
+
+    </div>
+
+</aura:component>

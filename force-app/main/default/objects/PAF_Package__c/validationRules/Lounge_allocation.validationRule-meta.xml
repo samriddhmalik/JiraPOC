@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lounge_allocation</fullName>
+    <active>true</active>
+    <description>Lounge allocation must be nominated if Lounge is an inclusion.</description>
+    <errorConditionFormula>AND( TEXT(Lounge_Inclusion__c)  = &quot;INC&quot;  || TEXT(Lounge_Inclusion__c)  = &quot;OPT&quot;, ISBLANK( Lounge_Allocation__c ) ||  Lounge_Allocation__c  = 0)</errorConditionFormula>
+    <errorDisplayField>Lounge_Allocation__c</errorDisplayField>
+    <errorMessage>Lounge allocation must be nominated if Lounge is an inclusion.</errorMessage>
+</ValidationRule>

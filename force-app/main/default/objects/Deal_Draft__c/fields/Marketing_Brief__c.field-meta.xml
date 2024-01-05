@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Brief__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Countries visited?
+Top 3 highlights?
+What makes it different to previous deals to this destination?
+Our competitive advantage?
+Iconic image or scene to sum up this trip?
+Imagine you’re the customer and had just returned - what is your feedback</inlineHelpText>
+    <label>Marketing Brief</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

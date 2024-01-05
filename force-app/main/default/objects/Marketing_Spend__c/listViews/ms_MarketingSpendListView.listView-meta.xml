@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ms_MarketingSpendListView</fullName>
+    <columns>NAME</columns>
+    <columns>ms_Channel_Name__c</columns>
+    <columns>ms_Supplier_Name__c</columns>
+    <columns>Deal__c</columns>
+    <columns>ms_Deal_Title__c</columns>
+    <columns>ms_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ms_Channel_Name__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>ms_MarketingSpendListView</label>
+</ListView>

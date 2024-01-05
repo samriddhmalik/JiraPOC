@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Lead_Account_Contact</fullName>
+    <columns>NAME</columns>
+    <columns>LeadID__c</columns>
+    <columns>AccountID__c</columns>
+    <columns>ContactID__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>AccountID__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ContactID__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>LeadID__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Missing Lead, Account, Contact</label>
+</ListView>

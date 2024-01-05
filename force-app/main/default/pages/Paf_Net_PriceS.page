@@ -1,0 +1,52 @@
+<apex:page standardController="order__c" readOnly="true" >
+  
+ 
+  
+  <apex:pageBlock title="PAF - Flights Max Nett Per PAX">
+  
+   <apex:pageBlockSection >
+   
+    <apex:outputField value="{!order__c.Current_Status__c}"/>
+    
+    </apex:pageBlockSection>
+  
+  <apex:pageBlockSection >
+  
+  <apex:outputField value="{!order__c.Max_Net_P_P__c}" label="MAX Nett Per PAX"/>
+  
+     
+   </apex:pageBlockSection>
+    
+     <apex:pageBlock >
+    
+   <apex:pageblockSection >
+  
+   <apex:outputlabel value= "{!IF(order__c.HSS_Flights__c > 0, 'Includes Flight HSS ', 'No hss' ) }" /> 
+       <apex:outputText value = "{!IF(order__c.HSS_Flights__c > 0, order__c.HSS_Flights__c, ' ' )}" />
+       
+        <apex:outputlabel value= "{!IF(order__c.departure_city_line_price__c > 0, 'Includes departure city ', 'No Departure City' ) }" /> 
+           <apex:outputText value = "{!IF(order__c.departure_city_line_price__c > 0, order__c.departure_city_line_price__c, ' ' )}" />       
+       
+       <apex:outputlabel value= "{!IF(order__c.pre_tour_stopover_line_price__c > 0, 'Includes Pre tour Stop over ',  'No Pre Tour Stop over' ) }" /> 
+           <apex:outputText value = "{!IF(order__c.pre_tour_stopover_line_price__c > 0, order__c.pre_tour_stopover_line_price__c, ' ' )}" />  
+       
+       <apex:outputlabel value= "{!IF(order__c.post_tour_stopover_line_price__c > 0, 'Includes Post tour Stop over ',  'No Post Tour Stop over' ) }" /> 
+           <apex:outputText value = "{!IF(order__c.post_tour_stopover_line_price__c > 0, order__c.post_tour_stopover_line_price__c, ' ' )}" />    
+           
+       <apex:outputlabel value= "{!IF(order__c.sb_line_price__c > 0, 'Includes Stay Behind ',  'No Stay Behind' ) }" /> 
+           <apex:outputText value = "{!IF(order__c.sb_line_price__c > 0, order__c.sb_line_price__c, ' ' )}" />   
+           
+       <apex:outputlabel value= "{!IF(order__c.ae_line_price__c > 0, 'Includes Arrive Early ',  'No Arrive Early' ) }" /> 
+           <apex:outputText value = "{!IF(order__c.ae_line_price__c > 0, order__c.ae_line_price__c, ' ' )}" />  
+        
+           <apex:outputlabel value= "{!IF(order__c.airline_upgrade_line_price__c >  0, 'Includes Airline Upgrade',  'No Airline Upgrade' )}" />
+   <apex:outputText value = "{!IF(order__c.airline_upgrade_line_price__c > 0, order__c.airline_upgrade_line_price__c,  ' ' )}" />
+       
+       
+   </apex:pageblockSection>
+  
+    </apex:pageBlock>   
+     
+   </apex:pageBlock>
+      
+</apex:page>

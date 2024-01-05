@@ -1,0 +1,162 @@
+<template>
+  <lightning-card>
+    <div style="width: 93% !important; max-width: 93% !important; ">
+  <div class="slds-box slds-box_small slds-text-align_center slds-m-around_small" style="border: hidden; margin-top: -25px; margin-left: 120px;"><p style="font-size: 40px; color: black;"><b>Raise a Question</b></p></div>
+
+<div class="slds-p-bottom_large slds-p-left_large" style="width: 105% !important; max-width: 105% !important;">
+  <lightning-record-edit-form  object-api-name="Case" record-type-id={CaseRecordTypeId} onsuccess={handleUpload}>
+    <p style="font-size: 20px; ">Subject:</p>
+    <lightning-input-field  label ="Subject" field-name="Subject" variant="label-hidden" style="WIDTH: 1800PX; BLOCK-SIZE: 200PX;" onchange={caseSubject} required="">
+        </lightning-input-field>
+    <p style="font-size: 20px;">Description:</p>
+         <lightning-input-field label1 ="Description" field-name="Description" variant="label-hidden" onchange={caseDescription} style="WIDTH: 1800PX; BLOCK-SIZE: 200PX;" required="">
+           </lightning-input-field>
+             <div class="slds-box slds-p-top_small" style="background-color: white; position: relative;">
+              <template if:true={showSpinner} >
+                  <lightning-spinner alternative-text="Loading" size="medium" class="spinnerClass"></lightning-spinner>
+              </template>
+         
+              <lightning-input type="file"
+                               label="Attach Files"
+                               onchange={handleFileUploaded}
+                               record-id={recId}
+                               multiple>
+              </lightning-input>
+
+              <template if:true={filesData}>
+                  <template for:each={filesData} for:item="imgName" for:index="index">
+                      <b key={imgName.key}>{imgName.fileName}</b>
+                      <!--span key={imgName.fileName} data-id={index} style="color:red;font-weight:bold" onclick={removeReceiptImage} class="removeImage"> x</span> &nbsp;-->
+                      <lightning-button-icon icon-name="utility:delete" key={imgName.key}   alternative-text="Delete"   class="test slds-m-left_xx-small" title="Delete" onclick={removeReceiptImage}></lightning-button-icon>
+                  </template>
+                 
+              </template>
+              <br/>
+              <div style="margin-top: 15px;">
+              <lightning-button variant="brand" label="Upload Selected Files" onclick={uploadFiles} class="slds-m-top_medium"> </lightning-button>
+            </div>
+            </div>
+
+            <div class="slds-align_absolute-center"  style = "padding-top: 15px;margin-left: 2%" >
+          </div>
+          
+
+           
+  </lightning-record-edit-form>
+
+  <div class="slds-align_absolute-center">
+  <template if:true={isLoading}>
+    <div class="slds-p-around_x-large">
+        <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+    </div>
+</template>
+
+<lightning-button variant="success" name="Finish" label="Raise A Question" onclick={saveButtoncaseDetails}></lightning-button>
+</div>
+  </div>
+
+  <div class="slds-box slds-box_xx-small slds-text-align_left slds-m-around_xx-small" style="border: hidden;"><p style="font-size: 20px;"><b><u>Active Cases/Question</u></b></p></div>
+      <template for:each={openCases} for:item="CaseOpen" for:index="index">
+          <div class="" key={CaseOpen.caseId}>
+              <template if:true={openCases}>
+                
+               <lightning-accordion allow-multiple-sections-open ="true" onsectiontoggle={handleSectionToggle}>
+                 
+                  <lightning-accordion-section title="Name" name={CaseOpen.caseId} label={CaseOpen.subPlusCaseNo} data-index={index}>
+                        <a href><b><u><div class="slds-truncate" title={CaseOpen.caseId} onclick={handleOpenAccordion} style="font-size: 16px; margin-left: 30px; color: black;">Click here for more information</div></u></b></a>
+                      
+                      <div class="slds-box slds-box_small"  style="border: hidden; margin-left: 20px; color: black;"><b><p style="font-size: 15px;">Description  :  {CaseOpen.description}</p></b></div>
+                      <div style="margin-left: 25px;">
+                             <template if:true={CaseOpen.feed} >
+                                   <p style="font-size: 15px;"><u><b>Case History</b></u></p>
+                                <template for:each={CaseOpen.feed} for:item="feeds">
+                                   <div key={feeds.feedBody}>
+                                    <p style="font-size: 15px;"><b>{feeds.feedName}  :  {feeds.feedBody}</b></p>
+                                   </div>
+                                </template>
+                            </template>
+                      </div>
+                </lightning-accordion-section>
+                   
+              </lightning-accordion>
+            </template>
+          </div>
+      </template >
+
+      
+      <div class="slds-box slds-box_xx-small slds-text-align_left slds-m-around_xx-small" style="border: hidden;"><p style="font-size: 20px;"><b><u>Closed Cases/Question</u></b></p></div>
+      <template for:each={closedCases} for:item="CaseClose" for:index="index">
+          <div class="" key={CaseClose.caseId}>
+      <template if:true={closedCases}>
+        <lightning-accordion allow-multiple-sections-open ="true" onsectiontoggle={handleSectionToggle}>
+          <lightning-accordion-section title="Name" name={CaseClose.caseId} label={CaseClose.subPlusCaseNo} data-index={index}>
+            <a href><b><u><div class="slds-truncate" title={CaseClose.caseId} onclick={handleOpenAccordion} style="font-size: 16px; margin-left: 30px; color: black;">Click here for more information</div></u></b></a>
+
+          
+          <div class="slds-box slds-box_small" style="border: hidden; margin-left: 15px; color: black;"><b><p style="font-size: 15px;">Description  :  {CaseClose.description}</p></b></div>  
+        <div style="margin-left: 25px;">
+            <template if:true={CaseClose.feed} >
+              <p style="font-size: 15px;"><u><b>Case History</b></u></p>
+            <template for:each={CaseClose.feed} for:item="feeds">
+              <div key={feeds.feedBody}>
+                <p style="font-size: 15px;"><b>{feeds.feedName}  :  {feeds.feedBody}</b></p>
+              </div>
+            </template>
+          </template>
+       </div>
+      </lightning-accordion-section>
+                  </lightning-accordion>
+
+      </template>
+      </div>
+      </template>
+    </div>
+  </lightning-card>
+
+
+  <template if:true={isModalOpen}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container" style="width: 100% !important; max-width: 100% !important;">
+            <!-- Modal/Popup Box LWC header here -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Case Created</h2>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+            <template if:true={NewCaseRecordDetails}>
+              <template for:each={NewCaseRecordDetails} for:item="caseDetails" for:index="index">
+
+            <div class="slds-modal__content slds-p-around_medium" key={caseDetails.key}>
+              
+                  <p style="font-size: 20px;">Case Number: <b>{caseDetails.CaseNumber}</b></p>
+
+                  <p style="font-size: 20px;">Case Subject: <b>{caseDetails.Subject}</b></p>
+
+                  <p style="font-size: 20px;">Case Description: <b>{caseDetails.Description}</b></p>
+  </div>
+          
+            </template>
+          </template>
+
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+              <div class="slds-align_absolute-center">
+                <button class="slds-button slds-button_brand" onclick={BackToSR} title="Cancel">Close</button>
+                <button class="slds-button slds-button_brand" onclick={NavigateToCase} title="OK">Click here to redirect to Case</button>
+            </div>
+              </footer>
+
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+
+</template>

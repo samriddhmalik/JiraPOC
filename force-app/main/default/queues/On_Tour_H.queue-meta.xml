@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>On Tour H</name>
+    <queueMembers>
+        <users>
+            <user>audrey@tripadeal.com.au</user>
+            <user>kerise.storey@tripadeal.com.au</user>
+            <user>melanie.king-prime@tripadeal.com.au</user>
+            <user>nadiya.massingham@tripadeal.com.au</user>
+            <user>shannon.knapp@tripadeal.com.au</user>
+            <user>tim.hillard@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>High</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

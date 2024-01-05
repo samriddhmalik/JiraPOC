@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1632</fullName>
+    <columns>created_date__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>agent_name__c</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>order_status__c</columns>
+    <columns>total_price__c</columns>
+    <columns>time_confirmed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>equals</operation>
+        <value>1632</value>
+    </filters>
+    <filters>
+        <field>ae__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>1632</label>
+    <sharedTo>
+        <role>Customer_Service_Manager</role>
+        <role>Head_of_IT</role>
+        <role>Salesforce_Admin</role>
+    </sharedTo>
+</ListView>

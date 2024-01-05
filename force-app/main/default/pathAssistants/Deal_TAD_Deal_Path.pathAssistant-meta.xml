@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Deal__c</entityName>
+    <fieldName>Deal_Status__c</fieldName>
+    <masterLabel>Deal - TAD Deal Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;In this phase of the deal, you will update:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;BDM Deal Summary: &lt;/b&gt;Key details of the deal&lt;/li&gt;&lt;li&gt;&lt;b&gt;Trip Concept &amp;amp; Marketing:&lt;/b&gt; Includes &amp;quot;Deal Highlights&amp;quot;, &amp;quot;Itinerary Outline.&amp;quot; In the Marketing sub-tab BDMs detail ideas for marketing for the Deal&lt;/li&gt;&lt;li&gt;&lt;b&gt;Flights: &lt;/b&gt;PAF will edit access to Departure Cities under this sub-tab and all other users will have read-only access to see the departure cities related to this deal&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pricing:&lt;/b&gt; this includes Options, Sub-Options, Components (merchant specific products), Component Pricing and Additional Extras (Land Activities, AE/SB, AirUpgrade, Sub StopOvers&lt;/li&gt;&lt;li&gt;&lt;b&gt;Logistics:&lt;/b&gt; Includes Transfers and specific Deal Contacts such as Emergency or Reservations&lt;/li&gt;&lt;li&gt;&lt;b&gt;Stress Test: &lt;/b&gt;For QA by the product team, here the Deal will be compared against competitor deals to make sure our deal is better!&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Plan &amp; Configure</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>TAD_Deal</recordTypeName>
+</PathAssistant>

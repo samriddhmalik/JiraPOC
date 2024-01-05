@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sb__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>SB</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND 3 AND (2 OR 4)</booleanFilter>
+        <filterItems>
+            <field>AE_SB__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Stay Behind</value>
+        </filterItems>
+        <filterItems>
+            <field>AE_SB__c.Deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>AE_SB__c.order_filter__c</field>
+            <operation>contains</operation>
+            <valueField>$Source.order_record_type_name__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>AE_SB__c.Option__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Options__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>AE_SB__c</referenceTo>
+    <relationshipLabel>order (SB)</relationshipLabel>
+    <relationshipName>order1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

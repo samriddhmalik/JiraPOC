@@ -1,0 +1,207 @@
+<apex:page standardController="order__c" >
+    <apex:pageBlock title="Deal Information">
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact">
+            <apex:column style="width:=16.6%">
+                <apex:facet name="header">Field Name</apex:facet>
+                <apex:outputText value="Deal ID"/>
+            </apex:column>
+            <apex:column style="width:16.6%">
+                <apex:facet name="header">Content</apex:facet>
+                <apex:outputText value="{!order__c.Deal_ID__c}"/>
+            </apex:column>
+            <apex:column style="width:16.6%">
+                <apex:facet name="header">Line Price (Gross)</apex:facet>
+                <apex:outputText value="{!order__c.empty_text_field__c}"/>
+            </apex:column>
+            <apex:column style="width:16.6%">
+                <apex:facet name="header">Quantity (Gross)</apex:facet>
+                <apex:outputText value="{!order__c.empty_text_field__c}"/>
+            </apex:column>
+            <apex:column style="width:16.6%">
+                <apex:facet name="header">Net Price (Qty)</apex:facet>
+                <apex:outputText value="{!order__c.empty_text_field__c}"/>
+            </apex:column>
+            <apex:column style="width:16.6%">
+                <apex:facet name="header">Commission (Qty)</apex:facet>
+                <apex:outputText value="{!order__c.empty_text_field__c}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Deal Name"/>
+            </apex:column>
+            <apex:column style="{width:83.4%;text-align:left;}" value="{!order__c.Deal_and_Option__c}"/>
+            <!--<apex:column style="{width:83.4%;text-align:left;}" value="{!order__c.empty_text_field__c}"/>
+         <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+         <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>-->
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Option"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.Option_Purchased_TC__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.option_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.option_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Option_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Option_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Sub Option"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.Sub_Option_Purchasedq__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.sub_option_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.sub_option_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Sub_Option_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Sub_Option_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Departure Date"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.departure_date__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.hss_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.hss_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.HSS_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.HSS_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.Dep_City__c<>'N/A', true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Departure City"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.Dep_City__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.departure_city_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.departure_city_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Departure_City_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Departure_City_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Quantity"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.qty__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.solo_surcharge_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Solo Traveller"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.solo_traveller__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.solo_surcharge_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.solo_surcharge_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Solo_Surcharge_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Solo_Surcharge_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+            <apex:column style="width:100%">
+                <apex:outputText value="Optional Extras" style="font-weight:bold;font-size:90%;"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.ae_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Arrive Early"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.ae_date__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.ae_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.ae_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.AE_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.AE_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.sb_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Stay Behind"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.sb_date__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.sb_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.sb_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.SB_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.SB_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.pre_tour_stopover_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Pre Tour Stopover"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.pre_tour_stopover__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.pre_tour_stopover_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.pre_tour_stopover_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Pre_Tour_S_O_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Pre_Tour_S_O_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.post_tour_stopover_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Post Tour Stopover"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.post_tour_stopover__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.post_tour_stopover_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.post_tour_stopover_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Post_Tour_S_O_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Post_Tour_S_O_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.airline_upgrade_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Airline Upgrade"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.airline_upgrade__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.airline_upgrade_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.airline_upgrade_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Airline_Upgrade_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Airline_Upgrade_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.land_activity_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Land Activity"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Land_Activity_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Land_Activity_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.land_activity_a_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Land Activity A"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_a__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_a_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_a_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Land_Activity_A_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Land_Activity_A_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.land_activity_b_line_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Land Activity B"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_b__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_b_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_b_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Land_Activity_B_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Land_Activity_B_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden" rendered="{!IF(order__c.land_activity_c_qty_price__c<>0, true, false)}">
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Land Activity C"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_c__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_c_line_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.land_activity_c_qty_price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Land_Activity_C_Qty_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Land_Activity_C_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockTable style="width:100%" value="{!order__c.City__c}" var="contact" headerClass="hidden">
+        
+            <apex:column style="width:16.6%">
+                <apex:outputText value="Total" style="font-weight:bold"/>
+            </apex:column>
+            <apex:column style="width:16.6%" value="{!order__c.empty_text_field__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Wholesale_Total_Line_Price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Wholesale_Total_Gross_Price__c}"/>
+            <apex:column style="width:16.6%" value="{!order__c.Wholesale_Total_Net_Price__c}"/>
+            <apex:Column style="width:16.6%" value="{!order__c.Wholesale_Total_Qty_Commission__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <style>body{padding:0!important}</style>
+</apex:page>

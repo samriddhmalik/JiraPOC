@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound_Gateway_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( TEXT( Inbound_Gateway__c ) = &quot;SYD&quot;, &quot;Sydney&quot;, 
+ IF( TEXT(Inbound_Gateway__c) = &quot;BNE&quot;, &quot;Brisbane&quot;, 
+ IF( TEXT(Inbound_Gateway__c) = &quot;MEL&quot;, &quot;Melbourne&quot;, 
+ IF( TEXT(Inbound_Gateway__c) = &quot;ADL&quot;, &quot;Adelaide&quot;, 
+ IF( TEXT(Inbound_Gateway__c) = &quot;PER&quot;, &quot;Perth&quot;,&quot;&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Inbound Gateway Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

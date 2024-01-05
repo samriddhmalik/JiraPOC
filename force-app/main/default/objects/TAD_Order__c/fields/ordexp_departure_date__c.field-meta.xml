@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_departure_date__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Departure date</label>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <filterItems>
+            <field>departures_dates__c.Deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ordexp_deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.options__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.ordexp_option__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>departures_dates__c.online_status__c</field>
+            <operation>equals</operation>
+            <value>Online</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>departures_dates__c</referenceTo>
+    <relationshipLabel>Orders</relationshipLabel>
+    <relationshipName>TAD_Orders_DD</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

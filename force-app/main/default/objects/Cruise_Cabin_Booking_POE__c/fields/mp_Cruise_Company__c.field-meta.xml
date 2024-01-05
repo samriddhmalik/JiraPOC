@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mp_Cruise_Company__c</fullName>
+    <externalId>false</externalId>
+    <label>Cruise Company</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MSC</fullName>
+                <default>false</default>
+                <label>MSC</label>
+            </value>
+            <value>
+                <fullName>Royal Caribbean</fullName>
+                <default>false</default>
+                <label>Royal Caribbean</label>
+            </value>
+            <value>
+                <fullName>Celebrity Cruises</fullName>
+                <default>false</default>
+                <label>Celebrity Cruises</label>
+            </value>
+            <value>
+                <fullName>Costa Cruises</fullName>
+                <default>false</default>
+                <label>Costa Cruises</label>
+            </value>
+            <value>
+                <fullName>Norwegian Cruise Lines</fullName>
+                <default>false</default>
+                <label>Norwegian Cruise Lines</label>
+            </value>
+            <value>
+                <fullName>Carnival Cruises</fullName>
+                <default>false</default>
+                <label>Carnival Cruises</label>
+            </value>
+            <value>
+                <fullName>Holland America</fullName>
+                <default>false</default>
+                <label>Holland America</label>
+            </value>
+            <value>
+                <fullName>Princess Cruises</fullName>
+                <default>false</default>
+                <label>Princess Cruises</label>
+            </value>
+            <value>
+                <fullName>P&amp;O Cruises</fullName>
+                <default>false</default>
+                <label>P&amp;O Cruises</label>
+            </value>
+            <value>
+                <fullName>CMV Cruises</fullName>
+                <default>false</default>
+                <label>CMV Cruises</label>
+            </value>
+            <value>
+                <fullName>Oceania Cruises</fullName>
+                <default>false</default>
+                <label>Oceania Cruises</label>
+            </value>
+            <value>
+                <fullName>Virgin Voyages</fullName>
+                <default>false</default>
+                <label>Virgin Voyages</label>
+            </value>
+            <value>
+                <fullName>Dream Cruises</fullName>
+                <default>false</default>
+                <label>Dream Cruises</label>
+            </value>
+            <value>
+                <fullName>Captain Cook Cruises</fullName>
+                <default>false</default>
+                <label>Captain Cook Cruises</label>
+            </value>
+            <value>
+                <fullName>Pullmantur</fullName>
+                <default>false</default>
+                <label>Pullmantur</label>
+            </value>
+            <value>
+                <fullName>Hurtigruten</fullName>
+                <default>false</default>
+                <label>Hurtigruten</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>Type__c</columns>
+    <columns>linked_deal__c</columns>
+    <columns>Deal__c</columns>
+    <columns>Option__c</columns>
+    <columns>City__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>City__c</field>
+        <operation>contains</operation>
+        <value>N</value>
+    </filters>
+    <label>All</label>
+    <sharedTo>
+        <role>CFO</role>
+        <role>Head_of_IT</role>
+    </sharedTo>
+</ListView>

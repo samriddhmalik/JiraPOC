@@ -1,0 +1,379 @@
+<aura:component controller="createTadOrderController" implements="lightning:availableForFlowScreens,force:lightningQuickAction,force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global">
+    
+    <aura:attribute name="redirectrender" type="Boolean" default="false"/>
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/>
+    <aura:attribute name="storeTheTADOrderRecordId" type="String" default=""/>
+    
+    <aura:attribute name="AccountId" type="String"/>
+    <aura:attribute name="SavedDealID" type="String" default=""/>
+    <aura:attribute name="sObjectName" type="String" />    
+    <aura:attribute name="tadOrderId" type="String"/>
+    <aura:attribute name="DealId" type="String"/>
+    <aura:attribute name="caseID" type="String"/>
+    <aura:attribute name="sourceObject" type="String"/>
+    
+    <aura:attribute name="tadOrderRecord" type="TAD_Order__c" default="{ 'sobjectType': 'TAD_Order__c' }"/>
+    <aura:attribute name="tadOrderData" type="createTadOrderController.tadOrderData"/>
+    <aura:attribute name="optionsList" type="createTadOrderController.relatedFields[]"/>
+    <aura:attribute name="searchedDeal" type="List[]"/>
+    
+   <aura:attribute name="searchedAccount" type="List[]"/>
+    <aura:attribute name="options" type="List[]"/>
+    <aura:attribute name="methodvalue" type="String"/>
+    <aura:attribute name="ispayment" type="boolean" default="false"/>
+    <aura:attribute name="isPaymentmethod" type="boolean" default="false"/>
+    <aura:attribute name="couponComponent" type="boolean" default="false"/>
+    <aura:attribute name="otherComponent" type="boolean" default="false"/>
+    <aura:attribute name="SearchAccKeyWord" type="string"/> 
+   
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="accountName" type="String" default=""/>
+    
+        <aura:attribute name="DealName" type="String" default=""/>
+
+    
+    <aura:attribute name="isSiteMinder" type="Boolean"/>
+    <aura:attribute name="startDateSiteMinder" type="Date"/>
+    <aura:attribute name="endDateSiteMinder" type="Date"/>
+    
+    <aura:attribute name="allocationData" type="createTadOrderController.allocationTableWrapper[]"/>
+    <aura:attribute name="filteredAllocationData" type="createTadOrderController.allocationTableWrapper[]"/>
+    <aura:attribute name="allocationYearMonthMap" type="Map"/>
+    <aura:attribute name="allocationMonth" type="Decimal"/>
+    <aura:attribute name="allocationMonthList" type="createTadOrderController.relatedFields[]"/>
+    <aura:attribute name="allocationYear" type="Decimal"/>
+    <aura:attribute name="allocationYearList" type="createTadOrderController.relatedFields[]"/>
+    <aura:attribute name="subOptionSelected" type="String"/>
+    <aura:attribute name="subOptionValuesList" type="createTadOrderController.relatedFields[]"/>
+    <aura:attribute name="allocationBy" type="String"/>
+    <aura:attribute name="isLoading" type="Boolean"/>
+    <aura:attribute name="showPostal" type="Boolean" default="false"/>
+    <aura:attribute name="postalCode" type="String" default=""/>
+    
+    <aura:attribute name="isAccount" type="Boolean" default="false"/>
+     <aura:attribute name="isCase" type="Boolean" default="false"/>
+    <aura:attribute name="isCaseOLI" type="Boolean" default="false"/>
+    <aura:attribute name="isNotCaseOLI" type="Boolean" default="true"/>
+    <aura:attribute name="isCaseOLIAddon" type="Boolean" default="false"/>
+    
+    <aura:attribute name="postcodeValidity" type="Boolean" default="true"/>
+    
+    <aura:handler event="aura:Waiting" action="{!c.loading}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.loaded}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.tadOrderRecord.ordexp_account__c}" action="{!c.updateTadOrderRecordAccount}"/>
+    
+        <aura:registerEvent name="sampleComponentEvent" type="c:caseTADorderEvent"/>
+
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <div class="slds-theme_default" style="width: inherit;padding: 16px; height :inherit; overflow:auto">
+        
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>
+        
+                <aura:if isTrue="{!v.isNotCaseOLI}">
+        
+        <h2 class="title slds-text-heading--medium slds-text-align--center"><b>Create New TAD Order</b></h2>
+         
+        </aura:if>
+        <br></br>
+        <br></br>
+        
+        <br></br>
+        <br></br>
+        
+        <aura:if isTrue="{!v.storeTheTADOrderRecordId==''}">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col" style="width: 40%;">
+                    <lightning:select label="Record Type" aura:id="orderRecordType" value ="{!v.tadOrderData.recordType}">
+                        <option value="" text="--- NONE ---"/> 
+                        <option value="TAD" text="TAD"/>
+                        <option value="TC" text="TC"/>
+                       <!-- <option value="TNZ" text="TNZ"/>
+                        <option value="WT" text="WT"/> -->
+                    </lightning:select>
+                    <br></br>
+                    
+                    <aura:if isTrue="{!or(v.isCase, v.isAccount)}">
+                        <lightning:input label="Account Name" name="accountScreen" value ="{!v.tadOrderData.accountName}" disabled="true"/>
+                        <aura:set attribute="else">
+                            
+                            Account Name
+                            <div class="slds-form-element slds-lookup slds-is-open" data-select="single"> 
+                                <div class="slds-form-element__control">
+                                    <div class="slds-input-has-icon slds-input-has-icon--right">
+                                        <!-- This markup is for when an record is selected -->
+                                        <div aura:id="AccountLookupPill" class="slds-pill-container slds-hide">
+                                            <lightning:pill class="pillSize" label="{!v.tadOrderData.accountName}" name="accountNamePill" onremove="{! c.clearAcc}">
+                                                <aura:set attribute="media">
+                                                    <lightning:icon iconName="standard:account" size="x-small" alternativeText="standard:account"/>
+                                                </aura:set>
+                                            </lightning:pill>
+                                        </div>
+                                        <div aura:id="AccountLookupField" class="slds-show">
+                                            <lightning:icon class="slds-input__icon slds-show" iconName="utility:search" size="x-small" alternativeText="search"/>
+                                            <ui:inputText updateOn="keyup" keyup="{!c.fetchAccountRecords}" class="slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchAccKeyWord}" placeholder="search.."/>
+                                        </div>   
+                                    </div>
+                                </div>
+                                
+                                <aura:if isTrue="{!not(empty(v.searchedAccount))}"> 
+                                    <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+                                        <aura:iteration items="{!v.searchedAccount}" var="singleRec" indexVar="index">
+                                            <li role="presentation" class="slds-listbox__item" onclick="{!c.selectAccRecord}" data-record="{!index}" >
+                                                <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                    <span class="slds-media__figure">
+                                                        <span class="slds-icon_container" title="Description of icon when needed">
+                                                            <lightning:icon iconName="standard:account" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                                                            <span class="slds-assistive-text">Description of icon</span>
+                                                        </span>
+                                                    </span>    
+                                                    <span class="slds-media__body">  
+                                                        <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!singleRec.Name}</span>
+                                                         <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!singleRec.Id}</span>
+                                                    </span>
+                                                </span>
+                                            </li>
+                                        </aura:iteration>
+                                    </ul>
+                                </aura:if>   
+                            </div>
+                            
+                        </aura:set>
+                    </aura:if>
+
+                   <!-- <aura:if isTrue="{!v.accountName==''}">
+                        Account Name
+                        <force:inputField aura:id="accountName" value="{!v.tadOrderRecord.ordexp_account__c }"/>
+                    </aura:if> 
+                    <aura:if isTrue="{!v.accountName!=''}">
+                        <lightning:input label="Account Name" name="accountScreen" value ="{!v.tadOrderData.accountName}" disabled="true" />
+                    </aura:if>-->
+                    <br></br>
+                    
+                    <aura:if isTrue="{!v.showPostal}">
+                        <aura:if isTrue="{!or(equals(v.tadOrderData.recordType, 'TAD'),equals(v.tadOrderData.recordType, 'TC'))}">
+                            <lightning:input type="text" name="orderPostalCode" aura:id="orderPostalCode" label="Postal Code" required="true" value ="{!v.postalCode}" onblur="{!c.validatePostCode}" messageWhenPatternMismatch="Please enter valid postcode" pattern="^(?:(?:[2-8]\d|9[0-7]|0?[28]|0?9(?=09))(?:\d{2}))$" /> 
+                        </aura:if>
+                         <aura:if isTrue="{!or(equals(v.tadOrderData.recordType, 'TNZ'),equals(v.tadOrderData.recordType, 'WT'))}">
+                            <lightning:input type="text" name="orderPostalCode" aura:id="orderPostalCode" label="Postal Code" required="true" value ="{!v.postalCode}" onblur="{!c.validatePostCode}" messageWhenPatternMismatch="Please enter valid postcode" pattern="^(?!0{4})[0-9]{4}$" /> 
+                        </aura:if>
+                    </aura:if>
+ 
+                    <br></br>
+                    Deal
+                    <div class="slds-form-element slds-lookup slds-is-open" data-select="single"> 
+                        <div class="slds-form-element__control">
+                            <div class="slds-input-has-icon slds-input-has-icon--right">
+                                <!-- This markup is for when an record is selected -->
+                                <div aura:id="dealLookupPill" class="slds-pill-container slds-hide">
+                                    <lightning:pill class="pillSize" label="{!v.tadOrderData.dealName}" name="accountNamePill" onremove="{! c.clearDeal }">
+                                        <aura:set attribute="media">
+                                            <lightning:icon iconName="standard:account" size="x-small" alternativeText="standard:account"/>
+                                        </aura:set>
+                                    </lightning:pill>
+                                </div>
+                                <div aura:id="dealLookupField" class="slds-show">
+                                    <lightning:icon class="slds-input__icon slds-show" iconName="utility:search" size="x-small" alternativeText="search"/>
+                                    <ui:inputText updateOn="keyup" keyup="{!c.fetchDealRecords}" class="slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchKeyWord}" placeholder="search.."/>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <aura:if isTrue="{!not(empty(v.searchedDeal))}"> 
+                            <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+                                <aura:iteration items="{!v.searchedDeal}" var="singleRec" indexVar="index">
+                                    <li role="presentation" class="slds-listbox__item" onclick="{!c.selectRecord}" data-record="{!index}" >
+                                        <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                            <span class="slds-media__figure">
+                                                <span class="slds-icon_container" title="Description of icon when needed">
+                                                    <lightning:icon iconName="standard:account" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                                                    <span class="slds-assistive-text">Description of icon</span>
+                                                </span>
+                                            </span>    
+                                            <span class="slds-media__body">  
+                                                <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!singleRec.Name}</span>
+                                                <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!singleRec.Deal_ID_Title__c}</span>
+                                            </span>
+                                        </span>
+                                    </li>
+                                </aura:iteration>
+                            </ul>
+                        </aura:if>   
+                    </div>
+                    
+                    <br></br>
+                    
+                    <lightning:select label="Select Option" aura:id="allocationYear" value ="{!v.tadOrderData.optionId}" onchange="{!c.fetchAllocation}">
+                        <option value="" text="--- NONE ---"/>
+                        <aura:iteration items="{!v.optionsList}" var="item">
+                            <option value="{!item.value}" text="{!item.text}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <br></br>
+                    <aura:if isTrue="{!equals(v.isSiteMinder, false)}">
+                        <lightning:input label="Departure Date" value ="{!v.tadOrderData.departureDateName}" disabled="true"/>
+                    </aura:if>
+                    <aura:if isTrue="{!equals(v.isSiteMinder, true)}">
+                        <lightning:input type="date" label="Start Date" value ="{!v.tadOrderData.startDateSiteMinder}" onchange="{!c.checkStartDate}"/>
+                        <lightning:input type="date" label="End Date" value ="{!v.tadOrderData.endDateSiteMinder}" onchange="{!c.checkEndDate}"/>
+                    </aura:if>
+                    <br></br>
+                </div>  
+                <div class="slds-col slds-box" style="width: 60%;">
+                    
+                    <b> Check Available Allocation ( {!v.allocationBy} ) :-</b>
+                    <div class="slds-grid slds-gutters">
+                        
+                        <div class="slds-col">      
+                            <lightning:select label="Select Year" aura:id="allocationYear" value ="{!v.allocationYear}" onchange="{!c.getMonths}">
+                                <option value="" text="--- NONE ---"/> 
+                                <aura:iteration items="{!v.allocationYearList}" var="item">
+                                    <option value="{!item.value}" text="{!item.text}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div> 
+                        
+                        <div class="slds-col">
+                            <lightning:select label="Select Month" aura:id="allocationMonth" value ="{!v.allocationMonth}" onchange="{!c.filterAllocation}">
+                                <option value="" text="--- NONE ---"/> 
+                                <aura:iteration items="{!v.allocationMonthList}" var="item">
+                                    <option value="{!item.value}" text="{!item.text}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>  
+                        
+                    </div>
+                    
+                    <aura:if isTrue="{!equals(v.allocationBy, 'Sub option')}">
+                    <div class="slds-col">
+                        <lightning:select label="Select Sub Option" aura:id="subOption" value ="{!v.subOptionSelected}" onchange="{!c.filterAllocation}">
+                                <option value="" text="--- NONE ---"/> 
+                                <aura:iteration items="{!v.subOptionValuesList}" var="item">
+                                    <option value="{!item.value}" text="{!item.text}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                     </div> 
+                     </aura:if>
+                    
+                    <br></br>
+                    <div class="slds-scrollable_y" style="height:19rem">
+                        <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid">
+                            <thead class="header">
+                                <tr class="slds-line-height_reset slds-text-heading_small slds-text-align--center">
+                                   <th scope="col" width="15%" class="slds-text-align_center"><b>Date</b></th>
+                                    <th scope="col" width="15%" class="slds-text-align_center"><b>Allocation Left</b></th>
+                                    <th scope="col" width="50%" class="slds-text-align_center"><b>Name</b></th>
+                                    <th scope="col" width="15%" class="slds-text-align_center"><b>Status</b></th>
+                                </tr>      
+                            </thead> 
+                            
+                            <tbody class="body">
+                                <aura:iteration items="{!v.filteredAllocationData}" var="rd" indexVar="index">
+                                    <tr>
+                                        <td scope="row" class="slds-text-align--center" name="{!index}">
+                                            <aura:if isTrue="{!equals(v.isSiteMinder, false)}">
+                                                <a  href="JavaScript:Void(0);" data-record="{!index}"  onclick="{!c.updateDepartureDate}"><p>{!rd.DateValue}</p></a>
+                                            </aura:if>
+                                            <aura:if isTrue="{!equals(v.isSiteMinder, true)}">
+                                                <p>{!rd.DateValue}</p>
+                                            </aura:if>
+                                        </td>
+                                        <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.remainingAllocation}"/></td>
+                                      
+                                        <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.name}"/></td>
+                                        <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.DeparureDateStatus}"/></td>
+                                 
+                                    </tr>
+                                </aura:iteration>
+                            </tbody>
+                        </table> 
+                    </div> 
+                </div>   
+            </div>
+            <br></br>
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Cancel" title="Save" onclick="{! c.closeWorkspace }"/>
+                <lightning:button variant="brand" label="Next" title="Save" onclick="{! c.validateAndSaveTadOrder }"/>
+            </div>
+        </aura:if> 
+        
+        
+        
+        <div class="slds-grid slds-wrap">
+            
+            <div class="slds-col slds-size_4-of-12">
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <aura:if isTrue="{!v.storeTheTADOrderRecordId!=''}">
+                    <br></br>
+                    <br></br> 
+                    <div class="slds-m-bottom_large flowruntimeRichTextWrapper flowruntimeDisplayText" data-aura-rendered-by="4346:0" data-aura-class="flowruntimeRichTextWrapper flowruntimeDisplayText">
+                        <div dir="ltr" data-aura-rendered-by="4349:0" class="uiOutputRichText" data-aura-class="uiOutputRichText">
+                            <p data-aura-rendered-by="4350:0">
+                                <span style="color: rgb(71, 218, 41); background-color: rgb(255, 255, 255); font-weight : bold;">
+                                    Congratulations, your order has been created
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-m-bottom_large flowruntimeRichTextWrapper flowruntimeDisplayText" data-aura-rendered-by="4360:0" data-aura-class="flowruntimeRichTextWrapper flowruntimeDisplayText">
+                        <div dir="ltr" data-aura-rendered-by="4363:0" class="uiOutputRichText" data-aura-class="uiOutputRichText">
+                            <p data-aura-rendered-by="4364:0">
+                                <a style="background-color: rgb(255, 255, 255); font-weight : bold;" href="JavaScript:Void(0);" onclick="{!c.navigateToRecord}" rel="noopener">
+                                    Click here to go to the record.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="slds-text-align--right">
+                        <lightning:button variant="brand" label="Done" title="Save" onclick="{! c.openModal }"/>
+                    </div>
+                </aura:if>
+                
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+            </div>
+            
+        </div>
+        
+        
+        
+        <aura:if isTrue="{!v.isModalOpen}">
+            <!-- Modal/Popup Box starts here--> 
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModal }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Anything else?</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p><b>Do you wish to create an OLI?
+                            </b>
+                        </p>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" 
+                                          label="Create an OLI"
+                                          title="Create an OLI"
+                                          onclick="{!c.submitDetailsToCallOLIFlow}"/>
+                        
+                        <lightning:button variant="neutral" 
+                                          label="No"
+                                          title="No"
+                                          onclick="{! c.navigateToRecord }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>  
+</aura:component>

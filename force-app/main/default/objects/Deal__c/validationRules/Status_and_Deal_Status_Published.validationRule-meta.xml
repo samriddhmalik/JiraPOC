@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_and_Deal_Status_Published</fullName>
+    <active>true</active>
+    <description>If Status equals &quot;Hero&quot; or &quot;Published&quot; then Deal Status must also be equal to &quot;Published&quot;.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Status__c,&quot;Hero&quot;), 
+ISPICKVAL(Status__c,&quot;Published&quot;), ISPICKVAL(Status_NZ__c,&quot;Hero&quot;), ISPICKVAL(Status_NZ__c,&quot;Published&quot;)),
+NOT(ISPICKVAL(Deal_Status__c,&quot;Published&quot;)))</errorConditionFormula>
+    <errorMessage>If Status equals &quot;Hero&quot; or &quot;Published&quot; then Deal Status must also be equal to &quot;Published&quot;.</errorMessage>
+</ValidationRule>

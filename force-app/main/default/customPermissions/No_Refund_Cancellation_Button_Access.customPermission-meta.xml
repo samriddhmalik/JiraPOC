@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>granted permission in the custom permission settings, should be able to view and access this quick action - Refund - No Cancellation.</description>
+    <isLicensed>false</isLicensed>
+    <label>No Refund Cancellation Button Access</label>
+</CustomPermission>

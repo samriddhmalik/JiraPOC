@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bug</fullName>
+    <active>true</active>
+    <description>An unexpected event that is disrupting an operational process or reducing the quality of a service.  Some common examples are: a problem with a customer order, a problem with a customer&apos;s account, an issue with our website, etc</description>
+    <label>Incident</label>
+    <picklistValues>
+        <picklist>Business_Value_Sub_Category__c</picklist>
+        <values>
+            <fullName>Data and insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improve customer experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing journey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimise%2FSimplify process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Expansion</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Value__c</picklist>
+        <values>
+            <fullName>Operational%2Frole efficiency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Enablement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Generation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merchant Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omni Channel %2F Cases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QFF Points</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website Enhancement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Department__c</picklist>
+        <values>
+            <fullName>Business Analysts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics%2FFlight Ticketers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online_Publishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations_HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visa %26 Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Grading__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Feature__c</picklist>
+        <values>
+            <fullName>Feature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSAG_Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Highest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lowest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High - Severe impact to the business and no workaround exists%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low - No loss of service%2E The result does not prevent operation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Normal - Minor loss of service%2E Temporary workaround exists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urgent - Complete loss of service or a significant failure%2C no workaround exists%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requesting_Team__c</picklist>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ops %2F On Tour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P%26C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales %26 Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Actioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved - Pending assignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned - Further information required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned - In progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned - Under review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Submitted for approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Whats_Impacted__c</picklist>
+        <values>
+            <fullName>Internal System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Comms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Who_is_impacted__c</picklist>
+        <values>
+            <fullName>All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Analysts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Merchants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Publishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations%2FHR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

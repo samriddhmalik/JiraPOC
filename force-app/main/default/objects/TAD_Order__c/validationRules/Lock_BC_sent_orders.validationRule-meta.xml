@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_BC_sent_orders</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(PRIORVALUE(ordexp_bc_sent__c)= true,
+NOT(
+OR(ISPICKVAL(ordexp_cancellation_request__c,&quot;Send Request Form&quot;),ISPICKVAL(ordexp_cancellation_request__c,&quot;Request Sent&quot;))
+),
+NOT($Permission.Lock_BC_Sent_Orders)
+)</errorConditionFormula>
+    <errorDisplayField>ordexp_account__c</errorDisplayField>
+    <errorMessage>This order has been finalised with the merchant so no changes can be made, ever, EVER! unless you ask logistics nicely... and we like skittles...</errorMessage>
+</ValidationRule>

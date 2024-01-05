@@ -1,0 +1,59 @@
+<template>
+
+    <!--<lightning-button variant="brand"
+label="Book Slot"
+title="Book Slot"
+onclick={openBookSlotModal}
+class="slds-m-left_x-small"> 
+</lightning-button>-->
+
+
+
+    <div class="slds-theme_default">
+            <p style="font-size:medium;font-family:sans-serif;padding:10px;margin:5px; text-align: center;"><b>BOOK SLOTS</b></p><br /><br />
+
+        <div class="slds-m-around_small slds-grid slds-wrap slds-grid_vertical" id="modal-content-id-1">
+            <div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+                <div class="slds-col slds-size_4-of-12"></div>
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-input value={startDate} type="date" name="stDt" label="Start date"
+                        onchange={handleStartDateEvent} min={currentdateplus1}
+                        message-when-range-underflow="Start date should be later than today"
+                        message-when-value-missing="Please Fill The Start Date" required>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_4-of-12"></div>
+            </div>
+            <div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+                <div class="slds-col slds-size_4-of-12"></div>
+                <div class="slds-col slds-size_4-of-12">
+                    <lightning-input value={endDate} type="date" name="stDte" label="End date"
+                        onchange={handleEndDateEvent} min={currentdateplus1}
+                        message-when-value-missing="Please fill the End Date" required>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_4-of-12"></div>
+            </div>
+
+
+        </div>
+
+        <footer class="slds-modal__footer">
+            <div class="slds-col slds-grid slds-size_12-of-12">
+                
+                <div class="slds-col slds-size_2-of-12 slds-grid_pull-padded-medium slds-align_absolute-center">
+
+                    <button class="slds-button slds-button_brand " onclick={submitBookSlotDetails}
+                        title="Next">Next</button>
+                </div>
+
+
+            </div>
+
+
+
+        </footer>
+    </div>
+
+
+</template>

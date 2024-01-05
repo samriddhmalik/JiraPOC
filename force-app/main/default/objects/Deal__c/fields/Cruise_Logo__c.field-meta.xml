@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cruise_Logo__c</fullName>
+    <externalId>false</externalId>
+    <label>Key Merchant Logo Old</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Albatros Expeditions</fullName>
+                <default>false</default>
+                <label>Albatros Expeditions</label>
+            </value>
+            <value>
+                <fullName>Amadeus River Cruises</fullName>
+                <default>false</default>
+                <label>Amadeus River Cruises</label>
+            </value>
+            <value>
+                <fullName>American Queen Voyages</fullName>
+                <default>false</default>
+                <label>American Queen Voyages</label>
+            </value>
+            <value>
+                <fullName>Aurora Expedition</fullName>
+                <default>false</default>
+                <label>Aurora Expedition</label>
+            </value>
+            <value>
+                <fullName>Azamara Cruises</fullName>
+                <default>false</default>
+                <label>Azamara Cruises</label>
+            </value>
+            <value>
+                <fullName>Captain Cook Cruises</fullName>
+                <default>false</default>
+                <label>Captain Cook Cruises</label>
+            </value>
+            <value>
+                <fullName>Carnival Cruises</fullName>
+                <default>false</default>
+                <label>Carnival Cruises</label>
+            </value>
+            <value>
+                <fullName>Celebrity Cruises</fullName>
+                <default>false</default>
+                <label>Celebrity Cruises</label>
+            </value>
+            <value>
+                <fullName>Compagnie Fluviale du Mekong</fullName>
+                <default>false</default>
+                <label>Compagnie Fluviale du Mekong</label>
+            </value>
+            <value>
+                <fullName>Coral Expeditions</fullName>
+                <default>false</default>
+                <label>Coral Expeditions</label>
+            </value>
+            <value>
+                <fullName>Costa Cruises</fullName>
+                <default>false</default>
+                <label>Costa Cruises</label>
+            </value>
+            <value>
+                <fullName>Holland America Line</fullName>
+                <default>false</default>
+                <label>Holland America Line</label>
+            </value>
+            <value>
+                <fullName>Hurtigruten</fullName>
+                <default>false</default>
+                <label>Hurtigruten</label>
+            </value>
+            <value>
+                <fullName>Miray Cruises</fullName>
+                <default>false</default>
+                <label>Miray Cruises</label>
+            </value>
+            <value>
+                <fullName>MSC Cruises</fullName>
+                <default>false</default>
+                <label>MSC Cruises</label>
+            </value>
+            <value>
+                <fullName>Norwegian Cruise Line</fullName>
+                <default>false</default>
+                <label>Norwegian Cruise Line</label>
+            </value>
+            <value>
+                <fullName>P&amp;O Cruises</fullName>
+                <default>false</default>
+                <label>P&amp;O Cruises</label>
+            </value>
+            <value>
+                <fullName>Princess Cruises</fullName>
+                <default>false</default>
+                <label>Princess Cruises</label>
+            </value>
+            <value>
+                <fullName>Qantas</fullName>
+                <default>false</default>
+                <label>Qantas</label>
+            </value>
+            <value>
+                <fullName>Qatar</fullName>
+                <default>false</default>
+                <label>Qatar</label>
+            </value>
+            <value>
+                <fullName>Rocky Mountaineer</fullName>
+                <default>false</default>
+                <label>Rocky Mountaineer</label>
+            </value>
+            <value>
+                <fullName>Royal Caribbean Cruises</fullName>
+                <default>false</default>
+                <label>Royal Caribbean Cruises</label>
+            </value>
+            <value>
+                <fullName>Silversea</fullName>
+                <default>false</default>
+                <label>Silversea</label>
+            </value>
+            <value>
+                <fullName>Singapore Airlines</fullName>
+                <default>false</default>
+                <label>Singapore Airlines</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka</fullName>
+                <default>false</default>
+                <label>Sri Lanka</label>
+            </value>
+            <value>
+                <fullName>Travel Marvel</fullName>
+                <default>false</default>
+                <label>Travel Marvel</label>
+            </value>
+            <value>
+                <fullName>WindStar</fullName>
+                <default>false</default>
+                <label>WindStar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

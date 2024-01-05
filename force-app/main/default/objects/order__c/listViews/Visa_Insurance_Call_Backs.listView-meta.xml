@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa_Insurance_Call_Backs</fullName>
+    <columns>Account__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>Account_phone_number__c</columns>
+    <columns>NAME</columns>
+    <columns>Visa_Insurance_Comment__c</columns>
+    <columns>Quote_Required_Date__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>order_status__c</columns>
+    <columns>departure_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Call_Back_Type__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Cancelled,Expired</value>
+    </filters>
+    <filters>
+        <field>Call_Back_Status__c</field>
+        <operation>equals</operation>
+        <value>Quote Required</value>
+    </filters>
+    <label>Visa &amp; Insurance Call Backs - Quote Req</label>
+</ListView>

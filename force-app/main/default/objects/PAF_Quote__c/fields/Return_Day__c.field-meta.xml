@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Day__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( zzzInbound_Day_date_time__c = 0 , &quot;Saturday&quot;, 
+IF( zzzInbound_Day_date_time__c = 1 , &quot;Sunday&quot;,
+IF( zzzInbound_Day_date_time__c = 2 , &quot;Monday&quot;,
+IF( zzzInbound_Day_date_time__c = 3 , &quot;Tuesday&quot;,
+IF( zzzInbound_Day_date_time__c = 4 , &quot;Wednesday&quot;,
+IF( zzzInbound_Day_date_time__c = 5 , &quot;Thursday&quot;,
+IF( zzzInbound_Day_date_time__c = 6 , &quot;Friday&quot;,&quot;Error&quot;)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Return - Day</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

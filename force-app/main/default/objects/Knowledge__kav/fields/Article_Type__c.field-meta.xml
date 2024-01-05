@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Article_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Article Type</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Flights</fullName>
+                <default>false</default>
+                <label>Flights</label>
+            </value>
+            <value>
+                <fullName>Cruises</fullName>
+                <default>false</default>
+                <label>Cruises</label>
+            </value>
+            <value>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+                <label>Hotels</label>
+            </value>
+            <value>
+                <fullName>Tours</fullName>
+                <default>false</default>
+                <label>Tours</label>
+            </value>
+            <value>
+                <fullName>Changes</fullName>
+                <default>false</default>
+                <label>Changes</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Transfers</fullName>
+                <default>false</default>
+                <label>Transfers</label>
+            </value>
+            <value>
+                <fullName>Itinerary</fullName>
+                <default>false</default>
+                <label>Itinerary</label>
+            </value>
+            <value>
+                <fullName>Invoices and receipts</fullName>
+                <default>false</default>
+                <label>Invoices and receipts</label>
+            </value>
+            <value>
+                <fullName>Placing an order</fullName>
+                <default>false</default>
+                <label>Placing an order</label>
+            </value>
+            <value>
+                <fullName>Account</fullName>
+                <default>false</default>
+                <label>Account</label>
+            </value>
+            <value>
+                <fullName>Medical</fullName>
+                <default>false</default>
+                <label>Medical</label>
+            </value>
+            <value>
+                <fullName>Refunds</fullName>
+                <default>false</default>
+                <label>Refunds</label>
+            </value>
+            <value>
+                <fullName>Book with credit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Book with credit</label>
+            </value>
+            <value>
+                <fullName>Itinerary,Invoices and receipts</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Itinerary,Invoices and receipts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

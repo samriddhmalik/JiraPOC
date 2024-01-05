@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solo_Balance_Pax_inc__c</fullName>
+    <externalId>false</externalId>
+    <formula>and((VALUE(TEXT(deal__r.PAX_included_per_deal__c)) = 1), INCLUDES( deal__r.deal_type__c , &apos;Cruise&apos;) , qty__c = 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Solo Balance Pax inc</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

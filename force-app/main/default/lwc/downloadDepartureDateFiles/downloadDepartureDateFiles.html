@@ -1,0 +1,38 @@
+<template>
+<template if:false={bIsFileDataEmpty}>
+  <lightning-card style="padding-top: 15px" title="Download files">
+    <lightning-layout multiple-rows="true">
+      <template for:each={FileData} for:item="file">
+        <lightning-layout-item
+          size="3"
+          class="slds-p-around_x-small"
+          key={file}
+        >
+        <div style="font-size:14px; color:black; padding-left:10px;">
+          <a href = {file.downloadURL}  data-item={file}   style="color:black" >{file.fileName}</a></p></div>
+      
+        </lightning-layout-item>
+      </template>
+    </lightning-layout>
+
+    <!--<table style="font-size: 14px; width: 100%; text-align: left">
+    <template for:each={FileData} for:item="file">
+      <tr key={file}>
+        <td>{file.fileName}</td>
+        <td>
+          <p>
+            <lightning-formatted-url
+              value={file.downloadURL}
+              label="Download"
+              target="null"
+            >
+
+            </lightning-formatted-url>
+          </p>
+        </td>
+      </tr>
+    </template>
+  </table>-->
+  </lightning-card>
+</template>
+</template>

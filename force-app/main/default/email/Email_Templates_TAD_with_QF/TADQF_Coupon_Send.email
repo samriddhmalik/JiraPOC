@@ -1,0 +1,133 @@
+<div style="margin: 0; background-color: #f8f8fa; height: 100%!important; width: 100%!important; padding: 0;">
+  <table style="border-collapse: collapse; margin: auto; background-color: #fff; height: 100%!important; width: 100%; max-width: 600px!important; border: 1px solid #c8c8c8; margin-top: 0;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td style="width: 5%; color: #fff;">.</td>
+        <td style="margin: 0; padding-top: 20px; padding-bottom: 20px; /*! background-color: #f8f8fa; */height: 100%!important; width: 90%!important;" align="center" valign="top">
+          <table style="border-collapse: collapse; background-color: #fff; max-width: 600px;" border="0" width="100%" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td style="margin-left: 0px; margin-right: 0px; padding-top: 26px; padding-bottom: 20px;" align="center" valign="top">
+                  <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0">
+                    <tbody>
+                      <tr>
+                        <td align="center" valign="top"><img style="max-width: 600px!important; border: 0; outline: none; text-decoration: none;" src="https://3039.s3.ap-southeast-2.amazonaws.com/TAD-QFF-EDM-Header-600px.jpg" alt="tripadeal logo" width="100%" align="middle" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table id="main-table" style="border-collapse: collapse; width: 100%;">
+                            <tbody>
+                              <tr>
+                                <td style="width: 100%; border-bottom-style: solid; border-color: #c8c8c8; border-width: 0px; line-height: 140%;" align="left" valign="top">
+                                  <table style="border-collapse: collapse;">
+                                    <tbody>
+
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left">
+                                  <p style="font-size: 16px; display: inline-block; line-height: 25px; font-family: Lato,Arial,Helvetica,sans-serif; color: #1a1a1a; font-weight: 400; text-align: left;">Dear {!Cancellation_Refund_POE__c.Account_Name__c},<br />
+                                      <br />Please note the conditions of the credit note:</strong><br />
+
+                                      <strong>1.</strong> If any destination restrictions are referenced in the offer email, they will be applied. <br />
+
+                                      <strong>2.</strong> Vouchers are non-refundable and non-redeemable for cash and cannot be used in conjunction with any other promotion or voucher/gift certificate. <br />
+
+                                      <strong>3.</strong> Vouchers cannot be used with any third party retailers or TripADeal wholesalers.</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="font-size: 0px; background: #fff; line-height: 20px;" height="20">&nbsp;</td>
+                              </tr>
+                              <!--/////// VOUCHER CODE ////////-->
+                              <tr>
+                                <td style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 14px 14px 10px 14px; text-align: center; background-color: #fff;">
+                                  <table
+                                    style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #B2F7FF; margin: 0 auto; width: 250px; height: 50px; -webkit-border-radius: 0px; border-radius: 0px; text-align: center; display: table;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #B2F7FF; text-align: center; text-decoration: none; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 18px; color: #000;">
+                                          <p>Value:</p>
+                                          <p>${!TEXT(Cancellation_Refund_POE__c.Coupon_Amount__c)}</p>
+                                          <p>Code:</p>
+                                          <p>{!Cancellation_Refund_POE__c.Coupon_Name_Formula__c}</p>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <table
+                                    style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #ECECEC; margin: 0 auto; width: 250px; height: 50px; -webkit-border-radius: 0px; border-radius: 0px; text-align: center; display: table;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: center; text-decoration: none; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 15px; color: #000;">
+                                          <span style="font-size: 12px;">DATE OF ISSUE</span> : {!TODAY()} </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <!--/////// END VOUCHER CODE ////////-->
+                              <!--/////// REDEMPTION INSTRUCTIONS ////////-->
+                              <tr>
+                                <td align="center">
+                                  <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato, Arial, sans-serif; font-size: 16px; color: #00bfd6; margin: 0; font-weight: bold; text-align: center; padding-top: 6px;">How to
+                                    redeem your voucher</p>
+                                  <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: 'Lato', Helvetica, Arial,sans-serif; color: #000; font-size: 15px; line-height: 22px; text-align: center;">1. Go to <a
+                                      style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #000;" href="https://www.tripadeal.com.au/">www.tripadeal.com.au</a><br /> 2. Find your preferred new holiday<br /> 3. Use your code at checkout</p>
+
+<p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: 'Lato', Helvetica, Arial,sans-serif; color: #000; font-size: 15px; line-height: 22px; text-align: left;">
+<br /><strong>Voucher Terms and Conditions </strong> <br /> <br />
+This voucher is valid for 12 months from the date of issue. TripADeal vouchers cannot be used in conjunction with any other offer. TripADeal vouchers are not valid for use on associated travel services, concierge flight tickets, travel visas, travel insurance, vouchers or any optional extras / supplements / surcharges. TripADeal vouchers cannot be exchanged for cash. All vouchers issued by TripAdeal can only be redeemed by a customer purchasing travel deals directly from TAD, they cannot be redeemed or applied to travel purchased via an intermediary, agent or wholesale partner of TripADeal.<br /> 
+</p>
+
+                                </td>
+                              </tr>
+                              <!--/////// END REDEMPTION INSTRUCTIONS ////////-->
+                              <tr>
+                                <td style="font-size: 0px; background: #fff; line-height: 30px;" height="20">&nbsp;</td>
+                              </tr>
+                              <!-- FOOTER:START -->
+                              <tr>
+                                <td style="font-size: 0px; background: #F2F1F1; line-height: 10px;" height="10">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td style="margin: 0px 20px 0px 20px; background: #F2F1F1;" align="center">
+                                  <p style="font-size: 15px; display: inline-block; line-height: 23px; font-family: Lato,Arial,Helvetica,sans-serif; color: #1a1a1a; font-weight: 400; text-align: center;">Kind Regards, <br /> The TripADeal Team</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="font-size: 0px; background: #F2F1F1; line-height: 10px;" height="10">&nbsp;</td>
+                              </tr>
+                              <!-- FOOTER:END -->
+                            </tbody>
+                          </table>
+<!-- QF FOOTER:START -->
+</br>
+<!-- QF FOOTER:END -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td style="width: 5%; color: #fff;">.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- #######  THIS IS A COMMENT - Visible only in the source editor #########-->

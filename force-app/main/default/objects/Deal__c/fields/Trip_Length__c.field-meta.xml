@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trip_Length__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(number_of_days__c &lt; 4,&quot;Getaway&quot;,
+if(and (number_of_days__c &gt;= 4, number_of_days__c &lt; 7),&quot;Short break&quot;,
+if(and (number_of_days__c &gt;= 7, number_of_days__c &lt; 14),&quot;Holiday&quot;,
+if(and (number_of_days__c &gt;= 14, number_of_days__c &lt; 30) ,&quot;Trip&quot;,
+if(number_of_days__c &gt;= 30 ,&quot;Long Haul&quot;,
+&quot;&quot;
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Trip Length</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

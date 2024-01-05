@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_with_payment_cant_be_expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Total_Order_OLI_Coupon__c != 0 || ordexp_total_payment_received__c !=0) &amp;&amp; TEXT(ordexp_sub_status__c)=&apos;Expired/Time out&apos;</errorConditionFormula>
+    <errorMessage>Order can&apos;t be &apos;Expired/Time&apos; out as there is payment</errorMessage>
+</ValidationRule>

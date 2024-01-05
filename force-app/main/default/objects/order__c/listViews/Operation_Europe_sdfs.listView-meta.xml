@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operation_Europe_sdfs</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>total_payment_received__c</columns>
+    <columns>booking_status__c</columns>
+    <columns>total_sale_value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>deal__c</field>
+        <operation>equals</operation>
+        <value>1407</value>
+    </filters>
+    <label>UJ - 1407</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Financial_Accountant</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

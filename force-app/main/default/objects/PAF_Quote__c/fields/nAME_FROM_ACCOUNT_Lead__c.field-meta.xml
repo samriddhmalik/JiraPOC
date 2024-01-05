@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>nAME_FROM_ACCOUNT_Lead__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( PAFJunctLookup__r.Account__r.Lead_Contact_del__c ,  PAFJunctLookup__r.Account__r.Name , &quot;Lead Contact Required&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>nAME - FROM ACCOUNT(Lead)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

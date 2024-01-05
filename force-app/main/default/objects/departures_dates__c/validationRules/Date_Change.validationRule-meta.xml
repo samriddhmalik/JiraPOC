@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Change</fullName>
+    <active>true</active>
+    <description>This rule prevents Date change if Total Hold or Sold &gt; 0</description>
+    <errorConditionFormula>AND(
+OR( Total_Sold_Hold_POE__c &gt;0),
+ISCHANGED( date__c ), $User.LastName &lt;&gt; &quot;Dowling&quot;, $User.LastName &lt;&gt; &quot;Fini&quot;
+)</errorConditionFormula>
+    <errorDisplayField>date__c</errorDisplayField>
+    <errorMessage>You cannot change the DATE as there are CONFIRMED or ON HOLD orders linked to this departure date. Please create a new departure date instead.</errorMessage>
+</ValidationRule>

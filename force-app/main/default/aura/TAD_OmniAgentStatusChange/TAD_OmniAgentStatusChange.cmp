@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="TAD_OmnichannelStatusController">
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <aura:attribute name="spWrapper" type="Object" />
+    <aura:handler event="lightning:omniChannelWorkloadChanged" action="{!c.onAgentWorkloadChanged}"/>
+     <aura:handler event="lightning:omniChannelWorkAccepted" action="{!c.onAgentWorkAccepted}"/>
+
+</aura:component>

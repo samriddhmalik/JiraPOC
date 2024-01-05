@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refund_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Refund Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Credit</fullName>
+                <default>false</default>
+                <label>Full Credit</label>
+            </value>
+            <value>
+                <fullName>Partial Credit</fullName>
+                <default>false</default>
+                <label>Partial Credit</label>
+            </value>
+            <value>
+                <fullName>Full Refund</fullName>
+                <default>false</default>
+                <label>Full Refund</label>
+            </value>
+            <value>
+                <fullName>Partial Refund</fullName>
+                <default>false</default>
+                <label>Partial Refund</label>
+            </value>
+            <value>
+                <fullName>Full Coupon</fullName>
+                <default>false</default>
+                <label>Full Coupon</label>
+            </value>
+            <value>
+                <fullName>Partial Coupon</fullName>
+                <default>false</default>
+                <label>Partial Coupon</label>
+            </value>
+            <value>
+                <fullName>No Refund/Credit</fullName>
+                <default>false</default>
+                <label>No Refund/Credit</label>
+            </value>
+            <value>
+                <fullName>Partial Refund/Coupon/Credit</fullName>
+                <default>false</default>
+                <label>Partial Refund/Coupon/Credit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

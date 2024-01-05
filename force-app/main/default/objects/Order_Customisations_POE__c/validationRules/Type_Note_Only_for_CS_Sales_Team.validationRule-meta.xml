@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Note_Only_for_CS_Sales_Team</fullName>
+    <active>true</active>
+    <description>The CS Sales team can only select customisation type of &quot;Note Only&quot;</description>
+    <errorConditionFormula>AND (
+OR ($Profile.Name = &quot;~TAD Travel Consultant&quot;, $Profile.Name = &quot;TAD Travel Consultant&quot;),
+NOT(TEXT( Type__c )= &quot;Note Only&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>This Customistion Type is not available to you - you can only select &quot;Note Only&quot;. Please try again.</errorMessage>
+</ValidationRule>

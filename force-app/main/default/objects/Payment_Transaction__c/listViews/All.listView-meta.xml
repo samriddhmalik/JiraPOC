@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>amount_charged__c</columns>
+    <columns>amount_original__c</columns>
+    <columns>amount_surcharge__c</columns>
+    <columns>currency_code__c</columns>
+    <columns>order__c</columns>
+    <columns>crn1__c</columns>
+    <columns>crn2__c</columns>
+    <columns>crn3__c</columns>
+    <columns>method__c</columns>
+    <columns>transaction_idenifier__c</columns>
+    <columns>transaction_date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

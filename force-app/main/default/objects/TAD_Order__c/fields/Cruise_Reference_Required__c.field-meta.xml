@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cruise_Reference_Required__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  (TEXT(ordexp_deal__r.Cruise_Cabin_Booked_by__c) ==&apos;Partner&apos;) &amp;&amp;   ordexp_cabin_bookings_outstanding__c != 0, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cruise Reference Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

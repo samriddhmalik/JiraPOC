@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa_Requirements__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select the correct visa requirements for customers for all countries related to this deal.</inlineHelpText>
+    <label>Visa Requirements</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Visa required</fullName>
+                <default>false</default>
+                <label>No Visa required</label>
+            </value>
+            <value>
+                <fullName>Visa Required</fullName>
+                <default>false</default>
+                <label>Visa Required</label>
+            </value>
+            <value>
+                <fullName>e-Visa required</fullName>
+                <default>false</default>
+                <label>e-Visa required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

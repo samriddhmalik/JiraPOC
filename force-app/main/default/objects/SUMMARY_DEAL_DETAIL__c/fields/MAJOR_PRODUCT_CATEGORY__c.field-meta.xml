@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MAJOR_PRODUCT_CATEGORY__c</fullName>
+    <externalId>false</externalId>
+    <label>MAJOR PRODUCT CATEGORY</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ACCOMM ONLY</fullName>
+                <default>false</default>
+                <label>ACCOMM ONLY</label>
+            </value>
+            <value>
+                <fullName>CRUISE</fullName>
+                <default>false</default>
+                <label>CRUISE</label>
+            </value>
+            <value>
+                <fullName>FLIGHT</fullName>
+                <default>false</default>
+                <label>FLIGHT</label>
+            </value>
+            <value>
+                <fullName>LAND</fullName>
+                <default>false</default>
+                <label>LAND</label>
+            </value>
+            <value>
+                <fullName>STOP OVER ACCOMM ONLY</fullName>
+                <default>false</default>
+                <label>STOP OVER ACCOMM ONLY</label>
+            </value>
+            <value>
+                <fullName>TRANSFER</fullName>
+                <default>false</default>
+                <label>TRANSFER</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

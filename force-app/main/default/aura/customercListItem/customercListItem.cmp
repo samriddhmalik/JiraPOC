@@ -1,0 +1,31 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="passenger" type="customer__c"/>
+    <aura:attribute name="tags" type="String[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <tr>
+        <th scope="row" data-label="PIF #">
+            <div class="slds-truncate" title="PIF #"><a href="{!'https://www.wholesale.tripadeal.com.au/s/passenger/' + v.passenger.Id + '/' +v.passenger.Name}">{!v.passenger.Name}</a></div>
+        </th>
+        <td data-label="First Name">
+            <div class="slds-truncate" title="First Name">{!v.passenger.first_name__c}</div>
+        </td>
+        <td data-label="Last Name">
+            <div class="slds-truncate" title="Last Name">{!v.passenger.last_name__c}</div>
+        </td>
+        <td data-label="DOB">
+            <div class="slds-truncate" title="DOB">{!v.passenger.dob__c}</div>
+        </td>
+        <td data-label="Order">
+            <div class="slds-truncate" title="Order"><a href="{!'https://www.wholesale.tripadeal.com.au/s/order/' + v.passenger.order__r.Id + '/' +v.passenger.order__r.Name}">{!v.passenger.order__r.Name}</a></div>
+        </td>
+        <!--<td data-label="Linked To">-->
+            <!--<div class="slds-truncate" title="Link to other">{!v.passenger.link_to_full_name__c}</div>-->
+        <!--</td>-->
+        <td data-label="Final PIF?">
+            <div class="slds-truncate" title="Final PIF">{!v.passenger.pif_final__c}</div>
+        </td>
+    </tr>
+</aura:component>

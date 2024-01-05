@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <description>Saint Martin (French part)</description>
+    <label>Saint Martin (French part)</label>
+    <protected>false</protected>
+    <values>
+        <field>Continent__c</field>
+        <value xsi:type="xsd:string">Americas</value>
+    </values>
+    <values>
+        <field>Country__c</field>
+        <value xsi:type="xsd:string">Saint Martin (French part)</value>
+    </values>
+    <values>
+        <field>Region__c</field>
+        <value xsi:type="xsd:string">Caribbean</value>
+    </values>
+</CustomMetadata>

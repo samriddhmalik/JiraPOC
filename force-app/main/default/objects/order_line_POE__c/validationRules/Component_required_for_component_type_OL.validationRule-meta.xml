@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component_required_for_component_type_OL</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(OL_Type__c , &apos;Component&apos;) &amp;&amp; ISBLANK(Component__c)</errorConditionFormula>
+    <errorDisplayField>Component__c</errorDisplayField>
+    <errorMessage>Add a lookup to component</errorMessage>
+</ValidationRule>

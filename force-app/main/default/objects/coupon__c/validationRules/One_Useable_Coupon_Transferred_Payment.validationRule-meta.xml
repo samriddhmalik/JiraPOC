@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_Useable_Coupon_Transferred_Payment</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Payment_Transaction__c)),OR(usable_count__c &gt; 1,Discount__c &gt; transferrable_amount__c))</errorConditionFormula>
+    <errorMessage>You can only have a usable count of 1 for a transferred payment and the Discount must be the same or less than the value of the transferred payment.</errorMessage>
+</ValidationRule>

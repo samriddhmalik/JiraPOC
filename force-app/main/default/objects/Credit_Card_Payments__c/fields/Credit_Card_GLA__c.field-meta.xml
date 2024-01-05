@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Card_GLA__c</fullName>
+    <externalId>false</externalId>
+    <label>Credit Card GLA</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>615 - Corporate Card - Chris Cowan</fullName>
+                <default>false</default>
+                <label>615 - Corporate Card - Chris Cowan</label>
+            </value>
+            <value>
+                <fullName>616 - Corporate Card - Chris Jewell</fullName>
+                <default>false</default>
+                <label>616 - Corporate Card - Chris Jewell</label>
+            </value>
+            <value>
+                <fullName>621 - Amex Card - Norm Black</fullName>
+                <default>false</default>
+                <label>621 - Amex Card - Norm Black</label>
+            </value>
+            <value>
+                <fullName>622 - Amex Card - Richard Johnston</fullName>
+                <default>false</default>
+                <label>622 - Amex Card - Richard Johnston</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

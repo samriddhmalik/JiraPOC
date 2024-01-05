@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ALL_Active_Tech_Support</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Subject_Area_IT__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Objective__c</columns>
+    <columns>Jira_Ticket_Number__c</columns>
+    <columns>ETA__c</columns>
+    <columns>Status__c</columns>
+    <columns>Priority__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Draft,Submitted for approval,Actioned,Withdrawn,Deferred</value>
+    </filters>
+    <label>ALL Active Tech Support</label>
+    <sharedTo>
+        <group>Elena</group>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

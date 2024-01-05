@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordxp_min_numbers_met__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((ordexp_departure_date__r.min_numbers_met__c==true || ordexp_departure_date__r.Approved_to_Run_Under_Mins__c==true || Min_numbers_met_OLI__c==true ) , true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Min numbers met</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

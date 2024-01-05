@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hack</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>accommodation__c</columns>
+    <columns>accommodation_class__c</columns>
+    <columns>accommodation_flag__c</columns>
+    <columns>accomodation_name__c</columns>
+    <columns>archetype__c</columns>
+    <columns>date__c</columns>
+    <columns>departures_dates__c</columns>
+    <columns>deal_d_o_s__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>departures_dates__c</field>
+        <operation>equals</operation>
+        <value>2018-04-30</value>
+    </filters>
+    <filters>
+        <field>deal_d_o_s__c</field>
+        <operation>equals</operation>
+        <value>1530</value>
+    </filters>
+    <filters>
+        <field>deal_d_o_s__c</field>
+        <operation>equals</operation>
+        <value>1431</value>
+    </filters>
+    <label>Hack</label>
+</ListView>

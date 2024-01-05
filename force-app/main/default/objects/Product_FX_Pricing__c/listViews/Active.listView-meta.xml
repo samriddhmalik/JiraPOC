@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active</fullName>
+    <columns>NAME</columns>
+    <columns>From_Currency__c</columns>
+    <columns>To_Currency__c</columns>
+    <columns>Hedged_Rate__c</columns>
+    <columns>RBA_Exchange_Rate__c</columns>
+    <columns>Exchange_Rate_AUD__c</columns>
+    <columns>Exchange_Rate_NZD__c</columns>
+    <columns>Active__c</columns>
+    <columns>Actual_Rate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active</label>
+</ListView>

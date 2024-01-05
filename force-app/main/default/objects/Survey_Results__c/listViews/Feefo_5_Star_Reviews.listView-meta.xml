@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feefo_5_Star_Reviews</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>TAD_Order__c</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Overall_Comments__c</columns>
+    <columns>Overall_Star_Rating__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Survey_Results__c.Feefo</value>
+    </filters>
+    <filters>
+        <field>Overall_Star_Rating__c</field>
+        <operation>equals</operation>
+        <value>5</value>
+    </filters>
+    <label>Feefo 5 Star Reviews</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POM_Credit_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>( total_payment_received__c +  total_discounts__c )-
+( IF(OR(CONTAINS( Deal_ID_Title__c,&quot;1512&quot;),CONTAINS( Deal_ID_Title__c,&quot;3070&quot;),CONTAINS( Deal_ID_Title__c,&quot;3065&quot;),CONTAINS( Deal_ID_Title__c,&quot;3078&quot;),CONTAINS( Deal_ID_Title__c,&quot;1884&quot;),CONTAINS( Deal_ID_Title__c,&quot;1893&quot;),CONTAINS( Deal_ID_Title__c,&quot;3304&quot;)), 299, IF(CONTAINS( Deal_ID_Title__c,&quot;1735&quot;), 399, IF(OR(CONTAINS( Deal_ID_Title__c,&quot;3368&quot;),CONTAINS( Deal_ID_Title__c,&quot;3108&quot;),CONTAINS( Deal_ID_Title__c,&quot;3133&quot;)),199,499)))  *  PAX_Travelling__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>POM Credit Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

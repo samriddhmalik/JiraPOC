@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Age_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( dob__c ), &quot;N/A&quot;, 
+IF(( Departure_Date__c - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &lt; 2, &quot;Infant&quot;, 
+IF(( Departure_Date__c - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &lt; 12, &quot;Child&quot;, 
+IF(( Departure_Date__c - (DATE(VALUE(RIGHT(dob__c, 4)),VALUE(MID(dob__c, 4,2)),VALUE(LEFT(dob__c,2)))) ) / 365 &gt;= 12, &quot;Adult&quot;,  
+&quot;N/A&quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Flight Age Grouping</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+   Account__c = &quot;PhoneAFlight&quot;,
+   &quot;a9e2x000000L2QRAA0&quot;,
+   Deal_Transaction__r.Company__r.Id
+)</formula>
+    <label>Company</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

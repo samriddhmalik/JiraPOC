@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(Deal_Transaction__r.Deal__r.deal_type__c , &apos;stay&apos;), &apos;Stay|&apos;,&apos;&apos;) + IF(INCLUDES(Deal_Transaction__r.Deal__r.deal_type__c , &apos;travel&apos;), &apos;Travel|&apos;,&apos;&apos;) + IF(INCLUDES(Deal_Transaction__r.Deal__r.deal_type__c , &apos;Cruise&apos;),&apos;Cruise|&apos; ,&apos;&apos;) + IF(TEXT(Deal_Transaction__r.Deal__r.Dates_Flights__c) =&apos;Dates/Domestic Flights&apos; || TEXT(Deal_Transaction__r.Deal__r.Dates_Flights__c) =&apos;Dates/International Flights&apos;, &apos;Flight|&apos;,&apos;&apos;)</formula>
+    <label>Deal Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

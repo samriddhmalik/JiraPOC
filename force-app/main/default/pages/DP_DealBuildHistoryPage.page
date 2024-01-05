@@ -1,0 +1,178 @@
+<apex:page showHeader="false" standardStylesheets="false" StandardController="Deal__c" extensions="DP_DealBuildHistoryController"
+    renderAs="pdf">
+    <html>
+
+    <head>
+        <!--<link rel="stylesheet" href="{!URLFOR($Resource.DealHistory)}" />-->
+    </head>
+
+    <body>
+        <apex:pageBlock >
+            <!--<apex:outputPanel rendered="{!wrapperData==null}">
+<p class="dealtitle" style="text-align:center">
+<strong>No data available for this deal</strong> 
+</p>
+</apex:outputPanel>-->
+
+            <apex:outputPanel rendered="{!wrapperData!=null}">
+                <p style="font-family:Arial;font-size:30px;font-weight:700; ">
+                    <apex:outputText value="{!wrapperData.dealtitle}" escape="false" />
+                </p>
+                <p style="font-family:arial;font-size:18px;">
+                    <apex:outputText value="{!wrapperData.highlights}" escape="false" />
+                </p>
+                <hr style="color:#000000" />
+                <p style="font-family:arial;font-size:24px;font-weight:700;">ATTACH INCLUSIONS</p>
+
+                <apex:outputPanel rendered="{!wrapperData.attachInclusionList.size>0}">
+                    <div>
+                        <apex:repeat var="inclusion" value="{!wrapperData.attachInclusionList}">
+                            <p>
+                                <span>
+                                    <apex:outputPanel rendered="{!inclusion.inclusionURL!=null}">
+                                        <apex:image url="{!inclusion.inclusionURL}" width="20px; height:20px" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!inclusion.inclusionURL==null}">
+                                        <apex:image url="{!$Resource.NoImageAvailable}" width="20px; height:20px" />
+                                    </apex:outputPanel>
+                                </span>
+                                <span>&nbsp;&nbsp;</span>
+                                <span style=" font-family:arial;font-size:18px;">
+                                    <apex:outputText value="{!inclusion.selectedText}" escape="false" />
+                                </span>
+                            </p>
+
+                        </apex:repeat>
+                    </div>
+
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!wrapperData.attachInclusionList.size==0}">
+                    <div style=" font-family:arial;font-size:18px;">No Attach Inclusions are available on this deal.</div>
+                </apex:outputPanel>
+
+
+                <br/>
+                <hr style="color:#000000" />
+                <p style="font-family:arial;font-size:24px;font-weight:700;">OVERVIEW</p>
+
+                <apex:outputPanel rendered="{!wrapperData.summaryAU!=null}">
+                    <p style=" font-family:arial;font-size:18px;">
+                        <apex:outputText value="{!wrapperData.summaryAU}" escape="false" />
+                    </p>
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!wrapperData.summaryAU==null}">
+                    <div style=" font-family:arial;font-size:18px;">No Overview is available</div>
+                </apex:outputPanel>
+                <br/>
+                <hr style="color:#000000" />
+                <p style="font-family:arial;font-size:24px;font-weight:700;">TOUR INCLUSIONS</p>
+
+                <apex:outputPanel rendered="{!wrapperData.tours.size>0}">
+
+                    <div>
+                        <apex:repeat var="tourData" value="{!wrapperData.tours}">
+                            <p style=" font-family:arial;font-size:18px;">
+                                <apex:outputText value="{!tourData.title}" escape="false" style="font-weight:bold" />
+                            </p>
+                            <p style=" font-family:arial;font-size:18px;">
+                                <apex:outputText value="{!tourData.description}" escape="false" />
+                            </p>
+                            <br/>
+                        </apex:repeat>
+                    </div>
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!wrapperData.tours.size==0}">
+                    <div style=" font-family:arial;font-size:18px;">No Tour Inclusions are available on this deal.</div>
+                </apex:outputPanel>
+
+                <br/>
+                <hr style="color:#000000" />
+
+                <div>
+                    <p style="font-family:arial;font-size:24px;font-weight:700;">ITINERARY</p>
+                    <apex:outputPanel rendered="{!wrapperData.itenarylist.size>0}">
+                        <apex:repeat var="it" value="{!wrapperData.itenarylist}">
+                            <p style="font-weight:bold; font-size:20px">
+                                <u>
+                                    <span>Itinerary</span>
+                                    <span>{!it.itNumber}</span>
+                                </u>
+                            </p>
+                            <apex:repeat var="itin" value="{!it.itList}">
+                                <p style=" font-family:arial;font-size:18px;font-weight:bold">
+                                    <span style="color:#00bfd6;">Day {!itin.day}</span>
+                                    <span>&nbsp; - &nbsp;</span>
+                                    <span>{!itin.title}</span>
+                                </p>
+                                <p style=" font-family:arial;font-size:18px;">
+                                    <apex:outputText value="{!itin.description}" escape="false" />
+                                </p>
+                                <apex:outputPanel rendered="{!itin.accommodation!=null}">
+                                    <p style=" font-family:arial;font-size:18px;">
+                                        <strong>Overnight:</strong>&nbsp;
+                                        <apex:outputText value="{!itin.accommodation}" escape="false" />
+                                    </p>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!itin.mealsIncluded!=null}">
+                                    <p style=" font-family:arial;font-size:18px;">
+                                        <strong>Meals Included:</strong>&nbsp;
+                                        <apex:outputText value="{!itin.mealsIncluded}" escape="false" />
+                                    </p>
+                                </apex:outputPanel>
+
+                                <br/>
+                            </apex:repeat>
+                        </apex:repeat>
+
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!wrapperData.itenarylist.size == 0}">
+                        <div style=" font-family:arial;font-size:18px;">No Itineraries are available on this deal.</div>
+                    </apex:outputPanel>
+
+
+                    <br/>
+                    <hr style="color:#000000" />
+
+                    <p style="font-family:arial;font-size:24px;font-weight:700;">ABOUT THE PROPERTY</p>
+                    <apex:outputPanel rendered="{!wrapperData.properties.size>0}">
+                        <apex:repeat var="propertyData" value="{!wrapperData.properties}">
+                            <p style=" font-family:arial;font-size:18px;">
+                                <apex:outputText value="{!propertyData.title}" style="font-weight:bold" escape="false" />
+                            </p>
+                            <p style=" font-family:arial;font-size:18px;">
+                                <apex:outputText value="{!propertyData.description}" escape="false" />
+                            </p>
+                            <br/>
+                        </apex:repeat>
+
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!wrapperData.properties.size==0}">
+                        <div style=" font-family:arial;font-size:18px;">No Properties are available on this deal.</div>
+                    </apex:outputPanel>
+                </div>
+
+                <br/>
+                <hr style="color:#000000;" />
+                <p style="font-family:arial;font-size:24px;font-weight:700;">IMPORTANT INFORMATION</p>
+                <apex:outputPanel rendered="{!wrapperData.importantinfoAU!=null}">
+                    <p style=" font-family:arial;font-size:18px;">
+                        <apex:outputText value="{!wrapperData.importantinfoAU}" escape="false" />
+                    </p>
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!wrapperData.importantinfoAU==null}">
+                    <div style=" font-family:arial;font-size:18px;">No Important Information is available on this deal.</div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </body>
+
+    </html>
+
+
+</apex:page>

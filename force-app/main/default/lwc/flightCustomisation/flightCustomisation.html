@@ -1,0 +1,117 @@
+<template>
+    <lightning-card title="" style="">
+        <div class="outerDiv">
+        <template if:true={showCustomisations}>
+            <template if:true={itinload}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+              </template>
+            <h2 style="text-align:center;">
+                <b>Flight Customisation</b>
+            </h2>
+            <br><br>
+            <div class="slds-grid " style="overflow:auto">
+                
+                <div class="slds-col" style="width: 100px; min-width:100px " >
+                    <h3 >
+                        <b>Carrier Groups</b>
+                    </h3>
+                </div>
+                <template for:each ={carriers} for:item="carrier" for:index="indexchild">
+                    <div class="slds-col" style="width: 80px;  text-align: center; text-overflow:ellipsis;" title={carrier}  key={carrier}>
+                        <h3 >
+                            <b>{carrier}</b>
+                        </h3>
+                    </div>
+                </template>
+            </div>
+                <br>
+            <div class="slds-grid " style="overflow:auto">
+                <lightning-accordion  allow-multiple-sections-open onsectiontoggle={handleToggleSection} active-section-name={activeSections} class=" slds-col slds-size_12-of-12 example-accordion parentSection">
+    
+                    <!--AE/SB-->
+                    <lightning-accordion-section  name="Select AE/SB" label="Select AE/SB">
+                        <div class="slds-grid slds-wrap" >
+                            <template for:each ={aesb} for:item="aesb" for:index="indexchild">
+                            <div class="slds-col slds-size_12-of-12" key={aesb.name}>
+                                <div class="slds-grid " style="margin-left:-12px; margin-right:-12px" >
+                                    <div class="slds-col" style="width: 100px; min-width:100px" >
+                                        {aesb.name}{aesb.site}{aesb.active}
+                                    </div>
+                                    <template for:each ={carriers} for:item="carrier" for:index="indexchild">
+                                        <div class="slds-col" style="width: 80px; " key={carrier}>
+                                            <lightning-input class="check" style="text-align: center; margin-right:-16px;" value={aesb} name={aesb} data-id={carrier} data-id1={aesb.Id} data-id2="aesb" type="checkbox" data-id3="checkbox" onchange={handleChange} ></lightning-input>
+                                        </div>
+                                    </template>
+                                </div>                      
+                            </div>
+                        </template>
+                        </div>
+            
+                    </lightning-accordion-section>
+        
+                    <!--stopOver-->
+                    <lightning-accordion-section  name="Select Stopover" label="Select Stopover">
+                        <div class="slds-grid slds-wrap"  >
+                            <template for:each ={stopOver} for:item="stopOver" for:index="indexchild">
+                                <div class="slds-col slds-size_12-of-12" key={stopOver.name}>
+                                    <div class="slds-grid" style="margin-left:-12px; margin-right:-12px" >
+                                        <div class="slds-col " style="width: 100px; min-width:100px">
+                                            {stopOver.name}{stopOver.site}{stopOver.active}
+                                        </div>
+                                        <template for:each ={carriers} for:item="carrier" for:index="indexchild">
+                                            <div class="slds-col" key={carrier} style="width: 80px;">
+                                                <lightning-input class="check" style="text-align: center; margin-right:-16px;" value={stopOver} name={stopOver} data-id={carrier} data-id1={stopOver.Id} data-id2="stopOver" data-id3="checkbox" type="checkbox" onchange={handleChange} ></lightning-input>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+            
+                    </lightning-accordion-section>
+        
+                    <!--AirlineUpgrade-->
+                    <lightning-accordion-section name="Airline Upgrade" label="Airline Upgrade">
+                        <div class="slds-grid slds-wrap"  >
+                            <template for:each ={airlineUpgrade} for:item="airlineUpgrade" for:index="indexchild">
+                                <div class="slds-col slds-size_12-of-12" key={airlineUpgrade.name}>
+                                    <div class="slds-grid " style="margin-left:-12px; margin-right:-12px" >
+                                        <div class="slds-col " style="width: 100px; min-width:100px">
+                                            {airlineUpgrade.name}{airlineUpgrade.site}{airlineUpgrade.active}
+                                        </div>
+                                        <template for:each ={carriers} for:item="carrier" for:index="indexchild">
+                                            <div class="slds-col" key={carrier} style="width: 80px;">
+                                                <lightning-input class="check" style="text-align: center; margin-right:-16px;" value={airlineUpgrade} name={airlineUpgrade} data-id={carrier} data-id1={airlineUpgrade.Id} data-id2="airlineUpgrade" data-id3="checkbox" type="checkbox" onchange={handleChange} ></lightning-input>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>                           
+                            </template>
+                        </div>
+            
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </div>
+            <br>
+
+            
+            <br>
+            <div class="slds-grid slds-wrap" style="justify-content: center;" >
+                <div align ="center">
+                    <lightning-button variant="brand" label="Save" title="Successful action" onclick={saveOnClick} class="slds-m-left_x-small"></lightning-button>
+                </div>
+                <div align ="center">
+                    <lightning-button variant="brand" label="Cancel" title="Cancel" onclick={cancelOnClick} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+            
+        </template>
+        
+        <template if:true={saved}>
+            <h3 style="text-align:center">
+                The Flight Customisations are saved successfully!
+            </h3>
+        </template>
+    </div>
+    </lightning-card>
+</template>

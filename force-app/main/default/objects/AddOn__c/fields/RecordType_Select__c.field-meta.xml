@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecordType_Select__c</fullName>
+    <externalId>false</externalId>
+    <label>RecordType Select</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AE/SB</fullName>
+                <default>false</default>
+                <label>0120p000000AxLtAAK</label>
+            </value>
+            <value>
+                <fullName>Airline Upgrade</fullName>
+                <default>false</default>
+                <label>Airline Upgrade</label>
+            </value>
+            <value>
+                <fullName>Customisation</fullName>
+                <default>false</default>
+                <label>Customisation</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Land Activity</fullName>
+                <default>false</default>
+                <label>Land Activity</label>
+            </value>
+            <value>
+                <fullName>SubStopover</fullName>
+                <default>false</default>
+                <label>SubStopover</label>
+            </value>
+            <value>
+                <fullName>Visa</fullName>
+                <default>false</default>
+                <label>Visa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

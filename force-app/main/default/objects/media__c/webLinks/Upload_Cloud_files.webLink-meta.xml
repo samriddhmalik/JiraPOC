@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upload_Cloud_files</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Upload Cloud files</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/TVA_CFB__UploadMultipleFiles?id={!CASESAFEID(media__c.Id)}&amp;BucketName=</url>
+</WebLink>

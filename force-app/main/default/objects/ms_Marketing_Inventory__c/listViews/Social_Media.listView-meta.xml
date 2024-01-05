@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Social_Media</fullName>
+    <columns>NAME</columns>
+    <columns>ms_Title__c</columns>
+    <columns>ms_Channel__c</columns>
+    <columns>ms_Date__c</columns>
+    <columns>ms_Placement__c</columns>
+    <columns>ms_Supplier__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ms_Channel__c</field>
+        <operation>equals</operation>
+        <value>Social</value>
+    </filters>
+    <label>Social Media</label>
+</ListView>

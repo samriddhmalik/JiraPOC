@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Rating_Stars__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ Deal_Estimated_Margin__c &gt;= 0.25, 
+ IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;5&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    ),
+IF(
+Deal_Estimated_Margin__c &gt;= 0.23, 
+ IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;4&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    ),
+IF(
+Deal_Estimated_Margin__c &gt;= 0.20, 
+ IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;3&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    ),
+IF(
+Deal_Estimated_Margin__c &gt;= 0.16, 
+ IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;2&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    ),
+IF(
+Deal_Estimated_Margin__c &gt; 0.11, 
+ IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;1&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    ),
+IMAGE(
+        &quot;/img/samples/stars_&quot; + &quot;0&quot; + &quot;00.gif&quot;,
+        &quot;Rating Level&quot;
+    )
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This shows the deal star rating based on a scale of 1 (low) - 5 (excellent). This is calculated on the estimated deal margin percentage.  5 stars is &gt;= 25% 4 stars is 23%-24% 3 stars is 20-22%-2  2 stars is 16%-19% 1 star is 11%-15% 0 stars is 0%-10%</inlineHelpText>
+    <label>Deal Rating Stars</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

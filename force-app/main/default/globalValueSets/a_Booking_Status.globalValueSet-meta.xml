@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Booking Form</fullName>
+        <default>false</default>
+        <label>Booking Form</label>
+    </customValue>
+    <customValue>
+        <fullName>call back</fullName>
+        <default>false</default>
+        <label>call back</label>
+    </customValue>
+    <customValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+    </customValue>
+    <customValue>
+        <fullName>ok to ticket</fullName>
+        <default>false</default>
+        <label>ok to ticket</label>
+    </customValue>
+    <customValue>
+        <fullName>ticketed</fullName>
+        <default>false</default>
+        <label>ticketed</label>
+    </customValue>
+    <customValue>
+        <fullName>ticket archived</fullName>
+        <default>false</default>
+        <label>ticket archived</label>
+    </customValue>
+    <customValue>
+        <fullName>pending</fullName>
+        <default>false</default>
+        <label>pending</label>
+    </customValue>
+    <customValue>
+        <fullName>travel pack sent</fullName>
+        <default>false</default>
+        <label>travel pack sent</label>
+    </customValue>
+    <customValue>
+        <fullName>vcxl + ri</fullName>
+        <default>false</default>
+        <label>vcxl + ri</label>
+    </customValue>
+    <customValue>
+        <fullName>vcxl + dup</fullName>
+        <default>false</default>
+        <label>vcxl + dup</label>
+    </customValue>
+    <customValue>
+        <fullName>vcxl + rf</fullName>
+        <default>false</default>
+        <label>vcxl + rf</label>
+    </customValue>
+    <customValue>
+        <fullName>vcxl + cr</fullName>
+        <default>false</default>
+        <label>vcxl + cr</label>
+    </customValue>
+    <customValue>
+        <fullName>vcxl + no rf</fullName>
+        <default>false</default>
+        <label>vcxl + no rf</label>
+    </customValue>
+    <customValue>
+        <fullName>tcxl + no rf</fullName>
+        <default>false</default>
+        <label>tcxl + no rf</label>
+    </customValue>
+    <customValue>
+        <fullName>tcxl + cr</fullName>
+        <default>false</default>
+        <label>tcxl + cr</label>
+    </customValue>
+    <customValue>
+        <fullName>tcxl + rf</fullName>
+        <default>false</default>
+        <label>tcxl + rf</label>
+    </customValue>
+    <customValue>
+        <fullName>no cxl + rf</fullName>
+        <default>false</default>
+        <label>no cxl + rf</label>
+    </customValue>
+    <customValue>
+        <fullName>no cxl + cr</fullName>
+        <default>false</default>
+        <label>no cxl + cr</label>
+    </customValue>
+    <customValue>
+        <fullName>option</fullName>
+        <default>false</default>
+        <label>option</label>
+    </customValue>
+    <customValue>
+        <fullName>booked</fullName>
+        <default>false</default>
+        <label>booked</label>
+    </customValue>
+    <customValue>
+        <fullName>online c/in done</fullName>
+        <default>false</default>
+        <label>online c/in done</label>
+    </customValue>
+    <customValue>
+        <fullName>e tkt archived</fullName>
+        <default>false</default>
+        <label>e tkt archived</label>
+    </customValue>
+    <masterLabel>a_Booking_Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

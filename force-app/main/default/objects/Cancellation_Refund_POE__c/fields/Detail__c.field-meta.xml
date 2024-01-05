@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detail__c</fullName>
+    <externalId>false</externalId>
+    <label>Detail</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TCXL + NO RF: Tour cancellation and no refund</fullName>
+                <default>false</default>
+                <label>TCXL + NO RF: Tour cancellation and no refund</label>
+            </value>
+            <value>
+                <fullName>VCXL + RI: Voucher cancellation and reissue</fullName>
+                <default>false</default>
+                <label>VCXL + RI: Voucher cancellation and reissue</label>
+            </value>
+            <value>
+                <fullName>NO VCXL + DUP: Voucher cancellation due to duplication</fullName>
+                <default>false</default>
+                <label>NO VCXL + DUP: Voucher cancellation due to duplication</label>
+            </value>
+            <value>
+                <fullName>VCXL + CR  - Voucher cancelled and a credit up to the same value of purchase offered</fullName>
+                <default>false</default>
+                <label>VCXL + CR  - Voucher cancelled and a credit up to the same value of purchase offered</label>
+            </value>
+            <value>
+                <fullName>NO CXL + CR - No cancellation + credit: when their tour is NOT CANCELLED but they receive a partial credit</fullName>
+                <default>false</default>
+                <label>NO CXL + CR - No cancellation + credit: when their tour is NOT CANCELLED but they receive a partial credit</label>
+            </value>
+            <value>
+                <fullName>TCXL + CR: TripADeal&apos;s decision to cancel tour and credit</fullName>
+                <default>false</default>
+                <label>TCXL + CR: TripADeal&apos;s decision to cancel tour and credit</label>
+            </value>
+            <value>
+                <fullName>TCXL + RF: Tour cancellation and refund</fullName>
+                <default>false</default>
+                <label>TCXL + RF: Tour cancellation and refund</label>
+            </value>
+            <value>
+                <fullName>NO CXL + RF: No cancellation + refund</fullName>
+                <default>false</default>
+                <label>NO CXL + RF: No cancellation + refund</label>
+            </value>
+            <value>
+                <fullName>VCXL + RF: When the customer has made an incorrect payment or purchased incorrectly</fullName>
+                <default>false</default>
+                <label>VCXL + RF: When the customer has made an incorrect payment or purchased incorrectly</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>No Refund Required</controllingFieldValue>
+            <valueName>TCXL + NO RF: Tour cancellation and no refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No Refund Required</controllingFieldValue>
+            <valueName>VCXL + RI: Voucher cancellation and reissue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No Refund Required</controllingFieldValue>
+            <valueName>NO VCXL + DUP: Voucher cancellation due to duplication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit Note</controllingFieldValue>
+            <valueName>VCXL + CR  - Voucher cancelled and a credit up to the same value of purchase offered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit Note</controllingFieldValue>
+            <valueName>NO CXL + CR - No cancellation + credit: when their tour is NOT CANCELLED but they receive a partial credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Credit Note</controllingFieldValue>
+            <valueName>TCXL + CR: TripADeal&apos;s decision to cancel tour and credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Required</controllingFieldValue>
+            <valueName>TCXL + RF: Tour cancellation and refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Required</controllingFieldValue>
+            <valueName>NO CXL + RF: No cancellation + refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Refund Required</controllingFieldValue>
+            <valueName>VCXL + RF: When the customer has made an incorrect payment or purchased incorrectly</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

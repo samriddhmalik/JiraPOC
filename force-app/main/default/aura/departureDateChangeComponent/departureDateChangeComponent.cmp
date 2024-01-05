@@ -1,0 +1,219 @@
+<aura:component controller="editTadOrderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    <aura:attribute name="prePostUpdate" type="boolean" default="false"/>
+    <aura:attribute name="isPaymentRecived" type="boolean" default="false"/><!--PSAG - 200-->
+    
+    <aura:attribute name="selectAllocation" type="boolean" default="false"/>
+    <aura:attribute name="selectAesbChange" type="boolean" default="false"/>
+    <aura:attribute name="tadOrderData" type="TAD_Order__c"/>
+    <aura:attribute name="originalTadOrderData" type="TAD_Order__c"/>
+    <aura:attribute name="originalTadOrderDataDate" type="Date" default="null"/>
+    <aura:attribute name="hssAmount" type="Decimal" default="0"/>
+    <aura:attribute name="totalAmtOutstanding" type="Decimal" default="0"/>
+    <aura:attribute name="refundAmount" type="Decimal" default="0"/>
+    <aura:attribute name="outstandingAmount" type="Decimal" default="0"/>
+    <aura:attribute name="nightInfo" type="String" default=""/>
+    <aura:attribute name="originalDateRecord" type="String" default=""/>
+    
+    <aura:attribute name="paxInfoQty" type="Decimal" default=""/>
+    
+    <aura:attribute name="allocationData" type="editTadOrderController.allocationTableWrapper[]"/>
+    <aura:attribute name="filteredAllocationData" type="editTadOrderController.allocationTableWrapper[]"/>
+    <aura:attribute name="allocationYearMonthMap" type="Map"/>
+    <aura:attribute name="allocationMonth" type="Decimal"/>
+    <aura:attribute name="allocationMonthList" type="editTadOrderController.relatedFields[]"/>
+    <aura:attribute name="allocationYear" type="Decimal"/>
+    <aura:attribute name="allocationYearList" type="editTadOrderController.relatedFields[]"/>
+    <aura:attribute name="allocationBy" type="String"/>
+    
+    <aura:attribute name="aeSbInfo" type="editTadOrderController.aeSbDataWrapper[]"/>
+    <aura:attribute name="orderInfoSection" type="editTadOrderController.orderInfoSection[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 75rem !important;
+        width:75% !important;
+        }
+        .modal-body{ 
+        height : 75vh !important; 
+        max-height: 75vh !important; 
+        } 
+    </aura:html>
+    
+    <div class="slds-theme_default">
+        
+        <lightning:spinner class="slds-hide" variant="brand" size="medium" aura:id="mySpinner"/>  
+        
+        <aura:if isTrue="{!v.prePostUpdate==false}">
+            <div class="slds-text-align--left slds-text-heading_small">
+                <b>Departure Date :- </b>      <a  href="JavaScript:Void(0);" onclick="{!c.showAllocation}">{!v.tadOrderData.ordexp_departure_date__r.Name}</a> 
+            </div>
+        </aura:if> 
+        
+        <aura:if isTrue="{!v.prePostUpdate==true}">
+            <div class="slds-text-align--left slds-text-heading_small">
+                <b>Departure Date :- </b>      {!v.tadOrderData.ordexp_departure_date__r.Name}
+            </div>
+        </aura:if> 
+        <aura:if isTrue="{!v.selectAllocation==true}">
+            
+            <aura:if isTrue="{!(not(empty(v.orderInfoSection)))}">
+                <br></br>
+                <b>Order Information :-</b>
+                <aura:if isTrue="{!v.nightInfo!=''}">
+                    <br></br>
+                    Number Of Nights =   {!v.nightInfo}  
+                </aura:if>  
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid">
+                    <thead class="header">
+                        <tr class="slds-line-height_reset slds-text-heading_small slds-text-align--center">
+                            <th scope="col" width="46%" class="slds-text-align_center"><b>Name</b></th>
+                            <th scope="col" width="18%" class="slds-text-align_center"><b>Allocation Type</b></th>
+                            <th scope="col" width="18%" class="slds-text-align_center"><b>Number Of Pax</b></th>
+                            <th scope="col" width="18%" class="slds-text-align_center"><b>Allocation Required</b></th>
+                        </tr>      
+                    </thead> 
+                    
+                    <tbody class="body">
+                        <aura:iteration items="{!v.orderInfoSection}" var="rd" indexVar="index">
+                            <tr>
+                                <td scope="row" class="slds-text-align--left"><ui:outputText value="{!rd.allocationName}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.allocationType}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.paxQty}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.allocationRequired}"/></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table> 
+            </aura:if> 
+            
+            <br></br>
+            <b> Check Available Allocation ( {!v.tadOrderData.ordexp_allocation_by__c} ) :-</b>
+            <div class="slds-grid slds-gutters">
+                
+                <div class="slds-col">      
+                    <lightning:select label="Select Year" aura:id="allocationYear" value ="{!v.allocationYear}" onchange="{!c.getMonths}">
+                        <option value="" text="--- NONE ---"/> 
+                        <aura:iteration items="{!v.allocationYearList}" var="item">
+                            <option value="{!item.value}" text="{!item.text}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div> 
+                
+                <div class="slds-col">
+                    <lightning:select label="Select Month" aura:id="allocationMonth" value ="{!v.allocationMonth}" onchange="{!c.filterAllocation}">
+                        <option value="" text="--- NONE ---"/> 
+                        <aura:iteration items="{!v.allocationMonthList}" var="item">
+                            <option value="{!item.value}" text="{!item.text}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>  
+                
+            </div>
+            <br></br>
+            <div class="slds-scrollable_y" style="height:19rem">
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid">
+                    <thead class="header">
+                        <tr class="slds-line-height_reset slds-text-heading_small slds-text-align--center">
+                            <th scope="col" width="37%" class="slds-text-align_center"><b>Name</b></th>
+                            <th scope="col" width="15%" class="slds-text-align_center"><b>Date</b></th>
+                            <th scope="col" width="18%" class="slds-text-align_center"><b>Allocation Remaining</b></th>
+                            <th scope="col" width="15%" class="slds-text-align_center"><b>HSS Amount</b></th>
+                            <th scope="col" width="15%" class="slds-text-align_center"><b>Status</b></th>
+                        </tr>      
+                    </thead> 
+                    
+                    <tbody class="body">
+                        <aura:iteration items="{!v.filteredAllocationData}" var="rd" indexVar="index">
+                            <tr>
+                                <td scope="row" class="slds-text-align--left slds-truncate"><ui:outputText value="{!rd.allRecordName}"/></td>
+                                <td scope="row" class="slds-text-align--center" name="{!index}">
+                                    <a  href="JavaScript:Void(0);" data-record="{!index}"  onclick="{!c.updateDepartureDate}"><p>{!rd.dateName}</p></a>
+                                </td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.remainingAllocation}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.surcharge}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.status}"/></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table> 
+            </div> 
+        </aura:if> 
+        
+        
+        <aura:if isTrue="{!v.selectAesbChange==true}">
+            <br></br>
+            <aura:if isTrue="{!(not(empty(v.aeSbInfo)))}">
+                <b>Would you like to change the date of your Arrive Early/Stay Behind?</b> 
+                
+                <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_fixed-layout" role="grid">
+                    <thead class="header">
+                        <tr class="slds-line-height_reset slds-text-heading_small slds-text-align--center">
+                            <th scope="col" width="25%" class="slds-text-align_center"><b>Date</b></th>
+                            <th scope="col" width="50%" class="slds-text-align_center"><b>AE/SB Name</b></th>
+                            <th scope="col" width="25%" class="slds-text-align_center"><b>Passenger</b></th>
+                        </tr>      
+                    </thead> 
+                    
+                    <tbody class="body">
+                        <aura:iteration items="{!v.aeSbInfo}" var="rd" indexVar="index">
+                            <tr>
+                                <td scope="row" class="slds-text-align--center"><lightning:input variant="label-hidden" name="aesbDate" value ="{!rd.aeSbDate}" type="date" min="{!rd.minDate}" max="{!rd.maxDate}"/></td>
+                                <td scope="row" class="slds-text-align--left"><ui:outputText value="{!rd.aesbName}"/></td>
+                                <td scope="row" class="slds-text-align--center"><ui:outputText value="{!rd.paxName}"/></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table> 
+            </aura:if>
+        </aura:if> 
+        
+        <br></br>
+        <br></br>
+        <div class="slds-text-align--left slds-text-heading_small">
+            <aura:if isTrue="{!v.isPaymentRecived==true}">
+            <div class="slds-p-horizontal--large">
+                <b>FINANCIAL SUMMARY</b>
+            </div> 
+            <br></br>
+            <div class="slds-p-horizontal--large">
+                Current HSS amount:   <ui:outputCurrency value="{!v.hssAmount}"/>
+            </div> 
+            </aura:if>
+        </div>
+        <br></br>
+        <br></br>
+        
+        <aura:if isTrue="{!v.prePostUpdate==false}">
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Update" title="Update" onclick="{! c.updateTadOrder }" disabled="{!equals(v.tadOrderData.ordexp_departure_date__c , v.tadOrderData.ordexp_departure_date__r.Id)}"/>
+                <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopup }"/>
+            </div>
+        </aura:if> 
+        <br></br>
+        
+        <aura:if isTrue="{!v.prePostUpdate==true}">
+            <aura:if isTrue="{!v.isPaymentRecived==true}"><!--PSAG - 200 -->
+            <div class="slds-text-align--left slds-text-heading_small">
+                <div class="slds-p-horizontal--large">
+                    <b>FINANCIAL SUMMARY CONFIRMATION</b>
+                </div> 
+                <br></br>
+                <div class="slds-p-horizontal--large">
+                    Refund Amount:   <ui:outputCurrency value="{!v.refundAmount}"/>
+                </div>
+                <div class="slds-p-horizontal--large">
+                    Outstanding HSS Amount:   <ui:outputCurrency value="{!v.outstandingAmount}"/>
+                </div>
+            </div>
+            </aura:if>
+            <div class="slds-text-align--center">
+                <lightning:button variant="brand" label="Confirm" title="Confirm" onclick="{! c.confirmTadOrder }" disabled="{!equals(v.tadOrderData.ordexp_departure_date__c , v.tadOrderData.ordexp_departure_date__r.Id)}"/>
+                <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closePopupRevert }"/>
+            </div>
+        </aura:if> 
+    </div>
+    
+</aura:component>

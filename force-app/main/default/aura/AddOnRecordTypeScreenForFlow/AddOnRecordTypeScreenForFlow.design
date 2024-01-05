@@ -1,0 +1,8 @@
+<design:component>
+		 <design:attribute name="dealId" label="Deal Id" description="attribute in deal id of Tad Order shall be passed"/>
+		 <design:attribute name="selectedRT" label="AddOn RT" description="to store the AddOn RT"/>
+         <design:attribute name="tadOrderId" label="TAD Order Id" description="to store the TAD Order ID"/>
+    
+    <design:attribute name="sourceObject" label="Source Object" description="To store the Object from where Component is being initiated"/>
+    
+</design:component>

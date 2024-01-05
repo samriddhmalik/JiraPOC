@@ -1,0 +1,130 @@
+<!--
+ @description       : 
+ @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ @group             : 
+ @last modified on  : 06-15-2023
+ @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+	<lightning-card title="">
+
+			<template if:true={subStatusTrue}>
+					<template if:true={showSpinner} >
+							<lightning-spinner alternative-text="Loading" size="medium" class="spinnerClass"></lightning-spinner>
+					</template>
+
+					<table style="margin-top:10px">
+							<thead>
+									<td><b>Order Number : </b></td>
+									<td>
+											<div style="margin-top:-10px">{orderdata.Ordernumber}</div>
+									</td>
+							</thead>
+							
+							<thead>
+								<td>
+									<br></br>
+								</td>
+							</thead>
+			
+			
+			      	<thead>
+									<td><b>Email Recipient : </b></td>
+									<td>
+											<div style="margin-top:-20px">
+													<lightning-input 
+																					 type="email" 
+																					 data-element="email" 
+																					 label=""
+																					 onchange={onEmailChanges}
+																					 value={orderdata.Email}
+																					 style = "inline-size: 250px;"> 
+													</lightning-input>
+																			</div>
+									</td>
+							</thead>
+			         
+ 
+							<thead>
+									<td><b>Payment link to Customer Amount($) : </b></td>
+									<td>
+											<div style="margin-top:-10px">
+													<lightning-input 
+																					 type="decimal" 
+																					 data-element="decimal" 
+																					 label=""
+																					 onchange={OrderAmountOutStandingChanges}
+																					 value={orderdata.OrderAmountOutStanding}
+																					 style = "inline-size: 250px;"> 
+													</lightning-input>
+																			</div>
+									</td>
+							</thead>
+							<thead>
+								<td>
+									<br>
+									
+								</br>
+								</td>
+							</thead>
+							
+								<thead >
+								
+										<td>		<div style="margin-top:10px"><b>Notify Me : </b></div></td>
+									<td>
+			 <div class="slds-col">
+			  <lightning-input type="checkbox"  onchange={checkboxchange}  > 
+			 </lightning-input>
+				 </div>
+										   </td>
+								
+								
+							</thead>
+							
+							<thead>
+								<td>
+									<br></br>
+								</td>
+							</thead>
+								<thead>
+										<td><div style="margin-top:10px"><b>Notify User : </b></div></td>
+									<td>
+								<div style="margin-top:-30px">			
+<c-taduserlookup  object-api-name="User" icon-name="standard:user"  
+									onrecordselection={onUserSelection}  style="margin-left : 100px;"></c-taduserlookup> </div>
+										   </td>
+							</thead>
+					
+							
+							
+							<thead>
+								<td>
+									<br></br>
+								</td>
+							</thead>
+							<tbody>
+									<td><div style="margin-top:10px"><b>Link Have Validity : </b></div>
+									</td>
+									<td>
+											<lightning-input type="datetime" 
+																			 name="link have validity" 
+																			 onchange={OnchangeFieldValue}
+																			 style = "inline-size: 250px;margin-left: -10px;"
+																			 >
+											</lightning-input>  
+									</td>
+							</tbody>
+					</table>
+					<div class="slds-align_absolute-center" style="margin-top:20px;">
+							<lightning-button variant="brand" name="Finish" label="Send Payment Link" onclick={saveButtoncaseDetails}></lightning-button>
+<lightning-button variant="brand" label="Cancel" onclick={closeQuickAction} style="margin-left:10px"></lightning-button>
+					</div>
+			</template>
+			<template if:true={subStatusfalse}>
+					<b>There is no due outstanding Amount or Order is cancelled.</b>
+			</template>
+			<template if:true={subStatusfalseQuote}>
+				<b>Payment cannot be applied unless order allocations are secured</b>
+			</template>
+	</lightning-card>
+</template>

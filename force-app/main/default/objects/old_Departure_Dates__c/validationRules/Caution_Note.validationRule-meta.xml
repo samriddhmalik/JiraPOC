@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Caution_Note</fullName>
+    <active>true</active>
+    <errorConditionFormula>and(  ISPICKVAL(Status__c,&apos;Caution&apos;)  , ISBLANK(  Caution_Note__c  ) )</errorConditionFormula>
+    <errorDisplayField>Caution_Note__c</errorDisplayField>
+    <errorMessage>If Caution Selected a &apos;Caution Note&apos; must be added.</errorMessage>
+</ValidationRule>

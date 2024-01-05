@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>land_activity__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Land Activity</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>land_activity__c.Deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>land_activity__c.order_filter__c</field>
+            <operation>contains</operation>
+            <valueField>$Source.order_record_type_name__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>land_activity__c</referenceTo>
+    <relationshipLabel>order</relationshipLabel>
+    <relationshipName>order</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

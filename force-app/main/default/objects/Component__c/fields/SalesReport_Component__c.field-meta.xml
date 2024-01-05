@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesReport_Component__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK( Options__r.Name )),TEXT(Component_Type__c) &amp; &quot;-&quot; &amp; Options__r.MP_Option_Tittle__c,IF(NOT(ISBLANK( Sub_Options__r.Name )),TEXT(Component_Type__c) &amp; &quot;-&quot; &amp; Trim(Sub_Options__r.title__c),IF(NOT(ISBLANK( Land_Activity__r.Name )),TEXT(Component_Type__c) &amp; &quot;-&quot; &amp; Trim(Land_Activity__r.MP_Land_Activity_Tittle__c), IF(NOT(ISBLANK( AE_SB__r.Name )),TEXT(Component_Type__c) &amp; &quot;:&quot; &amp; Trim(AE_SB__r.City__c), IF(NOT(ISBLANK( Airline_Upgrade__r.Name )),TEXT(Component_Type__c) &amp; &quot;:&quot; &amp; Trim(Airline_Upgrade__r.Name), IF(NOT(ISBLANK( Stopover__r.Name)),TEXT(Component_Type__c) &amp; &quot;:&quot; &amp; Trim(Stopover__r.Name),IF(NOT(ISBLANK( City__r.Name )), Trim(City__r.departure_airport_code__c) &amp; &quot;:&quot; &amp; Trim(City__r.Name),IF(AND(NOT(ISBLANK( Deal__r.Name)),NOT(ISBLANK(Deal__r.title__c ))),TEXT(Component_Type__c) &amp; &quot;-&quot; &amp; Trim(Deal__r.title__c),IF(AND(NOT(ISBLANK( Deal__r.Name)),NOT(ISBLANK( Trim(Deal__r.title_nz__c)))),TEXT(Component_Type__c) &amp; &quot;-&quot; &amp; Trim(Deal__r.title_nz__c),&quot;Information Not Available&quot;)))))))))
+
+/*
+IF(NOT(ISBLANK( Options__r.Name )),TEXT(Component_Type__c) &amp; &quot;-:&quot; &amp; Options__r.MP_Option_Tittle__c,IF(NOT(ISBLANK( Sub_Options__r.Name )),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Sub_Options__r.MP_SubOption_Tittle__c),IF(NOT(ISBLANK( Land_Activity__r.Name )),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Land_Activity__r.MP_Land_Activity_Tittle__c), IF(NOT(ISBLANK( AE_SB__r.Name )),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(AE_SB__r.City__c), IF(NOT(ISBLANK( Airline_Upgrade__r.Name )),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Airline_Upgrade__r.Name), IF(NOT(ISBLANK( Stopover__r.Name)),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Stopover__r.Name),IF(NOT(ISBLANK( City__r.Name )), Trim(City__r.departure_airport_code__c) &amp; &quot;:-&quot; &amp; Trim(City__r.Name),IF(AND(NOT(ISBLANK( Deal__r.Name)),NOT(ISBLANK(Deal__r.title__c ))),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Deal__r.title__c),IF(AND(NOT(ISBLANK( Deal__r.Name)),NOT(ISBLANK( Trim(Deal__r.title_nz__c)))),TEXT(Component_Type__c) &amp; &quot;:-&quot; &amp; Trim(Deal__r.title_nz__c),&quot;Information Not Available&quot;))))))))) */</formula>
+    <label>SalesReport Component</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

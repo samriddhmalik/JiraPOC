@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Package_PP__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( A_C_I__c = &quot;CNN&quot;,  PAF_Quote__r.PAF_Packagee__r.Child_Total__c , 
+ IF(A_C_I__c = &quot;INF&quot;,  PAF_Quote__r.PAF_Packagee__r.Infant_Total__c ,  PAF_Quote__r.PAF_Packagee__r.Adult_Total__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Package PP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

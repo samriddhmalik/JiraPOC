@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Sailaway Reef &amp; Island Tours (Port Douglas) Customer User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Sailaway Reef &amp; Island Tours (Port Douglas) Customer User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>Travel_Consultant</parentRole>
+</Role>

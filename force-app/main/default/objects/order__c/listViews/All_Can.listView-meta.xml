@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Can</fullName>
+    <columns>NAME</columns>
+    <columns>deal__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>City__c</columns>
+    <columns>user_email__c</columns>
+    <columns>user_id__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>Sale_Value__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>is_phone_sale__c</columns>
+    <columns>qty__c</columns>
+    <columns>HSS__c</columns>
+    <columns>Departure_City_Surcharge__c</columns>
+    <columns>payment_type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Cancelled</value>
+    </filters>
+    <label>All - Cancelled</label>
+    <sharedTo>
+        <role>Customer_Service_Manager</role>
+    </sharedTo>
+</ListView>

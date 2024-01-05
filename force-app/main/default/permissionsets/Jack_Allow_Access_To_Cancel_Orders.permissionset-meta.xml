@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>allows jack to set order status to cancelled</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>order__c.order_status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Jack Allow Access To Cancel Orders</label>
+</PermissionSet>

@@ -1,0 +1,35 @@
+<apex:page standardController="order__c" extensions="TADGlobalOrderController" id="TADGlobalOrder">
+    <apex:sectionHeader title="New TripADeal Order" subTitle="Another travel dream about to come true!" />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveOverride}" />
+                <apex:commandButton value="Cancel" action="{!doCancel}" immediate="true" />
+            </apex:pageBlockButtons>
+            <apex:messages ></apex:messages>
+            <apex:pageBlockSection >
+                <apex:outputField label="Record Type" value="{!order.RecordTypeId}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="Account" value="{!order.Account__c}" required="true"/>
+                <apex:inputField label="Postcode" value="{!order.POSTCODE__c}" required="true"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="Deal" value="{!order.deal__c}" required="true"/>
+                <apex:inputField label="Quantity" value="{!order.qty__c}" required="true"/>
+                <apex:inputField label="Option" value="{!order.Options__c}" required="true"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="Sub Option" value="{!order.Sub_Options__c}" required="true"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="Departure Date" value="{!order.departures_dates__c}" required="true"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="Departure City" value="{!order.departure_cities__c}" required="true"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageMessages ></apex:pageMessages>
+                <apex:inputField label="SiteMinder Start Date" value="{!order.SiteMinder_Start_Date__c }" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputField label="SiteMinder End Date" value="{!order.SiteMinder_End_Date__c }" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

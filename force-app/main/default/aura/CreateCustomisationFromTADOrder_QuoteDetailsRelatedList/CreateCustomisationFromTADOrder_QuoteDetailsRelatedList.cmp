@@ -1,0 +1,213 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="CreateCustomFromTADOrder" >
+    
+    <aura:attribute name="recordList" type="List"/>
+    <aura:attribute name="recordListSingle" type="CreateCustomFromTADOrder.quoteDetailWrapper"/>
+    <aura:attribute name="recordListSingle2" type="CreateCustomFromTADOrder.quoteDetailWrapper"/>
+    <aura:attribute name="quoteDetailAvailableForPicklist" type="List"/>
+    <aura:attribute name="quoteDetailStatusPicklist" type="List"/>
+    
+    <aura:attribute name = "consolidatedPriceToBeSent" type="Decimal"/>
+    <aura:attribute name = "masterCheckboxSelect" type="Boolean"/>
+    <aura:attribute name = "selectedQuoteDetailsId" type="List"/>
+    
+    <aura:attribute name="isModalOpen" type="Boolean" default="false"/>
+    <aura:attribute name="recordListSingleID" type="String"/>
+    <aura:attribute name="merchantNameToBeDisplayed" type="String"/>
+    <aura:attribute name="merchantCurrencyToBeDisplayed" type="String"/>
+    <aura:attribute name="quoteApprovalStatusToBeDisplayed" type="String"/>
+    
+    
+    <aura:attribute name="isEditing" type="boolean" default="false" />
+    <aura:attribute name="recordListBackup" type="List"/>
+    <aura:attribute name="OCStatus" type="String"/>   
+      
+    <aura:attribute name="requestStatusOptions" type="List"/> 
+    <aura:attribute name="currentIndex" type="Integer" default="-1"/>
+    <aura:attribute name="Decline" type="String" default="Decline"/>
+    <aura:attribute name="Approve" type="String" default="Approve"/>
+    <aura:attribute name="Pending" type="String" default="Pending"/> 
+    <aura:attribute name="CustomerApproved" type="String" default="CustomerApproved"/> 
+    <aura:attribute name="QuoteReceived" type="String" default="Quote Received"/>
+    <aura:attribute name="QuoteDecline" type="String" default="Quote Decline"/>
+    <aura:attribute name="QuoteRequested" type="String" default="Quote Requested"/>
+    <aura:attribute name="QuoteAccepted" type="String" default="Quote Accepted"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   
+    <aura:handler name="change" value="{!v.OCStatus}" action="{!c.doChange}"/>   
+    
+    
+    <div style="height: 100%; position: relative;">
+       
+        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" style="table-layout:fixed">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col" style="width:4%">
+                        <div class="slds-truncate">
+                            <ui:inputCheckbox aura:id="masterRecordSelector" change="{!c.checkAllTheEnabledCheckboxes}"/>
+                        </div>
+                    </th>
+                    <th class="" scope="col" style="width:8%">
+                        <div class="slds-truncate" title="Merchant Name">Merchant Name</div>
+                    </th>
+                    <th class="" scope="col" style="width:8%">
+                        <div class="slds-truncate" title="Quote Status">Quote Status</div>
+                    </th>
+                    <th class="" scope="col" style="width:11%">
+                        <div class="slds-truncate" title="Merchant Quote Status">Merchant Quote Status</div>
+                    </th>
+                    <th class="" scope="col" style="width:14%">
+                        <div class="slds-truncate" title="Merchant Quoted Details">Merchant Quoted Details</div>
+                    </th>
+                    <th class="" scope="col" style="width:14%">
+                        <div class="slds-truncate" title="Merchant Decline Reason">Merchant Decline Reason</div>
+                    </th>
+                    <th class="" scope="col" style="width:10%">
+                        <div class="slds-truncate" title="Quote Available For">Quote Available For</div>
+                    </th>
+                    <th class="" scope="col" style="width:8%">
+                        <div class="slds-truncate" title="Merchant Price">Merchant Price</div>
+                    </th>
+                    <th class="" scope="col" style="width:10%">
+                        <div class="slds-truncate" title="Merchant Currency">Merchant Currency</div>
+                    </th>
+                    <th class="" scope="col" style="width:7%">
+                        <div class="slds-truncate" title="TAD Price">TAD Price</div>
+                    </th>
+                    <th class="" scope="col" style="width:7%">
+                        <div class="slds-truncate" title="TAD Currency">TAD Currency</div>
+                    </th>
+                    <th class="" scope="col" style="width:6%">
+                        <div class="slds-truncate"/>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.recordList}" var="record"  indexVar="index"> 
+                    <tr class="slds-hint-parent">
+                        <td>
+                            <ui:inputCheckbox aura:id="recordSelected" change="{!c.addTheCheckedRows}" value="{!record.check}" name="{!index}" disabled ="{!or(or(or(record.requestStatus == 'Quote Decline',record.merchantQuoteApprovalStatus == 'Decline'),lessthanorequal(record.tadPrice,0)),empty(record.tadPrice))}"/> </td>
+                        <td data-label="Merchant Name">
+                            <div class="slds-truncate tableWrap">{!record.merchantName}</div>
+                        </td>
+                        <td data-label="Quote Status">
+                            <div class="slds-truncate tableWrap">{!record.requestStatus}</div>
+                        </td>
+                        <td data-label="Merchant Quote Status">
+                            <div class="slds-truncate tableWrap">{!record.merchantQuoteApprovalStatus}</div>
+                        </td>
+                        <td data-label="Merchant Quoted Details">
+                            <div class="slds-truncate tableWrap">{!record.merchantQuoteDetails}</div>
+                        </td>
+                        <td data-label="Merchant Decline Reason">
+                            <div class="slds-truncate tableWrap">{!record.merchantDeclineReason}</div>
+                        </td>
+                        <td data-label="Quote Available For">
+                            <div class="slds-truncate tableWrap">{!record.quoteAvailableFor}</div>
+                        </td>
+                        <td data-label="Merchant Price">
+                            <div class="slds-truncate tableWrap">{!record.merchantPrice}</div>
+                        </td>
+                        <td data-label="Merchant Rate">
+                            <div class="slds-truncate tableWrap">{!record.merchantCurrency}</div>
+                        </td>
+                        <td data-label="TAD Price">
+                            <div class="slds-truncate tableWrap">{!record.tadPrice}</div>
+                        </td>
+                        <td data-label="TAD Currency">
+                            <div class="slds-truncate tableWrap">{!record.tadCurrency}</div>
+                        </td>
+                        
+                        <td data-label="Edit Button" value="{!index}">
+                            <lightning:button name="EditAuraID" label="Edit" value="{!index}" variant="brand" onclick="{!c.onButtonPressed}" disabled ="{!or(or(record.requestStatus == 'Quote Decline',record.requestStatus == 'Customer Accepted'),record.merchantQuoteApprovalStatus == 'Decline')}"/>
+                        </td>
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        <aura:if isTrue="{!v.isModalOpen}">
+             
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Edit Quote Detail Record</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!-- Data to be inserted  -->
+                         <b>Merchant Name</b><br></br>       
+                        <ui:outputText value="{!v.recordListSingle.merchantName}"/><br/><br/>
+                        
+                        <lightning:select name="qdStatus"
+                                      value="{!v.recordListSingle.requestStatus}"
+                                      label="Quote Status"
+                                      aura:id="pickListOptionForQuoteStatus">
+                            <option value="" default="true">--- NONE ---</option>
+                            <option value="Quote Received">Quote Received</option>
+                        <!--    <option value="Quote Sent To Customer">Quote Sent To Customer</option>   -->
+                            <option value="Quote Decline">Quote Decline</option>
+                        </lightning:select><br></br>
+                        
+                        <lightning:select name="merchantQuoteApprovalStatus"
+                                      value="{!v.recordListSingle.merchantQuoteApprovalStatus}"
+                                      label="Merchant Quote Status"
+                                      aura:id="pickListOptionForQuoteStatus">
+                             <option value="" default="true">--- NONE ---</option>
+                       	     <option value="Accept">Accept</option>
+                             <option value="Decline">Decline</option>
+                        </lightning:select><br></br>
+                        
+                        
+                        
+                      <!--  <b>Merchant Quoted Details</b><br></br> -->
+                        <lightning:textarea name="myTextArea" value="{!v.recordListSingle.merchantQuoteDetails}" label="Merchant Quoted Details" maxlength="255"/><br></br>
+                        
+                     <!--   <b>Merchant Decline Reason</b>   -->
+                         <lightning:textarea name="myTextArea" value="{!v.recordListSingle.merchantDeclineReason}" label="Merchant Decline Reason" maxlength="255" /><br></br>
+                        
+                         <lightning:select name="qdAvailableFor"
+                                      value="{!v.recordListSingle.quoteAvailableFor}"
+                                      label="Quote Available For"
+                                      aura:id="pickListOption">
+                        <aura:iteration items="{!v.quoteDetailAvailableForPicklist}" var="qd">
+                            <option value="{!qd}">{!qd}</option>
+                        </aura:iteration>
+                        </lightning:select><br></br>
+                        
+                        <ui:inputCurrency aura:id="amount" label="Merchant Price" class="field" value="{!v.recordListSingle.merchantPrice}" updateOn="keyup"/><br></br>
+                        
+                        <b>Merchant Currency</b><br></br>       
+                        <ui:outputText value="{!v.recordListSingle.merchantCurrency}"/><br/><br/>
+                        
+                         <b>TAD Price</b><br></br>       
+                         {!v.recordListSingle.tadCurrency} &nbsp; <ui:outputText value="{!v.recordListSingle.tadPrice}"/><br/><br/>
+	                             
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{! c.closeModel }"/>
+                        <lightning:button variant="brand"
+                                          label="Save"
+                                          title="Save"
+                                          onclick="{!c.submitDetails}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+        
+    </div>
+    
+    
+</aura:component>

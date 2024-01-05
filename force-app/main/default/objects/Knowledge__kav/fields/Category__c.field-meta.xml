@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contact</fullName>
+                <default>false</default>
+                <label>Contact</label>
+            </value>
+            <value>
+                <fullName>Customisations</fullName>
+                <default>false</default>
+                <label>Customisations</label>
+            </value>
+            <value>
+                <fullName>Deal</fullName>
+                <default>false</default>
+                <label>Deal</label>
+            </value>
+            <value>
+                <fullName>Deal FAQs</fullName>
+                <default>false</default>
+                <label>Deal FAQs</label>
+            </value>
+            <value>
+                <fullName>Deal Pricing FAQs</fullName>
+                <default>false</default>
+                <label>Deal Pricing FAQs</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>General - Account</fullName>
+                <default>false</default>
+                <label>General - Account</label>
+            </value>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Payment</fullName>
+                <default>false</default>
+                <label>Payment</label>
+            </value>
+            <value>
+                <fullName>PIF</fullName>
+                <default>false</default>
+                <label>PIF</label>
+            </value>
+            <value>
+                <fullName>Post Purchase</fullName>
+                <default>false</default>
+                <label>Post Purchase</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Sales - Brochures</fullName>
+                <default>false</default>
+                <label>Sales - Brochures</label>
+            </value>
+            <value>
+                <fullName>Sales - Flights Only</fullName>
+                <default>false</default>
+                <label>Sales - Flights Only</label>
+            </value>
+            <value>
+                <fullName>Sales - How to order</fullName>
+                <default>false</default>
+                <label>Sales - How to order</label>
+            </value>
+            <value>
+                <fullName>Travel Advice</fullName>
+                <default>false</default>
+                <label>Travel Advice</label>
+            </value>
+            <value>
+                <fullName>Travel Documentation</fullName>
+                <default>false</default>
+                <label>Travel Documentation</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

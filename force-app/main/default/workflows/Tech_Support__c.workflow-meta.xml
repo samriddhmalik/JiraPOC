@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Tech_Support_Draft_Notification</fullName>
+        <description>Tech Support - Draft Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Tech_Ticket_Draft</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Support_Rejected_Withdrawn</fullName>
+        <description>Tech Support Rejected/Withdrawn</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Tech_Ticket_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Ticket_Approved</fullName>
+        <description>Tech Ticket Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>noreply@tripadeal.com.au</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Internal_Correspondence/Tech_Ticket_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Ticket_Completed</fullName>
+        <description>Tech Ticket Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tech_Ticket_Completed</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Ticket_More_information_required</fullName>
+        <description>Tech Ticket - More information required</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tech_Ticket_More_Info_Required</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Ticket_Requires_Approval</fullName>
+        <description>Tech Ticket Requires Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tech_Ticket_Requires_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Tech_Ticket_for_Op_Manager_specific_approval</fullName>
+        <description>Tech Ticket - for Op Manager specific approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>matt.wolfenden@tripadeal.com.au</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tech_Ticket_Requires_Approval_Op_Manager</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved - Pending assignment</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Withdrawn</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Submitted_for_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted for approval</literalValue>
+        <name>Set Status to Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_owner_to_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Tech_Support_Queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set owner to Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Google_CHat</fullName>
+        <apiVersion>52.0</apiVersion>
+        <endpointUrl>https://chat.googleapis.com/v1/spaces/AAAANBKF-lk/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&amp;token=QhQKkABg3-4x_tD8F3sMyPAXHD4k-3AhQ7DpraYLX9g%3D</endpointUrl>
+        <fields>CreatedById</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedById</fields>
+        <fields>Name</fields>
+        <fields>Subject__c</fields>
+        <fields>Whats_Required__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>adam@tripadeal.com.au</integrationUser>
+        <name>Google CHat</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Google Chat%28Tech%29</fullName>
+        <actions>
+            <name>Google_CHat</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Tech_Support__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Approved - Pending assignment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Tech_Support__c.Priority__c</field>
+            <operation>equals</operation>
+            <value>&quot;Urgent - Complete loss of service or a significant failure, no workaround exists.&quot;</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send email to Tech Support Owner on Actioned</fullName>
+        <actions>
+            <name>Tech_Ticket_Completed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Tech_Support__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Actioned</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send email to Tech Support Owner on More Info Req</fullName>
+        <actions>
+            <name>Tech_Ticket_More_information_required</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Tech_Support__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Assigned - Further information required</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

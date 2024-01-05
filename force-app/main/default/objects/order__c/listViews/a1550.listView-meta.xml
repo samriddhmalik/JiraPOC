@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a1550</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>full_name_purchaser__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>qty__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Sale_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>equals</operation>
+        <value>1550,1732</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Pending Cancellation,Cancelled,Expired</value>
+    </filters>
+    <label>(All Sales)Dash Hotel</label>
+    <sharedTo>
+        <group>Stay_BDM</group>
+        <portalRole>DashHotelSeminyakBaliCustomerUser</portalRole>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orders_BER_Semd</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>CVC__c</columns>
+    <columns>BER_Helper__c</columns>
+    <columns>BER_Refund_Amount__c</columns>
+    <columns>BER_Coupon_Amount__c</columns>
+    <columns>BER_Withholding_Amount__c</columns>
+    <columns>BER_Withholding_Details__c</columns>
+    <columns>CVC_Exclusives_Supplier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CVC__c</field>
+        <operation>contains</operation>
+        <value>BER Send</value>
+    </filters>
+    <label>BER Send Offer</label>
+    <sharedTo>
+        <group>IT_Team</group>
+        <role>Head_of_Product</role>
+    </sharedTo>
+</ListView>

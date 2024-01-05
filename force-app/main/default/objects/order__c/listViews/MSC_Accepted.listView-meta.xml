@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MSC_Accepted</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>Account__c</columns>
+    <columns>order_status__c</columns>
+    <columns>MSC_Accepted__c</columns>
+    <columns>qty__c</columns>
+    <columns>PAX_Travelling__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MSC_Accepted__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>MSC Accepted</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

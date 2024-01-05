@@ -1,0 +1,22 @@
+<apex:page standardController="c2g__codaJournal__c" recordSetVar="journal" extensions="discardJournalController" lightningStylesheets="True">
+    
+    <!--
+<flow:interview name="Object_Journal_DiscardJournalFlow">
+<apex:param name="ids" value="{!selectedJournalIDs}" />
+</flow:interview> -->
+    
+    <apex:includeLightning />
+    <div id="compContainer" />
+    <script>
+    $Lightning.use("c:discardJournalApplication", function() {
+        $Lightning.createComponent("c:discardJournal",
+                                   {journalValueFromVf:"{!selectedJournalIDs}"},
+                                   "compContainer",
+                                   function(cmp) {
+                                       console.log("c:VFPageApp loaded successfully in VF page");
+                                   }
+                                  );
+    });
+    </script>
+    
+</apex:page>

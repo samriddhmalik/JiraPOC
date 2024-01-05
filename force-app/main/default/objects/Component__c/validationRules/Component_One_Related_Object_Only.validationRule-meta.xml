@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component_One_Related_Object_Only</fullName>
+    <active>true</active>
+    <description>One and only of these to be populated please: Deal or Option or Sub Option or Land Activity or AE/SB or AE/SB Accommodation or Stopover or Airline Upgrade</description>
+    <errorConditionFormula>IF(NOT(ISBLANK( Deal__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( Options__c )), NOT(AND(ISBLANK( Deal__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( Sub_Options__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Deal__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( Land_Activity__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Deal__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( AE_SB__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( Deal__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( mp_AE_SB_Accommodation__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( Deal__c ), ISBLANK( AE_SB__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( Stopover__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Deal__c ), ISBLANK( Airline_Upgrade__c ), ISBLANK( City__c ))),
+IF(NOT(ISBLANK( City__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Deal__c ), ISBLANK( Stopover__c ), ISBLANK( Airline_Upgrade__c ))),
+IF(NOT(ISBLANK( Airline_Upgrade__c )), NOT(AND(ISBLANK( Options__c ), ISBLANK( Sub_Options__c ), ISBLANK( Land_Activity__c ), ISBLANK( AE_SB__c ), ISBLANK( mp_AE_SB_Accommodation__c ), ISBLANK( Stopover__c ), ISBLANK( Deal__c ), ISBLANK( City__c ))),
+true)
+)
+)
+)
+)
+)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>You can only populate one of the following: Deal, Option, Sub Option, Land Activity, AE/SB, AE/SB Accommodation, Stopover, Airline Upgrade, City.</errorMessage>
+</ValidationRule>

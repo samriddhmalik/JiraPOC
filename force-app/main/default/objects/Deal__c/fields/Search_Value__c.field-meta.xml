@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Value__c</fullName>
+    <externalId>false</externalId>
+    <label>Search Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 for 1</fullName>
+                <default>false</default>
+                <label>2 for 1</label>
+            </value>
+            <value>
+                <fullName>NRL Deals</fullName>
+                <default>false</default>
+                <label>NRL Deals</label>
+            </value>
+            <value>
+                <fullName>NBA Deals</fullName>
+                <default>false</default>
+                <label>NBA Deals</label>
+            </value>
+            <value>
+                <fullName>BBL Deals</fullName>
+                <default>false</default>
+                <label>BBL Deals</label>
+            </value>
+            <value>
+                <fullName>Cricket Deals</fullName>
+                <default>false</default>
+                <label>Cricket Deals</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

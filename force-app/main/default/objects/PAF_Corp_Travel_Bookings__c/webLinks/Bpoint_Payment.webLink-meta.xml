@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bpoint_Payment</fullName>
+    <availability>online</availability>
+    <description>New bpoint payment in window</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Bpoint Payment</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/NewPayment?paxid={!PAF_Corp_Travel_Bookings__c.PAXId__c}&amp;tbid={!PAF_Corp_Travel_Bookings__c.Id}&amp;tbname={!PAF_Corp_Travel_Bookings__c.Name}&amp;amt={!PAF_Corp_Travel_Bookings__c.Amount_Outstanding__c}&amp;sub={!PAF_Corp_Travel_Bookings__c.RecordType}</url>
+</WebLink>

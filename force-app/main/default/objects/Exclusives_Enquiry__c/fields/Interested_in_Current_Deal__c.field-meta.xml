@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interested_in_Current_Deal__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Is there an existing deal that the passenger is interested in? If so please enter the deal ID (4-digit number).</inlineHelpText>
+    <label>Interested in Current Deal?</label>
+    <referenceTo>Deal__c</referenceTo>
+    <relationshipLabel>Exclusives Enquiries</relationshipLabel>
+    <relationshipName>Exclusives_Enquiries</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Case Queue - Follow Up Required</name>
+    <queueMembers>
+        <users>
+            <user>alexandra@tripadeal.com.au</user>
+            <user>jessica.spiliotopoulos@tripadeal.com.au</user>
+            <user>melanie.king-prime@tripadeal.com.au</user>
+            <user>nadiya.massingham@tripadeal.com.au</user>
+            <user>sara.viola@tripadeal.com.au</user>
+            <user>shannon.knapp@tripadeal.com.au</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveAgentSession</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

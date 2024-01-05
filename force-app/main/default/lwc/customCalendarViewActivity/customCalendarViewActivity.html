@@ -1,0 +1,124 @@
+<template>
+
+  
+    <template if:true={openSpinner}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+  
+   <div class="slds-grid slds-wrap slds-theme_default">
+     
+    
+      <div class="slds-grid slds-grid_vertical" >
+     
+          <div class="slds-col slds-size_12-of-12 " style="line-height: 10px;font-size: 10px;--lwc-formLabelFontSize: 11px;">
+              <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                  <div class="slds-size_3-of-3">
+                      <c-t-a-d-_-show-filter-inventory-l-w-c iscalender = false onfilter={filterCalendar} onremovefilters = {clearfilter}></c-t-a-d-_-show-filter-inventory-l-w-c>
+                  </div>
+                  <div class="slds-size_12-of-12 slds-grid slds-wrap">
+                      <lightning-input type="text"
+                          value={searchBookingId}
+                          placeholder="Search by Booking ID"
+                          onchange={searchKeyword} class="slds-box_x-small"  style="width: 238px;margin-right:5px;margin-left:2px"></lightning-input>
+                         
+                          
+                          <lightning-input type="text"
+                                              name="SearchDeal"
+                                              label="Search"
+                                              value ={searchDealValue}
+                                              variant="label-hidden"
+                                              placeholder="Search by Deal ID/Deal Title"
+                                              onchange = {searchDealKeyword} class="slds-box_x-small slds-m-top_x-small" data-id="Deal" style="width: 232px;"></lightning-input><br/>
+                                              <lightning-helptext content="Please search for multiple deal Ids/Title by comma separation.Eg - (1122, 1111....)" class="customIcon" style="margin-top: 10px; margin-left: -7px;"></lightning-helptext>
+  
+                          <!--HERE IN DEAL TYPE DROPDOWN-->
+                         
+                         <div class="slds-form-element__control slds-p-top_medium slds-m-left_medium" style="width: 225px;"> 
+                              <div class="slds-combobox_container">
+                                  <div class={dropdown} onmouseleave={closeDropDown} data-id="statusBox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                      
+                                      <!--code for input and dropdown icon-->
+                                      <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                          <input type="text" class="statusId slds-input slds-combobox__input slds-combobox__input-value"
+                                                  placeholder="Select Deal type" onclick={openDropdown} value={selectValueType}/>
+                                          <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right" title="Down icon">
+                                              <lightning-icon icon-name="utility:down" size="xx-small" class="slds-icon-text-default" ></lightning-icon>
+                                              <span class="slds-assistive-text">Down icon</span>
+                                          </span>            
+                                      </div>
+                                      <div id="dealTypeId" role="listbox">
+                                          <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                              <div class="slds-scrollable">
+                                                  <!-- code to show list of Status -->
+                                                  <template for:each={dealtypeOptions} for:item="item">  
+                                                      <li key = {item.label} role="presentation" class="slds-listbox__item">
+                                                              <div  data-id="typeVar" data-name={item.label} onclick={selectOption} class={item.class} role="option">
+                                                              <span class="slds-media__figure">
+                                                                      <lightning-icon icon-name="utility:check" size="xx-small" class="slds-listbox__icon-selected"></lightning-icon>
+                                                              </span>
+                                                              <span class="slds-media__body">
+                                                                      <span class="slds-truncate" style="color:black;" title={item.label}> {item.label}</span>
+                                                              </span>
+                                                          </div> 
+                                                      </li>
+                                                  </template>
+                                              </div>
+                                          </ul>
+                                      </div>
+                                  </div>   
+                              </div>
+                              <!-- code to show pills of selected status -->
+                          <template for:each={dealtypeOptions} for:item="option">   
+                              <template if:true={option.isChecked}>
+                                      <span key={option.label}>
+                                  <lightning-pill label={option.label} name={option.label} class="slds-m-around_xx-small status" onremove={removeDealTypeRecord}>
+                                      </lightning-pill>
+                                  </span>
+                          </template>
+                          </template>
+                          </div>
+                          
+                          
+                  </div>
+              </div>
+          </div>
+          <div class="slds-col slds-size_12-of-12">
+              
+              <div id="calendar" class="fullcalendarjs"></div>
+          </div>
+  
+      </div>
+      <template if:true={openModal}>
+       
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleClose}>
+                      <lightning-icon icon-name="utility:close"
+                          alternative-text="close"
+                          variant="inverse"
+                          size="small" ></lightning-icon>
+                      <span class="slds-assistive-text">Close</span>
+                  </button>
+                  <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+                     <c-ms-_-hover-calender-view activityid={eventId} description={description} onparentstatus={parentdataevent} onparentapprovalstatus={parentdataevent} onparentsubstatus={parentdataevent} onchildstatus={childdataevent}></c-ms-_-hover-calender-view>
+                  </div>
+                  <footer class="slds-modal__footer">
+                      <!--<button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>-->
+                          <div class="slds-size_1-of-2" style="margin-left: 270px;">
+                      <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={handleSaveActivity} title="Save">Save</button>
+                  </div>
+                  <div class="slds-col slds-size_2-of-12" style="margin-left: 590px; margin-top: -31px;">
+                      <button class="slds-button slds-button_brand slds-align_absolute-center" onclick={handleClose} title="Close">Close</button>
+                  </div>
+                  </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+           
+        </template>
+        
+   </div>
+  
+   
+   
+  </template>

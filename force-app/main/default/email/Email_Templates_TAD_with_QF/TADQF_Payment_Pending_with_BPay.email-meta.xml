@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD Payment Pending with BPay</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF Payment Pending with BPay</name>
+    <style>none</style>
+    <subject>Your Order Is On Hold With TripADeal - Payment pending</subject>
+    <textOnly>.
+
+Dear {!Order_Communication_POE__c.ordexp_Purchaser_First_Name__c},
+
+We are holding the below booking for you. Please be aware we can only hold your booking for a maximum of 24 hours. After this time, the booking will be cancelled. If you would like to proceed with the booking, you will need to make full payment within this timeframe.
+
+The details and costs to secure your booking are below:
+
+Order Reference Number: {!Order_Communication_POE__c.order_number__c}
+Deal: {!Order_Communication_POE__c.Deal_and_Title__c}
+Deal ID: {!Order_Communication_POE__c.Deal__c}
+Name: {!Order_Communication_POE__c.Account_Name__c}
+Email: {!Order_Communication_POE__c.email_purchaser__c}
+Quantity:{!Order_Communication_POE__c.ordexp_PAX_Quantity__c}
+Departure Date: {!Order_Communication_POE__c.ordexp_Departure_Date__c}
+Option: {!Order_Communication_POE__c.ordexp_Option_Purchased__c}
+Sub Option:  {!Order_Communication_POE__c.ordexp_Sub_Option_Purchased__c}
+
+Want the details of your deal? Click here
+Our standard Terms and Conditions are here.
+
+The total amount due comes to
+$ {!Order_Communication_POE__c.ordexp_Total_Amount_Outstanding__c}
+
+Payment can be made via Amex, Visa or MasterCard with us directly over the phone (card fees apply).
+
+Alternatively, you can use online banking to pay via Poli. If you would like to discuss that option or our partnership with ZipMoney in regards to interest-free repayment plans, please call on   1300 861 736.
+
+If you wish to pay using BPAY please use the details below:
+
+
+Biller Code: 356972
+
+Ref: {!Order_Communication_POE__c.orderexp_BPay_CRN__c}
+
+
+
+
+Prior to confirming your order, please ensure that you have read and understood all of elements of the Qantas Tour:
+
+Tour Inclusions
+The Itinerary
+The Important Info
+Terms &amp; Conditions
+
+If you have any questions we would be more than happy to assist you.
+
+Please be aware, we can only hold your booking for a maximum of 24 hours. After this time, if we have not received full payment from you the booking will be cancelled.
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The Qantas Holidays Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

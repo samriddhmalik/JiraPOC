@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UL_Deals_with_Group_Information</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_for_Reporting__c</columns>
+    <columns>date__c</columns>
+    <columns>Group_ID__c</columns>
+    <columns>group_invoice_number__c</columns>
+    <columns>group_status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_for_Reporting__c</field>
+        <operation>contains</operation>
+        <value>3192,3248</value>
+    </filters>
+    <label>UL Deals with Group Information</label>
+    <sharedTo>
+        <group>Flight_Ticketers</group>
+    </sharedTo>
+</ListView>

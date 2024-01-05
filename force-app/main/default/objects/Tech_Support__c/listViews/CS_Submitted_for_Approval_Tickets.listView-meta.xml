@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Submitted_for_Approval_Tickets</fullName>
+    <columns>NAME</columns>
+    <columns>Issue_Feature__c</columns>
+    <columns>Status__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Description__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Submitted for approval</value>
+    </filters>
+    <filters>
+        <field>Department__c</field>
+        <operation>equals</operation>
+        <value>,Customer Service,Visa &amp; Insurance</value>
+    </filters>
+    <label>CS Submitted for Approval Tickets</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>CS_Tech_Support</group>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

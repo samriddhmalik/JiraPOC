@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Currency</fullName>
+    <active>true</active>
+    <description>Compare currency code on Payment Transaction to order Record Type</description>
+    <errorConditionFormula>OR( 
+AND(TEXT(currency_code__c) = &quot;AUD&quot;, OR (ordexp_tad_order__r.RecordType.Name = &quot;TNZ&quot;, ordexp_tad_order__r.RecordType.Name = &quot;WT&quot; ) 
+), 
+AND(TEXT(currency_code__c) = &quot;NZD&quot;, OR (ordexp_tad_order__r.RecordType.Name = &quot;TAD&quot;, ordexp_tad_order__r.RecordType.Name = &quot;TC&quot; ) 
+
+) 
+)</errorConditionFormula>
+    <errorDisplayField>currency_code__c</errorDisplayField>
+    <errorMessage>The currency paid against this order is incorrect for the Record Type</errorMessage>
+</ValidationRule>

@@ -1,0 +1,191 @@
+<template>
+    <lightning-card >
+        <template if:true={isLoading}>
+            
+        <div class="spinner">
+                 <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+                 </lightning-spinner>
+            
+        </div>
+    </template>
+        <Strong><h5 class="slds-align_absolute-center">{headingName} Marketing Activity Records</h5></Strong><br/>
+		<div class="slds">
+
+            
+            <div class="slds-table--header-fixed_container" style="height:400px;" >
+    
+               <!-- <div class="slds-scrollable_y heightClass" data-id="myDiv" >  -->
+
+
+                <div class="slds-scrollable_y" style="height:100%;">
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_col-bordered" width="100%">
+                <thead>
+                    <tr class="slds-text-title_caps" style="height: 35px;">
+                        <th scope="col"  class="row-color">
+                            <div class="slds-truncate slds-cell-fixed " title="Check All">
+                            <input name={checkAllName} type="checkbox" onchange={checkAll} checked={isChecked}/>
+                            
+                            </div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Inventory Title"  class="slds-truncate slds-cell-fixed" style="width:150px; margin-top: 10px;" >Inventory Title</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Deals"  class="slds-truncate slds-cell-fixed " style="width:150px; margin-left:45px; margin-top:10px; " >Deals</div>
+                        </th>
+                        <th scope="col" class="row-color">
+                            <div title="Activity"  class="slds-truncate slds-cell-fixed" style="margin-top: 10px;" >Activity</div>
+                        </th>
+                        <th scope="col"  class="row-color" style="width:150px;">
+                            <div title="Comments"  class="slds-truncate slds-cell-fixed" style="margin-left:45px; margin-top:10px; ">Comments</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Start Date" class="slds-truncate slds-cell-fixed" style="margin-left:14px; margin-top:10px;">Start Date</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="End Date" class="slds-truncate slds-cell-fixed" style="margin-left:14px; margin-top:10px;">End Date</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Marketing Activity Date" class="slds-truncate slds-cell-fixed" >Marketing </br> Activity Date</div>
+                        </th>
+                        
+                        
+                        <th scope="col"  class="row-color">
+                            <div title="Start Time" class="slds-truncate slds-cell-fixed" >Start Time</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Due Date" class="slds-truncate slds-cell-fixed" style="margin-left:14px; margin-top:10px;">Due Date</div>
+                        </th>
+                        <th scope="col"  class="row-color">
+                            <div title="Due Time" class="slds-truncate slds-cell-fixed" style="margin-left:14px; margin-top:10px;">Due Time</div>
+                        </th>
+                        <th scope="col"  class="row-color"> 
+                            <div title="Delete Record"  class="slds-truncate slds-cell-fixed" style="margin-left:10px; margin-top:10px;">Delete Record</div>
+                        </th>
+                        
+                    </tr>
+               
+                </thead>
+                <tbody>
+                <template if:true={inputLabel}> 
+                 <template for:each={inputLabel} for:item="key" for:index="index">
+                    <p key={key.ChannelName}><b>{key.ChannelName}</b></p>           
+                        <template for:each={key.wrapperparentWithChild} for:item="item" for:index="indexChild">
+                        <tr key={item.index} style="background-color:#01bfd7;">
+                            <td><lightning-input type="checkbox" name={checkboxNameParent} data-id={index} data-id2 ={indexChild} onchange={check}  checked={item.objParentvariable.CheckOrUncheck} ></lightning-input></td>
+                               <!--<input type="checkbox" name={checkboxName} data-id={index} onchange={check} class={indexChild} /></td>--> 
+                            <td style="width:150px; overflow-wrap: break-word; color: white;" class="slds-cell-wrap"><b>
+                                {item.objParentvariable.InventoryName}
+                            </b></td>
+                            <td  style="width:150px; overflow-wrap: break-word; color: white;" class="slds-cell-wrap" ><b>
+                                {item.objParentvariable.ms_Deal}
+                            </b></td>
+                            
+                            <td style="color: white;" ><b>
+                                {item.objParentvariable.Activity}
+                            </b></td>
+                            <td class="slds-cell-edit slds-cell-wrap">
+
+                                <lightning-textarea onchange={saveComment} label="" value={item.objParentvariable.ms_Comment} data-id={indexChild} class={commentParentClassName} name={index}></lightning-textarea>
+
+                               
+                            </td>
+                            <td  style="color: white;"><b>
+                                {item.objParentvariable.StartDate}
+                            </b></td>
+                            <td  style="color: white;"><b>
+                                {item.objParentvariable.Enddate}
+                            </b></td>
+                            <td style="color: white;"><b>
+                                {item.objParentvariable.ActivityDate}
+                            </b></td>
+                            <td style="color: white;"><b>
+                                {item.objParentvariable.StartTime}
+                            </b></td>
+                            <td  style="color: white;"><b>
+                                {item.objParentvariable.DueDate}
+                            </b></td>
+                            <td  style="color: white;"><b>
+                                {item.objParentvariable.Duetime}
+                            </b></td>
+                            <td>
+                                <lightning-button variant="brand" label="Delete" title={deleteTitle} onclick={RemoveRecord} value={index} class="slds-align_absolute-center"  data-id={indexChild} ></lightning-button>
+                            </td>
+                        </tr>
+                        <template for:each={item.objChildListVariable} for:item="childrecItem" for:index="indexChild2">
+                            <tr key={childrecItem.indexChild}>
+
+                                <td>
+                                    
+                                    <lightning-input type="checkbox" name={checkboxNameChild} data-id={index} data-id2 ={indexChild}  data-id3 ={indexChild2} onchange={check}  checked={childrecItem.CheckOrUncheck} ></lightning-input></td>
+                                <!--<input type="checkbox" name={checkboxName} data-id={index} onchange={check} class={indexChild} /></td>--> 
+                             <td style="width:150px; overflow-wrap: break-word;" class="slds-cell-wrap" > 
+                                 {childrecItem.inventoryTitle}
+                             </td>
+                             <td  style="width:100px; overflow-wrap: break-word;" class="slds-cell-wrap">
+                                 {childrecItem.Deals}
+                             </td>
+                             
+                             <td  >
+                                 {childrecItem.ActivityStatus}
+                             </td>
+                             <td class="slds-cell-edit slds-cell-wrap" >
+ 
+                                 <lightning-textarea onchange={saveComment} label="" value={childrecItem.Comments} data-id2={indexChild2} data-id={indexChild} class={commentChildClassName} name={index}></lightning-textarea>
+ 
+                                
+                             </td>
+                             <td >
+                                 {childrecItem.StartDate}
+                             </td>
+                             <td  >
+                                 {childrecItem.Enddate}
+                             </td>
+                             <td  >
+                                 {childrecItem.ActivityDate}
+                             </td>
+                             <td >
+                                 {childrecItem.StartTime}
+                             </td>
+                             <td  >
+                                 {childrecItem.DueDate}
+                             </td>
+                             <td  >
+                                 {childrecItem.Duetime}
+                             </td>
+                         
+                             <td></td>
+                            </tr>
+                            </template>
+                           
+                    </template>
+                </template>
+            </template>
+        </tbody>
+        </table>
+    </div>
+       <!-- </div> -->
+    </div>
+    
+    
+    </div>
+<div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+    <div class="slds-col slds-size_4-of-12"></div>
+    <div class="slds-col slds-size_4-of-12"></div>
+    <div class="slds-col slds-size_4-of-12">
+        <span><br/><lightning-button variant="brand" label="Enable" title={enableTitle} onclick={EnableActivity} class="slds-p-top_small slds-float_right"></lightning-button></span>
+       <span> <lightning-button variant="brand" label="Pending" title={pendingTitle} onclick={pendingActivity} class="slds-p-around_small slds-float_right"></lightning-button></span>
+    </div>
+</div>
+<div class="slds-col slds-grid slds-size_12-of-12 slds-gutters">
+    <div class="slds-align_absolute-center">
+      
+        <lightning-button variant="brand" label="Back" title={backTitle} onclick={callParentNavigation} class="slds-p-around_small" ></lightning-button>
+        <lightning-button variant="neutral" label="Cancel" title={cancelTitle} onclick={CancelActivityRecordNow} class="slds-p-around_small" ></lightning-button>
+        <lightning-button variant="brand" label="Save" title={saveTitle} onclick={saveActivityRecordNow} class="slds-p-around_small" ></lightning-button>
+    </div>
+</div>
+</lightning-card>
+
+
+</template>

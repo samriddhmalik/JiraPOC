@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SUB_PRODUCT_CATEGORIES__c</fullName>
+    <externalId>false</externalId>
+    <label>SUB PRODUCT CATEGORIES</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HOTEL ACCOM</fullName>
+                <default>false</default>
+                <label>HOTEL ACCOM</label>
+            </value>
+            <value>
+                <fullName>TRAIN TOUR</fullName>
+                <default>false</default>
+                <label>TRAIN TOUR</label>
+            </value>
+            <value>
+                <fullName>GUIDE TOUR</fullName>
+                <default>false</default>
+                <label>GUIDE TOUR</label>
+            </value>
+            <value>
+                <fullName>NATURE TOUR</fullName>
+                <default>false</default>
+                <label>NATURE TOUR</label>
+            </value>
+            <value>
+                <fullName>OTHER ACCOMM</fullName>
+                <default>false</default>
+                <label>OTHER ACCOMM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

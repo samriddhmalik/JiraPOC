@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Cities__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(  PAF_Packagee__r.Stopover__c  , &quot;AUH&quot;), &quot;AUH ;&quot;, NULL) +
+IF(INCLUDES(  PAF_Packagee__r.Stopover__c  , &quot;HKG&quot;), &quot;HKG ;&quot;, NULL) +
+IF(INCLUDES(  PAF_Packagee__r.Stopover__c  , &quot;TG&quot;), &quot;BKK ;&quot;, NULL) +
+IF(INCLUDES(  PAF_Packagee__r.Stopover__c  , &quot;HA&quot;), &quot;HNL ;&quot;, NULL) +
+IF(INCLUDES( PAF_Packagee__r.Stopover__c  , &quot;DXB&quot;), &quot;DXB ;&quot;, NULL) +
+IF(INCLUDES( PAF_Packagee__r.Stopover__c  , &quot;LA&quot;), &quot;SIN ;&quot;, NULL) +
+IF(INCLUDES( PAF_Packagee__r.Stopover__c  , &quot;SIN&quot; ), &quot;SIN &quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Available Cities</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

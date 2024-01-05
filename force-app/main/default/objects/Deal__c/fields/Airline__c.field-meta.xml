@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Airline__c</fullName>
+    <externalId>false</externalId>
+    <label>Airline</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Flight_Ticketing_Structure__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Qantas</fullName>
+                <default>false</default>
+                <label>Qantas</label>
+            </value>
+            <value>
+                <fullName>Jetstar</fullName>
+                <default>false</default>
+                <label>Jetstar</label>
+            </value>
+            <value>
+                <fullName>Sri Lankan Airlines</fullName>
+                <default>false</default>
+                <label>Sri Lankan Airlines</label>
+            </value>
+            <value>
+                <fullName>Korean Air</fullName>
+                <default>false</default>
+                <label>Korean Air</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>None</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <controllingFieldValue>FIT</controllingFieldValue>
+            <valueName>None</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Qantas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Jetstar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Sri Lankan Airlines</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

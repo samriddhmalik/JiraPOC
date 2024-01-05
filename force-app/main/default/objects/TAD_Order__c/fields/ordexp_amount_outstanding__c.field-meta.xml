@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_amount_outstanding__c</fullName>
+    <externalId>false</externalId>
+    <formula>(ordexp_nett_amount__c + TAD_Surcharge_Amount__c + ordexp_Date_City_Change_Refund__c) - (ordexp_total_payment_received__c + ( IF( Old_Credit_orders__c=true, Total_Credit_Amount__c,0 ) ) - ordexp_total_refund_amount__c - Total_Coupon_Amount__c -  
+( IF( RecordType_Name__c  == &apos;Hotel&apos;, Total_QFF_Refund__c,0 ) ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Amount outstanding</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

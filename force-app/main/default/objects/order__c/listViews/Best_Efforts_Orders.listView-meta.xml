@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Best_Efforts_Orders</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Sub_Options__c</columns>
+    <columns>departure_date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Account__c</columns>
+    <columns>email_purchaser__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>PAX_Travelling__c</columns>
+    <columns>order_status__c</columns>
+    <columns>CVC__c</columns>
+    <columns>Flights_Ticketed__c</columns>
+    <columns>Current_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CVC__c</field>
+        <operation>equals</operation>
+        <value>BERefund</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>Expired</value>
+    </filters>
+    <filters>
+        <field>Current_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Flights Ticketed</value>
+    </filters>
+    <filters>
+        <field>Current_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Cabin/s booked &amp; Flights Ticketed</value>
+    </filters>
+    <filters>
+        <field>Flights_Ticketed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Best Efforts - Orders</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>IT_Team</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

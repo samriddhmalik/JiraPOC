@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDM__c</fullName>
+    <externalId>false</externalId>
+    <label>BDM</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Maite De Hedervary</fullName>
+                <default>false</default>
+                <label>Maite De Hedervary</label>
+            </value>
+            <value>
+                <fullName>Silvia Magnani</fullName>
+                <default>false</default>
+                <label>Silvia Magnani</label>
+            </value>
+            <value>
+                <fullName>Teige O&apos;Sullivan</fullName>
+                <default>false</default>
+                <label>Teige O&apos;Sullivan</label>
+            </value>
+            <value>
+                <fullName>Alison Riordan</fullName>
+                <default>false</default>
+                <label>Alison Riordan</label>
+            </value>
+            <value>
+                <fullName>Eamonn O&apos;Sullivan</fullName>
+                <default>false</default>
+                <label>Eamonn O&apos;Sullivan</label>
+            </value>
+            <value>
+                <fullName>Rebecca Maitland</fullName>
+                <default>false</default>
+                <label>Rebecca Maitland</label>
+            </value>
+            <value>
+                <fullName>Andrew Bennett</fullName>
+                <default>false</default>
+                <label>Andrew Bennett</label>
+            </value>
+            <value>
+                <fullName>Holly Littlewood</fullName>
+                <default>false</default>
+                <label>Holly Littlewood</label>
+            </value>
+            <value>
+                <fullName>Nicoline Dolman</fullName>
+                <default>false</default>
+                <label>Nicoline Dolman</label>
+            </value>
+            <value>
+                <fullName>Emily Taylor</fullName>
+                <default>false</default>
+                <label>Emily Taylor</label>
+            </value>
+            <value>
+                <fullName>Alanna Betz</fullName>
+                <default>false</default>
+                <label>Alanna Betz</label>
+            </value>
+            <value>
+                <fullName>Ben Ellison</fullName>
+                <default>false</default>
+                <label>Ben Ellison</label>
+            </value>
+            <value>
+                <fullName>Luke Hansell</fullName>
+                <default>false</default>
+                <label>Luke Hansell</label>
+            </value>
+            <value>
+                <fullName>Laura Newman</fullName>
+                <default>false</default>
+                <label>Laura Newman</label>
+            </value>
+            <value>
+                <fullName>Peter Huff</fullName>
+                <default>false</default>
+                <label>Peter Huff</label>
+            </value>
+            <value>
+                <fullName>Lexi Graham</fullName>
+                <default>false</default>
+                <label>Lexi Graham</label>
+            </value>
+            <value>
+                <fullName>Ayu Herawati</fullName>
+                <default>false</default>
+                <label>Ayu Herawati</label>
+            </value>
+            <value>
+                <fullName>Brett Lemish</fullName>
+                <default>false</default>
+                <label>Brett Lemish</label>
+            </value>
+            <value>
+                <fullName>Pete Timbs</fullName>
+                <default>false</default>
+                <label>Pete Timbs</label>
+            </value>
+            <value>
+                <fullName>Serena Brillanti</fullName>
+                <default>false</default>
+                <label>Serena Brillanti</label>
+            </value>
+            <value>
+                <fullName>Angelina Hackett</fullName>
+                <default>false</default>
+                <label>Angelina Hackett</label>
+            </value>
+            <value>
+                <fullName>Jeremy Hagan</fullName>
+                <default>false</default>
+                <label>Jeremy Hagan</label>
+            </value>
+            <value>
+                <fullName>Paul Wards</fullName>
+                <default>false</default>
+                <label>Paul Wards</label>
+            </value>
+            <value>
+                <fullName>Trent Ellen</fullName>
+                <default>false</default>
+                <label>Trent Ellen</label>
+            </value>
+            <value>
+                <fullName>Alexandra Chakos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Alexandra Chakos</label>
+            </value>
+            <value>
+                <fullName>Amanda Tennant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amanda Tennant</label>
+            </value>
+            <value>
+                <fullName>Cameron Williams</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cameron Williams</label>
+            </value>
+            <value>
+                <fullName>Chaiy Donati</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chaiy Donati</label>
+            </value>
+            <value>
+                <fullName>Derek Test Dolan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Derek Test Dolan</label>
+            </value>
+            <value>
+                <fullName>Ella Dixon</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ella Dixon</label>
+            </value>
+            <value>
+                <fullName>Emmylou Stockbridge</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Emmylou Stockbridge</label>
+            </value>
+            <value>
+                <fullName>Gemma Burnham</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gemma Burnham</label>
+            </value>
+            <value>
+                <fullName>Ian Hunter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ian Hunter</label>
+            </value>
+            <value>
+                <fullName>Joe Dolpire</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Joe Dolpire</label>
+            </value>
+            <value>
+                <fullName>Jorden Krause</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Jorden Krause</label>
+            </value>
+            <value>
+                <fullName>Kate Bowie</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kate Bowie</label>
+            </value>
+            <value>
+                <fullName>Lauren Tsitos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lauren Tsitos</label>
+            </value>
+            <value>
+                <fullName>Lewis Tait</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lewis Tait</label>
+            </value>
+            <value>
+                <fullName>Melissa O&apos;Connell</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Melissa O&apos;Connell</label>
+            </value>
+            <value>
+                <fullName>Paul Robinson</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Paul Robinson</label>
+            </value>
+            <value>
+                <fullName>Rachel Sutherland</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rachel Sutherland</label>
+            </value>
+            <value>
+                <fullName>Samantha Waldron</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Samantha Waldron</label>
+            </value>
+            <value>
+                <fullName>Troy Rosee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Troy Rosee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

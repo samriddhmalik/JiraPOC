@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Departure_Date_Moved_to_Online</fullName>
+    <active>true</active>
+    <errorConditionFormula>/*IF(AND(ISPICKVAL(online_status__c,&apos;Online&apos;), finalise_date__c = true),true,false)*/
+
+
+AND(
+ISCHANGED(online_status__c),
+ISPICKVAL(online_status__c,&apos;Online&apos;),
+finalise_date__c = true)</errorConditionFormula>
+    <errorDisplayField>finalise_date__c</errorDisplayField>
+    <errorMessage>Please Uncheck Finalise Date before moving to &apos;Online&apos;.</errorMessage>
+</ValidationRule>

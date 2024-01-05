@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z2800000080zWAAQ.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>https://tad.force.com/TC/s/exclusivedealshere</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Search for leopards on safari &amp; visit Sigiriya Explore Colombo, Kandy, Galle &amp; More</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>12 DAY CLASSIC SRI LANKA</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z280000007aZjAAI.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>https://tad.force.com/TC/s/exclusivedealshere</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Discover the best of the North &amp; South Islands Cruise from Auckland to Sydney</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>24 DAY NEW ZEALAND CHRISTMAS</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>sidebar</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z2800000071C9AAI.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>https://tad.force.com/TC/s/exclusivedealshere</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Explore the Rockies &amp; Alaska&apos;s Inside Passage Stay at Fairmont Hotels in Banff &amp; Whistler</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>15 DAY LUXURY CANADA &amp; ALASKA</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>sidebarAlt</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Use this HTML Editor to add your own markup.&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:htmlBlock</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;div class=&quot;slds-grid slds-wrap homeIcons&quot;&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_Exclusive+deals.png&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;Travellers Choice deals&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            View deals
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_View+orders.png
+&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;Bookings&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            View now
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_How+to+get+started.png&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;How to get started&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            Watch our User Guides
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_Deal+pdfs.png
+&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;Marketing material&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            View now
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_Faqs.png
+&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;FAQ&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            Check our FAQ
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;slds-size_1-of-3&quot;&gt;
+    &lt;div class=&quot;slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small&quot;&gt;
+         &lt;img class=&quot;icon&quot; src=&quot;https://s3-ap-southeast-2.amazonaws.com/wholesalecommunity/TC_Icons_Need+support.png
+&quot;&gt;
+        &lt;h3 class=&quot;iconHeadline&quot;&gt;Need support?&lt;/h3&gt;
+        &lt;a href=&quot;#&quot; class=&quot;slds-button&quot;&gt;
+            Contact us
+        &lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;forceCommunityHeadline secondHeadline&quot;&gt;
+	&lt;h2 class=&quot;headlineTitle&quot;&gt;Travellers Choice Exclusive deals&lt;/h2&gt;
+	&lt;p class=&quot;headlineInfo&quot;&gt;These deals are only accessible to our Travellers Choice Agents. You can view all deals &lt;a href=&quot;https://tad.force.com/TC/s/letsbuy&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:htmlBlock</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container1</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z2800000080zWAAQ.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Search for leopards on safari &amp; visit Sigiriya Explore Colombo, Kandy, Galle &amp; More</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>20 DAY CLASSIC SRI LANKA</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container2</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z280000007aZjAAI.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Discover the best of the North &amp; South Islands Cruise from Auckland to Sydney</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>NEW ZEALAND CHRISTMAS</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container3</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z2800000076gvAAA.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Captain your own Whitsundays catamaran Explore the bays &amp; islands at your own pace</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>WHITSUNDAYS CHARTER</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container4</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z280000006cLcAAI.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Go on safari in Serengeti National Park Unwind on the stunning beaches of Zanzibar</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>TANZANIA &amp; ZANZIBAR</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container5</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z2800000076wqAAA.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Discover Argentina, Brazil, Chile &amp; Uruguay Visit Buenos Aires, Rio &amp; Santiago</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>SOUTH AMERICA</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container6</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>bannerImageUrl</name>
+                    <value>https://s3-ap-southeast-2.amazonaws.com/cstad/a2z280000007ZokAAE.jpg</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonLabel</name>
+                    <value>View Deal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonUrl</name>
+                    <value>#</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>buttonVariant</name>
+                    <value>brand</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>description</name>
+                    <value>Spot wild lemurs in Ranomafana National Park Trek in Isalo &amp; relax on the beaches</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionColor</name>
+                    <value>#979797</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>descriptionSize</name>
+                    <value>regular</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>212</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textAlign</name>
+                    <value>left</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textHeight</name>
+                    <value>170</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textOverlayBackground</name>
+                    <value>rgba(255,255,255,1)</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>textPosition</name>
+                    <value>card</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>MADAGASCAR WILDLIFE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleColor</name>
+                    <value>#000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleSize</name>
+                    <value>medium</value>
+                </componentInstanceProperties>
+                <componentName>cloudx_cms:SS_uiImageBanner</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>container7</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>container8</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>container9</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home test</masterLabel>
+    <template>
+        <name>threebytwo</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Affected__c</fullName>
+    <externalId>false</externalId>
+    <label>Site Affected</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AU</fullName>
+                <default>false</default>
+                <label>AU</label>
+            </value>
+            <value>
+                <fullName>NZ</fullName>
+                <default>false</default>
+                <label>NZ</label>
+            </value>
+            <value>
+                <fullName>AU and NZ</fullName>
+                <default>false</default>
+                <label>AU and NZ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

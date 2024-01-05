@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_allocation</fullName>
+    <active>true</active>
+    <description>Other allocation must be nominated if Other is an inclusion.</description>
+    <errorConditionFormula>AND( TEXT(Other_Inclusion__c)  = &quot;INC&quot;  || TEXT(Other_Inclusion__c)  = &quot;OPT&quot;, ISBLANK( Other_Allocation__c ) ||  Other_Allocation__c  = 0)</errorConditionFormula>
+    <errorDisplayField>Other_Allocation__c</errorDisplayField>
+    <errorMessage>Other allocation must be nominated if Other is an inclusion.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negative_Numbers</fullName>
+    <active>true</active>
+    <description>Refunds must be a negative amount.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( transaction_type__c , &quot;Refund&quot;), 
+OR( amount_original__c &gt; 0 ,  amount_charged__c &gt; 0 )
+)</errorConditionFormula>
+    <errorDisplayField>amount_charged__c</errorDisplayField>
+    <errorMessage>Refund amounts must be negative</errorMessage>
+</ValidationRule>

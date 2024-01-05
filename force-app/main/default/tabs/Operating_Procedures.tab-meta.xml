@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>800</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Operating Procedures</label>
+    <motif>Custom96: Street Sign</motif>
+    <url>https://docs.google.com/a/tripadeal.com.au/document/d/1K4swLeVuO8XgwBbj_fVhwSC2bE_2JQtttjledMZTWhk/edit?usp=sharing</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

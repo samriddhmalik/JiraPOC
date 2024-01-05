@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Specific_Active</fullName>
+    <columns>Deal_ID_title__c</columns>
+    <columns>Title__c</columns>
+    <columns>Description__c</columns>
+    <columns>Downloadable_Link__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Marketing_Content__c.Deal_Specific</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Deal Specific(Active)</label>
+</ListView>

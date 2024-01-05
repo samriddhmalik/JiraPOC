@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Tour_StopOver__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Post Tour StopOver</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>sub_stopover__c.Deal__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Deal__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>sub_stopover__c.type__c</field>
+            <operation>equals</operation>
+            <value>Post Tour</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>sub_stopover__c</referenceTo>
+    <relationshipLabel>NRMA (Post Tour StopOver)</relationshipLabel>
+    <relationshipName>NRMA1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

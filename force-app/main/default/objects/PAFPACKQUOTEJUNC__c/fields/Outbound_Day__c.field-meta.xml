@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outbound_Day__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  zzDatetime_Outbound__c  = 0 , &quot;Saturday&quot;, 
+IF( zzDatetime_Outbound__c = 1 , &quot;Sunday&quot;, 
+IF( zzDatetime_Outbound__c = 2 , &quot;Monday&quot;, 
+IF( zzDatetime_Outbound__c = 3 , &quot;Tuesday&quot;, 
+IF( zzDatetime_Outbound__c = 4 , &quot;Wednesday&quot;, 
+IF( zzDatetime_Outbound__c = 5 , &quot;Thursday&quot;, 
+IF( zzDatetime_Outbound__c = 6 , &quot;Friday&quot;,&quot;Error&quot;)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Outbound Day</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>irina.boriskina@tripadeal.com.au</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Direct needs to go for Approval to Rhian</label>
+        <name>Direct_needs_to_go_for_Approval_to_Rhian</name>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Cancellation_Refund_POE__c.Cancellation_Type__c</field>
+            <operation>equals</operation>
+            <value>Refund without Cancellation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cancellation_Refund_POE__c.Refund_Reason__c</field>
+            <operation>equals</operation>
+            <value>Deal Price Incorrect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Cancellation_Refund_POE__c.Total_Cancellation_Amount__c</field>
+            <operation>greaterThan</operation>
+            <value>AUD 1</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Approved_Processed</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Approval Process for Rhian &lt;2k</label>
+    <processOrder>2</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

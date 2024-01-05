@@ -1,0 +1,50 @@
+<template>
+ <lightning-card title ="Case Attachments">
+  <template if:true = {isUploaded}>
+   <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+   </template>
+
+  <template if:false = {isUploaded}>
+  <div style="margin-left:10px; padding-left:10px;" class ="slds-align_absolute-center">
+
+  <span style="display:inline-block">
+    <lightning-input type="file" 
+        accept = "image/jpeg, image/png, image/jpg, .doc, .docx, .pdf, .csv, .csvx, .xls, .xlsx" 
+        multiple ="false"  class="removeDropZone" onchange={handleFileUploaded} record-id={urlId}></lightning-input></span>    
+  <span style="display:inline-block; margin-right:60px; margin-top:15px">
+        <lightning-button variant="success" label="Upload" title="Upload" onclick={handleClick}></lightning-button>
+  </span> 
+  </div>
+
+  <hr>
+           
+<template if:true={filesData}> 
+        <template for:each={filesData} for:item="imgName" for:index="index">
+        <b style="margin-left:30px;" key={imgName.key}>{imgName.fileName}</b>
+        <lightning-button-icon icon-name="utility:delete" key={imgName.key} alternative-text="Delete"
+          class="test slds-m-left_xx-small"
+          title="Delete"
+          onclick={removeReceiptImage}></lightning-button-icon>
+      </template>
+</template>       
+
+  
+   <div>
+    <template for:each={feedcommentdata} for:item="feed" for:index="index">
+    <div class="slds-theme_default" key={feed}>
+    <lightning-layout multiple-rows="true">
+    <template for:each={feed.attachmentWrapperLst} for:item="attachment" for:index="index">
+    <lightning-layout-item size="6" class="slds-p-around_x-small" key={file}>
+         <p key={attachment} style="padding-top:10px; padding-left:20px;">
+                <span><lightning-icon icon-name={attachment.AttachmentExtension} title={attachment.AttachmentName} size="x-small"></lightning-icon></span>
+                <span style="padding-left:5px"><a download={attachment.AttachmentName} target="_blank" href={attachment.AttachmentURL} data-item={attachment}>{attachment.AttachmentName}</a></span>
+        </p>
+    </lightning-layout-item>
+    </template>
+    </lightning-layout>
+    </div>    
+    </template>
+   </div>
+  </template>
+ </lightning-card>
+</template>

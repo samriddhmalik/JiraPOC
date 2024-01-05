@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sunrise_Vouchers</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Deal__c</columns>
+    <columns>Coupon_type__c</columns>
+    <columns>type__c</columns>
+    <columns>Travel_type__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>currency_code__c</columns>
+    <columns>Coupon_Dep_Date__c</columns>
+    <columns>Expiry_Date__c</columns>
+    <columns>Usage__c</columns>
+    <columns>Discount__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Name__c</field>
+        <operation>contains</operation>
+        <value>TADSUNRISE</value>
+    </filters>
+    <label>Sunrise Vouchers</label>
+</ListView>

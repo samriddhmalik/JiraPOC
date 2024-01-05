@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_call_back_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Call back status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>ordexp_call_back_type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quote Required</fullName>
+                <default>false</default>
+                <label>Quote Required</label>
+            </value>
+            <value>
+                <fullName>Information Required</fullName>
+                <default>false</default>
+                <label>Information Required</label>
+            </value>
+            <value>
+                <fullName>Existing Order Issue</fullName>
+                <default>false</default>
+                <label>Existing Order Issue</label>
+            </value>
+            <value>
+                <fullName>Ready to Process</fullName>
+                <default>false</default>
+                <label>Ready to Process</label>
+            </value>
+            <value>
+                <fullName>Voicemail Left</fullName>
+                <default>false</default>
+                <label>Voicemail Left</label>
+            </value>
+            <value>
+                <fullName>No Voicemail Available</fullName>
+                <default>false</default>
+                <label>No Voicemail Available</label>
+            </value>
+            <value>
+                <fullName>Information Provided</fullName>
+                <default>false</default>
+                <label>Information Provided</label>
+            </value>
+            <value>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+                <label>Purchased</label>
+            </value>
+            <value>
+                <fullName>Declined</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Declined</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Payment Waiting</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Payment Waiting</label>
+            </value>
+            <value>
+                <fullName>Purchased/Completed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Purchased/Completed</label>
+            </value>
+            <value>
+                <fullName>Quoted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quoted</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <valueName>Information Required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <valueName>Existing Order Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <valueName>Ready to Process</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>Voicemail Left</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>No Voicemail Available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <valueName>Information Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visa</controllingFieldValue>
+            <valueName>Purchased</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>Quote Required</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not started</fullName>
+                <default>true</default>
+                <label>Not started</label>
+            </value>
+            <value>
+                <fullName>Template in Progress</fullName>
+                <default>false</default>
+                <label>Template in Progress</label>
+            </value>
+            <value>
+                <fullName>Template Completed</fullName>
+                <default>false</default>
+                <label>Template Completed</label>
+            </value>
+            <value>
+                <fullName>Test sent</fullName>
+                <default>false</default>
+                <label>Test sent</label>
+            </value>
+            <value>
+                <fullName>Pending Publishing Approval</fullName>
+                <default>false</default>
+                <label>Pending Publishing Approval</label>
+            </value>
+            <value>
+                <fullName>Rejected Publishing Approval</fullName>
+                <default>false</default>
+                <label>Rejected Publishing Approval</label>
+            </value>
+            <value>
+                <fullName>Pending Product Approval</fullName>
+                <default>false</default>
+                <label>Pending Product Approval</label>
+            </value>
+            <value>
+                <fullName>Rejected Product Approval</fullName>
+                <default>false</default>
+                <label>Rejected Product Approval</label>
+            </value>
+            <value>
+                <fullName>Finalized ready for Scheduling</fullName>
+                <default>false</default>
+                <label>Finalized ready for Scheduling</label>
+            </value>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>Deal Pulled Waiting for New Selection</fullName>
+                <default>false</default>
+                <label>Deal Pulled Waiting for New Selection</label>
+            </value>
+            <value>
+                <fullName>Brief in progress</fullName>
+                <default>false</default>
+                <label>Brief in progress</label>
+            </value>
+            <value>
+                <fullName>Brief ready for IKTP Submission</fullName>
+                <default>false</default>
+                <label>Brief ready for IKTP Submission</label>
+            </value>
+            <value>
+                <fullName>Brief submitted to IKTP</fullName>
+                <default>false</default>
+                <label>Brief submitted to IKTP</label>
+            </value>
+            <value>
+                <fullName>Finalised -Submitted to IKTP</fullName>
+                <default>false</default>
+                <label>Finalised -Submitted to IKTP</label>
+            </value>
+            <value>
+                <fullName>Ad Delivered</fullName>
+                <default>false</default>
+                <label>Ad Delivered</label>
+            </value>
+            <value>
+                <fullName>Content Scheduled</fullName>
+                <default>false</default>
+                <label>Content Scheduled</label>
+            </value>
+            <value>
+                <fullName>Hero Template chosen</fullName>
+                <default>false</default>
+                <label>Hero Template chosen</label>
+            </value>
+            <value>
+                <fullName>Final template in progress</fullName>
+                <default>false</default>
+                <label>Final template in progress</label>
+            </value>
+            <value>
+                <fullName>Finalised Ready for delivery</fullName>
+                <default>false</default>
+                <label>Finalised Ready for delivery</label>
+            </value>
+            <value>
+                <fullName>Draft post in progress</fullName>
+                <default>false</default>
+                <label>Draft post in progress</label>
+            </value>
+            <value>
+                <fullName>Draft post completed</fullName>
+                <default>false</default>
+                <label>Draft post completed</label>
+            </value>
+            <value>
+                <fullName>Brief sent to Thumpe Media</fullName>
+                <default>false</default>
+                <label>Brief sent to Thumpe Media</label>
+            </value>
+            <value>
+                <fullName>Script received from Thumpe Media</fullName>
+                <default>false</default>
+                <label>Script received from Thumpe Media</label>
+            </value>
+            <value>
+                <fullName>Finalised ready for submission to Thumpe media</fullName>
+                <default>false</default>
+                <label>Finalised ready for submission to Thumpe media</label>
+            </value>
+            <value>
+                <fullName>Confirm Approval with Thumpe media</fullName>
+                <default>false</default>
+                <label>Confirm Approval with Thumpe media</label>
+            </value>
+            <value>
+                <fullName>Finalised ready for ad creation</fullName>
+                <default>false</default>
+                <label>Finalised ready for ad creation</label>
+            </value>
+            <value>
+                <fullName>Ad scheduled</fullName>
+                <default>false</default>
+                <label>Ad scheduled</label>
+            </value>
+            <value>
+                <fullName>Finalised ready for Completion</fullName>
+                <default>false</default>
+                <label>Finalised ready for Completion</label>
+            </value>
+            <value>
+                <fullName>Banner set live</fullName>
+                <default>false</default>
+                <label>Banner set live</label>
+            </value>
+            <value>
+                <fullName>Creative in Progress</fullName>
+                <default>false</default>
+                <label>Creative in Progress</label>
+            </value>
+            <value>
+                <fullName>Creative Complete</fullName>
+                <default>false</default>
+                <label>Creative Complete</label>
+            </value>
+            <value>
+                <fullName>Finalised ready for Submission</fullName>
+                <default>false</default>
+                <label>Finalised ready for Submission</label>
+            </value>
+            <value>
+                <fullName>Content Delivered</fullName>
+                <default>false</default>
+                <label>Content Delivered</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Brief Pending Approval</fullName>
+                <default>false</default>
+                <label>Brief Pending Approval</label>
+            </value>
+            <value>
+                <fullName>Brief rejected</fullName>
+                <default>false</default>
+                <label>Brief rejected</label>
+            </value>
+            <value>
+                <fullName>Pending Marketing/Brand Manager Approval</fullName>
+                <default>false</default>
+                <label>Pending Marketing/Brand Manager Approval</label>
+            </value>
+            <value>
+                <fullName>Rejected marketing/Brand Manager Approval</fullName>
+                <default>false</default>
+                <label>Rejected marketing/Brand Manager Approval</label>
+            </value>
+            <value>
+                <fullName>Campaign Page Set Live</fullName>
+                <default>false</default>
+                <label>Campaign Page Set Live</label>
+            </value>
+            <value>
+                <fullName>Copy in Progress</fullName>
+                <default>false</default>
+                <label>Copy in Progress</label>
+            </value>
+            <value>
+                <fullName>Banner in Progress</fullName>
+                <default>false</default>
+                <label>Banner in Progress</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

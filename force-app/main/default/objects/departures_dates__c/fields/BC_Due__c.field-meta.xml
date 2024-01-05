@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BC_Due__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(date__c&gt; DATE(2100,01,01) , date__c, IF (
+(ISBLANK( BC_Due_Extension__c )),
+
+IF (
+(ISBLANK( Deal_for_Reporting__r.merchant_sharing_deadline_date__c )),
+(date__c - Deal_for_Reporting__r.merchant_sharing_deadline__c ),
+Deal_for_Reporting__r.merchant_sharing_deadline_date__c
+),BC_Due_Extension__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Number of days prior to departure that merchant will receive booking confirmation. If multi-merchant deal, please use the most restrictive deadline e.g 120 days instead of 90.</inlineHelpText>
+    <label>BC Due</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

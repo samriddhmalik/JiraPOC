@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zzzzzz__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (AND(TEXT(PAF_Quote__r.PAF_Packagee__r.Stopover_Inclusion__c)= &quot;OPT&quot;,VALUE(TEXT( PAF_Quote__r.PAFPACKQUOTEJUNC__r.Stopover_Outbound_Nights__c)) &gt; 0) , (IF(Single_Supplement__c ,1,0) * PAF_Quote__r.PAF_Packagee__r.Stopover_Allocation__c) + 50,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>zzz</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

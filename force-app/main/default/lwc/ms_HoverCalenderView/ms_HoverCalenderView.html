@@ -1,0 +1,820 @@
+<template>
+    <article class="slds-card cardStyle" style="height: 290px;">
+        <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+            <template for:each={parentRecord} for:item="parent" for:index="index">
+                <template if:true={newspaper}>
+                <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                    <ul class="slds-list_horizontal">
+                    
+                    <div class="slds-col slds-size_1-of-12" >
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                    
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12" >
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12" >
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 70px;"><p><b>Title</b></p></div>
+ 
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 175px;">{parent.InventoryTitle}</div>
+                     </div>
+                    <div class="slds-col slds-size_1-of-12" style="margin-left: 80px;">
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                    
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12" >
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px; inline-size: 70px;"><p><b>Deal Title</b></p></div>
+                    
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px; inline-size: 200px;">{parent.DealTitle}</div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-12" style="margin-left: 90px;">
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Placement</b></p></div>
+
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Placement}</div>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-12" >
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                    </div> 
+                    <div class="slds-col slds-size_1-of-12" >    
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                    </div> 
+                    <div class="slds-col slds-size_1-of-12" > 
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                    
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                            <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                       </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-12" >
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Booking ID</b></p></div>
+
+                       <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.BookingID}</div>
+                       </div>
+                       <div class="slds-col slds-size_1-of-12">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Cost</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Cost}</div>
+                        </div>
+
+
+                </ul>
+            </div>
+                <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12" style="margin-left: 780px; margin-top: -15px;" key={parent.Id}>
+                  <ul class="slds-list_horizontal">
+                  <div class="slds-col slds-size_1-of-12" >                
+                     <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 80px;"><p><b>Status</b></p></div>
+                     <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                     <lightning-combobox
+                                  name={index}
+                                  value={parent.Status}
+                                  options={StatusPkl}
+                                  onchange={handleChangeParentstatus}
+                                  style="text-align:left;position: fixed;"
+                                  >
+                      </lightning-combobox>
+                  </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-12" style="margin-left: 160px;">
+                  <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                  <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                      <lightning-combobox
+                                  name={index}
+                                  value={parent.ApprovalStatus}
+                                  options={ApprovalStatusPkl}
+                                  onchange={handleChangeParentapprovalstatus}
+                                  style="text-align:left;position: fixed;"
+                                  >
+                      </lightning-combobox>
+                  </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-12" style="margin-left: 160px;">
+                  <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                  <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                      <lightning-combobox
+                                  name={index}
+                                  value={parent.SubStatus}
+                                  options={SubstatusPkl}
+                                  onchange={handleChangeParentsubstatus}
+                                  style="text-align:left;position: fixed;"
+                                  >
+                      </lightning-combobox>
+                  </div>
+                  </div>
+                  </ul>
+                    </div>
+                </template>
+                <template if:true={EDMTAD}>
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                            <ul class="slds-list_horizontal">
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                            </div>
+                          
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal Title</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px;">{parent.DealTitle}</div>
+                            </div>
+        
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Placement</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Placement}</div>
+                            </div>
+                            
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -30px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                            </div> 
+                            <div class="slds-col slds-size_1-of-12"  style="margin-left: -30px;">
+                              <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Start Time</b></p></div>
+       
+                              <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                  <lightning-formatted-time value= {parent.starttime} hour="numeric"></lightning-formatted-time>
+                               </div>
+                           </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">    
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                            </div> 
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;"> 
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                    <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                               </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-12" >                
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 80px;"><p><b>Status</b></p></div>
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                               <lightning-combobox
+                                            name={index}
+                                            value={parent.Status}
+                                            options={StatusPkl}
+                                            onchange={handleChangeParentstatus}
+                                            style="text-align:left; position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                                <lightning-combobox
+                                            name={index}
+                                            value={parent.ApprovalStatus}
+                                            options={ApprovalStatusPkl}
+                                            onchange={handleChangeParentapprovalstatus}
+                                            style="text-align:left; position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                                <lightning-combobox
+                                            name={index}
+                                            value={parent.SubStatus}
+                                            options={SubstatusPkl}
+                                            onchange={handleChangeParentsubstatus}
+                                            style="text-align:left; position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                        </ul>
+                    </div>
+                        
+                </template>
+                <template if:true={EDMIKPT}>
+                        <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                            <ul class="slds-list_horizontal">
+                            
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                            </div>
+                           
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal Title</b></p></div>
+                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px;">{parent.DealTitle}</div>
+                            </div>
+        
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                            </div> 
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">    
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+        
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                            </div> 
+                            <div class="slds-col slds-size_1-of-12" > 
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                            
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                    <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                               </div>
+                            </div>
+
+                               <div class="slds-col slds-size_1-of-12">
+                                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                                </div>
+                            <div class="slds-col slds-size_1-of-12" >                
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 80px;"><p><b>Status</b></p></div>
+                               <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                               <lightning-combobox
+                                            name={index}
+                                            value={parent.Status}
+                                            options={StatusPkl}
+                                            onchange={handleChangeParentstatus}
+                                            style="text-align:left;position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                                <lightning-combobox
+                                            name={index}
+                                            value={parent.ApprovalStatus}
+                                            options={ApprovalStatusPkl}
+                                            onchange={handleChangeParentapprovalstatus}
+                                            style="text-align:left;position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12"  style="margin-left: 110px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                                <lightning-combobox
+                                            name={index}
+                                            value={parent.SubStatus}
+                                            options={SubstatusPkl}
+                                            onchange={handleChangeParentsubstatus}
+                                            style="text-align:left;position: fixed;"
+                                            >
+                                </lightning-combobox>
+                            </div>
+                            </div>
+                        </ul>
+                    </div>
+                </template>
+                <template if:true={social}>
+                    <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                        <ul class="slds-list_horizontal">
+                       
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -30px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                        </div>
+                      
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -35px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -30px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal Title</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px;">{parent.DealTitle}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                            </div>
+    
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Placement</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Placement}</div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -45px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -35px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Start Time</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                               <lightning-formatted-time value= {parent.starttime} hour="numeric"></lightning-formatted-time>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;"> 
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                           </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-12" >                
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 80px;"><p><b>Status</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                           <lightning-combobox
+                                        name={index}
+                                        value={parent.Status}
+                                        options={StatusPkl}
+                                        onchange={handleChangeParentstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.ApprovalStatus}
+                                        options={ApprovalStatusPkl}
+                                        onchange={handleChangeParentapprovalstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.SubStatus}
+                                        options={SubstatusPkl}
+                                        onchange={handleChangeParentsubstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                    </ul>
+                </div>
+                    
+                </template>
+                <template if:true={Radio}>
+                    <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                        <ul class="slds-list_horizontal">
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                        </div>
+                      
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 20px;inline-size: 70px;"><p><b>Deal Title</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px; inline-size: 100px;">{parent.DealTitle}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 10px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                            </div>
+    
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" >    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 80px;">{parent.DueDate}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 5px;"> 
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; ">
+                                <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                           </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 10px;">                
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 80px;"><p><b>Status</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                           <lightning-combobox
+                                        name={index}
+                                        value={parent.Status}
+                                        options={StatusPkl}
+                                        onchange={handleChangeParentstatus}
+                                        style="text-align:left; position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 120px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.ApprovalStatus}
+                                        options={ApprovalStatusPkl}
+                                        onchange={handleChangeParentapprovalstatus}
+                                        style="text-align:left; position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 120px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.SubStatus}
+                                        options={SubstatusPkl}
+                                        onchange={handleChangeParentsubstatus}
+                                        style="text-align:left; position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                    </ul>
+                </div>
+                    
+                </template>
+                <template if:true={Preroll}>
+                    <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                        <ul class="slds-list_horizontal">
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Supplier</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.SupplierName}</div>
+                        </div>
+                      
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal Title</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px;">{parent.DealTitle}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Cost</b></p></div>
+                                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Cost}</div>
+                                </div>
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;"> 
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                           </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-12" >                
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 80px;"><p><b>Status</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                           <lightning-combobox
+                                        name={index}
+                                        value={parent.Status}
+                                        options={StatusPkl}
+                                        onchange={handleChangeParentstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12"  style="margin-left: 110px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.ApprovalStatus}
+                                        options={ApprovalStatusPkl}
+                                        onchange={handleChangeParentapprovalstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 110px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.SubStatus}
+                                        options={SubstatusPkl}
+                                        onchange={handleChangeParentsubstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                    </ul>
+                </div>
+                    
+                </template>
+                <template if:true={Search}>
+                    <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                        <ul class="slds-list_horizontal">
+                        
+                        <div class="slds-col slds-size_1-of-12" >
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                        </div>
+                       
+                      
+                        <div class="slds-col slds-size_1-of-12" >
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 10px;" >
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-left: 50px; inline-size: 80px;"><p><b>Deal Title</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px; inline-size: 200px;">{parent.DealTitle}</div>
+                        </div>
+                       
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 60px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" >    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 15px;"> 
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                                <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                           </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 25px;">                
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 80px;"><p><b>Status</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                           <lightning-combobox
+                                        name={index}
+                                        value={parent.Status}
+                                        options={StatusPkl}
+                                        onchange={handleChangeParentstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 115px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.ApprovalStatus}
+                                        options={ApprovalStatusPkl}
+                                        onchange={handleChangeParentapprovalstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 115px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.SubStatus}
+                                        options={SubstatusPkl}
+                                        onchange={handleChangeParentsubstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                    </ul>
+                </div>
+                    
+                </template>
+                <template if:true={Website}>
+                    <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={parent.Id}>
+                        <ul class="slds-list_horizontal">
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Channel</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.ChannelName}</div>
+                        </div>
+                       
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -35px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal ID</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DealID}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -25px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Deal Title</b></p></div>
+                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-bottom: 25px;">{parent.DealTitle}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -20px;">
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sell Price</b></p></div>
+                            <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Spend}</div>
+                            </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -15px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Placement</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Placement}</div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -30px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Geo</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.Geo}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -30px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Start Time</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">
+                               <lightning-formatted-time value= {parent.starttime} hour="numeric"></lightning-formatted-time>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: -10px;" >    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Date</b></p></div>
+    
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{parent.DueDate}</div>
+                        </div> 
+                        <div class="slds-col slds-size_1-of-12" > 
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Due Time</b></p></div>
+                                        
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; inline-size: 90px;">
+                                <lightning-formatted-time value={parent.DueTime} hour="numeric"></lightning-formatted-time>
+                           </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-12"  style="margin-left: -10px;">                
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 80px;"><p><b>Status</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                           <lightning-combobox
+                                        name={index}
+                                        value={parent.Status}
+                                        options={StatusPkl}
+                                        onchange={handleChangeParentstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 105px;">
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;inline-size: 110px; margin-left: 55px;"><p><b>Approval Status</b></p></div>
+                        <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; ">
+                            <lightning-combobox
+                                        name={index}
+                                        value={parent.ApprovalStatus}
+                                        options={ApprovalStatusPkl}
+                                        onchange={handleChangeParentapprovalstatus}
+                                        style="text-align:left;position: fixed;"
+                                        >
+                            </lightning-combobox>
+                        </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-left: 105px;">
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;margin-left: 70px;"><p><b>SubStatus</b></p></div>
+                           <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px;">
+                               <lightning-combobox
+                                           name={index}
+                                           value={parent.SubStatus}
+                                           options={SubstatusPkl}
+                                           onchange={handleChangeParentsubstatus}
+                                           style="text-align:left;position: fixed;"
+                                           >
+                               </lightning-combobox>
+                           </div>
+                           </div>
+                    </ul>
+                </div>
+                </template>
+            </template>
+            </div>
+           
+            <div class="slds-col slds-size_12-of-12" style="height: 60px;"></div>
+            <template if:true={isChild}>
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -20px; margin-left: -1355px;"><p><b>Child</b></p></div>
+            </template>
+            <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12">
+               
+
+            <template for:each={childRecord} for:item="child" for:index="index">
+                <div class="demo-only demo-only--sizing slds-grid slds-wrap slds-col slds-size_12-of-12"  key={child.Id}>
+                   
+                    <ul class="slds-list_horizontal">
+                    <div class="slds-size_1-of-2" style="margin-left: 70px;">
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; "><p><b>Status</b></p></div>
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden; margin-top: -25px;">
+                <lightning-combobox
+                                name={index}
+                                value={child.Status}
+                                options={StatusPkl}
+                                onchange={handleChangeChildstatus}
+                                style="text-align:left; position: fixed;"
+                                >
+                    </lightning-combobox>
+                </div>   
+            </div>
+            <div class="slds-size_1-of-2" style="margin-left: 35px;">
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Approval Status</b></p></div>
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{child.ApprovalStatus}</div>
+            </div>
+            <div class="slds-size_1-of-2" style="margin-left: -30px;">
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;"><p><b>Sub Status</b></p></div>
+                <div class="slds-box slds-box_xx-small slds-text-align_center slds-m-around_xx-small" style="border: hidden;">{child.SubStatus}</div>
+            </div>
+        </ul>
+        </div>
+            </template>
+            </div>
+    </article>
+</template>

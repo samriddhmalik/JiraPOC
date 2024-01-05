@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unscheduled Event</fullName>
+                <default>false</default>
+                <label>Unscheduled Event</label>
+            </value>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>Staff</fullName>
+                <default>false</default>
+                <label>Staff</label>
+            </value>
+            <value>
+                <fullName>Gift Voucher</fullName>
+                <default>false</default>
+                <label>Gift Voucher</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Wholesale Incentive</fullName>
+                <default>false</default>
+                <label>Wholesale Incentive</label>
+            </value>
+            <value>
+                <fullName>Change to deal</fullName>
+                <default>false</default>
+                <label>Change to deal</label>
+            </value>
+            <value>
+                <fullName>Minimum Numbers</fullName>
+                <default>false</default>
+                <label>Minimum Numbers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

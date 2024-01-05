@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Component_MPTJoin Lookup Relationship</description>
+    <externalId>false</externalId>
+    <label>Component</label>
+    <referenceTo>Component__c</referenceTo>
+    <relationshipLabel>MPT_JOINS</relationshipLabel>
+    <relationshipName>MPT_JOINS</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>RefundnoCancellation</label>
+    <protected>false</protected>
+    <values>
+        <field>User_Profile__c</field>
+        <value xsi:type="xsd:string">~TAD Finance;System Administrator;~TAD Customisation Team;TAD Agents;TAD Agent Offshore</value>
+    </values>
+    <values>
+        <field>User_Role__c</field>
+        <value xsi:type="xsd:string">Financial Accountant;</value>
+    </values>
+    <values>
+        <field>feature_Name__c</field>
+        <value xsi:type="xsd:string">RefundnoCancellation</value>
+    </values>
+    <values>
+        <field>userId__c</field>
+        <value xsi:type="xsd:string">0052x000003h4Vs;0052x000002mAUy;0052x000003h9XkAAI;0052x000002lzSsAAI;0052x000002mAV3AAM;0050K00000AZzCwQAL;0052x000002m2KwAAI;0052x000003gGRBAA2;0052x000003h6pGAAQ;005280000074mekAAA;00528000003wiNU;0052x000004Uis7AAC;0052x000004AlKQAA0;0052x000003h4VsAAI;00528000003wiNUAAY;0052x000003hHSuAAM;0052x000004UkbDAAS;0052x000003h9XVAAY;0052x000003IbzjAAC;0052x000003IY3rAAG;0052x000004AtQXAA0;0052x000004AtTlAAK;0052x000003IYjnAAG;0052x0000052ZW5AAM;0052x000004AoVcAAK;0052x0000052ZWAAA2;0052x000004AtNnAAK;0052x0000052ZHjAAM;0052x000004AtO2AAK;0052x0000052ZWFAA2;0052x000004AoVNAA0;0052x000004UfDBAA0;0052x000004Ab2HAAS;0052x000004AQ6hAAG;0052x000004AlTDAA0;0052x000004AtOlAAK;0052x000004AlSyAAK;0052x000004AtNiAAK;0052x000004AQ7aAAG;0052x000004AoA0AAK;0052x000003IYjiAAG;0052x000004AQ6mAAG;0052x000004AQ7QAAW;0052x000004UfD1AAK;0052x000004Ab1JAAS;0052x000004AoF0AAK;0052x000004AtNOAA0;0052x000003IYkCAAW;0052x000004AoVXAA0;0052x0000052ZHoAAM;0052x000003IZcOAAW</value>
+    </values>
+</CustomMetadata>

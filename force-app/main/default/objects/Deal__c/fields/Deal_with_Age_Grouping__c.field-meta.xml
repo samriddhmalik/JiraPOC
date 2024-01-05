@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_with_Age_Grouping__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( IF ($User.UIThemeDisplayed=&quot;Theme4d&quot;, 
+&quot;/lightning/r/00O0K00000AOqJd/view?fv0=&quot;, 
+&quot;/00O0K00000AOqJd?pv0=&quot;) &amp; Name, Deal_ID_Title__c &amp;&quot; Deal with Age Grouping Report&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Deal with Age Grouping Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>merchant_sharing_deadline_notes__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter any information/date/comment relevant to deadline</inlineHelpText>
+    <label>Merchant Sharing Deadline Notes</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <formulas>
+        <name>removeSpaceFromPhone</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!$Record.DELAPLA__PLA_Caller_Phone_Number__c}, &quot; &quot;, &quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Task Before Insert Update Record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task Before Insert Update Record</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>remove_space_from_PLA_Phone_Field</name>
+        <label>remove space from PLA Phone Field</label>
+        <locationX>896</locationX>
+        <locationY>356</locationY>
+        <inputAssignments>
+            <field>DELAPLA__PLA_Caller_Phone_Number__c</field>
+            <value>
+                <elementReference>removeSpaceFromPhone</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>770</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>remove_space_from_PLA_Phone_Field</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DELAPLA__PLA_Caller_Phone_Number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TAD PIF Submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TADQF PIF Submitted</name>
+    <style>none</style>
+    <subject>Thanks for submitting your Passenger Information Form.</subject>
+    <textOnly>.
+
+Dear {!Order_Communication_POE__c.ordexp_Purchaser_First_Name__c},
+
+Thanks for submitting your Passenger Information Form for Order Number : {!Order_Communication_POE__c.order_number__c}. We will now be able to start processing your booking.
+
+As per the terms of this deal, any special requests, preferences and extras, including but not limited to dietary and mobility requirements, are strictly subject to availability and must be advised on your online Passenger Information Form. We will make every effort to accommodate special requests however please note these cannot be guaranteed.
+
+You will receive your final travel documentation by EMAIL (including e-tickets and all Important Information relating to your itinerary) approximately 4-6 weeks prior to departure (unless otherwise stated in your booking instructions). Please check your Junk/Spam folder in case they are directed there.
+
+We&apos;re here to help you.
+If you have any questions, please visit our   Support Page.
+Or call us on   1300 861 736.
+
+Regards,
+The TripADeal Team
+
+.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ArcheType__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TAD_Order__r.ordexp_deal_type__c=&apos;Stay&apos;, TAD_Order__c+&apos;-&apos;+  Order_Line_Item__r.ordexp_departure_date__c , null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ArcheType</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

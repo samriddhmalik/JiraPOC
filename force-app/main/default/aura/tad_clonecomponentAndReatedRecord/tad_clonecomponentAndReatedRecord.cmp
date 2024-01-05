@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--<ltng:require styles="{!$Resource.actionModalPopupSize}" />	-->
+    <aura:attribute name="cloneType" type="string" default = "Option"/>
+    <c:clonechildrecord recordId="{!v.recordId}" cloneType = "component" oncancel="{!c.handleCancel}" onclose ="{!c.handleCancel}"></c:clonechildrecord> 
+</aura:component>

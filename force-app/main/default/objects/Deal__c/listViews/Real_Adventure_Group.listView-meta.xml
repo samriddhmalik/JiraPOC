@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Real_Adventure_Group</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>BDM__c</columns>
+    <columns>Deal_ID_Title__c</columns>
+    <columns>Merchant__c</columns>
+    <columns>Deal_Status__c</columns>
+    <columns>URL_Text__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Deal__c.TAD_Deal</value>
+    </filters>
+    <filters>
+        <field>Merchant__c</field>
+        <operation>equals</operation>
+        <value>Real Aussie Adventures</value>
+    </filters>
+    <filters>
+        <field>Deal_Status__c</field>
+        <operation>equals</operation>
+        <value>Published</value>
+    </filters>
+    <label>Real Adventure Group</label>
+</ListView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Manager__c</fullName>
+    <externalId>false</externalId>
+    <label>Account Manager</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Heather McKenzie</fullName>
+                <default>false</default>
+                <label>Heather McKenzie</label>
+            </value>
+            <value>
+                <fullName>Sebastian Watsford</fullName>
+                <default>false</default>
+                <label>Sebastian Watsford</label>
+            </value>
+            <value>
+                <fullName>Elena Fini</fullName>
+                <default>false</default>
+                <label>Elena Fini</label>
+            </value>
+            <value>
+                <fullName>Ayu Herawati</fullName>
+                <default>false</default>
+                <label>Ayu Herawati</label>
+            </value>
+            <value>
+                <fullName>Rahayu Krisna</fullName>
+                <default>false</default>
+                <label>Rahayu Krisna</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

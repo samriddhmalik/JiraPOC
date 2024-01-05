@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_EV__c</fullName>
+    <externalId>false</externalId>
+    <formula>And( 
+   RecordType.Name = &quot;Multi-Line Expense&quot;,
+   Deal_Transaction__r.Processed_ML_PIN__c,
+   Processed_ER__c,
+   Expense_Variance__c &lt;&gt;0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Process EV</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

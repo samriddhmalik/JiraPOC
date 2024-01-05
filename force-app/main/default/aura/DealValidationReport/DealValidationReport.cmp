@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller='DealValidationResultApexClass'>
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="message" type="string" default="Deal Processing...."/>
+    <aura:attribute name="isSuccess" type="boolean" default="true"/>
+	<aura:attribute name="suboptionData" type="List[]"/>    
+    <aura:if isTrue="{!v.isSuccess}">
+        <p>{!v.message}</p>
+  </aura:if> 
+    <aura:if isTrue="{!not(empty(v.suboptionData))}">
+        
+        <Div class="" >
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer  slds-max-medium-table--stacked-horizontal"
+                                           role="grid">
+                                        <thead>
+                                            <tr class="slds-line-height_reset slds-text-heading_small">
+                                                <th scope="col" width="22%" class="slds-text-align_left"><b>Suboption Name</b></th>
+                                            </tr>      
+                                        </thead>
+                                        <tbody>
+                                            <aura:iteration items="{!v.suboptionData}" var="SO">
+                                                <tr class="slds-hint-parent">
+                                                    
+                                                    <td scope="row" class="slds-text-align--left">
+                                                        <b><lightning:formattedUrl value="{!SO.url}" tooltip="Navigate To Sub-Option Record" label="{!SO.name}" target="_parent" />- No General Pricing record </b>
+                                                </td>
+                                                </tr>
+                                            </aura:iteration>  
+                                        </tbody>
+                                    </table>
+        
+        
+        
+        
+        </Div>
+    </aura:if> 
+</aura:component>

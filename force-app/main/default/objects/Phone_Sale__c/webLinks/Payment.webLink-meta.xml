@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment</fullName>
+    <availability>online</availability>
+    <description>Single payment</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Payment</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/New_Single_Payment?paxid={!Phone_Sale__c.PurchaserId__c}
+&amp;psid={!Phone_Sale__c.Id}
+&amp;psname={!Phone_Sale__c.Name}
+&amp;amt={!Phone_Sale__c.Amount_Outstanding__c}
+&amp;sub=TAD</url>
+</WebLink>

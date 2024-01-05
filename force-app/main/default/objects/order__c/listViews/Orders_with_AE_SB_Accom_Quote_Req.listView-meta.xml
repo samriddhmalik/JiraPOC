@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orders_with_AE_SB_Accom_Quote_Req</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>order_status__c</columns>
+    <columns>Current_Status__c</columns>
+    <columns>Account__c</columns>
+    <columns>Deal_Option_Purchased__c</columns>
+    <columns>Departure_DateTC__c</columns>
+    <columns>ae__c</columns>
+    <columns>AE_City__c</columns>
+    <columns>AE_Accom_Quote_Request__c</columns>
+    <columns>SB_City__c</columns>
+    <columns>sb__c</columns>
+    <columns>SB_Accom_Quote_Request__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>order_status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,Ready For Export,Exported</value>
+    </filters>
+    <filters>
+        <field>Departure_DateTC__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>AE_Accom_Quote_Request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>SB_Accom_Quote_Request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Orders with AE/SB Accom Quote Req</label>
+    <sharedTo>
+        <group>CS_Manager</group>
+        <group>Team_Leaders_CS</group>
+    </sharedTo>
+</ListView>

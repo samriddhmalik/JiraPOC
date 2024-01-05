@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>order_nights_allocated__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Nights Allocated</label>
+    <summarizedField>Order_Night__c.order_quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>Order_Night__c.is_first_night__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Order_Night__c.status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Order_Night__c.Cancelled_Migrated_TAD_Order__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Order_Night__c.departures_dates__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

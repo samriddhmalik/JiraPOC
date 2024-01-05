@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_GP_edit_Post_Creation</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(ISNEW()) &amp;&amp; ( ISCHANGED(Price_AUD__c) || ISCHANGED(Price_NZD__c) || ISCHANGED(Solo_Surcharge_AUD__c) || ISCHANGED(Solo_Surcharge_NZD__c) || ISCHANGED(Sub_Options__c))</errorConditionFormula>
+    <errorMessage>You can&apos;t edit GP record contact your manager</errorMessage>
+</ValidationRule>

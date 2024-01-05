@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BER_Withheld_Value__c</fullName>
+    <externalId>false</externalId>
+    <label>BER Withheld Value</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Withheld Value Pending - UJ</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - UJ</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - Costa</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - Costa</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - MSC</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - MSC</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - MSC Hold</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - MSC Hold</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - MSC Pay Now</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - MSC Pay Now</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - Airline</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - Airline</label>
+            </value>
+            <value>
+                <fullName>Withheld Value Pending - Other</fullName>
+                <default>false</default>
+                <label>Withheld Value Pending - Other</label>
+            </value>
+            <value>
+                <fullName>Prepayments have been checked</fullName>
+                <default>false</default>
+                <label>Prepayments have been checked</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

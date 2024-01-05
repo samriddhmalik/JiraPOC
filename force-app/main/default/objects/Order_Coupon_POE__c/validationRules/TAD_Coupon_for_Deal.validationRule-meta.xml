@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAD_Coupon_for_Deal</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK( coupon__r.Deal__c )),
+coupon__r.Deal__c &lt;&gt; TAD_Order__r.ordexp_deal__c,
+TEXT(coupon__r.Deal_Promotion__c) &lt;&gt; &quot;NRMA&quot;
+)</errorConditionFormula>
+    <errorMessage>This coupon is to be applied with the deal specified on the coupon.</errorMessage>
+</ValidationRule>

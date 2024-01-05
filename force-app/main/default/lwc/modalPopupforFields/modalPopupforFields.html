@@ -1,0 +1,105 @@
+<template>
+  <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" style="margin-left: 20px; margin-right: 20px;" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+      <!-- Header Start -->
+      <header class="slds-modal__header">
+        <lightning-button-icon  class="slds-modal__close" title="Close" icon-name="utility:close" icon-class="slds-button_icon-inverse" onclick={handleDialogClose} style="color: red;"></lightning-button-icon>
+        <h2 class="slds-text-heading_medium slds-hyphenate header-string"> {itindata.name} </h2>
+      </header>
+      <!-- Header End -->
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <slot>
+          <div>
+            <div class="slds-grid ">
+              <div class="slds-col ">
+                <legend class="slds-form-element__legend slds-form-element__label">Day</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="number" max="999" label="Day" required="true" class="field" value={itindata.day} onchange={handleChange} data-id1="day" style="width:300px"></lightning-input>
+                <legend class="slds-form-element__legend slds-form-element__label">Itinerary Title</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="text" label="Itinerary Title" required="true" class="field" value={itindata.title} onchange={handleChange} data-id1="title" style="width:300px"></lightning-input>
+                <legend class="slds-form-element__legend slds-form-element__label">Accommodation</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="text" label="Accommodation" required="true" class="field" value={itindata.accommodation} onchange={handleChange} data-id1="accommodation" style="width:300px"></lightning-input>
+              </div>
+              <div class="slds-col ">
+                <legend class="slds-form-element__legend slds-form-element__label">Inclusions</legend>
+                <lightning-dual-listbox disabled={disableddata} source-label="Available Meals" selected-label="Selected Meals" value={itindata.selectedmeals} options={mealsOptions} size="3" data-id="Selected Meals" data-id1="inclusions" onchange={handleChange} style="width:300px"></lightning-dual-listbox>
+              </div>
+              <div class="slds-col ">
+                <legend class="slds-form-element__legend slds-form-element__label">Country Context</legend>
+                <lightning-combobox disabled={disableddata} variant="label-hidden" name="Country" label="Status" value={itindata.country} placeholder="Select Country" options={countryoptions} onchange={handleChange} data-id1="country" style="width:300px" required></lightning-combobox>
+                <legend class="slds-form-element__legend slds-form-element__label">Transfers</legend>
+                <lightning-input disabled={disableddata} variant="label-hidden" type="text" label="Transfers" required="true" class="field" value={itindata.transfers} onchange={handleChange} data-id1="transfers" style="width:300px"></lightning-input>
+                <legend class="slds-form-element__legend slds-form-element__label">Itinerary Activity</legend> 
+									
+                <!-- 									 <lightning-input variant="label-hidden" type="text" label="activity"  class="field" value={itindata.activity} onchange={handleChange} data-id1="transfers" style="width:400px"></lightning-input>
+               -->
+                <template if:false={selectedValue}>
+										<br>
+                  <div data-key="searchdiv" class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none" style="width:300px">
+                    <input disabled={disableddata} type="text" onfocusout={onLeave} value={searchKey} onkeyup={handleKeyChange} onchange={handleKeyChange} class="slds-input slds-combobox__input slds-has-focus" id="combobox-id-2" aria-autocomplete="list" aria-controls="listbox-id-2" role="textbox" placeholder="Search..." style="width:300px" />
+<!--                     <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                      <lightning-icon icon-name="utility:search" size="xx-Small" class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true"></lightning-icon>
+                    </span> -->
+                  </div>
+                  <template if:true={recordsList}>
+                    <div id="listbox-id-2-venu" data-key="dropdownresult" class="slds-show slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox" style="width:300px">
+                      <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        <template if:true={message}>
+                          <center> {message}</center>
+                        </template>
+                        <template for:each={recordsList} for:item="record">
+                          <li id={record.id} key={record.id} onclick={onRecordSelection} role="presentation" class="slds-listbox__item">
+                            <div data-key={record.id} data-name={record.name} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                              <span class="slds-media__figure slds-listbox__option-icon">
+                                <span class="slds-icon_container">
+                                  <lightning-icon icon-name={iconName} size="small"></lightning-icon>
+                                </span>
+                              </span>
+                              <span class="slds-media__body">
+                                <span data-key={record.id} data-name={record.name} class="slds-listbox__option-text slds-listbox__option-text_entity">{record.name} </span>
+                              </span>
+                            </div>
+                          </li>
+                        </template>
+                      </ul>
+                    </div>
+                  </template>
+                </template>
+                <template if:true={selectedValue}>
+                  <div data-key="pilldiv" class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right" role="none">
+                    <span class="slds-icon_container slds-icon-standard-account slds-combobox__input-entity-icon" title="object">
+                      <div class="slds-icon slds-icon_small" aria-hidden="true">
+                        <lightning-icon icon-name="utility:activity" size="small"></lightning-icon>
+                      </div>
+                      <span class="slds-assistive-text">Record</span>
+                    </span>
+                    <input type="text" class="slds-input slds-combobox__input slds-combobox__input-value" id="combobox-id-5" aria-controls="listbox-id-5" role="textbox" placeholder="Select an Activity" readonly value={selectedActivity} style="width:300px" />
+                    <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={removeRecordOnLookup} title="Remove selected option">
+                      <span class="slds-button__icon" aria-hidden="true">
+                        <lightning-icon disabled={disableddata} icon-name="utility:close" size="xx-Small" class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true"></lightning-icon>
+                      </span>
+                      <span class="slds-assistive-text">Remove selected option</span>
+                    </button>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <br>
+            <!-- 												<div class="slds-grid "><div class="slds-col slds-m-left_small"><legend class="slds-form-element__legend slds-form-element__label">Accommodation</legend><lightning-input variant="label-hidden" type="text" label="Accommodation" required="true" class="field" value={itindata.accommodation} onchange={handleChange} data-id1="accommodation"></lightning-input></div><div class="slds-col slds-m-left_small"><legend class="slds-form-element__legend slds-form-element__label">Country Context</legend><lightning-combobox variant="label-hidden" name="progress" label="Status" value={itindata.country} placeholder="Select Progress" options={countryoptions} onchange={handleChange} required></lightning-combobox></div><div class="slds-col slds-m-left_small"><legend class="slds-form-element__legend slds-form-element__label">Itinerary Activity</legend><lightning-input variant="label-hidden" type="text" label="Itinerary Activity" required="true" class="field" value={itindata.accommodation} onchange={handleChange} data-id1="accommodation"></lightning-input></div><div class="slds-col slds-m-left_small"><legend class="slds-form-element__legend slds-form-element__label">Transfers</legend><lightning-input variant="label-hidden" type="text" label="Transfers" required="true" class="field" value={itindata.transfers} onchange={handleChange} data-id1="accommodation"></lightning-input></div></div> -->
+            <div>
+              <b>Description</b>
+              <lightning-input-rich-text disabled={disableddata} label="Description" variant="top-toolbar" class="textAreaBody" value={itindata.description} onchange={handleChange} data-id1="description"></lightning-input-rich-text>
+            </div>
+            <br>
+            <br>
+          </div>
+          <br>
+          <br>
+          <div align="center">
+            <lightning-button disabled={disableddata} variant="Success" icon-name="utility:save" label="Save Itinerary" title="Click to save changes" class="slds-button_stretch" data-id="" data-id2="" onclick={handleSsaveChanges}></lightning-button>
+          </div>
+        </slot>
+      </div>
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

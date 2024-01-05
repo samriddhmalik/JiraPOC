@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Currency_for_Order</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ TEXT(currency_code__c) = &quot;AUD&quot;,  AND(orders__r.RecordType.Name = &quot;TNZ&quot;, orders__r.RecordType.Name = &quot;WT&quot;)  
+),
+AND(
+ TEXT(currency_code__c) = &quot;NZD&quot;, AND(orders__r.RecordType.Name &lt;&gt; &quot;TNZ&quot;, orders__r.RecordType.Name &lt;&gt; &quot;WT&quot;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>currency_code__c</errorDisplayField>
+    <errorMessage>The currency of this surcharge does not alight with the selected record type of the order.</errorMessage>
+</ValidationRule>

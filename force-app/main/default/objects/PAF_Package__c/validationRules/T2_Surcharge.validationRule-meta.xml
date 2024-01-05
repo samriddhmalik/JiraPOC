@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T2_Surcharge</fullName>
+    <active>true</active>
+    <description>If 1 or more T2 cities are selected a T2 Surcharge must be nominated</description>
+    <errorConditionFormula>AND( NOT(ISBLANK( Saucy_City__c )) , ISNULL( Tier_2__c ) || Tier_2__c = 0 )</errorConditionFormula>
+    <errorDisplayField>Tier_2__c</errorDisplayField>
+    <errorMessage>If 1 or more T2 cities are selected a T2 Surcharge must be nominated</errorMessage>
+</ValidationRule>

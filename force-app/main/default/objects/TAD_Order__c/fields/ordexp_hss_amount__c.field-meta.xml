@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ordexp_hss_amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RecordType_Name__c= &apos;TAD&apos;  &amp;&amp;  ordexp_departure_date__r.HSS__c =true ,  ordexp_departure_date__r.HSS_amount__c , 0)  +
+ IF( RecordType_Name__c= &apos;TNZ&apos;  &amp;&amp;  ordexp_departure_date__r.HSS_nz__c=true ,  ordexp_departure_date__r.HSS_amount_nz__c, 0)+IF( RecordType_Name__c= &apos;TC&apos;  &amp;&amp;  ordexp_departure_date__r.HSS__c =true ,  ordexp_departure_date__r.HSS_amount__c , 0)  +
+ IF( RecordType_Name__c= &apos;WT&apos;  &amp;&amp;  ordexp_departure_date__r.HSS_nz__c=true ,  ordexp_departure_date__r.HSS_amount_nz__c, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HSS Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

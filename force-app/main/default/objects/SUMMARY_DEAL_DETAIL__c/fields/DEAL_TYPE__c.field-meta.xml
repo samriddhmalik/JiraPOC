@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DEAL_TYPE__c</fullName>
+    <externalId>false</externalId>
+    <label>DEAL TYPE</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>MULTI PARTNER ONLY</fullName>
+                <default>false</default>
+                <label>MULTI PARTNER ONLY</label>
+            </value>
+            <value>
+                <fullName>PARTNER ONLY</fullName>
+                <default>false</default>
+                <label>PARTNER ONLY</label>
+            </value>
+            <value>
+                <fullName>TAD MULTI</fullName>
+                <default>false</default>
+                <label>TAD MULTI</label>
+            </value>
+            <value>
+                <fullName>TAD ONLY</fullName>
+                <default>false</default>
+                <label>TAD ONLY</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

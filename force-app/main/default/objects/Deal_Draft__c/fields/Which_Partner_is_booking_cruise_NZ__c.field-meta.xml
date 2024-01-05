@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_Partner_is_booking_cruise_NZ__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please list the name of the merchant partner who is booking this cruise.</inlineHelpText>
+    <label>Which Partner is booking cruise? - NZ</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

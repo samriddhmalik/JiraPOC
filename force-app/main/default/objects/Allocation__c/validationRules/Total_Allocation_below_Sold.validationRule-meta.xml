@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Allocation_below_Sold</fullName>
+    <active>true</active>
+    <description>Deactivated because of conflict taking date off line when rollup helper tried to up date allocation but couldn&apos;t.
+Activated as we no longer need roll up helper for dep dates sold and held</description>
+    <errorConditionFormula>Remaining__c &lt;0  &amp;&amp;   Override_Allocation__c =false &amp;&amp;   NOT(ISCHANGED(Override_Allocation__c))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>ALLOCATION ERROR! Requested Allocation are not available - Please check with BDM &amp; Content teams</errorMessage>
+</ValidationRule>

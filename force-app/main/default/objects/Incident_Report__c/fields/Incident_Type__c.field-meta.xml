@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incident_Type__c</fullName>
+    <description>Allows user to select incident type</description>
+    <externalId>false</externalId>
+    <label>Incident Type</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Flight Related</fullName>
+                <default>true</default>
+                <label>Flight Related</label>
+            </value>
+            <value>
+                <fullName>Tour Related</fullName>
+                <default>false</default>
+                <label>Tour Related</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Sales Enquiry</fullName>
+                <default>false</default>
+                <label>Sales Enquiry</label>
+            </value>
+            <value>
+                <fullName>Service Enquiry</fullName>
+                <default>false</default>
+                <label>Service Enquiry</label>
+            </value>
+            <value>
+                <fullName>Consultant/Human Error</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Consultant/Human Error</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Other Incidents</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Incidents</label>
+            </value>
+            <value>
+                <fullName>Process/Operational</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Process/Operational</label>
+            </value>
+            <value>
+                <fullName>Supplier/Merchant</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Supplier/Merchant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

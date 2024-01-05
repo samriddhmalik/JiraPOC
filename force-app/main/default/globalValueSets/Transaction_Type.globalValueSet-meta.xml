@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>callcentre</fullName>
+        <default>true</default>
+        <label>callcentre</label>
+    </customValue>
+    <customValue>
+        <fullName>cardpresent</fullName>
+        <default>false</default>
+        <label>cardpresent</label>
+    </customValue>
+    <customValue>
+        <fullName>ecommerce</fullName>
+        <default>false</default>
+        <label>ecommerce</label>
+    </customValue>
+    <customValue>
+        <fullName>internet</fullName>
+        <default>false</default>
+        <label>internet</label>
+    </customValue>
+    <customValue>
+        <fullName>ivr</fullName>
+        <default>false</default>
+        <label>ivr</label>
+    </customValue>
+    <customValue>
+        <fullName>mailorder</fullName>
+        <default>false</default>
+        <label>mailorder</label>
+    </customValue>
+    <customValue>
+        <fullName>telephoneorder</fullName>
+        <default>false</default>
+        <label>telephoneorder</label>
+    </customValue>
+    <description>Defines a type for transaction:
+&quot;callcentre&quot; Used for a call centre transaction. Transaction is flagged as a telephone order to the Issuer.
+&quot;cardpresent&quot; Used for reporting purposes only. Transaction is flagged as a telephone order to the Issuer.
+&quot;ecommerce&quot; Used for a real time customer internet transaction. Transaction is flagged as an internet order to the Issuer.
+internet&quot; Used for a real time customer internet transaction. Transaction is flagged as an internet order to the Issuer.
+&quot;ivr&quot; Used for an automated phone (IVR) transaction. Transaction is flagged as a telephone order to the Issuer.
+&quot;mailorder&quot; Used for a mail order transaction. Transaction is flagged as a mail order to the Issuer.
+&quot;telephoneorder&quot; Used for a telephone order transaction. Transactions is flagged as a telephone order to the Issuer.</description>
+    <masterLabel>Transaction Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

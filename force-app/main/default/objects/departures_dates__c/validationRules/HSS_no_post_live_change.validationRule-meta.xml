@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HSS_no_post_live_change</fullName>
+    <active>false</active>
+    <description>Can reset price by setting it to zero then resetting HSS but typically don&apos;t.</description>
+    <errorConditionFormula>AND($Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+OR(
+AND(HSS_amount__c &gt; 1, AND(PRIORVALUE(HSS_amount__c) &gt; 1, PRIORVALUE(HSS_amount__c) &lt;&gt; HSS_amount__c)
+),
+AND(HSS_amount_nz__c &gt; 1, AND(PRIORVALUE(HSS_amount_nz__c) &gt; 1, PRIORVALUE(HSS_amount_nz__c) &lt;&gt; HSS_amount_nz__c)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>HSS cannot be changed after deal has gone live. To edit surcharge, create new departure date (row).</errorMessage>
+</ValidationRule>

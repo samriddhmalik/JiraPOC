@@ -1,0 +1,55 @@
+<apex:page standardController="order__c" >
+
+  
+ 
+  
+  <apex:pageBlock title="PAF - Max Nett Total * Quantity (number of passenegers)">
+  
+   <apex:pageBlockSection >
+  
+  <apex:outputField value="{!order__c.Additional_Surcharges__c}"/>
+  
+   </apex:pageBlockSection>
+  
+   
+     <apex:pageBlock >
+    
+   <apex:pageblockSection title="Flight Additional costs">
+      <div class="row">
+      <div class="col-md-6">
+   <apex:outputlabel value= "{!IF(order__c.airline_upgrade_qty_price__c >  0, "Includes Airline Upgrade",  "No Airline Upgrade" )}" />
+   <apex:outputText value = "{!IF(order__c.airline_upgrade_qty_price__c > 0, order__c.airline_upgrade_qty_price__c,  " " )}" />
+   <apex:outputlabel value= "{!IF(order__c.departure_city_qty_price__c >  0, "Includes departure city",  "No departure city" )}" />
+   <apex:outputText value = "{!IF(order__c.departure_city_qty_price__c > 0, order__c.departure_city_qty_price__c,  " " )}" />
+    </div>
+  
+  <div class="col-md-7">
+   <apex:outputlabel value= "{!IF(order__c.hss_qty_price__c >  0, "Includes HSS ",  "No hss" )}" />
+   <apex:outputText value = "{!IF(order__c.hss_qty_price__c > 0, order__c.hss_qty_price__c,  " " )}" />
+   <apex:outputlabel value= "{!IF(order__c.pre_tour_stopover_qty_price__c >  0, "Includes Per tour Stop over",  "No departure city" )}" />
+   <apex:outputText value = "{!IF(order__c.pre_tour_stopover_qty_price__c > 0, order__c.pre_tour_stopover_qty_price__c,  " " )}" />
+   <apex:outputlabel value= "{!IF(order__c.post_tour_stopover_qty_price__c >  0, "Includes Post tour Stop over",  "No post tour stop over" )}" />
+   <apex:outputText value = "{!IF(order__c.post_tour_stopover_qty_price__c > 0, order__c.post_tour_stopover_qty_price__c,  " " )}" />
+   <apex:outputlabel value= "{!IF(order__c.sb_qty_price__c >  0, "Includes Stay Behind",  "No Stay behind" )}" />
+   <apex:outputText value = "{!IF(order__c.sb_qty_price__c > 0, order__c.sb_qty_price__c,  " " )}" />
+   <apex:outputlabel value= "{!IF(order__c.ae_qty_price__c >  0, "Includes Arrice Early",  "No Arrive Early" )}" />
+   <apex:outputText value = "{!IF(order__c.ae_qty_price__c > 0, order__c.ae_qty_price__c,  " " )}" />
+   </div>
+   
+   </div>
+   
+  
+   </apex:pageblockSection>
+  
+   
+    
+   
+    </apex:pageBlock>   
+   
+   
+   
+   </apex:pageBlock>
+      
+
+
+</apex:page>

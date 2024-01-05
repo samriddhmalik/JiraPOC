@@ -1,0 +1,16 @@
+<apex:page standardController="Account" extensions="NRMAStatusCheckController" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Back to Account" action="{!backToAccount}" rendered="{!back}"/>
+                <apex:commandButton value="Save Result" action="{!saveResult}" rendered="{!good}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Calling out to NRMA..." />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+.title{
+    font-size: large;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.row1, .row2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: medium;
+    font-weight: 400;
+}
+.recAmount, .coupon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+lightning-input,lightning-combobox{
+    margin-bottom: 1rem;
+    margin-left: 5px;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incorrect_City_for_Record_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(OR(
+RecordType.Name = &quot;TAD&quot;,RecordType.Name = &quot;TC&quot;,RecordType.Name = &quot;NRMA&quot;),NOT(CONTAINS(TEXT(departure_cities__r.site__c),&quot;AU&quot;))
+),
+AND(
+OR(RecordType.Name = &quot;TNZ&quot;,RecordType.Name = &quot;WT&quot;),NOT(CONTAINS(TEXT(departure_cities__r.site__c),&quot;NZ&quot;))
+)
+)</errorConditionFormula>
+    <errorDisplayField>departure_cities__c</errorDisplayField>
+    <errorMessage>Sorry Matey, That city ain&apos;t right for this Record Type!</errorMessage>
+</ValidationRule>

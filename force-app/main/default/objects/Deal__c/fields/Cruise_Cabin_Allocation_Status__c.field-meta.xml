@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cruise_Cabin_Allocation_Status__c</fullName>
+    <defaultValue>&apos;None&apos;</defaultValue>
+    <externalId>false</externalId>
+    <label>Cruise Cabin Allocation Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Cruise_Cabin_Booked_by__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unsecured</fullName>
+                <default>false</default>
+                <label>Unsecured</label>
+            </value>
+            <value>
+                <fullName>Secured</fullName>
+                <default>false</default>
+                <label>Secured</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>TAD</controllingFieldValue>
+            <valueName>Unsecured</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TAD</controllingFieldValue>
+            <controllingFieldValue>Partner</controllingFieldValue>
+            <valueName>Secured</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

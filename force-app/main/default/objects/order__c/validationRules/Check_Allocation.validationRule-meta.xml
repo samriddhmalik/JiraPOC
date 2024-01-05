@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Allocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT($Permission.Check_Allocation), 
+OR( 
+IF(ISNEW(), IF(qty__c &gt; departures_dates__r.Remaining_Allocation__c,true,false), 
+IF(qty__c &gt; ( departures_dates__r.Remaining_Allocation__c + PRIORVALUE(qty__c)),true,false))) 
+)</errorConditionFormula>
+    <errorDisplayField>qty__c</errorDisplayField>
+    <errorMessage>You do not have the allocation for this qty of passengers!</errorMessage>
+</ValidationRule>

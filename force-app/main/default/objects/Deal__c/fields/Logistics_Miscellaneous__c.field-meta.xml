@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logistics_Miscellaneous__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Any additional information about the deal the logistics team may need to know e.g. &quot;Merchant books internal flight from Delhi to Goa.&quot;</inlineHelpText>
+    <label>Logistics Miscellaneous</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

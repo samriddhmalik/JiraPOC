@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Order_Customisation__c</fullName>
+    <description>Total Order Customisation for flights and cruise</description>
+    <externalId>false</externalId>
+    <label>Total Order Customisation</label>
+    <summarizedField>Order_Customisations__c.Total_Final_Cost__c</summarizedField>
+    <summaryFilterItems>
+        <field>Order_Customisations__c.Status__c</field>
+        <operation>notEqual</operation>
+        <value>Quoted, Declined, Quote Requested</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Order_Customisations__c.order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

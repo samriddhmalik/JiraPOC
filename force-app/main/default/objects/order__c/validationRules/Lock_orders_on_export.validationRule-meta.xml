@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_orders_on_export</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(OR(ISPICKVAL(order_status__c ,&quot;Exported&quot;), ISPICKVAL( order_status__c ,&quot;Ready For Export&quot;)), 
+NOT ( ISPICKVAL(Cancellation_Request__c,&quot;Send Request Form&quot;)),
+NOT ( Order_Customisation_Count__c &gt; 0 ),
+NOT ( $Permission.Lock_Orders_On_Export ) 
+)</errorConditionFormula>
+    <errorMessage>Order is now Ready to be Ticketed. Please refer any changes to Admin/Customisation team.</errorMessage>
+</ValidationRule>

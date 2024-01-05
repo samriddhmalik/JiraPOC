@@ -1,0 +1,44 @@
+<apex:page standardController="Credit_Card_Auth__c" extensions="BpointPaymentController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <div><input name="MakePayment" class="btn" type="button" value="Make Payment" onclick="CreateCRN_JS();return false;" style="width: 90px; float: left"/></div>
+                <apex:commandButton id="backtotravelbooking" value="Back to Travel Booking" action="{!redirectToTravelBooking}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:actionFunction action="{!createCRN}" name="CreateCRN_JS" status="status1" reRender="statuses" onComplete="CallBpoint_JS();"/>
+            <apex:actionFunction action="{!makePayment}" name="CallBpoint_JS" status="status2" reRender="statuses, showmsg"/>
+            <apex:actionFunction action="{!updateCCDetails}" name="UpdateCCDetails_JS"/>
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+            <apex:pageBlockSection >
+                <apex:outputPanel id="statuses">
+                    <apex:actionStatus id="status1" startText="...Creating CRN and saving to DB..." />
+                    <apex:actionStatus id="status2" startText="...Sending transaction to Bpoint..." />
+                </apex:outputPanel>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >Note: AMEX Credit Cards attract a 3.5% surcharge.</apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputField label="Account / Pax" value="{!payment.Account__c}"/>
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputText label="Travel Booking" value="{!travelBookingName}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:inputText label="Payment Amount" value="{!pageAmount}" />
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:outputField label="Currency" value="{!payment.Currency__c}" /> <!-- Change to input field and check controller assignment to turn on currency picklist -->
+                <apex:inputField label="Transaction Type" value="{!payment.Transaction_Type__c}" />
+
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Attached Credit Cards" />
+                    <apex:selectlist value="{!whichCC}" required="true" multiSelect="false" size="1" onChange="UpdateCCDetails_JS();">
+                        <apex:selectOptions value="{!ccList}" />
+                    </apex:selectlist>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="ccDetails" >
+                <apex:outputField label="Name on card" value="{!payment.Name_on_card__c}"/>
+                <apex:outputField label="Credit Card Number" value="{!payment.Credit_Card__c}"/>
+                <apex:outputField label="Expiry Date" value="{!payment.Exp_Date__c}"/>
+                <apex:outputField label="CCV" value="{!payment.CCV__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

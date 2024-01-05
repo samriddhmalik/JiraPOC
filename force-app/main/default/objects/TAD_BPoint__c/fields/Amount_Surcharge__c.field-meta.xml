@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Surcharge__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is any surcharge amount that may be charged such as an AMEX fee. Typically this will be 0.00 for all Visa and MC payments.</inlineHelpText>
+    <label>Amount Surcharge</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

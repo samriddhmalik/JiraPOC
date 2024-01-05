@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Numbers_Met_Send_Email__c</fullName>
+    <description>Uses Process Builder to populate</description>
+    <externalId>false</externalId>
+    <label>Min Numbers Met - Send Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Email to Send</fullName>
+                <default>false</default>
+                <label>Email to Send</label>
+            </value>
+            <value>
+                <fullName>Email Sent</fullName>
+                <default>false</default>
+                <label>Email Sent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

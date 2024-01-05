@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1762</fullName>
+    <columns>NAME</columns>
+    <columns>Deal_ID__c</columns>
+    <columns>first_name_purchaser__c</columns>
+    <columns>Order_Number__c</columns>
+    <columns>Sale_Value__c</columns>
+    <columns>Merchant_Booking_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_ID__c</field>
+        <operation>equals</operation>
+        <value>1762</value>
+    </filters>
+    <filters>
+        <field>order_status__c</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Pending Cancellation,Cancelled,Expired</value>
+    </filters>
+    <label>(1762)Ramada Khao</label>
+    <sharedTo>
+        <portalRole>RamadaKhaoLakResortThailandCustomerUser</portalRole>
+    </sharedTo>
+</ListView>

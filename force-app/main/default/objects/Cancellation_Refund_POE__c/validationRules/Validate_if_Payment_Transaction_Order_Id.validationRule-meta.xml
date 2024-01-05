@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_if_Payment_Transaction_Order_Id</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Payment_Transaction__c != null)  &amp;&amp;  (Payment_Transaction__r.ordexp_tad_order__c !=  ordexp_tad_order__c )</errorConditionFormula>
+    <errorMessage>Payment Transaction and Cancellation Tad Order ID doesn&apos;t match</errorMessage>
+</ValidationRule>

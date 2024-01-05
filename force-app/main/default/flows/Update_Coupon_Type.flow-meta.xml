@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Complaint_in_Coupon</name>
+        <label>Complaint in Coupon</label>
+        <locationX>346</locationX>
+        <locationY>591</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Coupon_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Complaint</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Customer_Compensation_in_coupon</name>
+        <label>Customer Compensation in coupon</label>
+        <locationX>240</locationX>
+        <locationY>404</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Coupon_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Customer Compensation</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Minimum_Numbers_In_Coupon</name>
+        <label>Minimum Numbers In Coupon</label>
+        <locationX>685</locationX>
+        <locationY>433</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Coupon_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Minimum Numbers</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Unscheduled_Event_In_Coupon</name>
+        <label>Unscheduled Event In Coupon</label>
+        <locationX>545</locationX>
+        <locationY>654</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Coupon_type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Unscheduled Event</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Customer_Compensation</name>
+        <label>Check Customer Compensation</label>
+        <locationX>491</locationX>
+        <locationY>284</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Customer_Compensation</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer - Unable to travel - Medical</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer - Unable to Travel - Death</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer - Unable to Travel - Change of Mind</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Offload</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - System Error</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Staff Error</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Goodwill</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Customer_Compensation_in_coupon</targetReference>
+            </connector>
+            <label>Customer Compensation</label>
+        </rules>
+        <rules>
+            <name>Complaint</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer - Unable to Travel - Customer Complaint</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Customer Complaint</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Complaint_in_Coupon</targetReference>
+            </connector>
+            <label>Complaint</label>
+        </rules>
+        <rules>
+            <name>Unscheduled_Event</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Merchant</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Partner/ 3rd Party</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>External - Merchant</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>External - Force Majeure</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>External - Partner/ 3rd Party</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unscheduled_Event_In_Coupon</targetReference>
+            </connector>
+            <label>Unscheduled Event</label>
+        </rules>
+        <rules>
+            <name>Minimum_Numbers</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Cancellation_Reason.Refund_Reason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal - Min Numbers not met</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Minimum_Numbers_In_Coupon</targetReference>
+            </connector>
+            <label>Minimum Numbers</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Update Coupon Type {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Coupon Type</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Cancellation_Reason</name>
+        <label>Get Cancellation Reason</label>
+        <locationX>522</locationX>
+        <locationY>128</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Customer_Compensation</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ordexp_CancellationRefund__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Cancellation_Refund_POE__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Refund_Reason__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Get_Cancellation_Reason</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Coupon_type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>coupon__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

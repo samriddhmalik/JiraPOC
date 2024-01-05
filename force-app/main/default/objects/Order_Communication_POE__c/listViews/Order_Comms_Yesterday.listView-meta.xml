@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Comms_Yesterday</fullName>
+    <columns>NAME</columns>
+    <columns>au_nz_order__c</columns>
+    <columns>Deal_and_Title__c</columns>
+    <columns>purchaser_full_name__c</columns>
+    <columns>has_flights__c</columns>
+    <columns>is_escapes__c</columns>
+    <columns>escapes_with_flights_survey_sent__c</columns>
+    <columns>survey_sent__c</columns>
+    <columns>communication_code__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>YESTERDAY</value>
+    </filters>
+    <filters>
+        <field>communication_code__c</field>
+        <operation>contains</operation>
+        <value>WH,Escape</value>
+    </filters>
+    <label>Order Comms Yesterday</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

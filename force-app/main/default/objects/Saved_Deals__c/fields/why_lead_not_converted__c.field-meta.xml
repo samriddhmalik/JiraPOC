@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>why_lead_not_converted__c</fullName>
+    <externalId>false</externalId>
+    <label>why lead not converted?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>not the decision-maker</fullName>
+                <default>false</default>
+                <label>not the decision-maker</label>
+            </value>
+            <value>
+                <fullName>too expensive</fullName>
+                <default>false</default>
+                <label>too expensive</label>
+            </value>
+            <value>
+                <fullName>Only wanted to pay deposit</fullName>
+                <default>false</default>
+                <label>Only wanted to pay deposit</label>
+            </value>
+            <value>
+                <fullName>Competitor better price</fullName>
+                <default>false</default>
+                <label>Competitor better price</label>
+            </value>
+            <value>
+                <fullName>Didn’t want to include flights</fullName>
+                <default>false</default>
+                <label>Didn’t want to include flights</label>
+            </value>
+            <value>
+                <fullName>Not ready to purchase - general questions</fullName>
+                <default>false</default>
+                <label>Not ready to purchase - general questions</label>
+            </value>
+            <value>
+                <fullName>Order expired</fullName>
+                <default>false</default>
+                <label>Order expired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

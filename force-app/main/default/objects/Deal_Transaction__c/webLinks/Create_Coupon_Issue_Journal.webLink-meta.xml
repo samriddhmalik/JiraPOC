@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Coupon_Issue_Journal</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create Coupon Issue Journal</masterLabel>
+    <openType>sidebar</openType>
+    <page>CL_DT_to_JNL_CI</page>
+    <protected>false</protected>
+</WebLink>

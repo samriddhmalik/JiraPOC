@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transportation__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(MID(Survey_Response__c, 14, 1),
+&quot;0&quot;, &quot;0-NotApplicable&quot;,
+&quot;1&quot;, &quot;1-Poor&quot;,
+&quot;2&quot;, &quot;2-Satisfactory&quot;,
+&quot;3&quot;, &quot;3-Excellent&quot;,
+&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>How was your transportation such as transfers, shuttles and buses?</inlineHelpText>
+    <label>Transportation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

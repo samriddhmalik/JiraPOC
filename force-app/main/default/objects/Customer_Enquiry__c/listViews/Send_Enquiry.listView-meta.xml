@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Enquiry</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Enquiry_Status__c</columns>
+    <columns>Destination__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Customer_Enquiry__c.Send_Enquiry</value>
+    </filters>
+    <label>Send Enquiry</label>
+</ListView>

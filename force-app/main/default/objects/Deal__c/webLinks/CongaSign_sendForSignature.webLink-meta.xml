@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CongaSign_sendForSignature</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send with Conga Sign</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/APXT_CongaSign__apxt_sendForSignature?id={!Deal__c.Id}
+
+&amp;QueryId=[DSDEAL]a440K000001CaBW, 
+[DSOptions]a440K000001CaBb, 
+[DSSubOptions]a440K000001CaBg, 
+[DSAccount]a440K000001CaBl 
+
+&amp;TemplateId=a4C0K000000Jkan</url>
+</WebLink>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X4092_Check</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>ordexp_account__c</columns>
+    <columns>ordexp_deal_Option_Purchased__c</columns>
+    <columns>ordexp_departure_date__c</columns>
+    <columns>ordexp_master_status__c</columns>
+    <columns>ordexp_sub_status__c</columns>
+    <columns>ordexp_status_check__c</columns>
+    <columns>ordexp_pif_outstanding__c</columns>
+    <columns>PAX_Qty__c</columns>
+    <columns>ordexp_amount_outstanding__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ordexp_deal_id_title__c</field>
+        <operation>contains</operation>
+        <value>4092</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>TAD_Order__c.TAD,TAD_Order__c.TC,TAD_Order__c.TNZ,TAD_Order__c.WT</value>
+    </filters>
+    <label>4092 - Check</label>
+    <sharedTo>
+        <group>IT_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PQJunc_Pack__c</fullName>
+    <externalId>false</externalId>
+    <label>PAF Package</label>
+    <referenceTo>PAF_Package__c</referenceTo>
+    <relationshipLabel>PAFPACKQUOTEJUNC</relationshipLabel>
+    <relationshipName>PAFPACKQUOTEJUNC</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

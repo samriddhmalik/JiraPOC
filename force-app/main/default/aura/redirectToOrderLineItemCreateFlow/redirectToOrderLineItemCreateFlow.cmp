@@ -1,0 +1,61 @@
+<aura:component implements="lightning:availableForFlowScreens,force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride,lightning:hasPageReference,lightning:isUrlAddressable" access="global" controller="redirectToAddOnCreateFlowApexController">
+    
+    <aura:attribute name="parentRecordId" type="String" />
+    <aura:attribute name="quickActionRender" type="Boolean" default="false"/>
+    <aura:attribute name="redirectrender" type="Boolean" default="false"/>
+    <aura:attribute name="isLoading" type="Boolean"/>
+    <aura:attribute name="renderErrorMsgForCancelledOrder" type="Boolean" default="false"/>
+    <aura:attribute name="renderErrorMsgForPriceChange" type="Boolean" default="false"/>
+    <aura:handler event="aura:Waiting" action="{!c.loading}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.loaded}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:html tag="style">
+        .slds-modal__content{  
+        overflow-y: auto;
+        }
+        .slds-combobox_container{
+        width:95.5% !important;
+        }   
+    </aura:html>
+    
+    <aura:if isTrue="{!v.renderErrorMsgForCancelledOrder}">
+     
+	
+      <div aura:id="warningMessage" style="text-align: center;" class="slds-modal__content slds-text-heading_medium slds-align_absolute-center slds-show">This TAD Order is already Cancelled.<br></br>
+          You cannot create more OLIs</div>
+        <br></br>
+        <br></br>
+        <br></br>
+              <div class="slds-align_absolute-center">
+      <lightning:button variant="brand" label="Cancel" onclick="{! c.closeModal }" />
+                  </div>      
+    </aura:if> 
+     <aura:if isTrue="{!v.renderErrorMsgForPriceChange}">
+      <div aura:id="warningMessage" style="text-align: center;" class="slds-modal__content slds-text-heading_medium slds-align_absolute-center slds-show">Price on this TAD Order is changed.<br></br>
+          You cannot create more OLIs</div>
+        <br></br>
+        <br></br>
+        <br></br>
+              <div class="slds-align_absolute-center">
+      <lightning:button variant="brand" label="Cancel" onclick="{! c.closeModal }" />
+                  </div>      
+    </aura:if> 
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:if isTrue="{!v.quickActionRender}">
+        <div class="slds-theme_default slds-text-title_bold" style="height:750px;">
+            <!--   <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">  -->
+            <lightning:flow aura:id="flowId" onstatuschange="{!c.handleStatusChange}"/>
+            <!--  </div> -->
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.redirectrender}">
+        <div class="slds-box slds-theme_default slds-text-title_bold slds-grid slds-wrap slds-align_absolute-center" style="height:750px;">
+        	<lightning:flow aura:id="flowId" class="slds-size_1-of-2" onstatuschange="{!c.handleStatusChange}"/>
+        </div>
+    </aura:if>
+    
+    
+</aura:component>
